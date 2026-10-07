@@ -1,0 +1,1057 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>Day 05 · 精讲 30 词深度精讲 — 英国银行业合规英语强化</title>
+<style>
+:root{
+  --bg:#f5f6f8;--panel:#fff;--panel-2:#fafbfc;--line:#e3e6ea;--line-2:#eef1f4;
+  --ink:#1c2330;--ink-2:#4a5568;--ink-3:#8a94a3;
+  --navy:#012169;--red:#c8102e;--blue:#1f6feb;--teal:#0f8a7e;--amber:#b7791f;--purple:#6b46c1;--green:#2f855a;
+  --shadow:0 1px 2px rgba(16,24,40,.05),0 4px 14px rgba(16,24,40,.06);
+  --radius:12px;
+}
+*{box-sizing:border-box;}
+body{margin:0;background:var(--bg);color:var(--ink);font-size:14px;line-height:1.68;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",Roboto,sans-serif;
+  -webkit-font-smoothing:antialiased;}
+a{color:var(--blue);text-decoration:none;}
+a:hover{text-decoration:underline;}
+
+.hero{background:linear-gradient(120deg,#012169 0%,#0b3a8f 55%,#1f6feb 100%);color:#fff;padding:24px 28px 20px;}
+.hero-inner{max-width:1080px;margin:0 auto;}
+.crumb{font-size:12px;opacity:.85;}
+.crumb a{color:#fff;text-decoration:underline;}
+.hero h1{margin:8px 0 6px;font-size:23px;font-weight:700;}
+.hero p{margin:0;opacity:.88;font-size:13.5px;max-width:820px;}
+.stats{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px;}
+.stat{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18);border-radius:10px;padding:7px 13px;min-width:98px;}
+.stat b{display:block;font-size:17px;font-weight:700;line-height:1.2;}
+.stat span{font-size:11.5px;opacity:.82;}
+
+main{max-width:1080px;margin:0 auto;padding:22px 20px 90px;}
+h2.sec{font-size:18px;margin:0 0 4px;font-weight:700;}
+p.sub{margin:0 0 16px;color:var(--ink-3);font-size:13px;}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px;margin-bottom:16px;}
+.card h3{margin:0 0 10px;font-size:15.5px;font-weight:700;}
+.card h4{margin:16px 0 6px;font-size:13.5px;font-weight:700;color:var(--navy);}
+.card h4:first-child{margin-top:0;}
+.mod{display:flex;align-items:center;gap:12px;margin-bottom:10px;}
+.mod-no{flex:0 0 44px;height:44px;border-radius:11px;background:var(--navy);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1.05;}
+.mod-no b{font-size:15px;}
+.mod-no span{font-size:9px;opacity:.8;letter-spacing:.06em;}
+.mod-tt{flex:1;}
+.mod-tt h3{margin:0;font-size:16px;}
+.mod-tt p{margin:1px 0 0;font-size:12.5px;color:var(--ink-3);}
+.mod-time{font-size:11.5px;color:#fff;background:var(--teal);border-radius:999px;padding:3px 10px;white-space:nowrap;}
+.mod-time.hot{background:var(--red);}
+
+.pill{display:inline-block;font-size:11px;padding:2px 8px;border-radius:999px;border:1px solid var(--line);background:var(--panel-2);color:var(--ink-2);margin:0 5px 5px 0;}
+.pill.navy{background:#eef2fb;border-color:#d5def5;color:var(--navy);}
+.pill.red{background:#fdeef0;border-color:#f7d4d9;color:var(--red);}
+.pill.teal{background:#e9f7f5;border-color:#cbe9e4;color:var(--teal);}
+.pill.amber{background:#fdf6e7;border-color:#f3e3bd;color:var(--amber);}
+.pill.purple{background:#f2edfb;border-color:#e0d5f5;color:var(--purple);}
+.pill.green{background:#ecf7f1;border-color:#d0ebdd;color:var(--green);}
+
+ul.tight{margin:6px 0 0;padding-left:20px;}
+ul.tight li{margin-bottom:5px;font-size:13.2px;color:var(--ink-2);}
+ul.tight li b{color:var(--ink);}
+ol.tight{margin:6px 0 0;padding-left:22px;}
+ol.tight li{margin-bottom:6px;font-size:13.2px;color:var(--ink-2);}
+ol.tight li b{color:var(--ink);}
+
+.ck{display:flex;align-items:flex-start;gap:10px;padding:8px 0;border-bottom:1px solid var(--line-2);cursor:pointer;}
+.ck:last-child{border-bottom:0;}
+.ck:hover{background:var(--panel-2);}
+.ck .bx{flex:0 0 17px;width:17px;height:17px;border:1.5px solid var(--line);border-radius:5px;background:#fff;margin-top:3px;}
+.ck.on .bx{background:var(--green);border-color:var(--green);}
+.ck.on .bx::after{content:"✓";color:#fff;font-size:11px;display:flex;justify-content:center;line-height:15px;}
+.ck .tx{flex:1;font-size:13.2px;color:var(--ink-2);}
+.ck.on .tx{color:var(--ink-3);text-decoration:line-through;}
+
+.script{background:#fbfcfd;border:1px solid var(--line-2);border-radius:10px;padding:14px 16px;font-size:13.4px;line-height:1.95;color:var(--ink);}
+.script em{font-style:normal;background:#fff2c9;padding:0 1px;border-radius:2px;}
+.script u{text-decoration:none;border-bottom:2px solid #b9d4ff;}
+.script .rhythm{color:var(--red);font-weight:600;}
+.script .spk{font-weight:700;color:var(--navy);}
+.mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:12.6px;}
+.ipa{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--amber);font-size:12.4px;}
+
+table{width:100%;border-collapse:collapse;font-size:13px;}
+th,td{text-align:left;padding:8px 9px;border-bottom:1px solid var(--line-2);vertical-align:top;}
+th{background:var(--panel-2);font-size:11.5px;color:var(--ink-3);letter-spacing:.03em;text-transform:uppercase;font-weight:600;position:sticky;top:0;z-index:2;}
+tbody tr:hover{background:#fbfcfd;}
+td.en{font-weight:600;color:var(--navy);white-space:nowrap;}
+td.ph{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--amber);font-size:12px;white-space:nowrap;}
+td.ex{color:var(--ink-2);font-size:12.6px;}
+td.ex i{display:block;color:var(--ink-3);font-style:normal;font-size:12px;margin-top:2px;}
+.tblwrap{max-height:620px;overflow:auto;border:1px solid var(--line-2);border-radius:10px;}
+.vck{width:16px;height:16px;border:1.5px solid var(--line);border-radius:4px;background:#fff;display:inline-block;cursor:pointer;vertical-align:middle;}
+.vck.on{background:var(--green);border-color:var(--green);}
+.vck.on::after{content:"✓";color:#fff;font-size:10px;display:flex;justify-content:center;line-height:14px;}
+
+.btn{appearance:none;font:inherit;font-size:13px;padding:7px 14px;border-radius:8px;border:1px solid var(--line);background:#fff;color:var(--ink);cursor:pointer;}
+.btn:hover{background:var(--panel-2);}
+.btn.primary{background:var(--navy);border-color:var(--navy);color:#fff;}
+.btn.primary:hover{background:#0b3a8f;}
+.reveal{margin-top:10px;}
+.revbd{display:none;margin-top:10px;}
+.revbd.on{display:block;}
+
+.timer{display:flex;align-items:center;gap:10px;flex-wrap:wrap;background:var(--panel-2);border:1px solid var(--line-2);border-radius:10px;padding:10px 12px;}
+.timer .clock{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:24px;font-weight:700;color:var(--navy);min-width:76px;}
+.timer .clock.warn{color:var(--red);}
+
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+@media(max-width:840px){.two{grid-template-columns:1fr;}}
+.rowline{display:flex;gap:9px;font-size:13px;padding:7px 0;border-bottom:1px solid var(--line-2);}
+.rowline:last-child{border-bottom:0;}
+.rowline .t{flex:0 0 34%;font-weight:600;color:var(--navy);}
+.rowline .m{flex:1;color:var(--ink-2);}
+.note{background:#fffbea;border:1px solid #f5e6b8;border-radius:9px;padding:11px 13px;font-size:12.7px;color:#7a5c12;}
+.note b{color:#6b4f0d;}
+.bad{background:#fdeef0;border:1px solid #f7d4d9;border-radius:9px;padding:11px 13px;font-size:12.7px;color:#8c2231;}
+.good{background:#ecf7f1;border:1px solid #d0ebdd;border-radius:9px;padding:11px 13px;font-size:12.7px;color:#276749;}
+.info{background:#eef4ff;border:1px solid #d3e0fb;border-radius:9px;padding:11px 13px;font-size:12.7px;color:#1b4189;}
+.rate{display:flex;gap:6px;align-items:center;margin:4px 0 10px;}
+.rate span.lb{flex:0 0 260px;font-size:13px;color:var(--ink-2);}
+.rate button{width:32px;height:30px;border:1px solid var(--line);background:#fff;border-radius:7px;cursor:pointer;font:inherit;font-size:12.5px;color:var(--ink-2);}
+.rate button:hover{border-color:var(--blue);}
+.rate button.on{background:var(--navy);border-color:var(--navy);color:#fff;font-weight:700;}
+.bar{height:9px;background:var(--line-2);border-radius:999px;overflow:hidden;margin:6px 0 4px;}
+.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--navy),var(--blue));border-radius:999px;transition:width .3s;}
+.tagline{display:flex;gap:10px;font-size:12.5px;color:var(--ink-3);flex-wrap:wrap;}
+
+.step{display:flex;gap:10px;margin:14px 0 8px;}
+.step .n{flex:0 0 26px;height:26px;border-radius:8px;background:var(--blue);color:#fff;font-size:12.5px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.step .h{font-size:14px;font-weight:700;color:var(--navy);padding-top:2px;}
+.step .h small{display:block;font-weight:400;font-size:12px;color:var(--ink-3);}
+
+.hit{color:var(--red);font-weight:600;}
+.seg{background:#eef4ff;border-radius:4px;padding:0 2px;}
+.lk{background:#e9f7f5;border-radius:4px;padding:0 2px;}
+
+footer{max-width:1080px;margin:0 auto;padding:0 20px 60px;color:var(--ink-3);font-size:12.5px;text-align:center;}
+/*PRON_CSS_START*/
+.btn.sm{font-size:12px;padding:5px 10px;border-radius:7px;}
+.prhead{display:flex;align-items:flex-start;gap:10px;flex-wrap:wrap;margin:0 0 6px;}
+.prno{flex:0 0 auto;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:11.5px;font-weight:700;color:#fff;background:var(--teal);border-radius:6px;padding:3px 8px;}
+.prtt{font-size:15px;font-weight:700;flex:1;min-width:190px;color:var(--navy);}
+.prmeta{font-size:11.5px;color:var(--ink-3);padding-top:4px;}
+.prbox{background:#fbfcfd;border:1px solid var(--line-2);border-left:3px solid var(--teal);border-radius:10px;padding:15px 17px;font-size:15.2px;line-height:2.1;color:var(--ink);font-family:Georgia,"Times New Roman",-apple-system,"PingFang SC","Microsoft YaHei",serif;}
+.prbox .pp{margin-bottom:9px;}
+.prbox .pp:last-child{margin-bottom:0;}
+.prbox b.ps{color:var(--red);font-weight:700;}
+.prbox u.pl{text-decoration:none;background:#e9f1ff;border-radius:3px;padding:0 1px;}
+.prbox em.px{font-style:normal;background:#fff2c9;border-radius:3px;padding:0 1px;}
+.prbox .who{font-weight:700;color:var(--navy);font-family:-apple-system,"Segoe UI","Microsoft YaHei",sans-serif;font-size:13px;}
+.prleg{display:flex;gap:14px;flex-wrap:wrap;font-size:12px;color:var(--ink-3);margin:9px 0 0;}
+.prleg i{font-style:normal;padding:0 3px;border-radius:3px;}
+.prwhy{font-size:12.3px;color:var(--ink-3);display:block;margin:8px 0 0;}
+.prseg{border-top:1px dashed var(--line);padding-top:15px;margin-top:17px;}
+.prseg:first-child{border-top:0;padding-top:0;margin-top:0;}
+.przh{font-size:13.2px;color:var(--ink-2);background:var(--panel-2);border:1px solid var(--line-2);border-radius:9px;padding:12px 14px;line-height:1.9;}
+/*PRON_CSS_END*/
+
+
+/* ===== 本页专用 ===== */
+.hit{color:var(--red);font-weight:700;}
+.pl-syl{color:var(--ink-3);font-weight:400;}
+.wsyl .dot{color:var(--ink-3);margin:0 1px;}
+.gsec{margin-bottom:8px;}
+.ghead{border-left:4px solid var(--navy);margin-bottom:12px;}
+.gtag{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:11px;font-weight:700;color:#fff;background:var(--navy);display:inline-block;border-radius:5px;padding:2px 7px;margin-bottom:6px;}
+.gwords{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px;}
+.gwords a{font-size:11.5px;font-family:ui-monospace,Menlo,Consolas,monospace;color:var(--navy);background:#eef3fb;border:1px solid #d5def5;border-radius:20px;padding:2px 9px;text-decoration:none;}
+.gwords a:hover{background:var(--navy);color:#fff;}
+.wcard{background:#fff;border:1px solid var(--line,#e3e8ef);border-radius:12px;padding:14px 16px;margin-bottom:10px;box-shadow:0 1px 2px rgba(20,40,80,.05);}
+.whead{display:flex;align-items:flex-start;gap:12px;flex-wrap:wrap;}
+.wno{flex:0 0 auto;width:34px;height:34px;border-radius:9px;background:var(--navy);color:#fff;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.wmid{flex:1;min-width:240px;}
+.wterm{margin:0;font-size:16.5px;font-weight:700;color:var(--navy);letter-spacing:.01em;}
+.wipa{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:12.5px;color:var(--teal);margin-top:2px;}
+.wsyl{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:12.5px;margin-top:3px;letter-spacing:.02em;}
+.wact{display:flex;gap:6px;flex-wrap:wrap;align-items:center;}
+.wzh{margin:9px 0 4px;font-size:14px;font-weight:700;color:var(--ink);}
+.wrow{display:flex;gap:10px;padding:6px 0;border-top:1px dashed #e8edf4;}
+.wk{flex:0 0 46px;font-size:11.5px;font-weight:700;color:var(--ink-3);letter-spacing:.06em;padding-top:2px;}
+.wv{flex:1;font-size:13.2px;line-height:1.75;}
+.wv .en{font-size:13.5px;}
+.wv .zh{color:var(--ink-3);font-size:12.8px;}
+.wpit{background:#fff6f5;border-radius:8px;padding:6px 10px;margin:4px -10px;border-top:1px dashed #f0d5d1;}
+.wpit .wk{color:var(--red);}
+.mono{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.94em;background:#eef3fb;padding:0 3px;border-radius:3px;}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+@media(max-width:760px){.two{grid-template-columns:1fr;}}
+.st{background:#fff;border:1px solid #e3e8ef;border-radius:12px;padding:12px 16px;margin-bottom:10px;}
+.st h4{margin:0 0 6px;font-size:14px;color:var(--navy);}
+.st ol{margin:0;padding-left:22px;}
+.st li{font-size:13px;line-height:1.9;}
+.st code,.st .mono{background:#eef3fb;padding:0 3px;border-radius:3px;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:12.4px;}
+.jump{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.96);backdrop-filter:blur(6px);border-bottom:1px solid #e3e8ef;padding:8px 0;margin-bottom:12px;}
+.jump .inner{max-width:1080px;margin:0 auto;padding:0 20px;display:flex;gap:6px;flex-wrap:wrap;align-items:center;}
+.jump a{font-size:11.5px;color:var(--navy);background:#eef3fb;border:1px solid #d5def5;border-radius:20px;padding:3px 10px;text-decoration:none;}
+.jump a:hover{background:var(--navy);color:#fff;}
+.jump .lbl{font-size:11px;color:var(--ink-3);letter-spacing:.06em;margin-right:4px;}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="crumb"><a href="00-作战中心.html">← 返回作战中心</a>　·　<a href="Day-05.html">Day 05 课程页</a></div>
+    <h1>Day 05 · 精讲 30 词深度精讲</h1>
+    <p>今天 100 词里挑出的 <b>30 个精讲词</b>，每一个都拆成七层：<b>音节与重音 · 音标 · 本质（这个概念在解决什么合规问题）· 例句与译文 · 读音要点 · 中国人最常犯的具体错误 · 会议里的实际用法</b>。<b>红色标记的是重读音节</b>，等宽字体是音标与词面。</p>
+    <div class="stats">
+      <div class="stat"><b>30</b><span>精讲词</span></div>
+      <div class="stat"><b>6</b><span>教学分组</span></div>
+      <div class="stat"><b>411</b><span>配套朗读词</span></div>
+      <div class="stat"><b>0</b><span>录音留档</span></div>
+    </div>
+  </div>
+</div>
+
+<main>
+
+<div class="jump"><div class="inner">
+  <span class="lbl">跳到</span>
+  <a href="#g1">01 名单机制与所有权穿透</a><a href="#g2">02 规避、处罚与域外效力</a><a href="#g3">03 筛查运营</a><a href="#g4">04 出口管制</a><a href="#g5">05 航运规避</a><a href="#g6">06 金融犯罪开篇</a>
+  <a href="#selftest">自测清单</a>
+</div></div>
+
+<div class="card" style="border-left:4px solid var(--amber);">
+  <h3>怎么用这一页（重要）</h3>
+  <div class="two">
+    <div>
+      <b>第一遍：只看「本质」和「例句」</b><br>
+      先不管音标。目的是搞清<b>这 30 个概念分别在解决什么合规问题</b>。制裁工作里，判断力比口音值钱——<b>先能说清，再能读准</b>。
+    </div>
+    <div>
+      <b>第二遍：只练「音节行」和「易错」</b><br>
+      音节行里<b>红色的是重读音节</b>，其他都是弱读。逐词读三遍：慢速 → 正常 → 只打重音。<b>「易错」那一栏是中国学习者的高发区</b>，逐条对着自查。
+    </div>
+  </div>
+  <div class="note" style="margin-top:12px;">
+    <b>三条硬规则（今天新增）：</b>① <b>名词与动词靠重音区分</b>：<span class="mono">EXport / exPORT</span>、<span class="mono">TRANSfer / transFER</span> —— <span class="mono">deemed export</span> 和 <span class="mono">ship-to-ship transfer</span> 里都是<b>名词</b>，重音在首；② <b>缩写两套规则并存</b>：逐字母（EAR / FCA / PRA / SFO / AIS / UWO / ECCN）vs 读成词（ITAR / POCA / OFAC），靠记不靠推理；③ <b>/θ/ 一律舌尖伸出齿间</b>：<span class="mono">threshold / wealth</span> 今天两次出现，可对镜自查。
+  </div>
+</div>
+
+<div class="card" style="border-left:4px solid var(--teal);">
+  <h3>精讲进度（30 词）</h3>
+  <div class="bar"><i id="dp" style="width:0%"></i></div>
+  <div class="tagline"><span id="dtxt">0 / 30 个词已完成七层精讲</span></div>
+</div>
+
+
+<section class="gsec" id="g1">
+  <div class="card ghead">
+    <div class="gtag">GROUP 01</div>
+    <h3>名单机制与所有权穿透　<span style="font-weight:400;font-size:13px;color:var(--ink-3);">7 词</span></h3>
+    <p class="sub" style="margin:6px 0 0;">制裁的第一性问题不是「这个人是不是坏人」，而是「谁在背后控制这笔钱」。这 7 个词决定了一份制裁报告能不能立得住。</p>
+    <div class="gwords"><a href="#w1">ownership and control test</a><a href="#w2">consolidated list</a><a href="#w3">UK Sanctions List</a><a href="#w4">50 per cent rule</a><a href="#w5">ownership chain</a><a href="#w6">control via other means</a><a href="#w7">general licence</a></div>
+  </div>
+  
+<article class="wcard" id="w1">
+  <div class="whead">
+    <div class="wno">01</div>
+    <div class="wmid">
+      <h3 class="wterm">ownership and control test</h3>
+      <div class="wipa">/ˈəʊnəʃɪp ənd kənˈtrəʊl test/</div>
+      <div class="wsyl"><b class="hit">own</b><span class="dot">·</span><span class="pl-syl">er</span><span class="dot">·</span><span class="pl-syl">ship</span><span class="dot">·</span><span class="pl-syl">and</span><span class="dot">·</span><span class="pl-syl">con</span><span class="dot">·</span><b class="hit">trol</b><span class="dot">·</span><span class="pl-syl">test</span></div>
+    </div>
+    <div class="wact">
+      <button class="btn sm" data-say="ownership and control test">▶ 词</button>
+      <button class="btn sm" data-slow="ownership and control test">▶ 慢</button>
+      <button class="btn sm" data-say="The ownership and control test decides whether the 50 per cent rule catches the ship's registered owner.">▶ 例句</button>
+    </div>
+  </div>
+  <div class="wzh">所有权与控制判定</div>
+  <div class="wrow"><div class="wk">本质</div><div class="wv">一句话：这是「谁在背后说了算」的判定题。欧盟叫 ownership/control test，英国叫 ownership and control test——本质是同一个问题：钱和权 ultimate 落在谁身上。</div></div>
+  <div class="wrow"><div class="wk">例句</div><div class="wv"><span class="en">The ownership and control test decides whether the 50 per cent rule catches the ship's registered owner.</span><br><span class="zh">所有权与控制判定决定 50% 规则是否适用于该船的登记船东。</span></div></div>
+  <div class="wrow"><div class="wk">读音</div><div class="wv">① ownership 重音在<b>首</b>音节 /ˈəʊ-/；② 英式 /əʊ/ 从 /ə/ 滑向 /ʊ/，起点是「呃」不是「欧」，不是美式 /oʊ/；③ control 名词动词同音，重音都在<b>后</b> /kənˈtrəʊl/；④ 三词连读时 and 弱读成 /ən/：/ˈəʊ.nə.ʃɪp ən kənˈtrəʊl test/。</div></div>
+  <div class="wrow wpit"><div class="wk">易错</div><div class="wv">❌ /ˈaʊnəʃɪp/（美式化）→ ✅ /ˈəʊnəʃɪp/　　❌ 三个词全重读 → ✅ 只有 own 和 trol 重读，and / test 一带而过</div></div>
+  <div class="wrow"><div class="wk">用法</div><div class="wv">出现在制裁报告的<b>结论段</b>：<span class="mono">the ownership and control test has not been satisfied</span>（判定未通过）。这句话一出，整笔交易就要停。</div></div>
+</article>
+
+<article class="wcard" id="w2">
+  <div class="whead">
+    <div class="wno">02</div>
+    <div class="wmid">
+      <h3 class="wterm">consolidated list</h3>
+      <div class="wipa">/kənˈsɒlɪdeɪtɪd lɪst/</div>
+      <div class="wsyl"><span class="pl-syl">con</span><span class="dot">·</span><b class="hit">sol</b><span class="dot">·</span><span class="pl-syl">i</span><span class="dot">·</span><span class="pl-syl">dat</span><span class="dot">·</span><span class="pl-syl">ed</span><span class="dot">·</span><span class="pl-syl">list</span></div>
+    </div>
+    <div class="wact">
+      <button class="btn sm" data-say="consolidated list">▶ 词</button>
+      <button class="btn sm" data-slow="consolidated list">▶ 慢</button>
+      <button class="btn sm" data-say="The name appears on the UK consolidated list under a Cyrillic transliteration.">▶ 例句</button>
+    </div>
+  </div>
+  <div class="wzh">（英国）综合制裁名单</div>
+  <div class="wrow"><div class="wk">本质</div><div class="wv">一份把所有来源的名单合并起来的清单。<b>英美最重要的一个结构差异</b>：英国用一张 consolidated list；美国是几张分开的（OFAC 的 SDN、BIS 的 Entity List…）。所以英国同事说"查一下综合名单"，美国同事要问"查哪一张"。</div></div>
+  <div class="wrow"><div class="wk">例句</div><div class="wv"><span class="en">The name appears on the UK consolidated list under a Cyrillic transliteration.</span><br><span class="zh">该姓名以西里尔字母音译形式出现在英国综合制裁名单上。</span></div></div>
+  <div class="wrow"><div class="wk">读音</div><div class="wv">① 重音在<b>第二音节 -SOL-</b>，五个音节要有明显强弱起伏：/kən.ˈsɒ.lɪ.deɪ.tɪd/；② 词尾 -ed 读 /ɪd/（因为原形 consolidate 以 /t/ 结尾）；③ 今天全天第一高频词，听到就要能立刻反应。</div></div>
+  <div class="wrow wpit"><div class="wk">易错</div><div class="wv">❌ /ˈkɒnsəldeɪtɪd/（重音丢到第一音节）→ ✅ /kənˈsɒlɪdeɪtɪd/　　❌ -ed 只读 /t/ → ✅ 读 /ɪd/，多一个音节</div></div>
+  <div class="wrow"><div class="wk">用法</div><div class="wv">英国案件里出现频率最高的词之一。标准问法：<span class="mono">Is it on the consolidated list?</span> 标准答法：<span class="mono">It is not, but it is on the UN list.</span></div></div>
+</article>
+
+<article class="wcard" id="w3">
+  <div class="whead">
+    <div class="wno">03</div>
+    <div class="wmid">
+      <h3 class="wterm">UK Sanctions List</h3>
+      <div class="wipa">/ˌjuː ˈkeɪ ˈsæŋkʃnz lɪst/</div>
+      <div class="wsyl"><b class="hit">U</b><span class="dot">·</span><b class="hit">K</b><span class="dot">·</span><b class="hit"> sanc</b><span class="dot">·</span><span class="pl-syl">tions</span><span class="dot">·</span><span class="pl-syl">list</span></div>
+    </div>
+    <div class="wact">
+      <button class="btn sm" data-say="UK Sanctions List">▶ 词</button>
+      <button class="btn sm" data-slow="UK Sanctions List">▶ 慢</button>
+      <button class="btn sm" data-say="The UK Sanctions List is the authoritative record; the consolidated list is the searchable version.">▶ 例句</button>
+    </div>
+  </div>
+  <div class="wzh">英国制裁名单</div>
+  <div class="wrow"><div class="wk">本质</div><div class="wv"><b>UK Sanctions List = 权威记录（authoritative record）<br>consolidated list = 可检索版本（searchable version）</b><br>这个区别是考试和实战都爱问的一对——法律上算数的是前者，日常用的是后者。</div></div>
+  <div class="wrow"><div class="wk">例句</div><div class="wv"><span class="en">The UK Sanctions List is the authoritative record; the consolidated list is the searchable version.</span><br><span class="zh">英国制裁名单是权威记录，综合名单是可检索的版本。</span></div></div>
+  <div class="wrow"><div class="wk">读音</div><div class="wv">① UK <b>逐字母</b>读 /juː ˈkeɪ/，不要读成「乌克」；② sanctions 词尾 /kʃnz/ 是四个辅音连成一串，中间绝不能加元音；③ 三个名词连续出现时，第一个可略弱，后面两个要实。</div></div>
+  <div class="wrow wpit"><div class="wk">易错</div><div class="wv">❌ UK 读成「乌克」→ ✅ /juː ˈkeɪ/ 逐字母　　❌ sanctions 读成 /ˈsænkʃənz/ → ✅ /ˈsæŋkʃnz/，中间那个 /ŋ/ 必须是鼻音</div></div>
+  <div class="wrow"><div class="wk">用法</div><div class="wv">措辞：<span class="mono">We screened against the UK Sanctions List and found no match.</span> 报告里如果说「查了综合名单」而不说「查了 UK 名单」，法律上会被追问。</div></div>
+</article>
+
+<article class="wcard" id="w4">
+  <div class="whead">
+    <div class="wno">04</div>
+    <div class="wmid">
+      <h3 class="wterm">50 per cent rule</h3>
+      <div class="wipa">/ˌfɪfti pə ˈsent ruːl/</div>
+      <div class="wsyl"><b class="hit">fif</b><span class="dot">·</span><span class="pl-syl">ty</span><span class="dot">·</span><span class="pl-syl">per</span><span class="dot">·</span><b class="hit">cent</b><span class="dot">·</span><span class="pl-syl">rule</span></div>
+    </div>
+    <div class="wact">
+      <button class="btn sm" data-say="50 per cent rule">▶ 词</button>
+      <button class="btn sm" data-slow="50 per cent rule">▶ 慢</button>
+      <button class="btn sm" data-say="Under the 50 per cent rule, an entity owned or controlled by a designated person is itself treated as designated.">▶ 例句</button>
+    </div>
+  </div>
+  <div class="wzh">50% 规则</div>
+  <div class="wrow"><div class="wk">本质</div><div class="wv">一条<b>传染规则</b>：被列名的人持有某公司 >50% 股权，这家公司<b>自己</b>就被视为被列名。换个方向也成立——公司被列名，持股 >50% 的股东同样受管制。所以一次命中往往拉出一整串。</div></div>
+  <div class="wrow"><div class="wk">例句</div><div class="wv"><span class="en">Under the 50 per cent rule, an entity owned or controlled by a designated person is itself treated as designated.</span><br><span class="zh">根据 50% 规则，由被列名个人拥有或控制的实体本身即视为被列名。</span></div></div>
+  <div class="wrow"><div class="wk">读音</div><div class="wv">① <b>per cent 英式写成两个词</b>（美式 percent 一个词）；② cent 口语里弱读成 /sənt/，不追求清晰；③ fifty 重音在<b>首</b> /ˈfɪfti/，不要说成 /fɪfˈtiː/。</div></div>
+  <div class="wrow wpit"><div class="wk">易错</div><div class="wv">❌ 读成 percent 一个词 → ✅ per cent 两个词　　❌ fifty 重音后移 → ✅ /ˈfɪf.ti/</div></div>
+  <div class="wrow"><div class="wk">用法</div><div class="wv">结论句：<span class="mono">The 50 per cent rule catches the parent, so we must freeze the whole group.</span> 讲清"为什么不是只冻这一家"。</div></div>
+</article>
+
+<article class="wcard" id="w5">
+  <div class="whead">
+    <div class="wno">05</div>
+    <div class="wmid">
+      <h3 class="wterm">ownership chain</h3>
+      <div class="wipa">/ˈəʊnəʃɪp tʃeɪn/</div>
+      <div class="wsyl"><b class="hit">own</b><span class="dot">·</span><span class="pl-syl">er</span><span class="dot">·</span><span class="pl-syl">ship</span><span class="dot">·</span><span class="pl-syl">chain</span></div>
+    </div>
+    <div class="wact">
+      <button class="btn sm" data-say="ownership chain">▶ 词</button>
+      <button class="btn sm" data-slow="ownership chain">▶ 慢</button>
+      <button class="btn sm" data-say="We traced the ownership chain through two offshore holding companies to the ultimate beneficial owner.">▶ 例句</button>
+    </div>
+  </div>
+  <div class="wzh">股权链条</div>
+  <div class="wrow"><div class="wk">本质</div><div class="wv">查 UBO（最终受益人）时的「链条」——从顶层壳公司一层层往下追。<b>追不到头，就是红旗</b>。合规上这叫"无法完成穿透"，本身就是一个可上报的发现。</div></div>
+  <div class="wrow"><div class="wk">例句</div><div class="wv"><span class="en">We traced the ownership chain through two offshore holding companies to the ultimate beneficial owner.</span><br><span class="zh">我们穿透两家离岸控股公司，沿股权链条追溯到最终受益人。</span></div></div>
+  <div class="wrow"><div class="wk">读音</div><div class="wv">① chain 的 /tʃ/ 是清塞擦音（ch 音），和 shame /ʃeɪn/ 只差一个 /t/——读丢了就变成另一个词；② /eɪ/ 要滑足；③ ownership 的 -ship 是轻音节，很容易被吞掉。</div></div>
+  <div class="wrow wpit"><div class="wk">易错</div><div class="wv">❌ chain 读成 /ʃeɪn/（shame 的音）→ ✅ /tʃeɪn/，先有 /t/ 的爆破再滑向 /eɪ/</div></div>
+  <div class="wrow"><div class="wk">用法</div><div class="wv">描述发现：<span class="mono">The ownership chain stops at the second holding company.</span> 短句、降调、说完就停——这个停顿本身就是信息。</div></div>
+</article>
+
+<article class="wcard" id="w6">
+  <div class="whead">
+    <div class="wno">06</div>
+    <div class="wmid">
+      <h3 class="wterm">control via other means</h3>
+      <div class="wipa">/kənˈtrəʊl ˈvaɪə ˈʌðə miːnz/</div>
+      <div class="wsyl"><span class="pl-syl">con</span><span class="dot">·</span><b class="hit">trol</b><span class="dot">·</span><b class="hit">vi</b><span class="dot">·</span><span class="pl-syl">a</span><span class="dot">·</span><span class="pl-syl">o</span><span class="dot">·</span><span class="pl-syl">ther</span><span class="dot">·</span><span class="pl-syl">means</span></div>
+    </div>
+    <div class="wact">
+      <button class="btn sm" data-say="control via other means">▶ 词</button>
+      <button class="btn sm" data-slow="control via other means">▶ 慢</button>
+      <button class="btn sm" data-say="Control via other means includes the power to appoint a majority of the board.">▶ 例句</button>
+    </div>
+  </div>
+  <div class="wzh">以其他方式控制</div>
+  <div class="wrow"><div class="wk">本质</div><div class="wv">不是"持股"，是"支配"——任免董事会、过半表决权、实质控制。<b>ownership 查的是钱，control via other means 查的是权。</b>两条腿都要查，只有钱没有权、或只有权没有钱，都可能被穿透。</div></div>
+  <div class="wrow"><div class="wk">例句</div><div class="wv"><span class="en">Control via other means includes the power to appoint a majority of the board.</span><br><span class="zh">以其他方式控制包括任免董事会多数席位的权力。</span></div></div>
+  <div class="wrow"><div class="wk">读音</div><div class="wv">① via 英式习惯读<b>两音节</b> /ˈvaɪ.ə/，不要压缩成一个音节（那是美式）；② means 词尾 /nz/ 是浊音——前面的 /n/ 是浊辅音，所以 -s 读 /z/；③ other 的 th 是清 /θ/，舌尖伸出。</div></div>
+  <div class="wrow wpit"><div class="wk">易错</div><div class="wv">❌ via 读成一个音节 /ˈvaɪə/→ ✅ /ˈvaɪ.ə/ 两音节　　❌ means 读成 /miːns/ → ✅ /miːnz/ 词尾浊音（单数是 mean，没有 /s/）</div></div>
+  <div class="wrow"><div class="wk">用法</div><div class="wv">只出现在专业报告里，但一出现就是关键抗辩点：对方会说"我只有 20% 股权"。你的回应是 <span class="mono">but you appoint the majority of the board, which is control via other means.</span></div></div>
+</article>
+
+<article class="wcard" id="w7">
+  <div class="whead">
+    <div class="wno">07</div>
+    <div class="wmid">
+      <h3 class="wterm">general licence</h3>
+      <div class="wipa">/ˈdʒenrəl ˈlaɪsns/</div>
+      <div class="wsyl"><b class="hit">gen</b><span class="dot">·</span><span class="pl-syl">ral</span><span class="dot">·</span><b class="hit">li</b><span class="dot">·</span><span class="pl-syl">cence</span></div>
+    </div>
+    <div class="wact">
+      <button class="btn sm" data-say="general licence">▶ 词</button>
+      <button class="btn sm" data-slow="general licence">▶ 慢</button>
+      <button class="btn sm" data-say="A general licence allows certain activities without a case-by-case application.">▶ 例句</button>
+    </div>
+  </div>
+  <div class="wzh">一般许可</div>
+  <div class="wrow"><div class="wk">本质</div><div class="wv"><b>一次授权、长期有效</b>——与 specific licence（逐案审批）相对的一对。今天只需要把这一对记牢，因为在任何许可讨论里都是先问"这是一般许可还是特定许可"。</div></div>
+  <div class="wrow"><div class="wk">例句</div><div class="wv"><span class="en">A general licence allows certain activities without a case-by-case application.</span><br><span class="zh">一般许可允许特定活动无需逐案申请即可进行。</span></div></div>
+  <div class="wrow"><div class="wk">读音</div><div class="wv">① general 英式习惯<b>压成两音节</b> /ˈdʒen.rəl/，不是清清楚楚三个音节的 /ˈdʒe.nə.rəl/；② licence 是名词拼 <b>-ce</b>，动词才拼 license，读音相同 /ˈlaɪsns/；③ 两个 -l 都在，第一个在 general 里要清楚。</div></div>
+  <div class="wrow wpit"><div class="wk">易错</div><div class="wv">❌ /ˈdʒenərəl/（三音节）→ ✅ /ˈdʒenrəl/（两音节，英式）　　❌ licence 拼成 license → ✅ 名词永远 -ce，拼错就是错字</div></div>
+  <div class="wrow"><div class="wk">用法</div><div class="wv">结论句：<span class="mono">A general licence covers this activity, so no case-by-case application is needed.</span> 说完通常能省对方一周。</div></div>
+</article>
+</section>
+
+<section class="gsec" id="g2">
+  <div class="card ghead">
+    <div class="gtag">GROUP 02</div>
+    <h3>规避、处罚与域外效力　<span style="font-weight:400;font-size:13px;color:var(--ink-3);">5 词</span></h3>
+    <p class="sub" style="margin:6px 0 0;">这组词回答两个问题：对方做了什么（规避 vs 规避的违法），以及我们/他国的责任边界在哪（域外效力）。</p>
+    <div class="gwords"><a href="#w8">circumvention</a><a href="#w9">sanctions evasion</a><a href="#w10">strict liability</a><a href="#w11">voluntary self-disclosure</a><a href="#w12">extraterritorial reach</a></div>
+  </div>
+  
+<article class="wcard" id="w8">
+  <div class="whead">
+    <div class="wno">08</div>
+    <div class="wmid">
+      <h3 class="wterm">circumvention</h3>
+      <div class="wipa">/ˌsɜːkəmˈvenʃn/</div>
+      <div class="wsyl"><span class="pl-syl">cir</span><span class="dot">·</span><span class="pl-syl">cum</span><span class="dot">·</span><b class="hit">ven</b><span class="dot">·</span><span class="pl-syl">tion</span></div>
+    </div>
+    <div class="wact">
+      <button class="btn sm" data-say="circumvention">▶ 词</button>
+      <button class="btn sm" data-slow="circumvention">▶ 慢</button>
+      <button class="btn sm" data-say="Structuring payments through a third country is a classic form of circumvention.">▶ 例句</button>
+    </div>
+  </div>
+  <div class="wzh">规避（制裁）</div>
+  <div class="wrow"><div class="wk">本质</div><div class="wv"><b>「绕过去」，不是「违反」</b>——同一笔交易换个管道、换个国家、换一套单证再做一遍。它描述的是手法本身；违法性要靠 sanction evasion 来定性。</div></div>
+  <div class="wrow"><div class="wk">例句</div><div class="wv"><span class="en">Structuring payments through a third country is a classic form of circumvention.</span><br><span class="zh">通过第三国分拆付款是典型的规避手法。</span></div></div>
+  <div class="wrow"><div class="wk">读音</div><div class="wv">① 重音在 <b>-VEN-</b> /ˌsɜː.kəmˈven.ʃn/，前两个音节 /ˌsɜːkəm/ 全部快读带过；② /ɜː/ 英式<b>不卷舌</b>；③ -tion 是压缩音节 /ʃn/，不要拖成 /ʃən/。</div></div>
+  <div class="wrow wpit"><div class="wk">易错</div><div class="wv">❌ 重音跑到第一音节 /ˈsɜːkəmvenʃn/ → ✅ /ˌsɜːkəmˈvenʃn/　　❌ -tion 读成「-shun」/ʃən/ → ✅ 一个音节 /ʃn/，一气收住</div></div>
+  <div class="wrow"><div class="wk">用法</div><div class="wv">指控用语：<span class="mono">Structuring via a third country is a classic form of circumvention.</span> 注意用 form of，不要用 violation of（那是别的意思）。</div></div>
+</article>
+
+<article class="wcard" id="w9">
+  <div class="whead">
+    <div class="wno">09</div>
+    <div class="wmid">
+      <h3 class="wterm">sanctions evasion</h3>
+      <div class="wipa">/sæŋkʃnz ɪˈveɪʒn/</div>
+      <div class="wsyl"><span class="pl-syl">sanc</span><span class="dot">·</span><span class="pl-syl">tions</span><span class="dot">·</span><span class="pl-syl">e</span><span class="dot">·</span><b class="hit">va</b><span class="dot">·</span><span class="pl-syl">sion</span></div>
+    </div>
+    <div class="wact">
+      <button class="btn sm" data-say="sanctions evasion">▶ 词</button>
+      <button class="btn sm" data-slow="sanctions evasion">▶ 慢</button>
+      <button class="btn sm" data-say="Sanctions evasion carries criminal liability, not just a regulatory penalty.">▶ 例句</button>
+    </div>
+  </div>
+  <div class="wzh">制裁规避（违法）</div>
+  <div class="wrow"><div class="wk">本质</div><div class="wv">比 circumvention <b>更重一层</b>：evasion 是「逃避制裁本身」，在多数辖区是<b>刑事罪名</b>，可导致个人入刑、公司被罚。</div></div>
+  <div class="wrow"><div class="wk">例句</div><div class="wv"><span class="en">Sanctions evasion carries criminal liability, not just a regulatory penalty.</span><br><span class="zh">制裁规避要承担刑事责任，而不只是监管处罚。</span></div></div>
+  <div class="wrow"><div class="wk">读音</div><div class="wv">① <b>本批第一号发音错误：evasion 里的 s 读 /ʒ/</b>——就是 measure 里的那个浊擦音，不是 /z/、更不是 /ʃ/；② 重音在 <b>-VAI-</b> /ɪˈveɪ.ʒn/；③ sanctions 词尾 /kʃnz/ 四个辅音一串，别拆开。</div></div>
+  <div class="wrow wpit"><div class="wk">易错</div><div class="wv">❌ /ɪˈveɪzn/（读成 z）→ ✅ /ɪˈveɪʒn/（舌尖不上颚，喉结振动）　❌ /ɪˈveɪʃn/（读成 sh）→ ✅ 同上<br><b>自查法</b>：读这个词时手贴喉结，/ʒ/ 和 /z/ 都振动，但 /ʒ/ 舌尖不碰上颚。</div></div>
+  <div class="wrow"><div class="wk">用法</div><div class="wv">定性句：<span class="mono">Sanctions evasion carries criminal liability, not just a penalty.</span> 这句话在内部培训里必须讲清 criminal 和 regulatory 的区别。</div></div>
+</article>
+
+<article class="wcard" id="w10">
+  <div class="whead">
+    <div class="wno">10</div>
+    <div class="wmid">
+      <h3 class="wterm">strict liability</h3>
+      <div class="wipa">/strɪkt ˌlaɪəˈbɪləti/</div>
+      <div class="wsyl"><b class="hit">strict</b><span class="dot">·</span><span class="pl-syl">li</span><span class="dot">·</span><span class="pl-syl">a</span><span class="dot">·</span><b class="hit">bil</b><span class="dot">·</span><span class="pl-syl">i</span><span class="dot">·</span><span class="pl-syl">ty</span></div>
+    </div>
+    <div class="wact">
+      <button class="btn sm" data-say="strict liability">▶ 词</button>
+      <button class="btn sm" data-slow="strict liability">▶ 慢</button>
+      <button class="btn sm" data-say="Sanctions offences are offences of strict liability: intent is not part of the test.">▶ 例句</button>
+    </div>
+  </div>
+  <div class="wzh">严格责任</div>
+  <div class="wrow"><div class="wk">本质</div><div class="wv"><b>不问主观故意</b>——制裁违法是"做错了就成立"，不查你有没有恶意。这能一次性堵掉"我们以为是合法的"这类辩解。</div></div>
+  <div class="wrow"><div class="wk">例句</div><div class="wv"><span class="en">Sanctions offences are offences of strict liability: intent is not part of the test.</span><br><span class="zh">制裁违法属严格责任犯罪：主观故意不是构成要件。</span></div></div>
+  <div class="wrow"><div class="wk">读音</div><div class="wv">① <b>strict 词尾是 /kt/ 两个辅音</b>，一气收住，绝不加元音读成「strict-a」；② liability 五个音节只有 <b>-BIL-</b> 重读，前面 /ˌlaɪə/ 两个音节快读；③ 英式词尾 -ty 读 /ti/，不浊化成美式 /di/。</div></div>
+  <div class="wrow wpit"><div class="wk">易错</div><div class="wv">❌ /ˈstrɪktə/ → ✅ /strɪkt/ 一音节　❌ 重音在 -LAI- → ✅ 在 -BIL-（和 account 一样，来自 liable）　❌ /laɪəˈbɪlɪdi/ → ✅ /ˌlaɪəˈbɪləti/（英式 /ə/，不浊化）</div></div>
+  <div class="wrow"><div class="wk">用法</div><div class="wv">会议里用来压住辩解：<span class="mono">Intent does not come into it — these are offences of strict liability.</span> 说这句时降调、语速放慢。</div></div>
+</article>
+
+<article class="wcard" id="w11">
+  <div class="whead">
+    <div class="wno">11</div>
+    <div class="wmid">
+      <h3 class="wterm">voluntary self-disclosure</h3>
+      <div class="wipa">/ˈvɒləntri self dɪsˈkləʊʒə/</div>
+      <div class="wsyl"><b class="hit">vol</b><span class="dot">·</span><span class="pl-syl">un</span><span class="dot">·</span><span class="pl-syl">tar</span><span class="dot">·</span><span class="pl-syl">y</span><span class="dot">·</span><span class="pl-syl">self</span><span class="dot">·</span><span class="pl-syl">dis</span><span class="dot">·</span><b class="hit">clo</b><span class="dot">·</span><span class="pl-syl">sure</span></div>
+    </div>
+    <div class="wact">
+      <button class="btn sm" data-say="voluntary self-disclosure">▶ 词</button>
+      <button class="btn sm" data-slow="voluntary self-disclosure">▶ 慢</button>
+      <button class="btn sm" data-say="A voluntary self-disclosure usually reduces the penalty by a substantial margin.">▶ 例句</button>
+    </div>
+  </div>
+  <div class="wzh">自愿披露</div>
+  <div class="wrow"><div class="wk">本质</div><div class="wv"><b>主动报告换减罚</b>——在监管发现之前自己说。这是英美执法里最重要的减罚路径，也是谈判里最值钱的一张牌。</div></div>
+  <div class="wrow"><div class="wk">例句</div><div class="wv"><span class="en">A voluntary self-disclosure usually reduces the penalty by a substantial margin.</span><br><span class="zh">自愿披露通常能大幅降低处罚幅度。</span></div></div>
+  <div class="wrow"><div class="wk">读音</div><div class="wv">① voluntary 英式习惯读<b>三音节</b> /ˈvɒ.lən.tri/，不是四音节 /ˈvɒ.lən.te.ri/；② self 是前缀，直接接在后面不要停顿；③ disclosure 重音在 <b>-CLO-</b>，中间的 s 读<b>浊音</b> /z/（后面是 /k/ 前的浊辅音 l 前的清辅音…口诀：<b>s 前面的音是清辅音就读 /s/，这里 s 后面跟 /kl/，实际读 /z/</b>——实际语流里 disclosure 开头是 /dɪsˈkl/，s 保持 /z/ 浊音）。</div></div>
+  <div class="wrow wpit"><div class="wk">易错</div><div class="wv">❌ /ˈvɒlənteri/（四音节）→ ✅ /ˈvɒləntri/（三音节）　❌ disclosure 重音在 -CLO- 之前 → ✅ 重音落在 <b>clo</b> 上</div></div>
+  <div class="wrow"><div class="wk">用法</div><div class="wv">结论段必写：<span class="mono">An early voluntary self-disclosure changes the whole conversation about penalty.</span> change the conversation 是英式的说法（直译成中文是"整个对话变了"）。</div></div>
+</article>
+
+<article class="wcard" id="w12">
+  <div class="whead">
+    <div class="wno">12</div>
+    <div class="wmid">
+      <h3 class="wterm">extraterritorial reach</h3>
+      <div class="wipa">/ˌekstrəterɪˈtɔːriəl riːtʃ/</div>
+      <div class="wsyl"><span class="pl-syl">ex</span><span class="dot">·</span><span class="pl-syl">tra</span><span class="dot">·</span><span class="pl-syl">ter</span><span class="dot">·</span><span class="pl-syl">ri</span><span class="dot">·</span><b class="hit">to</b><span class="dot">·</span><span class="pl-syl">ri</span><span class="dot">·</span><span class="pl-syl">al</span><span class="dot">·</span><span class="pl-syl">reach</span></div>
+    </div>
+    <div class="wact">
+      <button class="btn sm" data-say="extraterritorial reach">▶ 词</button>
+      <button class="btn sm" data-slow="extraterritorial reach">▶ 慢</button>
+      <button class="btn sm" data-say="US secondary sanctions have extraterritorial reach over non-US banks clearing in dollars.">▶ 例句</button>
+    </div>
+  </div>
+  <div class="wzh">域外效力</div>
+  <div class="wrow"><div class="wk">本质</div><div class="wv"><b>美国能管到美国之外</b>——没有美国公民、没有美国公司、只用美元清算，一样可能被美国制裁。这是"我这笔交易跟美国没关系"这个说法最常见的反驳点。</div></div>
+  <div class="wrow"><div class="wk">例句</div><div class="wv"><span class="en">US secondary sanctions have extraterritorial reach over non-US banks clearing in dollars.</span><br><span class="zh">美国二级制裁对以美元清算的非美国银行具有域外效力。</span></div></div>
+  <div class="wrow"><div class="wk">读音</div><div class="wv">① 重音<b>固定在 -TO-</b> /ˌek.strə.ter.ɪˈtɔː.ri.əl/，前面四个音节一路滑过去，中间不许停顿；② 英式 -torial 的 r <b>不卷舌</b>；③ reach 词尾 /tʃ/ 要收干净。</div></div>
+  <div class="wrow wpit"><div class="wk">易错</div><div class="wv">❌ /ˌekstrəˌterɪˈtɔːriəl/（重音乱跑）→ ✅ 只有 -TO- 重读　❌ /riːtʃ/ 读成 /riːʃ/ → ✅ /tʃ/ 有爆破再滑</div></div>
+  <div class="wrow"><div class="wk">用法</div><div class="wv">判断"这笔交易会不会被美国管"的关键词。<span class="mono">Does this transaction have any US nexus that would give the extraterritorial reach a footing?</span></div></div>
+</article>
+</section>
+
+<section class="gsec" id="g3">
+  <div class="card ghead">
+    <div class="gtag">GROUP 03</div>
+    <h3>筛查运营　<span style="font-weight:400;font-size:13px;color:var(--ink-3);">5 词</span></h3>
+    <p class="sub" style="margin:6px 0 0;">从「查什么」到「怎么调」，这 5 个词是筛查体系日常运行的词汇，面试和 KPI 里都会问。</p>
+    <div class="gwords"><a href="#w13">name screening</a><a href="#w14">payment screening</a><a href="#w15">alert disposition</a><a href="#w16">threshold / sensitivity</a><a href="#w17">sanctions nexus</a></div>
+  </div>
+  
+<article class="wcard" id="w13">
+  <div class="whead">
+    <div class="wno">13</div>
+    <div class="wmid">
+      <h3 class="wterm">name screening</h3>
+      <div class="wipa">/neɪm ˈskriːnɪŋ/</div>
+      <div class="wsyl"><span class="pl-syl">name</span><span class="dot">·</span><b class="hit">screen</b><span class="dot">·</span><span class="pl-syl">ing</span></div>
+    </div>
+    <div class="wact">
+      <button class="btn sm" data-say="name screening">▶ 词</button>
+      <button class="btn sm" data-slow="name screening">▶ 慢</button>
+      <button class="btn sm" data-say="Name screening runs at onboarding and again at every trigger event.">▶ 例句</button>
+    </div>
+  </div>
+  <div class="wzh">名单筛查</div>
+  <div class="wrow"><div class="wk">本质</div><div class="wv">开户做一次，<b>之后每个 trigger event 再做一次</b>——它不是一个一次性动作，而是一个持续触发的过程。</div></div>
+  <div class="wrow"><div class="wk">例句</div><div class="wv"><span class="en">Name screening runs at onboarding and again at every trigger event.</span><br><span class="zh">名单筛查在开户时执行，并在每一个触发事件发生时重新执行。</span></div></div>
+  <div class="wrow"><div class="wk">读音</div><div class="wv">① screening 开头 <b>/skr/ 是三个辅音连缀</b>，中间不能加元音（不要读成 /səˈkriː/）；② 重音在后 /ˈskriː.nɪŋ/；③ runs 词尾 /nz/ 是浊音。</div></div>
+  <div class="wrow wpit"><div class="wk">易错</div><div class="wv">❌ /səˈkriːnɪŋ/（加元音）→ ✅ /ˈskriːnɪŋ/，/sk/ 之后直接 /r/　❌ 重音在第一音节 → ✅ 在 scre(e)n-ing</div></div>
+  <div class="wrow"><div class="wk">用法</div><div class="wv">描述流程：<span class="mono">Name screening runs at onboarding and at every trigger event.</span> 讲流程时 on-boarding 的 /ˌɒnˈbɔːdɪŋ/ 首音节是 /ɒ/ 不是 /əʊ/，也别加 /ʊ/。</div></div>
+</article>
+
+<article class="wcard" id="w14">
+  <div class="whead">
+    <div class="wno">14</div>
+    <div class="wmid">
+      <h3 class="wterm">payment screening</h3>
+      <div class="wipa">/ˈpeɪmənt ˈskriːnɪŋ/</div>
+      <div class="wsyl"><b class="hit">pay</b><span class="dot">·</span><span class="pl-syl">ment</span><span class="dot">·</span><b class="hit">screen</b><span class="dot">·</span><span class="pl-syl">ing</span></div>
+    </div>
+    <div class="wact">
+      <button class="btn sm" data-say="payment screening">▶ 词</button>
+      <button class="btn sm" data-slow="payment screening">▶ 慢</button>
+      <button class="btn sm" data-say="Payment screening catches the beneficiary name in the MT103 field 59.">▶ 例句</button>
+    </div>
+  </div>
+  <div class="wzh">支付筛查</div>
+  <div class="wrow"><div class="wk">本质</div><div class="wv">和 name screening 的分工：<b>name 查客户名，payment 查报文里的收款人字段</b>（MT103 的第 59 栏）。两套系统、两个时点，别混。</div></div>
+  <div class="wrow"><div class="wk">例句</div><div class="wv"><span class="en">Payment screening catches the beneficiary name in the MT103 field 59.</span><br><span class="zh">支付筛查在 MT103 报文的第 59 栏中抓取收款人姓名。</span></div></div>
+  <div class="wrow"><div class="wk">读音</div><div class="wv">① payment 的 t 在自然语速里<b>几乎不爆破</b>，只做口型；② 节奏是「修饰语略轻、中心词重」：payment <b>略</b>重，screening 最重——两个词都重读反而丢了信息焦点。</div></div>
+  <div class="wrow wpit"><div class="wk">易错</div><div class="wv">❌ payment 读成 /ˈpeɪment/（t 爆破）→ ✅ /ˈpeɪmənt/（口型不爆破）　❌ 两个词一样重 → ✅ screening 更重</div></div>
+  <div class="wrow"><div class="wk">用法</div><div class="wv">描述系统能力：<span class="mono">Payment screening catches the beneficiary in field 59.</span> field 59 要重读，这是报文位置，讲错就等于查错地方。</div></div>
+</article>
+
+<article class="wcard" id="w15">
+  <div class="whead">
+    <div class="wno">15</div>
+    <div class="wmid">
+      <h3 class="wterm">alert disposition</h3>
+      <div class="wipa">/əˈlɜːt ˌdɪspəˈzɪʃn/</div>
+      <div class="wsyl"><span class="pl-syl">a</span><span class="dot">·</span><b class="hit">lert</b><span class="dot">·</span><span class="pl-syl">dis</span><span class="dot">·</span><span class="pl-syl">po</span><span class="dot">·</span><b class="hit">si</b><span class="dot">·</span><span class="pl-syl">tion</span></div>
+    </div>
+    <div class="wact">
+      <button class="btn sm" data-say="alert disposition">▶ 词</button>
+      <button class="btn sm" data-slow="alert disposition">▶ 慢</button>
+      <button class="btn sm" data-say="Every alert disposition must be documented, including false positives.">▶ 例句</button>
+    </div>
+  </div>
+  <div class="wzh">警报处置结论</div>
+  <div class="wrow"><div class="wk">本质</div><div class="wv"><b>一条警报的最终结论（含误报）</b>。有 disposition 才算"处理完"；没有 disposition 的警报就是积压，也是审计最爱问的东西。</div></div>
+  <div class="wrow"><div class="wk">例句</div><div class="wv"><span class="en">Every alert disposition must be documented, including false positives.</span><br><span class="zh">每一条警报处置结论都必须留痕，包括误报。</span></div></div>
+  <div class="wrow"><div class="wk">读音</div><div class="wv">① <b>alert 重音在后</b> /əˈlɜːt/（a-lert 两音节，重音在第二个）；② disposition 重音在 <b>-ZI-</b> /ˌdɪs.pəˈzɪ.ʃn/，前面三个音节快读带过；③ /ɜː/ 英式不卷舌。</div></div>
+  <div class="wrow wpit"><div class="wk">易错</div><div class="wv">❌ /ˈeɪlət/（重音在前）→ ✅ /əˈlɜːt/　❌ disposition 重音在 -PO- → ✅ 在 <b>-ZI-</b>（dis-PO-si-tion 中间那个是弱音节）</div></div>
+  <div class="wrow"><div class="wk">用法</div><div class="wv">合规留痕的核心字段：<span class="mono">Every alert disposition must be documented, including false positives.</span> 写 false positives 这半句很重要——它证明你不只是处理真警报。</div></div>
+</article>
+
+<article class="wcard" id="w16">
+  <div class="whead">
+    <div class="wno">16</div>
+    <div class="wmid">
+      <h3 class="wterm">threshold / sensitivity</h3>
+      <div class="wipa">/ˈθreʃhəʊld/ · /ˌsensəˈtɪvəti/</div>
+      <div class="wsyl"><b class="hit">thresh</b><span class="dot">·</span><span class="pl-syl">hold</span><span class="dot">·</span><span class="pl-syl">sen</span><span class="dot">·</span><span class="pl-syl">si</span><span class="dot">·</span><b class="hit">tiv</b><span class="dot">·</span><span class="pl-syl">i</span><span class="dot">·</span><span class="pl-syl">ty</span></div>
+    </div>
+    <div class="wact">
+      <button class="btn sm" data-say="threshold / sensitivity">▶ 词</button>
+      <button class="btn sm" data-slow="threshold / sensitivity">▶ 慢</button>
+      <button class="btn sm" data-say="Raising the threshold cuts false positives but lowers sensitivity on short names.">▶ 例句</button>
+    </div>
+  </div>
+  <div class="wzh">阈值 / 灵敏度</div>
+  <div class="wrow"><div class="wk">本质</div><div class="wv"><b>一对权衡，今天最实用的一对词</b>：threshold 是"多可疑才报"，sensitivity 是"能认出多少"。提高门槛 → 误报少、漏报多。<b>所有规则调优都绕不开这个矛盾</b>，能讲清这一对就够用一年。</div></div>
+  <div class="wrow"><div class="wk">例句</div><div class="wv"><span class="en">Raising the threshold cuts false positives but lowers sensitivity on short names.</span><br><span class="zh">提高阈值能减少误报，但会降低对短姓名的灵敏度。</span></div></div>
+  <div class="wrow"><div class="wk">读音</div><div class="wv">① <b>threshold 首音是 /θ/，舌尖必须伸出齿间</b>，后面紧跟 /ʃh/ 连在一起；② /əʊ/ 英式不卷舌；③ sensitivity 五个音节重音在 <b>-TIV-</b>，一气呵成，中间不要断。</div></div>
+  <div class="wrow wpit"><div class="wk">易错</div><div class="wv">❌ /ˈsreʃhəʊld/（/θ/ 读成 /s/）→ ✅ 舌尖伸出齿间，音送到舌尖上<br>❌ /ˈfreʃhəʊld/（读成 /f/）→ ✅ 同上，可对镜自查<br>❌ sensitivity 重音在 -SI- → ✅ 在 <b>-TIV-</b></div></div>
+  <div class="wrow"><div class="wk">用法</div><div class="wv">讲规则调优时的标准句式：<span class="mono">Raising the threshold cuts false positives but lowers sensitivity.</span> 这句在 Day-03 的 tuning / optimisation 那组词里也用得上。</div></div>
+</article>
+
+<article class="wcard" id="w17">
+  <div class="whead">
+    <div class="wno">17</div>
+    <div class="wmid">
+      <h3 class="wterm">sanctions nexus</h3>
+      <div class="wipa">/ˈsæŋkʃnz ˈneksəs/</div>
+      <div class="wsyl"><span class="pl-syl">sanc</span><span class="dot">·</span><span class="pl-syl">tions</span><span class="dot">·</span><b class="hit">ne</b><span class="dot">·</span><span class="pl-syl">xus</span></div>
+    </div>
+    <div class="wact">
+      <button class="btn sm" data-say="sanctions nexus">▶ 词</button>
+      <button class="btn sm" data-slow="sanctions nexus">▶ 慢</button>
+      <button class="btn sm" data-say="Any sanctions nexus — even a 5 per cent shareholder — has to be assessed.">▶ 例句</button>
+    </div>
+  </div>
+  <div class="wzh">制裁关联点</div>
+  <div class="wrow"><div class="wk">本质</div><div class="wv"><b>「连接点」</b>——哪怕只持股 5%，只要与美国或被列名方有这个连接点，次级制裁就可能适用。<b>nexus 是美国制裁体系里最常用的触发词</b>，英国同事也会借用。</div></div>
+  <div class="wrow"><div class="wk">例句</div><div class="wv"><span class="en">Any sanctions nexus — even a 5 per cent shareholder — has to be assessed.</span><br><span class="zh">任何制裁关联点——哪怕只持股 5%——都必须评估。</span></div></div>
+  <div class="wrow"><div class="wk">读音</div><div class="wv">① <b>重音在首音节</b> /ˈnek.səs/——这是拉丁借词，别按英语习惯把重音往后放；② 第二个音节 /səs/ 极弱；③ 中间是 <b>/ks/</b> 不是 /kʃ/。</div></div>
+  <div class="wrow wpit"><div class="wk">易错</div><div class="wv">❌ /ˈnekʃəs/（中间读成 /kʃ/）→ ✅ /ˈneksəs/，/k/ 后直接 /s/　❌ /ˈnekˈsəs/（重音在后）→ ✅ 重音在 <b>首</b></div></div>
+  <div class="wrow"><div class="wk">用法</div><div class="wv">判断是否触及次级制裁的关键词：<span class="mono">Is there any sanctions nexus, even a 5 per cent holding?</span> even 后面要重读——这个词是给对方台阶的信号。</div></div>
+</article>
+</section>
+
+<section class="gsec" id="g4">
+  <div class="card ghead">
+    <div class="gtag">GROUP 04</div>
+    <h3>出口管制　<span style="font-weight:400;font-size:13px;color:var(--ink-3);">4 词</span></h3>
+    <p class="sub" style="margin:6px 0 0;">制裁管的是人，管货的是出口管制。英美两套体系逻辑不同，这 4 个词是进入 IT / 贸易 / 技术服务领域的第一道门。</p>
+    <div class="gwords"><a href="#w18">EAR (Export Administration Regulations)</a><a href="#w19">Entity List</a><a href="#w20">catch-all control</a><a href="#w21">deemed export</a></div>
+  </div>
+  
+<article class="wcard" id="w18">
+  <div class="whead">
+    <div class="wno">18</div>
+    <div class="wmid">
+      <h3 class="wterm">EAR (Export Administration Regulations)</h3>
+      <div class="wipa">/ˌiː eɪ ˈɑː/</div>
+      <div class="wsyl"><b class="hit">E</b><span class="dot">·</span><b class="hit">A</b><span class="dot">·</span><b class="hit">R</b></div>
+    </div>
+    <div class="wact">
+      <button class="btn sm" data-say="EAR (Export Administration Regulations)">▶ 词</button>
+      <button class="btn sm" data-slow="EAR (Export Administration Regulations)">▶ 慢</button>
+      <button class="btn sm" data-say="The item is classified under the EAR and needs a licence for that destination.">▶ 例句</button>
+    </div>
+  </div>
+  <div class="wzh">美国出口管理条例</div>
+  <div class="wrow"><div class="wk">本质</div><div class="wv"><b>美国出口管制的"母法"</b>。EAR 下的物项按 ECCN 分类（1–5 类），<b>没有 ECCN 就要走 catch-all</b>。任何一笔交易只要碰到两用物项，EAR 就是必查的条例名。</div></div>
+  <div class="wrow"><div class="wk">例句</div><div class="wv"><span class="en">The item is classified under the EAR and needs a licence for that destination.</span><br><span class="zh">该物项按美国出口管理条例分级，运往该目的地需要许可。</span></div></div>
+  <div class="wrow"><div class="wk">读音</div><div class="wv">① <b>逐字母读 /iː eɪ ˈɑː/</b>，三个音节，绝不要试图读成一个词；② R 是 /ɑː/，英式<b>不卷舌</b>（美式会卷）；③ 全称 Administration 重音在 <b>-STRA-</b> /ədˌmɪnɪˈstreɪʃn/。</div></div>
+  <div class="wrow wpit"><div class="wk">易错</div><div class="wv">❌ 读成一个词 /ɪə/ → ✅ 逐字母三个音节　❌ /ɪɑː/（R 音卷舌）→ ✅ /ˈɑː/<br><b>易混</b>：EAR 逐字母，ITAR 读成词 /ˈaɪtɑː/ —— 同一批文件里两套规则并存，只能靠记。</div></div>
+  <div class="wrow"><div class="wk">用法</div><div class="wv">货物涉及两用物项时的必查项：<span class="mono">The item is classified under the EAR.</span> 后面紧跟 ECCN 与 licence 要求。</div></div>
+</article>
+
+<article class="wcard" id="w19">
+  <div class="whead">
+    <div class="wno">19</div>
+    <div class="wmid">
+      <h3 class="wterm">Entity List</h3>
+      <div class="wipa">/ˈentəti lɪst/</div>
+      <div class="wsyl"><b class="hit">en</b><span class="dot">·</span><span class="pl-syl">ti</span><span class="dot">·</span><span class="pl-syl">ty</span><span class="dot">·</span><b class="hit">list</b></div>
+    </div>
+    <div class="wact">
+      <button class="btn sm" data-say="Entity List">▶ 词</button>
+      <button class="btn sm" data-slow="Entity List">▶ 慢</button>
+      <button class="btn sm" data-say="The buyer was added to the Entity List last year, so the order has to be stopped.">▶ 例句</button>
+    </div>
+  </div>
+  <div class="wzh">（美国）实体清单</div>
+  <div class="wrow"><div class="wk">本质</div><div class="wv">美国商务部 BIS 维护的<b>实物清单</b>——人、实体、船舶都在里面。比 OFAC 的 SDN 更"物"、更硬：上清单基本等于不能碰。</div></div>
+  <div class="wrow"><div class="wk">例句</div><div class="wv"><span class="en">The buyer was added to the Entity List last year, so the order has to be stopped.</span><br><span class="zh">该买方去年被列入实体清单，所以这笔订单必须叫停。</span></div></div>
+  <div class="wrow"><div class="wk">读音</div><div class="wv">① <b>首重音</b> /ˈen.tɪ.ti/，不是 /enˈtaɪti/；② 英式三音节 /ˈentəti/，中间的 /t/ 要清楚；③ 词尾 -ty 读 /ti/，<b>不浊化</b>（美式读 /di/）；④ List 是专有名词的一半，也要重读。</div></div>
+  <div class="wrow wpit"><div class="wk">易错</div><div class="wv">❌ /enˈtaɪti/ → ✅ /ˈentəti/，重音在首　❌ /ˈentɪdi/（美式浊化）→ ✅ /ˈentəti/（英式清 /t/）</div></div>
+  <div class="wrow"><div class="wk">用法</div><div class="wv">停止交易的直接依据：<span class="mono">The buyer was added to the Entity List, so we have to stop the order.</span> 结论词用 stop / halt，不要用 reject。</div></div>
+</article>
+
+<article class="wcard" id="w20">
+  <div class="whead">
+    <div class="wno">20</div>
+    <div class="wmid">
+      <h3 class="wterm">catch-all control</h3>
+      <div class="wipa">/ˈkætʃ ɔːl kənˈtrəʊl/</div>
+      <div class="wsyl"><b class="hit">catch</b><span class="dot">·</span><span class="pl-syl">all</span><span class="dot">·</span><span class="pl-syl">con</span><span class="dot">·</span><b class="hit">trol</b></div>
+    </div>
+    <div class="wact">
+      <button class="btn sm" data-say="catch-all control">▶ 词</button>
+      <button class="btn sm" data-slow="catch-all control">▶ 慢</button>
+      <button class="btn sm" data-say="Catch-all control requires an end-use assessment even when no licence is listed.">▶ 例句</button>
+    </div>
+  </div>
+  <div class="wzh">兜底管制</div>
+  <div class="wrow"><div class="wk">本质</div><div class="wv"><b>「兜底」——没有明确管制要求 ≠ 可以放行。</b>你必须自己判断最终用途和目的地，判断不了就当它可能被管制。<b>这是义务（duty），不是选项（option）</b>。今天 B 段会议的核心结论就是这一条。</div></div>
+  <div class="wrow"><div class="wk">例句</div><div class="wv"><span class="en">Catch-all control requires an end-use assessment even when no licence is listed.</span><br><span class="zh">兜底管制要求即便没有列明许可要求，也要做最终用途评估。</span></div></div>
+  <div class="wrow"><div class="wk">读音</div><div class="wv">① catch 的 /æ/ 英式<b>更前更开</b>（比美式靠前，嘴张得更大）；② catch-all 连成一个语块读，<b>连字符不产生停顿</b>；③ control 重音在后。</div></div>
+  <div class="wrow wpit"><div class="wk">易错</div><div class="wv">❌ /ˈkætʃ əl/（中间加元音）→ ✅ /ˈkætʃ ɔːl/，整块读　❌ 把 catch-all 拆成两句 → ✅ 一个语块，中间不停</div></div>
+  <div class="wrow"><div class="wk">用法</div><div class="wv">会议定论句：<span class="mono">Catch-all is a duty, not an option.</span> 说这句时前两句铺垫、后一句降收音，力量最足。</div></div>
+</article>
+
+<article class="wcard" id="w21">
+  <div class="whead">
+    <div class="wno">21</div>
+    <div class="wmid">
+      <h3 class="wterm">deemed export</h3>
+      <div class="wipa">/diːmd ˈekspɔːt/</div>
+      <div class="wsyl"><b class="hit">deemed</b><span class="dot">·</span><b class="hit">ex</b><span class="dot">·</span><span class="pl-syl">port</span></div>
+    </div>
+    <div class="wact">
+      <button class="btn sm" data-say="deemed export">▶ 词</button>
+      <button class="btn sm" data-slow="deemed export">▶ 慢</button>
+      <button class="btn sm" data-say="Sharing the technical data with a foreign national in the UK is a deemed export.">▶ 例句</button>
+    </div>
+  </div>
+  <div class="wzh">视同出口</div>
+  <div class="wrow"><div class="wk">本质</div><div class="wv"><b>物项没出境，但技术数据给了外籍人士，在英国也算出口</b>。这个概念是英美出口管制最难的部分，也是科技 / IT / 技术服务公司最常踩的雷。</div></div>
+  <div class="wrow"><div class="wk">例句</div><div class="wv"><span class="en">Sharing the technical data with a foreign national in the UK is a deemed export.</span><br><span class="zh">在英国把技术资料分享给外籍人士，构成视同出口。</span></div></div>
+  <div class="wrow"><div class="wk">读音</div><div class="wv">① deemed 的 /iː/ 是长音 + 词尾 <b>/md/ 两个辅音收住</b>，不加音节；② <b>export 作名词重音在首</b> /ˈeks.pɔːt/（作动词才后移 /eksˈpɔːt/）；③ deemed export 连读时前词轻、后词重。</div></div>
+  <div class="wrow wpit"><div class="wk">易错</div><div class="wv">❌ /diːˈmiːd/ → ✅ /diːmd/ 一音节　❌ /eksˈpɔːt/（名词用了动词的重音）→ ✅ 名词 /ˈekspɔːt/<br><b>同批易混</b>：transfer 也一样，名词首重音、动词后重音。</div></div>
+  <div class="wrow"><div class="wk">用法</div><div class="wv">科技业务线的关键词：<span class="mono">Sharing technical data with a foreign national in the UK is a deemed export.</span> foreign national 要重读——这是判定成立的关键限定。</div></div>
+</article>
+</section>
+
+<section class="gsec" id="g5">
+  <div class="card ghead">
+    <div class="gtag">GROUP 05</div>
+    <h3>航运规避　<span style="font-weight:400;font-size:13px;color:var(--ink-3);">3 词</span></h3>
+    <p class="sub" style="margin:6px 0 0;">海上是制裁规避最难抓的场景。这 3 个词是航运筛查、能源贸易和保险业务的入口词。</p>
+    <div class="gwords"><a href="#w22">dark fleet</a><a href="#w23">ship-to-ship transfer</a><a href="#w24">price cap</a></div>
+  </div>
+  
+<article class="wcard" id="w22">
+  <div class="whead">
+    <div class="wno">22</div>
+    <div class="wmid">
+      <h3 class="wterm">dark fleet</h3>
+      <div class="wipa">/dɑːk fliːt/</div>
+      <div class="wsyl"><b class="hit">dark</b><span class="dot">·</span><b class="hit">fleet</b></div>
+    </div>
+    <div class="wact">
+      <button class="btn sm" data-say="dark fleet">▶ 词</button>
+      <button class="btn sm" data-slow="dark fleet">▶ 慢</button>
+      <button class="btn sm" data-say="The dark fleet turns off AIS transponders before loading in the Baltic.">▶ 例句</button>
+    </div>
+  </div>
+  <div class="wzh">暗船队、影子船队（关闭 AIS）</div>
+  <div class="wrow"><div class="wk">本质</div><div class="wv"><b>关闭 AIS、不出现在公开航运数据里的船队</b>。它是制裁规避最常见的表现形式。配套词：<b>go dark</b>（关掉信号）、<b>dark activity</b>（今天词表里有）。</div></div>
+  <div class="wrow"><div class="wk">例句</div><div class="wv"><span class="en">The dark fleet turns off AIS transponders before loading in the Baltic.</span><br><span class="zh">暗船队在波罗的海装货前关闭船舶自动识别系统应答器。</span></div></div>
+  <div class="wrow"><div class="wk">读音</div><div class="wv">① dark 的 /ɑː/ 是英式长音，<b>不卷舌</b>（美式 /dɑːrk/ 才卷）；② fleet 的 /iː/ 要拉长；③ 两个词都重读，这是术语不是普通名词。</div></div>
+  <div class="wrow wpit"><div class="wk">易错</div><div class="wv">❌ /dɑːk flɪt/（短音 + 没拉长）→ ✅ /dɑːk fliːt/　❌ /dɑːrk/（卷舌）→ ✅ 英式不卷<br><b>易混</b>：别和 flit /flɪt/（快速移动）混。</div></div>
+  <div class="wrow"><div class="wk">用法</div><div class="wv">航运筛查的入口：听到 dark fleet 或 go dark，就要立刻问 AIS 记录与装载历史。今天 B 段第 11 句就是这句的完整用法。</div></div>
+</article>
+
+<article class="wcard" id="w23">
+  <div class="whead">
+    <div class="wno">23</div>
+    <div class="wmid">
+      <h3 class="wterm">ship-to-ship transfer</h3>
+      <div class="wipa">/ˌʃɪp tə ˈʃɪp ˈtrænsfɜː/</div>
+      <div class="wsyl"><b class="hit">ship</b><span class="dot">·</span><span class="pl-syl">to</span><span class="dot">·</span><span class="pl-syl">ship</span><span class="dot">·</span><b class="hit">trans</b><span class="dot">·</span><span class="pl-syl">fer</span></div>
+    </div>
+    <div class="wact">
+      <button class="btn sm" data-say="ship-to-ship transfer">▶ 词</button>
+      <button class="btn sm" data-slow="ship-to-ship transfer">▶ 慢</button>
+      <button class="btn sm" data-say="The cargo was moved by ship-to-ship transfer outside territorial waters.">▶ 例句</button>
+    </div>
+  </div>
+  <div class="wzh">船对船过驳（STS）</div>
+  <div class="wrow"><div class="wk">本质</div><div class="wv"><b>把货从一条船转到另一条</b>——在海上换身份，是最常见的规避手法。制裁调查的时间线描述里几乎必有这一项。</div></div>
+  <div class="wrow"><div class="wk">例句</div><div class="wv"><span class="en">The cargo was moved by ship-to-ship transfer outside territorial waters.</span><br><span class="zh">货物在领海之外通过船对船过驳完成转移。</span></div></div>
+  <div class="wrow"><div class="wk">读音</div><div class="wv">① 连字符短语整体<b>重音落在后半段</b> /ˌʃɪp tə ˈʃɪp/；② 中间的 to 弱读成 /tə/；③ <b>transfer 作名词重音在首</b> /ˈtræns.fɜː/，作动词才后移 /trænsˈfɜː/ —— 本批最容易搞反的一对。</div></div>
+  <div class="wrow wpit"><div class="wk">易错</div><div class="wv">❌ /trænsˈfɜː/（名词用了动词重音）→ ✅ 名词 /ˈtrænsfɜː/<br>❌ 三个词都重读 → ✅ ship / trans- 重，to 弱<br><b>同批同规则</b>：deemed export、contract / conTRACT。</div></div>
+  <div class="wrow"><div class="wk">用法</div><div class="wv">时间线描述：<span class="mono">She went dark for eleven days before the ship-to-ship transfer.</span> 真实案件里这句话通常紧跟在 AIS 异常之后。</div></div>
+</article>
+
+<article class="wcard" id="w24">
+  <div class="whead">
+    <div class="wno">24</div>
+    <div class="wmid">
+      <h3 class="wterm">price cap</h3>
+      <div class="wipa">/praɪs kæp/</div>
+      <div class="wsyl"><b class="hit">price</b><span class="dot">·</span><b class="hit">cap</b></div>
+    </div>
+    <div class="wact">
+      <button class="btn sm" data-say="price cap">▶ 词</button>
+      <button class="btn sm" data-slow="price cap">▶ 慢</button>
+      <button class="btn sm" data-say="The G7 price cap only works if every link in the chain gets an attestation.">▶ 例句</button>
+    </div>
+  </div>
+  <div class="wzh">价格上限</div>
+  <div class="wrow"><div class="wk">本质</div><div class="wv"><b>G7 价格上限</b>（对俄罗斯石油）：约定成交价必须低于某上限，靠<b>链条每一环都签合规声明（attestation）</b>来执行。任何一环不签，整个机制失效。今天词表里 price cap 和 attestation 是配套出现的。</div></div>
+  <div class="wrow"><div class="wk">例句</div><div class="wv"><span class="en">The G7 price cap only works if every link in the chain gets an attestation.</span><br><span class="zh">七国集团价格上限只有在链条每一环都取得合规声明时才有效。</span></div></div>
+  <div class="wrow"><div class="wk">读音</div><div class="wv">① cap 的 /æ/ 英式<b>更前更开</b>；② <b>新闻播报里这两个词都要重读</b>，弱化任何一个都听不出来；③ G7 读 "G seven" /ˌdʒiː ˈsevn/。</div></div>
+  <div class="wrow wpit"><div class="wk">易错</div><div class="wv">❌ /keɪp/（读成 keep）→ ✅ /kæp/，短元音 + /p/ 收尾　❌ 只重读 price → ✅ 两词都重读（这是术语）</div></div>
+  <div class="wrow"><div class="wk">用法</div><div class="wv">能源贸易场景的核心词组：<span class="mono">only works if every link in the chain gets an attestation</b></span> —— only works 要重读，因为整个逻辑都挂在 only 上。</div></div>
+</article>
+</section>
+
+<section class="gsec" id="g6">
+  <div class="card ghead">
+    <div class="gtag">GROUP 06</div>
+    <h3>金融犯罪开篇　<span style="font-weight:400;font-size:13px;color:var(--ink-3);">6 词</span></h3>
+    <p class="sub" style="margin:6px 0 0;">从制裁转到执法。今天只记 6 个核心词，明天（Day-06）会正面处理这一领域的其余 40 条。</p>
+    <div class="gwords"><a href="#w25">economic crime</a><a href="#w26">failure to prevent</a><a href="#w27">adequate procedures</a><a href="#w28">POCA 2002</a><a href="#w29">suspicion</a><a href="#w30">unexplained wealth order (UWO)</a></div>
+  </div>
+  
+<article class="wcard" id="w25">
+  <div class="whead">
+    <div class="wno">25</div>
+    <div class="wmid">
+      <h3 class="wterm">economic crime</h3>
+      <div class="wipa">/ˌiːkəˈnɒmɪk kraɪm/</div>
+      <div class="wsyl"><span class="pl-syl">e</span><span class="dot">·</span><span class="pl-syl">co</span><span class="dot">·</span><b class="hit">nom</b><span class="dot">·</span><span class="pl-syl">ic</span><span class="dot">·</span><span class="pl-syl">crime</span></div>
+    </div>
+    <div class="wact">
+      <button class="btn sm" data-say="economic crime">▶ 词</button>
+      <button class="btn sm" data-slow="economic crime">▶ 慢</button>
+      <button class="btn sm" data-say="The Economic Crime and Corporate Transparency Act widened the failure to prevent offence.">▶ 例句</button>
+    </div>
+  </div>
+  <div class="wzh">经济犯罪</div>
+  <div class="wrow"><div class="wk">本质</div><div class="wv">英国 2023 年《经济犯罪与企业透明度法》（<b>Economic Crime and Corporate Transparency Act</b>）把它系统化了，最重要的产出是「<b>failure to prevent</b>」这一整组单位犯罪。</div></div>
+  <div class="wrow"><div class="wk">例句</div><div class="wv"><span class="en">The Economic Crime and Corporate Transparency Act widened the failure to prevent offence.</span><br><span class="zh">《经济犯罪与企业透明度法》扩大了「未能预防」罪的范围。</span></div></div>
+  <div class="wrow"><div class="wk">读音</div><div class="wv">① <b>重音在 -NOM-</b> /ˌiː.kəˈnɒm.ɪk/，前面两个音节快读；② 词尾 -ic 读 /ɪk/ 不是 /ɪːk/；③ crime 的 /kraɪm/ 首音节重读。</div></div>
+  <div class="wrow wpit"><div class="wk">易错</div><div class="wv">❌ /ˌekəˈnɒmɪk/（首音节读成 /e/）→ ✅ /ˌiː.kə-/（英式首音是长音 /iː/）<br>❌ 重音在 -NOM- 之前的 -CO- → ✅ 在 <b>-NOM-</b>，和下面 economy 对照记</div></div>
+  <div class="wrow"><div class="wk">用法</div><div class="wv">罪名与法案名里天天出现。<span class="mono">Economic crime covers bribery, fraud, money laundering and market abuse.</span> 这句是标准开场。</div></div>
+</article>
+
+<article class="wcard" id="w26">
+  <div class="whead">
+    <div class="wno">26</div>
+    <div class="wmid">
+      <h3 class="wterm">failure to prevent</h3>
+      <div class="wipa">/ˈfeɪljə tə prɪˈvent/</div>
+      <div class="wsyl"><b class="hit">fail</b><span class="dot">·</span><span class="pl-syl">ure</span><span class="dot">·</span><span class="pl-syl">to</span><span class="dot">·</span><b class="hit">pre</b><span class="dot">·</span><span class="pl-syl">vent</span></div>
+    </div>
+    <div class="wact">
+      <button class="btn sm" data-say="failure to prevent">▶ 词</button>
+      <button class="btn sm" data-slow="failure to prevent">▶ 慢</button>
+      <button class="btn sm" data-say="Failure to prevent fraud is a corporate offence; the firm answers for its employees.">▶ 例句</button>
+    </div>
+  </div>
+  <div class="wzh">未能预防（罪）</div>
+  <div class="wrow"><div class="wk">本质</div><div class="wv"><b>单位犯罪的默认条款</b>——公司没能防止员工犯罪，机构本身担责。抗辩的唯一路径是证明"已有<a href="#" class="mono">adequate procedures</a>"。这是你未来最需要理解的一个罪名。</div></div>
+  <div class="wrow"><div class="wk">例句</div><div class="wv"><span class="en">Failure to prevent fraud is a corporate offence; the firm answers for its employees.</span><br><span class="zh">未能预防欺诈是单位犯罪，机构要为其员工的行为负责。</span></div></div>
+  <div class="wrow"><div class="wk">读音</div><div class="wv">① failure 词尾是 <b>/jə/</b> 不是 /jʊə/（英式是弱化 /ə/）；② prevent 重音在<b>后</b> /prɪˈvent/；③ 首音节 prɪ 是<b>短音</b>，不是长音——别和 pre- /priː/ 混；④ 三个词连读时 to 弱读成 /tə/。</div></div>
+  <div class="wrow wpit"><div class="wk">易错</div><div class="wv">❌ /ˈfeɪljʊə/ → ✅ /ˈfeɪljə/（英式弱化）　❌ /prɪˈviːnt/ → ✅ 首音节是短音 /prɪ/　❌ 重音在 -VEN- → ✅ 重音在 <b>-VENT-</b></div></div>
+  <div class="wrow"><div class="wk">用法</div><div class="wv">定性的关键词：<span class="mono">Failure to prevent fraud is a corporate offence.</span> corporate offence 是英式的说法（美式多说 corporate criminal offense）。</div></div>
+</article>
+
+<article class="wcard" id="w27">
+  <div class="whead">
+    <div class="wno">27</div>
+    <div class="wmid">
+      <h3 class="wterm">adequate procedures</h3>
+      <div class="wipa">/ˈædɪkwət prəˈsiːdʒəz/</div>
+      <div class="wsyl"><b class="hit">ad</b><span class="dot">·</span><span class="pl-syl">e</span><span class="dot">·</span><span class="pl-syl">quate</span><span class="dot">·</span><b class="hit">pro</b><span class="dot">·</span><span class="pl-syl">ce</span><span class="dot">·</span><span class="pl-syl">dures</span></div>
+    </div>
+    <div class="wact">
+      <button class="btn sm" data-say="adequate procedures">▶ 词</button>
+      <button class="btn sm" data-slow="adequate procedures">▶ 慢</button>
+      <button class="btn sm" data-say="The only defence is that the firm had adequate procedures in place.">▶ 例句</button>
+    </div>
+  </div>
+  <div class="wzh">充分程序（抗辩）</div>
+  <div class="wrow"><div class="wk">本质</div><div class="wv"><b>唯一法定抗辩</b>。注意它问的是"程序够不够"，不是"结果好不好"——这正是英美公司法和合规体系的核心思路：你控制不了结果，但要控制住流程。</div></div>
+  <div class="wrow"><div class="wk">例句</div><div class="wv"><span class="en">The only defence is that the firm had adequate procedures in place.</span><br><span class="zh">唯一的抗辩理由是该机构已建立充分程序。</span></div></div>
+  <div class="wrow"><div class="wk">读音</div><div class="wv">① <b>adequate 词尾 -ate 弱读成 /ət/</b>，绝不读 /eɪt/；② procedures 重音在 <b>-CE-</b> /prəˈsiː.dʒəz/；③ 词尾 /dʒəz/ 是浊音（s 前面的 d 是浊辅音）。</div></div>
+  <div class="wrow wpit"><div class="wk">易错</div><div class="wv">❌ /ˈædɪkweɪt/ → ✅ /ˈædɪkwət/，词尾 /ət/　❌ 重音在 -PRO- → ✅ 在 <b>-CE-</b>　❌ 词尾读成 /dʒuːz/ → ✅ /dʒəz/ 弱化</div></div>
+  <div class="wrow"><div class="wk">用法</div><div class="wv">抗辩句式：<span class="mono">The only defence is that the firm had adequate procedures in place.</span> in place 读 /ɪn ˈpleɪs/，那个 /pleɪs/ 要重读（不是 place /s/）。</div></div>
+</article>
+
+<article class="wcard" id="w28">
+  <div class="whead">
+    <div class="wno">28</div>
+    <div class="wmid">
+      <h3 class="wterm">POCA 2002</h3>
+      <div class="wipa">/ˈpɒkə ˌtuː ˈθaʊznd ənd tuː/</div>
+      <div class="wsyl"><b class="hit">P</b><span class="dot">·</span><span class="pl-syl">O</span><span class="dot">·</span><b class="hit">C</b><span class="dot">·</span><span class="pl-syl">A</span><span class="dot">·</span><span class="pl-syl">two</span><span class="dot">·</span><span class="pl-syl"> thou</span><span class="dot">·</span><span class="pl-syl">sand</span><span class="dot">·</span><span class="pl-syl">and</span><span class="dot">·</span><span class="pl-syl">two</span></div>
+    </div>
+    <div class="wact">
+      <button class="btn sm" data-say="POCA 2002">▶ 词</button>
+      <button class="btn sm" data-slow="POCA 2002">▶ 慢</button>
+      <button class="btn sm" data-say="POCA 2002 gives the courts power to make a confiscation order.">▶ 例句</button>
+    </div>
+  </div>
+  <div class="wzh">2002 年犯罪所得法</div>
+  <div class="wrow"><div class="wk">本质</div><div class="wv"><b>Proceeds of Crime Act 2002</b>，英国反洗钱与资产追回的主力法。它创造了整套工具：<b>AFO</b>（账户冻结令）、<b>UWO</b>（财富来源不明令）、<b>confiscation order</b>（没收令）。今天词表尾部的那些令状都出自它。</div></div>
+  <div class="wrow"><div class="wk">例句</div><div class="wv"><span class="en">POCA 2002 gives the courts power to make a confiscation order.</span><br><span class="zh">2002 年犯罪所得法赋予法院作出没收令的权力。</span></div></div>
+  <div class="wrow"><div class="wk">读音</div><div class="wv">① <b>POCA 读成一个词 /ˈpɒkə/</b> —— 行业固定读法，逐字母念 P-O-C-A 会被立刻听出是外行；② 20th 读 two thousand and two，英式保留 <b>and</b>，美式常说 two thousand two；③ thousand 的 th 是清 /θ/。</div></div>
+  <div class="wrow wpit"><div class="wk">易错</div><div class="wv">❌ /ˌpiː əʊ siː ˈeɪ/ → ✅ /ˈpɒkə/ 一个词　❌ /tuː θaʊznd tuː/（漏 and）→ ✅ 英式 two thousand <b>and</b> two</div></div>
+  <div class="wrow"><div class="wk">用法</div><div class="wv">提到"追缴 / 冻结 / 没收"必然引到 POCA：<span class="mono">POCA 2002 gives the courts power to make a confiscation order.</span> 全称第一次出现时写全，之后用缩写。</div></div>
+</article>
+
+<article class="wcard" id="w29">
+  <div class="whead">
+    <div class="wno">29</div>
+    <div class="wmid">
+      <h3 class="wterm">suspicion</h3>
+      <div class="wipa">/səˈspɪʃn/</div>
+      <div class="wsyl"><span class="pl-syl">sus</span><span class="dot">·</span><b class="hit">pi</b><span class="dot">·</span><span class="pl-syl">cion</span></div>
+    </div>
+    <div class="wact">
+      <button class="btn sm" data-say="suspicion">▶ 词</button>
+      <button class="btn sm" data-slow="suspicion">▶ 慢</button>
+      <button class="btn sm" data-say="The obligation is triggered by suspicion, not by proof.">▶ 例句</button>
+    </div>
+  </div>
+  <div class="wzh">怀疑（法定门槛）</div>
+  <div class="wrow"><div class="wk">本质</div><div class="wv"><b>AML 的法定门槛词</b>：上报义务由"怀疑（suspicion）"触发，<b>不是由"证明（proof）"触发</b>。这个区别是整个反洗钱体系的地基，也是你未来最常被问到的概念之一。</div></div>
+  <div class="wrow"><div class="wk">例句</div><div class="wv"><span class="en">The obligation is triggered by suspicion, not by proof.</span><br><span class="zh">该义务由「怀疑」触发，而不是由证据触发。</span></div></div>
+  <div class="wrow"><div class="wk">读音</div><div class="wv">① 重音在<b>第二音节 -SPI-</b>，首音节 /sə/ 极弱；② 词尾 <b>-cion 压成 /ʃn/ 一个音节</b>，不要拖成 /ʃən/；③ 三个音节里只有一个重音，其余两个弱到几乎听不见。</div></div>
+  <div class="wrow wpit"><div class="wk">易错</div><div class="wv">❌ /ˈsʌspɪʃn/（重音在首）→ ✅ /səˈspɪʃn/　❌ /səˈspɪʃən/（多一个音节）→ ✅ 词尾压缩 /ʃn/<br><b>自检</b>：这个词三音节，第二个重、第一个几乎听不到、第三个瞬间收。</div></div>
+  <div class="wrow"><div class="wk">用法</div><div class="wv">AML 的核心陈述：<span class="mono">The obligation is triggered by suspicion, not by proof.</span> 说完 not by proof 要<b>降调</b>，表示"这条界线不能越"。</div></div>
+</article>
+
+<article class="wcard" id="w30">
+  <div class="whead">
+    <div class="wno">30</div>
+    <div class="wmid">
+      <h3 class="wterm">unexplained wealth order (UWO)</h3>
+      <div class="wipa">/ˌʌnɪkˈspleɪnd welθ ˈɔːdə/</div>
+      <div class="wsyl"><span class="pl-syl">un</span><span class="dot">·</span><span class="pl-syl">ex</span><span class="dot">·</span><b class="hit">plained</b><span class="dot">·</span><span class="pl-syl">wealth</span><span class="dot">·</span><span class="pl-syl">or</span><span class="dot">·</span><span class="pl-syl">der</span></div>
+    </div>
+    <div class="wact">
+      <button class="btn sm" data-say="unexplained wealth order (UWO)">▶ 词</button>
+      <button class="btn sm" data-slow="unexplained wealth order (UWO)">▶ 慢</button>
+      <button class="btn sm" data-say="An unexplained wealth order forces the holder to explain how the assets were funded.">▶ 例句</button>
+    </div>
+  </div>
+  <div class="wzh">财富来源不明令</div>
+  <div class="wrow"><div class="wk">本质</div><div class="wv"><b>钱说不清来路，就先冻结并要求解释</b>——持有人必须说明资产如何取得，说不清就可能被没收。这是英国特有的工具，财富调查、PEP 审查、跨境资产三类场景都会遇到。</div></div>
+  <div class="wrow"><div class="wk">例句</div><div class="wv"><span class="en">An unexplained wealth order forces the holder to explain how the assets were funded.</span><br><span class="zh">财富来源不明令强制持有人说明资产来源。</span></div></div>
+  <div class="wrow"><div class="wk">读音</div><div class="wv">① unexplained 重音在 <b>-PLAINED-</b>，前两音节 /ˌʌn.ɪk/ 快读带过；② <b>wealth 的 /θ/ 舌尖必须伸出齿间</b>——读成 /wels/ 是本批最高频的错误之一；③ order 词尾 /ə/，英式弱化；④ UWO 逐字母 /juː dʌ.bəl.juː ˈəʊ/。</div></div>
+  <div class="wrow wpit"><div class="wk">易错</div><div class="wv">❌ /wels/ → ✅ /welθ/，舌尖伸出再收（可对镜验证）<br>❌ unexplained 重音在 -EX- → ✅ 在 <b>-PLAINED-</b><br>❌ UWO 读成一个词 → ✅ 三个字母逐念</div></div>
+  <div class="wrow"><div class="wk">用法</div><div class="wv">三类场景的关键词：财富调查、PEP 审查、跨境资产。句型：<span class="mono">An unexplained wealth order forces the holder to explain how the assets were funded.</span> funded 词尾 /d/，别读成 /dɪd/。</div></div>
+</article>
+</section>
+
+<div class="card" id="selftest" style="border-left:4px solid var(--teal);">
+  <h3>自测清单（做完再对答案）</h3>
+  <p class="sub">先在纸上写，写完再点开对照。<b>三组都要出声做第二、三组。</b></p>
+  
+  <div class="reveal" style="margin-top:10px;">
+    <button class="btn" onclick="tog(this)">一、读音自测（对着音标读，读顺再往下）</button>
+    <div class="revbd"><ol class="tight"><li>01　ownership and control test　/ˈəʊnəʃɪp ənd kənˈtrəʊl test/</li><li>02　consolidated list　/kənˈsɒlɪdeɪtɪd lɪst/</li><li>03　UK Sanctions List　/ˌjuː ˈkeɪ ˈsæŋkʃnz lɪst/</li><li>04　50 per cent rule　/ˌfɪfti pə ˈsent ruːl/</li><li>05　ownership chain　/ˈəʊnəʃɪp tʃeɪn/</li><li>06　control via other means　/kənˈtrəʊl ˈvaɪə ˈʌðə miːnz/</li><li>07　general licence　/ˈdʒenrəl ˈlaɪsns/</li><li>08　circumvention　/ˌsɜːkəmˈvenʃn/</li><li>09　sanctions evasion　/sæŋkʃnz ɪˈveɪʒn/</li><li>10　strict liability　/strɪkt ˌlaɪəˈbɪləti/</li><li>11　voluntary self-disclosure　/ˈvɒləntri self dɪsˈkləʊʒə/</li><li>12　extraterritorial reach　/ˌekstrəterɪˈtɔːriəl riːtʃ/</li><li>13　name screening　/neɪm ˈskriːnɪŋ/</li><li>14　payment screening　/ˈpeɪmənt ˈskriːnɪŋ/</li><li>15　alert disposition　/əˈlɜːt ˌdɪspəˈzɪʃn/</li><li>16　threshold / sensitivity　/ˈθreʃhəʊld/ · /ˌsensəˈtɪvəti/</li><li>17　sanctions nexus　/ˈsæŋkʃnz ˈneksəs/</li><li>18　EAR (Export Administration Regulations)　/ˌiː eɪ ˈɑː/</li><li>19　Entity List　/ˈentəti lɪst/</li><li>20　catch-all control　/ˈkætʃ ɔːl kənˈtrəʊl/</li><li>21　deemed export　/diːmd ˈekspɔːt/</li><li>22　dark fleet　/dɑːk fliːt/</li><li>23　ship-to-ship transfer　/ˌʃɪp tə ˈʃɪp ˈtrænsfɜː/</li><li>24　price cap　/praɪs kæp/</li><li>25　economic crime　/ˌiːkəˈnɒmɪk kraɪm/</li><li>26　failure to prevent　/ˈfeɪljə tə prɪˈvent/</li><li>27　adequate procedures　/ˈædɪkwət prəˈsiːdʒəz/</li><li>28　POCA 2002　/ˈpɒkə ˌtuː ˈθaʊznd ənd tuː/</li><li>29　suspicion　/səˈspɪʃn/</li><li>30　unexplained wealth order (UWO)　/ˌʌnɪkˈspleɪnd welθ ˈɔːdə/</li></ol></div>
+  </div>
+  <div class="reveal" style="margin-top:10px;">
+    <button class="btn" onclick="tog(this)">二、词义自测（中→英，遮住页面先写）</button>
+    <div class="revbd"><ol class="tight"><li>所有权与控制判定</li><li>综合制裁名单</li><li>英国制裁名单</li><li>50% 规则</li><li>股权链条</li><li>以其他方式控制</li><li>一般许可</li><li>规避（制裁）</li><li>制裁规避（违法）</li><li>严格责任</li><li>自愿披露</li><li>域外效力</li><li>名单筛查</li><li>支付筛查</li><li>警报处置结论</li><li>阈值 / 灵敏度</li><li>制裁关联点</li><li>美国出口管理条例</li><li>（美国）实体清单</li><li>兜底管制</li><li>视同出口</li><li>暗船队</li><li>船对船过驳</li><li>价格上限</li><li>经济犯罪</li><li>未能预防（罪）</li><li>充分程序（抗辩）</li><li>2002 年犯罪所得法</li><li>怀疑（法定门槛）</li><li>财富来源不明令</li></ol></div>
+  </div>
+  <div class="reveal" style="margin-top:10px;">
+    <button class="btn" onclick="tog(this)">三、场景自测（每组说一句话，必须出声）</button>
+    <div class="revbd"><ol class="tight"><li>① 用 ownership and control test + 50 per cent rule 说出「为什么这笔交易要停」</li><li>② 用 consolidated list / UK Sanctions List 说出两张名单的区别</li><li>② 用 catch-all control + deemed export 说出「没有管制编号为什么还要卡」</li><li>③ 用 sanctions evasion + strict liability 说出「故意不重要，为什么」</li><li>④ 用 dark fleet + ship-to-ship transfer + price cap 描述一条可疑船的时间线</li><li>⑤ 用 economic crime + failure to prevent + adequate procedures 说出公司的抗辩逻辑</li><li>⑥ 用 suspicion + unexplained wealth order 说出「怀疑」与「证明」的分界</li><li>⑦ 用 voluntary self-disclosure + extraterritorial reach 说出减罚与域外风险</li></ol></div>
+  </div>
+  <div class="note" style="margin-top:14px;">
+    <b>判读标准：</b>第一组（读音）能顺下来 24 个以上 = 合格；<b>第二组（中→英）能写出 20 个以上 = 合格</b>；第三组（场景）能<b>不卡壳地说完 5 句以上</b> = 合格。达不到就把对应的词挑出来，明天模块 03 朗读前先过一遍。
+  </div>
+</div>
+
+</main>
+
+<footer>
+  Day 05 · 精讲 30 词深度精讲　|　<a href="00-作战中心.html">作战中心</a>　·　<a href="Day-05.html">Day 05 课程页</a>　·　<a href="03-发音与朗读系统.html">朗读库</a>　·　<a href="02-Anki复习系统.html">Anki 系统</a>
+</footer>
+
+<script>
+/* ---------- 折叠 ---------- */
+function tog(btn){
+  var bd = btn.nextElementSibling;
+  bd.classList.toggle("on");
+  if(!btn.dataset.base){ btn.dataset.base = btn.textContent; }
+  btn.textContent = bd.classList.contains("on") ? "收起" : btn.dataset.base;
+}
+
+/* ---------- 英式朗读 ---------- */
+var gbVoice = null;
+function pickVoice(){
+  if(!window.speechSynthesis){ return; }
+  var vs = speechSynthesis.getVoices() || [];
+  var pref = ['Google UK English Female','Google UK English Male','Libby','Sonia','Ryan','George','Hazel','Microsoft Libby','Microsoft Sonia'];
+  gbVoice = null;
+  for(var i = 0; i < pref.length && !gbVoice; i++){
+    gbVoice = vs.filter(function(v){ return v.name.indexOf(pref[i]) > -1; })[0] || null;
+  }
+  if(!gbVoice){ gbVoice = vs.filter(function(v){ return /^en-GB/i.test(v.lang); })[0] || null; }
+  if(!gbVoice){ gbVoice = vs.filter(function(v){ return /^en/i.test(v.lang); })[0] || null; }
+}
+if(window.speechSynthesis){ pickVoice(); speechSynthesis.onvoiceschanged = pickVoice; }
+function speak(txt, rate){
+  if(!window.speechSynthesis){ alert('当前浏览器不支持朗读，请用 Edge 或 Chrome 打开本页。'); return; }
+  speechSynthesis.cancel();
+  var u = new SpeechSynthesisUtterance(txt);
+  u.lang = 'en-GB';
+  if(gbVoice){ u.voice = gbVoice; }
+  u.rate = rate || 0.95; u.pitch = 1.0;
+  speechSynthesis.speak(u);
+}
+document.addEventListener('click', function(e){
+  var b = e.target.closest ? e.target.closest('button') : null;
+  if(!b) return;
+  if(b.hasAttribute('data-say')){ speak(b.getAttribute('data-say'), 0.95); }
+  else if(b.hasAttribute('data-slow')){ speak(b.getAttribute('data-slow'), 0.68); }
+});
+
+/* ---------- 进度：读到第几个词（按浏览位置粗算） ---------- */
+var cards = [].slice.call(document.querySelectorAll('.wcard'));
+var seen = {};
+var LS = 'ukce_deep30';
+try{ seen = JSON.parse(localStorage.getItem(LS) || '{}') || {}; }catch(e){}
+var dp = document.getElementById('dp'), dtxt = document.getElementById('dtxt');
+function upd(){
+  var n = Object.keys(seen).length;
+  if(dp){ dp.style.width = (n / cards.length * 100) + '%'; }
+  if(dtxt){ dtxt.textContent = n + ' / ' + cards.length + ' 个词已完成七层精讲'; }
+}
+cards.forEach(function(c){
+  var id = c.id;
+  var mark = document.createElement('div');
+  mark.style.cssText = 'margin-top:8px;';
+  var box = document.createElement('span');
+  box.className = 'ck' + (seen[id] ? ' on' : '');
+  box.innerHTML = '<div class="bx"></div><div class="tx">这个词的七层都过了一遍（音节重音 + 本质 + 例句 + 易错 + 用法）</div>';
+  box.addEventListener('click', function(){
+    if(seen[id]){ delete seen[id]; } else { seen[id] = 1; }
+    box.classList.toggle('on', !!seen[id]);
+    try{ localStorage.setItem(LS, JSON.stringify(seen)); }catch(e){}
+    upd();
+  });
+  mark.appendChild(box);
+  c.appendChild(mark);
+});
+upd();
+</script>
+</body>
+</html>

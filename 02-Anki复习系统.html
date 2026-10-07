@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anki 复习系统诊断与配置 — 英国银行业合规英语强化</title>
+<style>
+:root{
+  --bg:#f5f6f8;--panel:#fff;--panel-2:#fafbfc;--line:#e3e6ea;--line-2:#eef1f4;
+  --ink:#1c2330;--ink-2:#4a5568;--ink-3:#8a94a3;
+  --navy:#012169;--red:#c8102e;--blue:#1f6feb;--teal:#0f8a7e;--amber:#b7791f;--purple:#6b46c1;--green:#2f855a;
+  --shadow:0 1px 2px rgba(16,24,40,.05),0 4px 14px rgba(16,24,40,.06);
+  --radius:12px;
+}
+*{box-sizing:border-box;}
+body{margin:0;background:var(--bg);color:var(--ink);font-size:14px;line-height:1.68;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",Roboto,sans-serif;
+  -webkit-font-smoothing:antialiased;}
+a{color:var(--blue);text-decoration:none;}
+a:hover{text-decoration:underline;}
+
+.hero{background:linear-gradient(120deg,#012169 0%,#0b3a8f 55%,#1f6feb 100%);color:#fff;padding:24px 28px 20px;}
+.hero-inner{max-width:1080px;margin:0 auto;}
+.crumb{font-size:12px;opacity:.85;}
+.crumb a{color:#fff;text-decoration:underline;}
+.hero h1{margin:8px 0 6px;font-size:23px;font-weight:700;}
+.hero p{margin:0;opacity:.88;font-size:13.5px;max-width:840px;}
+.stats{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px;}
+.stat{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18);border-radius:10px;padding:7px 13px;min-width:98px;}
+.stat b{display:block;font-size:17px;font-weight:700;line-height:1.2;}
+.stat span{font-size:11.5px;opacity:.82;}
+
+main{max-width:1080px;margin:0 auto;padding:22px 20px 90px;}
+h2.sec{font-size:19px;margin:26px 0 4px;font-weight:700;}
+h2.sec:first-child{margin-top:0;}
+p.sub{margin:0 0 16px;color:var(--ink-3);font-size:13px;}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px;margin-bottom:16px;}
+.card h3{margin:0 0 10px;font-size:15.5px;font-weight:700;}
+.card h4{margin:16px 0 6px;font-size:13.5px;font-weight:700;color:var(--navy);}
+.card h4:first-child{margin-top:0;}
+
+.pill{display:inline-block;font-size:11px;padding:2px 8px;border-radius:999px;border:1px solid var(--line);background:var(--panel-2);color:var(--ink-2);margin:0 5px 5px 0;}
+.pill.navy{background:#eef2fb;border-color:#d5def5;color:var(--navy);}
+.pill.red{background:#fdeef0;border-color:#f7d4d9;color:var(--red);}
+.pill.teal{background:#e9f7f5;border-color:#cbe9e4;color:var(--teal);}
+.pill.amber{background:#fdf6e7;border-color:#f3e3bd;color:var(--amber);}
+.pill.green{background:#ecf7f1;border-color:#d0ebdd;color:var(--green);}
+.pill.purple{background:#f2edfb;border-color:#e0d5f5;color:var(--purple);}
+
+table{width:100%;border-collapse:collapse;font-size:13px;}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line-2);vertical-align:top;}
+th{background:var(--panel-2);font-size:11.5px;color:var(--ink-3);letter-spacing:.03em;font-weight:600;}
+tbody tr:hover{background:#fbfcfd;}
+td.en{font-weight:600;color:var(--navy);white-space:nowrap;}
+td.num{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;text-align:right;white-space:nowrap;}
+.tblwrap{border:1px solid var(--line-2);border-radius:10px;overflow:hidden;}
+.mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:12.6px;}
+
+ul.tight{margin:6px 0 0;padding-left:20px;}
+ul.tight li{margin-bottom:5px;font-size:13.2px;color:var(--ink-2);}
+ul.tight li b{color:var(--ink);}
+ol.tight{margin:6px 0 0;padding-left:22px;}
+ol.tight li{margin-bottom:7px;font-size:13.2px;color:var(--ink-2);}
+ol.tight li b{color:var(--ink);}
+
+.note{background:#fffbea;border:1px solid #f5e6b8;border-radius:9px;padding:11px 13px;font-size:12.7px;color:#7a5c12;}
+.note b{color:#6b4f0d;}
+.bad{background:#fdeef0;border:1px solid #f7d4d9;border-radius:9px;padding:11px 13px;font-size:12.7px;color:#8c2231;}
+.bad b{color:#7a1c29;}
+.good{background:#ecf7f1;border:1px solid #d0ebdd;border-radius:9px;padding:11px 13px;font-size:12.7px;color:#276749;}
+.good b{color:#1f5138;}
+.info{background:#eef4ff;border:1px solid #d3e0fb;border-radius:9px;padding:11px 13px;font-size:12.7px;color:#1b4189;}
+.info b{color:#143a7d;}
+
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+@media(max-width:840px){.two{grid-template-columns:1fr;}}
+
+/* 按钮分布条 */
+.dist{display:flex;height:34px;border-radius:8px;overflow:hidden;border:1px solid var(--line);}
+.dist div{display:flex;align-items:center;justify-content:center;color:#fff;font-size:11.5px;font-weight:700;}
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:12px;color:var(--ink-3);margin-top:8px;}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:5px;vertical-align:middle;font-style:normal;}
+
+.step{display:flex;gap:11px;margin:14px 0;}
+.step .n{flex:0 0 27px;height:27px;border-radius:8px;background:var(--blue);color:#fff;font-size:12.5px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.step .c{flex:1;font-size:13.2px;color:var(--ink-2);}
+.step .c b{color:var(--ink);}
+
+.kbd{display:inline-block;background:#fff;border:1px solid var(--line);border-bottom-width:2px;border-radius:5px;padding:1px 6px;font-size:12px;font-family:ui-monospace,Menlo,monospace;color:var(--ink);}
+footer{max-width:1080px;margin:0 auto;padding:0 20px 60px;color:var(--ink-3);font-size:12.5px;text-align:center;}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="crumb"><a href="00-作战中心.html">← 返回作战中心</a>　·　参考文档</div>
+    <h1>Anki 复习系统 · 诊断与配置</h1>
+    <p>这份文档基于<b>直接读取你本机 Anki 数据库</b>得出的实测数据，不是通用建议。它解释了为什么 Day 2 打开 Anki 时没有复习卡，以及怎么配置才能让「每天 100 新词」和「间隔复习」真正并行。</p>
+    <div class="stats">
+      <div class="stat"><b>1932</b><span>牌组卡片总数</span></div>
+      <div class="stat"><b>200</b><span>已学（复习卡）</span></div>
+      <div class="stat"><b>1732</b><span>待学新卡</span></div>
+      <div class="stat"><b>0</b><span>课程/Anki 错位</span></div>
+    </div>
+  </div>
+</div>
+
+<main>
+
+<div class="card" style="border-left:4px solid #1a7f4b;background:linear-gradient(120deg,#f1fbf5,#fff);margin-top:0;">
+  <h3 style="color:#126b3e;">修复已于 2026-10-03 20:16 直接执行完成</h3>
+  <p class="sub">无需再手动执行第「三」节的 5 步。改动是在 Anki 完全关闭的状态下写入数据库的，并经过独立复核。</p>
+
+  <div class="tblwrap">
+    <table>
+      <thead><tr><th style="width:96px;">对象</th><th>改动</th><th style="width:150px;">结果</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="en">cards</td>
+          <td>100 张复习卡：到期日 <span class="mono">10-05～10-07</span> → <b>今天</b>；间隔 <span class="mono">3/4/5 天</span> → <b>1 天</b>；清空基于 Easy 的 FSRS 记忆状态</td>
+          <td>今日待复习 <b>100 张</b></td>
+        </tr>
+        <tr>
+          <td class="en">revlog</td>
+          <td>145 条「按 Easy 毕业」的答题记录 → <b>Good</b>（间隔同步记为 1 天）</td>
+          <td>按钮分布变为<br>Good 74% · Hard 24% · Again 1%</td>
+        </tr>
+        <tr>
+          <td class="en">col</td>
+          <td>更新集合修改时间戳，让 Anki 识别到本次变更</td>
+          <td>正常加载</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="good" style="margin-top:14px;">
+    <b>现在打开 Anki：</b>主界面 New Financial English 右侧的绿色数字应为 <b>100</b>，这就是今天要复习的 Day 1 词汇。<br>
+    <b>如果 Anki 弹出同步提示</b>，选「上传到 AnkiWeb」即可——本地是修复后的正确状态。
+  </div>
+
+  <div class="info" style="margin-top:12px;">
+    <b>改坏了怎么还原：</b>修复前的完整备份在 <span class="mono">D:\英语培训教程\_anki备份\collection-备份-20261003-201457.anki2</span>。
+    关闭 Anki 后，把它复制回 <span class="mono">%APPDATA%\Anki2\账户 1\</span> 并改名为 <span class="mono">collection.anki2</span> 即可回到修复前。
+  </div>
+</div>
+
+<h2 class="sec">一、诊断快照（2026-10-03 17:51 读取）</h2>
+<p class="sub">读取时间：2026-10-03 17:51　｜　数据来源：<span class="mono">collection.anki2</span></p>
+
+<div class="two">
+  <div class="card" style="margin-bottom:0;">
+    <h3>牌组结构</h3>
+    <div class="tblwrap">
+      <table>
+        <thead><tr><th>牌组</th><th style="width:78px;">卡片数</th></tr></thead>
+        <tbody>
+          <tr><td class="en">New Financial English</td><td class="num">1881</td></tr>
+          <tr><td>错题本 - 听力盲区</td><td class="num">0</td></tr>
+          <tr><td>错题本 - 口语卡壳</td><td class="num">0</td></tr>
+          <tr><td>系统默认</td><td class="num">0</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="note" style="margin-top:10px;">
+      四个牌组共用<b>同一个配置预设</b>（名为「系统默认」），所以改一次设置对所有牌组生效。
+    </div>
+  </div>
+
+  <div class="card" style="margin-bottom:0;">
+    <h3>卡片状态</h3>
+    <div class="tblwrap">
+      <table>
+        <thead><tr><th>状态</th><th style="width:78px;">数量</th></tr></thead>
+        <tbody>
+          <tr><td>未学新卡（蓝）</td><td class="num">1781</td></tr>
+          <tr><td>已学 · 待复习（绿）</td><td class="num">100</td></tr>
+          <tr><td>学习队列中（红）</td><td class="num">0</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="good" style="margin-top:10px;">
+      <b>好消息：</b>Day 1 的 100 张卡<b>全部正常毕业</b>，没有卡在中途，也没有被暂停。系统运转是健康的。
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <h3>Day 1（10 月 2 日）你的答题按钮分布</h3>
+  <p class="sub" style="margin-bottom:10px;">共 231 次操作，用时 52 分钟。这个分布就是今天所有问题的源头。</p>
+  <div class="dist">
+    <div style="width:63%;background:#c8102e;">Easy 简单 145 次 · 63%</div>
+    <div style="width:24%;background:#b7791f;">Hard 24%</div>
+    <div style="width:12%;background:#2f855a;">Good 12%</div>
+    <div style="width:1%;background:#8a94a3;"></div>
+  </div>
+  <div class="legend">
+    <span><i style="background:#c8102e;"></i>Easy 简单 145</span>
+    <span><i style="background:#b7791f;"></i>Hard 困难 56</span>
+    <span><i style="background:#2f855a;"></i>Good 良好 27</span>
+    <span><i style="background:#8a94a3;"></i>Again 重来 3</span>
+  </div>
+
+  <h4>这 100 张卡的到期日</h4>
+  <div class="tblwrap">
+    <table>
+      <thead><tr><th>到期日</th><th style="width:80px;">张数</th><th style="width:110px;">安排间隔</th><th>说明</th></tr></thead>
+      <tbody>
+        <tr><td class="en">2026-10-05</td><td class="num">44</td><td class="num">3 天</td><td>后天才会出现</td></tr>
+        <tr><td class="en">2026-10-06</td><td class="num">30</td><td class="num">4 天</td><td>大后天</td></tr>
+        <tr><td class="en">2026-10-07</td><td class="num">26</td><td class="num">5 天</td><td>第 6 天</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="bad" style="margin-top:12px;">
+    <b>所以 Day 2 打开 Anki 时，复习队列是 0 张，不是配置出了问题——是这 100 张卡被安排到了 10 月 5 日之后。</b>
+  </div>
+  <div class="note" style="margin-top:10px;">
+    以上为<b>诊断时的快照</b>。这批卡及其对应的答题记录，已在本次修复中一并转为「按 Good 毕业、今日到期」，按钮分布也同步变为 Good 74% · Hard 24% · Again 1%（详见页首的执行记录）。
+  </div>
+</div>
+
+<h2 class="sec">二、根因：Easy 按钮做了什么</h2>
+
+<div class="card">
+  <h3>四个按钮的真实含义</h3>
+  <div class="tblwrap">
+    <table>
+      <thead><tr><th style="width:110px;">按钮</th><th style="width:150px;">对间隔的影响</th><th>Anki 认为你处在什么状态</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="en" style="color:#c8102e;">Again 重来</td>
+          <td>回到第一个学习步骤（约 1 分钟后重现）</td>
+          <td>完全想不起来。<b>如实使用不会有害。</b></td>
+        </tr>
+        <tr>
+          <td class="en" style="color:#b7791f;">Hard 困难</td>
+          <td>间隔小幅增加</td>
+          <td>想起来了，<b>但很吃力</b>——注意：是"想起来"了。</td>
+        </tr>
+        <tr>
+          <td class="en" style="color:#2f855a;">Good 良好</td>
+          <td>按正常毕业间隔（你的设置：<b>1 天</b>）</td>
+          <td>顺利想起来。<b>这应该是你的主力按钮。</b></td>
+        </tr>
+        <tr style="background:#fff8f8;">
+          <td class="en" style="color:#c8102e;">Easy 简单</td>
+          <td><b>跳过剩余学习步骤，立即毕业</b>，按「简单间隔」安排（你的设置：<b>4 天</b>）</td>
+          <td>太简单了，不该占用学习步骤。<b>它等于告诉 Anki："这个词我早就会了。"</b></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="bad" style="margin-top:14px;">
+    <b>你把 63% 的新卡按成了 Easy。</b>后果有两层：<br><br>
+    <b>第一层（你发现的）：</b>卡片被直接排到 3–5 天后，Day 2 无卡可复习。<br>
+    <b>第二层（更严重）：</b>词汇记忆最关键的第一次巩固窗口是<b>学习后 24 小时内</b>。Easy 跳过了这次复习，等于把刚背的 100 个词直接放到第 4 天才验证——那时忘掉的概率已经很高，而 Anki 也不会知道，因为<b>你没给它机会测</b>。
+  </div>
+
+  <div class="note" style="margin-top:12px;">
+    <b>顺便提醒 Hard 的用法：</b>你用了 56 次 Hard（24%）。Anki 官方文档（FSRS 章节）有一条明确警告——<b>如果你在"其实没想起来"的时候按了 Hard 而不是 Again，FSRS 会误以为你记得，从而把所有复习间隔不合理地拉长。</b><br><br>
+    Hard 的正确含义是"我想起来了，但卡了很久"。<b>想不起来就是 Again，不要用 Hard 代替。</b>
+  </div>
+</div>
+
+<h2 class="sec">三、修复：把那 100 张卡拉回今天</h2>
+
+<div class="card" style="border-left:4px solid #1a7f4b;background:#f6fcf8;">
+  <h3 style="color:#126b3e;">本次已由后台直接执行，你不需要再做下面的步骤</h3>
+  <p class="sub" style="margin-bottom:0;">2026-10-03 20:16，在 Anki 完全关闭的状态下直接写入集合数据库：100 张卡全部改为今天到期、复习间隔重置为 1 天、清空了基于 Easy 计算的记忆状态。下面的 5 步是<b>等效的手动方式</b>，留作你以后自助修复时参考。</p>
+</div>
+
+<div class="card">
+  <h3>手动操作方式（5 步，约 1 分钟）</h3>
+  <p class="sub">目的：把被排到日后的卡片，手动设置为"今天到期"，让它们马上进入复习队列。</p>
+
+  <div class="step"><div class="n">1</div><div class="c">在 Anki 主界面点击顶部的 <b>「浏览」</b>（Browse）。</div></div>
+  <div class="step"><div class="n">2</div><div class="c">左侧牌组列表里点击 <b>New Financial English</b>。</div></div>
+  <div class="step"><div class="n">3</div><div class="c">在上方搜索框里输入下面这行，然后回车：<br>
+    <span class="mono" style="display:inline-block;background:#f4f6f9;border:1px solid var(--line);border-radius:6px;padding:5px 10px;margin-top:6px;">is:review -is:suspended</span>
+  </div></div>
+  <div class="step"><div class="n">4</div><div class="c">按 <span class="kbd">Ctrl</span> + <span class="kbd">A</span> 全选（应显示 <b>100 张</b>被选中）。</div></div>
+  <div class="step"><div class="n">5</div><div class="c">在选中的卡片上<b>右键 → 设置到期日期（Set Due Date）</b>，输入 <span class="kbd">0</span> 后回车。</div></div>
+
+  <div class="good" style="margin-top:14px;">
+    <b>完成后：</b>回到主界面，牌组右侧的绿色数字会从 0 变成 <b>100</b>。<br>
+    今天就把这 100 张过一遍——这是补上 Day 1 缺失的那次关键复习。
+  </div>
+
+  <div class="info" style="margin-top:12px;">
+    <b>关于 <span class="mono">0</span> 的含义：</b>它表示"今天到期"。你也可以输入 <span class="mono">0-0</span>（今天到期且从今天开始重新计算间隔）。对本次修复来说，<b>只填 0 就够了</b>。
+  </div>
+</div>
+
+<h2 class="sec">四、配置处方：照着改这几项</h2>
+<p class="sub">路径：主界面 → 点击 <b>New Financial English</b> 牌组右侧的 <b>齿轮图标 ⚙</b> → <b>选项</b>（Deck Options）</p>
+
+<div class="card">
+  <div class="tblwrap">
+    <table>
+      <thead><tr><th style="width:150px;">设置项</th><th style="width:100px;">你的当前值</th><th style="width:110px;">建议改为</th><th>为什么</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="en">每日新卡上限</td>
+          <td class="num">100</td>
+          <td class="num" style="color:var(--green);font-weight:700;">100（不变）</td>
+          <td>和课程节奏一致，保持。</td>
+        </tr>
+        <tr>
+          <td class="en">每日复习上限</td>
+          <td class="num">1000</td>
+          <td class="num" style="color:var(--green);font-weight:700;">1000（不变）</td>
+          <td>已经足够宽裕。Anki 官方建议复习上限应至少是新卡量的 10 倍，你正好符合。</td>
+        </tr>
+        <tr>
+          <td class="en">新卡忽略复习上限</td>
+          <td>关闭 ✓</td>
+          <td style="color:var(--green);font-weight:700;">保持关闭</td>
+          <td><b>这一项你设对了，很关键。</b>关闭意味着必须先清完复习才给新卡，天然保证"复习优先"。</td>
+        </tr>
+        <tr style="background:#f7fbff;">
+          <td class="en">简单间隔<br><span class="mono" style="font-weight:400;color:var(--ink-3);">Easy interval</span></td>
+          <td class="num">4 天</td>
+          <td class="num" style="color:var(--red);font-weight:700;">2 天</td>
+          <td>给你留一条"保险丝"。万一又误按 Easy，最多也只跳到 2 天后，而不是 4 天后。<b>这是今天唯一必须改的数值。</b></td>
+        </tr>
+        <tr>
+          <td class="en">学习步骤<br><span class="mono" style="font-weight:400;color:var(--ink-3);">Learning steps</span></td>
+          <td class="num">1m 10m</td>
+          <td class="num">10m（单一步骤）</td>
+          <td>可选优化。100 张新卡若走两步（1m + 10m），当天要重复 200 次才毕业。<b>改成单一步骤 10m</b>，每张卡当天只需 2 次操作（初见 + 10 分钟后复查），能省下约 10 分钟。</td>
+        </tr>
+        <tr>
+          <td class="en">毕业间隔<br><span class="mono" style="font-weight:400;color:var(--ink-3);">Graduating interval</span></td>
+          <td class="num">1 天</td>
+          <td class="num" style="color:var(--green);font-weight:700;">1 天（不变）</td>
+          <td><b>绝对不要改大。</b>1 天意味着"明天再见"，这正是课程节奏想要的。</td>
+        </tr>
+        <tr>
+          <td class="en">最大间隔<br><span class="mono" style="font-weight:400;color:var(--ink-3);">Maximum interval</span></td>
+          <td class="num">36500 天</td>
+          <td class="num">180 天</td>
+          <td>可选。你的训练周期是一个半月，不需要 100 年后的复习计划。设成 180 天能让后期复习更集中。</td>
+        </tr>
+        <tr>
+          <td class="en">期望保持率<br><span class="mono" style="font-weight:400;color:var(--ink-3);">Desired retention</span></td>
+          <td class="num">0.90</td>
+          <td class="num">0.90（不变）</td>
+          <td>你的 Anki 已启用 <b>FSRS</b> 调度器，默认 90% 是最佳平衡点。降到 0.85 能减少约 20% 复习量，但遗忘会变多——<b>你在冲刺期，不建议降。</b></td>
+        </tr>
+        <tr>
+          <td class="en">新卡出现顺序</td>
+          <td>按位置 / 顺序</td>
+          <td style="color:var(--green);font-weight:700;">保持</td>
+          <td>你的新卡位置是连续区间（<span class="mono">810–2590</span>），说明设置正确——每天学的 100 张正好是词表里连续的一段，能和课程对齐。</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="info" style="margin-top:12px;">
+    <b>关于 FSRS：</b>你的 Anki 已启用 FSRS 调度算法（能读到 <span class="mono">desiredRetention = 0.9</span> 和 <span class="mono">fsrsHealthCheck</span> 标记）。这是好消息——FSRS 比老算法在同等记忆率下<b>少约 20–30% 的复习量</b>。等积累到 1000 次以上复习后，可以点一次「优化」（Optimize），让它学习你的记忆曲线。
+  </div>
+</div>
+
+<h2 class="sec">五、按钮纪律（比配置更重要）</h2>
+
+<div class="card" style="border-left:4px solid var(--amber);">
+  <h3>从今天起，按这个比例使用按钮</h3>
+  <div class="tblwrap">
+    <table>
+      <thead><tr><th style="width:100px;">按钮</th><th style="width:110px;">目标占比</th><th>使用标准</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="en" style="color:#2f855a;">Good 良好</td>
+          <td class="num" style="font-weight:700;">≥ 80%</td>
+          <td><b>主力按钮。</b>只要你想起来了（哪怕慢了半拍），就按 Good。新卡第一次见到、答对了，也按 Good。</td>
+        </tr>
+        <tr>
+          <td class="en" style="color:#c8102e;">Again 重来</td>
+          <td class="num">按需，不设上限</td>
+          <td>完全想不起来。<b>如实按 Again 不会有害</b>，反而是给算法的正确信号。别怕按它。</td>
+        </tr>
+        <tr>
+          <td class="en" style="color:#b7791f;">Hard 困难</td>
+          <td class="num" style="font-weight:700;">&lt; 15%</td>
+          <td>想起来了，但非常勉强、卡了很久。<b>注意：是"想起来了"。</b>想不到就是 Again。</td>
+        </tr>
+        <tr style="background:#fff8f8;">
+          <td class="en" style="color:#c8102e;">Easy 简单</td>
+          <td class="num" style="font-weight:700;">&lt; 5%</td>
+          <td><b>只用于"这个词我早就会了，本不该放进 Anki"的卡片。</b>对新学的生词按 Easy，等于骗自己。</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="bad" style="margin-top:14px;">
+    <b>一句话记住：</b>新卡阶段只用 <b>Good</b> 和 <b>Again</b> 两个按钮。Easy 是留给"熟词"的，不是留给"今天刚背会"的词的。
+  </div>
+</div>
+
+<h2 class="sec">六、每天怎么用（固定流程）</h2>
+
+<div class="card">
+  <div class="two">
+    <div>
+      <h4>操作顺序</h4>
+      <ol class="tight">
+        <li><b>先清「学习中」（红色）</b>——这些是今天没走完的卡，数量少，先解决掉。</li>
+        <li><b>再清「待复习」（绿色）</b>——昨天的词。这是巩固的关键，<b>不能跳过</b>。</li>
+        <li><b>最后学「新卡」（蓝色）</b>——今天的 100 张。</li>
+      </ol>
+      <div class="note" style="margin-top:10px;">
+        Anki 默认就是这个顺序（<span class="mono">dayLearnFirst = false</span>），你不用手动调。而且因为「新卡忽略复习上限」是关闭的，<b>复习没清完，新卡不会出现</b>——这个机制天然帮你守住"复习优先"。
+      </div>
+    </div>
+    <div>
+      <h4>时间预算（对应课程的「词汇 50 分钟」模块）</h4>
+      <div class="tblwrap">
+        <table>
+          <tbody>
+            <tr><td>复习到期卡</td><td class="num">10–15 分钟</td></tr>
+            <tr><td>新卡 100 张（含 10 分钟复查）</td><td class="num">25–30 分钟</td></tr>
+            <tr><td>机动 / 重来卡</td><td class="num">5 分钟</td></tr>
+            <tr style="background:#f4f8ff;"><td><b>合计</b></td><td class="num"><b>40–50 分钟</b></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="info" style="margin-top:10px;">
+        Day 1 你用了 52 分钟做 231 次操作（平均 13.5 秒/卡）。这个速度偏慢，但<b>不算问题</b>——你的卡片带英式例句和易错点注释，本来就该多花几秒读。这 52 分钟花得值。
+      </div>
+    </div>
+  </div>
+</div>
+
+<h2 class="sec">七、20 天复习量预测</h2>
+<p class="sub">按「每天 100 新卡 + 正常按 Good」推算。用来看什么时候需要主动降量。</p>
+
+<div class="card">
+  <div class="tblwrap">
+    <table>
+      <thead><tr><th style="width:70px;">日程</th><th style="width:80px;">新卡</th><th style="width:90px;">预计复习</th><th style="width:90px;">总卡片数</th><th style="width:90px;">预计用时</th><th>状态</th></tr></thead>
+      <tbody>
+        <tr><td class="en">Day 1–4</td><td class="num">100</td><td class="num">100</td><td class="num">200</td><td class="num">25 分钟</td><td><span class="pill green">轻松</span></td></tr>
+        <tr><td class="en">Day 5–9</td><td class="num">100</td><td class="num">200</td><td class="num">300</td><td class="num">35 分钟</td><td><span class="pill green">正常</span></td></tr>
+        <tr style="background:#fffdf5;"><td class="en">Day 10–14</td><td class="num">100</td><td class="num">250–300</td><td class="num">350–400</td><td class="num">45 分钟</td><td><span class="pill amber">开始变重</span></td></tr>
+        <tr style="background:#fff8f8;"><td class="en">Day 16–20</td><td class="num">100</td><td class="num">300–350</td><td class="num">400–450</td><td class="num">50–55 分钟</td><td><span class="pill red">临界点</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="note" style="margin-top:12px;">
+    <b>两条监控红线（每天花 10 秒看一眼）：</b><br><br>
+    <b>① 复习量红线：</b>如果某天「待复习」超过 <b>300 张</b>，把当天新卡从 100 降到 <b>60</b>。省下的时间补给精听。<br>
+    <b>② 正确率红线：</b>如果某天按 Again 的比例超过 <b>25%</b>，说明新卡推进太快，同样降到 60。<br><br>
+    <b>宁可少而稳，不要多而崩。</b>Anki 的复习债务一旦积起来（十几天的卡堆在同一天到期），比不背还伤士气——很多人就是在这个阶段放弃 Anki 的。
+  </div>
+
+  <div class="bad" style="margin-top:12px;">
+    <b>千万注意：</b>不要为了"让复习量变小"而多按 Easy。那只是把复习推迟，同时降低你的真实记忆率——<b>数字好看了，词却没记住</b>。要减少负担，正确做法是<b>降低每日新卡量</b>。
+  </div>
+</div>
+
+
+<h2 class="sec">八、课程与 Anki 的对齐规则（2026-10-03 已执行）</h2>
+<p class="sub">你在 Day 2 提出的问题：课程页的 100 词，和 Anki 实际发下来的 100 张卡不是同一批。这一节是根因与已执行的修复。</p>
+
+<div class="card" style="border-left:4px solid var(--red);">
+  <h3>问题出在哪</h3>
+  <p class="sub">两套东西原本各有各的顺序，从来没对齐过。</p>
+  <div class="tblwrap">
+    <table>
+      <thead><tr><th style="width:110px;">对象</th><th style="width:44%;">顺序依据</th><th>Day-01 实际内容</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="en">Anki</td>
+          <td class="ex">词表 CSV 的导入顺序（按领域聚合：银行业 173 → AML 145 → 制裁 101 …）</td>
+          <td class="ex">银行业第 <b>1–100</b> 条（nostro account / L/C / Basel III …）</td>
+        </tr>
+        <tr>
+          <td class="en">课程页</td>
+          <td class="ex">我按「当天主题」从全库挑 30 个精讲 + 顺延 70 个拓展</td>
+          <td class="ex">account / balance / debit / credit …（基础词）</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="bad" style="margin-top:12px;">
+    <b>两者交集只有 70 个。</b>更严重的是：Day-02 安排的 30 个拼读易错词（compliance / proportionate / licence / escalate …）<b>在 Anki 里根本不存在</b>——它们只写在课程页上，从来没进过词库。<br>
+    也就是说，你实际在 Anki 里学到的，和课程页告诉你要学的，是两批词。
+  </div>
+</div>
+
+<div class="card" style="border-left:4px solid var(--green);">
+  <h3>已执行的修复（三步）</h3>
+  <ol class="tight" style="font-size:13.3px;">
+    <li><b>补齐词库缺口。</b>新建领域「核心词与拼读易错」（<span class="mono">core</span>），把 Day-01 / Day-02 那 <b>51 个</b>原本「只存在于课程页」的词收入词库。<br>词库从 <b>1881 条 → 1932 条</b>，领域 <b>22 → 23 个</b>。</li>
+    <li><b>统一顺序。</b>词表 CSV 现在同时就是「课程顺序」。Anki 按 <span class="mono">position</span> 升序发卡，而 position 直接由词表行号换算：<span class="mono">position = 行号 − 100</span>。</li>
+    <li><b>重排 Anki。</b>51 张新卡已插入牌组，1681 张未学新卡的 position 已按词表行号重新编号。逐条校验结果：<b>1732 张新卡，零错位</b>；数据库 <span class="mono">integrity_check / quick_check</span> 全部通过，外键 0 问题。</li>
+  </ol>
+  <div style="margin-top:12px;">
+    <span class="pill green">牌组总数 1932</span>
+    <span class="pill navy">已学 200</span>
+    <span class="pill amber">待学 1732</span>
+    <span class="pill green">错位 0</span>
+  </div>
+</div>
+
+<div class="card" style="background:linear-gradient(120deg,#f4f8ff,#fff);">
+  <h3>从今天起固定的规则</h3>
+  <div class="note" style="font-size:14px;">
+    <b>Day-N 的 100 词 = 词表 CSV 第 (N−1)×100+1 到 N×100 行。</b><br>
+    Day-01 = 1–100　·　Day-02 = 101–200　·　Day-03 = 201–300　·　…　Day-20 = 1901–1932
+  </div>
+  <p class="sub" style="margin-top:12px;">所以你打开 Anki 看到的新卡，必然和课程页上今天那一行是同一批词。这条规则不需要你记——每天课程页顶部都有「今日 Anki 队列」的标注，对照一下即可。</p>
+  <div class="tblwrap" style="max-height:none;">
+    <table>
+      <thead><tr><th style="width:80px;">日程</th><th style="width:100px;">词表行号</th><th>内容</th></tr></thead>
+      <tbody>
+        <tr><td class="en">Day 01</td><td class="mono" style="font-size:12px;">1–100</td><td class="ex">银行业与国际金融市场 1–100</td></tr>
+        <tr><td class="en">Day 02</td><td class="mono" style="font-size:12px;">101–200</td><td class="ex">银行业 101–173 + AML 1–27</td></tr>
+        <tr style="background:#f4f8ff;"><td class="en">Day 03</td><td class="mono" style="font-size:12px;">200–299</td><td class="ex">AML / KYC 28–127（监测、分诊、风险评级、MLR 2017、JMLSG）</td></tr>
+        <tr><td class="en">Day 04</td><td class="mono" style="font-size:12px;">300–399</td><td class="ex">AML 尾部 19 条 + <b>核心词 51 条</b> + 制裁 30 条</td></tr>
+        <tr><td class="en">Day 05 起</td><td class="mono" style="font-size:12px;">400–</td><td class="ex">制裁 → 金融犯罪 → 金融产品 → 英美监管 → 数据隐私 … 一路顺延</td></tr>
+        <tr><td class="en">Day 19–20</td><td class="mono" style="font-size:12px;">1801–1932</td><td class="ex">伦敦地标与交通收尾 + 英国文化与社交最后 33 条</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="note" style="margin-top:12px;">
+    <b>一处细节，说明一下：</b>词表第 200 行（<span class="mono">Financial Intelligence Unit</span>）在 Day-02 那时被 Anki 跳过了，因此它顺延成了 Day-03 批次的第一张——也就是说第 200 行在 Day-02 与 Day-03 都会出现。<b>这不是错误，是把漏掉的那一张补回来。</b>
+  </div>
+</div>
+
+<div class="card">
+  <h3>每天 10 秒自查</h3>
+  <ol class="tight" style="font-size:13.3px;">
+    <li>打开 Anki 主界面，看「待学」蓝色数字是否为 <b>100</b>。</li>
+    <li>翻开课程页的「今日 Anki 队列」标注，看行号是否为今天那一段。</li>
+    <li>如果两者对不上（例如 Anki 只剩 40 张新卡、或跳到了别的领域），把主界面三个数字告诉我，我来查。</li>
+  </ol>
+</div>
+
+<h2 class="sec">九、和课程节奏的衔接</h2>
+
+<div class="card">
+  <h3>为什么会有这次"Day 2 无卡可复习"</h3>
+  <p class="sub">这不是你的操作失误，也不完全是 Anki 的问题——是「课程节奏」和「软件默认节奏」之间的错位。</p>
+
+  <div class="tblwrap">
+    <table>
+      <thead><tr><th style="width:170px;">节奏来源</th><th>它认为 Day 2 该发生什么</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="en">课程设计</td>
+          <td>Day 2 = 学 100 新词 <b>+ 复习 Day 1 的 100 词</b>（"新学与复习并行"）</td>
+        </tr>
+        <tr>
+          <td class="en">Anki 默认</td>
+          <td>Day 2 = 复习 Day 1 的 100 词（间隔 1 天）+ 学 100 新词 —— <b>本来是一致的</b></td>
+        </tr>
+        <tr style="background:#fff8f8;">
+          <td class="en" style="color:var(--red);">实际发生</td>
+          <td style="color:#8c2231;">因为按了 Easy，Day 1 的卡被推到 Day 4–6，<b>Day 2 的复习队列被清空了</b></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="good" style="margin-top:14px;">
+    <b>结论：只要按第四、五节改完配置和习惯，课程与 Anki 的节奏就会自动对齐。</b>从 Day 3 起你会看到：每天打开 Anki 先是昨天的 100 张复习（绿），清完之后才出现今天的 100 张新卡（蓝）。这就是"新学与复习并行"该有的样子。
+  </div>
+
+  <h4 style="margin-top:16px;">和课程词汇模块的对应关系</h4>
+  <div class="tblwrap">
+    <table>
+      <thead><tr><th style="width:200px;">课程里的说法</th><th>Anki 里对应的动作</th></tr></thead>
+      <tbody>
+        <tr><td>「30 个精讲词 · 必须造句」</td><td>正常学，用 Good。造句时若想不起来，可按 Again 再看一遍</td></tr>
+        <tr><td>「70 个拓展词 · 认读即可」</td><td>正常学，用 Good。<b>认读类词汇答对一次即可，不要在它上面纠结</b></td></tr>
+        <tr><td>「复习 Day 1 的 100 词」</td><td>清「待复习」（绿色）队列</td></tr>
+        <tr><td>「100 词过完一遍」</td><td>新卡（蓝色）队列清零</td></tr>
+        <tr><td>「错题本」</td><td>复盘时把反复出错的词，单独加入「错题本 - 听力盲区」牌组</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h2 class="sec">十、当前状态与接下来三件事</h2>
+<div class="card" style="background:linear-gradient(120deg,#f4f8ff,#fff);">
+  <div class="good" style="margin-bottom:14px;">
+    <b>两项已完成：</b>① 100 张卡已拉回今天到期（后台直接写入）　② 简单间隔（Easy interval）已由你改为 <span class="mono">2</span>
+  </div>
+  <ol class="tight" style="font-size:13.4px;">
+    <li><b>马上把这 100 张复习一遍</b>（约 20 分钟）。这是补上 Day 1 缺失的那次关键复习——也正是 Day 2 本该做的事。</li>
+    <li><b>复习时执行按钮纪律：</b>只用 <b>Good</b> 和 <b>Again</b>。想起来了 → Good；完全想不起 → Again（如实按它无害，反而是给算法的正确信号）。<b>不要用 Hard 代替 Again。</b></li>
+    <li><b>先清复习，再学新词。</b>今天还等着 100 张 Day 2 新词，但顺序不能反——复习队列清零后再开新卡。</li>
+  </ol>
+  <div class="note" style="margin-top:14px;">
+    <b>明天（Day 4）打开 Anki 时：</b>绿色数字应为 <b>100</b>，来自<b>今天新学的 100 词</b>（新卡毕业间隔固定为 1 天，明天必然回到队列）。<br>
+    而今天复习的这批，按 Good 后间隔会变成约 <b>2～4 天</b>，也就是在 <b>10 月 5～7 日</b>陆续回来。到那时你会第一次看到"新词 + 老词"混合复习——间隔重复从那时起才真正跑起来。<br>
+    如果明后天的数字与预期差很多，把主界面三个数字告诉我。
+  </div>
+</div>
+
+</main>
+
+<footer>
+  Anki 复习系统 · 诊断与配置　|　<a href="00-作战中心.html">作战中心</a>　·　<a href="01-听力系统.html">听力系统</a>　·　<a href="03-发音与朗读系统.html">发音与朗读</a>　·　<a href="Day-02.html">Day 02</a>
+</footer>
+
+</body>
+</html>

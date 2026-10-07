@@ -1,0 +1,1170 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Day 03 · AML 核心 I：警报分诊 · SAR 上报 · 风险评级 — 英国银行业合规英语强化</title>
+<style>
+:root{
+  --bg:#f5f6f8;--panel:#fff;--panel-2:#fafbfc;--line:#e3e6ea;--line-2:#eef1f4;
+  --ink:#1c2330;--ink-2:#4a5568;--ink-3:#8a94a3;
+  --navy:#012169;--red:#c8102e;--blue:#1f6feb;--teal:#0f8a7e;--amber:#b7791f;--purple:#6b46c1;--green:#2f855a;
+  --shadow:0 1px 2px rgba(16,24,40,.05),0 4px 14px rgba(16,24,40,.06);
+  --radius:12px;
+}
+*{box-sizing:border-box;}
+body{margin:0;background:var(--bg);color:var(--ink);font-size:14px;line-height:1.68;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",Roboto,sans-serif;
+  -webkit-font-smoothing:antialiased;}
+a{color:var(--blue);text-decoration:none;}
+a:hover{text-decoration:underline;}
+
+.hero{background:linear-gradient(120deg,#012169 0%,#0b3a8f 55%,#1f6feb 100%);color:#fff;padding:24px 28px 20px;}
+.hero-inner{max-width:1080px;margin:0 auto;}
+.crumb{font-size:12px;opacity:.85;}
+.crumb a{color:#fff;text-decoration:underline;}
+.hero h1{margin:8px 0 6px;font-size:23px;font-weight:700;}
+.hero p{margin:0;opacity:.88;font-size:13.5px;max-width:820px;}
+.stats{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px;}
+.stat{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18);border-radius:10px;padding:7px 13px;min-width:98px;}
+.stat b{display:block;font-size:17px;font-weight:700;line-height:1.2;}
+.stat span{font-size:11.5px;opacity:.82;}
+
+main{max-width:1080px;margin:0 auto;padding:22px 20px 90px;}
+h2.sec{font-size:18px;margin:0 0 4px;font-weight:700;}
+p.sub{margin:0 0 16px;color:var(--ink-3);font-size:13px;}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px;margin-bottom:16px;}
+.card h3{margin:0 0 10px;font-size:15.5px;font-weight:700;}
+.card h4{margin:16px 0 6px;font-size:13.5px;font-weight:700;color:var(--navy);}
+.card h4:first-child{margin-top:0;}
+.mod{display:flex;align-items:center;gap:12px;margin-bottom:10px;}
+.mod-no{flex:0 0 44px;height:44px;border-radius:11px;background:var(--navy);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1.05;}
+.mod-no b{font-size:15px;}
+.mod-no span{font-size:9px;opacity:.8;letter-spacing:.06em;}
+.mod-tt{flex:1;}
+.mod-tt h3{margin:0;font-size:16px;}
+.mod-tt p{margin:1px 0 0;font-size:12.5px;color:var(--ink-3);}
+.mod-time{font-size:11.5px;color:#fff;background:var(--teal);border-radius:999px;padding:3px 10px;white-space:nowrap;}
+.mod-time.hot{background:var(--red);}
+
+.pill{display:inline-block;font-size:11px;padding:2px 8px;border-radius:999px;border:1px solid var(--line);background:var(--panel-2);color:var(--ink-2);margin:0 5px 5px 0;}
+.pill.navy{background:#eef2fb;border-color:#d5def5;color:var(--navy);}
+.pill.red{background:#fdeef0;border-color:#f7d4d9;color:var(--red);}
+.pill.teal{background:#e9f7f5;border-color:#cbe9e4;color:var(--teal);}
+.pill.amber{background:#fdf6e7;border-color:#f3e3bd;color:var(--amber);}
+.pill.purple{background:#f2edfb;border-color:#e0d5f5;color:var(--purple);}
+.pill.green{background:#ecf7f1;border-color:#d0ebdd;color:var(--green);}
+
+ul.tight{margin:6px 0 0;padding-left:20px;}
+ul.tight li{margin-bottom:5px;font-size:13.2px;color:var(--ink-2);}
+ul.tight li b{color:var(--ink);}
+ol.tight{margin:6px 0 0;padding-left:22px;}
+ol.tight li{margin-bottom:6px;font-size:13.2px;color:var(--ink-2);}
+ol.tight li b{color:var(--ink);}
+
+.ck{display:flex;align-items:flex-start;gap:10px;padding:8px 0;border-bottom:1px solid var(--line-2);cursor:pointer;}
+.ck:last-child{border-bottom:0;}
+.ck:hover{background:var(--panel-2);}
+.ck .bx{flex:0 0 17px;width:17px;height:17px;border:1.5px solid var(--line);border-radius:5px;background:#fff;margin-top:3px;}
+.ck.on .bx{background:var(--green);border-color:var(--green);}
+.ck.on .bx::after{content:"✓";color:#fff;font-size:11px;display:flex;justify-content:center;line-height:15px;}
+.ck .tx{flex:1;font-size:13.2px;color:var(--ink-2);}
+.ck.on .tx{color:var(--ink-3);text-decoration:line-through;}
+
+.script{background:#fbfcfd;border:1px solid var(--line-2);border-radius:10px;padding:14px 16px;font-size:13.4px;line-height:1.95;color:var(--ink);}
+.script em{font-style:normal;background:#fff2c9;padding:0 1px;border-radius:2px;}
+.script u{text-decoration:none;border-bottom:2px solid #b9d4ff;}
+.script .rhythm{color:var(--red);font-weight:600;}
+.script .spk{font-weight:700;color:var(--navy);}
+.mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:12.6px;}
+.ipa{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--amber);font-size:12.4px;}
+
+table{width:100%;border-collapse:collapse;font-size:13px;}
+th,td{text-align:left;padding:8px 9px;border-bottom:1px solid var(--line-2);vertical-align:top;}
+th{background:var(--panel-2);font-size:11.5px;color:var(--ink-3);letter-spacing:.03em;text-transform:uppercase;font-weight:600;position:sticky;top:0;z-index:2;}
+tbody tr:hover{background:#fbfcfd;}
+td.en{font-weight:600;color:var(--navy);white-space:nowrap;}
+td.ph{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--amber);font-size:12px;white-space:nowrap;}
+td.ex{color:var(--ink-2);font-size:12.6px;}
+td.ex i{display:block;color:var(--ink-3);font-style:normal;font-size:12px;margin-top:2px;}
+.tblwrap{max-height:620px;overflow:auto;border:1px solid var(--line-2);border-radius:10px;}
+.vck{width:16px;height:16px;border:1.5px solid var(--line);border-radius:4px;background:#fff;display:inline-block;cursor:pointer;vertical-align:middle;}
+.vck.on{background:var(--green);border-color:var(--green);}
+.vck.on::after{content:"✓";color:#fff;font-size:10px;display:flex;justify-content:center;line-height:14px;}
+
+.btn{appearance:none;font:inherit;font-size:13px;padding:7px 14px;border-radius:8px;border:1px solid var(--line);background:#fff;color:var(--ink);cursor:pointer;}
+.btn:hover{background:var(--panel-2);}
+.btn.primary{background:var(--navy);border-color:var(--navy);color:#fff;}
+.btn.primary:hover{background:#0b3a8f;}
+.reveal{margin-top:10px;}
+.revbd{display:none;margin-top:10px;}
+.revbd.on{display:block;}
+
+.timer{display:flex;align-items:center;gap:10px;flex-wrap:wrap;background:var(--panel-2);border:1px solid var(--line-2);border-radius:10px;padding:10px 12px;}
+.timer .clock{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:24px;font-weight:700;color:var(--navy);min-width:76px;}
+.timer .clock.warn{color:var(--red);}
+
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+@media(max-width:840px){.two{grid-template-columns:1fr;}}
+.rowline{display:flex;gap:9px;font-size:13px;padding:7px 0;border-bottom:1px solid var(--line-2);}
+.rowline:last-child{border-bottom:0;}
+.rowline .t{flex:0 0 34%;font-weight:600;color:var(--navy);}
+.rowline .m{flex:1;color:var(--ink-2);}
+.note{background:#fffbea;border:1px solid #f5e6b8;border-radius:9px;padding:11px 13px;font-size:12.7px;color:#7a5c12;}
+.note b{color:#6b4f0d;}
+.bad{background:#fdeef0;border:1px solid #f7d4d9;border-radius:9px;padding:11px 13px;font-size:12.7px;color:#8c2231;}
+.good{background:#ecf7f1;border:1px solid #d0ebdd;border-radius:9px;padding:11px 13px;font-size:12.7px;color:#276749;}
+.info{background:#eef4ff;border:1px solid #d3e0fb;border-radius:9px;padding:11px 13px;font-size:12.7px;color:#1b4189;}
+.rate{display:flex;gap:6px;align-items:center;margin:4px 0 10px;}
+.rate span.lb{flex:0 0 260px;font-size:13px;color:var(--ink-2);}
+.rate button{width:32px;height:30px;border:1px solid var(--line);background:#fff;border-radius:7px;cursor:pointer;font:inherit;font-size:12.5px;color:var(--ink-2);}
+.rate button:hover{border-color:var(--blue);}
+.rate button.on{background:var(--navy);border-color:var(--navy);color:#fff;font-weight:700;}
+.bar{height:9px;background:var(--line-2);border-radius:999px;overflow:hidden;margin:6px 0 4px;}
+.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--navy),var(--blue));border-radius:999px;transition:width .3s;}
+.tagline{display:flex;gap:10px;font-size:12.5px;color:var(--ink-3);flex-wrap:wrap;}
+
+.step{display:flex;gap:10px;margin:14px 0 8px;}
+.step .n{flex:0 0 26px;height:26px;border-radius:8px;background:var(--blue);color:#fff;font-size:12.5px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.step .h{font-size:14px;font-weight:700;color:var(--navy);padding-top:2px;}
+.step .h small{display:block;font-weight:400;font-size:12px;color:var(--ink-3);}
+
+.hit{color:var(--red);font-weight:600;}
+.seg{background:#eef4ff;border-radius:4px;padding:0 2px;}
+.lk{background:#e9f7f5;border-radius:4px;padding:0 2px;}
+
+footer{max-width:1080px;margin:0 auto;padding:0 20px 60px;color:var(--ink-3);font-size:12.5px;text-align:center;}
+/*PRON_CSS_START*/
+.btn.sm{font-size:12px;padding:5px 10px;border-radius:7px;}
+.prhead{display:flex;align-items:flex-start;gap:10px;flex-wrap:wrap;margin:0 0 6px;}
+.prno{flex:0 0 auto;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:11.5px;font-weight:700;color:#fff;background:var(--teal);border-radius:6px;padding:3px 8px;}
+.prtt{font-size:15px;font-weight:700;flex:1;min-width:190px;color:var(--navy);}
+.prmeta{font-size:11.5px;color:var(--ink-3);padding-top:4px;}
+.prbox{background:#fbfcfd;border:1px solid var(--line-2);border-left:3px solid var(--teal);border-radius:10px;padding:15px 17px;font-size:15.2px;line-height:2.1;color:var(--ink);font-family:Georgia,"Times New Roman",-apple-system,"PingFang SC","Microsoft YaHei",serif;}
+.prbox .pp{margin-bottom:9px;}
+.prbox .pp:last-child{margin-bottom:0;}
+.prbox b.ps{color:var(--red);font-weight:700;}
+.prbox u.pl{text-decoration:none;background:#e9f1ff;border-radius:3px;padding:0 1px;}
+.prbox em.px{font-style:normal;background:#fff2c9;border-radius:3px;padding:0 1px;}
+.prbox .who{font-weight:700;color:var(--navy);font-family:-apple-system,"Segoe UI","Microsoft YaHei",sans-serif;font-size:13px;}
+.prleg{display:flex;gap:14px;flex-wrap:wrap;font-size:12px;color:var(--ink-3);margin:9px 0 0;}
+.prleg i{font-style:normal;padding:0 3px;border-radius:3px;}
+.prwhy{font-size:12.3px;color:var(--ink-3);display:block;margin:8px 0 0;}
+.prseg{border-top:1px dashed var(--line);padding-top:15px;margin-top:17px;}
+.prseg:first-child{border-top:0;padding-top:0;margin-top:0;}
+.przh{font-size:13.2px;color:var(--ink-2);background:var(--panel-2);border:1px solid var(--line-2);border-radius:9px;padding:12px 14px;line-height:1.9;}
+/*PRON_CSS_END*/
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="crumb"><a href="00-作战中心.html">← 返回作战中心</a>　·　第 1 周：地基与英式英语适应　·　<a href="Day-02.html">Day 02</a></div>
+    <h1>Day 03 · AML 核心 I：警报分诊 · SAR 上报 · 风险评级</h1>
+    <p>前两天的 200 个词以「银行业与国际金融」为主，今天的 100 个词整批进入 <b>AML / KYC</b>——而且是这条线上最硬的一段：<b>交易监测 → 警报分诊 → 风险评级 → 类型学 → 上报与同意制度 → 整改与治理</b>。这不是巧合：你的词库是按实务优先级排的（银行 → AML → 核心词 → 制裁 → 金融犯罪 → …），所以第 1 周就会撞上 AML。今天的听力脚本，就是这套流程在会议室里被讲出来的样子。</p>
+    <div class="stats">
+      <div class="stat"><b>4 h 15 m</b><span>今日训练量</span></div>
+      <div class="stat"><b>6</b><span>训练模块</span></div>
+      <div class="stat"><b>100</b><span>核心词</span></div>
+      <div class="stat"><b id="statPct">0%</b><span>完成进度</span></div>
+    </div>
+  </div>
+</div>
+
+<main>
+
+<!-- 进度 -->
+<div class="card">
+  <h3>今日总进度</h3>
+  <div class="bar"><i id="barAll" style="width:0%"></i></div>
+  <div class="tagline"><span id="progText">0 / 0 项已完成</span></div>
+</div>
+
+<div class="info" style="margin-bottom:16px;">
+  <b>今天的节奏安排：</b>90 分钟听力仍然是单日最大块，但今天换了一种练法——<b>听力材料与词汇是同一个主题（AML）</b>，所以你听完会议对话之后，立刻就会在词汇模块看到刚才那些词。这种「先听到、再背到、再读到」的顺序，比先背单词再听力有效得多。<b>请按 00 → 01 → 02 → 03 → 04 → 05 的顺序做</b>。时间不够时优先砍模块 05 的写作，<b>模块 01 的 B 段（会议对话精听）不能砍</b>。
+</div>
+
+<!-- 模块 0 -->
+<div class="card">
+  <div class="mod">
+    <div class="mod-no"><b>00</b><span>WARMUP</span></div>
+    <div class="mod-tt"><h3>昨日复盘 + 音素自测 + 今天为什么这样排</h3><p>先对齐，再动手</p></div>
+    <div class="mod-time">15 分钟</div>
+  </div>
+
+  <h4>第一步：Day 02 的数据回填（5 分钟）</h4>
+  <p class="sub" style="margin-bottom:8px;">打开 <span class="mono">学习记录/Day-02.md</span>，把昨天 5 项自评的分数填进去。<b>那份数据决定我后面几周的配比</b>——尤其是「元音分辨错了几组」和「精听脚本 A 的盲听理解率」这两项。</p>
+  <div class="note" style="margin-bottom:4px;">
+    <b>顺便做一件事：</b>把 Day-02 错题本里的「听力盲区」条目按原因分类——<b>读音错记</b>（我以为读法 A，实际是 B）还是<b>语流问题</b>（连读、弱读、吞音）。如果 6 成以上是读音错记，说明你要把发音练习的比重再往上提。
+  </div>
+
+  <h4 style="margin-top:18px;">第二步：今天的音素自测（5 分钟，3 组、18 个词）</h4>
+  <p class="sub" style="margin-bottom:6px;">今天突破三组最难缠的音：<b>/ɪ/ 与 /iː/</b>（松紧）、<b>/ɜː/ 与 /ɔː/</b>（两条长音）、<b>词尾辅音串</b>（-s / -ed / -ths / -sks）。<b>先不看音标出声读一遍</b>，再展开答案对照。<b>词尾辅音串是中国人丢分最多的一项</b>——不是不会读音，而是习惯性地在词尾加一个元音。</p>
+  <div class="tblwrap" style="max-height:none;">
+    <table>
+      <thead><tr><th style="width:22%;">单词</th><th style="width:24%;">你的读法（先自己读）</th><th>正确读音</th><th>你要注意的点</th></tr></thead>
+      <tbody>
+        <tr><td class="en">feel</td><td class="ex">先自己读一遍再对答案</td><td class="ph">/fiːl/</td><td class="ex"><span class="mono">/iː/</span> 长而紧，嘴角向两边拉；不是 <span class="mono">/fɪl/</span></td></tr>
+        <tr><td class="en">fill</td><td class="ex">—</td><td class="ph">/fɪl/</td><td class="ex"><span class="mono">/ɪ/</span> 短而松，舌位比 <span class="mono">/iː/</span> 低半档、嘴角不拉</td></tr>
+        <tr><td class="en">work</td><td class="ex">—</td><td class="ph">/wɜːk/</td><td class="ex"><span class="mono">/ɜː/</span> 长音、<b>不卷舌</b>。英式 non-rhotic：拼写里的 r 完全不发音</td></tr>
+        <tr><td class="en">walk</td><td class="ex">—</td><td class="ph">/wɔːk/</td><td class="ex"><span class="mono">/ɔː/</span> 长音 + 圆唇；<span class="mono">l</span> 不发音，只有三个音</td></tr>
+        <tr><td class="en">bird</td><td class="ex">—</td><td class="ph">/bɜːd/</td><td class="ex">同上，r 不发音；读成 <span class="mono">/bɜːrd/</span> 会立刻暴露美式习惯</td></tr>
+        <tr><td class="en">board</td><td class="ex">—</td><td class="ph">/bɔːd/</td><td class="ex">和我方 <b>Board（董事会）</b>同一个词，重音在唯一的音节上</td></tr>
+        <tr><td class="en">thresholds</td><td class="ex">—</td><td class="ph">/ˈθreʃhəʊldz/</td><td class="ex">词尾 <span class="mono">/ldz/</span> 三个辅音一口气收住，<b>不许加 /ɪ/</b></td></tr>
+        <tr><td class="en">risks</td><td class="ex">—</td><td class="ph">/rɪsks/</td><td class="ex">词尾 <span class="mono">/sks/</span>；读成 <span class="mono">/ˈrɪskɪs/</span> 是典型错误</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h4 style="margin-top:18px;">第三步：今天为什么排成 AML（读一遍，30 秒）</h4>
+  <div class="two">
+    <div class="info">
+      <b>词汇按什么走：</b>严格按 <b>词表 CSV 顺序</b> —— 也就是 Anki 发卡的顺序。今天发的 100 张 = 词表<b>第 200–299 行</b> = <b>AML / KYC 第 27–126 个概念</b>。已逐条核对：<b>与 Anki 队列零差异</b>。
+    </div>
+    <div class="info">
+      <b>听力/口语/写作按什么走：</b>跟着<b>当天的词汇主题</b>走，而不是硬套原计划。今天的词表是 AML，所以今天的会议脚本、绕口句、写作任务<b>全部是 AML 场景</b>——这样一天之内同一个概念会被你听到 3 次、说出 2 次、写下 1 次。
+    </div>
+  </div>
+
+  <h4 style="margin-top:16px;">第四步：开机清单</h4>
+  <div id="ckSetup"></div>
+</div>
+
+<!-- 模块 1 -->
+<div class="card" style="border-left:4px solid var(--red);">
+  <div class="mod">
+    <div class="mod-no" style="background:var(--red);"><b>01</b><span>LISTEN</span></div>
+    <div class="mod-tt"><h3>听力：四段式（今天的重点是 B 段会议对话）</h3><p>音素听辨 → 会议对话精听 → 词块听写 → 多口音真实材料</p></div>
+    <div class="mod-time hot">90 分钟</div>
+  </div>
+
+  <div class="note" style="margin-bottom:16px;">
+    <b>今天的听力设计逻辑：</b>A 段修耳朵，B 段给你一段<b>真实语速的 AML 会议对话</b>（你已经认识的主角 Maya 和 Tom 回来了），C 段把今天的 100 个词放进真实句子里做<b>听写</b>，D 段上真实材料并第一次引入<b>多口音</b>。四段是递进的：<b>A 段决定你能不能分辨，B 段决定你能不能跟上，C 段决定你能不能写下来，D 段决定你能不能听懂真人。</b>
+  </div>
+
+  <!-- A 段 -->
+  <div class="step"><div class="n">A</div><div class="h">音素听辨：18 组最小对立体<small>先让耳朵分得清，再谈听得懂 · 20 分钟</small></div></div>
+  <p class="sub" style="margin-bottom:8px;">用 Edge「朗读此页」或任意 TTS 逐组播放（每对之间停 2 秒），<b>不看音标先判断你听到的是左还是右</b>，写出答案再对。做错的组用红笔圈出。<b>今天的 18 组只围绕三组音系</b>，第三组（词尾辅音串）是重点。</p>
+  <div class="tblwrap" style="max-height:none;">
+    <table>
+      <thead><tr><th style="width:6%;">#</th><th style="width:20%;">左</th><th style="width:20%;">右</th><th style="width:22%;">关键差别</th><th>说明</th></tr></thead>
+      <tbody>
+        <tr><td colspan="5" style="background:#f4f8ff;font-weight:700;color:var(--navy);font-size:12.5px;">① /ɪ/ 与 /iː/ —— 松紧之别（4 组）</td></tr>
+        <tr><td>1</td><td class="en">sit <span class="ph">/sɪt/</span></td><td class="en">seat <span class="ph">/siːt/</span></td><td class="ex"><span class="mono">/ɪ/</span> 短松<br><span class="mono">/iː/</span> 长紧</td><td class="ex">不是长短的差别，是<b>肌肉松紧</b>的差别。<span class="mono">/iː/</span> 要把嘴角向两边拉</td></tr>
+        <tr><td>2</td><td class="en">fit <span class="ph">/fɪt/</span></td><td class="en">feet <span class="ph">/fiːt/</span></td><td class="ex">同上</td><td class="ex">换一组辅音再验证，确认你是靠元音判断而不是靠辅音</td></tr>
+        <tr><td>3</td><td class="en">slip <span class="ph">/slɪp/</span></td><td class="en">sleep <span class="ph">/sliːp/</span></td><td class="ex">同上</td><td class="ex"><b>业务高频</b>：slip（疏漏）与 sleep 混淆会闹笑话</td></tr>
+        <tr><td>4</td><td class="en">bin <span class="ph">/bɪn/</span></td><td class="en">bean <span class="ph">/biːn/</span></td><td class="ex">同上</td><td class="ex">词尾是 <span class="mono">/n/</span>，不要加元音读成 <span class="mono">/ˈbiːnə/</span></td></tr>
+        <tr><td colspan="5" style="background:#f4f8ff;font-weight:700;color:var(--navy);font-size:12.5px;">② /ɜː/ 与 /ɔː/ —— 两条长音（4 组）</td></tr>
+        <tr><td>5</td><td class="en">work <span class="ph">/wɜːk/</span></td><td class="en">walk <span class="ph">/wɔːk/</span></td><td class="ex"><span class="mono">/ɜː/</span> 中舌位、不圆唇<br><span class="mono">/ɔː/</span> 后舌位、圆唇</td><td class="ex">两条都是长音，靠<b>唇形</b>分辨：一个平唇、一个圆唇</td></tr>
+        <tr><td>6</td><td class="en">bird <span class="ph">/bɜːd/</span></td><td class="en">board <span class="ph">/bɔːd/</span></td><td class="ex">同上</td><td class="ex">board = 董事会，业务高频词，必须条件反射级识别</td></tr>
+        <tr><td>7</td><td class="en">firm <span class="ph">/fɜːm/</span></td><td class="en">form <span class="ph">/fɔːm/</span></td><td class="ex">同上</td><td class="ex"><b>高危</b>：firm（机构）与 form（表格）在合规文书里天天出现</td></tr>
+        <tr><td>8</td><td class="en">burn <span class="ph">/bɜːn/</span></td><td class="en">born <span class="ph">/bɔːn/</span></td><td class="ex">同上</td><td class="ex">两个词都以 <span class="mono">/n/</span> 收尾，别加元音</td></tr>
+        <tr><td colspan="5" style="background:#f4f8ff;font-weight:700;color:var(--navy);font-size:12.5px;">③ 词尾辅音串 —— 中国人丢分最多的一项（6 组）</td></tr>
+        <tr><td>9</td><td class="en">risk <span class="ph">/rɪsk/</span></td><td class="en">risks <span class="ph">/rɪsks/</span></td><td class="ex">词尾加 <span class="mono">/s/</span>，且与前一个 <span class="mono">/k/</span> 连成一串</td><td class="ex">你在说 <b>risks</b> 时如果读成 <span class="mono">/ˈrɪskɪs/</span>，英式同事听到的是另一个词</td></tr>
+        <tr><td>10</td><td class="en">threshold <span class="ph">/ˈθreʃhəʊld/</span></td><td class="en">thresholds <span class="ph">/ˈθreʃhəʊldz/</span></td><td class="ex">词尾 <span class="mono">/ldz/</span> 三个辅音一口气</td><td class="ex">今天的核心词，单复数必须都能读、都能听出来</td></tr>
+        <tr><td>11</td><td class="en">flag <span class="ph">/flæɡ/</span></td><td class="en">flagged <span class="ph">/flæɡd/</span></td><td class="ex">词尾 <span class="mono">/ɡd/</span>，不是 <span class="mono">/ɡɪd/</span></td><td class="ex">过去式在上下文里承担时态信息，读错就丢了时间线</td></tr>
+        <tr><td>12</td><td class="en">alert <span class="ph">/əˈlɜːt/</span></td><td class="en">alerted <span class="ph">/əˈlɜːtɪd/</span></td><td class="ex">这里<b>确实</b>要读出 <span class="mono">/ɪd/</span>（t/d 结尾才加 /ɪd/）</td><td class="ex"><b>反例要记住</b>：只有 -t / -d 结尾的过去式才加 <span class="mono">/ɪd/</span>，其余一律只有一个 <span class="mono">/d/</span> 或 <span class="mono">/t/</span></td></tr>
+        <tr><td>13</td><td class="en">escalate <span class="ph">/ˈeskəleɪt/</span></td><td class="en">escalated <span class="ph">/ˈeskəleɪtɪd/</span></td><td class="ex">同上，<span class="mono">/ɪd/</span> 一个音节，不重读</td><td class="ex">今天的动词主角。重音始终在<b>首</b>音节，加 -d 也不移动</td></tr>
+        <tr><td>14</td><td class="en">report <span class="ph">/rɪˈpɔːt/</span></td><td class="en">reports <span class="ph">/rɪˈpɔːts/</span></td><td class="ex">词尾 <span class="mono">/ts/</span>，清音收尾</td><td class="ex">动词第三人称单数与名词复数同形同音，靠句子位置判断</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="note" style="margin-top:12px;">
+    <b>第 ③ 组做错 3 组以上，说明你有一个具体习惯要改：</b>在词尾辅音后加元音。<b>纠正方法只有一个</b>——把词尾辅音当成整句的最后一个音，嘴巴停在辅音上不动，宁可听起来"没读完"，也不要补一个 /ə/ 或 /ɪ/。今天朗读模块的 A8 段就是专门治这个的。
+  </div>
+
+  <!-- B 段 -->
+  <div class="step"><div class="n">B</div><div class="h">精听脚本 A：一次警报分诊会（会议对话）<small>真实语速 · 今天的核心材料 · 30 分钟</small></div></div>
+  <div class="info" style="margin-bottom:12px;">
+    <b>这是昨天那段对话的续集。</b>昨天的 Maya 把一笔可疑的拆分交易上报了；今天她回到工位，手里有 <b>41 条积压警报</b>，要跟组长 Tom 决定哪些该升级。<b>这段材料里的每一个术语，都会出现在你今天的 100 词里。</b><br>
+    用法：用 Edge「朗读此页」播放（<span class="mono">edge://settings/accessibility</span> 里开启）。<b>第 1 遍 0.9 倍速盲听，第 4 遍回到 1.0 倍速。</b>先自己听、自己猜，猜完再看下面的拆解表——<b>顺序反了就没效果</b>。
+  </div>
+
+  <div class="script">
+    <div><span class="spk">Maya:</span> Tom, I've closed out the Birmingham file. The <em>underlying</em> invoices came back and everything ties. No SAR.</div>
+    <div style="margin-top:8px;"><span class="spk">Tom:</span> Good. So that's one alert cleared. What's sitting in the queue?</div>
+    <div style="margin-top:8px;"><span class="spk">Maya:</span> Forty-one alerts, and <em>eleven</em> of them are <u>aged</u> — past our five-day target. Most are <u>threshold</u> breaches on the same three accounts.</div>
+    <div style="margin-top:8px;"><span class="spk">Tom:</span> The same three accounts? That's the bit that worries me. Are they all on the same <em>customer risk rating</em>?</div>
+    <div style="margin-top:8px;"><span class="spk">Maya:</span> Two are medium, one is high. The high one is the import-export client I <u>flagged</u> last week.</div>
+    <div style="margin-top:8px;"><span class="spk">Tom:</span> Right. So is there anything <em>unusual</em> in the activity itself, or is it just volume?</div>
+    <div style="margin-top:8px;"><span class="spk">Maya:</span> Volume, mostly. But there's one <em>red flag</em>. The high-risk account received a payment from a company registered in the same jurisdiction as its supplier — and the invoice number looks like it's been reused.</div>
+    <div style="margin-top:8px;"><span class="spk">Tom:</span> A reused invoice number. That's a classic <em>trade-based money laundering</em> typology, so we can't just <u>triage it out</u> as a false positive.</div>
+    <div style="margin-top:8px;"><span class="spk">Maya:</span> Agreed. So what would you like me to do — <u>escalate</u> straight to the MLRO, or run it past the second line first?</div>
+    <div style="margin-top:8px;"><span class="spk">Tom:</span> Escalate it. Draft an <em>escalation memo</em> this afternoon, and make sure you document the invoice reuse with the exact reference numbers.</div>
+    <div style="margin-top:8px;"><span class="spk">Maya:</span> Understood. And in the meantime, do we need to put in a <em>DAML request</em>?</div>
+    <div style="margin-top:8px;"><span class="spk">Tom:</span> Not yet. A DAML request only comes in once we've taken the decision to file. For now, flag the account so that nothing is released automatically, and log the decision on the file.</div>
+    <div style="margin-top:8px;"><span class="spk">Maya:</span> Will do. One more thing — if we do file, am I allowed to tell the <u>relationship manager</u>?</div>
+    <div style="margin-top:8px;"><span class="spk">Tom:</span> No. Telling anyone outside the reporting chain carries a <em>tipping-off</em> risk. Keep it to the MLRO and me.</div>
+    <div style="margin-top:8px;"><span class="spk">Maya:</span> <span class="rhythm">Noted. I'll send the memo by four.</span></div>
+  </div>
+
+  <h4 style="margin-top:16px;">逐句拆解表（先听，后看）</h4>
+  <div class="tblwrap" style="max-height:none;">
+    <table>
+      <thead><tr><th style="width:5%;">#</th><th style="width:32%;">原句</th><th style="width:28%;">语音难点</th><th>你可能会听成</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td class="ex">I've closed out the Birmingham file. The <b>underlying</b> invoices came back and everything ties.</td><td class="ex"><span class="lk">closed out</span> → <span class="mono">/kləʊzd aʊt/</span><br><span class="hit">underlying</span> → <span class="mono">/ˌʌndəˈlaɪɪŋ/</span><br><span class="lk">everything ties</span> → <span class="mono">/ˈevriθɪŋ taɪz/</span></td><td class="ex"><b>ties</b> 在这里是「对得上、能勾稽」，不是「领带」。这个词听不出，整句逻辑就丢了</td></tr>
+        <tr><td>2</td><td class="ex">So that's one alert cleared. What's <b>sitting in the queue</b>?</td><td class="ex"><span class="lk">What's sitting</span> → <span class="mono">/wɒts ˈsɪtɪŋ/</span><br><span class="lk">in the</span> → <span class="mono">/ɪn ðə/</span></td><td class="ex">"sitting in the queue" 是固定说法（积压在队列里）。queue 读 <span class="mono">/kjuː/</span>，不是 /kwiː/</td></tr>
+        <tr><td>3</td><td class="ex">Forty-one alerts, and <b>eleven</b> of them are <b>aged</b> — past our five-day target.</td><td class="ex"><span class="hit">eleven</span> → <span class="mono">/ɪˈlevn/</span>，重音在<b>后</b><br><span class="hit">aged</span> → <span class="mono">/eɪdʒd/</span> 一个音节</td><td class="ex"><b>数字是事故高发区</b>：forty-one 重音在前、eleven 重音在后。aged alerts 是今天词表里的固定术语</td></tr>
+        <tr><td>4</td><td class="ex">Most are <b>threshold</b> breaches on the same three accounts.</td><td class="ex"><span class="hit">threshold</span> → <span class="mono">/ˈθreʃhəʊld/</span>，<span class="mono">/ʃh/</span> 相连<br><span class="lk">breaches on</span> → <span class="mono">/ˈbriːtʃɪz ɒn/</span></td><td class="ex">"breach" 里的 <span class="mono">ea</span> 读 <span class="mono">/iː/</span>，不是 <span class="mono">/e/</span>；threshold 中间的 h 送气极短，容易整个吞掉</td></tr>
+        <tr><td>5</td><td class="ex">Are they all on the same <b>customer risk rating</b>?</td><td class="ex"><span class="lk">Are they all on</span> → <span class="mono">/ə ðeɪ ɔːl ɒn/</span><br><span class="hit">rating</span> 的 t 清脆</td><td class="ex">提一个问题时句尾<b>升调</b>——这是识别"他在问我"的唯一信号</td></tr>
+        <tr><td>6</td><td class="ex">The high one is the import-export client I <b>flagged</b> last week.</td><td class="ex"><span class="hit">flagged</span> → <span class="mono">/flæɡd/</span> 词尾 <span class="mono">/ɡd/</span><br><span class="lk">import-export</span> 两个词各带重音</td><td class="ex">flagged 词尾三辅音，容易听成一个模糊的音节。<b>时态信息藏在这里</b></td></tr>
+        <tr><td>7</td><td class="ex">Is there anything <b>unusual</b> in the activity itself, or is it just volume?</td><td class="ex"><span class="hit">unusual</span> → <span class="mono">/ʌnˈjuːʒuəl/</span><br><span class="lk">activity itself</span> 连读</td><td class="ex">unusual 里的 <span class="mono">/ʒ/</span> 是浊擦音，听起来像「日」，不是 /s/</td></tr>
+        <tr><td>8</td><td class="ex">The high-risk account received a payment from a company registered in the same <b>jurisdiction</b> as its supplier…</td><td class="ex"><span class="hit">jurisdiction</span> → <span class="mono">/ˌdʒʊərɪsˈdɪkʃn/</span><br><span class="lk">registered in the</span> 三词挤在一起</td><td class="ex">jurisdiction 首音节 <span class="mono">/dʒʊə/</span> 常被压掉，听起来像 "risdiction"</td></tr>
+        <tr><td>9</td><td class="ex">…and the invoice number looks like it's been <b>reused</b>.</td><td class="ex"><span class="hit">reused</span> → <span class="mono">/ˌriːˈjuːzd/</span>，两个重音<br><span class="lk">like it's been</span> → <span class="mono">/laɪk ɪts bɪn/</span></td><td class="ex">been 弱读成 <span class="mono">/bɪn/</span>，几乎听不见；reused 的 re- 读长音 <span class="mono">/riː/</span></td></tr>
+        <tr><td>10</td><td class="ex">That's a classic <b>trade-based money laundering</b> typology, so we can't just <b>triage it out</b> as a false positive.</td><td class="ex"><span class="hit">laundering</span> → <span class="mono">/ˈlɔːndərɪŋ/</span><br><span class="hit">triage</span> → <span class="mono">/ˈtriːɑːʒ/</span><br><span class="lk">triage it out</span> → <span class="mono">/ˈtriːɑːʒ ɪt aʊt/</span></td><td class="ex"><b>本段最难的一句。</b>triage 读「特里-啊日」，g 是 <span class="mono">/ʒ/</span>；triage out 是"排除掉"的固定说法</td></tr>
+        <tr><td>11</td><td class="ex">So what would you like me to do — <b>escalate</b> straight to the MLRO, or run it past the second line first?</td><td class="ex"><span class="hit">escalate</span> → <span class="mono">/ˈeskəleɪt/</span> 重音在<b>首</b><br><span class="lk">run it past</span> → <span class="mono">/rʌn ɪt pɑːst/</span></td><td class="ex">选择疑问句：<b>前半升调、后半降调</b>。MLRO 读字母 <span class="mono">/ˌem el ɑːr ˈəʊ/</span></td></tr>
+        <tr><td>12</td><td class="ex">Draft an <b>escalation memo</b> this afternoon, and make sure you <b>document</b> the invoice reuse with the exact reference numbers.</td><td class="ex"><span class="hit">escalation</span> → <span class="mono">/ˌeskəˈleɪʃn/</span> 重音<b>后移</b><br><span class="hit">document</span> 作动词 → <span class="mono">/ˈdɒkjument/</span></td><td class="ex">escalate（首重音）→ escalation（后重音），同一词根重音位置相反；document 名动同音</td></tr>
+        <tr><td>13</td><td class="ex">And in the meantime, do we need to put in a <b>DAML request</b>?</td><td class="ex"><span class="hit">DAML</span> → <span class="mono">/ˈdæml/</span> 整体拼读<br><span class="lk">put in a</span> → <span class="mono">/pʊt ɪn ə/</span></td><td class="ex">DAML 当成一个词读「dam-l」，<b>不要逐字母念</b>。in the meantime 重音在 mean-</td></tr>
+        <tr><td>14</td><td class="ex">A DAML request only comes in once we've taken the decision to <b>file</b>. Flag the account so that nothing is <b>released</b> automatically.</td><td class="ex"><span class="hit">file</span> 在这里是「上报」<br><span class="hit">released</span> → <span class="mono">/rɪˈliːsɪz/</span><br><span class="lk">so that</span> → <span class="mono">/səʊ ðət/</span></td><td class="ex"><b>file 是动词</b>，意思是"提交（SAR）"。这句话的语法信号是 "once we've taken the decision to"——听到这里要预判一个动作</td></tr>
+        <tr><td>15</td><td class="ex">Telling anyone outside the reporting chain carries a <b>tipping-off</b> risk.</td><td class="ex"><span class="hit">tipping-off</span> → <span class="mono">/ˈtɪpɪŋ ɒf/</span><br><span class="lk">outside the</span> → <span class="mono">/ˌaʊtˈsaɪd ðə/</span></td><td class="ex">这个词昨天背过，今天要在<b>真实语速</b>里认出来。连字符复合词重音在第一个词</td></tr>
+        <tr><td>16</td><td class="ex"><span class="rhythm">Noted. I'll send the memo by four.</span></td><td class="ex">两句都极轻，句尾降调</td><td class="ex">英式职场里 "Noted" 是"收到、记下了"，比 "OK" 更专业。<b>句尾降调 = 我有把握</b></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="reveal">
+    <button class="btn" onclick="tog(this)">查看本段中文参考译文</button>
+    <div class="revbd">
+      <div class="script" style="font-size:13.2px;line-height:1.9;">
+        <b>1.</b> Tom，伯明翰那个案子我结了。底层发票都回来了，全部对得上。不上报。<br>
+        <b>2.</b> 好。那就是清掉一条警报。队列里还积着什么？<br>
+        <b>3.</b> 41 条警报，其中 11 条已经超期——超过我们五天的时限。大部分是同样三个账户的阈值突破。<br>
+        <b>4.</b> 同样三个账户？这正是我担心的。它们的客户风险评级是同一档吗？<br>
+        <b>5.</b> 两个是中风险，一个是高风险。高风险那个就是我上周标记的进出口客户。<br>
+        <b>6.</b> 好。那活动本身有什么异常吗，还是只是量的问题？<br>
+        <b>7.</b> 主要是量。但有一个危险信号。那个高风险账户收到了一笔付款，付款公司注册地与它的供应商在同一个司法辖区——而且发票号码看起来被重复使用了。<br>
+        <b>8.</b> 发票号重复使用。这是典型的贸易洗钱类型学，所以我们不能简单当作误报把它排除掉。<br>
+        <b>9.</b> 同意。那你要我怎么做——直接向 MLRO 升级，还是先过一遍第二道防线？<br>
+        <b>10.</b> 升级。今天下午起草一份上报备忘，务必把发票重复使用的情况连同准确的参考编号一起记录下来。<br>
+        <b>11.</b> 明白。那这期间，我们需要提交 DAML 申请吗？<br>
+        <b>12.</b> 还不用。DAML 申请要在我们决定上报之后才提。现在先把账户标记出来，确保不会自动放款，并把判断记录在案卷里。<br>
+        <b>13.</b> 好。还有一件事——如果我们真的上报了，我可以告诉客户关系经理吗？<br>
+        <b>14.</b> 不可以。向上报链条之外的任何人透露都存在泄密风险。只限我和 MLRO 知道。<br>
+        <b>15.</b> 记下了。我四点前把备忘发出去。
+      </div>
+    </div>
+  </div>
+
+  <!-- C 段 -->
+  <div class="step"><div class="n">C</div><div class="h">词块听写：今天的词在真实句子里长什么样<small>把"认得"变成"写得出" · 25 分钟</small></div></div>
+  <div class="info" style="margin-bottom:12px;">
+    <b>为什么加这一段：</b>昨天你练的是"听懂"；今天要更进一步<b>写到纸上</b>。听写是最诚实的检测——它同时暴露拼写、词尾、数字和连读四个问题。<br>
+    <b>做法：</b>用 Edge 朗读下面的 16 句（<b>慢速档 0.8 倍</b>），<b>一句一停，写下来</b>。写完再看答案。<b>拼写错和听不出一样算错。</b>
+  </div>
+  <div class="tblwrap" style="max-height:none;">
+    <table>
+      <thead><tr><th style="width:5%;">#</th><th>听写句（先别看这列，用它朗读）</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td class="ex">Eleven alerts are now <b>aged</b> and past the five-day target.</td></tr>
+        <tr><td>2</td><td class="ex">Every alert must be <b>triaged</b> and the outcome recorded on the file.</td></tr>
+        <tr><td>3</td><td class="ex">Most of the breaches are <b>threshold</b> breaches on the same three accounts.</td></tr>
+        <tr><td>4</td><td class="ex">The customer is on a high <b>customer risk rating</b> and needs a <b>periodic review</b>.</td></tr>
+        <tr><td>5</td><td class="ex">The reused invoice number is a classic <b>trade-based money laundering</b> typology.</td></tr>
+        <tr><td>6</td><td class="ex">Please <b>escalate</b> this to the MLRO and draft an <b>escalation memo</b>.</td></tr>
+        <tr><td>7</td><td class="ex">We cannot <b>triage it out</b> as a false positive.</td></tr>
+        <tr><td>8</td><td class="ex">A <b>DAML request</b> only goes in once we have decided to file.</td></tr>
+        <tr><td>9</td><td class="ex">Under the <b>consent regime</b> the transaction waits for the NCA's decision.</td></tr>
+        <tr><td>10</td><td class="ex">Telling the relationship manager would carry a <b>tipping-off</b> risk.</td></tr>
+        <tr><td>11</td><td class="ex">The <b>BWRA</b> is a legal requirement under the Money Laundering Regulations 2017.</td></tr>
+        <tr><td>12</td><td class="ex">A change of ownership is a <b>trigger event</b> for enhanced due diligence.</td></tr>
+        <tr><td>13</td><td class="ex">The <b>remediation</b> programme covers every file identified in the <b>lookback review</b>.</td></tr>
+        <tr><td>14</td><td class="ex">Monitoring sits in the <b>first line</b>; oversight sits in the <b>second line</b>.</td></tr>
+        <tr><td>15</td><td class="ex"><b>Aged alerts</b> are our single most useful <b>KRI</b>.</td></tr>
+        <tr><td>16</td><td class="ex">Supervisors look for evidence of <b>tone from the top</b>, not just policies.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="note" style="margin-top:12px;">
+    <b>判读标准：</b>16 句全对 → 今天的词已经完全"落地"；错 3–5 处 → 正常；<b>错 6 处以上</b> → 大概率错在词尾（-s / -ed）和拼写（threshold / triage / remediation / moratorium），把错的地方抄进错题本，明天朗读前先过一遍。
+  </div>
+
+  <!-- D 段 -->
+  <div class="step"><div class="n">D</div><div class="h">真实材料：多口音适应 + 财经简报<small>第一次接触非 RP 口音 · 15 分钟</small></div></div>
+
+  <div class="two">
+    <div>
+      <h4>① 6 Minute English 第三集（8 分钟）</h4>
+      <p class="sub" style="margin-bottom:6px;">昨天留的那一集，在 <span class="mono">bbc.co.uk/learningenglish</span> 的 <b>6 Minute English</b> 里搜：</p>
+      <ul class="tight">
+        <li><b>Is working from home good for us?</b> — 语速偏快，两个人轮替说话，正好练"在换人时抓住话题"</li>
+      </ul>
+      <p class="sub" style="margin:8px 0 0;"><b>只做四遍法，不查词。</b>这一集的任务是"训练注意力切换"，不是学新词。</p>
+    </div>
+    <div>
+      <h4>② 多口音材料：You and Yours / FT News Briefing（7 分钟）</h4>
+      <p class="sub" style="margin-bottom:6px;">今天开始加入<b>多口音</b>——你未来在英国的会议上会遇到苏格兰、北爱、印度、东欧同事，他们的英语都不是 RP。</p>
+      <ul class="tight">
+        <li><b>BBC Radio 4「You and Yours」</b>：消费事务访谈，会采访普通民众，<b>口音杂、语速真实</b>，是最接近"英国街头英语"的材料</li>
+        <li><b>FT News Briefing</b>：仍然只听最新一集的<b>开头 30 秒</b>，用 1.0 倍速，不要减速</li>
+      </ul>
+      <div class="note" style="margin-top:10px;font-size:12.3px;">
+        <b>听多口音时的心态：</b>第一遍听不懂是<b>正常且必然</b>的——你的耳朵只被 RP 训练过。不要因为听不懂就换回标准音，<b>你的目标不是听懂口音，而是学会在口音下抓住关键词</b>。
+      </div>
+    </div>
+  </div>
+
+  <h4 style="margin-top:18px;">四遍法操作表（今天以 B 段会议对话为准）</h4>
+  <div class="tblwrap" style="max-height:none;">
+    <table>
+      <thead><tr><th style="width:10%;">遍数</th><th style="width:10%;">时长</th><th style="width:38%;">动作</th><th>必须产出的东西</th></tr></thead>
+      <tbody>
+        <tr><td class="en">第 1 遍</td><td class="ph">6 min</td><td class="ex"><b>0.9 倍速盲听，不看文本。</b>只回答一个问题：Maya 手里有几条警报、其中几条超期？</td><td class="ex">写下 3 个你<b>听清</b>的词（不是猜的）+ 那两个数字</td></tr>
+        <tr><td class="en" style="color:var(--red);">第 2 遍</td><td class="ph">10 min</td><td class="ex"><b>看文本听。</b>圈出所有"<b>这个词我认识（今天刚背的），但刚才没听出来</b>"的位置。<span class="hit">这是整件事的胜负手</span></td><td class="ex">错题本新增 8–12 条，格式：<span class="mono">单词 ｜ 听成了什么 ｜ 原因</span></td></tr>
+        <tr><td class="en">第 3 遍</td><td class="ph">8 min</td><td class="ex"><b>逐句跟读。</b>每句暂停跟读 3 次，重点模仿 <span class="mono">triage / escalate / escalation</span> 这三个词的节奏</td><td class="ex">标出 2–3 个"读起来最拗口"的句子，模块 04 用它做影子跟读</td></tr>
+        <tr><td class="en">第 4 遍</td><td class="ph">6 min</td><td class="ex"><b>关掉文本，1.0 倍速再听一遍</b>，中间不暂停</td><td class="ex">估一个理解率（%），写进学习记录</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h4 style="margin-top:18px;">盲区预测清单（20 条 · AML 专用）</h4>
+  <p class="sub" style="margin-bottom:8px;">下面这些词，<b>你十有八九会在接下来几天的听力里听不出来</b>。命中一条记一条进错题本。<b>命中得越多越正常</b>——说明你的盲区和大多数中国学习者一致。</p>
+  <div class="tblwrap">
+    <table>
+      <thead><tr><th style="width:4%;">#</th><th style="width:18%;">词</th><th style="width:18%;">你的默认读法（易错）</th><th style="width:18%;">实际读音</th><th>原因</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td class="en">threshold</td><td class="ex">/θreʃəʊld/</td><td class="ph">/ˈθreʃhəʊld/</td><td class="ex">/ʃ/ 后的 h 送气极短，容易整个吞掉</td></tr>
+        <tr><td>2</td><td class="en">triage</td><td class="ex">/traɪˈɑːdʒ/</td><td class="ph">/ˈtriːɑːʒ/</td><td class="ex">首音节是长音 /iː/、重音在前；g 读 /ʒ/ 不读 /dʒ/</td></tr>
+        <tr><td>3</td><td class="en">typology</td><td class="ex">/tɪˈpɒlədʒi/</td><td class="ph">/taɪˈpɒlədʒi/</td><td class="ex">首音节是 /taɪ/，和 type 同源</td></tr>
+        <tr><td>4</td><td class="en">moratorium</td><td class="ex">/ˌmɒrəˈtɔːrɪəm/</td><td class="ph">/ˌmɒrəˈtɔːriəm/</td><td class="ex">词尾是 /iəm/ 两个弱音节，不是 /ɪəm/</td></tr>
+        <tr><td>5</td><td class="en">regime</td><td class="ex">/rɪˈdʒaɪm/</td><td class="ph">/reɪˈʒiːm/</td><td class="ex">g 读 /ʒ/，且首音节是 /reɪ/。这个词读错非常显眼</td></tr>
+        <tr><td>6</td><td class="en">remediation</td><td class="ex">/ˌremɪˈdeɪʃn/</td><td class="ph">/rɪˌmiːdiˈeɪʃn/</td><td class="ex">重音在 -Eɪ-，前面三个音节全部快读</td></tr>
+        <tr><td>7</td><td class="en">corroborate</td><td class="ex">/ˈkɒrəbəreɪt/</td><td class="ph">/kəˈrɒbəreɪt/</td><td class="ex">重音在第二音节，首音节弱读</td></tr>
+        <tr><td>8</td><td class="en">jurisdiction</td><td class="ex">/dʒəˈrɪsdɪkʃn/</td><td class="ph">/ˌdʒʊərɪsˈdɪkʃn/</td><td class="ex">首音节 /dʒʊə/ 常被压掉，中间多一个音节</td></tr>
+        <tr><td>9</td><td class="en">aged</td><td class="ex">/ˈeɪdʒɪd/</td><td class="ph">/eɪdʒd/</td><td class="ex">只有一个音节，dʒ 后直接接 d</td></tr>
+        <tr><td>10</td><td class="en">bearer share</td><td class="ex">/ˈbeərə ʃeə/ 加卷舌</td><td class="ph">/ˈbeərə ʃeə/</td><td class="ex">英式非重读 r 不卷舌；而且这个词组今天在拓展词里</td></tr>
+        <tr><td>11</td><td class="en">beneficiary</td><td class="ex">/beˈnefɪʃəri/</td><td class="ph">/ˌbenɪˈfɪʃəri/</td><td class="ex">重音在 -FI-，五个音节里只有一个是重音</td></tr>
+        <tr><td>12</td><td class="en">discrepancy</td><td class="ex">/dɪsˈkrepənsi/ 是对的读法</td><td class="ph">/dɪsˈkrepənsi/</td><td class="ex">问题在拼写：不是 -ancy 结尾而是 -ancy；先练听，再练拼</td></tr>
+        <tr><td>13</td><td class="en">surveillance</td><td class="ex">/səˈveɪləns/</td><td class="ph">/səˈveɪləns/</td><td class="ex">拼写里有 <span class="mono">ll</span>，读音里毫无痕迹——典型的「拼读脱节」词</td></tr>
+        <tr><td>14</td><td class="en">proliferation</td><td class="ex">/ˌprɒlɪfəˈreɪʃn/</td><td class="ph">/prəˌlɪfəˈreɪʃn/</td><td class="ex">第二个音节才是重音群起点，首音节极弱</td></tr>
+        <tr><td>15</td><td class="en">confiscation</td><td class="ex">/ˌkɒnfɪsˈkeɪʃn/</td><td class="ph">/ˌkɒnfɪsˈkeɪʃn/</td><td class="ex">重音在 -KEɪ-，前面三个音节快过</td></tr>
+        <tr><td>16</td><td class="en">seizure</td><td class="ex">/ˈsiːzjə/</td><td class="ph">/ˈsiːʒə/</td><td class="ex">没有 /z/ 再 /j/ 那一步，直接 /ʒ/</td></tr>
+        <tr><td>17</td><td class="en">indictment</td><td class="ex">/ɪnˈdɪktmənt/</td><td class="ph">/ɪnˈdaɪtmənt/</td><td class="ex">c 完全不发音，i 读 /aɪ/——纯粹靠记</td></tr>
+        <tr><td>18</td><td class="en">proceeds</td><td class="ex">/prəˈsiːdz/ 重音后</td><td class="ph">/ˈprəʊsiːdz/</td><td class="ex">作名词「犯罪所得」时重音在<b>首</b>音节，和动词 proceed 不同</td></tr>
+        <tr><td>19</td><td class="en">hawala</td><td class="ex">/həˈwɑːlə/ 或 /ˈhæwələ/</td><td class="ph">/həˈwɑːlə/</td><td class="ex">重音在第二音节，两个 a 都读 /ɑː/</td></tr>
+        <tr><td>20</td><td class="en">anonymity</td><td class="ex">/ˌænəˈnɪməti/</td><td class="ph">/ˌænəˈnɪməti/</td><td class="ex">重音在 -NIM-；拼写是 -onym-，读音里 y 变成 /ɪ/</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="reveal">
+    <button class="btn" onclick="tog(this)">展开：AML 高频词块的连读与弱读速查</button>
+    <div class="revbd">
+      <div class="script" style="font-size:13px;">
+        <b style="color:var(--navy);">一、AML 会议里出现频率最高的连读块（整块记住，不要拆开听）</b><br>
+        · <span class="mono">source of funds</span> → <span class="mono">/sɔːsəv fʌndz/</span>　· <span class="mono">source of wealth</span> → <span class="mono">/sɔːsəv welθ/</span><br>
+        · <span class="mono">a false positive</span> → <span class="mono">/ə fɔːls ˈpɒzətɪv/</span>　· <span class="mono">on the file</span> → <span class="mono">/ɒn ðə faɪl/</span><br>
+        · <span class="mono">past our five-day target</span> → <span class="mono">/pɑːst ɑː faɪv deɪ ˈtɑːɡɪt/</span><br>
+        · <span class="mono">once we've taken the decision</span> → <span class="mono">/wʌns wɪv ˈteɪkən ðə dɪˈsɪʒn/</span><br><br>
+
+        <b style="color:var(--navy);">二、今天新学到的弱读（功能词继续降级）</b><br>
+        · <span class="mono">would you</span> → <span class="mono">/wʊdʒə/</span>　· <span class="mono">what would you</span> → <span class="mono">/wɒt wʊdʒə/</span><br>
+        · <span class="mono">make sure you</span> → <span class="mono">/meɪk ʃʊə jə/</span>　· <span class="mono">so that</span> → <span class="mono">/səʊ ðət/</span><br>
+        · <span class="mono">past it</span> → <span class="mono">/pɑːst ɪt/</span>　· <span class="mono">in the meantime</span> → <span class="mono">/ɪn ðə ˈmiːntaɪm/</span><br><br>
+
+        <b style="color:var(--navy);">三、英式 vs 美式：今天新增的 3 条</b><br>
+        1. <b>/ɜː/ 不卷舌</b>：<span class="mono">work /wɜːk/</span>、<span class="mono">firm /fɜːm/</span>、<span class="mono">bird /bɜːd/</span> —— 美式都要卷舌<br>
+        2. <b>-re / -iə 结尾弱化</b>：<span class="mono">moratorium /ˌmɒrəˈtɔːriəm/</span> 的尾音几乎听不见<br>
+        3. <b>词尾辅音不吐元音</b>：<span class="mono">risks /rɪsks/</span>、<span class="mono">thresholds /ˈθreʃhəʊldz/</span> —— 美式也这样，但中国学习者最容易在这里加 /ɪ/<br>
+      </div>
+    </div>
+  </div>
+
+  <h4 style="margin-top:16px;">今日听力任务</h4>
+  <div id="ckListen"></div>
+</div>
+
+<!-- 模块 2 -->
+<div class="card">
+  <div class="mod">
+    <div class="mod-no"><b>02</b><span>VOCAB</span></div>
+    <div class="mod-tt"><h3>词汇：100 个核心词（30 精讲 + 70 拓展）</h3><p>整批 AML —— 从警报分诊到整改治理的完整流程词</p></div>
+    <div class="mod-time">50 分钟</div>
+  </div>
+
+  <div class="note" style="margin-bottom:12px;">
+    <b>今天这 100 词就是词表第 200–299 行 = 今天 Anki 会发给你的那 100 张卡。</b>已逐条核对：<b>与 Anki 队列零差异</b>。整批属于「反洗钱与客户尽调 AML/KYC」领域，是这个领域的第 27–126 个概念。<br><br>
+    <b>30 个精讲词怎么挑的：</b>今天的 100 词里有大量缩写（FIU / NCA / UKFIU / RBA / CRA / BWRA / KRI / MI / DAML…）。缩写本身没什么可讲的，所以我把名额<b>全部让给了 30 个「读错就会出事」的多音节实义词</b>——triage、typology、remediation、moratorium、regime、whistleblowing 这一批。<b>它们是你在电话会里最容易被听错、也最容易说错的词。</b>
+  </div>
+
+  <p class="sub" style="margin:0 0 8px;"><b>第一档｜精讲词 30 个（需开口造句 + 读准）</b>　按工作流排序：监测 → 分诊 → 风险评级 → 类型学 → 上报 → 法律 → 整改 → 治理</p>
+  <div class="tblwrap">
+    <table id="vocabTbl">
+      <thead><tr><th style="width:34px;">造句</th><th>英文</th><th>读音（英式）</th><th>释义</th><th>英式例句</th></tr></thead>
+      <tbody id="vocabBody"></tbody>
+    </table>
+  </div>
+
+  <h4 style="margin:20px 0 8px;">第二档｜拓展词 70 个（认读即可）</h4>
+  <div class="note" style="margin-bottom:10px;">
+    这 70 个词同样进 Anki。要求降到最低：<b>看到英文能想起中文、听到能反应过来</b>就行。这一批集中在<b>洗钱手法与欺诈类型</b>（TBML / 幽灵货运 / 杀猪盘 / 混币器）、<b>欺诈分类</b>（一方 / 第三方 / 未授权侵入）、<b>机构缩写</b>（FIU / NCA / UKFIU / SAR online）三个子域——信息密度高，但都属于"认知型"词汇。
+  </div>
+  <div class="tblwrap">
+    <table id="vocab2Tbl">
+      <thead><tr><th style="width:34px;">打卡</th><th style="width:26%;">英文</th><th style="width:20%;">中文</th><th>备注（用途与易错点）</th></tr></thead>
+      <tbody id="vocab2Body"></tbody>
+    </table>
+  </div>
+
+  <div class="reveal" style="margin-top:14px;">
+    <button class="btn" onclick="tog(this)">查看 30 个精讲词的「英式读音速记法」</button>
+    <div class="revbd">
+      <div class="script" style="font-size:13px;">
+        <b>1. transaction monitoring (TM)</b> <span class="mono">/trænˈzækʃn ˈmɒnɪtərɪŋ/</span> — transaction 重音在 <b>-ZAK-</b>；monitoring 的 <b>/ɒ/</b> 是英式专属短圆唇<br>
+        <b>2. alert / alert triage</b> <span class="mono">/əˈlɜːt/ · /ˈtriːɑːʒ/</span> — <b>triage 是本批头号难点</b>：/ˈtriːɑːʒ/，重音在前，g 读 /ʒ/<br>
+        <b>3. aged alerts</b> <span class="mono">/ˌeɪdʒd əˈlɜːts/</span> — aged 只有<b>一个音节</b>，不是 /ˈeɪdʒɪd/<br>
+        <b>4. red flag</b> <span class="mono">/ˌred ˈflæɡ/</span> — 名词短语，两词都可重读；搭配 raise / spot / clear<br>
+        <b>5. unusual activity</b> <span class="mono">/ʌnˈjuːʒuəl ækˈtɪvəti/</span> — unusual 中间是浊音 <b>/ʒ/</b>，不是 /s/<br>
+        <b>6. threshold</b> <span class="mono">/ˈθreʃhəʊld/</span> — <b>/ʃ/ 与 /h/ 相连</b>，h 送气极短；复数 /-ldz/ 一口气<br>
+        <b>7. structuring / smurfing</b> <span class="mono">/ˈstrʌktʃərɪŋ/ · /ˈsmɜːfɪŋ/</span> — /strʌk/ 后直接接 /tʃə/；smurfing 的 /ɜː/ 不卷舌<br>
+        <b>8. risk-based approach (RBA)</b> <span class="mono">/ˈrɪsk beɪst əˈprəʊtʃ/</span> — approach 重音在<b>第二</b>音节<br>
+        <b>9. customer risk rating / risk scoring</b> <span class="mono">/ˈkʌstəmə rɪsk ˈreɪtɪŋ/</span> — 英式 t 清脆；rating 是结论、scoring 是过程<br>
+        <b>10. risk appetite</b> <span class="mono">/ˈrɪsk ˈæpɪtaɪt/</span> — 尾 -ite 读 <b>/aɪt/</b>，不是 /ɪt/<br>
+        <b>11. customer risk assessment (CRA)</b> <span class="mono">/əˈsesmənt/</span> — 重音在 <b>-SESS-</b>；双写 s 仍是清音<br>
+        <b>12. business-wide risk assessment (BWRA)</b> <span class="mono">/ˈbɪznəs/</span> — business <b>两个音节</b>，i 完全不发音<br>
+        <b>13. trigger event</b> <span class="mono">/ˈtrɪɡə ɪˈvent/</span> — event 重音在后；trigger 的 /ɡ/ 后直接接 /ə/<br>
+        <b>14. periodic review</b> <span class="mono">/ˌpɪəriˈɒdɪk rɪˈvjuː/</span> — 英式含 <b>/ɒ/</b>，美式才是 /ɑː/<br>
+        <b>15. typology</b> <span class="mono">/taɪˈpɒlədʒi/</span> — 首音节 <b>/taɪ/</b>，和 type 同源，这是记读音的抓手<br>
+        <b>16. trade-based money laundering (TBML)</b> <span class="mono">/ˈtreɪd beɪst ˈmʌni ˈlɔːndərɪŋ/</span> — laundering 的 /lɔːn-/ 是长音<br>
+        <b>17. money mule / mule account</b> <span class="mono">/ˈmʌni mjuːl/</span> — mule 保留 <b>/j/ 滑音</b>，和 music 起音相同<br>
+        <b>18. escalate / escalation memo</b> <span class="mono">/ˈeskəleɪt/ · /ˌeskəˈleɪʃn/</span> — 动词重音<b>在首</b>、名词重音<b>在后</b>，必须都认得<br>
+        <b>19. consent regime</b> <span class="mono">/kənˈsent reɪˈʒiːm/</span> — regime 读 <b>/reɪˈʒiːm/</b>，g 是 /ʒ/，不是 /rɪˈdʒaɪm/<br>
+        <b>20. DAML request</b> <span class="mono">/ˈdæml rɪˈkwest/</span> — <b>整体拼读成一个词</b>「dam-l」，不逐字母念<br>
+        <b>21. moratorium period</b> <span class="mono">/ˌmɒrəˈtɔːriəm ˈpɪəriəd/</span> — 重音在 <b>-TO-</b>，词尾 /əm/<br>
+        <b>22. Money Laundering Regulations 2017</b> <span class="mono">/ˌreɡjuˈleɪʃnz/</span> — Regulations 重音在 <b>-LA-</b>；年份读 twenty seventeen<br>
+        <b>23. JMLSG Guidance</b> <span class="mono">/ˌdʒeɪ em el es ˈdʒiː ˈɡaɪdns/</span> — 五字母逐个读；guidance 只有两个音节<br>
+        <b>24. remediation</b> <span class="mono">/rɪˌmiːdiˈeɪʃn/</span> — 重音在 <b>-Eɪ-</b>，前三个音节全部快读<br>
+        <b>25. lookback review</b> <span class="mono">/ˈlʊkbæk rɪˈvjuː/</span> — 复合名词重音在<b>第一</b>个词<br>
+        <b>26. first / second / third line</b> <span class="mono">/ˌfɜːst laɪn/</span> — first 的 /ɜː/ 长音且<b>不卷舌</b>；说三条线时最后一项降调<br>
+        <b>27. key risk indicator (KRI)</b> <span class="mono">/ˈɪndɪkeɪtə/</span> — indicator 重音在首音节 /ˈɪn-/<br>
+        <b>28. management information (MI)</b> <span class="mono">/ˈmænɪdʒmənt/</span> — 英式三音节，中间的 /ɪ/ 极轻<br>
+        <b>29. tone from the top</b> <span class="mono">/ˈtəʊn frəm ðə ˈtɒp/</span> — from the 连读成 <b>/frəmðə/</b>，几乎听不出两个词<br>
+        <b>30. whistleblowing</b> <span class="mono">/ˈwɪslbləʊɪŋ/</span> — whistle 的 <b>/t/ 基本消失</b>，读 /ˈwɪsl-/
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 模块 3 PRON -->
+<!--PRON_MODULE_START-->
+<!-- 发音朗读模块（由 _朗读源文件/_build_day_pron.js 生成，勿手改） -->
+<div class="card" style="border-left:4px solid var(--teal);">
+  <div class="mod">
+    <div class="mod-no" style="background:var(--teal);"><b>03</b><span>PRON</span></div>
+    <div class="mod-tt"><h3>发音朗读：今日 3 段文本（已内嵌）</h3><p>文本 + 标注 + 发音要点 + 中文译文 + 英式朗读按钮，全在本页</p></div>
+    <div class="mod-time">30 分钟</div>
+  </div>
+  <div class="info" style="margin-bottom:12px;">
+    <b>今天的 3 段朗读文本已经直接放在本页了，不用跳转。</b>
+    点 <b>▶ 英式朗读</b> 听 en-GB 标准音，点 <b>▶ 慢速</b> 听 0.72 倍速。
+    完整文本库（36 段 · 211 条发音要点 · 3925 词）在 <a href="03-发音与朗读系统.html"><b>03-发音与朗读系统.html</b></a>，
+    <b>42 天逐日分配表</b>见该页第六节。<br>
+    <b>标注法：</b><span style="color:var(--red);font-weight:700;">红色 = 句子重音</span>　<span style="background:#e9f1ff;border-radius:3px;padding:0 3px;">蓝底 = 连读 / 弱读</span>　<span style="background:#fff2c9;border-radius:3px;padding:0 3px;">黄底 = 易错音</span>
+  </div>
+
+  <h4>今天的读法（照这个顺序走，30 分钟）</h4>
+  <div class="rowline"><div class="t">① 先听后读</div><div class="m">每段先点「英式朗读」听 1 遍，<b>不跟读</b>，只听轮廓与重音落点。　<span class="mono">4 分钟</span></div></div>
+  <div class="rowline"><div class="t">② 看标注读</div><div class="m">把每个标记落实：红色落在哪、蓝色哪里连、黄色哪里别读错。<b>慢，但每个音要到位。</b>　<span class="mono">10 分钟</span></div></div>
+  <div class="rowline"><div class="t">③ 不看标注读</div><div class="m">把标注当透明，检验是否已经内化。卡住的位置就是今天的真实短板。　<span class="mono">10 分钟</span></div></div>
+  <div class="rowline"><div class="t">④ 站着读收尾</div><div class="m">站起来、用比平时大半格的音量读第 3 遍，模拟会议室强度，完后做体感自查。　<span class="mono">6 分钟</span></div></div>
+
+  <div class="note" style="margin:12px 0 4px;">
+    <b>没有录音，怎么知道读对了（四点自查）：</b>① <b>喉结振动</b>——手贴喉结读 /v/ /ð/ /b/ /d/ /g/ 应明显振动，读 /f/ /θ/ /s/ 几乎不振动；② <b>嘴前气流</b>——/p/ /t/ /k/ 开头应感到气流；③ <b>对镜看舌尖</b>——/θ/ /ð/ 必须看得见舌尖；④ <b>中文回想</b>——读完合上文本用中文回想，想不起英文怎么说的位置就是卡壳点，记入错题本。
+  </div>
+
+  <h4 style="margin-top:16px;">今日朗读文本 <span style="font-size:12px;font-weight:400;color:var(--ink-3);">（第 1 周·按当日主题加权：A 组 2 段（音素收尾）+ B 组 1 段（与今天词表同主题））</span></h4>
+  <div id="prWrap"></div>
+
+  <h4 style="margin-top:18px;">今日朗读打卡</h4>
+  <div id="ckPron"></div>
+</div>
+<!--PRON_MODULE_END-->
+
+<!-- 模块 4 -->
+<div class="card">
+  <div class="mod">
+    <div class="mod-no"><b>04</b><span>SPEAK</span></div>
+    <div class="mod-tt"><h3>口语：影子跟读 + 绕口句 + 三点式汇报</h3><p>不做录音留档，但必须出声、必须完整说完</p></div>
+    <div class="mod-time">30 分钟</div>
+  </div>
+
+  <div class="note" style="margin-bottom:14px;">
+    <b>按你的要求，本阶段口语与发音自行练习，不做录音留档。</b>三条底线不变：<b>① 必须出声</b>；<b>② 必须完整说完一整段</b>；<b>③ 说完立刻用中文回想</b>——想不起英文怎么说的位置就是真实卡壳点，记入错题本。
+  </div>
+
+  <h4>第一步：影子跟读（Shadowing）三个层次（15 分钟）</h4>
+  <p class="sub" style="margin-bottom:6px;">材料用上面 <b>模块 03 的 B11 段（团队会议：警报分级讨论）</b>——它就是今天会议对话的对应朗读文本。<b>影子跟读不是复述，是几乎同时跟着说。</b></p>
+  <div class="rowline"><div class="t">第 1 层｜看文本跟</div><div class="m">看着文本，落后原声半个词跟着读。目标：嘴跟得上，不掉队。　<span class="mono">5 分钟</span></div></div>
+  <div class="rowline"><div class="t">第 2 层｜关文本跟</div><div class="m">关掉文本，只听声音跟。目标：不靠眼睛也能跟上节奏和语调。　<span class="mono">5 分钟</span></div></div>
+  <div class="rowline"><div class="t">第 3 层｜变速跟</div><div class="m">把语速调到 <b>1.1 倍</b>再跟一遍。目标：把平时的说话速度逼上去。　<span class="mono">5 分钟</span></div></div>
+
+  <h4 style="margin-top:16px;">第二步：今日必练的 3 组绕口句（10 分钟）</h4>
+  <p class="sub" style="margin-bottom:6px;">每组连读 5 遍，慢速 → 正常 → 快速。<b>这些句子专门用今天的词和今天的音素难点设计。</b></p>
+  <div class="tblwrap" style="max-height:none;">
+    <table>
+      <thead><tr><th style="width:46%;">句子</th><th>训练目标</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="ex" style="font-size:13px;">Eleven <b>aged alerts</b> are past the five-day target, and most are <b>threshold</b> breaches.</td>
+          <td class="ex"><span class="mono">/ɜː/</span>（eleven 的重音在 <span class="mono">-LE-</span>）+ <span class="mono">/eɪdʒd/</span> 单音节 + <span class="mono">/ʃh/</span> 连缀 + 词尾 <span class="mono">/ldz/</span>。一句话把今天三组音全踩一遍</td>
+        </tr>
+        <tr>
+          <td class="ex" style="font-size:13px;">We can't <b>triage it out</b> as a false positive — it's a classic <b>trade-based money laundering typology</b>.</td>
+          <td class="ex"><span class="mono">/ˈtriːɑːʒ/</span> 的 <span class="mono">/ʒ/</span> + <span class="mono">/taɪˈpɒlədʒi/</span> 的首音节 <span class="mono">/taɪ/</span> + t 的清脆（英式不浊化）</td>
+        </tr>
+        <tr>
+          <td class="ex" style="font-size:13px;">Please <b>escalate</b> this to the MLRO and draft an <b>escalation memo</b> — and mind the <b>tipping-off</b> risk.</td>
+          <td class="ex">同一词根的两个重音位置（<span class="mono">/ˈeskəleɪt/</span> → <span class="mono">/ˌeskəˈleɪʃn/</span>）+ 复合词重音在首（tipping-off）+ MLRO 读字母</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h4 style="margin-top:16px;">第三步：三点式汇报与列表语调（5 分钟）</h4>
+  <p class="sub" style="margin-bottom:8px;"><b>今天要建立的是一个你能直接搬到会议上的汇报结构</b>——AML 汇报几乎永远是三点式。用下面的骨架，把今天的一条警报说一遍（1 分钟，出声）。</p>
+  <div class="script" style="font-size:13px;">
+    <b style="color:var(--navy);">三点式骨架（照着填，然后整段说 3 遍）</b><br>
+    · <span class="seg">First</span>, the queue stands at forty-one alerts, of which <span class="seg">eleven</span> are <span class="seg">aged</span>.<br>
+    · <span class="seg">Second</span>, one alert shows a genuine <span class="seg">red flag</span> — a reused invoice number.<br>
+    · <span class="seg">And third</span>, we are <span class="seg">escalating</span> that one to the MLRO with an <span class="seg">escalation memo</span> today.
+  </div>
+  <div class="note" style="margin-top:10px;">
+    <b>语调规则（今天必须练对的三条）：</b>① 列表前几项用<b>升调</b>、最后一项用<b>降调</b>——这个模式让听众知道"还没说完 / 说完了"；② 强调靠<b>放慢 + 加重</b>，不靠提高音量；③ 陈述句末尾一定<b>降调</b>，升调会让你听起来不确定，而合规汇报最不能缺的就是确定感。
+  </div>
+
+  <div id="ckSpeak" style="margin-top:12px;"></div>
+</div>
+
+<!-- 模块 5 -->
+<div class="card">
+  <div class="mod">
+    <div class="mod-no"><b>05</b><span>WRITE</span></div>
+    <div class="mod-tt"><h3>写作与今日复盘</h3><p>精讲词造句 + 写出第一份 escalation memo 骨架</p></div>
+    <div class="mod-time">30 分钟</div>
+  </div>
+
+  <h4>任务 A：用精讲词写 5 句（15 分钟）</h4>
+  <p class="sub" style="margin-bottom:6px;">从今天 30 个精讲词里选词，<b>每句至少用 2 个</b>，写成你在真实工作中会说的话。写完朗读一遍，<b>读着拗口的句子必须改到顺为止</b>。</p>
+  <div class="script" style="font-size:13px;">
+    <b>示例（可以直接沿用句式）</b><br>
+    · Any payment above the <span class="seg">threshold</span> must be <span class="seg">escalated</span> to the MLRO the same day.<br>
+    · The <span class="seg">escalation memo</span> must <span class="seg">document</span> the reused invoice number and the exact reference numbers.<br>
+    · <span class="seg">Aged alerts</span> are the single most useful <span class="seg">KRI</span> in our <span class="seg">management information</span> pack.
+  </div>
+
+  <h4 style="margin-top:16px;">任务 B：写出你的第一份 escalation memo 骨架（10 分钟）</h4>
+  <p class="sub" style="margin-bottom:6px;">这是第 2 周的交付物之一，今天先写<b>骨架</b>——只写四行标题 + 每行一句。真正成文放到 Day 11。</p>
+  <div class="script" style="font-size:13px;">
+    <b style="color:var(--navy);">ESCALATION MEMO（骨架，照抄格式，内容用自己的话）</b><br>
+    <b>Subject:</b> Escalation of aged alert — accounts <span class="mono">[__]</span><br>
+    <b>Background:</b> Eleven <span class="seg">aged alerts</span> are past the five-day target; most are <span class="seg">threshold</span> breaches on the same three accounts.<br>
+    <b>Finding:</b> One account shows a <span class="seg">red flag</span> — a reused invoice number, consistent with a <span class="seg">trade-based money laundering typology</span>.<br>
+    <b>Recommendation:</b> <span class="seg">Escalate</span> to the MLRO today; place a block on automatic release; no customer contact (<span class="seg">tipping-off</span> risk).
+  </div>
+  <div class="note" style="margin-top:10px;">
+    <b>为什么现在就开始写：</b>这份骨架里的四个词——Background / Finding / Recommendation / 加上一句风险提示——<b>是英美合规上报文书的通用结构</b>。你以后写任何 escalation，改的只是内容，骨架不用动。
+  </div>
+
+  <div id="ckWrite" style="margin-top:12px;"></div>
+
+  <h4 style="margin-top:16px;">任务 C：回炉昨天的作业（5 分钟）</h4>
+  <p class="sub" style="margin-bottom:6px;">打开 <span class="mono">Day02_精讲词造句.md</span>，检查三件事：</p>
+  <ol class="tight">
+    <li><b>词尾</b>——把所有以 -s / -ed / -ths 结尾的词圈出来，对照模块 01 的 A 段第 ③ 组重新读一遍，<b>确认自己没有在词尾加元音</b>。</li>
+    <li><b>动词的及物性</b>——<i>escalate</i>、<i>document</i>、<i>file</i> 都是及物动词，检查有没有漏掉宾语（<span class="mono">escalate it to the MLRO</span> 而不是 <span class="mono">escalate to the MLRO</span>）。</li>
+    <li><b>英式拼写</b>——继续检查 -ise / -isation / -our / -re 的拼法（<span class="mono">organisation / behaviour / centre</span>）。</li>
+  </ol>
+
+  <h4 style="margin-top:16px;">任务 D：今日收尾</h4>
+  <div id="ckWrap"></div>
+</div>
+
+<!-- 自评 -->
+<div class="card">
+  <h3>今日自评（听力与输出，5 项）</h3>
+  <p class="sub">按实际感受打分，不用美化。<b>这份数据决定我后面几周的配比。</b></p>
+  <div id="rateWrap"></div>
+  <div class="bar"><i id="barRate" style="width:0%"></i></div>
+  <div class="tagline"><span id="rateText">尚未评分</span></div>
+</div>
+
+<!-- 词库推进地图 -->
+<div class="card">
+  <h3>词库推进地图（1932 条 · 每日 100 条 · 约 20 天）</h3>
+  <p class="sub">避免重复、也避免漏词。每天开始前对照这张表，确认今天该用哪一段。</p>
+  <div class="tblwrap" style="max-height:none;">
+    <table>
+      <thead><tr><th style="width:13%;">日程</th><th style="width:13%;">词表行号</th><th>内容</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="en">Day 01</td>
+          <td class="mono" style="font-size:12px;">1–100</td>
+          <td class="ex">银行业与国际金融市场 <b>1–100</b>（nostro / L/C / Basel III / SWIFT / CHAPS …）</td>
+        </tr>
+        <tr>
+          <td class="en">Day 02</td>
+          <td class="mono" style="font-size:12px;">101–199</td>
+          <td class="ex">银行业 <b>101–173</b> + AML <b>1–26</b>（支付报文、货币市场基准、资本监管指标、AML 开篇）</td>
+        </tr>
+        <tr>
+          <td class="en">Day 03</td>
+          <td class="mono" style="font-size:12px;">200–299</td>
+          <td class="ex">AML / KYC <b>27–126</b>（交易监测、警报分诊、风险评级、洗钱类型学、上报与同意制度、整改与治理）</td>
+        </tr>
+        <tr style="background:#f4f8ff;">
+          <td class="en">Day 04 <span class="pill navy">当前</span></td>
+          <td class="mono" style="font-size:12px;">300–399</td>
+          <td class="ex">AML 尾部 <b>19 条</b> + <b>核心地基词 51 条</b>（account / compliance / regulation / regulatory / proportionate / licence …）+ 制裁开篇 <b>30 条</b></td>
+        </tr>
+        <tr>
+          <td class="en">Day 05</td>
+          <td class="mono" style="font-size:12px;">400–499</td>
+          <td class="ex">制裁剩余 <b>71 条</b>（名单机制、许可与豁免、出口管制、船舶筛查）+ 金融犯罪开篇 <b>29 条</b></td>
+        </tr>
+        <tr>
+          <td class="en">Day 06 起</td>
+          <td class="mono" style="font-size:12px;">500–</td>
+          <td class="ex">金融犯罪 → 金融产品 → 英美监管 → 数据隐私 → 法律 …… 一路顺延</td>
+        </tr>
+        <tr>
+          <td class="en">Day 19–20</td>
+          <td class="mono" style="font-size:12px;">1900–1932</td>
+          <td class="ex">伦敦地标与交通收尾 + 英国文化与社交 <b>最后 33 条</b></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="note" style="margin-top:12px;">
+    <b>对齐规则（唯一真相源 = 词表顺序）：</b>每天 100 词的取材顺序，与 Anki 发放新卡的顺序<b>完全一致</b>——Anki 按卡片 position 升序发卡，而 position 与词表行号一一对应。所以你只要打开 Anki，看到的必然是这张表上今天那一行。<br><br>
+    <b>一个已知的一格重叠：</b>第 200 行（FIU，金融情报中心）已经在 Day 02 的页面上出现过，但 Anki 当时没发到它，所以它顺延成了今天这一批的第一张。<b>所以它会在 Day 02 和 Day 03 各出现一次</b>——不是错位，是这一格的边界对齐产生的重叠，不影响其余 99 张。<br><br>
+    <b>另外：</b>词库按实务优先级排列（银行 → AML → 核心词 → 制裁 → 金融犯罪 → …），所以第 1 周的词汇会先走完 AML。这是<b>刻意的</b>——AML 是你未来每天都要用的东西，早背早受益。
+  </div>
+</div>
+
+<div class="card" style="background:linear-gradient(120deg,#f4f8ff,#fff);">
+  <h3>明天（Day 04）预告</h3>
+  <ul class="tight">
+    <li><b>词汇</b>：今天之后 AML 收尾 19 条 + <b>51 个核心地基词</b>（account / balance / debit / credit / deposit / compliance / regulation / regulatory / proportionate / licence …——这批原先只在 Day-01/02 的课程页里出现、从未进过词库，现已收编命名并排进 Anki 队列）+ 制裁开篇 30 条</li>
+    <li><b>听力</b>：<b>今天这场对话的下一步</b>——一笔付款在名单筛查里命中，Maya 和制裁官要判断它是<b>潜在命中</b>还是<b>真实命中</b>；配套音素对照 16 组，重点是<b>重音位置</b>（designated / counterparty / adverse / regulatory）</li>
+    <li><b>发音</b>：<span class="mono">/ʒ/</span> 与 <span class="mono">/dʒ/</span>（中文里都没有的两个音）+ 重音错位的成对词；朗读读 <b>A4 / B2 / C2</b>，A4 读完 A 组 8 段就全走完一轮</li>
+    <li><b>写作</b>：写出一份「<b>筛查命中处置记录</b>」四行骨架（事项 / 筛查结论 / 重大缺口 / 处置决定），并把今天这份 escalation memo 回炉检查重音与英式拼写</li>
+  </ul>
+</div>
+
+</main>
+
+<footer>
+  Day 03 · AML 核心 I：警报分诊 · SAR 上报 · 风险评级　|　<a href="00-作战中心.html">作战中心</a>　·　<a href="01-听力系统.html">听力系统</a>　·　<a href="02-Anki复习系统.html">Anki 系统</a>　·　<a href="03-发音与朗读系统.html">朗读库</a>　·　<a href="Day-02.html">Day 02</a>　·　<a href="Day-04.html">Day 04</a>
+</footer>
+
+<script>
+var LS = "ukce_day03";
+var state = {ck:{}, voc:{}, voc2:{}, rate:{}};
+try{ var raw = localStorage.getItem(LS); if(raw){ state = JSON.parse(raw); } }catch(e){}
+state.ck = state.ck||{}; state.voc = state.voc||{}; state.voc2 = state.voc2||{}; state.rate = state.rate||{};
+function save(){ try{ localStorage.setItem(LS, JSON.stringify(state)); }catch(e){} }
+function $(s){ return document.querySelector(s); }
+
+/* ---------- 词条数据（由 _词库源文件/_build_day03.js 注入） ---------- */
+var WORDS = [["transaction monitoring (TM)","/trænˈzækʃn ˈmɒnɪtərɪŋ/","交易监测","Transaction monitoring generates the alerts that the first line reviews each morning.","交易监测产生警报，由第一道防线每天早上复核。","transaction 重音在 -ZAK-；monitoring 重音在首音节 /ˈmɒn-/，英式 /ɒ/ 短而圆。口语一律说 TM /ˌtiː ˈem/"],
+["alert / alert triage","/əˈlɜːt/ · /ˈtriːɑːʒ/","警报 / 警报分诊","Every alert must be triaged within five working days and the outcome recorded.","每一条警报都必须在五个工作日内完成分诊，并记录结论。","triage 是法语借词，读 /ˈtriːɑːʒ/（「特里-啊日」），g 读 /ʒ/ 不读 /dʒ/，重音在首音节——本批词里最容易读错的一个"],
+["aged alerts","/ˌeɪdʒd əˈlɜːts/","超期未处理警报","Aged alerts are reported to the risk committee every month.","超期未处理的警报每月向风险委员会报告。","aged 读 /eɪdʒd/ 一个音节，不是 /ˈeɪdʒɪd/；alerts 词尾 /ts/ 要一口气收住，不要加 /ɪ/ 变成 /əˈlɜːtsɪ/"],
+["red flag","/ˌred ˈflæɡ/","危险信号","A single large cash deposit from an otherwise quiet account is a red flag.","原本安静的账户突然出现一笔大额现金存入，就是一个危险信号。","作名词短语时两词都可重读；red 的 /e/ 短促，别拖成 /reɪd/。搭配 raise / spot / clear a red flag"],
+["unusual activity","/ʌnˈjuːʒuəl ækˈtɪvəti/","异常活动","Unusual activity must be assessed against the customer's known profile.","异常活动必须结合客户已知的画像进行评估。","unusual 读 /ʌnˈjuːʒuəl/，中间是浊音 /ʒ/ 不是 /s/，且三个音节挤得很紧；activity 重音在 -TIV-"],
+["threshold","/ˈθreʃhəʊld/","阈值","Any cash transaction above the reporting threshold must be escalated.","任何超过申报阈值的现金交易都必须上报。","/θ/ 舌尖必须伸出齿间；/ʃ/ 与 /h/ 直接相连，h 送气极短。这个词读错，整句都会听岔"],
+["structuring / smurfing","/ˈstrʌktʃərɪŋ/ · /ˈsmɜːfɪŋ/","拆分交易","Deliberately keeping payments below the threshold is structuring, and it is a criminal offence.","刻意把付款压在阈值以下就是拆分交易，属于刑事犯罪。","structuring 的 /strʌk/ 后直接接 /tʃə/，中间不加元音；smurfing 的 /ɜː/ 是长音且不卷舌"],
+["risk-based approach (RBA)","/ˈrɪsk beɪst əˈprəʊtʃ/","风险为本方法","A risk-based approach means the intensity of controls follows the risk.","风险为本方法意味着控制强度与风险相匹配。","approach 重音在第二音节 /əˈprəʊtʃ/，读成 /ˈæprəʊtʃ/ 就错了。口语说 RBA /ˌɑː biː ˈeɪ/"],
+["customer risk rating / risk scoring","/ˈkʌstəmə rɪsk ˈreɪtɪŋ/","客户风险评级 / 风险评分","The customer risk rating drives the frequency of periodic review.","客户风险评级决定定期复核的频率。","rating 的 t 在英式里保持清脆 /ˈreɪtɪŋ/，不要浊化成美式 /ˈreɪdɪŋ/；rating 与 scoring 常混用，但 rating 是结论、scoring 是过程"],
+["risk appetite","/ˈrɪsk ˈæpɪtaɪt/","风险偏好","The Board sets the risk appetite for each customer segment.","董事会为每一类客户设定风险偏好。","appetite 重音在首音节 /ˈæp-/，词尾 -ite 读 /aɪt/，不是 /ɪt/；不要读成 /əˈpetɪt/"],
+["customer risk assessment (CRA)","/ˈkʌstəmə rɪsk əˈsesmənt/","客户风险评估","The CRA is refreshed whenever a trigger event occurs.","一旦发生触发事件，客户风险评估就要重新做。","assessment 重音在 -SESS-，双写 s 仍是清音 /s/。口语说 CRA /ˌsiː ɑːr ˈeɪ/"],
+["business-wide risk assessment (BWRA)","/ˈbɪznəs waɪd rɪsk əˈsesmənt/","全业务风险评估","The BWRA is a legal requirement under the Money Laundering Regulations.","全业务风险评估是反洗钱条例规定的法定义务。","business 英式读 /ˈbɪznəs/，只有两个音节，i 完全不发音——读成 /ˈbɪzɪnəs/ 是典型中国式错误"],
+["trigger event","/ˈtrɪɡə ɪˈvent/","触发事件","A change of ownership is a trigger event for enhanced due diligence.","股权变更属于触发强化尽职调查的事件。","trigger 的 /ɡ/ 后直接接 /ə/，中间不加音；event 重音在第二音节 /ɪˈvent/"],
+["periodic review","/ˌpɪəriˈɒdɪk rɪˈvjuː/","定期复核","High-risk customers are subject to periodic review at least annually.","高风险客户至少每年接受一次定期复核。","periodic 重音在 -OD-，英式读 /ˌpɪəriˈɒdɪk/（含 /ɒ/），美式才是 /ˌpɪriˈɑːdɪk/"],
+["typology","/taɪˈpɒlədʒi/","（犯罪）类型学","The NCA's typologies report sets out the methods seen in the last year.","NCA 的类型报告列明了上一年度出现的作案手法。","首音节是 /taɪ/（「泰」）不是 /tɪ/，重音在 -Pɒ-；typology 与 type 同源，这是记读音的抓手"],
+["trade-based money laundering (TBML)","/ˈtreɪd beɪst ˈmʌni ˈlɔːndərɪŋ/","贸易洗钱","TBML hides the movement of value inside apparently ordinary trade documents.","贸易洗钱把资金转移隐藏在看似普通的贸易单证里。","laundering 的 /lɔːn-/ 是长音，词尾 /dərɪŋ/ 很轻几乎滑过。口语说 TBML /ˌtiː biː em ˈel/"],
+["money mule / mule account","/ˈmʌni mjuːl/","钱骡 / 钱骡账户","Students are often recruited as money mules through social media.","学生常通过社交媒体被招募成钱骡。","mule 读 /mjuːl/，英式保留 /j/ 滑音（和 music 起音相同），不是 /muːl/"],
+["escalate / escalation memo","/ˈeskəleɪt/ · /ˌeskəˈleɪʃn ˈmeməʊ/","上报 / 上报备忘","Please escalate this to the MLRO and draft an escalation memo.","请将此上报给反洗钱报告官，并起草一份上报备忘。","动词重音在首音节 /ˈeskəleɪt/，名词重音后移 /ˌeskəˈleɪʃn/——同一词根、重音位置相反，听力里必须都认得"],
+["consent regime","/kənˈsent reɪˈʒiːm/","同意制度","Under the consent regime, the transaction must wait for the NCA's decision.","在同意制度下，该笔交易必须等待 NCA 的决定。","consent 名词动词同音，重音都在后 /kənˈsent/；regime 读 /reɪˈʒiːm/，g 读 /ʒ/，不是 /rɪˈdʒaɪm/"],
+["DAML request","/ˈdæml rɪˈkwest/","洗钱抗辩许可申请","We submitted a DAML request and received consent on day six.","我们提交了洗钱抗辩许可申请，第六天收到了同意。","读作「dam-l」当成一个词，不要逐字母念；展开是 Defence Against Money Laundering"],
+["moratorium period","/ˌmɒrəˈtɔːriəm ˈpɪəriəd/","冻结期","During the moratorium period the bank may not proceed with the transaction.","在冻结期内，银行不得推进该笔交易。","moratorium 重音在 -TO-，词尾是 /əm/ 不是 /ʌm/；英式首音节 /ˌmɒrə/ 短促"],
+["Money Laundering Regulations 2017","/ˈmʌni ˈlɔːndərɪŋ ˌreɡjuˈleɪʃnz/","英国反洗钱条例 2017","The Money Laundering Regulations 2017 require a business-wide risk assessment.","2017 年反洗钱条例要求开展全业务风险评估。","Regulations 重音在 -LA-；英式读 /ˌreɡjuˈleɪʃnz/，不是美式 /ˌreɡjəˈleɪʃnz/。年份读 twenty seventeen，不读 two thousand and seventeen"],
+["JMLSG Guidance","/ˌdʒeɪ em el es ˈdʒiː ˈɡaɪdns/","英国反洗钱行业指引","The JMLSG Guidance is not law, but supervisors expect firms to follow it.","JMLSG 指引不是法律，但监管机构期望机构遵循它。","五个字母逐个读 /dʒeɪ em el es dʒiː/；guidance 读 /ˈɡaɪdns/，只有两个音节，中间的元音几乎消失"],
+["remediation","/rɪˌmiːdiˈeɪʃn/","整改","The remediation programme covers 4,000 files identified in the lookback.","整改方案覆盖回溯审查中识别出的 4,000 份档案。","重音在 -Eɪ-，前面 rɪ-miː-di 三个音节全部快读；读成 /ˌremɪˈdeɪʃn/ 就错了"],
+["lookback review","/ˈlʊkbæk rɪˈvjuː/","回溯审查","The lookback review went back six years and covered every high-risk file.","回溯审查追溯了六年，覆盖全部高风险档案。","lookback 是复合名词，重音落在第一个词 /ˈlʊkbæk/，不要读成两个等重的词；review 重音在后"],
+["first / second / third line","/ˌfɜːst laɪn/","第一 / 第二 / 三道防线","Monitoring sits in the first line; compliance oversight is the second line.","监测属于第一道防线，合规监督属于第二道防线。","first 的 /ɜː/ 是长音且不卷舌（this 那条规则）；说三条线时用 first, second and third line，最后一项降调"],
+["key risk indicator (KRI)","/kiː rɪsk ˈɪndɪkeɪtə/","关键风险指标","Aged alerts are the single most useful KRI for an AML function.","超期未处理警报是反洗钱职能最有用的一个关键风险指标。","indicator 重音在首音节 /ˈɪn-/；口语说 KRI /ˌkeɪ ɑːr ˈaɪ/。KRI 是先行指标，KPI 是结果指标，别混"],
+["management information (MI)","/ˈmænɪdʒmənt ˌɪnfəˈmeɪʃn/","管理信息","The MI pack goes to the Board three weeks after quarter end.","管理信息包在季度结束后三周提交董事会。","management 英式三个音节 /ˈmænɪdʒmənt/，中间的 /ɪ/ 极轻；口语说 MI /ˌem ˈaɪ/"],
+["tone from the top","/ˈtəʊn frəm ðə ˈtɒp/","高层基调","Supervisors look for evidence of tone from the top, not just policies.","监管机构要找的是高层基调的证据，而不只是制度文本。","from the 三词连读成 /frəmðə/，几乎听不出是两个词；tone 的 /əʊ/ 是双元音，要有滑动"],
+["whistleblowing","/ˈwɪslbləʊɪŋ/","内部举报","Whistleblowing is protected under the Public Interest Disclosure Act 1998.","内部举报受 1998 年公共利益披露法保护。","whistle 的 /t/ 夹在 /s/ 和 /l/ 之间基本消失，读 /ˈwɪsl-/；结尾 /bləʊɪŋ/ 连成一串"]];
+var EXTRA = [["Financial Intelligence Unit (FIU)","金融情报中心",""],
+["National Crime Agency (NCA)","英国国家犯罪调查局",""],
+["UKFIU","英国金融情报中心",""],
+["6AMLD","第六号欧盟反洗钱指令",""],
+["record keeping / audit trail","记录保存 / 审计轨迹",""],
+["correspondent banking due diligence","代理行尽职调查",""],
+["wire transfer","电汇",""],
+["typologies report","类型报告",""],
+["invoice manipulation","发票操纵",""],
+["over- / under-invoicing","高开发票 / 低开发票",""],
+["phantom shipment","幽灵货运","单证齐全但货根本不存在"],
+["carousel fraud","旋转木马骗税","循环开具增值税发票骗取退税"],
+["shell company","空壳公司",""],
+["front company","前台公司",""],
+["nominee director / shareholder","名义董事 / 名义股东",""],
+["bearer share","无记名股票",""],
+["trust and company service provider (TCSP)","信托与公司服务提供商",""],
+["professional enabler","专业协助者","律师、会计师等为洗钱提供便利的人"],
+["gatekeeper","守门人","金融业在反洗钱中的角色定位"],
+["cuckoo smurfing","杜鹃式拆分","利用不知情第三方账户过账的洗钱手法"],
+["hawala / hundi","哈瓦拉","非正式跨境汇款体系"],
+["underground banking","地下钱庄",""],
+["authorised push payment (APP) fraud","授权推送支付欺诈","英国最受关注的支付欺诈类型"],
+["romance fraud","情感诈骗",""],
+["invoice redirection fraud","发票改向欺诈",""],
+["CEO fraud","冒充高管诈骗",""],
+["pig butchering","杀猪盘",""],
+["crypto laundering","加密货币洗钱",""],
+["mixer / tumbler","混币器","隐私增强服务，受制裁关注"],
+["privacy coin","隐私币",""],
+["chain-hopping","链跳","在不同区块链间转移以躲避追踪"],
+["national risk assessment (NRA)","国家风险评估",""],
+["geographic risk","地域风险",""],
+["product / service risk","产品服务风险",""],
+["delivery channel risk","交付渠道风险",""],
+["control testing","控制测试",""],
+["independent testing","独立测试",""],
+["compliance monitoring","合规监控",""],
+["quality assurance (QA)","质量保证",""],
+["key performance indicator (KPI)","关键绩效指标",""],
+["board reporting","董事会报告",""],
+["policy owner","政策责任人",""],
+["remediation plan","整改计划",""],
+["past business review (PBR)","历史业务审查",""],
+["training completion rate","培训完成率",""],
+["regulatory expectation","监管期望",""],
+["placement","放置阶段","洗钱三阶段之首：将现金投入金融体系"],
+["layering","离析阶段","通过多层交易切断资金与来源的联系"],
+["integration","整合阶段","资金回流合法经济体系"],
+["mule account / money mule","钱骡账户 / 钱骡","以佣金诱使他人出借账户"],
+["round-tripping","循环回流","资金出境后再以投资名义回流"],
+["loan-back scheme","贷款回流式洗钱",""],
+["APP fraud","授权推送支付欺诈","Authorised Push Payment，受害者自愿转账"],
+["authorised push payment scam","授权推送支付骗局",""],
+["phishing / smishing / vishing","钓鱼 / 短信钓鱼 / 电话钓鱼",""],
+["investment fraud","投资诈骗",""],
+["boiler room fraud","锅炉房诈骗","高压电话推销不存在的股票"],
+["pump and dump","拉高出货",""],
+["unauthorised access fraud","未授权侵入欺诈",""],
+["internal fraud","内部欺诈",""],
+["third-party fraud","第三方欺诈",""],
+["first-party fraud","一方欺诈","客户本人虚构事实骗贷"],
+["synthetic identity","合成身份","拼接真实与虚构信息制造的身份"],
+["account takeover","账户劫持",""],
+["SAR online","英国线上 SAR 提交系统",""],
+["NCA","英国国家犯罪调查局","National Crime Agency"],
+["consent / refusal","同意 / 拒绝","NCA 对 DAML 申请的两种回复"],
+["criminal property","犯罪财产",""],
+["proceeds of crime","犯罪所得",""],
+["terrorist financing","恐怖融资",""]];
+
+(function renderVocab2(){
+  var tb = $("#vocab2Body");
+  EXTRA.forEach(function(w, i){
+    var tr = document.createElement("tr");
+    var on = state.voc2[i] ? " on" : "";
+    tr.innerHTML =
+      '<td><span class="vck' + on + '" data-j="' + i + '"></span></td>' +
+      '<td class="en">' + w[0] + '</td>' +
+      '<td>' + w[1] + '</td>' +
+      '<td class="ex" style="font-size:12px;">' + (w[2]||"") + '</td>';
+    tb.appendChild(tr);
+  });
+  tb.addEventListener("click", function(e){
+    var el = e.target;
+    if(!el.classList.contains("vck")){ return; }
+    var i = el.getAttribute("data-j");
+    if(state.voc2[i]){ delete state.voc2[i]; } else { state.voc2[i] = true; }
+    el.classList.toggle("on", !!state.voc2[i]);
+    save(); sync();
+  });
+})();
+
+(function renderVocab(){
+  var tb = $("#vocabBody");
+  WORDS.forEach(function(w, i){
+    var tr = document.createElement("tr");
+    var on = state.voc[i] ? " on" : "";
+    tr.innerHTML =
+      '<td><span class="vck' + on + '" data-i="' + i + '"></span></td>' +
+      '<td class="en">' + w[0] + '</td>' +
+      '<td class="ph">' + w[1] + '</td>' +
+      '<td>' + w[2] + '</td>' +
+      '<td class="ex">' + w[3] + '<i>' + w[4] + '</i>' + (w[5] ? '<i style="color:var(--red);">※ ' + w[5] + '</i>' : '') + '</td>';
+    tb.appendChild(tr);
+  });
+  tb.addEventListener("click", function(e){
+    var el = e.target;
+    if(!el.classList.contains("vck")){ return; }
+    var i = el.getAttribute("data-i");
+    if(state.voc[i]){ delete state.voc[i]; } else { state.voc[i] = true; }
+    el.classList.toggle("on", !!state.voc[i]);
+    save(); sync();
+  });
+})();
+
+/* ---------- 清单数据 ---------- */
+var LISTS = {
+  ckSetup: [
+    "把 <span class='mono'>学习记录/Day-02.md</span> 的 5 项自评分数回填，并把错题本按「读音错记 / 语流问题」分类",
+    "完成上面的 8 词音素自测，写下至少 3 个和自己读法不一致的词（<b>尤其看词尾那两行</b>）",
+    "确认 Edge 的「朗读此页」功能可用（今天 B 段会议对话和 C 段听写都要靠它播放）",
+    "打开 Anki，确认今天的新卡第一张是 <span class='mono'>Financial Intelligence Unit (FIU)</span>（如果不是，先看 02-Anki复习系统.html 第八节）",
+    "把今天要用的书签准备好：6 Minute English 归档页、Radio 4「You and Yours」、FT News Briefing 播客页",
+    "复习昨天 100 词中标记为困难的词，把仍不熟的重新标一次"
+  ],
+  ckListen: [
+    "<b>A 段</b>：18 组最小对立体全部听过一遍，圈出判断错误的组；<b>第 ③ 组（词尾辅音串）是今天的重点</b>",
+    "<b>B 段</b>：会议对话走完四遍法，先盲听再对拆解表，错题本新增 8 条以上",
+    "<b>B 段</b>：把 <span class='mono'>triage / escalate / escalation / threshold</span> 四个词单独回听 3 遍，直到能条件反射式反应",
+    "<b>C 段</b>：16 句词块听写全部写完，对照答案，把拼错和听错的分开记",
+    "<b>D 段</b>：6 Minute English 第三集走完四遍法并记录理解率",
+    "<b>D 段</b>：Radio 4「You and Yours」听 5 分钟多口音材料，<b>只记关键词，不追求听懂</b>；FT News Briefing 只精听开头 30 秒",
+    "对照「盲区预测清单（AML 专用 20 条）」验证命中情况，命中的全部记入错题本"
+  ],
+  ckSpeak: [
+    "影子跟读第 1 层（看文本，用 B11 段）完成 5 分钟",
+    "影子跟读第 2 层（关文本）完成 5 分钟",
+    "影子跟读第 3 层（1.1 倍速）完成 5 分钟",
+    "3 组绕口句各连读 5 遍（慢 → 正常 → 快），确认词尾不加元音",
+    "三点式汇报骨架填好并<b>整段出声说 3 遍</b>（First / Second / And third，最后一项降调）",
+    "说完立刻回想：今天有哪些位置「想不起英文怎么说」，全部记入错题本"
+  ],
+  ckWrite: [
+    "用今天的精讲词写出 5 个句子，每句至少用 2 个精讲词",
+    "5 句全部朗读出声，拗口的地方改到顺为止",
+    "写出 escalation memo 骨架四行（Subject / Background / Finding / Recommendation）",
+    "回炉 Day 02 作业：圈出所有 -s / -ed / -ths 结尾的词，确认词尾不加元音",
+    "回炉 Day 02 作业：检查 escalate / document / file 是否都带了宾语",
+    "把今天的产出保存到「我的作业」，命名 <span class='mono'>Day03_精讲词造句.md</span> 与 <span class='mono'>Day03_escalation_memo_骨架.md</span>"
+  ],
+  ckWrap: [
+    "填写 <span class='mono'>学习记录/Day-03.md</span>（模块 01 的 B 段听力记录是重点，写清「我当时听成了什么」）",
+    "错题本更新完成，且至少淘汰 1 条已连续 3 次反应过来的旧条目",
+    "100 词过完一遍：30 个精讲词完成口头造句打卡，70 个拓展词在 Anki 完成首轮",
+    "在作战中心的「45天计划」里把 Day 3 打勾",
+    "回听一遍今天 B 段会议对话（睡前 10 分钟，不看文本）"
+  ]
+};
+
+var RATES = [
+  ["音素分辨（18 组最小对立体，错几组）", "5 = 全对；3 = 错 3-5 组；1 = 错 8 组以上"],
+  ["词尾辅音串（第 ③ 组 6 对，错几对）", "5 = 全对；3 = 错 2 对；1 = 全错——今天最该拿满分的一项"],
+  ["精听脚本 A（会议对话）的盲听理解率", "5 = 70% 以上；3 = 40% 左右；1 = 只抓住几个词"],
+  ["词块听写（16 句，写对几句）", "5 = 15 句以上；3 = 10-12 句；1 = 6 句以下"],
+  ["30 个精讲词的开口造句完成度", "5 = 30 个都能现场造句；3 = 一半能；1 = 大部分想不起搭配"]
+];
+
+(function renderLists(){
+  Object.keys(LISTS).forEach(function(id){
+    var box = document.getElementById(id);
+    if(!box){ return; }
+    LISTS[id].forEach(function(txt, i){
+      var key = id + "_" + i;
+      var el = document.createElement("div");
+      el.className = "ck" + (state.ck[key] ? " on" : "");
+      el.innerHTML = '<div class="bx"></div><div class="tx">' + txt + '</div>';
+      el.addEventListener("click", function(){
+        if(state.ck[key]){ delete state.ck[key]; } else { state.ck[key] = true; }
+        el.classList.toggle("on", !!state.ck[key]);
+        save(); sync();
+      });
+      box.appendChild(el);
+    });
+  });
+})();
+
+(function renderRates(){
+  var wrap = $("#rateWrap");
+  RATES.forEach(function(r, i){
+    var row = document.createElement("div");
+    row.className = "rate";
+    var btns = "";
+    for(var s = 1; s <= 5; s++){
+      btns += '<button data-r="' + i + '" data-s="' + s + '"' + (state.rate[i] === s ? ' class="on"' : '') + '>' + s + '</button>';
+    }
+    row.innerHTML = '<span class="lb">' + r[0] + '</span>' + btns;
+    wrap.appendChild(row);
+    var tip = document.createElement("div");
+    tip.style.cssText = "font-size:11.5px;color:var(--ink-3);margin:-6px 0 10px 266px;";
+    tip.textContent = r[1];
+    wrap.appendChild(tip);
+  });
+  wrap.addEventListener("click", function(e){
+    var b = e.target;
+    if(b.tagName !== "BUTTON"){ return; }
+    var i = b.getAttribute("data-r");
+    state.rate[i] = parseInt(b.getAttribute("data-s"), 10);
+    Array.prototype.forEach.call(wrap.querySelectorAll('button[data-r="' + i + '"]'), function(x){ x.classList.remove("on"); });
+    b.classList.add("on");
+    save(); sync();
+  });
+})();
+
+/* ---------- 进度统计 ---------- */
+function countAll(){
+  var total = 0, done = 0;
+  Object.keys(LISTS).forEach(function(id){
+    LISTS[id].forEach(function(_, i){
+      total++; if(state.ck[id + "_" + i]){ done++; }
+    });
+  });
+  total += WORDS.length + EXTRA.length;
+  done += Object.keys(state.voc).length + Object.keys(state.voc2).length;
+  return {total:total, done:done};
+}
+function sync(){
+  var c = countAll();
+  var pct = c.total ? Math.round(c.done / c.total * 100) : 0;
+  $("#barAll").style.width = pct + "%";
+  $("#statPct").textContent = pct + "%";
+  var vocN = Object.keys(state.voc).length, vocN2 = Object.keys(state.voc2).length;
+  $("#progText").textContent = c.done + " / " + c.total + " 项已完成　·　精讲词造句 " + vocN + " / " + WORDS.length + "　·　拓展词认读 " + vocN2 + " / " + EXTRA.length;
+  var rk = Object.keys(state.rate);
+  if(rk.length){
+    var sum = 0; rk.forEach(function(k){ sum += state.rate[k]; });
+    $("#rateText").textContent = "已评分：" + rk.length + " / 5 项，当前得分 " + sum + " / 25";
+    $("#barRate").style.width = (sum / 25 * 100) + "%";
+  } else {
+    $("#rateText").textContent = "尚未评分";
+    $("#barRate").style.width = "0%";
+  }
+}
+
+/* ---------- 折叠 ---------- */
+function tog(btn){
+  var bd = btn.nextElementSibling;
+  bd.classList.toggle("on");
+  if(!btn.dataset.base){ btn.dataset.base = btn.textContent; }
+  btn.textContent = bd.classList.contains("on") ? "收起" : btn.dataset.base;
+}
+
+sync();
+</script>
+<!--PRON_JS_START-->
+<script>
+/* 发音朗读模块（由 _朗读源文件/_build_day_pron.js 生成，勿手改） */
+var PRON_DAY = [{"id":"A8","title":"词尾辅音串：别加元音，也别吞掉","words":64,"mins":0.6,"focus":"-s / -ed / -ths 结尾","text":"*Banks ask* for *documents*, *contracts*, *reports* and *statements*. *Clients submit requests*, *banks assess risks*, and *records get archived*. *Last* week we *checked* the *lists*, *flagged* the *gaps*, and *moved* the *files*. The *months* of *work* paid off.","points":[["contracts /ˈkɒntrækts/","词尾三个辅音 /kts/ 要连读成一串。常见错误是加元音读成 /ˈkɒntræktɪs/"],["documents /ˈdɒkjumənts/","重音在第一音节，第二音节弱化成 /ju/ 或 /jə/，结尾 /nts/ 一串连读"],["checked /tʃekt/、flagged /flæɡd/、moved /muːvd/","-ed 的三种读法：前面是清辅音读 /t/，浊辅音或元音读 /d/，只有 /t/ /d/ 结尾才读 /ɪd/。<b>不要把 checked 读成 /ˈtʃekɪd/</b>"],["months /mʌnθs/、sixths /sɪksθs/","/θs/ 连续两个齿音，是英语里最难的结尾之一。慢慢读，先保证 /θ/ 的舌尖位置，再过渡到 /s/"],["assess /əˈses/、risks /rɪsks/","assess 是两音节 /əˈses/，重音在后；risks 结尾 /sks/ 三连辅音"]],"zh":"银行要求提供文件、合同、报告和账单。客户提交申请，银行评估风险，记录被归档。上周我们核对了清单，标记了缺口，并转移了文件。几个月的工作有了回报。","why":"今天的第 ③ 组音素就是它。<b>词尾辅音串是中国人丢分最多的一项</b>——thresholds、risks、flagged 这些词你其实都认识，问题全在词尾：加一个 /ɪ/ 就变成另一个词。A8 专门练 -s / -ed / -ths 的收尾，读完马上回到模块 01 的 A 段重测一遍。"},{"id":"A5","title":"/ɜː/ 与 /ɔː/：一对长元音","words":60,"mins":0.5,"focus":"/ɜː/ vs /ɔː/","text":"The *firm learned* that *early warnings work* only if the *first report* is *urgent*. *All four boards ordered* a *thorough review* and *sought more support* for the *third quarter*.","points":[["firm /fɜːm/、work /wɜːk/","/ɜː/ 舌位居中、唇自然放松，是最\"中性\"的长元音。不要卷舌（美式 /ɜːr/ 才卷）"],["learned /lɜːnd/","一个音节，不要读成两个。结尾 /nd/ 辅音串要连起来"],["all /ɔːl/、four /fɔː/、boards /bɔːdz/","/ɔː/ 唇要收圆，比 /ɜː/ 更靠后。four 和 for 同音，都是 /fɔː/"],["thorough /ˈθʌrə/","英式读 /ˈθʌrə/（两个音节），不是 /ˈθɜːroʊ/。开头是 /θ/，舌尖必须触上齿"],["sought /sɔːt/","和 sort 同音。不规则动词，读 /sɔːt/，不是 /saʊt/"]],"zh":"公司认识到，只有第一份报告足够紧急，早期预警才真正管用。所有四个董事会都下令做彻底审查，并为第三季度争取了更多支持。","why":"/ɜː/ 与 /ɔː/ 是今天另外两条长音。work / firm / bird 的 <span class=\"mono\">/ɜː/</span> 在英式里<b>不卷舌</b>；walk / board / form 的 <span class=\"mono\">/ɔː/</span> 要圆唇。这两条音一混，董事会（board）会被听成小鸟（bird）——今天词表里 board reporting 是高频词。"},{"id":"B11","title":"团队会议：警报分级讨论","words":130,"mins":1.2,"focus":"口语连读 · 会议中的确认与追问","text":"<span class='who'>Team Lead</span> _Right_, let us _run through_ the *queue*. _Remind me_ where we are with the *Martins matter*.\n<span class='who'>Analyst</span> _I closed it_ as a *false positive*. The _structuring pattern_ _looked_ suspicious, but the *invoices* _backed up_ every payment, and the client has been _with us_ for *eleven years*.\n<span class='who'>Team Lead</span> *Fine.* _Just to be clear_ — did you *document* the reason? _Because if it comes back_ in a *thematic review*, we need to _show_ why we _stopped there_.\n<span class='who'>Analyst</span> _Yes_, it is in the *file note*.\n<span class='who'>Team Lead</span> *Good.* _Next one._","points":[["queue /kjuː/","英式读 /kjuː/。/juː/ 要读成两个音素的滑动，不要读成 /kuː/"],["Martins matter /ˈmɑːtɪnz ˈmætə/","两个词连读时 /nz/ 与 /m/ 相邻，实际读成 /ˈmɑːtɪnz mætə/，中间只有极短的停顿"],["structuring /ˈstrʌktʃərɪŋ/","指\"化整为零\"的交易结构。重音在首，三个音节后接 /ɪŋ/，不要读成 /strʌkˈtʃʊərɪŋ/"],["Just to be clear","会议中的追问套语。<b>语调是先降后升</b>，表示\"我要确认一下\"而不是质问"],["thematic review /θɪˈmætɪk rɪˈvjuː/","监管的\"专题审查\"。thematic 重音在第二音节，开头是 /θ/（舌尖触上齿）"],["file note /faɪl nəʊt/","合规术语，指\"案卷记录\"。两个词要读成一个单位，中间不断开"]],"zh":"组长：好，我们过一遍队列。提醒我一下 Martins 那件事到哪了。\n分析员：我按误报结案了。那个拆分结构看着可疑，但发票为每一笔付款都提供了支撑，而且客户跟我们往来十一年了。\n组长：可以。确认一下——你把理由写下来了吗？因为如果专题审查回头问起，我们需要说明为什么在那里停下。\n分析员：写了，在案卷记录里。\n组长：好。下一个。","why":"这一段就是今天 100 词所在的场景：<b>团队会议里的警报分级讨论</b>。你刚在模块 01 的 B 段听过会议对话，现在把它读出来——<b>听过的句子再读，口腔记忆形成得最快</b>。它同时是模块 04 影子跟读的材料，读准了晚上跟读会轻松很多。"}];
+
+(function(){
+  var GROUP_CN = {"A":"音素校准","B":"合规专业","C":"职场口语","D":"生活场景","E":"语调与节奏"};
+
+  function markup(t){
+    return String(t)
+      .replace(/\*(.+?)\*/g, '<b class="ps">$1</b>')
+      .replace(/(^|[^_])_([^_]+?)_(?=[^_]|$)/g, '$1<u class="pl">$2</u>')
+      .replace(/~(.+?)~/g, '<em class="px">$1</em>');
+  }
+  function plain(t){
+    return String(t)
+      .replace(/\*(.+?)\*/g, '$1')
+      .replace(/(^|[^_])_([^_]+?)_(?=[^_]|$)/g, '$1$2')
+      .replace(/~(.+?)~/g, '$1')
+      .replace(/<span[^>]*>/g, '').replace(/<\/span>/g, '')
+      .replace(/<br\s*\/?>/g, '. ');
+  }
+
+  /* ---------- 语音合成（en-GB） ---------- */
+  var gbVoice = null;
+  function pickVoice(){
+    if(!window.speechSynthesis){ return; }
+    var vs = speechSynthesis.getVoices() || [];
+    var pref = ['Google UK English Female','Google UK English Male','Libby','Sonia','Ryan','George','Hazel','Microsoft Libby','Microsoft Sonia'];
+    gbVoice = null;
+    for(var i = 0; i < pref.length && !gbVoice; i++){
+      gbVoice = vs.filter(function(v){ return v.name.indexOf(pref[i]) > -1; })[0] || null;
+    }
+    if(!gbVoice){ gbVoice = vs.filter(function(v){ return /^en-GB/i.test(v.lang); })[0] || null; }
+    if(!gbVoice){ gbVoice = vs.filter(function(v){ return /^en/i.test(v.lang); })[0] || null; }
+  }
+  if(window.speechSynthesis){ pickVoice(); speechSynthesis.onvoiceschanged = pickVoice; }
+  function speak(txt, rate){
+    if(!window.speechSynthesis){ alert('当前浏览器不支持朗读，请用 Edge 或 Chrome 打开本页。'); return; }
+    speechSynthesis.cancel();
+    var u = new SpeechSynthesisUtterance(txt);
+    u.lang = 'en-GB';
+    if(gbVoice){ u.voice = gbVoice; }
+    u.rate = rate || 0.95;
+    u.pitch = 1.0;
+    speechSynthesis.speak(u);
+  }
+
+  /* ---------- 渲染今日段落 ---------- */
+  var wrap = document.getElementById('prWrap');
+  wrap.innerHTML = PRON_DAY.map(function(s, i){
+    var paras = markup(s.text).split('\n').map(function(p){ return '<div class="pp">' + p + '</div>'; }).join('');
+    var pts = s.points.map(function(p){
+      return '<tr><td class="ph">' + markup(p[0]) + '</td><td class="ex">' + markup(p[1]) + '</td></tr>';
+    }).join('');
+    var zh = String(s.zh).replace(/\n/g, '<br>');
+    var g = s.id.charAt(0);
+    return '<div class="prseg">' +
+      '<div class="prhead">' +
+        '<span class="prno">' + s.id + '</span>' +
+        '<span class="prtt">' + s.title + '</span>' +
+        '<span class="prmeta">' + s.words + ' 词 · 约 ' + s.mins + ' 分钟 · ' + g + ' 组 ' + (GROUP_CN[g] || '') + ' · ' + s.focus + '</span>' +
+      '</div>' +
+      '<div style="margin:8px 0 9px;">' +
+        '<button class="btn sm primary" data-say="' + i + '">▶ 英式朗读</button> ' +
+        '<button class="btn sm" data-slow="' + i + '">▶ 慢速</button>' +
+      '</div>' +
+      (s.why ? '<span class="prwhy"><b>今天为什么读这段：</b>' + s.why + '</span>' : '') +
+      '<div class="prbox">' + paras + '</div>' +
+      '<div class="prleg">' +
+        '<span><i style="background:#fff2c9;">黄底</i> 易错音</span>' +
+        '<span><i style="background:#e9f1ff;">蓝底</i> 连读 / 弱读</span>' +
+        '<span style="color:var(--red);">红色 = 句子重音</span>' +
+        '<span>' + s.points.length + ' 条发音要点</span>' +
+      '</div>' +
+      '<div class="reveal"><button class="btn sm" onclick="tog(this)">发音要点（' + s.points.length + ' 条）</button>' +
+        '<div class="revbd"><div class="tblwrap"><table><thead><tr><th style="width:200px;">词 / 短语</th><th>为什么容易读错 · 怎么改</th></tr></thead><tbody>' + pts + '</tbody></table></div></div>' +
+      '</div>' +
+      '<div class="reveal"><button class="btn sm" onclick="tog(this)">中文译文</button>' +
+        '<div class="revbd"><div class="przh">' + zh + '</div></div>' +
+      '</div>' +
+    '</div>';
+  }).join('');
+
+  Array.prototype.forEach.call(wrap.querySelectorAll('[data-say]'), function(b){
+    b.onclick = function(){ speak(plain(PRON_DAY[+b.getAttribute('data-say')].text), 0.95); };
+  });
+  Array.prototype.forEach.call(wrap.querySelectorAll('[data-slow]'), function(b){
+    b.onclick = function(){ speak(plain(PRON_DAY[+b.getAttribute('data-slow')].text), 0.72); };
+  });
+
+  /* ---------- 打卡清单（并入当日总进度） ---------- */
+  var GENERAL = ["走完四步：先听 → 看标注读 → 不看标注读 → 站起来加大音量读（<b>不许只读 1 遍就勾</b>）","每段读完后做体感自查：喉结振动 / 嘴前气流 / 对镜看舌尖 / 非重读 r 不卷舌","读完立刻合上文本用中文回想一遍，凡想不起英文怎么说的位置记入 <span class=\"mono\">错题本.md</span>"];
+  var box = document.getElementById('ckPron');
+  if(typeof LISTS !== 'undefined' && box && typeof state !== 'undefined'){
+    LISTS.ckPron = GENERAL.concat(PRON_DAY.map(function(s){
+      return s.id + ' ' + s.title + ' —— 三遍读完（听 → 看标注 → 不看标注 → 站着读），并做完体感自查';
+    }));
+    LISTS.ckPron.forEach(function(txt, i){
+      var key = 'ckPron_' + i;
+      var el = document.createElement('div');
+      el.className = 'ck' + (state.ck[key] ? ' on' : '');
+      el.innerHTML = '<div class="bx"></div><div class="tx">' + txt + '</div>';
+      el.addEventListener('click', function(){
+        if(state.ck[key]){ delete state.ck[key]; } else { state.ck[key] = true; }
+        el.classList.toggle('on', !!state.ck[key]);
+        save(); sync();
+      });
+      box.appendChild(el);
+    });
+    if(typeof sync === 'function'){ sync(); }
+  }
+})();
+</script>
+<!--PRON_JS_END-->
+</body>
+</html>

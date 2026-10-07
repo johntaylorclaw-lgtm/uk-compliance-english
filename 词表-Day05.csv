@@ -1,0 +1,101 @@
+﻿英文,中文,领域,补充说明
+ownership and control test,所有权与控制判定,制裁与出口管制,英国法下控制权可低于 50%
+humanitarian carve-out,人道主义例外,制裁与出口管制,
+sanctions compliance programme,制裁合规体系,制裁与出口管制,
+HM Treasury,英国财政部,制裁与出口管制,英国制裁的发布机关
+Sanctions and Anti-Money Laundering Act 2018,2018 年制裁与反洗钱法,制裁与出口管制,英国脱欧后制裁制度的法律基础
+consolidated list,综合名单,制裁与出口管制,英国 OFSI 维护的金融制裁名单
+UK Sanctions List,英国制裁名单,制裁与出口管制,
+UN Security Council resolution,联合国安理会决议,制裁与出口管制,
+BIS (Bureau of Industry and Security),美国工业与安全局,制裁与出口管制,
+EAR (Export Administration Regulations),美国出口管理条例,制裁与出口管制,
+ITAR,美国国际武器贸易条例,制裁与出口管制,
+Entity List,实体清单,制裁与出口管制,美国商务部限制出口的实体名单
+Denied Persons List,拒绝人员清单,制裁与出口管制,
+Affiliates Rule,关联方规则,制裁与出口管制,
+sanctions nexus,制裁关联点,制裁与出口管制,判断一笔业务是否触及制裁的连结点
+US person,美国人士,制裁与出口管制,美国制裁域外适用的核心概念
+facilitation,促成,制裁与出口管制,禁止协助他人规避制裁
+economic resources,经济资源,制裁与出口管制,
+making available,提供（资金或经济资源）,制裁与出口管制,制裁禁令中的核心动词
+dominant influence,支配性影响,制裁与出口管制,
+flag state,船旗国,制裁与出口管制,
+AIS (Automatic Identification System),船舶自动识别系统,制裁与出口管制,
+dark fleet,影子船队,制裁与出口管制,关闭 AIS 以规避制裁的油轮群
+ship-to-ship transfer,船对船过驳,制裁与出口管制,
+price cap,价格上限,制裁与出口管制,G7 对俄油的价格上限机制
+attestation (price cap),价格上限声明,制裁与出口管制,
+certificate of origin,原产地证明,制裁与出口管制,
+stop list / watchlist,禁止名单 / 观察名单,制裁与出口管制,
+rescreening,重新筛查,制裁与出口管制,
+lookback screening,回溯筛查,制裁与出口管制,
+screening tuning,筛查规则调优,制裁与出口管制,降低误报率的核心工作
+voluntary self-disclosure,自愿披露,制裁与出口管制,可显著减轻处罚的关键动作
+civil penalty / criminal penalty,民事处罚 / 刑事处罚,制裁与出口管制,
+strict liability,严格责任,制裁与出口管制,制裁违规通常不要求证明主观故意
+reasonable cause to suspect,有合理理由怀疑,制裁与出口管制,
+funds and economic resources,资金与经济资源,制裁与出口管制,冻结令的法定标的表述
+travel ban,旅行禁令,制裁与出口管制,
+arms embargo,武器禁运,制裁与出口管制,
+extraterritorial reach,域外效力,制裁与出口管制,
+50 per cent rule,50% 规则,制裁与出口管制,受制裁主体合计持股达 50% 的实体视为受制裁
+circumvention,规避,制裁与出口管制,
+sanctions evasion,制裁规避,制裁与出口管制,主观故意的违规行为
+general licence,一般许可,制裁与出口管制,无需逐一申请、满足条件即可适用的豁免
+specific licence,特定许可,制裁与出口管制,个案申请
+derogation,例外减免,制裁与出口管制,
+delisting / de-listing request,除名申请,制裁与出口管制,
+potential match / partial match,潜在命中,制裁与出口管制,
+name screening,名单筛查,制裁与出口管制,
+payment screening,支付筛查,制裁与出口管制,在报文流转环节实时拦截
+transaction screening,交易筛查,制裁与出口管制,
+threshold / sensitivity,阈值 / 灵敏度,制裁与出口管制,调高降误报、调低防漏报的权衡
+alert disposition,警报处置结论,制裁与出口管制,
+whitelist / suppression list,白名单 / 抑制名单,制裁与出口管制,须有独立复核机制，否则是监管雷区
+screening tool coverage,筛查工具覆盖率,制裁与出口管制,
+fleet screening,全量批次筛查,制裁与出口管制,
+ownership screening,股权穿透筛查,制裁与出口管制,
+shadow fleet,影子船队,制裁与出口管制,通过换旗、关 AIS 规避价格上限与制裁
+AIS,船舶自动识别系统,制裁与出口管制,Automatic Identification System，常被关闭以隐藏轨迹
+dark fleet activity,暗船队活动,制裁与出口管制,
+G7 price cap,七国集团价格上限,制裁与出口管制,针对俄罗斯原油与成品油
+attestation,合规声明,制裁与出口管制,供应链中下游主体出具的用途与价格承诺
+end-use statement,最终用途声明,制裁与出口管制,
+catch-all control,兜底管制,制裁与出口管制,物项本身未被列名但用途可疑即可管制
+export control classification number (ECCN),出口管制分类编号,制裁与出口管制,
+technology transfer,技术转移,制裁与出口管制,
+deemed export,视同出口,制裁与出口管制,向境内外国人披露技术即视为出口
+embargoed jurisdiction,受禁运法域,制裁与出口管制,
+ownership chain,股权链条,制裁与出口管制,
+control via other means,其他方式控制,制裁与出口管制,如任命多数董事、主导经营
+sanctions risk assessment,制裁风险评估,制裁与出口管制,
+monetary penalty,罚款,制裁与出口管制,
+economic crime,经济犯罪,金融犯罪、欺诈与执法,英国《2023 年经济犯罪与企业透明法》的法定用语
+fraud,欺诈,金融犯罪、欺诈与执法,
+bribery and corruption,贿赂与腐败,金融犯罪、欺诈与执法,
+tax evasion,逃税,金融犯罪、欺诈与执法,刑事犯罪；与 tax avoidance 有本质区别
+tax avoidance,避税,金融犯罪、欺诈与执法,合法但可能被认定为 aggressive
+facilitation of tax evasion,协助逃税,金融犯罪、欺诈与执法,英国 2017 年刑事财政法创设的企业犯罪
+failure to prevent,未能预防,金融犯罪、欺诈与执法,英国法下企业犯罪的典型归责模式
+failure to prevent bribery,未能预防贿赂,金融犯罪、欺诈与执法,2010 年反贿赂法第六条
+failure to prevent fraud,未能预防欺诈,金融犯罪、欺诈与执法,2023 年经济犯罪法新增罪名
+adequate procedures,充分程序,金融犯罪、欺诈与执法,反贿赂法的唯一抗辩事由
+POCA 2002,2002 年犯罪所得法,金融犯罪、欺诈与执法,英国反洗钱刑事体系的根基
+SOCPA 2005,2005 年严重有组织犯罪与警察法,金融犯罪、欺诈与执法,
+suspicion,怀疑,金融犯罪、欺诈与执法,英国法下无需确证，标准极低且主观
+reasonable grounds to suspect,有合理理由怀疑,金融犯罪、欺诈与执法,
+knowledge,明知,金融犯罪、欺诈与执法,
+criminal conduct,犯罪行为,金融犯罪、欺诈与执法,
+benefit from criminal conduct,从犯罪行为中获益,金融犯罪、欺诈与执法,
+civil recovery,民事追缴,金融犯罪、欺诈与执法,无需刑事定罪即可追回资产
+unexplained wealth order (UWO),财富来源不明令,金融犯罪、欺诈与执法,针对高价值资产的强调查权
+account freezing order (AFO),账户冻结令,金融犯罪、欺诈与执法,
+account forfeiture order,账户没收令,金融犯罪、欺诈与执法,
+restraint order,限制令,金融犯罪、欺诈与执法,刑事程序中冻结被告资产
+confiscation order,没收令,金融犯罪、欺诈与执法,
+cash seizure,现金扣押,金融犯罪、欺诈与执法,
+asset recovery,资产追回,金融犯罪、欺诈与执法,
+Serious Fraud Office (SFO),英国严重欺诈办公室,金融犯罪、欺诈与执法,
+CPS,英国皇家检察署,金融犯罪、欺诈与执法,Crown Prosecution Service
+Financial Conduct Authority (FCA),英国金融行为监管局,金融犯罪、欺诈与执法,
+Prudential Regulation Authority (PRA),英国审慎监管局,金融犯罪、欺诈与执法,

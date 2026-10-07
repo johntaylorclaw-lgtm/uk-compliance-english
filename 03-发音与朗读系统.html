@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>发音与朗读系统 · 文本库与每日用法 — 英国银行业合规英语强化</title>
+<style>
+:root{
+  --bg:#f5f6f8;--panel:#fff;--panel-2:#fafbfc;--line:#e3e6ea;--line-2:#eef1f4;
+  --ink:#1c2330;--ink-2:#4a5568;--ink-3:#8a94a3;
+  --navy:#012169;--red:#c8102e;--blue:#1f6feb;--teal:#0f8a7e;--amber:#b7791f;--purple:#6b46c1;--green:#2f855a;
+  --shadow:0 1px 2px rgba(16,24,40,.05),0 4px 14px rgba(16,24,40,.06);
+  --radius:12px;
+}
+*{box-sizing:border-box;}
+body{margin:0;background:var(--bg);color:var(--ink);font-size:14px;line-height:1.68;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",Roboto,sans-serif;
+  -webkit-font-smoothing:antialiased;}
+a{color:var(--blue);text-decoration:none;}
+a:hover{text-decoration:underline;}
+
+.hero{background:linear-gradient(120deg,#012169 0%,#0b3a8f 55%,#1f6feb 100%);color:#fff;padding:24px 28px 20px;}
+.hero-inner{max-width:1080px;margin:0 auto;}
+.crumb{font-size:12px;opacity:.85;}
+.crumb a{color:#fff;text-decoration:underline;}
+.hero h1{margin:8px 0 6px;font-size:23px;font-weight:700;}
+.hero p{margin:0;opacity:.88;font-size:13.5px;max-width:840px;}
+.stats{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px;}
+.stat{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18);border-radius:10px;padding:7px 13px;min-width:98px;}
+.stat b{display:block;font-size:17px;font-weight:700;line-height:1.2;}
+.stat span{font-size:11.5px;opacity:.82;}
+
+main{max-width:1080px;margin:0 auto;padding:22px 20px 90px;}
+h2.sec{font-size:18px;margin:0 0 4px;font-weight:700;}
+p.sub{margin:0 0 16px;color:var(--ink-3);font-size:13px;}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px;margin-bottom:16px;}
+.card h3{margin:0 0 10px;font-size:15.5px;font-weight:700;}
+.card h4{margin:16px 0 6px;font-size:13.5px;font-weight:700;color:var(--navy);}
+.card h4:first-child{margin-top:0;}
+
+.pill{display:inline-block;font-size:11px;padding:2px 8px;border-radius:999px;border:1px solid var(--line);background:var(--panel-2);color:var(--ink-2);margin:0 5px 5px 0;}
+.pill.navy{background:#eef2fb;border-color:#d5def5;color:var(--navy);}
+.pill.red{background:#fdeef0;border-color:#f7d4d9;color:var(--red);}
+.pill.teal{background:#e9f7f5;border-color:#cbe9e4;color:var(--teal);}
+.pill.amber{background:#fdf6e7;border-color:#f3e3bd;color:var(--amber);}
+.pill.purple{background:#f2edfb;border-color:#e0d5f5;color:var(--purple);}
+.pill.green{background:#ecf7f1;border-color:#d0ebdd;color:var(--green);}
+
+ul.tight{margin:6px 0 0;padding-left:20px;}
+ul.tight li{margin-bottom:5px;font-size:13.2px;color:var(--ink-2);}
+ul.tight li b{color:var(--ink);}
+ol.tight{margin:6px 0 0;padding-left:22px;}
+ol.tight li{margin-bottom:6px;font-size:13.2px;color:var(--ink-2);}
+ol.tight li b{color:var(--ink);}
+
+.ck{display:flex;align-items:flex-start;gap:10px;padding:8px 0;border-bottom:1px solid var(--line-2);cursor:pointer;}
+.ck:last-child{border-bottom:0;}
+.ck:hover{background:var(--panel-2);}
+.ck .bx{flex:0 0 17px;width:17px;height:17px;border:1.5px solid var(--line);border-radius:5px;background:#fff;margin-top:3px;}
+.ck.on .bx{background:var(--green);border-color:var(--green);}
+.ck.on .bx::after{content:"✓";color:#fff;font-size:11px;display:flex;justify-content:center;line-height:15px;}
+.ck .tx{flex:1;font-size:13.2px;color:var(--ink-2);}
+.ck.on .tx{color:var(--ink-3);text-decoration:line-through;}
+
+.mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:12.6px;}
+.ipa{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--amber);font-size:12.4px;}
+
+table{width:100%;border-collapse:collapse;font-size:13px;}
+th,td{text-align:left;padding:8px 9px;border-bottom:1px solid var(--line-2);vertical-align:top;}
+th{background:var(--panel-2);font-size:11.5px;color:var(--ink-3);letter-spacing:.03em;text-transform:uppercase;font-weight:600;}
+tbody tr:hover{background:#fbfcfd;}
+td.en{font-weight:600;color:var(--navy);white-space:nowrap;}
+td.ph{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--amber);font-size:12px;white-space:nowrap;}
+td.ex{color:var(--ink-2);font-size:12.6px;}
+.tblwrap{max-height:620px;overflow:auto;border:1px solid var(--line-2);border-radius:10px;}
+
+.btn{appearance:none;font:inherit;font-size:13px;padding:7px 14px;border-radius:8px;border:1px solid var(--line);background:#fff;color:var(--ink);cursor:pointer;}
+.btn:hover{background:var(--panel-2);}
+.btn.primary{background:var(--navy);border-color:var(--navy);color:#fff;}
+.btn.primary:hover{background:#0b3a8f;}
+.btn.sm{font-size:12px;padding:5px 10px;border-radius:7px;}
+.reveal{margin-top:10px;}
+.revbd{display:none;margin-top:10px;}
+.revbd.on{display:block;}
+
+.timer{display:flex;align-items:center;gap:10px;flex-wrap:wrap;background:var(--panel-2);border:1px solid var(--line-2);border-radius:10px;padding:10px 12px;}
+.timer .clock{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:24px;font-weight:700;color:var(--navy);min-width:76px;}
+.timer .clock.warn{color:var(--red);}
+
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+@media(max-width:840px){.two{grid-template-columns:1fr;}}
+.note{background:#fffbea;border:1px solid #f5e6b8;border-radius:9px;padding:11px 13px;font-size:12.7px;color:#7a5c12;}
+.note b{color:#6b4f0d;}
+.bad{background:#fdeef0;border:1px solid #f7d4d9;border-radius:9px;padding:11px 13px;font-size:12.7px;color:#8c2231;}
+.good{background:#ecf7f1;border:1px solid #d0ebdd;border-radius:9px;padding:11px 13px;font-size:12.7px;color:#276749;}
+.info{background:#eef4ff;border:1px solid #d3e0fb;border-radius:9px;padding:11px 13px;font-size:12.7px;color:#1b4189;}
+
+.bar{height:9px;background:var(--line-2);border-radius:999px;overflow:hidden;margin:6px 0 4px;}
+.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--navy),var(--blue));border-radius:999px;transition:width .3s;}
+
+.step{display:flex;gap:10px;margin:14px 0 8px;}
+.step .n{flex:0 0 26px;height:26px;border-radius:8px;background:var(--blue);color:#fff;font-size:12.5px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.step .h{font-size:14px;font-weight:700;color:var(--navy);padding-top:2px;}
+.step .h small{display:block;font-weight:400;font-size:12px;color:var(--ink-3);}
+
+/* ---------- 朗读文本块 ---------- */
+.rb{background:#fbfcfd;border:1px solid var(--line-2);border-left:3px solid var(--navy);border-radius:10px;
+    padding:16px 18px;font-size:15.2px;line-height:2.15;color:var(--ink);
+    font-family:Georgia,"Times New Roman",-apple-system,"PingFang SC","Microsoft YaHei",serif;}
+.rb b.st{color:var(--red);font-weight:700;}
+.rb u.lk{text-decoration:none;background:#e9f1ff;border-radius:3px;padding:0 1px;}
+.rb em.hw{font-style:normal;background:#fff2c9;border-radius:3px;padding:0 1px;}
+.rb .para{margin-bottom:10px;}
+.rb .para:last-child{margin-bottom:0;}
+.rb .who{font-weight:700;color:var(--navy);font-family:-apple-system,"Segoe UI","Microsoft YaHei",sans-serif;font-size:13px;}
+
+.seghead{display:flex;align-items:flex-start;gap:11px;flex-wrap:wrap;margin-bottom:4px;}
+.segno{flex:0 0 auto;font-family:ui-monospace,Menlo,monospace;font-size:11.5px;font-weight:700;color:#fff;background:var(--navy);border-radius:6px;padding:3px 8px;}
+.segtt{font-size:15.2px;font-weight:700;flex:1;min-width:200px;}
+.segmeta{font-size:11.5px;color:var(--ink-3);padding-top:4px;}
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:12px;color:var(--ink-3);margin:10px 0 0;}
+.legend i{font-style:normal;padding:0 3px;border-radius:3px;}
+
+.navbar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px;}
+.navbar button{appearance:none;font:inherit;font-size:12.5px;padding:6px 13px;border-radius:999px;border:1px solid var(--line);background:#fff;color:var(--ink-2);cursor:pointer;}
+.navbar button:hover{border-color:var(--blue);color:var(--blue);}
+.navbar button.on{background:var(--navy);border-color:var(--navy);color:#fff;font-weight:600;}
+
+.score{display:flex;gap:8px;align-items:center;flex-wrap:wrap;background:var(--panel-2);border:1px solid var(--line-2);border-radius:10px;padding:10px 12px;margin-bottom:14px;}
+.score .n{font-family:ui-monospace,Menlo,monospace;font-size:20px;font-weight:700;color:var(--navy);}
+.score .lb{font-size:12.5px;color:var(--ink-3);}
+
+footer{max-width:1080px;margin:0 auto;padding:0 20px 60px;color:var(--ink-3);font-size:12.5px;text-align:center;}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="crumb"><a href="00-作战中心.html">← 返回作战中心</a>　·　参考文档　·　<a href="01-听力系统.html">听力系统</a></div>
+    <h1>发音与朗读系统 · 文本库与每日用法</h1>
+    <p>你说不做录音，那发音训练就必须换一套反馈机制——不能靠"回听"，就得靠<b>体感自查</b>和<b>外部标准音对照</b>。这份文档提供 <b>36 段可直接朗读的英文文本</b>，每段都标了发音难点、译文和朗读时长，并内嵌英式朗读按钮。</p>
+    <div class="stats">
+      <div class="stat"><b>36</b><span>朗读文本段落</span></div>
+      <div class="stat"><b>25</b><span>每日分钟数</span></div>
+      <div class="stat"><b>5</b><span>材料模块</span></div>
+      <div class="stat"><b>en-GB</b><span>内嵌语音</span></div>
+    </div>
+  </div>
+</div>
+
+<main>
+
+<h2 class="sec">一、没有录音，怎么知道自己读对了</h2>
+<p class="sub">这是本份文档要解决的核心问题。录音的价值在于"听见自己"，缺了它，就用下面三重替代反馈补上。</p>
+
+<div class="card">
+  <div class="tblwrap">
+    <table>
+      <thead><tr><th style="width:150px;">替代手段</th><th>怎么做</th><th style="width:210px;">能查出发音问题吗</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="en">① 体感自查</td>
+          <td>把一只手轻贴<b>喉结</b>、一只手放<b>嘴前 3 厘米</b>，读目标词。声带不振动 → 你发成了清辅音（如 /θ/ 读成 /s/、/v/ 读成 /f/）；嘴前没有气流 → 你漏了送气（如 /p/ /t/ /k/ 词首）</td>
+          <td><span class="pill green">能查</span>清浊混淆、送气缺失</td>
+        </tr>
+        <tr>
+          <td class="en">② 标准音对照</td>
+          <td>先点本页的<b>朗读按钮</b>听一遍，再自己读，再听一遍。<b>不用耳朵分辨"差在哪"，只要分辨"像不像"</b>——不像就说明有偏差，再去看该段的发音要点</td>
+          <td><span class="pill green">能查</span>重音位置、元音长度、整体轮廓</td>
+        </tr>
+        <tr>
+          <td class="en">③ 中文回想</td>
+          <td>读完立刻合上文本，用中文回想刚说的内容。<b>凡是想不起英文怎么说的位置，就是真实卡壳点</b>，记进错题本</td>
+          <td><span class="pill amber">查不出</span>发音，但能查出表达缺口</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="note" style="margin-top:12px;">
+    <b>要诚实面对的一点：</b>不录音，你确实无法发现"自己以为对、其实错了"的细节偏差（比如某个词的重音位置）。所以本页把所有<b>容易读错的地方直接标注在文本上</b>——用标注替代回听，这是唯一可行的补救。
+  </div>
+</div>
+
+<h2 class="sec">二、每天 25 分钟怎么读</h2>
+<p class="sub">固定四步。朗读不是"念一遍就完"，关键是第 2 步和第 4 步。</p>
+
+<div class="card">
+  <div class="timer">
+    <span class="clock" id="clock">25:00</span>
+    <button class="btn sm primary" id="tStart">开始</button>
+    <button class="btn sm" id="tPause">暂停</button>
+    <button class="btn sm" id="tReset">重置</button>
+    <span class="lb" style="font-size:12.5px;color:var(--ink-3);">建议拆成 25 分钟单段，不要一次读一小时</span>
+  </div>
+
+  <h4>第 1 步｜音素热身（5 分钟）</h4>
+  <ul class="tight">
+    <li>从 <b>A 组</b>挑 1 段，先点朗读按钮听，再跟读 <b>3 遍</b>。</li>
+    <li>每一遍都做<b>体感自查</b>：手贴喉结读 /v/ /ð/ /b/ /d/ /g/，感受振动；读 /f/ /θ/ /p/ /t/ /k/ 时感受嘴前气流。</li>
+    <li><b>不要读快。</b>这一阶段的目标是"每个音都发到位"，速度是后面的事。读快了必然回到中文发音习惯。</li>
+  </ul>
+
+  <h4>第 2 步｜影子跟读真人材料（7 分钟）—— 这一步不能省</h4>
+  <ul class="tight">
+    <li>打开 <a href="01-听力系统.html">听力系统</a>里的 L0 / L2 材料（6 Minute English、FT News Briefing），<b>延迟 1 秒跟读</b>，模仿语调和节奏，不追求听懂。</li>
+    <li><b>为什么必须做：</b>本页的机器朗读只能给你"单个音"的参照，<b>连读、弱读、句子重音这些只有真人材料才有</b>。跟读是唯一能同时练到这三样的动作。</li>
+    <li>跟读时故意比原声<b>慢半拍</b>——如果跟不上，说明你在逐词念，而不是按"意群"念。</li>
+  </ul>
+
+  <h4>第 3 步｜朗读当日文本（8 分钟）</h4>
+  <ul class="tight">
+    <li>按下面的<b>六周轮换表</b>选 2～3 段，每段读 <b>3 遍</b>：
+      <br>第 1 遍 —— 看标注读，把每个标记落实（重音落在哪、哪里连读）
+      <br>第 2 遍 —— 不看标注读，检验是否已经内化
+      <br>第 3 遍 —— <b>站起来、用比平时大半格的音量</b>读，模拟真实会议室</li>
+    <li><b>合规文本（B 组）务必读到能"不用看就能说出大意"</b>。你要能脱口而出的，不是单词，是这种整句的语块。</li>
+  </ul>
+
+  <h4>第 4 步｜对照收尾（5 分钟）</h4>
+  <ul class="tight">
+    <li>读完后<b>再点一次朗读按钮</b>，闭上眼听，问自己一个问题：<b>"如果这是我在会上说的话，听起来像不像那个意思？"</b></li>
+    <li>把第 3 遍仍然卡壳的位置，写进 <span class="mono">错题本.md</span>——<b>只记那个卡住的短语，不要抄整句</b>。</li>
+    <li>勾选本页的「已朗读」方格，进度自动保存。</li>
+  </ul>
+</div>
+
+<h2 class="sec">三、英式发音速查（朗读前扫一眼）</h2>
+<p class="sub">七条规则，覆盖你 90% 的错误来源。每天朗读前花 30 秒过一遍，两周后就不需要了。</p>
+
+<div class="card">
+  <div class="tblwrap">
+    <table>
+      <thead><tr><th style="width:130px;">规则</th><th>要点</th><th style="width:230px;">例词</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="en">① 非重读 r 不发音</td>
+          <td>音节末尾或辅音前的 r 只影响前面元音，<b>不卷舌</b>。这是英美差异最明显的一处</td>
+          <td class="ex"><span class="mono">quarter</span> /ˈkwɔːtə/　<span class="mono">market</span> /ˈmɑːkɪt/　<span class="mono">corporate</span> /ˈkɔːpərət/</td>
+        </tr>
+        <tr>
+          <td class="en">② /ɒ/ 是英式专属</td>
+          <td>短促、圆唇、舌位靠后。美式一律读成 /ɑː/，所以这个词你按美式读就是错的</td>
+          <td class="ex"><span class="mono">policy</span> /ˈpɒləsi/　<span class="mono">compliance</span> /kəmˈplaɪəns/　<span class="mono">monitor</span> /ˈmɒnɪtə/</td>
+        </tr>
+        <tr>
+          <td class="en">③ /ɑː/ 张口到底</td>
+          <td>长音，口型大、舌位低后。不能读成美式 /æ/</td>
+          <td class="ex"><span class="mono">staff</span> /stɑːf/　<span class="mono">task</span> /tɑːsk/　<span class="mono">draft</span> /drɑːft/　<span class="mono">rather</span> /ˈrɑːðə/</td>
+        </tr>
+        <tr>
+          <td class="en">④ /t/ 保持清脆</td>
+          <td>英美最大差异之一：英式词中 /t/ <b>不浊化成 /d/</b>。<span class="mono">better</span> 不是 "bedder"</td>
+          <td class="ex"><span class="mono">matter</span> /ˈmætə/　<span class="mono">data</span> /ˈdeɪtə/　<span class="mono">attribute</span>（动词 /əˈtrɪbjuːt/）</td>
+        </tr>
+        <tr>
+          <td class="en">⑤ 弱读 schwa /ə/</td>
+          <td>非重读元音一律弱化成 /ə/——这是英语节奏的核心，也是"听得懂单个词、听不懂整句"的根因</td>
+          <td class="ex"><span class="mono">to</span> /tə/　<span class="mono">for</span> /fə/　<span class="mono">and</span> /ənd/　<span class="mono">at</span> /ət/　<span class="mono">of</span> /əv/</td>
+        </tr>
+        <tr>
+          <td class="en">⑥ 连读三型</td>
+          <td>辅音 + 元音直接连（<span class="mono">check it</span> → /tʃekɪt/）；相同辅音合并；/t/ /d/ 遇 /j/ 融成 /tʃ/ /dʒ/</td>
+          <td class="ex"><span class="mono">do you</span> → /dʒə/　<span class="mono">just under</span> → /dʒʌstʌndə/　<span class="mono">not at all</span> → /nɒtətɔːl/</td>
+        </tr>
+        <tr>
+          <td class="en">⑦ 陈述句降调</td>
+          <td>英式正式表达里，陈述句结尾<b>明显下降</b>，这是"笃定"的信号。用升调收尾会显得不确定甚至像在征求同意</td>
+          <td class="ex">Our position is unchanged. <span style="color:var(--red);">↘</span><br>I think we should escalate this. <span style="color:var(--red);">↘</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h2 class="sec">四、朗读文本库</h2>
+<p class="sub">共 <b>36</b> 段，分 5 个模块。<b>标注说明：</b><span class="pill red">红色</span>句子重音 &nbsp; <span class="pill navy">蓝底</span>连读/弱读 &nbsp; <span class="pill amber">黄底</span>易错音。</p>
+
+<div class="card" style="padding-bottom:14px;">
+  <div class="score">
+    <span class="n" id="statDone">0</span>
+    <span class="lb">/ <span id="statAll">0</span> 段已朗读</span>
+    <div style="flex:1;min-width:160px;">
+      <div class="bar"><i id="barAll" style="width:0%"></i></div>
+    </div>
+    <span class="lb" id="statPct">0%</span>
+    <button class="btn sm" id="btnReset">清空进度</button>
+  </div>
+  <div class="navbar" id="navbar"></div>
+  <div class="legend">
+    <span><i style="background:#fff2c9;">黄底</i> 易错音，重点看</span>
+    <span><i style="background:#e9f1ff;">蓝底</i> 连读或弱读</span>
+    <span style="color:var(--red);">红色 = 句子重音</span>
+  </div>
+</div>
+
+<div id="segWrap"></div>
+
+<h2 class="sec">五、无录音的三项自查（读完必做）</h2>
+
+<div class="two">
+  <div class="card" style="margin-bottom:0;">
+    <h3>体感自查：五个动作</h3>
+    <ol class="tight">
+      <li><b>喉结振动</b>——读 /v/ /ð/ /z/ /b/ /d/ /g/，手贴喉结应明显振动；读 /f/ /θ/ /s/ /p/ /t/ /k/ 则几乎不振动。<b>如果读 /v/ 时没振动，你发的是 /f/</b>（中文母语者最常见错误之一）。</li>
+      <li><b>嘴前气流</b>——读 /p/ /t/ /k/ 的开头，手放嘴前 3 厘米应有明显气流。<b>没有气流 = 你发成了不送气音</b>，老外听起来像 /b/ /d/ /g/。</li>
+      <li><b>舌位对照</b>——/θ/ 和 /ð/ 必须<b>舌尖轻触上齿</b>。对着手机前置摄像头读 <span class="mono">think</span> / <span class="mono">this</span>，看得见舌尖才算对；看不见就是读成了 /s/ /z/。</li>
+      <li><b>口型大小</b>——/ɑː/ 要能塞进两根手指的高度；/ɪ/ 只张一点点；/æ/ 要咧嘴。<b>张口幅度不够是最普遍的元音错误。</b></li>
+      <li><b>非重读 r</b>——读 <span class="mono">market、quarter、corporate</span>，<b>舌尖全程不碰硬腭</b>。如果舌尖动了，你是在卷舌，立刻改成美式了。</li>
+    </ol>
+  </div>
+
+  <div class="card" style="margin-bottom:0;">
+    <h3>节奏自查：三档朗读</h3>
+    <ul class="tight">
+      <li><b>慢速（约 70% 速度）</b>——把每个音读到位。这一步几乎一定会觉得"很别扭"，这是正常的，说明你在突破旧的肌肉记忆。</li>
+      <li><b>常速</b>——正常说话速度，重点检查弱读是否自然。<b>如果常速和慢速读起来"差不多清楚"，说明你没做弱读</b>，只是在用慢速的发音方式加速。</li>
+      <li><b>快速（约 120%）</b>——故意读快，检查哪些音会塌掉。<b>第一个塌掉的音，就是你的发音薄弱点</b>，记下来单独练。</li>
+    </ul>
+    <div class="note" style="margin-top:12px;">
+      <b>一个判断标准：</b>读完一段后，如果你<b>喘不上气</b>，说明你在逐词念，没有按意群分组呼吸。<b>正确做法是在逗号、分号、"and" 前换气</b>，把一个意群一口气读完。
+    </div>
+  </div>
+</div>
+
+<h2 class="sec">六、六周朗读轮换表</h2>
+<p class="sub">每天从对应模块取 2～3 段。B 组（合规专业）是全过程的主线，会反复回来读。</p>
+
+<div class="card">
+  <div class="tblwrap">
+    <table>
+      <thead><tr><th style="width:90px;">周次</th><th style="width:130px;">当日主攻</th><th>朗读安排</th><th style="width:170px;">本周目标</th></tr></thead>
+      <tbody>
+        <tr><td class="en">第 1 周</td><td>A 组 音素</td><td>每天 A 组 2 段 + C 组 1 段（先求准，不求快）</td><td>八个元音区分开，/v/ /θ/ /ð/ 能靠体感自查</td></tr>
+        <tr><td class="en">第 2 周</td><td>B 组 AML 专题</td><td>A 组 1 段热身 + B 组 2 段</td><td>合规核心句能不看标注读顺</td></tr>
+        <tr><td class="en">第 3 周</td><td>B 组 制裁 / 隐私</td><td>A 组 1 段 + B 组 2 段 + D 组 1 段</td><td>长句会分意群呼吸，不逐词念</td></tr>
+        <tr><td class="en">第 4 周</td><td>C 组 职场口语</td><td>C 组 2 段 + E 组 1 段（语调专练）</td><td>语调有升有降，不再平调</td></tr>
+        <tr><td class="en">第 5 周</td><td>B + C 混合</td><td>每天 3 段，全部<b>不先看标注</b>直接读</td><td>标注内化，脱离视觉提示</td></tr>
+        <tr><td class="en">第 6 周</td><td>E 组 语调与长句</td><td>B 组挑 3 段 → 读成"会议发言"的强度</td><td>能在会议室音量下稳定输出</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="info" style="margin-top:12px;">
+    <b>用法上的一个提醒：</b>同一段文本<b>隔几天重读一次</b>比每天换新段更有效。重读时你会发现"上次卡的地方这次不卡了"——这是唯一可感知的进步信号，在没有录音的情况下尤其重要。
+  </div>
+</div>
+
+<!--PRON_SCHED_START-->
+<h2 class="sec">六·B、42 天逐日朗读分配表</h2>
+<p class="sub">把上面的六周轮换表落到每一天。<b>每天 3 段（第 1、2 周 3 段，第 3 周 4 段）</b>，合计 25 分钟。分配依据是《00-作战中心》42 天计划的当日主题：主题是 AML 就配 AML 段，主题是会议就配职场段。<b>每周第 7 天（周测日）安排前一阶段最卡的段重读</b>——重读比每天换新段有效得多。</p>
+
+<div class="card">
+  <div class="tblwrap" style="max-height:640px;">
+    <table>
+      <thead><tr><th style="width:74px;">日程</th><th style="width:200px;">当日主题</th><th style="width:104px;">段号</th><th>今日朗读的 36 段库中选段</th></tr></thead>
+      <tbody>
+<tr style="background:#f4f8ff;"><td colspan="4" style="font-size:12px;font-weight:700;color:var(--navy);padding:7px 9px;">第 1 周　A 组音素校准打底（8 段走完一轮）+ B / C / D 逐日加入</td></tr><tr><td class="en">Day 01</td><td class="ex">诊断日 + 环境搭建</td><td style="font-size:12px;">A6 · A7 · C1</td><td><span class="pill amber">A6 /θ/ 与 /ð/：舌尖必须出来</span><span class="pill amber">A7 /v/ 与 /w/：一个咬唇，一个圆唇</span><span class="pill teal">C1 电话会议：开场与议程</span></td></tr><tr><td class="en">Day 02</td><td class="ex">英式发音重校准</td><td style="font-size:12px;">A1 · A2 · A3</td><td><span class="pill amber">A1 /ɑː/ 与 /ʌ/：长音到底，短音收住</span><span class="pill amber">A2 /ɒ/ 是英式专属音：最短、最圆</span><span class="pill amber">A3 /æ/ /e/ /ʌ/：三个前元音的三角</span></td></tr><tr><td class="en">Day 03</td><td class="ex">AML 核心 I：警报分诊与上报</td><td style="font-size:12px;">A8 · A5 · B11</td><td><span class="pill amber">A8 词尾辅音串：别加元音，也别吞掉</span><span class="pill amber">A5 /ɜː/ 与 /ɔː/：一对长元音</span><span class="pill navy">B11 团队会议：警报分级讨论</span></td></tr><tr><td class="en">Day 04</td><td class="ex">AML 收尾 + 核心地基词 + 制裁开篇</td><td style="font-size:12px;">A4 · B2 · C2</td><td><span class="pill amber">A4 /ɪ/ 与 /iː/：松紧之别</span><span class="pill navy">B2 制裁筛查命中：判断与放行</span><span class="pill teal">C2 会议中：澄清与确认</span></td></tr><tr><td class="en">Day 05</td><td class="ex">制裁 II：名单机制与出口管制 + 金融犯罪开篇</td><td style="font-size:12px;">B8 · B10 · C3</td><td><span class="pill navy">B8 监管者演讲节选（FCA 风格）</span><span class="pill navy">B10 与业务部门沟通设限（不说不）</span><span class="pill teal">C3 委婉提出异议（不树敌）</span></td></tr><tr><td class="en">Day 06</td><td class="ex">金融犯罪与执法续：调查 × 特权 × 举报</td><td style="font-size:12px;">B1 · C4 · E6</td><td><span class="pill navy">B1 向 MLRO 升级可疑活动（口头陈述）</span><span class="pill teal">C4 汇报进度与坏消息</span><span class="pill purple">E6 数字、日期与编号：读错就是事故</span></td></tr><tr><td class="en">Day 07</td><td class="ex">第 1 周测评与复盘</td><td style="font-size:12px;">A4 · A8 · B2</td><td><span class="pill amber">A4 /ɪ/ 与 /iː/：松紧之别</span><span class="pill amber">A8 词尾辅音串：别加元音，也别吞掉</span><span class="pill navy">B2 制裁筛查命中：判断与放行</span></td></tr><tr style="background:#f4f8ff;"><td colspan="4" style="font-size:12px;font-weight:700;color:var(--navy);padding:7px 9px;">第 2 周　第 2 周轮换：A 组 1 段热身 + B 组 2 段</td></tr><tr><td class="en">Day 08</td><td class="ex">AML 全景与洗钱三阶段</td><td style="font-size:12px;">A4 · B1 · B11</td><td><span class="pill amber">A4 /ɪ/ 与 /iː/：松紧之别</span><span class="pill navy">B1 向 MLRO 升级可疑活动（口头陈述）</span><span class="pill navy">B11 团队会议：警报分级讨论</span></td></tr><tr><td class="en">Day 09</td><td class="ex">CDD 基础：我们要什么材料</td><td style="font-size:12px;">A8 · B3 · B4</td><td><span class="pill amber">A8 词尾辅音串：别加元音，也别吞掉</span><span class="pill navy">B3 客户尽职调查问询（对话体）</span><span class="pill navy">B4 EDD 请求函（正式书面朗读）</span></td></tr><tr><td class="en">Day 10</td><td class="ex">EDD 与资金来源 / 财富来源</td><td style="font-size:12px;">A5 · B4 · B3</td><td><span class="pill amber">A5 /ɜː/ 与 /ɔː/：一对长元音</span><span class="pill navy">B4 EDD 请求函（正式书面朗读）</span><span class="pill navy">B3 客户尽职调查问询（对话体）</span></td></tr><tr><td class="en">Day 11</td><td class="ex">交易监测与警报分诊</td><td style="font-size:12px;">A1 · B11 · B1</td><td><span class="pill amber">A1 /ɑː/ 与 /ʌ/：长音到底，短音收住</span><span class="pill navy">B11 团队会议：警报分级讨论</span><span class="pill navy">B1 向 MLRO 升级可疑活动（口头陈述）</span></td></tr><tr><td class="en">Day 12</td><td class="ex">SAR 上报与泄密风险</td><td style="font-size:12px;">A6 · B1 · B4</td><td><span class="pill amber">A6 /θ/ 与 /ð/：舌尖必须出来</span><span class="pill navy">B1 向 MLRO 升级可疑活动（口头陈述）</span><span class="pill navy">B4 EDD 请求函（正式书面朗读）</span></td></tr><tr><td class="en">Day 13</td><td class="ex">客户风险评级与治理</td><td style="font-size:12px;">A7 · B7 · B12</td><td><span class="pill amber">A7 /v/ 与 /w/：一个咬唇，一个圆唇</span><span class="pill navy">B7 风险委员会汇报（三点式结构）</span><span class="pill navy">B12 年度合规报告摘要（董事会语调）</span></td></tr><tr><td class="en">Day 14</td><td class="ex">第 2 周测评与复盘</td><td style="font-size:12px;">A2 · B4 · B11</td><td><span class="pill amber">A2 /ɒ/ 是英式专属音：最短、最圆</span><span class="pill navy">B4 EDD 请求函（正式书面朗读）</span><span class="pill navy">B11 团队会议：警报分级讨论</span></td></tr><tr style="background:#f4f8ff;"><td colspan="4" style="font-size:12px;font-weight:700;color:var(--navy);padding:7px 9px;">第 3 周　第 3 周轮换：A 组 1 段 + B 组 2 段 + D 组 1 段</td></tr><tr><td class="en">Day 15</td><td class="ex">制裁基础与监管机构</td><td style="font-size:12px;">A3 · B2 · B8 · D1</td><td><span class="pill amber">A3 /æ/ /e/ /ʌ/：三个前元音的三角</span><span class="pill navy">B2 制裁筛查命中：判断与放行</span><span class="pill navy">B8 监管者演讲节选（FCA 风格）</span><span class="pill green">D1 银行开户（英国柜台实景）</span></td></tr><tr><td class="en">Day 16</td><td class="ex">名单匹配机制与误报</td><td style="font-size:12px;">A4 · B2 · B9 · D1</td><td><span class="pill amber">A4 /ɪ/ 与 /iː/：松紧之别</span><span class="pill navy">B2 制裁筛查命中：判断与放行</span><span class="pill navy">B9 回复监管信息请求（正式函件）</span><span class="pill green">D1 银行开户（英国柜台实景）</span></td></tr><tr><td class="en">Day 17</td><td class="ex">命中处理与交易放行</td><td style="font-size:12px;">A5 · B2 · B5 · D2</td><td><span class="pill amber">A5 /ɜː/ 与 /ɔː/：一对长元音</span><span class="pill navy">B2 制裁筛查命中：判断与放行</span><span class="pill navy">B5 监管现场检查：开场致词</span><span class="pill green">D2 租房看房（押金与账单）</span></td></tr><tr><td class="en">Day 18</td><td class="ex">出口管制与两用物项</td><td style="font-size:12px;">A8 · B10 · B9 · D2</td><td><span class="pill amber">A8 词尾辅音串：别加元音，也别吞掉</span><span class="pill navy">B10 与业务部门沟通设限（不说不）</span><span class="pill navy">B9 回复监管信息请求（正式函件）</span><span class="pill green">D2 租房看房（押金与账单）</span></td></tr><tr><td class="en">Day 19</td><td class="ex">数据隐私基础</td><td style="font-size:12px;">A1 · B12 · B3 · D3</td><td><span class="pill amber">A1 /ɑː/ 与 /ʌ/：长音到底，短音收住</span><span class="pill navy">B12 年度合规报告摘要（董事会语调）</span><span class="pill navy">B3 客户尽职调查问询（对话体）</span><span class="pill green">D3 注册 GP 与看诊</span></td></tr><tr><td class="en">Day 20</td><td class="ex">数据主体权利与 DPIA</td><td style="font-size:12px;">A6 · B9 · B6 · D3</td><td><span class="pill amber">A6 /θ/ 与 /ð/：舌尖必须出来</span><span class="pill navy">B9 回复监管信息请求（正式函件）</span><span class="pill navy">B6 合规培训讲稿：让听众坐直的开场</span><span class="pill green">D3 注册 GP 与看诊</span></td></tr><tr><td class="en">Day 21</td><td class="ex">第 3 周测评与复盘</td><td style="font-size:12px;">A2 · B2 · B12 · D4</td><td><span class="pill amber">A2 /ɒ/ 是英式专属音：最短、最圆</span><span class="pill navy">B2 制裁筛查命中：判断与放行</span><span class="pill navy">B12 年度合规报告摘要（董事会语调）</span><span class="pill green">D4 邻里寒暄与下班后的酒馆</span></td></tr><tr style="background:#f4f8ff;"><td colspan="4" style="font-size:12px;font-weight:700;color:var(--navy);padding:7px 9px;">第 4 周　第 4 周轮换：C 组 2 段 + E 组 1 段</td></tr><tr><td class="en">Day 22</td><td class="ex">英国监管架构与双头监管</td><td style="font-size:12px;">C1 · C6 · E1</td><td><span class="pill teal">C1 电话会议：开场与议程</span><span class="pill teal">C6 会议主持：推进与总结</span><span class="pill purple">E1 陈述句降调：英式"笃定"的信号</span></td></tr><tr><td class="en">Day 23</td><td class="ex">FCA Handbook 与商业原则</td><td style="font-size:12px;">C2 · C3 · E5</td><td><span class="pill teal">C2 会议中：澄清与确认</span><span class="pill teal">C3 委婉提出异议（不树敌）</span><span class="pill purple">E5 长句呼吸分组：合规长句怎么念</span></td></tr><tr><td class="en">Day 24</td><td class="ex">Consumer Duty 与客户保护</td><td style="font-size:12px;">C4 · C5 · E1</td><td><span class="pill teal">C4 汇报进度与坏消息</span><span class="pill teal">C5 一对一沟通：给出反馈</span><span class="pill purple">E1 陈述句降调：英式"笃定"的信号</span></td></tr><tr><td class="en">Day 25</td><td class="ex">MiFID 与 MAR 市场滥用</td><td style="font-size:12px;">C3 · C4 · E3</td><td><span class="pill teal">C3 委婉提出异议（不树敌）</span><span class="pill teal">C4 汇报进度与坏消息</span><span class="pill purple">E3 列举与对比：结构靠语调撑起来</span></td></tr><tr><td class="en">Day 26</td><td class="ex">美国监管 I：BSA / FinCEN</td><td style="font-size:12px;">C1 · C2 · E4</td><td><span class="pill teal">C1 电话会议：开场与议程</span><span class="pill teal">C2 会议中：澄清与确认</span><span class="pill purple">E4 信息焦点：同一句话的五种意思</span></td></tr><tr><td class="en">Day 27</td><td class="ex">美国监管 II：FCPA / Volcker</td><td style="font-size:12px;">C5 · C6 · E5</td><td><span class="pill teal">C5 一对一沟通：给出反馈</span><span class="pill teal">C6 会议主持：推进与总结</span><span class="pill purple">E5 长句呼吸分组：合规长句怎么念</span></td></tr><tr><td class="en">Day 28</td><td class="ex">第 4 周测评与复盘</td><td style="font-size:12px;">C2 · C4 · E2</td><td><span class="pill teal">C2 会议中：澄清与确认</span><span class="pill teal">C4 汇报进度与坏消息</span><span class="pill purple">E2 疑问句与附加疑问：升调与选择问</span></td></tr><tr style="background:#f4f8ff;"><td colspan="4" style="font-size:12px;font-weight:700;color:var(--navy);padding:7px 9px;">第 5 周　第 5 周轮换：B / C 混合 3 段</td></tr><tr><td class="en">Day 29</td><td class="ex">会议英语 I：主持与发言</td><td style="font-size:12px;">C1 · C6 · E3</td><td><span class="pill teal">C1 电话会议：开场与议程</span><span class="pill teal">C6 会议主持：推进与总结</span><span class="pill purple">E3 列举与对比：结构靠语调撑起来</span></td></tr><tr><td class="en">Day 30</td><td class="ex">会议英语 II：异议与推进</td><td style="font-size:12px;">C3 · B10 · E4</td><td><span class="pill teal">C3 委婉提出异议（不树敌）</span><span class="pill navy">B10 与业务部门沟通设限（不说不）</span><span class="pill purple">E4 信息焦点：同一句话的五种意思</span></td></tr><tr><td class="en">Day 31</td><td class="ex">电话与远程会议</td><td style="font-size:12px;">C1 · C2 · B9</td><td><span class="pill teal">C1 电话会议：开场与议程</span><span class="pill teal">C2 会议中：澄清与确认</span><span class="pill navy">B9 回复监管信息请求（正式函件）</span></td></tr><tr><td class="en">Day 32</td><td class="ex">培训与宣讲</td><td style="font-size:12px;">B6 · B7 · E5</td><td><span class="pill navy">B6 合规培训讲稿：让听众坐直的开场</span><span class="pill navy">B7 风险委员会汇报（三点式结构）</span><span class="pill purple">E5 长句呼吸分组：合规长句怎么念</span></td></tr><tr><td class="en">Day 33</td><td class="ex">谈判与影响他人</td><td style="font-size:12px;">B10 · C3 · C4</td><td><span class="pill navy">B10 与业务部门沟通设限（不说不）</span><span class="pill teal">C3 委婉提出异议（不树敌）</span><span class="pill teal">C4 汇报进度与坏消息</span></td></tr><tr><td class="en">Day 34</td><td class="ex">生活英语 I：吃、买、看病</td><td style="font-size:12px;">D3 · D1 · D2</td><td><span class="pill green">D3 注册 GP 与看诊</span><span class="pill green">D1 银行开户（英国柜台实景）</span><span class="pill green">D2 租房看房（押金与账单）</span></td></tr><tr><td class="en">Day 35</td><td class="ex">生活英语 II：伦敦与通勤</td><td style="font-size:12px;">D4 · D1 · D2</td><td><span class="pill green">D4 邻里寒暄与下班后的酒馆</span><span class="pill green">D1 银行开户（英国柜台实景）</span><span class="pill green">D2 租房看房（押金与账单）</span></td></tr><tr style="background:#f4f8ff;"><td colspan="4" style="font-size:12px;font-weight:700;color:var(--navy);padding:7px 9px;">第 6 周　第 6 周轮换：B 组 3 段，读成会议发言强度</td></tr><tr><td class="en">Day 36</td><td class="ex">极限听力训练</td><td style="font-size:12px;">B8 · B9 · E5</td><td><span class="pill navy">B8 监管者演讲节选（FCA 风格）</span><span class="pill navy">B9 回复监管信息请求（正式函件）</span><span class="pill purple">E5 长句呼吸分组：合规长句怎么念</span></td></tr><tr><td class="en">Day 37</td><td class="ex">全真模拟（一）监管检查开场</td><td style="font-size:12px;">B5 · B9 · E1</td><td><span class="pill navy">B5 监管现场检查：开场致词</span><span class="pill navy">B9 回复监管信息请求（正式函件）</span><span class="pill purple">E1 陈述句降调：英式"笃定"的信号</span></td></tr><tr><td class="en">Day 38</td><td class="ex">全真模拟（二）客户投诉</td><td style="font-size:12px;">B10 · C5 · E2</td><td><span class="pill navy">B10 与业务部门沟通设限（不说不）</span><span class="pill teal">C5 一对一沟通：给出反馈</span><span class="pill purple">E2 疑问句与附加疑问：升调与选择问</span></td></tr><tr><td class="en">Day 39</td><td class="ex">全真模拟（三）内部举报</td><td style="font-size:12px;">B1 · B4 · E6</td><td><span class="pill navy">B1 向 MLRO 升级可疑活动（口头陈述）</span><span class="pill navy">B4 EDD 请求函（正式书面朗读）</span><span class="pill purple">E6 数字、日期与编号：读错就是事故</span></td></tr><tr><td class="en">Day 40</td><td class="ex">全真模拟（四）媒体与外部问询</td><td style="font-size:12px;">B8 · B12 · E4</td><td><span class="pill navy">B8 监管者演讲节选（FCA 风格）</span><span class="pill navy">B12 年度合规报告摘要（董事会语调）</span><span class="pill purple">E4 信息焦点：同一句话的五种意思</span></td></tr><tr><td class="en">Day 41</td><td class="ex">应急话术库定稿</td><td style="font-size:12px;">B5 · B7 · E6</td><td><span class="pill navy">B5 监管现场检查：开场致词</span><span class="pill navy">B7 风险委员会汇报（三点式结构）</span><span class="pill purple">E6 数字、日期与编号：读错就是事故</span></td></tr><tr><td class="en">Day 42</td><td class="ex">终测与交付</td><td style="font-size:12px;">B12 · B7 · E1</td><td><span class="pill navy">B12 年度合规报告摘要（董事会语调）</span><span class="pill navy">B7 风险委员会汇报（三点式结构）</span><span class="pill purple">E1 陈述句降调：英式"笃定"的信号</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="info" style="margin-top:12px;">
+    <b>这份表怎么用：</b>从 <b>Day 01</b> 起，每天课程页（<span class="mono">Day-NN.html</span>）的「发音朗读」模块里已经把当天这几段的<b>全文、标注、发音要点、中文译文和英式朗读按钮直接内嵌</b>，不需要再跳回本页找。<br>
+    本页是<b>总库与索引</b>：想通读全部 36 段 / 211 条发音要点、按 A–E 组浏览，或核对某一天该读哪几段，看这里。
+  </div>
+</div>
+<!--PRON_SCHED_END-->
+<h2 class="sec">七、分组材料索引</h2>
+<p class="sub">五组材料的定位与篇幅，方便你按当天的时间预算挑选。</p>
+
+<div class="card">
+  <div class="tblwrap">
+    <table>
+      <thead><tr><th style="width:80px;">组别</th><th style="width:180px;">模块</th><th>内容</th><th style="width:90px;">段数</th><th style="width:100px;">单段时长</th></tr></thead>
+      <tbody id="indexBody"></tbody>
+    </table>
+  </div>
+</div>
+
+<footer>
+  发音与朗读系统　|　<a href="00-作战中心.html">作战中心</a>　·　<a href="01-听力系统.html">听力系统</a>　·　<a href="02-Anki复习系统.html">Anki 复习系统</a>　·　<a href="Day-02.html">Day 02</a>
+</footer>
+
+</main>
+
+<script>
+/* ============ 数据（由 _build.js 自动生成，请勿手改本区块）============ */
+var SEG_1 = [{"id":"A1","g":"A","title":"/ɑː/ 与 /ʌ/：长音到底，短音收住","desc":"八组最小对立元音的成段朗读。先要求每个音发到位，速度是后面的事。","words":62,"mins":0.5,"focus":"/ɑː/ vs /ʌ/","text":"Our *branch staff* must *pass* the *audit* this *quarter*. The *task force* has a *tough* job — the *chart* shows a *gap*, and the *draft* is ~not~ *up to standard*. I would *rather laugh* at the *draft* than *fall in love* with it, so let us *start* with the *last part* first.","points":[["staff /stɑːf/","不读 /stæf/。英式 /ɑː/ 是长音，口张开约两指高、舌位低而靠后；美式同词读 /æ/，两者完全不同"],["must /mʌst/","/ʌ/ 短促，口型比 /ɑː/ 小得多、舌位居中。常见错误是把 /ʌ/ 也拖长，结果 must 听起来像 marst"],["rather /ˈrɑːðə/","英式读 /ɑː/，美式读 /ˈræðər/。这是最能暴露你学的是哪套音的单词"],["laugh /lɑːf/","英式 /ɑːf/，不读 /læf/。结尾 /f/ 要送气，手放嘴前应感到气流"],["quarter /ˈkwɔːtə/","非重读 r 不发音；词尾 -er 弱化成 /ə/，不要卷舌"]],"zh":"我们分行员工必须通过本季度的审计。专项小组任务很紧——图表显示有缺口，初稿也不达标。我宁愿嘲笑这份初稿，也不愿爱上它，所以我们从最后一部分开始。"},{"id":"A2","g":"A","title":"/ɒ/ 是英式专属音：最短、最圆","words":66,"mins":0.6,"focus":"/ɒ/ vs /ɔː/ vs /əʊ/","text":"This *office* has a *policy* on *monitoring*. We *monitor* the *process* and we *note* what is *notable*. The *law* says *all* *documents* must be *logged*, so *do not go slow* on the *forms* — *most* of the *cost* is in the *follow-up*.","points":[["office /ˈɒfɪs/","/ɒ/ 是英式独有元音：短、圆唇、舌位靠后。美式一律读 /ɑː/，你按美式读就错了"],["policy /ˈpɒləsi/","合规人每天说十遍的词。重音在第一音节，第二音节弱化成 /ə/"],["monitor /ˈmɒnɪtə/","名词和动词都是这个读法，重音始终在第一音节"],["law /lɔː/","/ɔː/ 比 /ɒ/ 长且更圆，嘴要收圆并保持。和 low /ləʊ/ 区分：后者是双元音，有滑动"],["logged /lɒɡd/","英式 /ɒ/ + 词尾 /ɡd/ 辅音串。不要加音读成 /lɒɡɪd/"],["follow-up /ˈfɒləʊ ʌp/","复合名词重音在前，连起来读，中间不停顿"]],"zh":"这个部门有监控政策。我们监控流程，记录值得注意的地方。法律规定所有文件都必须登记，所以办理表格不要慢——大部分成本都在后续跟进上。"},{"id":"A3","g":"A","title":"/æ/ /e/ /ʌ/：三个前元音的三角","words":68,"mins":0.6,"focus":"/æ/ vs /e/ vs /ʌ/","text":"The *bank* has *ample cash* in the *vault*, and the *plan* is to *hand* the *balance* to the *branch manager*. *Let* me *check* the *ledger* *again* — if the *spread* is *bad*, the *head* of *credit* *must* *cut* the *cap*.","points":[["bank /bæŋk/、cash /kæʃ/","/æ/ 要咧嘴、下颌放低，比 /e/ 张口大得多。中文母语者最常犯的错是把 /æ/ 读成 /e/，bank 听起来像 benk"],["vault /vɔːlt/","/v/ 要声带振动（手贴喉结），/ɔː/ 长而圆。整词读 /vɔːlt/，不是 /wɔːlt/"],["again /əˈɡen/","英式常读 /əˈɡen/（不是 /əˈɡeɪn/）；词首弱化成 /ə/"],["credit /ˈkredɪt/、ledger /ˈledʒə/","/e/ 短而平，不要滑向 /æ/。ledger 的 /dʒ/ 要浊化 + 振动"],["cap /kæp/ 与 cup /kʌp/","朗读时注意对照：cap 是 /æ/（前、低），cup 是 /ʌ/（中、短）"]],"zh":"银行金库里现金充裕，计划是把余额交给分行经理。让我再核一遍账——如果利差不好，信贷主管必须压低上限。"},{"id":"A4","g":"A","title":"/ɪ/ 与 /iː/：松紧之别","words":58,"mins":0.5,"focus":"/ɪ/ vs /iː/","text":"Please *sit* and *read* the *sheet*. *Each team needs three weeks* to *finish* the *list*. The *risk* is *minimal* if we *keep* it *simple* and *leave* the *details* to the *leads*.","points":[["sit /sɪt/ vs seat /siːt/","/ɪ/ 是松元音，短而放松；/iː/ 是紧元音，长且嘴角向两边拉。英语母语者靠这个区分 sit 和 seat"],["sheet /ʃiːt/","/iː/ 拉长。要特别注意这个词：如果读成短音 /ʃɪt/ 会变成粗俗词，这是中国学习者最著名的翻车点之一"],["finish /ˈfɪnɪʃ/、list /lɪst/","两个音节都是 /ɪ/，不要读成 /fiːnɪʃ/"],["minimal /ˈmɪnɪməl/","三个音节全是 /ɪ/ 或 /ə/，重音在第一个"],["details /ˈdiːteɪlz/","英式重音在第一音节 /ˈdiːteɪlz/（美式常在第二音节）"]],"zh":"请坐下读这份表。每个团队需要三周才能完成清单。只要保持简单、把细节交给负责人，风险很小。"},{"id":"A5","g":"A","title":"/ɜː/ 与 /ɔː/：一对长元音","words":60,"mins":0.5,"focus":"/ɜː/ vs /ɔː/","text":"The *firm learned* that *early warnings work* only if the *first report* is *urgent*. *All four boards ordered* a *thorough review* and *sought more support* for the *third quarter*.","points":[["firm /fɜːm/、work /wɜːk/","/ɜː/ 舌位居中、唇自然放松，是最\"中性\"的长元音。不要卷舌（美式 /ɜːr/ 才卷）"],["learned /lɜːnd/","一个音节，不要读成两个。结尾 /nd/ 辅音串要连起来"],["all /ɔːl/、four /fɔː/、boards /bɔːdz/","/ɔː/ 唇要收圆，比 /ɜː/ 更靠后。four 和 for 同音，都是 /fɔː/"],["thorough /ˈθʌrə/","英式读 /ˈθʌrə/（两个音节），不是 /ˈθɜːroʊ/。开头是 /θ/，舌尖必须触上齿"],["sought /sɔːt/","和 sort 同音。不规则动词，读 /sɔːt/，不是 /saʊt/"]],"zh":"公司认识到，只有第一份报告足够紧急，早期预警才真正管用。所有四个董事会都下令做彻底审查，并为第三季度争取了更多支持。"},{"id":"A6","g":"A","title":"/θ/ 与 /ð/：舌尖必须出来","words":58,"mins":0.5,"focus":"清浊齿音 /θ/ /ð/","text":"*Thank* you for the *three thousand through Thursday*. *This* is the *third month* in a row, and *those thresholds* were *north* of the *target*. *Both parties think* it is *worth* the *effort*.","points":[["thank /θæŋk/、three /θriː/","舌尖轻触上齿、送气、声带不振动。常见错误是读成 /s/ 或 /f/，thank 变成 sank 或 fank"],["this /ðɪs/、those /ðəʊz/","同样是舌尖触上齿，但声带要振动（手贴喉结应有明显振动）。读成 /z/ 或 /d/ 都不对"],["thousand /ˈθaʊznd/","开头 /θ/，中间 /z/ 要振动，结尾 /nd/ 连读。三处音都不同，是很好的综合练习"],["threshold /ˈθreʃhəʊld/","合规高频词。两个音节间是 /ʃh/ 而不是简单的 /ʃ/，读的时候别吞掉 /h/"],["north /nɔːθ/、worth /wɜːθ/","结尾 /θ/ 不振动。词尾 /θ/ 是中文里完全没有的音，需要刻意练"]],"zh":"感谢你从周四之前发来的三千份材料。这已经是连续第三个月了，那些阈值都超过了目标值。双方都认为这件事值得投入。"},{"id":"A7","g":"A","title":"/v/ 与 /w/：一个咬唇，一个圆唇","words":60,"mins":0.5,"focus":"/v/ vs /w/ vs /f/","text":"We *verify* every *wire voucher*. The *value* of the *vault* is *very high*, so we *view* the *videos weekly*. *Which verification form* did you *file*? *Five* of the *files have not* been *verified*.","points":[["verify /ˈverɪfaɪ/、voucher /ˈvaʊtʃə/","/v/ 必须上齿轻咬下唇 + 声带振动。中文没有 /v/，最容易读成 /w/（圆唇不咬唇）"],["wire /ˈwaɪə/、weekly /ˈwiːklɪ/、which /wɪtʃ/","/w/ 是双唇收圆后迅速打开，牙齿不碰下唇。<b>判断法：读 /w/ 时如果牙齿碰到嘴唇，你读错了</b>"],["file /faɪl/、five /faɪv/","/f/ 是 /v/ 的清音版，同样的唇齿位置但不振动。file 结尾是 /l/，five 结尾是 /v/，别混"],["have not /ˈhæv nɒt/","口语中常弱读连成 /ˈhævn̩t/ 或 /ˈhævənt/，两个词之间不停顿"],["value /ˈvæljuː/","重音在第一音节，/v/ 振动 + /æ/ 咧嘴"]],"zh":"我们核验每一张电汇凭证。金库价值很高，所以我们每周查看录像。你提交的是哪种核验表？有五份文件尚未核验。"},{"id":"A8","g":"A","title":"词尾辅音串：别加元音，也别吞掉","words":64,"mins":0.6,"focus":"-s / -ed / -ths 结尾","text":"*Banks ask* for *documents*, *contracts*, *reports* and *statements*. *Clients submit requests*, *banks assess risks*, and *records get archived*. *Last* week we *checked* the *lists*, *flagged* the *gaps*, and *moved* the *files*. The *months* of *work* paid off.","points":[["contracts /ˈkɒntrækts/","词尾三个辅音 /kts/ 要连读成一串。常见错误是加元音读成 /ˈkɒntræktɪs/"],["documents /ˈdɒkjumənts/","重音在第一音节，第二音节弱化成 /ju/ 或 /jə/，结尾 /nts/ 一串连读"],["checked /tʃekt/、flagged /flæɡd/、moved /muːvd/","-ed 的三种读法：前面是清辅音读 /t/，浊辅音或元音读 /d/，只有 /t/ /d/ 结尾才读 /ɪd/。<b>不要把 checked 读成 /ˈtʃekɪd/</b>"],["months /mʌnθs/、sixths /sɪksθs/","/θs/ 连续两个齿音，是英语里最难的结尾之一。慢慢读，先保证 /θ/ 的舌尖位置，再过渡到 /s/"],["assess /əˈses/、risks /rɪsks/","assess 是两音节 /əˈses/，重音在后；risks 结尾 /sks/ 三连辅音"]],"zh":"银行要求提供文件、合同、报告和账单。客户提交申请，银行评估风险，记录被归档。上周我们核对了清单，标记了缺口，并转移了文件。几个月的工作有了回报。"},{"id":"B1","g":"B","title":"向 MLRO 升级可疑活动（口头陈述）","desc":"合规工作的核心语域：升级汇报、筛查判断、监管致词、客户问询、函件与培训。多数段落可直接改造成你自己的稿子。","words":150,"mins":1.4,"focus":"金额数字 · 连读 · 正式陈述语调","text":"<span class='who'>Compliance Analyst</span> *Sorry to pull you in on this*, but I think we need to _escalate_. The *customer* is a *dormant corporate account* that _came back to life_ *eighteen months* ago. Since then we have seen *nineteen inbound payments* from *three jurisdictions* we treat as *higher risk*, _totalling_ about *four hundred thousand pounds*.\n*What concerns me* is not the *volume* but the *pattern*: the *funds _arrive_ and _move out_ within twenty-four hours*, and the *underlying invoices _do not match_ the stated business*.\nI have _already asked_ the *relationship team* for the *source of funds*. They have _not come back_ to me. *My recommendation* is to _file a SAR_ _unless_ we get *documentation that stands up*.","points":[["escalate /ˈeskəleɪt/","重音在第一音节，不是 /esˈkəleɪt/。动词重音规则：多数三音节动词重音在首"],["eighteen /ˌeɪˈtiːn/ 与 eighty /ˈeɪti/","<b>金额听错就是合规事故。</b> -teen 结尾重音在<u>后</u>且带长 /iː/；-ty 结尾重音在<u>前</u>且尾音短。读 18 时要有明显的两个重音峰"],["nineteen /ˌnaɪnˈtiːn/ 与 ninety /ˈnaɪnti/","同上规则。练习时把手放在桌上打节拍：nine-TEEN 是弱-强，NINE-ty 是强-弱"],["dormant /ˈdɔːmənt/、jurisdiction /ˌdʒʊərɪsˈdɪkʃn/","dormant 重音在首；jurisdiction 重音在第三音节 /dɪk/，这是很长的词，要分意群读"],["totalling /ˈtəʊtlɪŋ/","英式拼写双 l。读的时候两个 /l/ 只发一次，中间不加元音"],["underlying /ˌʌndəˈlaɪɪŋ/","重音在 /laɪ/；结尾 /ɪɪŋ/ 是两个相邻的松元音，慢慢读到位再提速"],["pull you in /pʊl ju ɪn/","连读成 /pʊljʊɪn/。do not match 中 /t/ 遇 /m/ 常被吞掉，读成 /duː nɒ mætʃ/"]],"zh":"抱歉把你拉进来，但我觉得这件事需要升级。客户是一个休眠的对公账户，十八个月前重新活跃。此后我们看到来自三个我们视为较高风险司法辖区的十九笔入账，总额约四十万英镑。\n让我担心的不是金额而是模式：资金到账后二十四小时内就转出，而且底层发票与所述业务不符。\n我已经向客户关系团队索要资金来源，他们没有回复我。我的建议是：除非能拿到经得起推敲的材料，否则提交可疑活动报告。"},{"id":"B2","g":"B","title":"制裁筛查命中：判断与放行","words":142,"mins":1.3,"focus":"专有名词重音 · 审慎措辞语调","text":"<span class='who'>Sanctions Officer</span> *Here is the case.* The *screening system* _returned_ a *potential match* on the *beneficiary name*. On _closer inspection_, the *name differs* in *two letters*, and the *date of birth* is _not consistent_ with our record.\nWe _ran_ the *name* against _both_ the *UK consolidated list* and the *OFAC list*. *Neither returns an exact match.* The customer's *identity documents* _corroborate_ the details, and *no adverse media* was found.\n*My view* is that this is a *false positive*, and we can _release_ the payment. *However*, I would _like your sign-off_ _before_ we do — _given_ the *jurisdiction involved*.","points":[["beneficiary /ˌbenɪˈfɪʃəri/","五个音节，重音在第三音节 /fɪ/。念的时候别把重音放在开头"],["corroborate /kəˈrɒbəreɪt/","重音在第二音节 /rɒb/。注意是两个 /r/，中间是 /ɒ/ 不是 /əʊ/"],["adverse /ˈædvɜːs/","<b>英式重音在第一音节</b>，美式在第二（/ædˈvɜːrs/）。你在英国同事面前读错会很显眼"],["consolidated /kənˈsɒlɪdeɪtɪd/","重音在第二音节，五个音节要有清晰的强弱起伏，别读成一串平调"],["OFAC /ˈəʊfæk/","读成一个词，不是逐字母念 O-F-A-C。同理 FATF 读 /fætf/、FCA 读三个字母 /ef siː eɪ/"],["sign-off /ˈsaɪnɒf/","复合名词重音在前半。作动词时读 /ˌsaɪn ˈɒf/，重音在后"],["closer inspection /ˈkləʊsə ɪnˈspekʃn/","closer 在这里是形容词\"更仔细的\"，读 /s/ 不读 /z/（后者是\"更近的\"）"]],"zh":"情况是这样的。筛查系统对收款人姓名返回了一个潜在命中。经更仔细的检查，姓名有两个字母不同，出生日期也与我们的记录不一致。\n我们同时用英国综合制裁名单和 OFAC 名单做了比对，两者都没有精确命中。客户的身份文件与所填细节相互印证，也没有发现负面舆情。\n我认为这是误报，可以放行付款。但在放行之前，考虑到涉及的司法辖区，我希望得到你的签批。"},{"id":"B3","g":"B","title":"客户尽职调查问询（对话体）","words":150,"mins":1.4,"focus":"问句语调 · 委婉索取信息","text":"<span class='who'>Relationship Manager</span> *Could you walk me through* the *purpose* of this account? *Specifically*, what *kind of payments* do you _expect to make_ _day to day_?\n<span class='who'>Client</span> We are a *wholesale importer*. Most of our payments go to *suppliers in Asia*.\n<span class='who'>Relationship Manager</span> *Thank you.* And _roughly_ *what volume* are we _talking about_ *per month*?\n<span class='who'>Client</span> _Around_ *two hundred thousand euros*.\n<span class='who'>Relationship Manager</span> *That is helpful.* One _more thing_ — can you *confirm* who the *ultimate beneficial owners* are, and _where_ they are _resident_? *We need this* _before_ we can _open_ the account. *I appreciate* it is a *lot to ask*, but it is a *regulatory requirement*.","points":[["Could you /kʊdʒə/","英式口语里 could you 连读成 /kʊdʒə/。但<b>在正式问询场合要读清楚 /kʊd juː/</b>，过度含糊会显得不专业"],["walk me through /wɔːk mi θruː/","固定短语，意思是\"逐步说明\"。/k/ 遇 /m/ 不停顿，直接连过去"],["ultimate beneficial owners /ˈʌltɪmət ˌbenɪˈfɪʃl ˈəʊnəz/","这是 UBO 的全称，合规高频。<b>ultimate 的 -mate 弱读成 /mət/</b>，不要读成 /meɪt/"],["two hundred thousand /tuː ˈhʌndrəd ˈθaʊznd/","hundred 和 thousand 都是<b>强-弱</b>节奏，第二个音节弱化。数字部分要压低放慢，让金额听得清楚"],["regulatory /ˈreɡjələtəri/","英式读四个音节的 /ˈreɡjələtəri/。重音在首，其余音节依次弱化"],["I appreciate it is a lot to ask","这是英式礼貌的标准句式。语调上 \"I appreciate\" 压低，\"a lot to ask\" 略微上扬表示体谅"]],"zh":"能否请你说明一下这个账户的用途？具体来说，你们日常预计做哪类付款？\n我们是一家批发进口商，大部分款项付给亚洲的供应商。\n谢谢。那大概每月是什么量级？\n大约二十万欧元。\n这很有帮助。还有一件事——能否确认最终受益所有人是谁，以及他们居住在哪里？在开立账户之前我们需要这些信息。我知道要的东西不少，但这是监管要求。"},{"id":"B4","g":"B","title":"EDD 请求函（正式书面朗读）","words":145,"mins":1.3,"focus":"书面语节奏 · 列举结构","text":"*Dear Mr Whitfield,*\n*Thank you* for your _recent application_. *Before* we can _progress the matter_, we need to _carry out_ *enhanced due diligence*, _which is required_ _where_ the relationship is _assessed_ as *higher risk*.\n*Please provide the following:* _first_, the _most recent_ *audited financial statements*; _second_, a *description of the source of wealth*, with _supporting documentation_; _third_, the *full ownership structure*, _including_ any *intermediate holdings*.\n*Once* we _receive these documents_, we will _complete_ our *review* _within ten working days_. *If anything is unclear*, _please do not hesitate_ to _contact me directly_.\n*Yours sincerely,*\n*Compliance Team*","points":[["enhanced due diligence /ɪnˈhɑːnst/","enhanced 的 <b>-ance 在英式读 /ɑː/</b>（美式读 /æ/）。diligence 读 /ˈdɪlɪdʒəns/，重音在首、结尾弱化成 /dʒəns/"],["audited /ˈɔːdɪtɪd/","-ed 在这里读 /ɪd/，因为词干以 /t/ 结尾。重音在首，别读成 /ɔːˈdɪtɪd/"],["Yours sincerely","<b>英式书信礼仪的关键：</b>称呼用具体姓名 → 结尾 Yours sincerely；称呼用 Dear Sir/Madam → 结尾 Yours faithfully。<b>这封信称呼了 Mr Whitfield，所以必须用 Yours sincerely</b>，用错在英国会被视为不专业"],["first / second / third","书面列举词的语调要<b>逐个上扬再在最后一项降下</b>（列表语调）。全读平调会让整段显得呆板"],["intermediate /ˌɪntəˈmiːdiət/","五个音节，重音在第三音节 /miː/。形容词性时结尾弱读成 /ət/"],["do not hesitate /duː nɒt ˈhezɪteɪt/","固定客套语。读的时候前面压低、hesitate 略提，形成礼貌的语形"]],"zh":"尊敬的 Whitfield 先生：\n感谢您最近的申请。在推进此事之前，我们需要进行强化尽职调查——当关系被评定为较高风险时，这是必需的程序。\n请提供以下材料：第一，最近一期经审计的财务报表；第二，资金来源说明及支持性文件；第三，完整的股权结构，包括任何中间层持股。\n我们收到这些文件后，将在十个工作日内完成审核。如有任何不清楚之处，请随时直接与我联系。\n此致，\n合规团队"}];
+var SEG_2 = [{"id":"B5","g":"B","title":"监管现场检查：开场致词","words":140,"mins":1.3,"focus":"英式 /ʃedjuːl/ · 正式致词节奏","text":"<span class='who'>Head of Compliance</span> *Good morning, and _thank you for coming_.* I am the *Head of Compliance*. _With me_ are the *Head of Financial Crime* and our *Internal Audit lead*.\nWe have _prepared_ a *schedule* for the *three days*, _which we can adjust_ to suit your *priorities*. The *first day* covers *governance and oversight*; the _second_, *customer risk assessment and monitoring*; the _third_, *reporting and training*.\nA *dedicated room* has been _set aside_ for your use, and _all requested documents_ are _already available_. *My colleague* will be _your point of contact_ throughout. _If you need anything at all_, please *ask her directly*. We would *rather* deal with _questions early_ than _discover gaps later_.","points":[["schedule /ˈʃedjuːl/","<b>英式读 /ˈʃedjuːl/（sh- 开头），美式读 /ˈskedʒuːl/。</b>你在英国同事面前用美式读法会被立刻听出来——这个词是很强的口音信号"],["with me /wɪð miː/","/ð/ 要舌尖触上齿并振动，不能读成 /wɪz miː/"],["governance /ˈɡʌvənəns/","/ʌ/ 短促，第二音节弱化成 /ə/。不要读成 /ɡəʊvənəns/"],["point of contact /pɔɪnt əv ˈkɒntækt/","of 弱读成 /əv/（不是 /ɒv/）。contact 重音在首，作名词时不要读成 /kənˈtækt/"],["second / third","列举时 <span class='mono'>the second, the third</span> 通常省略名词，只留序数词。语调是<b>先升后降</b>：first↗、second↗、third↘"],["rather /ˈrɑːðə/","英式 /ɑː/。这个位置用 rather 表达委婉偏好，是英式职场的高频用法"]],"zh":"早上好，感谢各位前来。我是合规主管。这位是金融犯罪主管，这位是我们的内部审计负责人。\n我们为这三天准备了日程，可以根据你们关注的重点调整。第一天覆盖治理与监督；第二天是客户风险评估与监测；第三天是报告与培训。\n我们专门留了一间房间供你们使用，所有要求的文件都已经备好。我的同事将全程作为你们的联络人。如果有任何需要，请直接找她。我们宁愿早点面对问题，也不愿后面才发现缺口。"},{"id":"B6","g":"B","title":"合规培训讲稿：让听众坐直的开场","words":150,"mins":1.4,"focus":"修辞重音 · 说服性语调","text":"*Let me start with a question.* _Hands up_ if you have *ever* received a payment you _could not quite explain_. *Thank you* — _that is roughly_ *three quarters of the room*, and _that is exactly the point_.\n*Financial crime does not usually announce itself.* It arrives as a _normal-looking transaction_ from a _normal-looking client_, handled by a _busy team_ on a *Friday afternoon*. *Nobody* sets out to _process a criminal payment_. *What happens* is that the *warning signs* are _spread across_ *three systems* and *two people*, and _nobody sees the whole picture_.\n*So the rule is simple.* _If something does not sit right_, *raise it*. You will *never* be criticised for _asking a question_. You will be _criticised_ for *staying silent*.","points":[["roughly /ˈrʌfli/","/ʌ/ 短促；-gh- 不发音。不要读成 /ˈrɔːfli/"],["quarters /ˈkwɔːtəz/","非重读 r 不发音、词尾 -ers 弱化成 /əz/。整词读成 /ˈkwɔːtəz/，听起来接近 \"kwaw-tuhz\""],["announce itself /əˈnaʊns ɪtˈself/","连读成 /əˈnaʊnsɪtself/。announce 的重音在第二音节"],["Friday /ˈfraɪdeɪ/","英式 /aɪ/ 要读足，不能含糊成 /ˈfraːdeɪ/"],["spread across /spred əˈkrɒs/","/d/ 与 /ə/ 连读，几乎听成一个词。across 重音在后、/ɒ/ 短促"],["criticised /ˈkrɪtɪsaɪzd/","<b>英式拼写用 s（criticised），美式用 z（criticized）</b>；但两者读音相同，都是 /z/ 结尾"],["does not sit right /dʌz nɒt sɪt raɪt/","口语中常压缩成 /dʌzn̩ sɪt raɪt/。这是一句非常好用的英式口语表达"]],"zh":"我先问一个问题。如果你曾经收到过一笔自己说不清楚的付款，请举手。谢谢——大约四分之三的人都举了手，而这正是我要说的重点。\n金融犯罪通常不会自我宣告。它是一笔看起来正常的交易，来自一个看起来正常的客户，由一个忙碌的团队在某个周五下午处理。没有人一开始就打算处理犯罪款项。真实情况是：警示信号分散在三个系统和两个人手里，没有人看到全貌。\n所以规则很简单：如果哪里不对劲，就提出来。你永远不会因为多问一句而被批评。你会因为保持沉默而被批评。"},{"id":"B7","g":"B","title":"风险委员会汇报（三点式结构）","words":152,"mins":1.5,"focus":"数字清晰度 · 三点式节奏","text":"*Chair, thank you.* I will _keep this brief_ and _focus on three points_.\n*First*, *financial crime risk*. We _closed_ *four hundred and twelve* alerts last quarter. Of those, *nineteen* were escalated and *three* resulted in a *SAR*. The *backlog* is _down_ from *nine days* to *four*, which is _within_ our *risk appetite*.\n*Second*, *regulatory change*. The new *guidance* on _third-party risk_ takes effect in *April*. We have _completed_ a *gap analysis* and _identified_ *seven* areas requiring _remediation_.\n*Third*, *resourcing*. We are _carrying_ *two vacancies* in the _second line_. _Until those are filled_, we are _relying on_ *contractors*. I would _welcome_ the *Committee's view* on _whether_ to _extend_ those contracts.\n*Happy to take questions.*","points":[["four hundred and twelve","<b>英式数字必读 and：</b>412 = four hundred <u>and</u> twelve。省略 and 是美式习惯，在英国正式场合会显得别扭"],["nineteen /ˌnaɪnˈtiːn/","与 ninety 区分：-teen <b>重音在后</b>、尾音长；-ty <b>重音在前</b>、尾音短。汇报数字时读错会直接造成误解"],["vacancies /ˈveɪkənsiz/","三个音节，重音在首，中间 /kən/ 弱化"],["remediation /rɪˌmiːdiˈeɪʃn/","五个音节，<b>重音在第四音节 /eɪ/</b>。合规高频词，值得单独练十遍"],["risk appetite /rɪsk ˈæpɪtaɪt/","appetite 重音在首、三音节，结尾 /aɪt/ 要完整。这是合规报告的核心术语"],["First / Second / Third","三点式汇报的语调模板：First↗、Second↗、Third↘，然后用降调收尾。全平调会让听众抓不住结构"]],"zh":"主席，谢谢。我会简短，聚焦三点。\n第一，金融犯罪风险。上季度我们结清了四百一十二个警报，其中十九个升级，三个形成可疑活动报告。积压从九天降到四天，处于我们的风险偏好之内。\n第二，监管变化。关于第三方风险的新指引将于四月生效。我们已完成差距分析，识别出七个需要整改的领域。\n第三，资源。二道防线目前有两个空缺岗位，在填补之前我们依赖外部顾问。希望听取委员会关于是否延长这些合同的意见。\n欢迎提问。"},{"id":"B8","g":"B","title":"监管者演讲节选（FCA 风格）","words":148,"mins":1.4,"focus":"对比结构 · 长句呼吸","text":"*Our starting point is a conversation, not a fine.*\n_Ten years ago_, the *regulatory relationship* with firms was _largely_ *episodic*. We _appeared_, we _asked questions_, we _left_. That model _served its purpose_ _for a time_, but it _did not_ *prevent* the failures we have _since seen_.\n_What we are asking for now_ is a *different posture*. We want firms to _come to us early_ — _not_ when the problem is *acute*. We want _candid self-assessment_, _not_ a *defence* of the _indefensible_.\n_Let me be clear about the trade-off._ *Where a firm identifies and addresses an issue itself, the outcome will be different* — _materially different_ — *from the case where we discover it first*.\n_That is not a promise of indulgence._ It is a *statement of how incentives work*.","points":[["episodic /ˌepɪˈsɒdɪk/","四个音节，重音在第三音节 /sɒ/。/ɒ/ 要短促圆唇"],["purpose /ˈpɜːpəs/","<b>英式非重读 r 不发音</b>，读 /ˈpɜːpəs/。美式 /ˈpɜːrpəs/ 会卷舌——这是英式正式演讲中很显眼的差异"],["posture /ˈpɒstʃə/","/ɒ/ + /stʃ/。/tʃ/ 是清音，声带不振动，短促收住"],["candid /ˈkændɪd/","/æ/ 咧嘴，重音在首。意思是\"坦率的\"，是监管语境的高频词"],["indefensible /ˌɪndɪˈfensəbl/","五个音节，重音在第三音节。读的时候先分意群，别一口气冲到底"],["materially /məˈtɪəriəli/","<b>英式读 /məˈtɪəriəli/</b>（四个音节），美式是 /məˈtɪriəli/（三音节并卷舌）。这里的破折号停顿是修辞手段，朗读时也要停"],["indulgence /ɪnˈdʌldʒəns/","重音在第二音节 /dʌl/。这个词组\"not a promise of indulgence\"是整段的转折点，要读得慢而清晰"]],"zh":"我们的出发点是一次对话，而不是一张罚单。\n十年前，我们与机构的监管关系基本是片段式的：我们出现，我们提问，我们离开。那个模式一度管用，但它没有阻止我们后来看到的那些失败。\n我们现在要求的是一种不同的姿态。我们希望机构早点来找我们——而不是等到问题已经严重。我们希望看到坦诚的自我评估，而不是为不可辩护的事辩护。\n请允许我把取舍说清楚：如果一家机构自己发现并处理了问题，结果会不同——会有实质不同——与我们先发现的情况相比。\n这不是在承诺宽容，而是在陈述激励如何运作。"},{"id":"B9","g":"B","title":"回复监管信息请求（正式函件）","words":150,"mins":1.4,"focus":"函件套语 · 正式书面语调","text":"*Dear Ms Okonkwo,*\n*Thank you for your letter of the _fourteenth of March_ _requesting information_ under _section one sixty-six_.* _Please find enclosed_ our *response*.\n_You asked about three matters._ _Taking them in turn_: on _transaction monitoring_, we have _provided_ the *tuning methodology* and the *alert volumes* for _each of the last four quarters_; on _correspondent banking_, we have _set out_ our *exit criteria* and the *accounts closed* under that framework; on *governance*, we have attached the *terms of reference* for the *Financial Crime Committee*.\n_Where_ we have _not_ been able to _answer fully_, we have said so _explicitly_ and _explained why_.\n*We would be glad to meet* to _discuss any of this_ in _more detail_.","points":[["section one sixty-six","法条读法：<b>数字通常逐位或按习惯读，不读 \"one hundred and sixty-six\"</b>。s166 在合规语境里就读作 \"section one sixty-six\""],["enclosed /ɪnˈkləʊzd/","重音在后。这个词组 _Please find enclosed_ 是正式函件的固定套语，语速要放慢"],["Okonkwo","西非常见姓氏（尼日利亚伊博族）。读作 /əˈkɒŋkwəʊ/ 左右。<b>不确定对方姓名读音时，宁可在会面时先问一句</b>，也不要含糊带过"],["Taking them in turn","字面\"依次处理\"，是英式正式文书的连接套语。语调上前面略升、句尾降"],["terms of reference /tɜːmz əv ˈrefrəns/","简称 ToR，指委员会的职权范围文件。of 弱读成 /əv/"],["glad /ɡlæd/","/æ/ 咧嘴、口型大。结尾 /d/ 要浊，与 glad 的过去式无关"]],"zh":"尊敬的 Okonkwo 女士：\n感谢您三月十四日依据第一百六十六条索取信息的来函。随函附上我们的回复。\n您提出三个方面的问题。依次回应：关于交易监测，我们提供了参数调优方法和过去四个季度各自的警报数量；关于代理行，我们列出了退出标准和依该框架关闭的账户；关于治理，我们附上了金融犯罪委员会的职权范围文件。\n凡我们无法完整回答之处，均已明确指出并说明了原因。\n我们很乐意会面，就其中任何事项做更详细的讨论。"},{"id":"B10","g":"B","title":"与业务部门沟通设限（不说不）","words":135,"mins":1.2,"focus":"软化语 · 立场坚定但不对抗","text":"<span class='who'>Business</span> _Look_, the client is _worth a lot to us_. Can we not just _onboard them_ and _sort the paperwork out later_?\n<span class='who'>Compliance</span> *I understand the pressure*, and _I am not saying no_. _What I am saying_ is that *we cannot take on the risk before we know what it is*. _If_ we onboard now and the *source of funds* turns out to be a _problem_, we will have to _exit the relationship_ — _and that is a worse outcome_ for the client _and for us_.\n_Give me_ the *two documents* I asked for, and I will _turn this around_ _within forty-eight hours_. *That is the fastest route to a yes.*","points":[["onboard /ˌɒnˈbɔːd/","动词读 /ˌɒnˈbɔːd/（重音在后），名词/形容词作 onboard 时重音在前。board 的 /ɔː/ 要长而圆"],["I am not saying no","<b>这是英式职场最重要的软化句式之一。</b>语调关键：\"not saying\" 稍微上扬，\"no\" 用降调，听起来是讲道理而不是拒绝"],["take on the risk /teɪk ɒn ðə rɪsk/","take on 连读成 /teɪkɒn/。这是\"承担\"的固定搭配，不要读成 take off"],["exit /ˈeksɪt/","重音在首。作动词时英式通常是 /ˈeksɪt/，不是 /eɡˈzɪt/"],["forty-eight /ˌfɔːti ˈeɪt/","-ty 结尾短促 + -eight 独立清晰。承诺时间时数字必须读准，这是专业度的体现"],["route /ruːt/","<b>英式读 /ruːt/</b>（美式常读 /raʊt/）。fastest route to a yes 是很好用的收尾句"]],"zh":"业务：「你看，这个客户对我们很重要。能不能先开户，文件后面再补？」\n合规：「我理解你们的压力，我不是说不。我想说的是：在我们还不知道风险是什么之前，无法承担它。如果现在开户，而资金来源后来出了问题，我们就必须退出这段关系——这对客户和我们都是更糟的结果。」\n把我要的那两份文件给我，我在四十八小时内给你答复。那是通向\"可以\"的最快路径。"},{"id":"B11","g":"B","title":"团队会议：警报分级讨论","words":130,"mins":1.2,"focus":"口语连读 · 会议中的确认与追问","text":"<span class='who'>Team Lead</span> _Right_, let us _run through_ the *queue*. _Remind me_ where we are with the *Martins matter*.\n<span class='who'>Analyst</span> _I closed it_ as a *false positive*. The _structuring pattern_ _looked_ suspicious, but the *invoices* _backed up_ every payment, and the client has been _with us_ for *eleven years*.\n<span class='who'>Team Lead</span> *Fine.* _Just to be clear_ — did you *document* the reason? _Because if it comes back_ in a *thematic review*, we need to _show_ why we _stopped there_.\n<span class='who'>Analyst</span> _Yes_, it is in the *file note*.\n<span class='who'>Team Lead</span> *Good.* _Next one._","points":[["queue /kjuː/","英式读 /kjuː/。/juː/ 要读成两个音素的滑动，不要读成 /kuː/"],["Martins matter /ˈmɑːtɪnz ˈmætə/","两个词连读时 /nz/ 与 /m/ 相邻，实际读成 /ˈmɑːtɪnz mætə/，中间只有极短的停顿"],["structuring /ˈstrʌktʃərɪŋ/","指\"化整为零\"的交易结构。重音在首，三个音节后接 /ɪŋ/，不要读成 /strʌkˈtʃʊərɪŋ/"],["Just to be clear","会议中的追问套语。<b>语调是先降后升</b>，表示\"我要确认一下\"而不是质问"],["thematic review /θɪˈmætɪk rɪˈvjuː/","监管的\"专题审查\"。thematic 重音在第二音节，开头是 /θ/（舌尖触上齿）"],["file note /faɪl nəʊt/","合规术语，指\"案卷记录\"。两个词要读成一个单位，中间不断开"]],"zh":"组长：好，我们过一遍队列。提醒我一下 Martins 那件事到哪了。\n分析员：我按误报结案了。那个拆分结构看着可疑，但发票为每一笔付款都提供了支撑，而且客户跟我们往来十一年了。\n组长：可以。确认一下——你把理由写下来了吗？因为如果专题审查回头问起，我们需要说明为什么在那里停下。\n分析员：写了，在案卷记录里。\n组长：好。下一个。"},{"id":"B12","g":"B","title":"年度合规报告摘要（董事会语调）","words":152,"mins":1.5,"focus":"董事会汇报语调 · 谨慎措辞","text":"*This report covers the year to December.*\n_Let me be direct about the headline._ We had *no material breaches* of our regulatory obligations, and *no findings* from the regulator that required _formal remediation_. _That is a good outcome_, and it reflects the *discipline* of teams across the _second line_.\n_It would, however, be a mistake_ to read that as *comfortable*. The *volume of alerts* _rose by thirty per cent_, and the *regulatory perimeter* _continues to expand_ into areas that were _not on our map three years ago_.\n_My assessment_ is that the *control environment* is *sound* but _does not have much headroom_. _If we want to grow the business_ without _growing the risk_, we will need to *invest* in _automation_ and in the *quality of our data*.\n_I am happy to take the Committee's questions._","points":[["breaches /ˈbriːtʃɪz/","<b>-ch 加 -es 读 /tʃɪz/</b>，是一个完整音节，不是 /tʃz/。这个词在合规报告里出现频率极高"],["perimeter /pəˈrɪmɪtə/","重音在第二音节 /rɪ/。指监管的\"边界范围\""],["headroom /ˈhedruːm/","金融术语，指\"余量、缓冲空间\"。说 _not much headroom_ 是委婉表达\"已经很紧\""],["automation /ˌɔːtəˈmeɪʃn/","四个音节，重音在第三音节 /meɪ/"],["comfortable /ˈkʌmftəbl/","<b>英式常压缩成三个音节 /ˈkʌmftəbl/</b>，中间的 /or/ 几乎不发音。这是英式口语的重要特征"],["It would, however, be a mistake","插入语 however 前后要<b>各停半拍</b>。这种插入式转折是英式正式表述的典型结构，朗读时停顿不能省"]],"zh":"本报告涵盖截至十二月的年度。\n让我直接说结论：我们在监管义务方面没有重大违规，也没有收到需要正式整改的监管发现。这是不错的结果，也反映了二道防线各团队的纪律性。\n然而，把它理解为\"高枕无忧\"就错了。警报量上升了百分之三十，监管边界也在持续扩张——进入三年前不在我们视野内的领域。\n我的评估是：控制环境是健全的，但没有多少余量。如果我们想在业务上增长而不让风险同步增长，就需要在自动化和数据质量上投入。\n我很乐意回答委员会的问题。"}];
+var SEG_3 = [{"id":"C1","g":"C","title":"电话会议：开场与议程","desc":"职场口语的核心动作：主持会议、澄清确认、委婉反对、汇报坏消息。这些是你在会议上真正要说的话。","words":135,"mins":1.2,"focus":"主持语 · 打断与交接","text":"<span class='who'>Host</span> *Good morning, everyone*, and _thanks for joining_. _Can I just check_ who we have on the line? _I can hear you_, Priya. *Daniel*, are you there?\n<span class='who'>Daniel</span> _Yes, I am here._ _Apologies_ — I was _on mute_.\n<span class='who'>Host</span> _No problem, it happens to all of us._ *Let me set out the shape of the call.* We have *forty-five minutes*. I will _hand over_ to Sarah for the *first item*, then we will _open the floor_. _If anything is unclear at any point_, please _jump in_ — _do not wait until the end_. _And if we run out of time_, we will _take the rest offline_.","points":[["Apologies /əˈpɒlədʒiz/","<b>英式口语道歉的常用形式</b>，注意是复数。重音在第二音节，/ɒ/ 短促圆唇"],["on mute /ɒn mjuːt/","/juː/ 要读成滑动音，不能读成 /muːt/（那样变成\"哑巴\"以外还容易听混）。这是远程会议的每日高频句"],["hand over /hænd ˈəʊvə/","连读成 /hændəʊvə/。意思是\"把发言权交给\"，是会议主持的核心动词"],["forty-five /ˌfɔːti ˈfaɪv/","-ty 短促，five 独立清晰。会议时长要说准，读错会直接影响议程安排"],["jump in /dʒʌmp ɪn/","口语\"随时插话\"。这一点和很多亚洲会议文化相反——<b>在英国会议上，中途打断提问是受欢迎的</b>，等最后才问反而显得被动"],["take the rest offline","固定表达，指\"剩下的事会后再谈\"。这是英式会议最常用的收尾语之一"]],"zh":"主持人：大家早上好，感谢参加。我先确认一下在线的是哪些人？Priya，我能听到你。Daniel，你在吗？\nDaniel：在，我在。抱歉——我刚才静音了。\n主持人：没问题，我们都遇到过。我先说明这次会议的结构。我们有四十五分钟。第一项交给 Sarah，然后开放讨论。如果任何时候有不清楚的地方，请随时插话——不要等到最后。如果时间不够，其余的我们会后再谈。"},{"id":"C2","g":"C","title":"会议中：澄清与确认","words":118,"mins":1.1,"focus":"问句语调 · 确认句式","text":"<span class='who'>Attendee</span> _Sorry, could you just _go back_ a moment?_ *I want to make sure I have understood.* _Are you saying_ that the *new threshold* applies from *April*, or from the *start of the financial year*?\n<span class='who'>Presenter</span> _Good question._ It applies from April — that is, the *first of April*, _not_ the *tax year*.\n<span class='who'>Attendee</span> _Right, that is what I thought._ *Just so I am clear* — _does that mean_ we have *six weeks* to _remediate_, or *ten*?\n<span class='who'>Presenter</span> *Six weeks.*\n<span class='who'>Attendee</span> _Understood. Thanks._","points":[["go back a moment /ɡəʊ bæk ə ˈməʊmənt/","三个词连成一串 /ɡəʊbækəˈməʊmənt/。这是请求对方重复的礼貌说法，比 \"repeat that\" 自然得多"],["threshold /ˈθreʃhəʊld/","合规最高频词之一。开头 /θ/ 舌尖必须触上齿，中间 /ʃh/ 两个音都要发出来，不要吞掉 /h/"],["financial year /faɪˈnænʃl jɪə/","<b>英式读 /ʃl/（-cial 读 sh）</b>。这个词读错在财务场合很显眼"],["remediate /rɪˈmiːdieɪt/","动词，重音在第二音节；名词 remediation 重音在第四音节。同一词根重音完全不同，要分开记"],["Just so I am clear","会议里的\"确认一下我的理解\"。<b>语调关键在于说得轻而快</b>，重读落在 clear 上，听起来是核对而非质疑"],["or ten?","选择疑问句的前项用升调、后项用降调：six weeks↗ or ten↘。这也是判断对方听没听懂的好工具"]],"zh":"与会者：抱歉，能不能往回一点？我想确认自己理解对了。你的意思是新阈值从四月开始适用，还是从本财年开始？\n主讲人：好问题。从四月开始——具体是四月一日，不是税年。\n与会者：好，我也是这么理解的。再确认一下——那意味着我们有六周时间整改，还是十周？\n主讲人：六周。\n与会者：明白了，谢谢。"},{"id":"C3","g":"C","title":"委婉提出异议（不树敌）","words":128,"mins":1.2,"focus":"软化语 · 反建议结构","text":"*Can I push back on that, gently?*\n_I see it slightly differently._ The *proposal* assumes the *volume* stays _flat_, but _our own data_ shows it _rose by a third_ last year. _So if we plan on the flat assumption_, we will _run out of capacity_ by *September*.\n_I am not against the approach._ _What I would suggest_ is that we *pilot* it in *one region* first, and _review after a quarter_ — _rather than_ _roll it out_ across the *whole business* and _discover the problem later_.\n*Does that sound workable?*","points":[["push back /pʊʃ bæk/","字面\"推回去\"，实际是\"提出不同意见\"。加上 gently 就把对抗性降下来了。<b>这个组合是英式职场的经典用法</b>"],["assumes /əˈsjuːmz/","<b>英式读 /əˈsjuːmz/，保留 /j/ 音</b>；美式读 /əˈsuːmz/。类似的还有 tune、duty、new"],["a third /ə θɜːd/","分数表达。注意 /θ/ 与 /ɜː/ 的组合，读成 /sɜːd/ 就错了"],["capacity /kəˈpæsəti/","四个音节，重音在第二音节 /pæ/。这个词在资源讨论里出现的频率极高"],["I see it slightly differently","<b>比 \"I disagree\" 好用得多的开场句。</b>语调要平缓，重音落在 differently，听起来是提供另一个视角"],["Does that sound workable?","收尾问句用升调，把决定权交回对方。<b>这是英式\"异议\"的关键技巧：提出替代方案后，以询问结尾而不是断言</b>"]],"zh":"我能温和地提出点不同意见吗？\n我的看法略有不同。这个提案假设业务量保持平稳，但我们自己的数据显示去年增长了三分之一。所以如果按平稳假设做计划，到九月就会产能不足。\n我不是反对这个方向。我建议先在一个区域试点，一个季度后评估——而不是在全公司推开之后再发现问题。\n这听起来可行吗？"},{"id":"C4","g":"C","title":"汇报进度与坏消息","words":128,"mins":1.2,"focus":"坦率语调 · 补救方案","text":"*I need to _flag something_ before we move on.*\n_The timeline is going to slip._ We _committed_ to delivering the *risk assessment framework* by _the end of the month_, and *we are not going to make that*. _The reason_ is that the *data* coming out of the _legacy system_ is _not in a usable state_, and _cleaning it_ is taking _longer than we estimated_.\n_What I would like to do_ is *move the deadline* to _the middle of next month_. _In return_, I will _give you_ a *weekly progress note* so there are _no surprises_.\n*I would rather tell you now than in three weeks.*","points":[["flag /flæɡ/","作动词表示\"提请注意\"。conference call 里 _I need to flag something_ 是非常实用的开场句"],["slip /slɪp/","时间表\"滑期\"的标准说法。<b>注意 slip 是中性词，不含\"搞砸\"的意思</b>，比 \"we failed\" 温和得多"],["committed /kəˈmɪtɪd/","重音在第二音节，结尾 -ed 读 /ɪd/（因词干以 /t/ 结尾）"],["legacy /ˈleɡəsi/","指\"遗留的（旧系统）\"。重音在首，/ɡ/ 要浊化振动"],["estimated /ˈestɪmeɪtɪd/","<b>动词重音在首 /ˈestɪmeɪt/</b>，名词 estimate 也读 /ˈestɪmət/。这个词英美重音差异不大，但很多人读成 /esˈtɪmeɪtɪd/ 是错的"],["I would rather tell you now than in three weeks","<b>英式坏消息汇报的黄金句式。</b>语调：前半降、\"than in three weeks\" 再降一次，形成\"主动坦白\"的语气"]],"zh":"在继续之前我需要提一件事。\n时间表会滑。我们承诺月底交付风险评估框架，但做不到。原因是旧系统出来的数据不可用，清理它比我们估计的花的时间更长。\n我想做的是把截止日期推到下月中旬。作为交换，我会每周给你一份进度说明，不会有意外。\n我宁愿现在告诉你，而不是三周后。"},{"id":"C5","g":"C","title":"一对一沟通：给出反馈","words":138,"mins":1.3,"focus":"英式委婉 · 具体化反馈","text":"*Thanks for making time.* _I wanted to talk about_ the *Harrow account*.\n*I will be straightforward with you*, because _I think you would rather have it straight_. The *client contact* has _chased us_ *four times* in *two weeks*, and _on three of those occasions_ the response came from *someone else*. _That is not a criticism of your work_ — _your analysis has been excellent_. *But the client experience is what it is*, and _it is being noticed_.\n_What would help_ is if you could _give me_ a *heads-up* when something is going to _sit with you_ for more than a day. _Then I can manage the expectation_ on the other side. *Does that feel fair?*","points":[["straightforward /ˌstreɪtˈfɔːwəd/","<b>英式非重读 r 不发音</b>，/fɔːwəd/。副词 straightforwardly 太长，口头常用 straight"],["chased /tʃeɪst/","\"催促\"的非正式说法，英式职场很常用。单独一个 chased us 就够，不需要 \"chased us repeatedly\""],["occasions /əˈkeɪʒnz/","/ʒ/ 是浊擦音，声带要振动。结尾 /nz/ 是一个音节内的辅音串"],["excellent /ˈeksələnt/","<b>英式读三个音节 /ˈeksələnt/</b>，中间的 e 几乎不发音；读成 /ˈeksiələnt/ 是中式发音习惯"],["heads-up /ˈhedz ʌp/","名词，指\"提前知会\"。重音在前半，读成一个单位"],["Does that feel fair?","<b>反馈收尾的英式问法。</b>用升调，把\"你觉得怎么样\"的判断权交给对方，比 \"Do you understand?\" 尊重得多"]],"zh":"谢谢抽时间。我想谈谈 Harrow 这个客户。\n我会直说，因为我想你更希望听到直接的话。客户联系人两周内催了四次，其中三次回复是别人给的。这不是在批评你的工作——你的分析一直很出色。但客户的感受就是这样，而且已经被注意到了。\n如果能帮上忙的是：当某件事要压在你那儿超过一天时，提前知会我一声。这样我能管理另一边的预期。你觉得这样公平吗？"},{"id":"C6","g":"C","title":"会议主持：推进与总结","words":126,"mins":1.2,"focus":"时间控制 · 总结结构","text":"*We are _halfway through_ and we have _three items left_, so _let me be disciplined_ about time.*\n_Two minutes_ on the *budget*, then *five* on the *hiring plan*, and then we will _wrap up_.\n*Right, let me try to summarise.* _Three things._ *First*, we _agreed_ to _keep the current threshold_ for now. *Second*, Priya will _circulate_ the *revised numbers* by *Wednesday*. *Third*, we will _revisit_ the *resourcing question* at the next meeting.\n*Anything I have missed?* … *Good. Thanks, everyone.*","points":[["halfway /ˌhɑːfˈweɪ/","<b>英式读 /ˌhɑːfˈweɪ/</b>（长 /ɑː/）；美式读 /ˌhæfˈweɪ/。这个词是英美口音的明显分水岭"],["disciplined /ˈdɪsəplɪnd/","三个音节，重音在首，-ed 读 /d/（因词干以 /n/ 结尾）"],["wrap up /ræp ʌp/","连读成 /ræpʌp/。会议主持的收尾动词，比 finish 更口语、更自然"],["summarise /ˈsʌməraɪz/","<b>英式拼写 -ise，美式 -ize。</b>读音相同，都是 /aɪz/"],["circulate /ˈsɜːkjəleɪt/","三个音节，重音在首，中间 /kjə/ 快速带过。意思是\"分发（文件）\""],["revisit /ˌriːˈvɪzɪt/","重音在第二音节 /vɪ/。比 \"discuss again\" 更正式、更简洁，是英式会议的常用词"]],"zh":"我们已经过半，还剩三项，所以我要在时间上严格一点。\n预算两分钟，然后是招聘计划五分钟，接着我们收尾。\n好，我来试着总结。三点。第一，我们同意暂时维持现行阈值。第二，Priya 会在周三前分发修订后的数字。第三，资源问题我们下次会议再议。\n我有遗漏的吗？……好，谢谢各位。"},{"id":"D1","g":"D","title":"银行开户（英国柜台实景）","desc":"落地日常：开户、租房、就医、邻里往来。这些场景不需要术语，但需要说得自然、听得懂对方的省略和习惯语。","words":132,"mins":1.2,"focus":"日常语速 · 请求与应答","text":"<span class='who'>Staff</span> _Good morning._ _How can I help?_\n<span class='who'>You</span> I would like to _open a current account_, please. I have _just moved to the UK_, and I _start work next week_.\n<span class='who'>Staff</span> _Of course._ _Do you have_ *proof of address* and a *form of photo ID* with you?\n<span class='who'>You</span> _I have my passport_, and I have a *tenancy agreement*. _Will that do?_\n<span class='who'>Staff</span> _A tenancy agreement is usually fine._ _I will also need_ your *National Insurance number* if you have one, and _proof of your employment_ — _a contract letter_ is ideal.\n<span class='who'>You</span> _I have the contract on my phone._ _Is that acceptable?_\n<span class='who'>Staff</span> _It should be._ _Take a seat_ and _I will get you started_.","points":[["current account /ˈkʌrənt əˈkaʊnt/","英国的\"活期账户\"。注意不是美式的 checking account。<b>/ʌ/ 短促，别读成 /ˈkɔːrənt/</b>"],["proof of address /pruːf əv əˈdres/","开户必备文件。of 弱读成 /əv/，address 作名词时英式重音在第二音节 /əˈdres/"],["tenancy /ˈtenənsi/","租约。三个音节，重音在首，中间 /nən/ 弱化"],["National Insurance number","英国社保号。读作 /ˈnæʃnəl ɪnˈʃʊərəns/，常缩写为 NI number，口语里直接说 \"an NI number\""],["Will that do? /wɪl ðæt duː/","<b>\"这样可以吗\"的地道说法</b>，比 \"Is that OK\" 更英式。用升调"],["get you started /ɡet ju ˈstɑːtɪd/","连读成 /ɡetʃu ˈstɑːtɪd/。银行、客服场景的高频句"]],"zh":"职员：早上好。有什么可以帮您？\n你：我想开一个活期账户。我刚搬到英国，下周开始上班。\n职员：当然可以。您带地址证明和带照片的身份证件了吗？\n你：我带了护照，还有一份租约。这样可以吗？\n职员：租约一般可以。如果方便的话我还需要您的国民保险号，以及在职证明——录用函最好。\n你：合同在我手机上。这样行吗？\n职员：应该可以。请坐，我来帮您办。"},{"id":"D2","g":"D","title":"租房看房（押金与账单）","words":134,"mins":1.2,"focus":"金额与费用类词汇","text":"<span class='who'>Agent</span> So this is the *living room*, and the *kitchen* is _through there_. _It is a bit compact_, but it has _everything you need_.\n<span class='who'>You</span> _It is nicer than I expected._ _How much is_ the *deposit*?\n<span class='who'>Agent</span> *Five weeks' rent.* It has to be _protected_ in a *government-approved scheme* — _I will send you the certificate_. And the *rent* is _due on the first of each month_.\n<span class='who'>You</span> _Is that including_ *council tax* and *utilities*?\n<span class='who'>Agent</span> _No — those are separate._ *Council tax* is *band D* for this property. _Water and electricity_ are _on you_ as well.\n<span class='who'>You</span> _Right, understood._ _Could I _have a think_ and _come back to you_ tomorrow?_","points":[["through there /θruː ðeə/","<b>两个齿音连着来：/θ/ 清、/ð/ 浊。</b>这是英式口语里极常见的指向表达，读含糊了对方听不懂"],["compact /kəmˈpækt/","作形容词表示\"面积小\"时重音在<u>后</u>。这是英国房东和中介描述小房间的标准委婉说法"],["deposit /dɪˈpɒzɪt/","押金。重音在第二音节，/ɒ/ 短促。英国的押金必须放入政府认可的押金保护计划"],["council tax /ˈkaʊnsl tæks/","市政税。<b>council 读两个音节 /ˈkaʊnsl/</b>，中间的 i 不发音，别读成 /ˈkaʊnsɪl/"],["utilities /juːˈtɪlətiz/","水电燃气等公用事业费。重音在第二音节。口语里也常说 bills 或 \"water and electricity\""],["have a think","英式口语\"考虑一下\"，比 \"think about it\" 更地道。搭配 come back to you 表示\"回头答复你\""]],"zh":"中介：这是客厅，厨房在那边。空间有点小，但该有的都有。\n你：比我预期的好。押金多少？\n中介：五周租金。押金必须放入政府认可的押金保护计划——我会把证书发给你。租金每月一日到期。\n你：这包含市政税和公用事业费吗？\n中介：不包含，那些是分开的。这套房的市政税是 D 档。水电也由你承担。\n你：好，明白了。我能考虑一下，明天回复你吗？"},{"id":"D3","g":"D","title":"注册 GP 与看诊","words":140,"mins":1.3,"focus":"医疗场景 · 症状描述","text":"<span class='who'>Receptionist</span> _Hello, how can I help?_\n<span class='who'>You</span> I would like to _register with the practice_, please. I have _just moved into the area_.\n<span class='who'>Receptionist</span> _Fine._ _Do you have_ your *proof of address* and your *NHS number*?\n<span class='who'>You</span> _I have the address_, but I _do not have_ an NHS number yet — _will that be a problem?_\n<span class='who'>Receptionist</span> _Not at all._ _We can look it up._ Now, _the doctor is running about ten minutes behind_, so _if you take a seat_, _we will call you through_.\n<span class='who'>Doctor</span> _Come in, take a seat._ _What brings you in today?_\n<span class='who'>You</span> I have had a _sore throat_ for about a week, and _it is not clearing up_. _I was wondering_ whether I should _take anything_ for it.\n<span class='who'>Doctor</span> _Let me have a look._","points":[["practice /ˈpræktɪs/","名词指\"诊所\"，英式拼写用 c（动词 practise 用 s）。<b>注意读音都是 /s/</b>"],["register /ˈredʒɪstə/","注册。重音在首，非重读 r 不发音"],["NHS number","读字母 N-H-S，或整体读 /ˌen eɪtʃ ˈes/。类似地 GP 读 /ˌdʒiː ˈpiː/"],["running behind /ˈrʌnɪŋ bɪˈhaɪnd/","\"（医生）时间延误了\"。英国诊所的高频句，听到就知道要多等一会儿"],["sore throat /sɔː θrəʊt/","<b>两个音都容易读错：</b>sore 是 /ɔː/ 且不卷舌；throat 开头是 /θ/，舌尖必须触上齿"],["What brings you in today?","医生的标准开场，意思是\"今天哪里不舒服\"。<b>听到这句话直接描述症状即可</b>，不需要寒暄"],["I was wondering whether…","<b>英式最礼貌的请求句式之一。</b>用过去进行时表达犹豫，比 \"I want to know if\" 委婉得多"]],"zh":"前台：你好，有什么可以帮您？\n你：我想在这个诊所注册。我刚搬到这个区域。\n前台：好。您有地址证明和 NHS 号码吗？\n你：我有地址，但还没有 NHS 号码——这会有问题吗？\n前台：完全不会，我们可以帮您查。另外医生今天延误了大约十分钟，所以请先坐一下，我们会叫您。\n医生：请进，坐吧。今天哪里不舒服？\n你：我喉咙痛了大约一周，一直没好。我想问需不需要吃什么药。\n医生：我看一下。"},{"id":"D4","g":"D","title":"邻里寒暄与下班后的酒馆","words":130,"mins":1.2,"focus":"英式日常对话 · 反义疑问句","text":"<span class='who'>Neighbour</span> _Morning!_ _Bit nippy today, is it not?_\n<span class='who'>You</span> _It is._ _I am still getting used to the weather._\n<span class='who'>Neighbour</span> _You will._ _Whereabouts_ are you from originally?\n<span class='who'>You</span> _China._ _I moved here for work — I am in banking._\n<span class='who'>Neighbour</span> _Right. Fancy a cuppa? I am just putting the kettle on._\n<span class='who'>You</span> _That would be lovely, thank you._\n——\n<span class='who'>Colleague</span> _It is _my round_. What are you having?_\n<span class='who'>You</span> _I will have _a half_ of lager, please._\n<span class='who'>Colleague</span> _A half? Go on, have a pint._\n<span class='who'>You</span> _I will _stick to_ a half, thanks — I am driving._","points":[["Bit nippy today, is it not?","_nippy_ 是英式口语\"有点冷\"。<b>反义疑问用 is it not 而非 isn't it，是偏正式的英式说法</b>；日常更多说 isn't it"],["getting used to /ˈɡetɪŋ ˈjuːstə/","used to 弱读连读成 /ˈjuːstə/，<b>不要读成 /juːzd tuː/</b>。这是英式口语节奏的典型例子"],["Whereabouts /ˈweərəbaʊts/","口语\"大概在哪儿\"，比 where 更随意、更友好。重音在首"],["Fancy a cuppa?","_Fancy…?_ 是英式口语\"想不想来点……\"；_cuppa_ 是 cup of tea 的口语缩写。这是英国社交最高频的邀约句"],["my round /maɪ raʊnd/","<b>英国酒馆文化的核心规则：轮流请客。</b>说 It is my round 等于\"这轮我请\"。拒绝别人的 round 会被视为不礼貌"],["a half /ə hɑːf/","半品脱。点酒时说 a half of lager 即可。Go on 是英式口语的\"来吧、别客气\""],["stick to /stɪk tuː/","\"坚持（喝这个）\"。用 I will stick to… 来礼貌拒绝升级饮品，是很好用的社交缓冲句"]],"zh":"邻居：早啊！今天有点冷，是吧？\n你：是啊。我还在适应这边的天气。\n邻居：会适应的。你原本是哪里人？\n你：中国。我因为工作搬过来的——在银行做事。\n邻居：这样啊。要来杯茶吗？我正烧水呢。\n你：那太好了，谢谢。\n——\n同事：这轮我请。你喝什么？\n你：我来半品脱拉格，谢谢。\n同事：半品脱？别客气，来一品脱吧。\n你：我还是半品脱就好，谢谢——我开车。"}];
+var SEG_4 = [{"id":"E1","g":"E","title":"陈述句降调：英式\"笃定\"的信号","desc":"语调与节奏专练。发音对了但语调是平的，听起来仍然像在念稿；这一组解决\"说得像不像那个意思\"。","words":56,"mins":0.5,"focus":"句尾降调 ↘","text":"*The position is unchanged.* ~↘~\n*We have reviewed the matter, and our view has not moved.* ~↘~\n*I have taken advice on this, and I am satisfied with the conclusion.* ~↘~\n*If the client wishes to pursue it, we will respond in writing.* ~↘~\n_This is not a negotiating position._ ~↘~ _It is where we are._ ~↘~","points":[["句尾必须明显下降","<b>英式正式表达里，陈述句结尾要有清晰的下滑。</b>如果结尾上扬，英国同事会理解成\"你不太确定\"甚至\"你在征求我同意\"，而不是\"你在陈述立场\""],["重读落在最后一个实词","The position is un<u>changed</u>——重音在 changed，前面全部弱化。<b>不要每个词都重读</b>，那是中文的节奏习惯"],["and our view has not moved","and 弱读成 /ənd/ 甚至 /n̩/，our 弱读成 /ɑː/。整句读成一个语块，中间不停"],["satisfied /ˈsætɪsfaɪd/","三个音节，重音在首。这个词常被读成四个音节 /ˈsætɪsɪfaɪd/，多了一个 /ɪ/"],["It is where we are","这句是收尾的\"钉子句\"，<b>每个词都要读清、读慢</b>。英式职场里这种短句比长篇论证更有力"]],"zh":"立场没有变化。\n我们已经审阅过此事，看法没有改变。\n我为此征询过意见，对结论是满意的。\n如果客户希望继续推进，我们会以书面方式回复。\n这不是谈判姿态，这就是我们的立场。"},{"id":"E2","g":"E","title":"疑问句与附加疑问：升调与选择问","words":58,"mins":0.5,"focus":"升调 ↗ · 选择疑问句","text":"*Could you send me the file?* ~↗~\n*Is that the final version?* ~↗~\n*Do you want the summary alone, or the annex as well?* ~↗~ ~↘~\n*Shall I take that away and come back to you?* ~↗~\n_You have seen the draft, have you not?_ ~↗~\n*Would Thursday suit you?* ~↗~ _Or would Friday be easier?_ ~↗~","points":[["一般疑问句用升调","<b>英式升调的幅度比美式小</b>，只在最后一个词上抬。整句都往上飘会听起来不自信"],["选择疑问句：前升后降","_the summary_ ↗ _or the annex_ ↘。这是英语的固定规则——<b>不能两项都升，那样对方不知道哪一个是你的倾向</b>"],["附加疑问句语调决定含义","_have you not?_ 用升调表示\"我不确定，想确认\"；用降调则表示\"我知道你看了，我在等你承认\"。<b>同一个句子，语调不同意思完全不同</b>"],["Shall I…? 是英式专属","表示\"要不要我来……\"。<b>美式几乎不用 shall</b>，英式职场里这是提供帮助的标准句式，用 would you like me to 会显得更客气但更啰嗦"],["Would Thursday suit you?","<b>suit 是英式约时间的标准动词。</b>不要说 \"Is Thursday OK for you\"，说 \"Would Thursday suit you\" 立刻地道很多"]],"zh":"能把文件发给我吗？\n那是最终版本吗？\n你只要摘要，还是要连同附件？\n要不要我拿走，回头再答复你？\n你看过初稿了吧？\n周四方便吗？还是周五更合适？"},{"id":"E3","g":"E","title":"列举与对比：结构靠语调撑起来","words":60,"mins":0.6,"focus":"列表语调 · 对比重音","text":"*There are three options:* ~hold~ ~↗~, ~amend~ ~↗~, ~or exit~ ~↘~.\n*First, the cost* ~↗~; *second, the timing* ~↗~; *and third, the reputational risk* ~↘~.\n_It is not a question of cost._ *It is a question of timing.*\n*I am not saying no* ~↗~ — *I am saying not yet* ~↘~.\n_We can either accept the finding_ *and remediate* ~↗~, _or challenge it_ *and document our reasoning* ~↘~.","points":[["列表语调：升、升、降","<b>英语列举的固定模式：除最后一项外全部升调，最后一项降调。</b>全读平调会让听众不知道列举何时结束"],["对比靠重音不靠词","_not a question of <b>cost</b>_ … _a question of <b>timing</b>_。<b>中国学习者常把对比说成 \"on the contrary\"，其实英语母语者更常靠重音和停顿完成对比</b>"],["not saying no — saying not yet","这是英式谈判里极好用的一对：<b>前半升调软化、后半降调落地</b>。语调走错就变成生硬拒绝"],["either… or…","/ˈaɪðə/ 或 /ˈiːðə/ 两种读音都可接受。<b>但在同一场对话里保持一致</b>，混用会显得随意"],["三段式结构的呼吸点","Each of first / second / third 后面<b>停顿半拍</b>，让听众跟上结构。不停顿等于把三点糊成一点"]],"zh":"有三个选项：维持、修订，或者退出。\n第一是成本；第二是时机；第三是声誉风险。\n这不是成本问题，是时机问题。\n我不是说不——我是说还不是时候。\n我们要么接受这个发现并整改，要么提出异议并记录我们的理由。"},{"id":"E4","g":"E","title":"信息焦点：同一句话的五种意思","words":66,"mins":0.6,"focus":"句子重音改变语义","text":"这一段的读法：每次只重读红色加粗的那个词，其余部分快速弱读，然后体会意思变化。\n*I* did not say we should exit the client. → ~是别人说的~ ~↗~\nI *did not* say we should exit the client. → ~我否认说过~ ~↘~\nI did not say *we* should exit the client. → ~该退出的是别人~ ~↗~\nI did not say we should *exit* the client. → ~我说的不是\"退出\"~ ~↘~\nI did not say we should exit the *client*. → ~不是这个客户~ ~↘~","points":[["英语靠重音，中文靠语序","中文说\"我没说<b>我们</b>该退出\"可以把\"我们\"重读，也可以用\"是我们……\"的结构。<b>英语只有重音一条路</b>，重读位置错了，意思就变了"],["五个句子的元音都相同","五句话的发音完全一样，<b>唯一差别就是重音落点</b>。这说明：发音正确 ≠ 意思正确，重音才是语义的载体"],["弱读要足够弱","被重读的那个词要<b>明显更长、更响、更高</b>；其余的词要压得很低、读得很快。<b>如果每个词都读得一样响，就没有焦点</b>"],["会议里的实用价值","当有人误传了你的话，这句话的第一种读法就是你的澄清工具。<b>不用解释半天，重音落对就够了</b>"],["练习方法","对着这五句各读三遍，每遍只允许一个词重读。<b>自己感觉最别扭的那一句，往往是你在真实对话中会用到的</b>"]],"zh":"（这一段的重点是重音位置而非发音——每句只重读红色加粗的词，体会意思如何变化。）\n<b>我</b>没说我们应该退出这个客户。（是别人说的）\n我<b>没有</b>说我们应该退出这个客户。（我否认说过）\n我没说<b>我们</b>该退出这个客户。（该退出的是别人）\n我没说我们该<b>退出</b>这个客户。（我说的不是\"退出\"）\n我没说我们应该退出<b>这个</b>客户。（不是这个客户）"},{"id":"E5","g":"E","title":"长句呼吸分组：合规长句怎么念","words":72,"mins":0.7,"focus":"换气点 ⏸ · 意群划分","text":"*Where a firm has identified the issue itself,* ~⏸~ *and has taken steps to address it* ~⏸~ _before it became material,_ ~⏸~ *the outcome will generally be different* ~⏸~ _from the case where we discover it first._\n_Whether the regulator treats the matter as a supervisory concern_ ~⏸~ _or as an enforcement matter_ ~⏸~ *depends largely on the quality of the firm's own assessment.*","points":[["在连接词前换气","<b>换气点不在逗号，而在 and / but / or / before / where 这些连接词之前。</b>这些位置是意群的天然边界，在这里换气听起来最自然"],["一口气一个意群","朗读时如果<b>喘不上气</b>，说明你在逐词念，没有分组。正确做法是把 4～7 个词作为一个意群一口气读完"],["长句靠语调不靠停顿","整句的语调轮廓：<b>每个意群内部平缓，意群末尾略升，最后一句降调收尾</b>。段中间不要降，降了听起来像说完了"],["the firm's own assessment","<b>所有格 's 后面的词要读得稍重</b>。英式正式文书中这种\"自己的评估\"是责任归属的关键表达"],["depends largely on /dɪˈpendz ˈlɑːdʒli ɒn/","depends 结尾 /dz/、largely 结尾 /li/，两个词连读。largely 的 /ɑː/ 要长"],["练习建议","先用铅笔在文本上标出换气点，读三遍；<b>第四遍把标记擦掉再读</b>。如果你能在无标记的情况下自然断在同样的位置，说明节奏已经内化"]],"zh":"如果一家机构自己识别出了问题，并在其变得重大之前采取措施处理，那么结果通常会与我们先发现的情况不同。\n监管者把这件事实为监管关注还是执法事项，很大程度上取决于机构自身评估的质量。"},{"id":"E6","g":"E","title":"数字、日期与编号：读错就是事故","words":64,"mins":0.6,"focus":"金额 · 日期 · 条款号","text":"_Amounts_\n*four hundred and twelve thousand pounds* ~£412,000~\n*two point five per cent* ~2.5%~\n*one point two million euros* ~€1.2m~\n_Dates_\n*the fourteenth of March* ~14 March（英式）~\n*March the fourteenth* ~口语~\n*in the financial year twenty twenty-six* ~2026~\n_References_\n*section one sixty-six* ~s166~\n*article five, paragraph two* ~Art. 5(2)~\n*reference B-X-four-seven-two-nine* ~BX4729~","points":[["百位以上必读 and","412,000 = four hundred <u>and</u> twelve thousand。<b>省略 and 是美式习惯</b>，在英国正式场合会显得不专业"],["-teen 与 -ty 的致命差别","<b>金额场景读错会直接造成事故。</b>fourteen /ˌfɔːˈtiːn/ 重音在<u>后</u>、尾音长；forty /ˈfɔːti/ 重音在<u>前</u>、尾音短。练习时用手打节拍：four-TEEN 是弱-强，FOR-ty 是强-弱"],["英式日期是\"日-月\"","<b>the fourteenth of March</b> 读出来是\"14 号三月\"。书面可以写 14/03/2026；但美式写作 03/14/2026，<b>谈判或签约时务必口头确认一遍</b>"],["条款号读法","s166 读 section one sixty-six，<b>不读 one hundred and sixty-six</b>。Art. 5(2) 读 article five, paragraph two"],["编号逐字符读","BX4729 读 B-X-four-seven-two-nine。<b>电话、邮件里核对编号时必须逐字符念</b>，整段读会听不清"],["小数与百分数","2.5% 读 two point five per cent（英式写 per cent 两个词）。1.2m 读 one point two million"]],"zh":"（这一段练的是数字的读法——合规工作里，金额、日期、条款号是最不能出错的三类信息。）\n金额：四十一万二千英镑　/　百分之二点五　/　一百二十万欧元\n日期：三月十四日　/　2026 财年\n编号：第一百六十六条　/　第五条第二款　/　编号 B-X-四-七-二-九"}];
+var SEGMENTS = SEG_1.concat(SEG_2, SEG_3, SEG_4);
+var GROUPNAME = {"A":"音素校准","B":"合规专业","C":"职场口语","D":"生活场景","E":"语调与节奏"};
+
+
+/* ---------- 渲染 ---------- */
+var $ = function(s){ return document.querySelector(s); };
+var LS = "ukce_pron_v1";
+var state = { done: {} };
+try { var raw = localStorage.getItem(LS); if(raw) state = JSON.parse(raw); } catch(e){}
+if(!state.done) state.done = {};
+function save(){ try{ localStorage.setItem(LS, JSON.stringify(state)); }catch(e){} }
+
+/* 把 *重音* _连读_ ~易错~ 渲染成 HTML；同时产出纯文本供语音合成 */
+function markup(t){
+  return t.replace(/\*(.+?)\*/g, '<b class="st">$1</b>')
+          .replace(/_(.+?)_/g, '<u class="lk">$1</u>')
+          .replace(/~(.+?)~/g, '<em class="hw">$1</em>');
+}
+function plain(t){
+  return t.replace(/\*(.+?)\*/g, '$1').replace(/_(.+?)_/g, '$1').replace(/~(.+?)~/g, '$1')
+          .replace(/<span[^>]*>/g, '').replace(/<\/span>/g, '')
+          .replace(/<br\s*\/?>/g, '. ');
+}
+
+/* ---------- 语音合成 ---------- */
+var gbVoice = null;
+function pickVoice(){
+  if(!window.speechSynthesis) return;
+  var vs = speechSynthesis.getVoices() || [];
+  var pref = ["Google UK English Female","Google UK English Male","Libby","Sonia","Ryan","George","Hazel","Microsoft Libby","Microsoft Sonia"];
+  gbVoice = null;
+  for(var i=0;i<pref.length && !gbVoice;i++){
+    gbVoice = vs.find(function(v){ return v.name.indexOf(pref[i])>-1; }) || null;
+  }
+  if(!gbVoice) gbVoice = vs.find(function(v){ return /^en-GB/i.test(v.lang); }) || null;
+  if(!gbVoice) gbVoice = vs.find(function(v){ return /^en/i.test(v.lang); }) || null;
+}
+if(window.speechSynthesis){
+  pickVoice();
+  speechSynthesis.onvoiceschanged = pickVoice;
+}
+function speak(txt, rate){
+  if(!window.speechSynthesis){ alert("当前浏览器不支持朗读功能，请用 Edge 或 Chrome 打开本页。"); return; }
+  speechSynthesis.cancel();
+  var u = new SpeechSynthesisUtterance(txt);
+  u.lang = "en-GB";
+  if(gbVoice) u.voice = gbVoice;
+  u.rate = rate || 0.92;
+  u.pitch = 1.0;
+  speechSynthesis.speak(u);
+}
+
+/* ---------- 计时器 ---------- */
+(function(){
+  var total = 25*60, left = total, t = null;
+  function draw(){
+    var m = Math.floor(left/60), s = left%60;
+    $("#clock").textContent = (m<10?"0":"")+m+":"+(s<10?"0":"")+s;
+    $("#clock").className = "clock" + (left<=180 ? " warn" : "");
+  }
+  $("#tStart").onclick = function(){
+    if(t) return;
+    t = setInterval(function(){
+      if(left>0){ left--; draw(); } else { clearInterval(t); t=null; }
+    }, 1000);
+  };
+  $("#tPause").onclick = function(){ if(t){ clearInterval(t); t=null; } };
+  $("#tReset").onclick = function(){ if(t){ clearInterval(t); t=null; } left = total; draw(); };
+  draw();
+})();
+
+/* ---------- 渲染文本库 ---------- */
+var curGroup = "all";
+function groupsOf(){ 
+  var o = [], seen = {};
+  SEGMENTS.forEach(function(s){ if(!seen[s.g]){ seen[s.g]=1; o.push(s.g); } });
+  return o;
+}
+var GROUPNAME = {"A":"音素校准","B":"合规专业","C":"职场口语","D":"生活场景","E":"语调与节奏"};
+
+function renderNav(){
+  var nav = $("#navbar"), html = '<button data-g="all"'+(curGroup==="all"?' class="on"':'')+'>全部 '+SEGMENTS.length+'</button>';
+  groupsOf().forEach(function(g){
+    var n = SEGMENTS.filter(function(s){ return s.g===g; }).length;
+    html += '<button data-g="'+g+'"'+(curGroup===g?' class="on"':'')+'>'+g+' '+GROUPNAME[g]+' · '+n+'</button>';
+  });
+  nav.innerHTML = html;
+  [].forEach.call(nav.querySelectorAll("button"), function(b){
+    b.onclick = function(){ curGroup = b.getAttribute("data-g"); renderNav(); renderSegs(); };
+  });
+}
+
+function renderSegs(){
+  var wrap = $("#segWrap");
+  var list = SEGMENTS.filter(function(s){ return curGroup==="all" || s.g===curGroup; });
+  wrap.innerHTML = list.map(function(s){
+    var on = !!state.done[s.id];
+    return '<div class="card">' +
+      '<div class="seghead">' +
+        '<span class="segno">'+s.id+'</span>' +
+        '<span class="segtt">'+s.title+'</span>' +
+        '<span class="segmeta">'+s.words+' 词 · 约 '+s.mins+' 分钟 · '+s.focus+'</span>' +
+      '</div>' +
+      '<div style="margin:8px 0 10px;">' +
+        '<button class="btn sm primary" data-say="'+s.id+'">▶ 英式朗读</button> ' +
+        '<button class="btn sm" data-slow="'+s.id+'">▶ 慢速</button> ' +
+        '<button class="btn sm ckbtn'+(on?' primary':'')+'" data-ck="'+s.id+'">'+(on?'✓ 已朗读':'标记已朗读')+'</button>' +
+      '</div>' +
+      '<div class="rb">'+markup(s.text).split("\n").map(function(p){ return '<div class="para">'+p+'</div>'; }).join("")+'</div>' +
+      '<div class="reveal">' +
+        '<button class="btn sm" data-rv="p'+s.id+'" data-base="发音要点（'+s.points.length+' 条）">发音要点（'+s.points.length+' 条）</button> ' +
+        '<button class="btn sm" data-rv="z'+s.id+'" data-base="中文译文">中文译文</button>' +
+      '</div>' +
+      '<div class="revbd" id="p'+s.id+'">' +
+        '<div class="tblwrap"><table><thead><tr><th style="width:190px;">词 / 短语</th><th>为什么容易读错 · 怎么改</th></tr></thead><tbody>' +
+        s.points.map(function(p){ return '<tr><td class="ph">'+p[0]+'</td><td class="ex">'+p[1]+'</td></tr>'; }).join("") +
+        '</tbody></table></div>' +
+      '</div>' +
+      '<div class="revbd" id="z'+s.id+'" style="font-size:13.2px;color:var(--ink-2);background:var(--panel-2);border:1px solid var(--line-2);border-radius:9px;padding:12px 14px;">'+s.zh+'</div>' +
+    '</div>';
+  }).join("");
+
+  [].forEach.call(wrap.querySelectorAll("[data-say]"), function(b){
+    b.onclick = function(){
+      var s = SEGMENTS.find(function(x){ return x.id===b.getAttribute("data-say"); });
+      speak(plain(s.text), 0.95);
+    };
+  });
+  [].forEach.call(wrap.querySelectorAll("[data-slow]"), function(b){
+    b.onclick = function(){
+      var s = SEGMENTS.find(function(x){ return x.id===b.getAttribute("data-slow"); });
+      speak(plain(s.text), 0.72);
+    };
+  });
+  [].forEach.call(wrap.querySelectorAll("[data-ck]"), function(b){
+    b.onclick = function(){
+      var id = b.getAttribute("data-ck");
+      state.done[id] = !state.done[id];
+      if(!state.done[id]) delete state.done[id];
+      save(); drawStat(); renderSegs();
+    };
+  });
+  [].forEach.call(wrap.querySelectorAll("[data-rv]"), function(b){
+    b.onclick = function(){
+      var el = document.getElementById(b.getAttribute("data-rv"));
+      el.classList.toggle("on");
+      var base = b.getAttribute("data-base");
+      b.textContent = (el.classList.contains("on") ? "收起 · " : "") + base;
+    };
+  });
+}
+
+function drawStat(){
+  var all = SEGMENTS.length, done = Object.keys(state.done).length;
+  $("#statDone").textContent = done;
+  $("#statAll").textContent = all;
+  var pct = all ? Math.round(done/all*100) : 0;
+  $("#barAll").style.width = pct+"%";
+  $("#statPct").textContent = pct+"%";
+}
+
+/* 索引表 */
+(function(){
+  var rows = "";
+  groupsOf().forEach(function(g){
+    var list = SEGMENTS.filter(function(s){ return s.g===g; });
+    var mins = list.reduce(function(a,b){ return a + b.mins; }, 0);
+    rows += '<tr><td class="en">'+g+'</td><td>'+GROUPNAME[g]+'</td><td class="ex">'+list[0].desc+'</td>' +
+            '<td>'+list.length+'</td><td>约 '+mins+' 分钟</td></tr>';
+  });
+  $("#indexBody").innerHTML = rows;
+})();
+
+$("#btnReset").onclick = function(){
+  if(confirm("清空所有朗读进度？")){ state.done = {}; save(); drawStat(); renderSegs(); }
+};
+
+renderNav();
+renderSegs();
+drawStat();
+</script>
+</body>
+</html>

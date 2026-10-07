@@ -1,0 +1,62 @@
+/* ============================================================
+   词库分片 v12 · core 核心词与拼读易错
+   ------------------------------------------------------------
+   来源：Day-01 的 22 个基础词 + Day-02 的 30 个拼读易错词。
+   这些词原本只存在于每日课程页的「精讲 30」表格里，
+   没有进入词库，导致 Anki 与课程页对不上。
+   现统一收入词库，作为独立领域 core。
+   ============================================================ */
+
+VOCAB_DOMAINS[22].deck = [
+["account","账户","/əˈkaʊnt/"],
+["balance","余额","/ˈbæləns/"],
+["debit","借记、借方","/ˈdebɪt/　英式读 /ˈdebɪt/，重音在第一音节"],
+["credit","贷记、贷方","/ˈkredɪt/"],
+["deposit","存款","/dɪˈpɒzɪt/　重音在第二音节，/ɒ/ 是短元音"],
+["withdrawal","取款","/wɪðˈdrɔːəl/"],
+["transaction","交易","/trænˈzækʃn/"],
+["transfer","转账、划转","/ˈtrænsfɜː/　名词重音在前，动词重音在后"],
+["beneficiary","收款人、受益人","/ˌbenɪˈfɪʃəri/"],
+["ledger","总账、分类账","/ˈledʒə/"],
+["margin","利差、保证金","/ˈmɑːdʒɪn/"],
+["fee / charge","手续费、费用","/fiː/ /tʃɑːdʒ/"],
+["interest rate","利率","/ˈɪntrəst reɪt/"],
+["principal","本金","/ˈprɪnsəpl/"],
+["counterparty","交易对手","/ˈkaʊntəpɑːti/"],
+["liquidity","流动性","/lɪˈkwɪdəti/"],
+["capital","资本","/ˈkæpɪtl/"],
+["liability","负债","/ˌlaɪəˈbɪləti/"],
+["asset","资产","/ˈæset/"],
+["portfolio","投资组合","/pɔːtˈfəʊliəʊ/"],
+["on behalf of","代表……","/ɒn bɪˈhɑːf əv/"],
+["in accordance with","依照、根据","/ɪn əˈkɔːdns wɪð/　合规文书第一高频，务必练到脱口而出"],
+["audit","审计、审计工作","/ˈɔːdɪt/　首音节是长音 /ɔː/（奥），不是 /aʊ/"],
+["authority","主管机关、授权","/ɔːˈθɒrəti/　重音在第二音节；英式首音 /ɔː/"],
+["compliance","合规","/kəmˈplaɪəns/　重音在 -PLI-，因为来自 comply /kəmˈplaɪ/"],
+["regulation","法规、条例","/ˌreɡjuˈleɪʃn/　重音在 -LA-，前两音节全部弱读"],
+["regulatory","监管的","/ˈreɡjələtri/　重音在首音节，与 regulation 位置相反"],
+["proportionate","相称的、成比例的","/prəˈpɔːʃənət/　形容词尾 -ate 弱读成 /ət/，绝不读 /eɪt/"],
+["inadequate","不充分的、不适当的","/ɪnˈædɪkwət/　重音在 -AD-；尾 -ate 同样弱读"],
+["material","重大的、实质性的","/məˈtɪəriəl/　英式读三音节 /məˈtɪə-ri-əl/，重音在第二音节"],
+["scrutiny","审查、审视","/ˈskruːtəni/　首音节 /skruː/ 三辅音连缀；中间弱化成 /tə/"],
+["jurisdiction","司法管辖区、管辖","/ˌdʒʊərɪsˈdɪkʃn/　重音在 -DIC-；首音节 /dʒʊə/ 常被压掉"],
+["licence","许可证、牌照（英式名词）","/ˈlaɪsns/　英式：名词 -ce，动词 license -se，读音相同"],
+["practise","执业、从事（英式动词）","/ˈpræktɪs/　英式：动词 -se，名词 practice -ce"],
+["schedule","时间表、排期","/ˈʃedjuːl/　英式读 /ʃed-/（谢），不是美式 /sked-/"],
+["programme","计划、方案（英式拼法）","/ˈprəʊɡræm/　英式拼 -me 结尾，美式拼 program"],
+["cheque","支票（英式拼法）","/tʃek/　英式仅「支票」义用 cheque，核对义用 check"],
+["instalment","分期付款","/ɪnˈstɔːlmənt/　英式单 l；a 读 /ɔː/"],
+["judgement","判断、判决","/ˈdʒʌdʒmənt/　法律文本保留 e；其他语境用 judgment"],
+["defence","抗辩、辩护（英式拼法）","/dɪˈfens/　英式 -ce，美式 defense；同族 defend 读 /dɪˈfend/"],
+["endeavour","尽力、努力","/ɪnˈdevə/　英式 -our；best 与 reasonable endeavours 法律强度不同"],
+["organisation","组织、机构","/ˌɔːɡənaɪˈzeɪʃn/　第三音节是 /naɪ/；英式 -isation 拼法"],
+["escalate","上报、升级处理","/ˈeskəleɪt/　重音在首音节；动词尾读 /eɪt/"],
+["mitigate","减轻、缓解","/ˈmɪtɪɡeɪt/　重音在首音节；名词 mitigation 同"],
+["corroborate","佐证、印证","/kəˈrɒbəreɪt/　双 r 拼写；重音在 -ROB-"],
+["straightforward","直接的、简单的","/ˌstreɪtˈfɔːwəd/　两个 t 相连只发一个音"],
+["underlying","底层的、潜在的","/ˌʌndəˈlaɪɪŋ/　/aɪ/ 与 /ɪ/ 直接相接，中间没有 /n/"],
+["adverse","不利的、负面的","/ˈædvɜːs/　重音在首音节，不是 /ədˈvɜːs/"],
+["legitimate","合法的、正当的","/lɪˈdʒɪtɪmət/　重音在第二音节；尾 -ate 弱读"],
+["evidence","证据；（动词）证明","/ˈevɪdens/　名词动词同音同重音，靠句子位置判断"],
+["enquiry","询问、查询（英式拼法）","/ɪnˈkwaɪəri/　英式通用 enquiry；正式调查用 inquiry，同音"],
+];

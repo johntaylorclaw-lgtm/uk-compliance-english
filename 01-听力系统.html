@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>听力系统 · 材料清单与每日使用方法 — 英国银行业合规英语强化</title>
+<style>
+:root{
+  --bg:#f5f6f8;--panel:#fff;--panel-2:#fafbfc;--line:#e3e6ea;--line-2:#eef1f4;
+  --ink:#1c2330;--ink-2:#4a5568;--ink-3:#8a94a3;
+  --navy:#012169;--red:#c8102e;--blue:#1f6feb;--teal:#0f8a7e;--amber:#b7791f;--purple:#6b46c1;--green:#2f855a;
+  --shadow:0 1px 2px rgba(16,24,40,.05),0 4px 14px rgba(16,24,40,.06);
+  --radius:12px;
+}
+*{box-sizing:border-box;}
+body{margin:0;background:var(--bg);color:var(--ink);font-size:14px;line-height:1.68;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",Roboto,sans-serif;
+  -webkit-font-smoothing:antialiased;}
+a{color:var(--blue);text-decoration:none;}
+a:hover{text-decoration:underline;}
+
+.hero{background:linear-gradient(120deg,#012169 0%,#0b3a8f 55%,#1f6feb 100%);color:#fff;padding:24px 28px 20px;}
+.hero-inner{max-width:1080px;margin:0 auto;}
+.crumb{font-size:12px;opacity:.85;}
+.crumb a{color:#fff;text-decoration:underline;}
+.hero h1{margin:8px 0 6px;font-size:23px;font-weight:700;}
+.hero p{margin:0;opacity:.88;font-size:13.5px;max-width:840px;}
+.stats{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px;}
+.stat{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18);border-radius:10px;padding:7px 13px;min-width:98px;}
+.stat b{display:block;font-size:17px;font-weight:700;line-height:1.2;}
+.stat span{font-size:11.5px;opacity:.82;}
+
+main{max-width:1080px;margin:0 auto;padding:22px 20px 90px;}
+h2.sec{font-size:18px;margin:0 0 4px;font-weight:700;}
+p.sub{margin:0 0 16px;color:var(--ink-3);font-size:13px;}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px;margin-bottom:16px;}
+.card h3{margin:0 0 10px;font-size:15.5px;font-weight:700;}
+.card h4{margin:16px 0 6px;font-size:13.5px;font-weight:700;color:var(--navy);}
+.card h4:first-child{margin-top:0;}
+
+.pill{display:inline-block;font-size:11px;padding:2px 8px;border-radius:999px;border:1px solid var(--line);background:var(--panel-2);color:var(--ink-2);margin:0 5px 5px 0;white-space:nowrap;}
+.pill.navy{background:#eef2fb;border-color:#d5def5;color:var(--navy);}
+.pill.red{background:#fdeef0;border-color:#f7d4d9;color:var(--red);}
+.pill.teal{background:#e9f7f5;border-color:#cbe9e4;color:var(--teal);}
+.pill.amber{background:#fdf6e7;border-color:#f3e3bd;color:var(--amber);}
+.pill.purple{background:#f2edfb;border-color:#e0d5f5;color:var(--purple);}
+.pill.green{background:#ecf7f1;border-color:#d0ebdd;color:var(--green);}
+
+ul.tight{margin:6px 0 0;padding-left:20px;}
+ul.tight li{margin-bottom:5px;font-size:13.2px;color:var(--ink-2);}
+ul.tight li b{color:var(--ink);}
+ol.tight{margin:6px 0 0;padding-left:22px;}
+ol.tight li{margin-bottom:6px;font-size:13.2px;color:var(--ink-2);}
+ol.tight li b{color:var(--ink);}
+
+.ck{display:flex;align-items:flex-start;gap:10px;padding:8px 0;border-bottom:1px solid var(--line-2);cursor:pointer;}
+.ck:last-child{border-bottom:0;}
+.ck:hover{background:var(--panel-2);}
+.ck .bx{flex:0 0 17px;width:17px;height:17px;border:1.5px solid var(--line);border-radius:5px;background:#fff;margin-top:3px;}
+.ck.on .bx{background:var(--green);border-color:var(--green);}
+.ck.on .bx::after{content:"✓";color:#fff;font-size:11px;display:flex;justify-content:center;line-height:15px;}
+.ck .tx{flex:1;font-size:13.2px;color:var(--ink-2);}
+.ck.on .tx{color:var(--ink-3);text-decoration:line-through;}
+
+table{width:100%;border-collapse:collapse;font-size:13px;}
+th,td{text-align:left;padding:8px 9px;border-bottom:1px solid var(--line-2);vertical-align:top;}
+th{background:var(--panel-2);font-size:11.5px;color:var(--ink-3);letter-spacing:.03em;text-transform:uppercase;font-weight:600;}
+tbody tr:hover{background:#fbfcfd;}
+td.en{font-weight:600;color:var(--navy);}
+td.ex{color:var(--ink-2);font-size:12.6px;}
+.tblwrap{overflow:auto;border:1px solid var(--line-2);border-radius:10px;margin-top:8px;}
+.tblwrap.tall{max-height:560px;}
+
+.btn{appearance:none;font:inherit;font-size:13px;padding:7px 14px;border-radius:8px;border:1px solid var(--line);background:#fff;color:var(--ink);cursor:pointer;}
+.btn:hover{background:var(--panel-2);}
+.btn.primary{background:var(--navy);border-color:var(--navy);color:#fff;}
+.btn.primary:hover{background:#0b3a8f;}
+.reveal{margin-top:10px;}
+.revbd{display:none;margin-top:10px;}
+.revbd.on{display:block;}
+
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.three{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+@media(max-width:840px){.two,.three{grid-template-columns:1fr;}}
+.rowline{display:flex;gap:9px;font-size:13px;padding:7px 0;border-bottom:1px solid var(--line-2);}
+.rowline:last-child{border-bottom:0;}
+.rowline .t{flex:0 0 34%;font-weight:600;color:var(--navy);}
+.rowline .m{flex:1;color:var(--ink-2);}
+.note{background:#fffbea;border:1px solid #f5e6b8;border-radius:9px;padding:11px 13px;font-size:12.7px;color:#7a5c12;}
+.note b{color:#6b4f0d;}
+.bad{background:#fdeef0;border:1px solid #f7d4d9;border-radius:9px;padding:11px 13px;font-size:12.7px;color:#8c2231;}
+.bad b{color:#7a1c29;}
+.good{background:#ecf7f1;border:1px solid #d0ebdd;border-radius:9px;padding:11px 13px;font-size:12.7px;color:#276749;}
+.good b{color:#1e5640;}
+.mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:12.6px;}
+.layer{border-left:4px solid var(--navy);padding-left:13px;margin:18px 0 8px;}
+.layer.l0{border-color:var(--ink-3);}
+.layer.l1{border-color:var(--teal);}
+.layer.l2{border-color:var(--blue);}
+.layer.l3{border-color:var(--purple);}
+.layer.l4{border-color:var(--red);}
+.layer.l5{border-color:var(--amber);}
+.layer h4{margin:0;font-size:14.5px;}
+.layer p{margin:2px 0 0;font-size:12.5px;color:var(--ink-3);}
+.bar{height:9px;background:var(--line-2);border-radius:999px;overflow:hidden;margin:6px 0 4px;}
+.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--navy),var(--blue));border-radius:999px;transition:width .3s;}
+.tagline{display:flex;gap:10px;font-size:12.5px;color:var(--ink-3);flex-wrap:wrap;}
+.toc{display:flex;flex-wrap:wrap;gap:8px;}
+.toc a{font-size:12.5px;padding:5px 11px;border:1px solid var(--line);border-radius:999px;background:#fff;color:var(--ink-2);}
+.toc a:hover{border-color:var(--navy);color:var(--navy);text-decoration:none;}
+.weekgrid{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;margin-top:8px;}
+.wd{border:1px solid var(--line-2);border-radius:8px;padding:8px 9px;background:var(--panel-2);font-size:12px;}
+.wd b{display:block;font-size:11.5px;color:var(--navy);margin-bottom:3px;}
+.wd span{color:var(--ink-2);font-size:11.5px;line-height:1.5;display:block;}
+@media(max-width:840px){.weekgrid{grid-template-columns:1fr 1fr;}}
+footer{max-width:1080px;margin:0 auto;padding:0 20px 60px;color:var(--ink-3);font-size:12.5px;text-align:center;}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="crumb"><a href="00-作战中心.html">← 返回作战中心</a>　·　<a href="Day-01.html">Day 01</a>　·　听力系统</div>
+    <h1>听力系统 · 材料清单与每日使用方法</h1>
+    <p>这份文档回答两个问题：<b>听什么</b>（五层材料，从校准到会议仿真）和<b>每天怎么听</b>（四遍法操作 + 每周轮换节拍）。听力是这 42 天里唯一不能靠"多读多背"绕过去的技能——它只能靠耳朵一遍遍过。</p>
+    <div class="stats">
+      <div class="stat"><b>6 层</b><span>材料分级</span></div>
+      <div class="stat"><b>30+</b><span>材料来源</span></div>
+      <div class="stat"><b>50 min</b><span>每日听力量</span></div>
+      <div class="stat"><b id="statPct">0%</b><span>系统就绪度</span></div>
+    </div>
+  </div>
+</div>
+
+<main>
+
+<!-- 目录 -->
+<div class="card">
+  <h3>这份文档怎么用</h3>
+  <div class="toc">
+    <a href="#s1">① 先理解三件事</a>
+    <a href="#s2">② 五层材料清单</a>
+    <a href="#s3">③ 每天怎么听</a>
+    <a href="#s4">④ 每周轮换表</a>
+    <a href="#s5">⑤ 判断与调参</a>
+    <a href="#s6">⑥ 记录方式</a>
+    <a href="#s7">⑦ 环境就绪清单</a>
+  </div>
+  <p class="sub" style="margin:12px 0 0;">第一次读建议按顺序读完前三节（约 12 分钟），然后立刻去 <a href="#s7">第 ⑦ 节</a>把环境搭好。之后每天只需要回来看 <a href="#s3">③</a> 和 <a href="#s4">④</a>。</p>
+</div>
+
+<!-- ① -->
+<div class="card">
+  <h2 class="sec" id="s1">① 先理解三件事</h2>
+  <p class="sub">不理解这三件事，你会用最勤奋的方式做最低效的练习。</p>
+
+  <h4>1. 你现在的听力障碍，大概率不在"词汇量"</h4>
+  <p style="font-size:13.2px;color:var(--ink-2);margin:4px 0 0;">你能听懂日常对话，说明基础词汇和语法框架是在的。真正让你在专业场景里崩掉的，是三个独立的缺口，且必须分开治：</p>
+  <div class="tblwrap">
+    <table>
+      <thead><tr><th style="width:20%;">缺口</th><th style="width:34%;">表现</th><th>成因与治法</th></tr></thead>
+      <tbody>
+        <tr><td class="en">语音盲区</td><td>这个词我认识，写出来我懂，但刚才没听出来</td><td>你的"脑中发音"和真实发音对不上。治法是<b>精听时专门圈这类词</b>，逐个纠正读音，而不是当成生词去背</td></tr>
+        <tr><td class="en">语流盲区</td><td>每个词单独听都懂，连成句子就糊了</td><td>连读、弱读、吞音、句子重音四条规则没内化。<b>只能靠影子跟读解决</b>，读懂规则没用</td></tr>
+        <tr><td class="en">语境盲区</td><td>词都听清了，但不知道他们在说什么事</td><td>行业缩略语与背景知识（MLRO、STOR、PRA、Dear CEO letter）。治法是<b>先补术语再听</b>，顺序不能反</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="note" style="margin-top:12px;">
+    <b>这条最重要：</b>"认识但没听出来"的词，和"完全不认识的词"，是两类问题。前者要练耳朵，后者要背单词。混在一起处理，两边都治不好。这也是为什么错题本要求你<b>只记那个卡住的点，不要抄整句</b>。
+  </div>
+
+  <h4>2. 精听与泛听，是两种完全不同的训练</h4>
+  <div class="three" style="margin-top:6px;">
+    <div>
+      <div class="pill navy">精听 · 每天 30 分钟</div>
+      <p style="font-size:12.7px;color:var(--ink-2);margin:4px 0 0;"><b>相当于练肌肉。</b>材料短（2–6 分钟）、反复过、逐句拆、必须产出笔记。<br><br>目标是<b>把听不出的地方一个个消灭掉</b>，追求深度，不追求数量。一周只吃透 3–4 段材料，比糊弄 20 段有用得多。</p>
+    </div>
+    <div>
+      <div class="pill teal">泛听 · 每天 20 分钟</div>
+      <p style="font-size:12.7px;color:var(--ink-2);margin:4px 0 0;"><b>相当于练耐力与语感。</b>材料长（20–40 分钟）、只听一遍、不暂停、不查词。<br><br>目标是让耳朵<b>长时间浸泡在英语语流里</b>，熟悉节奏与韵律。允许听不懂，听不进去也算完成任务。</p>
+    </div>
+    <div>
+      <div class="pill amber">为什么必须两者都有</div>
+      <p style="font-size:12.7px;color:var(--ink-2);margin:4px 0 0;">只有精听：像健身房举铁但从不跑步，实际会议里 30 分钟连续语流撑不住。<br><br>只有泛听：耳朵永远是"大概懂了"的模糊状态，盲区永远不会被定位和消除。</p>
+    </div>
+  </div>
+
+  <h4>3. 材料难度：卡在 70–80% 的理解率</h4>
+  <p style="font-size:13.2px;color:var(--ink-2);margin:4px 0 0;">这是选材料的唯一硬指标。用"盲听一遍后，你能用中文说出大意，覆盖了多少比例"来估。</p>
+  <div class="two" style="margin-top:10px;">
+    <div class="bad">
+      <b>理解率低于 60% → 材料太难</b><br>
+      症状：听 30 秒就放弃、注意力涣散、越听越焦虑。<br>
+      <b>处理：</b>降一层。不要硬扛，硬扛的收益是负的——你只是在练习"听不懂时如何走神"。
+    </div>
+    <div class="good">
+      <b>理解率 70–80% → 刚好</b><br>
+      症状：能跟上主线，但每个 30 秒总有个把地方卡住。<br>
+      <b>处理：</b>这就是你的训练区，反复过到 90% 再换材料。
+    </div>
+  </div>
+  <p class="sub" style="margin:10px 0 0;">理解率高于 90%：材料太简单，只适合当泛听或热身，不要占用精听时间。</p>
+  <div class="note" style="margin-top:12px;">
+    <b>起步建议：</b>你现在应该从 L0（6 Minute English）开始，用前面两三天把理解率测准。如果 6 Minute English 的盲听理解率已经到 85% 以上，直接跳到 L2（FT News Briefing）。
+  </div>
+</div>
+
+<!-- ② -->
+<div class="card">
+  <h2 class="sec" id="s2">② 五层材料清单</h2>
+  <p class="sub">按"从校准到仿真"排序。不要跳层——每一层都在补上一层的缺口。</p>
+
+  <div class="layer l0">
+    <h4>L0 · 校准层　<span class="pill" style="margin-left:6px;">第 1–3 天专用</span></h4>
+    <p>目的：测出你的真实基线，并且第一次把"语音盲区"和"生词"分开。</p>
+  </div>
+  <div class="tblwrap">
+    <table>
+      <thead><tr><th style="width:23%;">材料</th><th style="width:15%;">规格</th><th style="width:12%;">口音</th><th>内容与用法</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="en">6 Minute English<br><span style="font-weight:400;font-size:11.5px;color:var(--ink-3);">BBC Learning English</span></td>
+          <td>6 分钟<br>每周更新</td>
+          <td><span class="pill green">标准英式</span></td>
+          <td class="ex"><b>核心精听材料。</b>两位主持人对话讨论一个话题，语速中偏慢，<b>提供完整文本与词汇表</b>，是唯一能让你"听—对—改"闭环的材料。归档里有几百集，按需检索主题即可。<br><b>用法：</b>四遍法标准模板，每集吃透。</td>
+        </tr>
+        <tr>
+          <td class="en">English at Work<br><span style="font-weight:400;font-size:11.5px;color:var(--ink-3);">BBC Learning English</span></td>
+          <td>3–5 分钟<br>连续剧</td>
+          <td><span class="pill green">标准英式</span></td>
+          <td class="ex"><b>你最好的"办公室英文预演"。</b>剧情连续剧，讲一个叫 Anna 的女生在英国公司上班的全过程：接电话、开会、请假、汇报、处理冲突。有文本与配套练习。<br><b>为什么特别适合你：</b>里面的办公室场景和你入职后的处境几乎一一对应，且语气是真实职场语气，不是教材腔。</td>
+        </tr>
+        <tr>
+          <td class="en">The English We Speak<br><span style="font-weight:400;font-size:11.5px;color:var(--ink-3);">BBC Learning English</span></td>
+          <td>3 分钟<br>每周更新</td>
+          <td><span class="pill green">标准英式</span></td>
+          <td class="ex"><b>补"俚语与地道短语"的缺口。</b>每集讲一个有英式用法但教材里不会有的表达（如 <i>a bit of a faff</i>、<i>sorted</i>、<i>fair enough</i>）。<br><b>用法：</b>当泛听，或作为每天正式开始前的 3 分钟热身。</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="layer l1">
+    <h4>L1 · 生活与日常泛听层　<span class="pill" style="margin-left:6px;">全程，通勤 20 分钟</span></h4>
+    <p>目的：让耳朵习惯"背景里有英语"的状态，同时把生活英语变成条件反射。</p>
+  </div>
+  <div class="tblwrap">
+    <table>
+      <thead><tr><th style="width:23%;">材料</th><th style="width:15%;">规格</th><th style="width:12%;">口音</th><th>内容与用法</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="en">You and Yours<br><span style="font-weight:400;font-size:11.5px;color:var(--ink-3);">BBC Radio 4</span></td>
+          <td>约 40 分钟<br>工作日播出</td>
+          <td><span class="pill green">英式混合</span></td>
+          <td class="ex"><b>消费与生活事务的现场访谈。</b>话题全是英国日常：账单、保险、网购纠纷、租房、养老。语速真实，有大量普通人电话连线，口音五花八门。<br><b>用法：</b>纯泛听。既练生活词汇，又练"适应各种口音"。</td>
+        </tr>
+        <tr>
+          <td class="en">Money Box<br><span style="font-weight:400;font-size:11.5px;color:var(--ink-3);">BBC Radio 4</span></td>
+          <td>约 25 分钟<br>每周一集</td>
+          <td><span class="pill green">英式混合</span></td>
+          <td class="ex"><b>英国个人理财。</b>ISA、养老金、房贷、税务——正是你要办的那些事，也正是银行的零售业务。<br><b>用法：</b>泛听。你会意外发现这里面有一半词和你工作里的词重合。</td>
+        </tr>
+        <tr>
+          <td class="en">The Archers<br><span style="font-weight:400;font-size:11.5px;color:var(--ink-3);">BBC Radio 4</span></td>
+          <td>13 分钟/集<br>每日播出</td>
+          <td><span class="pill green">多口音</span></td>
+          <td class="ex"><b>英国最长的广播剧。</b>纯日常口语，语速自然，是"没有任何信息压力"的纯语音浸泡材料。<br><b>用法：</b>睡前或做家务时听。不要求听懂情节，只要求耳朵一直开着。</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="layer l2">
+    <h4>L2 · 新闻时事层　<span class="pill" style="margin-left:6px;">第 1 周起，每天早晨</span></h4>
+    <p>目的：这是你每天"英语世界开机"的开关，也是语速与信息密度的过渡带。</p>
+  </div>
+  <div class="tblwrap">
+    <table>
+      <thead><tr><th style="width:23%;">材料</th><th style="width:15%;">规格</th><th style="width:12%;">口音</th><th>内容与用法</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="en">FT News Briefing<br><span style="font-weight:400;font-size:11.5px;color:var(--ink-3);">Financial Times</span></td>
+          <td>约 10 分钟<br>工作日每天</td>
+          <td><span class="pill green">英式为主</span></td>
+          <td class="ex"><b>首推。你每天的第一份材料。</b>每个工作日英国时间清晨发布，用十分钟讲三到四条全球商业财经要闻，语速中等偏快但不含糊。<br><b>为什么适合你：</b>这是《金融时报》编辑在向金融从业者播报，用词就是你想学的那种"专业但不说废话"的商务英语。免费收听。<br><b>用法：</b>每天通勤听，先泛听一遍。遇到与合规、制裁、银行监管相关的条目，回家后拿同一段做精听。</td>
+        </tr>
+        <tr>
+          <td class="en">Business Daily<br><span style="font-weight:400;font-size:11.5px;color:var(--ink-3);">BBC World Service</span></td>
+          <td>约 18 分钟<br>工作日每天</td>
+          <td><span class="pill green">英式为主</span></td>
+          <td class="ex"><b>单议题深挖。</b>每集只讲一个商业话题（如某国的支付体系、某行业的监管变化），会采访多位专业人士。<br><b>用法：</b>泛听为主。这类"一人一议题"的结构，正好帮你建立"听懂专业讨论"的耐力。</td>
+        </tr>
+        <tr>
+          <td class="en">Wake Up to Money<br><span style="font-weight:400;font-size:11.5px;color:var(--ink-3);">BBC Radio 5 Live</span></td>
+          <td>约 35–45 分钟<br>工作日清晨</td>
+          <td><span class="pill amber">快，多口音</span></td>
+          <td class="ex"><b>市场晨会感。</b>比 FT 更长更快，多个嘉宾连线讨论当日市场与经济新闻。<br><b>用法：</b>第 3 周之后再上。现在听会挫败。它是你的"进阶压力测试"。</td>
+        </tr>
+        <tr>
+          <td class="en">The Intelligence<br><span style="font-weight:400;font-size:11.5px;color:var(--ink-3);">The Economist</span></td>
+          <td>约 25 分钟<br>工作日每天</td>
+          <td><span class="pill green">英式为主</span></td>
+          <td class="ex"><b>用词最讲究的财经播客。</b>非常适合学"高级商务表达"，但部分内容需订阅。<br><b>用法：</b>泛听，重点听主持人如何用一两句话精准概括一件事。</td>
+        </tr>
+        <tr>
+          <td class="en">Bloomberg Daybreak Europe<br><span style="font-weight:400;font-size:11.5px;color:var(--ink-3);">Bloomberg</span></td>
+          <td>约 20 分钟<br>工作日早晨</td>
+          <td><span class="pill amber">英美混合</span></td>
+          <td class="ex">欧洲市场开盘前的财经速览，嘉宾多为伦敦金融城从业者。<br><b>用法：</b>泛听。好处是能听到大量"真人即兴说话"，包括犹豫、自我纠正——这才是真实会议的样子。</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="layer l3">
+    <h4>L3 · 专业与监管层　<span class="pill" style="margin-left:6px;">第 2–4 周，精听主力</span></h4>
+    <p>目的：这是"你的行业在说什么"。第 2 周起，精听材料从 L0 换成这一层。</p>
+  </div>
+  <div class="tblwrap">
+    <table>
+      <thead><tr><th style="width:23%;">材料</th><th style="width:15%;">形式</th><th style="width:12%;">难度</th><th>内容与用法</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="en">FCA<br><span style="font-weight:400;font-size:11.5px;color:var(--ink-3);">fca.org.uk</span></td>
+          <td>演讲稿、<br>Insight 文章、<br>部分音频</td>
+          <td><span class="pill purple">专业</span></td>
+          <td class="ex"><b>你未来监管者的原声。</b>官网 Speech 栏目收录高管在各类会议的发言，Insight 栏目是深度分析文章。部分有配套音视频，没有的用 Edge 的"朗读"功能生成音频。<br><b>用法：</b>精听。挑 3–5 分钟一段，四遍法全程走完。<b>这是最高价值材料</b>——它的用词会直接出现在你的工作邮件里。</td>
+        </tr>
+        <tr>
+          <td class="en">Bank of England<br><span style="font-weight:400;font-size:11.5px;color:var(--ink-3);">bankofengland.co.uk</span></td>
+          <td>官方播客 +<br>演讲稿</td>
+          <td><span class="pill purple">专业</span></td>
+          <td class="ex">英格兰银行有官方播客系列，也包括金融稳定报告与货币政策的讲解。口音是很标准的英式正式体，语速稳。<br><b>用法：</b>精听 + 跟读。这是练"正式场合英式语调"的最佳素材。</td>
+        </tr>
+        <tr>
+          <td class="en">PRA 与 FCA 的<br>Dear CEO letters</td>
+          <td>公开信<br>（文本）</td>
+          <td><span class="pill purple">专业</span></td>
+          <td class="ex"><b>监管写给银行 CEO 的信。</b>虽然主要是文本，但它定义了你所在部门未来一年的工作重点，语言正式、结构清晰。<br><b>用法：</b>读为主，读完后<b>用英文口头复述这封信要求银行做哪三件事</b>——这是最高效的口语+听力复合训练。</td>
+        </tr>
+        <tr>
+          <td class="en">ICO<br><span style="font-weight:400;font-size:11.5px;color:var(--ink-3);">ico.org.uk</span></td>
+          <td>视频、<br>网络研讨会</td>
+          <td><span class="pill purple">专业</span></td>
+          <td class="ex">英国信息专员办公室的官方讲解视频与研讨会录像，覆盖 UK GDPR 的核心制度。<br><b>用法：</b>第 3 周数据隐私专题时集中听。多数有字幕，第一遍带字幕，第二遍关掉。</td>
+        </tr>
+        <tr>
+          <td class="en">OFSI 与 FATF<br><span style="font-weight:400;font-size:11.5px;color:var(--ink-3);">gov.uk / fatf-gafi.org</span></td>
+          <td>指南、<br>官方视频</td>
+          <td><span class="pill purple">专业</span></td>
+          <td class="ex">英国制裁执行办公室的合规指南、FATF 的全体会议成果与培训材料（YouTube 有官方频道）。<br><b>用法：</b>第 3 周制裁专题时用。FATF 的视频多为各国代表发言，正好练多种口音。</td>
+        </tr>
+        <tr>
+          <td class="en">Fintech Insider<br><span style="font-weight:400;font-size:11.5px;color:var(--ink-3);">11:FS</span></td>
+          <td>约 45 分钟<br>每周一集</td>
+          <td><span class="pill teal">行业口语</span></td>
+          <td class="ex"><b>最像"同事聊天"的材料。</b>主持人是伦敦金融科技从业者，讨论银行、支付、监管科技。语速接近真实对话，充满行业缩略语和玩笑。<br><b>用法：</b>泛听，第 4 周起可拿片段做精听。<b>强烈推荐</b>——它能让你提前习惯"英国同事用行业黑话快速聊天"的语速。</td>
+        </tr>
+        <tr>
+          <td class="en">Financial Crime Matters<br><span style="font-weight:400;font-size:11.5px;color:var(--ink-3);">ACAMS</span></td>
+          <td>约 30 分钟<br>定期更新</td>
+          <td><span class="pill teal">行业口语</span></td>
+          <td class="ex">ACAMS 出品的反金融犯罪播客，采访全球合规负责人。<br><b>用法：</b>第 2 周 AML 专题时听。<b>这是你未来工作的"同行在讨论什么"</b>，能同时补术语和行业视角。</td>
+        </tr>
+        <tr>
+          <td class="en">ICA 与 ACAMS<br>公开网络研讨会</td>
+          <td>30–60 分钟<br>视频</td>
+          <td><span class="pill teal">行业口语</span></td>
+          <td class="ex">两家行业培训机构都定期发布免费网络研讨会，主题直接是 AML、制裁、金融犯罪调查实务。<br><b>用法：</b>带 PPT 的视频，先听一遍再看画面。这是最接近"真实培训现场"的材料。</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="layer l4">
+    <h4>L4 · 职场与会议仿真层　<span class="pill" style="margin-left:6px;">第 5–6 周</span></h4>
+    <p>目的：从"能听懂播客"过渡到"能在多人快速对话里跟上"。这中间隔着一次质变。</p>
+  </div>
+  <div class="tblwrap">
+    <table>
+      <thead><tr><th style="width:23%;">材料</th><th style="width:15%;">规格</th><th style="width:12%;">口音</th><th>内容与用法</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="en">Industry<br><span style="font-weight:400;font-size:11.5px;color:var(--ink-3);">BBC One / HBO</span></td>
+          <td>剧集<br>每集约 50 分钟</td>
+          <td><span class="pill amber">伦敦多国混合</span></td>
+          <td class="ex"><b>最接近你未来会议室的声音。</b>讲伦敦投行新人的剧。术语密度极高，人物在交易大厅里快速插话、打断、抢着说话，背景还有电话与喊声。<br><b>唯一的问题：</b>含成人内容（性、毒品），看的时候注意场合。<br><b>用法：</b>第 5 周起，第一遍关字幕硬听，第二遍开英文字幕核对。听不懂是正常的，你要练的是<b>在不完美条件下抓住主线</b>。</td>
+        </tr>
+        <tr>
+          <td class="en">The Thick of It<br><span style="font-weight:400;font-size:11.5px;color:var(--ink-3);">BBC</span></td>
+          <td>剧集<br>每集约 30 分钟</td>
+          <td><span class="pill amber">快速英式</span></td>
+          <td class="ex"><b>语速压力测试。</b>英国政府幕僚的办公室日常，以语速极快、脏话密集著称。<br><b>用法：</b>不建议做精听。当"防崩溃训练"——习惯了这种语速，真实会议会显得很慢。</td>
+        </tr>
+        <tr>
+          <td class="en">The Bottom Line<br><span style="font-weight:400;font-size:11.5px;color:var(--ink-3);">BBC Radio 4</span></td>
+          <td>约 30 分钟<br>每周一集</td>
+          <td><span class="pill green">标准英式</span></td>
+          <td class="ex"><b>商学院教授主持的 CEO 圆桌访谈。</b>商业语域正式但不晦涩，几位高管围绕一个议题讨论。<br><b>用法：</b>精听。<b>这是"多人专业讨论"的最佳范本</b>——注意听主持人如何提问、如何把跑题的人拉回来。</td>
+        </tr>
+        <tr>
+          <td class="en">Today programme<br><span style="font-weight:400;font-size:11.5px;color:var(--ink-3);">BBC Radio 4</span></td>
+          <td>早晨 6–9 点<br>可回听片段</td>
+          <td><span class="pill green">英式混合</span></td>
+          <td class="ex"><b>英国精英的早晨议程。</b>政治家、监管者、企业高管的直播访谈，追问激烈、交锋密集。<br><b>用法：</b>泛听，挑选涉及金融监管的片段做精听。听懂这个，等于摸到英国专业圈的语言底色。</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="layer l5">
+    <h4>L5 · 口音适应层　<span class="pill" style="margin-left:6px;">贯穿全程，轻量</span></h4>
+    <p>目的：纠正一个关键预期——英国口音不是一种。</p>
+  </div>
+  <div class="two">
+    <div>
+      <h4>你会遇到的主要口音</h4>
+      <div class="rowline"><div class="t">RP（标准音）</div><div class="m">BBC 播音、传统精英教育背景。你现在的教材基本都是这个，最容易懂</div></div>
+      <div class="rowline"><div class="t">Estuary English</div><div class="m">伦敦及东南部，<b>现实中最常见</b>。特征：/t/ 常变成喉塞音，th 变 f/v</div></div>
+      <div class="rowline"><div class="t">Cockney</div><div class="m">东伦敦传统口音，有押韵俚语</div></div>
+      <div class="rowline"><div class="t">Scottish</div><div class="m">苏格兰口音，卷舌 r 明显，元音差异大</div></div>
+      <div class="rowline"><div class="t">Geordie / Scouse / Brummie</div><div class="m">纽卡斯尔 / 利物浦 / 伯明翰，地区特征强，初期会明显吃力</div></div>
+      <div class="rowline"><div class="t">Indian English</div><div class="m">节奏与重音体系不同，但金融与科技行业极其常见</div></div>
+      <div class="rowline"><div class="t">欧洲大陆口音</div><div class="m">波兰、德国、法国、意大利同事的口音，元音会偏移</div></div>
+    </div>
+    <div>
+      <h4>怎么练</h4>
+      <ul class="tight">
+        <li><b>不要专门去"学"口音，而是专门去"暴露"。</b>刻意收集不同口音的材料各听一遍即可。</li>
+        <li>实践方法：在 You and Yours 里听到一个明显的地方口音，<b>单独把那 30 秒抽出来反复听 5 遍</b>，直到听清为止。这比听 10 集新内容有用。</li>
+        <li>搜索 BBC 的 accent 专题节目、YouTube 上的 "British accents comparison" 视频，一次搞清各口音的特征差异。</li>
+        <li>真实世界提醒：<b>你未来同事里可能不到一半是英式口音。</b>英语是他们的共同工作语言。所以真正要适应的不是"英音"，而是"混合口音环境下的英语"。</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ③ -->
+<div class="card">
+  <h2 class="sec" id="s3">③ 每天怎么听</h2>
+  <p class="sub">把上面对应到每天的具体动作。精听 30 分钟 + 泛听 20 分钟。</p>
+
+  <h4>精听：四遍法标准操作</h4>
+  <div class="tblwrap">
+    <table>
+      <thead><tr><th style="width:8%;">遍次</th><th style="width:9%;">时长</th><th style="width:22%;">目的</th><th>具体动作</th><th style="width:20%;">必须产出的东西</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="en">第 1 遍</td><td>约 3 分钟</td><td>抓大意，建立场景</td>
+          <td class="ex">不看文本，1.0 倍速从头听到尾。<b>不要暂停</b>。只回答一个问题：他们在聊什么？</td>
+          <td class="ex">3 个你听清的关键词 + 一个理解率估计（%）</td>
+        </tr>
+        <tr>
+          <td class="en">第 2 遍</td><td>约 7 分钟</td><td><b>定位真实盲区</b></td>
+          <td class="ex">打开文本，边听边看。<b>只圈一类东西</b>：「这个词我认识、但刚才没听出来」。生词用另一种颜色标，分开处理。</td>
+          <td class="ex">盲区词清单（这是全天最关键产出，直接进错题本）</td>
+        </tr>
+        <tr>
+          <td class="en">第 3 遍</td><td>约 10 分钟</td><td>拆解语流</td>
+          <td class="ex">逐句暂停。对每句问三个问题：哪里连读了？哪个词弱读了？重音落在哪？<b>在文本上做标记</b>。</td>
+          <td class="ex">语流笔记：连读处、弱读处、重音位置</td>
+        </tr>
+        <tr>
+          <td class="en">第 4 遍</td><td>约 10 分钟</td><td>固化</td>
+          <td class="ex">先影子跟读 3 遍（滞后原音半秒跟着说，不暂停）。<b>然后关掉文本再听一遍</b>，重新估一次理解率。</td>
+          <td class="ex">新的理解率数字 + 跟读录音（自己回听对比）</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="note" style="margin-top:12px;">
+    <b>第 2 遍是整件事的胜负手。</b>大多数人精听时把"生词"和"没听出来的词"混为一谈，结果背了一堆单词但听力没长进。<b>你的听力缺口，绝大多数在"认识但没听出来"这一类里</b>——因为你的脑中发音是错的，或者你没意识到这里有连读。圈出它们，逐个纠正，听力才真正进步。
+  </div>
+
+  <h4>泛听：三条铁律</h4>
+  <ol class="tight">
+    <li><b>不暂停、不查词、不回头。</b>泛听的全部价值在于"连续浸泡"，一旦暂停就退化成低效精听。</li>
+    <li><b>允许听不懂。</b>听不懂也把时间听完。你要训练的是耳朵持续接收处理的耐力，理解率不是泛听的指标。</li>
+    <li><b>塞进已有的生活缝隙。</b>通勤、走路、做饭、洗碗。不要专门腾时间——专门腾时间它就会最先被牺牲掉。</li>
+  </ol>
+
+  <h4>每天的完整流程（对接作战中心的 3.5 小时时间块）</h4>
+  <div class="two">
+    <div>
+      <div class="rowline"><div class="t">起床后 / 通勤</div><div class="m"><b>泛听 20 分钟</b>　FT News Briefing（首选）或 Business Daily。手机蓝牙耳机，一路听</div></div>
+      <div class="rowline"><div class="t">0:00 – 0:30</div><div class="m"><b>精听 30 分钟</b>　当周指定的精听材料，走完整四遍法。安静环境，必须用耳机</div></div>
+      <div class="rowline"><div class="t">0:30 – 1:20</div><div class="m">术语闪卡 100 张（第 2 遍圈出的盲区词优先复习）</div></div>
+      <div class="rowline"><div class="t">1:20 – 2:05</div><div class="m">精读监管文本，合上资料用英文口头复述大意</div></div>
+    </div>
+    <div>
+      <div class="rowline"><div class="t">2:05 – 2:50</div><div class="m">口语输出（自行练习）</div></div>
+      <div class="rowline"><div class="t">2:50 – 3:20</div><div class="m">写作输出</div></div>
+      <div class="rowline"><div class="t">睡前 10 分钟</div><div class="m">把当天盲区词过一遍 + 在错题本登记。睡前过一遍的记忆留存率明显更高</div></div>
+      <div class="rowline"><div class="t">周末</div><div class="m">周六复测本周材料理解率；周日纯泛听（剧集/播客），零压力</div></div>
+    </div>
+  </div>
+
+  <div class="bad" style="margin-top:14px;">
+    <b>三个必须避开的坑</b><br>
+    <b>1. 一直开着字幕。</b>字幕会让耳朵偷懒，你会误以为自己听懂了。精听第 2 遍才允许开文本，第 1 和第 4 遍必须关。<br>
+    <b>2. 每天换新材料。</b>换材料无法测量进步，也永远吃不透。一段材料反复过到理解率 90% 再换。<br>
+    <b>3. 只听不记。</b>不记录，盲区词就不会沉淀，下个月还在同一个地方卡住。
+  </div>
+</div>
+
+<!-- ④ -->
+<div class="card">
+  <h2 class="sec" id="s4">④ 每周轮换表</h2>
+  <p class="sub">回答"这 42 天每天具体听什么"。配合作战中心的逐日计划使用。</p>
+
+  <h4>六周材料主线</h4>
+  <div class="tblwrap">
+    <table>
+      <thead><tr><th style="width:11%;">周次</th><th style="width:26%;">精听主线（30 分钟/天）</th><th style="width:26%;">泛听主线（20 分钟/天）</th><th>本周要解决的听力问题</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="en">第 1 周</td>
+          <td class="ex"><b>6 Minute English</b> + <b>English at Work</b><br>每天一集，四遍法完整走完</td>
+          <td class="ex"><b>FT News Briefing</b><br>每天一集，纯泛听</td>
+          <td class="ex">测准基线，把"语音盲区"和"生词"第一次彻底分开</td>
+        </tr>
+        <tr>
+          <td class="en">第 2 周</td>
+          <td class="ex"><b>FCA Speech 3–5 分钟片段</b><br>用 Edge 朗读功能生成音频，四遍法</td>
+          <td class="ex"><b>FT News Briefing</b> + <b>Financial Crime Matters</b>（AML 专题集）</td>
+          <td class="ex">从"教材腔"过渡到"真实专业语流"，开始适应无文本材料</td>
+        </tr>
+        <tr>
+          <td class="en">第 3 周</td>
+          <td class="ex"><b>OFSI / FATF 材料片段</b> + <b>ICO 视频</b><br>每周交替：制裁两天、数据两天</td>
+          <td class="ex"><b>Business Daily</b> + <b>You and Yours</b></td>
+          <td class="ex">适应多国口音（FATF 会议上有各国代表发言）</td>
+        </tr>
+        <tr>
+          <td class="en">第 4 周</td>
+          <td class="ex"><b>Bank of England 播客与演讲</b> + <b>PRA/FCA Dear CEO letters</b>（读+口头复述）</td>
+          <td class="ex"><b>Fintech Insider</b> + <b>The Intelligence</b></td>
+          <td class="ex">练"正式英式语调"的跟读，同时把语速拉上来</td>
+        </tr>
+        <tr>
+          <td class="en">第 5 周</td>
+          <td class="ex"><b>The Bottom Line</b>（多人讨论）+ <b>Fintech Insider</b> 片段</td>
+          <td class="ex"><b>Today programme</b> + <b>Industry</b>（剧集）</td>
+          <td class="ex">从单人讲述转到多人对话——这是最难跨的一步</td>
+        </tr>
+        <tr>
+          <td class="en">第 6 周</td>
+          <td class="ex"><b>Industry</b> 片段精听 + 监管材料回炉</td>
+          <td class="ex"><b>Industry</b> + <b>The Thick of It</b> + 全周轮换早前所有材料</td>
+          <td class="ex">在"不完美条件"下抓主线，为真实会议做最后准备</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h4>每周的固定节拍</h4>
+  <div class="weekgrid">
+    <div class="wd"><b>周一</b><span>新材料首听<br>不追求全懂<br>只测理解率基线</span></div>
+    <div class="wd"><b>周二</b><span>同一材料四遍法<br>重点做第 2 遍<br>圈盲区词</span></div>
+    <div class="wd"><b>周三</b><span>换一集新材料<br>继续四遍法<br>泛听不间断</span></div>
+    <div class="wd"><b>周四</b><span>回炉周二材料<br>测理解率是否到 90%</span></div>
+    <div class="wd"><b>周五</b><span>本周材料盲听复测<br>与周一数字对比</span></div>
+    <div class="wd"><b>周六</b><span>本周盲区词全过一遍<br>换新素材测一段</span></div>
+    <div class="wd"><b>周日</b><span>纯泛听<br>剧集/播客/电影<br>零压力</span></div>
+  </div>
+  <div class="note" style="margin-top:12px;">
+    <b>为什么周一要"不追求全懂"：</b>你需要一个可比较的起点数字。周一测出 65%，周五复测到 85%，这个进步才是真实可见的。如果没有周一的基线，你永远不知道自己有没有进步，也就无从坚持下去。
+  </div>
+</div>
+
+<!-- ⑤ -->
+<div class="card">
+  <h2 class="sec" id="s5">⑤ 判断与调参</h2>
+  <p class="sub">听力的进步是非线性的：会先难后易，中间有一段"感觉更差了"的时期。知道怎么判断，才不会误判。</p>
+
+  <h4>每天的三秒自检</h4>
+  <ul class="tight">
+    <li><b>精听时第 1 遍就能抓住大意吗？</b>能 = 难度合适；完全抓不住 = 太难，降一层</li>
+    <li><b>第 2 遍圈的盲区词，超过 10 个吗？</b>超过 = 材料超出当前水平，换更简单的；低于 3 个 = 太简单，往上升</li>
+    <li><b>第 4 遍理解率比第 1 遍提高了吗？</b>提高 15 个点以上是正常节奏；没提高说明材料太简单或太难</li>
+  </ul>
+
+  <h4>什么时候该换材料</h4>
+  <div class="two" style="margin-top:6px;">
+    <div class="bad">
+      <b>立刻降难度</b><br>
+      · 连续两天在第 1 遍就彻底跟丢<br>
+      · 听 10 分钟就烦躁、想关掉<br>
+      · 第 2 遍圈出的盲区词超过 15 个<br>
+      <b>动作：</b>回到 6 Minute English 或 The English We Speak，把信心找回来。降难度不丢人，硬扛才是浪费时间。
+    </div>
+    <div class="good">
+      <b>该升难度了</b><br>
+      · 第 1 遍理解率稳定在 85% 以上<br>
+      · 第 2 遍几乎圈不出盲区词<br>
+      · 同一档材料连听一周都毫无压力<br>
+      <b>动作：</b>往上升一层（L0 → L2 → L3 → L4）。
+    </div>
+  </div>
+
+  <h4>关于"感觉变差了"</h4>
+  <p style="font-size:13.2px;color:var(--ink-2);margin:4px 0 0;">第 2 周左右你大概率会遇到一次"怎么反而听不懂了"。这不是退步，而是<b>你的注意力从"抓关键词"升级成了"听完整句子"</b>，处理的信息量变大了，短期内会过载。<b>处理办法是继续按计划走，不要改材料、不要加量。</b>通常三到四天会自然穿过去。</p>
+</div>
+
+<!-- ⑥ -->
+<div class="card">
+  <h2 class="sec" id="s6">⑥ 记录方式</h2>
+  <p class="sub">对接 `错题本.md` 和每日学习记录。记录越短，你越会去复习。</p>
+
+  <h4>每天必记的三行</h4>
+  <div class="script" style="background:#fbfcfd;border:1px solid var(--line-2);border-radius:10px;padding:14px 16px;font-size:13.2px;line-height:2;font-family:ui-monospace,Menlo,monospace;">
+日期 · 材料名 · 时长<br>
+第 1 遍理解率 ___%　→　第 4 遍理解率 ___%<br>
+盲区词 ___ 个（已录入错题本）
+  </div>
+
+  <h4>盲区词怎么记（这是关键）</h4>
+  <div class="two" style="margin-top:6px;">
+    <div class="bad">
+      <b>错误的记法</b><br>
+      抄下整句："Regulators expect banks to know who is ultimately receiving the funds."<br><br>
+      <b>为什么错：</b>太长，复习时你会跳过；而且这句话里你真正卡住的只有一个点，抄整句等于没定位。
+    </div>
+    <div class="good">
+      <b>正确的记法</b><br>
+      <span class="mono">ultimately</span> ｜ 我当时听成了 "alternately" ｜ 原因：<span class="mono">/ˈʌltɪmətli/</span> 三个弱读连在一起<br><br>
+      <b>为什么对：</b>只记那个卡住的点，加上"我当时听成了什么"——这个对照才是进步的依据。
+    </div>
+  </div>
+
+  <div class="note" style="margin-top:12px;">
+    <b>为什么一定要写"我当时听成了什么"：</b>这个信息告诉你错误的性质。如果听成了另一个真实存在的词，说明是<b>辨音问题</b>；如果完全没听见，说明是<b>语流问题</b>（连读/弱读把它吞掉了）。两种问题的练法完全不同。
+  </div>
+
+  <h4>错题本的两条维护机制（已写进 `错题本.md`）</h4>
+  <ul class="tight">
+    <li><b>淘汰：</b>同一条连续 3 次能立刻反应过来，就删掉。错题本要越用越薄，不是越记越厚。</li>
+    <li><b>升级：</b>同一问题出现 3 次以上，移进「反复出错清单」专项攻坚——那说明它不是记忆问题，是系统性盲区。</li>
+  </ul>
+</div>
+
+<!-- ⑦ -->
+<div class="card">
+  <h2 class="sec" id="s7">⑦ 环境就绪清单</h2>
+  <p class="sub">一次性做完。这是原「步骤四 · 浏览器书签」的完整版——不只是收藏链接，而是把收听环境搭好。</p>
+
+  <h4>订阅与收藏（10 分钟）</h4>
+  <div id="ckEnv"></div>
+
+  <h4>播放器与习惯设置（10 分钟）</h4>
+  <div id="ckSet"></div>
+
+  <div class="note" style="margin-top:14px;">
+    <b>关于播放器：</b>把播客订阅到手机自带的播客 App 或任意通用播客客户端，让新一期自动下载。这一步的价值在于<b>消除摩擦</b>——如果每次都要现找链接，你一定会在第三周开始偷懒不做泛听。自动下载，打开就能听。
+  </div>
+
+  <div class="reveal" style="margin-top:14px;">
+    <button class="btn primary" onclick="tog(this)">展开：本页所有材料的地址</button>
+    <div class="revbd">
+      <div class="script" style="font-size:12.8px;line-height:1.9;">
+        <b>BBC Learning English（6 Minute English / English at Work / The English We Speak）</b><br>
+        <span class="mono">bbc.co.uk/learningenglish</span> — 网页版免费，附带完整文本与词汇表；音频也可在 BBC Sounds 或任意播客客户端订阅<br><br>
+        <b>FT News Briefing</b><br>
+        <span class="mono">ft.com/news-briefing</span> — 播客全平台免费订阅（Spotify / Apple Podcasts / 任意客户端搜索 "FT News Briefing"）<br><br>
+        <b>BBC Sounds（Radio 4 与 5 Live 全部节目）</b><br>
+        <span class="mono">bbc.co.uk/sounds</span> — You and Yours、Money Box、The Archers、Today、The Bottom Line、Wake Up to Money 都在这里<br><br>
+        <b>Business Daily</b><br>
+        BBC World Service 出品，任意播客客户端搜索 "Business Daily"<br><br>
+        <b>FCA</b><br>
+        <span class="mono">fca.org.uk</span> — Speech 与 Insight 栏目；无音频的用 Edge 浏览器「朗读此页」生成<br><br>
+        <b>Bank of England</b><br>
+        <span class="mono">bankofengland.co.uk</span> — 播客与演讲稿栏目<br><br>
+        <b>ICO</b><br>
+        <span class="mono">ico.org.uk</span> — 视频与网络研讨会<br><br>
+        <b>OFSI（英国制裁执行办公室）</b><br>
+        <span class="mono">gov.uk</span> — 搜索 "OFSI guidance"<br><br>
+        <b>FATF</b><br>
+        <span class="mono">fatf-gafi.org</span> — 官网与 YouTube 官方频道<br><br>
+        <b>Fintech Insider</b><br>
+        <span class="mono">11fs.com</span> 或任意播客客户端搜索<br><br>
+        <b>Financial Crime Matters（ACAMS）</b><br>
+        <span class="mono">acams.org</span> — 播客与网络研讨会<br><br>
+        <b>ICA</b><br>
+        <span class="mono">int-comp.org</span> — 公开网络研讨会<br><br>
+        <b>Edge 朗读功能（生成任意文本的音频）</b><br>
+        在 Edge 中打开英文网页 → 右键「朗读此页」→ 语速可调 0.8–1.2 倍。这是把 FCA、JMLSG 这类纯文本材料转成听力素材的关键工具
+      </div>
+    </div>
+  </div>
+
+  <div class="good" style="margin-top:14px;">
+    <b>完成标准：</b>①四类播客已订阅并设好自动下载；②Edge 朗读功能实测能正常发声；③每日泛听的时间槽已在日程里固定下来（建议通勤）。三项达成，听力系统就绪。
+  </div>
+</div>
+
+</main>
+
+<footer>英国银行业合规英语强化 · 听力系统　|　配合 <a href="00-作战中心.html">作战中心</a>、<a href="03-发音与朗读系统.html">发音与朗读系统</a> 与每日课程使用</footer>
+
+<script>
+var LS_KEY = "ukce_listen_v1";
+var state = {ck:{}};
+try { var raw = localStorage.getItem(LS_KEY); if(raw){ state = JSON.parse(raw); } } catch(e){}
+function save(){ try{ localStorage.setItem(LS_KEY, JSON.stringify(state)); }catch(e){} }
+function $(s){ return document.querySelector(s); }
+
+var LISTS = {
+  ckEnv: [
+    "<b>BBC Learning English</b> — 打开 <span class='mono'>bbc.co.uk/learningenglish</span>，收藏；找到 6 Minute English 与 English at Work 的归档页",
+    "<b>FT News Briefing</b> — 在手机播客客户端搜索并订阅，打开自动下载",
+    "<b>BBC Sounds</b> — 打开 <span class='mono'>bbc.co.uk/sounds</span>，收藏；找到 Radio 4 的 You and Yours 与 Money Box",
+    "<b>FCA 官网</b> — 打开 <span class='mono'>fca.org.uk</span>，收藏；进 Speech 栏目随便点开一篇感受一下难度",
+    "<b>Bank of England</b> — 打开 <span class='mono'>bankofengland.co.uk</span>，订阅官方播客",
+    "<b>Business Daily</b> — 在播客客户端搜索并订阅",
+    "<b>Fintech Insider</b> — 在播客客户端搜索并订阅（第 4 周起才会用到，现在先订好）",
+    "<b>FATF / OFSI / ICO</b> — 三个官网各收藏一个页面即可，第 3 周才会密集使用"
+  ],
+  ckSet: [
+    "<b>播客自动下载</b> — 已订阅的节目全部设为自动下载最新一期，避免每次现找链接",
+    "<b>Edge 朗读实测</b> — 在 Edge 打开任意英文网页 → 右键「朗读此页」，确认能正常发声，语速调到 0.9 倍",
+    "<b>固定泛听时间槽</b> — 把每天 20 分钟泛听绑定到一个已有习惯上（如通勤、遛狗、做饭），写进日程",
+    "<b>耳机就位</b> — 精听必须用耳机。外放会漏掉一半的弱读和连读，这是很多人听力上不去的隐形原因",
+    "<b>建立今日第一条记录</b> — 在 <span class='mono'>错题本.md</span> 里录入今天精听圈出的第一批盲区词"
+  ]
+};
+
+(function renderLists(){
+  Object.keys(LISTS).forEach(function(id){
+    var box = document.getElementById(id);
+    if(!box){ return; }
+    LISTS[id].forEach(function(txt, i){
+      var key = id + "_" + i;
+      var el = document.createElement("div");
+      el.className = "ck" + (state.ck[key] ? " on" : "");
+      el.innerHTML = '<div class="bx"></div><div class="tx">' + txt + '</div>';
+      el.addEventListener("click", function(){
+        if(state.ck[key]){ delete state.ck[key]; } else { state.ck[key] = true; }
+        el.classList.toggle("on", !!state.ck[key]);
+        save(); sync();
+      });
+      box.appendChild(el);
+    });
+  });
+})();
+
+function countAll(){
+  var total = 0, done = 0;
+  Object.keys(LISTS).forEach(function(id){
+    LISTS[id].forEach(function(_, i){
+      total++; if(state.ck[id + "_" + i]){ done++; }
+    });
+  });
+  return {total:total, done:done};
+}
+function sync(){
+  var c = countAll();
+  var pct = c.total ? Math.round(c.done / c.total * 100) : 0;
+  $("#statPct").textContent = pct + "%";
+}
+
+function tog(btn){
+  var bd = btn.nextElementSibling;
+  bd.classList.toggle("on");
+  var open = bd.classList.contains("on");
+  if(!btn.dataset.base){ btn.dataset.base = btn.textContent.replace(/[⌄⌃\s]+$/, "").trim(); }
+  btn.textContent = btn.dataset.base + (open ? "　⌃" : "　⌄");
+}
+
+sync();
+</script>
+</body>
+</html>

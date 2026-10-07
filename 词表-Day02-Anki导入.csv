@@ -1,0 +1,100 @@
+﻿fair value,公允价值,银行业与国际金融市场,
+initial margin / variation margin,初始保证金 / 变动保证金,银行业与国际金融市场,
+central counterparty (CCP),中央对手方,银行业与国际金融市场,
+reconciliation,对账,银行业与国际金融市场,
+nostro break,往账差异,银行业与国际金融市场,
+suspense account,暂记账户,银行业与国际金融市场,款项归属不明时暂时挂账
+dormant account,休眠账户,银行业与国际金融市场,
+legal entity identifier (LEI),法人机构识别编码,银行业与国际金融市场,
+cash pooling,现金池,银行业与国际金融市场,集团资金归集安排
+securities lending,证券借贷,银行业与国际金融市场,
+sub-custody,次托管,银行业与国际金融市场,
+corporate actions,公司行为,银行业与国际金融市场,分红、配股、股东大会等
+margin lending,保证金贷款,银行业与国际金融市场,
+structured product,结构性产品,银行业与国际金融市场,零售分销适格性是监管关注重点
+payment system,支付系统,银行业与国际金融市场,
+RTGS,实时全额结算系统,银行业与国际金融市场,Real-Time Gross Settlement，英国 CHAPS 即属此类
+Fedwire,美联储资金转账系统,银行业与国际金融市场,
+TARGET2,欧洲央行实时清算系统,银行业与国际金融市场,
+ACH,自动清算所,银行业与国际金融市场,Automated Clearing House，美国批量支付网络
+pacs.008,客户贷记转账报文,银行业与国际金融市场,ISO 20022 中最核心的支付报文
+camt.053,账户对账单报文,银行业与国际金融市场,
+SWIFT MT103,客户汇款报文,银行业与国际金融市场,传统跨境汇款主报文
+UETR,唯一端到端交易参考号,银行业与国际金融市场,Unique End-to-End Transaction Reference，gpi 追踪用
+correspondent bank,代理行,银行业与国际金融市场,
+intermediary bank,中间行,银行业与国际金融市场,转汇链条中的中转机构
+beneficiary bank,收款人银行,银行业与国际金融市场,
+IBAN,国际银行账号,银行业与国际金融市场,
+BIC / SWIFT code,银行识别码,银行业与国际金融市场,
+sort code,英国银行分行代码,银行业与国际金融市场,六位数字，如 20-00-00
+national clearing code,国家清算代码,银行业与国际金融市场,各国本地清算行号的统称
+payer / payee,付款人 / 收款人,银行业与国际金融市场,重音均在第二音节；英式 payee 与 payer 重音一致
+payment instruction,支付指令,银行业与国际金融市场,
+remittance information,汇款附言,银行业与国际金融市场,反洗钱筛查的重点字段，需留意结构化拆分
+straight-through processing (STP),直通式处理,银行业与国际金融市场,无需人工干预的自动处理
+repair queue,待修复队列,银行业与国际金融市场,报文要素不全被挂起的处理流水线
+recall / cancellation,召回 / 撤销,银行业与国际金融市场,支付的追溯处理机制
+money market,货币市场,银行业与国际金融市场,
+SONIA,英镑隔夜指数平均利率,银行业与国际金融市场,Sterling Overnight Index Average，英国无风险利率基准
+SOFR,有担保隔夜融资利率,银行业与国际金融市场,Secured Overnight Financing Rate，美元基准
+€STR,欧元短期利率,银行业与国际金融市场,
+RFR,无风险利率,银行业与国际金融市场,Risk-Free Rate，LIBOR 退场后的替代基准
+term rate,期限利率,银行业与国际金融市场,由隔夜利率推导出的前瞻性期限基准
+compounded rate,复利利率,银行业与国际金融市场,隔夜利率回溯复利计算法
+basis point (bp),基点,银行业与国际金融市场,万分之一，100bp = 1%
+yield curve,收益率曲线,银行业与国际金融市场,
+HQLA,优质流动性资产,银行业与国际金融市场,High-Quality Liquid Assets
+liquidity buffer,流动性缓冲,银行业与国际金融市场,
+deposit runoff,存款流失,银行业与国际金融市场,压力测试中的核心假设之一
+deposit insurance,存款保险,银行业与国际金融市场,"英国 FSCS 保障上限为每人每机构 85,000 英镑"
+CET1 ratio,核心一级资本充足率,银行业与国际金融市场,Common Equity Tier 1
+Tier 1 / Tier 2 capital,一级 / 二级资本,银行业与国际金融市场,
+MREL,最低自有资金与合格负债要求,银行业与国际金融市场,欧盟/英国版 TLAC
+TLAC,总损失吸收能力,银行业与国际金融市场,Total Loss-Absorbing Capacity
+Pillar 1 / 2 / 3,第一 / 二 / 三支柱,银行业与国际金融市场,最低资本要求 / 监管审查 / 市场约束
+ICAAP,内部资本充足评估程序,银行业与国际金融市场,银行自评估资本充足性的年度作业
+ILAAP,内部流动性充足评估程序,银行业与国际金融市场,
+capital planning buffer,资本规划缓冲,银行业与国际金融市场,
+recovery plan,恢复计划,银行业与国际金融市场,危机自救方案
+resolution plan,处置计划,银行业与国际金融市场,有序倒闭方案
+living will,生前遗嘱,银行业与国际金融市场,处置计划的通俗说法
+repo / reverse repo,回购 / 逆回购,银行业与国际金融市场,回购是融资，逆回购是融出资金
+prime brokerage,主经纪商业务,银行业与国际金融市场,
+special purpose vehicle (SPV),特殊目的实体,银行业与国际金融市场,
+set-off,抵销,银行业与国际金融市场,
+close-out netting,终止净额结算,银行业与国际金融市场,ISDA 主协议的核心机制
+wholesale banking,批发银行,银行业与国际金融市场,
+retail banking,零售银行,银行业与国际金融市场,
+private banking,私人银行,银行业与国际金融市场,
+wealth management,财富管理,银行业与国际金融市场,
+corporate banking,对公业务,银行业与国际金融市场,
+treasury,资金部 / 司库,银行业与国际金融市场,
+ALM,资产负债管理,银行业与国际金融市场,Asset-Liability Management
+nostro reconciliation,往账对账,银行业与国际金融市场,
+anti-money laundering (AML),反洗钱,反洗钱与客户尽调 AML/KYC,
+counter-terrorist financing (CTF),反恐融资,反洗钱与客户尽调 AML/KYC,
+money laundering (ML),洗钱,反洗钱与客户尽调 AML/KYC,
+terrorist financing (TF),恐怖融资,反洗钱与客户尽调 AML/KYC,
+financial crime,金融犯罪,反洗钱与客户尽调 AML/KYC,银行内部通常用这个词统称 AML、制裁、欺诈、贿赂
+financial crime compliance (FCC),金融犯罪合规,反洗钱与客户尽调 AML/KYC,
+predicate offence,上游犯罪,反洗钱与客户尽调 AML/KYC,
+placement / layering / integration,处置 / 离析 / 整合（洗钱三阶段）,反洗钱与客户尽调 AML/KYC,
+Know Your Customer (KYC),客户身份识别,反洗钱与客户尽调 AML/KYC,
+Customer Due Diligence (CDD),客户尽职调查,反洗钱与客户尽调 AML/KYC,
+Enhanced Due Diligence (EDD),强化尽职调查,反洗钱与客户尽调 AML/KYC,
+Simplified Due Diligence (SDD),简化尽职调查,反洗钱与客户尽调 AML/KYC,
+ongoing monitoring,持续监测,反洗钱与客户尽调 AML/KYC,
+Ultimate Beneficial Owner (UBO),最终受益人,反洗钱与客户尽调 AML/KYC,
+beneficial ownership,受益所有权,反洗钱与客户尽调 AML/KYC,
+Politically Exposed Person (PEP),政治公众人物,反洗钱与客户尽调 AML/KYC,
+source of funds (SOF),资金来源,反洗钱与客户尽调 AML/KYC,这笔钱从哪来
+source of wealth (SOW),财富来源,反洗钱与客户尽调 AML/KYC,这个人的全部身家怎么来的
+adverse media,负面舆情筛查,反洗钱与客户尽调 AML/KYC,
+sanctions screening,制裁筛查,反洗钱与客户尽调 AML/KYC,
+suspicious activity report (SAR),可疑活动报告（AML 语境）,反洗钱与客户尽调 AML/KYC,英国向 NCA 提交；同缩写也指数据主体访问请求
+suspicious transaction report (STR),可疑交易报告,反洗钱与客户尽调 AML/KYC,
+tipping off,泄密（向当事人透露已被上报）,反洗钱与客户尽调 AML/KYC,英国法下的刑事犯罪
+Defence Against Money Laundering (DAML),反洗钱抗辩 / 同意申请,反洗钱与客户尽调 AML/KYC,
+Money Laundering Reporting Officer (MLRO),反洗钱报告官,反洗钱与客户尽调 AML/KYC,
+Nominated Officer,指定报告官,反洗钱与客户尽调 AML/KYC,
+Financial Intelligence Unit (FIU),金融情报中心,反洗钱与客户尽调 AML/KYC,

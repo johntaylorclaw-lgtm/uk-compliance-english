@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>发音与朗读系统 · 文本库与每日用法 — 英国银行业合规英语强化</title>
+<style>
+:root{
+  --bg:#f5f6f8;--panel:#fff;--panel-2:#fafbfc;--line:#e3e6ea;--line-2:#eef1f4;
+  --ink:#1c2330;--ink-2:#4a5568;--ink-3:#8a94a3;
+  --navy:#012169;--red:#c8102e;--blue:#1f6feb;--teal:#0f8a7e;--amber:#b7791f;--purple:#6b46c1;--green:#2f855a;
+  --shadow:0 1px 2px rgba(16,24,40,.05),0 4px 14px rgba(16,24,40,.06);
+  --radius:12px;
+}
+*{box-sizing:border-box;}
+body{margin:0;background:var(--bg);color:var(--ink);font-size:14px;line-height:1.68;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",Roboto,sans-serif;
+  -webkit-font-smoothing:antialiased;}
+a{color:var(--blue);text-decoration:none;}
+a:hover{text-decoration:underline;}
+
+.hero{background:linear-gradient(120deg,#012169 0%,#0b3a8f 55%,#1f6feb 100%);color:#fff;padding:24px 28px 20px;}
+.hero-inner{max-width:1080px;margin:0 auto;}
+.crumb{font-size:12px;opacity:.85;}
+.crumb a{color:#fff;text-decoration:underline;}
+.hero h1{margin:8px 0 6px;font-size:23px;font-weight:700;}
+.hero p{margin:0;opacity:.88;font-size:13.5px;max-width:840px;}
+.stats{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px;}
+.stat{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18);border-radius:10px;padding:7px 13px;min-width:98px;}
+.stat b{display:block;font-size:17px;font-weight:700;line-height:1.2;}
+.stat span{font-size:11.5px;opacity:.82;}
+
+main{max-width:1080px;margin:0 auto;padding:22px 20px 90px;}
+h2.sec{font-size:18px;margin:0 0 4px;font-weight:700;}
+p.sub{margin:0 0 16px;color:var(--ink-3);font-size:13px;}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px;margin-bottom:16px;}
+.card h3{margin:0 0 10px;font-size:15.5px;font-weight:700;}
+.card h4{margin:16px 0 6px;font-size:13.5px;font-weight:700;color:var(--navy);}
+.card h4:first-child{margin-top:0;}
+
+.pill{display:inline-block;font-size:11px;padding:2px 8px;border-radius:999px;border:1px solid var(--line);background:var(--panel-2);color:var(--ink-2);margin:0 5px 5px 0;}
+.pill.navy{background:#eef2fb;border-color:#d5def5;color:var(--navy);}
+.pill.red{background:#fdeef0;border-color:#f7d4d9;color:var(--red);}
+.pill.teal{background:#e9f7f5;border-color:#cbe9e4;color:var(--teal);}
+.pill.amber{background:#fdf6e7;border-color:#f3e3bd;color:var(--amber);}
+.pill.purple{background:#f2edfb;border-color:#e0d5f5;color:var(--purple);}
+.pill.green{background:#ecf7f1;border-color:#d0ebdd;color:var(--green);}
+
+ul.tight{margin:6px 0 0;padding-left:20px;}
+ul.tight li{margin-bottom:5px;font-size:13.2px;color:var(--ink-2);}
+ul.tight li b{color:var(--ink);}
+ol.tight{margin:6px 0 0;padding-left:22px;}
+ol.tight li{margin-bottom:6px;font-size:13.2px;color:var(--ink-2);}
+ol.tight li b{color:var(--ink);}
+
+.ck{display:flex;align-items:flex-start;gap:10px;padding:8px 0;border-bottom:1px solid var(--line-2);cursor:pointer;}
+.ck:last-child{border-bottom:0;}
+.ck:hover{background:var(--panel-2);}
+.ck .bx{flex:0 0 17px;width:17px;height:17px;border:1.5px solid var(--line);border-radius:5px;background:#fff;margin-top:3px;}
+.ck.on .bx{background:var(--green);border-color:var(--green);}
+.ck.on .bx::after{content:"✓";color:#fff;font-size:11px;display:flex;justify-content:center;line-height:15px;}
+.ck .tx{flex:1;font-size:13.2px;color:var(--ink-2);}
+.ck.on .tx{color:var(--ink-3);text-decoration:line-through;}
+
+.mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:12.6px;}
+.ipa{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--amber);font-size:12.4px;}
+
+table{width:100%;border-collapse:collapse;font-size:13px;}
+th,td{text-align:left;padding:8px 9px;border-bottom:1px solid var(--line-2);vertical-align:top;}
+th{background:var(--panel-2);font-size:11.5px;color:var(--ink-3);letter-spacing:.03em;text-transform:uppercase;font-weight:600;}
+tbody tr:hover{background:#fbfcfd;}
+td.en{font-weight:600;color:var(--navy);white-space:nowrap;}
+td.ph{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--amber);font-size:12px;white-space:nowrap;}
+td.ex{color:var(--ink-2);font-size:12.6px;}
+.tblwrap{max-height:620px;overflow:auto;border:1px solid var(--line-2);border-radius:10px;}
+
+.btn{appearance:none;font:inherit;font-size:13px;padding:7px 14px;border-radius:8px;border:1px solid var(--line);background:#fff;color:var(--ink);cursor:pointer;}
+.btn:hover{background:var(--panel-2);}
+.btn.primary{background:var(--navy);border-color:var(--navy);color:#fff;}
+.btn.primary:hover{background:#0b3a8f;}
+.btn.sm{font-size:12px;padding:5px 10px;border-radius:7px;}
+.reveal{margin-top:10px;}
+.revbd{display:none;margin-top:10px;}
+.revbd.on{display:block;}
+
+.timer{display:flex;align-items:center;gap:10px;flex-wrap:wrap;background:var(--panel-2);border:1px solid var(--line-2);border-radius:10px;padding:10px 12px;}
+.timer .clock{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:24px;font-weight:700;color:var(--navy);min-width:76px;}
+.timer .clock.warn{color:var(--red);}
+
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+@media(max-width:840px){.two{grid-template-columns:1fr;}}
+.note{background:#fffbea;border:1px solid #f5e6b8;border-radius:9px;padding:11px 13px;font-size:12.7px;color:#7a5c12;}
+.note b{color:#6b4f0d;}
+.bad{background:#fdeef0;border:1px solid #f7d4d9;border-radius:9px;padding:11px 13px;font-size:12.7px;color:#8c2231;}
+.good{background:#ecf7f1;border:1px solid #d0ebdd;border-radius:9px;padding:11px 13px;font-size:12.7px;color:#276749;}
+.info{background:#eef4ff;border:1px solid #d3e0fb;border-radius:9px;padding:11px 13px;font-size:12.7px;color:#1b4189;}
+
+.bar{height:9px;background:var(--line-2);border-radius:999px;overflow:hidden;margin:6px 0 4px;}
+.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--navy),var(--blue));border-radius:999px;transition:width .3s;}
+
+.step{display:flex;gap:10px;margin:14px 0 8px;}
+.step .n{flex:0 0 26px;height:26px;border-radius:8px;background:var(--blue);color:#fff;font-size:12.5px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.step .h{font-size:14px;font-weight:700;color:var(--navy);padding-top:2px;}
+.step .h small{display:block;font-weight:400;font-size:12px;color:var(--ink-3);}
+
+/* ---------- 朗读文本块 ---------- */
+.rb{background:#fbfcfd;border:1px solid var(--line-2);border-left:3px solid var(--navy);border-radius:10px;
+    padding:16px 18px;font-size:15.2px;line-height:2.15;color:var(--ink);
+    font-family:Georgia,"Times New Roman",-apple-system,"PingFang SC","Microsoft YaHei",serif;}
+.rb b.st{color:var(--red);font-weight:700;}
+.rb u.lk{text-decoration:none;background:#e9f1ff;border-radius:3px;padding:0 1px;}
+.rb em.hw{font-style:normal;background:#fff2c9;border-radius:3px;padding:0 1px;}
+.rb .para{margin-bottom:10px;}
+.rb .para:last-child{margin-bottom:0;}
+.rb .who{font-weight:700;color:var(--navy);font-family:-apple-system,"Segoe UI","Microsoft YaHei",sans-serif;font-size:13px;}
+
+.seghead{display:flex;align-items:flex-start;gap:11px;flex-wrap:wrap;margin-bottom:4px;}
+.segno{flex:0 0 auto;font-family:ui-monospace,Menlo,monospace;font-size:11.5px;font-weight:700;color:#fff;background:var(--navy);border-radius:6px;padding:3px 8px;}
+.segtt{font-size:15.2px;font-weight:700;flex:1;min-width:200px;}
+.segmeta{font-size:11.5px;color:var(--ink-3);padding-top:4px;}
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:12px;color:var(--ink-3);margin:10px 0 0;}
+.legend i{font-style:normal;padding:0 3px;border-radius:3px;}
+
+.navbar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px;}
+.navbar button{appearance:none;font:inherit;font-size:12.5px;padding:6px 13px;border-radius:999px;border:1px solid var(--line);background:#fff;color:var(--ink-2);cursor:pointer;}
+.navbar button:hover{border-color:var(--blue);color:var(--blue);}
+.navbar button.on{background:var(--navy);border-color:var(--navy);color:#fff;font-weight:600;}
+
+.score{display:flex;gap:8px;align-items:center;flex-wrap:wrap;background:var(--panel-2);border:1px solid var(--line-2);border-radius:10px;padding:10px 12px;margin-bottom:14px;}
+.score .n{font-family:ui-monospace,Menlo,monospace;font-size:20px;font-weight:700;color:var(--navy);}
+.score .lb{font-size:12.5px;color:var(--ink-3);}
+
+footer{max-width:1080px;margin:0 auto;padding:0 20px 60px;color:var(--ink-3);font-size:12.5px;text-align:center;}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="crumb"><a href="00-作战中心.html">← 返回作战中心</a>　·　参考文档　·　<a href="01-听力系统.html">听力系统</a></div>
+    <h1>发音与朗读系统 · 文本库与每日用法</h1>
+    <p>你说不做录音，那发音训练就必须换一套反馈机制——不能靠"回听"，就得靠<b>体感自查</b>和<b>外部标准音对照</b>。这份文档提供 <b>__TOTAL__ 段可直接朗读的英文文本</b>，每段都标了发音难点、译文和朗读时长，并内嵌英式朗读按钮。</p>
+    <div class="stats">
+      <div class="stat"><b>__TOTAL__</b><span>朗读文本段落</span></div>
+      <div class="stat"><b>25</b><span>每日分钟数</span></div>
+      <div class="stat"><b>5</b><span>材料模块</span></div>
+      <div class="stat"><b>en-GB</b><span>内嵌语音</span></div>
+    </div>
+  </div>
+</div>
+
+<main>
+
+<h2 class="sec">一、没有录音，怎么知道自己读对了</h2>
+<p class="sub">这是本份文档要解决的核心问题。录音的价值在于"听见自己"，缺了它，就用下面三重替代反馈补上。</p>
+
+<div class="card">
+  <div class="tblwrap">
+    <table>
+      <thead><tr><th style="width:150px;">替代手段</th><th>怎么做</th><th style="width:210px;">能查出发音问题吗</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="en">① 体感自查</td>
+          <td>把一只手轻贴<b>喉结</b>、一只手放<b>嘴前 3 厘米</b>，读目标词。声带不振动 → 你发成了清辅音（如 /θ/ 读成 /s/、/v/ 读成 /f/）；嘴前没有气流 → 你漏了送气（如 /p/ /t/ /k/ 词首）</td>
+          <td><span class="pill green">能查</span>清浊混淆、送气缺失</td>
+        </tr>
+        <tr>
+          <td class="en">② 标准音对照</td>
+          <td>先点本页的<b>朗读按钮</b>听一遍，再自己读，再听一遍。<b>不用耳朵分辨"差在哪"，只要分辨"像不像"</b>——不像就说明有偏差，再去看该段的发音要点</td>
+          <td><span class="pill green">能查</span>重音位置、元音长度、整体轮廓</td>
+        </tr>
+        <tr>
+          <td class="en">③ 中文回想</td>
+          <td>读完立刻合上文本，用中文回想刚说的内容。<b>凡是想不起英文怎么说的位置，就是真实卡壳点</b>，记进错题本</td>
+          <td><span class="pill amber">查不出</span>发音，但能查出表达缺口</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="note" style="margin-top:12px;">
+    <b>要诚实面对的一点：</b>不录音，你确实无法发现"自己以为对、其实错了"的细节偏差（比如某个词的重音位置）。所以本页把所有<b>容易读错的地方直接标注在文本上</b>——用标注替代回听，这是唯一可行的补救。
+  </div>
+</div>
+
+<h2 class="sec">二、每天 25 分钟怎么读</h2>
+<p class="sub">固定四步。朗读不是"念一遍就完"，关键是第 2 步和第 4 步。</p>
+
+<div class="card">
+  <div class="timer">
+    <span class="clock" id="clock">25:00</span>
+    <button class="btn sm primary" id="tStart">开始</button>
+    <button class="btn sm" id="tPause">暂停</button>
+    <button class="btn sm" id="tReset">重置</button>
+    <span class="lb" style="font-size:12.5px;color:var(--ink-3);">建议拆成 25 分钟单段，不要一次读一小时</span>
+  </div>
+
+  <h4>第 1 步｜音素热身（5 分钟）</h4>
+  <ul class="tight">
+    <li>从 <b>A 组</b>挑 1 段，先点朗读按钮听，再跟读 <b>3 遍</b>。</li>
+    <li>每一遍都做<b>体感自查</b>：手贴喉结读 /v/ /ð/ /b/ /d/ /g/，感受振动；读 /f/ /θ/ /p/ /t/ /k/ 时感受嘴前气流。</li>
+    <li><b>不要读快。</b>这一阶段的目标是"每个音都发到位"，速度是后面的事。读快了必然回到中文发音习惯。</li>
+  </ul>
+
+  <h4>第 2 步｜影子跟读真人材料（7 分钟）—— 这一步不能省</h4>
+  <ul class="tight">
+    <li>打开 <a href="01-听力系统.html">听力系统</a>里的 L0 / L2 材料（6 Minute English、FT News Briefing），<b>延迟 1 秒跟读</b>，模仿语调和节奏，不追求听懂。</li>
+    <li><b>为什么必须做：</b>本页的机器朗读只能给你"单个音"的参照，<b>连读、弱读、句子重音这些只有真人材料才有</b>。跟读是唯一能同时练到这三样的动作。</li>
+    <li>跟读时故意比原声<b>慢半拍</b>——如果跟不上，说明你在逐词念，而不是按"意群"念。</li>
+  </ul>
+
+  <h4>第 3 步｜朗读当日文本（8 分钟）</h4>
+  <ul class="tight">
+    <li>按下面的<b>六周轮换表</b>选 2～3 段，每段读 <b>3 遍</b>：
+      <br>第 1 遍 —— 看标注读，把每个标记落实（重音落在哪、哪里连读）
+      <br>第 2 遍 —— 不看标注读，检验是否已经内化
+      <br>第 3 遍 —— <b>站起来、用比平时大半格的音量</b>读，模拟真实会议室</li>
+    <li><b>合规文本（B 组）务必读到能"不用看就能说出大意"</b>。你要能脱口而出的，不是单词，是这种整句的语块。</li>
+  </ul>
+
+  <h4>第 4 步｜对照收尾（5 分钟）</h4>
+  <ul class="tight">
+    <li>读完后<b>再点一次朗读按钮</b>，闭上眼听，问自己一个问题：<b>"如果这是我在会上说的话，听起来像不像那个意思？"</b></li>
+    <li>把第 3 遍仍然卡壳的位置，写进 <span class="mono">错题本.md</span>——<b>只记那个卡住的短语，不要抄整句</b>。</li>
+    <li>勾选本页的「已朗读」方格，进度自动保存。</li>
+  </ul>
+</div>
+
+<h2 class="sec">三、英式发音速查（朗读前扫一眼）</h2>
+<p class="sub">七条规则，覆盖你 90% 的错误来源。每天朗读前花 30 秒过一遍，两周后就不需要了。</p>
+
+<div class="card">
+  <div class="tblwrap">
+    <table>
+      <thead><tr><th style="width:130px;">规则</th><th>要点</th><th style="width:230px;">例词</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="en">① 非重读 r 不发音</td>
+          <td>音节末尾或辅音前的 r 只影响前面元音，<b>不卷舌</b>。这是英美差异最明显的一处</td>
+          <td class="ex"><span class="mono">quarter</span> /ˈkwɔːtə/　<span class="mono">market</span> /ˈmɑːkɪt/　<span class="mono">corporate</span> /ˈkɔːpərət/</td>
+        </tr>
+        <tr>
+          <td class="en">② /ɒ/ 是英式专属</td>
+          <td>短促、圆唇、舌位靠后。美式一律读成 /ɑː/，所以这个词你按美式读就是错的</td>
+          <td class="ex"><span class="mono">policy</span> /ˈpɒləsi/　<span class="mono">compliance</span> /kəmˈplaɪəns/　<span class="mono">monitor</span> /ˈmɒnɪtə/</td>
+        </tr>
+        <tr>
+          <td class="en">③ /ɑː/ 张口到底</td>
+          <td>长音，口型大、舌位低后。不能读成美式 /æ/</td>
+          <td class="ex"><span class="mono">staff</span> /stɑːf/　<span class="mono">task</span> /tɑːsk/　<span class="mono">draft</span> /drɑːft/　<span class="mono">rather</span> /ˈrɑːðə/</td>
+        </tr>
+        <tr>
+          <td class="en">④ /t/ 保持清脆</td>
+          <td>英美最大差异之一：英式词中 /t/ <b>不浊化成 /d/</b>。<span class="mono">better</span> 不是 "bedder"</td>
+          <td class="ex"><span class="mono">matter</span> /ˈmætə/　<span class="mono">data</span> /ˈdeɪtə/　<span class="mono">attribute</span>（动词 /əˈtrɪbjuːt/）</td>
+        </tr>
+        <tr>
+          <td class="en">⑤ 弱读 schwa /ə/</td>
+          <td>非重读元音一律弱化成 /ə/——这是英语节奏的核心，也是"听得懂单个词、听不懂整句"的根因</td>
+          <td class="ex"><span class="mono">to</span> /tə/　<span class="mono">for</span> /fə/　<span class="mono">and</span> /ənd/　<span class="mono">at</span> /ət/　<span class="mono">of</span> /əv/</td>
+        </tr>
+        <tr>
+          <td class="en">⑥ 连读三型</td>
+          <td>辅音 + 元音直接连（<span class="mono">check it</span> → /tʃekɪt/）；相同辅音合并；/t/ /d/ 遇 /j/ 融成 /tʃ/ /dʒ/</td>
+          <td class="ex"><span class="mono">do you</span> → /dʒə/　<span class="mono">just under</span> → /dʒʌstʌndə/　<span class="mono">not at all</span> → /nɒtətɔːl/</td>
+        </tr>
+        <tr>
+          <td class="en">⑦ 陈述句降调</td>
+          <td>英式正式表达里，陈述句结尾<b>明显下降</b>，这是"笃定"的信号。用升调收尾会显得不确定甚至像在征求同意</td>
+          <td class="ex">Our position is unchanged. <span style="color:var(--red);">↘</span><br>I think we should escalate this. <span style="color:var(--red);">↘</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h2 class="sec">四、朗读文本库</h2>
+<p class="sub">共 <b>__TOTAL__</b> 段，分 5 个模块。<b>标注说明：</b><span class="pill red">红色</span>句子重音 &nbsp; <span class="pill navy">蓝底</span>连读/弱读 &nbsp; <span class="pill amber">黄底</span>易错音。</p>
+
+<div class="card" style="padding-bottom:14px;">
+  <div class="score">
+    <span class="n" id="statDone">0</span>
+    <span class="lb">/ <span id="statAll">0</span> 段已朗读</span>
+    <div style="flex:1;min-width:160px;">
+      <div class="bar"><i id="barAll" style="width:0%"></i></div>
+    </div>
+    <span class="lb" id="statPct">0%</span>
+    <button class="btn sm" id="btnReset">清空进度</button>
+  </div>
+  <div class="navbar" id="navbar"></div>
+  <div class="legend">
+    <span><i style="background:#fff2c9;">黄底</i> 易错音，重点看</span>
+    <span><i style="background:#e9f1ff;">蓝底</i> 连读或弱读</span>
+    <span style="color:var(--red);">红色 = 句子重音</span>
+  </div>
+</div>
+
+<div id="segWrap"></div>
+
+<h2 class="sec">五、无录音的三项自查（读完必做）</h2>
+
+<div class="two">
+  <div class="card" style="margin-bottom:0;">
+    <h3>体感自查：五个动作</h3>
+    <ol class="tight">
+      <li><b>喉结振动</b>——读 /v/ /ð/ /z/ /b/ /d/ /g/，手贴喉结应明显振动；读 /f/ /θ/ /s/ /p/ /t/ /k/ 则几乎不振动。<b>如果读 /v/ 时没振动，你发的是 /f/</b>（中文母语者最常见错误之一）。</li>
+      <li><b>嘴前气流</b>——读 /p/ /t/ /k/ 的开头，手放嘴前 3 厘米应有明显气流。<b>没有气流 = 你发成了不送气音</b>，老外听起来像 /b/ /d/ /g/。</li>
+      <li><b>舌位对照</b>——/θ/ 和 /ð/ 必须<b>舌尖轻触上齿</b>。对着手机前置摄像头读 <span class="mono">think</span> / <span class="mono">this</span>，看得见舌尖才算对；看不见就是读成了 /s/ /z/。</li>
+      <li><b>口型大小</b>——/ɑː/ 要能塞进两根手指的高度；/ɪ/ 只张一点点；/æ/ 要咧嘴。<b>张口幅度不够是最普遍的元音错误。</b></li>
+      <li><b>非重读 r</b>——读 <span class="mono">market、quarter、corporate</span>，<b>舌尖全程不碰硬腭</b>。如果舌尖动了，你是在卷舌，立刻改成美式了。</li>
+    </ol>
+  </div>
+
+  <div class="card" style="margin-bottom:0;">
+    <h3>节奏自查：三档朗读</h3>
+    <ul class="tight">
+      <li><b>慢速（约 70% 速度）</b>——把每个音读到位。这一步几乎一定会觉得"很别扭"，这是正常的，说明你在突破旧的肌肉记忆。</li>
+      <li><b>常速</b>——正常说话速度，重点检查弱读是否自然。<b>如果常速和慢速读起来"差不多清楚"，说明你没做弱读</b>，只是在用慢速的发音方式加速。</li>
+      <li><b>快速（约 120%）</b>——故意读快，检查哪些音会塌掉。<b>第一个塌掉的音，就是你的发音薄弱点</b>，记下来单独练。</li>
+    </ul>
+    <div class="note" style="margin-top:12px;">
+      <b>一个判断标准：</b>读完一段后，如果你<b>喘不上气</b>，说明你在逐词念，没有按意群分组呼吸。<b>正确做法是在逗号、分号、"and" 前换气</b>，把一个意群一口气读完。
+    </div>
+  </div>
+</div>
+
+<h2 class="sec">六、六周朗读轮换表</h2>
+<p class="sub">每天从对应模块取 2～3 段。B 组（合规专业）是全过程的主线，会反复回来读。</p>
+
+<div class="card">
+  <div class="tblwrap">
+    <table>
+      <thead><tr><th style="width:90px;">周次</th><th style="width:130px;">当日主攻</th><th>朗读安排</th><th style="width:170px;">本周目标</th></tr></thead>
+      <tbody>
+        <tr><td class="en">第 1 周</td><td>A 组 音素</td><td>每天 A 组 2 段 + C 组 1 段（先求准，不求快）</td><td>八个元音区分开，/v/ /θ/ /ð/ 能靠体感自查</td></tr>
+        <tr><td class="en">第 2 周</td><td>B 组 AML 专题</td><td>A 组 1 段热身 + B 组 2 段</td><td>合规核心句能不看标注读顺</td></tr>
+        <tr><td class="en">第 3 周</td><td>B 组 制裁 / 隐私</td><td>A 组 1 段 + B 组 2 段 + D 组 1 段</td><td>长句会分意群呼吸，不逐词念</td></tr>
+        <tr><td class="en">第 4 周</td><td>C 组 职场口语</td><td>C 组 2 段 + E 组 1 段（语调专练）</td><td>语调有升有降，不再平调</td></tr>
+        <tr><td class="en">第 5 周</td><td>B + C 混合</td><td>每天 3 段，全部<b>不先看标注</b>直接读</td><td>标注内化，脱离视觉提示</td></tr>
+        <tr><td class="en">第 6 周</td><td>E 组 语调与长句</td><td>B 组挑 3 段 → 读成"会议发言"的强度</td><td>能在会议室音量下稳定输出</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="info" style="margin-top:12px;">
+    <b>用法上的一个提醒：</b>同一段文本<b>隔几天重读一次</b>比每天换新段更有效。重读时你会发现"上次卡的地方这次不卡了"——这是唯一可感知的进步信号，在没有录音的情况下尤其重要。
+  </div>
+</div>
+
+<!--PRON_SCHED_START-->
+<h2 class="sec">六·B、42 天逐日朗读分配表</h2>
+<p class="sub">把上面的六周轮换表落到每一天。<b>每天 3 段（第 1、2 周 3 段，第 3 周 4 段）</b>，合计 25 分钟。分配依据是《00-作战中心》42 天计划的当日主题：主题是 AML 就配 AML 段，主题是会议就配职场段。<b>每周第 7 天（周测日）安排前一阶段最卡的段重读</b>——重读比每天换新段有效得多。</p>
+
+<div class="card">
+  <div class="tblwrap" style="max-height:640px;">
+    <table>
+      <thead><tr><th style="width:74px;">日程</th><th style="width:200px;">当日主题</th><th style="width:104px;">段号</th><th>今日朗读的 __TOTAL__ 段库中选段</th></tr></thead>
+      <tbody>
+<tr style="background:#f4f8ff;"><td colspan="4" style="font-size:12px;font-weight:700;color:var(--navy);padding:7px 9px;">第 1 周　A 组音素校准打底（8 段走完一轮）+ B / C / D 逐日加入</td></tr><tr><td class="en">Day 01</td><td class="ex">诊断日 + 环境搭建</td><td style="font-size:12px;">A6 · A7 · C1</td><td><span class="pill amber">A6 /θ/ 与 /ð/：舌尖必须出来</span><span class="pill amber">A7 /v/ 与 /w/：一个咬唇，一个圆唇</span><span class="pill teal">C1 电话会议：开场与议程</span></td></tr><tr><td class="en">Day 02</td><td class="ex">英式发音重校准</td><td style="font-size:12px;">A1 · A2 · A3</td><td><span class="pill amber">A1 /ɑː/ 与 /ʌ/：长音到底，短音收住</span><span class="pill amber">A2 /ɒ/ 是英式专属音：最短、最圆</span><span class="pill amber">A3 /æ/ /e/ /ʌ/：三个前元音的三角</span></td></tr><tr><td class="en">Day 03</td><td class="ex">AML 核心 I：警报分诊与上报</td><td style="font-size:12px;">A8 · A5 · B11</td><td><span class="pill amber">A8 词尾辅音串：别加元音，也别吞掉</span><span class="pill amber">A5 /ɜː/ 与 /ɔː/：一对长元音</span><span class="pill navy">B11 团队会议：警报分级讨论</span></td></tr><tr><td class="en">Day 04</td><td class="ex">AML 收尾 + 核心地基词 + 制裁开篇</td><td style="font-size:12px;">A4 · B2 · C2</td><td><span class="pill amber">A4 /ɪ/ 与 /iː/：松紧之别</span><span class="pill navy">B2 制裁筛查命中：判断与放行</span><span class="pill teal">C2 会议中：澄清与确认</span></td></tr><tr><td class="en">Day 05</td><td class="ex">制裁 II：名单机制与出口管制 + 金融犯罪开篇</td><td style="font-size:12px;">B8 · B10 · C3</td><td><span class="pill navy">B8 监管者演讲节选（FCA 风格）</span><span class="pill navy">B10 与业务部门沟通设限（不说不）</span><span class="pill teal">C3 委婉提出异议（不树敌）</span></td></tr><tr><td class="en">Day 06</td><td class="ex">金融犯罪与执法续：调查 × 特权 × 举报</td><td style="font-size:12px;">B1 · C4 · E6</td><td><span class="pill navy">B1 向 MLRO 升级可疑活动（口头陈述）</span><span class="pill teal">C4 汇报进度与坏消息</span><span class="pill purple">E6 数字、日期与编号：读错就是事故</span></td></tr><tr><td class="en">Day 07</td><td class="ex">第 1 周测评与复盘</td><td style="font-size:12px;">A4 · A8 · B2</td><td><span class="pill amber">A4 /ɪ/ 与 /iː/：松紧之别</span><span class="pill amber">A8 词尾辅音串：别加元音，也别吞掉</span><span class="pill navy">B2 制裁筛查命中：判断与放行</span></td></tr><tr style="background:#f4f8ff;"><td colspan="4" style="font-size:12px;font-weight:700;color:var(--navy);padding:7px 9px;">第 2 周　第 2 周轮换：A 组 1 段热身 + B 组 2 段</td></tr><tr><td class="en">Day 08</td><td class="ex">AML 全景与洗钱三阶段</td><td style="font-size:12px;">A4 · B1 · B11</td><td><span class="pill amber">A4 /ɪ/ 与 /iː/：松紧之别</span><span class="pill navy">B1 向 MLRO 升级可疑活动（口头陈述）</span><span class="pill navy">B11 团队会议：警报分级讨论</span></td></tr><tr><td class="en">Day 09</td><td class="ex">CDD 基础：我们要什么材料</td><td style="font-size:12px;">A8 · B3 · B4</td><td><span class="pill amber">A8 词尾辅音串：别加元音，也别吞掉</span><span class="pill navy">B3 客户尽职调查问询（对话体）</span><span class="pill navy">B4 EDD 请求函（正式书面朗读）</span></td></tr><tr><td class="en">Day 10</td><td class="ex">EDD 与资金来源 / 财富来源</td><td style="font-size:12px;">A5 · B4 · B3</td><td><span class="pill amber">A5 /ɜː/ 与 /ɔː/：一对长元音</span><span class="pill navy">B4 EDD 请求函（正式书面朗读）</span><span class="pill navy">B3 客户尽职调查问询（对话体）</span></td></tr><tr><td class="en">Day 11</td><td class="ex">交易监测与警报分诊</td><td style="font-size:12px;">A1 · B11 · B1</td><td><span class="pill amber">A1 /ɑː/ 与 /ʌ/：长音到底，短音收住</span><span class="pill navy">B11 团队会议：警报分级讨论</span><span class="pill navy">B1 向 MLRO 升级可疑活动（口头陈述）</span></td></tr><tr><td class="en">Day 12</td><td class="ex">SAR 上报与泄密风险</td><td style="font-size:12px;">A6 · B1 · B4</td><td><span class="pill amber">A6 /θ/ 与 /ð/：舌尖必须出来</span><span class="pill navy">B1 向 MLRO 升级可疑活动（口头陈述）</span><span class="pill navy">B4 EDD 请求函（正式书面朗读）</span></td></tr><tr><td class="en">Day 13</td><td class="ex">客户风险评级与治理</td><td style="font-size:12px;">A7 · B7 · B12</td><td><span class="pill amber">A7 /v/ 与 /w/：一个咬唇，一个圆唇</span><span class="pill navy">B7 风险委员会汇报（三点式结构）</span><span class="pill navy">B12 年度合规报告摘要（董事会语调）</span></td></tr><tr><td class="en">Day 14</td><td class="ex">第 2 周测评与复盘</td><td style="font-size:12px;">A2 · B4 · B11</td><td><span class="pill amber">A2 /ɒ/ 是英式专属音：最短、最圆</span><span class="pill navy">B4 EDD 请求函（正式书面朗读）</span><span class="pill navy">B11 团队会议：警报分级讨论</span></td></tr><tr style="background:#f4f8ff;"><td colspan="4" style="font-size:12px;font-weight:700;color:var(--navy);padding:7px 9px;">第 3 周　第 3 周轮换：A 组 1 段 + B 组 2 段 + D 组 1 段</td></tr><tr><td class="en">Day 15</td><td class="ex">制裁基础与监管机构</td><td style="font-size:12px;">A3 · B2 · B8 · D1</td><td><span class="pill amber">A3 /æ/ /e/ /ʌ/：三个前元音的三角</span><span class="pill navy">B2 制裁筛查命中：判断与放行</span><span class="pill navy">B8 监管者演讲节选（FCA 风格）</span><span class="pill green">D1 银行开户（英国柜台实景）</span></td></tr><tr><td class="en">Day 16</td><td class="ex">名单匹配机制与误报</td><td style="font-size:12px;">A4 · B2 · B9 · D1</td><td><span class="pill amber">A4 /ɪ/ 与 /iː/：松紧之别</span><span class="pill navy">B2 制裁筛查命中：判断与放行</span><span class="pill navy">B9 回复监管信息请求（正式函件）</span><span class="pill green">D1 银行开户（英国柜台实景）</span></td></tr><tr><td class="en">Day 17</td><td class="ex">命中处理与交易放行</td><td style="font-size:12px;">A5 · B2 · B5 · D2</td><td><span class="pill amber">A5 /ɜː/ 与 /ɔː/：一对长元音</span><span class="pill navy">B2 制裁筛查命中：判断与放行</span><span class="pill navy">B5 监管现场检查：开场致词</span><span class="pill green">D2 租房看房（押金与账单）</span></td></tr><tr><td class="en">Day 18</td><td class="ex">出口管制与两用物项</td><td style="font-size:12px;">A8 · B10 · B9 · D2</td><td><span class="pill amber">A8 词尾辅音串：别加元音，也别吞掉</span><span class="pill navy">B10 与业务部门沟通设限（不说不）</span><span class="pill navy">B9 回复监管信息请求（正式函件）</span><span class="pill green">D2 租房看房（押金与账单）</span></td></tr><tr><td class="en">Day 19</td><td class="ex">数据隐私基础</td><td style="font-size:12px;">A1 · B12 · B3 · D3</td><td><span class="pill amber">A1 /ɑː/ 与 /ʌ/：长音到底，短音收住</span><span class="pill navy">B12 年度合规报告摘要（董事会语调）</span><span class="pill navy">B3 客户尽职调查问询（对话体）</span><span class="pill green">D3 注册 GP 与看诊</span></td></tr><tr><td class="en">Day 20</td><td class="ex">数据主体权利与 DPIA</td><td style="font-size:12px;">A6 · B9 · B6 · D3</td><td><span class="pill amber">A6 /θ/ 与 /ð/：舌尖必须出来</span><span class="pill navy">B9 回复监管信息请求（正式函件）</span><span class="pill navy">B6 合规培训讲稿：让听众坐直的开场</span><span class="pill green">D3 注册 GP 与看诊</span></td></tr><tr><td class="en">Day 21</td><td class="ex">第 3 周测评与复盘</td><td style="font-size:12px;">A2 · B2 · B12 · D4</td><td><span class="pill amber">A2 /ɒ/ 是英式专属音：最短、最圆</span><span class="pill navy">B2 制裁筛查命中：判断与放行</span><span class="pill navy">B12 年度合规报告摘要（董事会语调）</span><span class="pill green">D4 邻里寒暄与下班后的酒馆</span></td></tr><tr style="background:#f4f8ff;"><td colspan="4" style="font-size:12px;font-weight:700;color:var(--navy);padding:7px 9px;">第 4 周　第 4 周轮换：C 组 2 段 + E 组 1 段</td></tr><tr><td class="en">Day 22</td><td class="ex">英国监管架构与双头监管</td><td style="font-size:12px;">C1 · C6 · E1</td><td><span class="pill teal">C1 电话会议：开场与议程</span><span class="pill teal">C6 会议主持：推进与总结</span><span class="pill purple">E1 陈述句降调：英式"笃定"的信号</span></td></tr><tr><td class="en">Day 23</td><td class="ex">FCA Handbook 与商业原则</td><td style="font-size:12px;">C2 · C3 · E5</td><td><span class="pill teal">C2 会议中：澄清与确认</span><span class="pill teal">C3 委婉提出异议（不树敌）</span><span class="pill purple">E5 长句呼吸分组：合规长句怎么念</span></td></tr><tr><td class="en">Day 24</td><td class="ex">Consumer Duty 与客户保护</td><td style="font-size:12px;">C4 · C5 · E1</td><td><span class="pill teal">C4 汇报进度与坏消息</span><span class="pill teal">C5 一对一沟通：给出反馈</span><span class="pill purple">E1 陈述句降调：英式"笃定"的信号</span></td></tr><tr><td class="en">Day 25</td><td class="ex">MiFID 与 MAR 市场滥用</td><td style="font-size:12px;">C3 · C4 · E3</td><td><span class="pill teal">C3 委婉提出异议（不树敌）</span><span class="pill teal">C4 汇报进度与坏消息</span><span class="pill purple">E3 列举与对比：结构靠语调撑起来</span></td></tr><tr><td class="en">Day 26</td><td class="ex">美国监管 I：BSA / FinCEN</td><td style="font-size:12px;">C1 · C2 · E4</td><td><span class="pill teal">C1 电话会议：开场与议程</span><span class="pill teal">C2 会议中：澄清与确认</span><span class="pill purple">E4 信息焦点：同一句话的五种意思</span></td></tr><tr><td class="en">Day 27</td><td class="ex">美国监管 II：FCPA / Volcker</td><td style="font-size:12px;">C5 · C6 · E5</td><td><span class="pill teal">C5 一对一沟通：给出反馈</span><span class="pill teal">C6 会议主持：推进与总结</span><span class="pill purple">E5 长句呼吸分组：合规长句怎么念</span></td></tr><tr><td class="en">Day 28</td><td class="ex">第 4 周测评与复盘</td><td style="font-size:12px;">C2 · C4 · E2</td><td><span class="pill teal">C2 会议中：澄清与确认</span><span class="pill teal">C4 汇报进度与坏消息</span><span class="pill purple">E2 疑问句与附加疑问：升调与选择问</span></td></tr><tr style="background:#f4f8ff;"><td colspan="4" style="font-size:12px;font-weight:700;color:var(--navy);padding:7px 9px;">第 5 周　第 5 周轮换：B / C 混合 3 段</td></tr><tr><td class="en">Day 29</td><td class="ex">会议英语 I：主持与发言</td><td style="font-size:12px;">C1 · C6 · E3</td><td><span class="pill teal">C1 电话会议：开场与议程</span><span class="pill teal">C6 会议主持：推进与总结</span><span class="pill purple">E3 列举与对比：结构靠语调撑起来</span></td></tr><tr><td class="en">Day 30</td><td class="ex">会议英语 II：异议与推进</td><td style="font-size:12px;">C3 · B10 · E4</td><td><span class="pill teal">C3 委婉提出异议（不树敌）</span><span class="pill navy">B10 与业务部门沟通设限（不说不）</span><span class="pill purple">E4 信息焦点：同一句话的五种意思</span></td></tr><tr><td class="en">Day 31</td><td class="ex">电话与远程会议</td><td style="font-size:12px;">C1 · C2 · B9</td><td><span class="pill teal">C1 电话会议：开场与议程</span><span class="pill teal">C2 会议中：澄清与确认</span><span class="pill navy">B9 回复监管信息请求（正式函件）</span></td></tr><tr><td class="en">Day 32</td><td class="ex">培训与宣讲</td><td style="font-size:12px;">B6 · B7 · E5</td><td><span class="pill navy">B6 合规培训讲稿：让听众坐直的开场</span><span class="pill navy">B7 风险委员会汇报（三点式结构）</span><span class="pill purple">E5 长句呼吸分组：合规长句怎么念</span></td></tr><tr><td class="en">Day 33</td><td class="ex">谈判与影响他人</td><td style="font-size:12px;">B10 · C3 · C4</td><td><span class="pill navy">B10 与业务部门沟通设限（不说不）</span><span class="pill teal">C3 委婉提出异议（不树敌）</span><span class="pill teal">C4 汇报进度与坏消息</span></td></tr><tr><td class="en">Day 34</td><td class="ex">生活英语 I：吃、买、看病</td><td style="font-size:12px;">D3 · D1 · D2</td><td><span class="pill green">D3 注册 GP 与看诊</span><span class="pill green">D1 银行开户（英国柜台实景）</span><span class="pill green">D2 租房看房（押金与账单）</span></td></tr><tr><td class="en">Day 35</td><td class="ex">生活英语 II：伦敦与通勤</td><td style="font-size:12px;">D4 · D1 · D2</td><td><span class="pill green">D4 邻里寒暄与下班后的酒馆</span><span class="pill green">D1 银行开户（英国柜台实景）</span><span class="pill green">D2 租房看房（押金与账单）</span></td></tr><tr style="background:#f4f8ff;"><td colspan="4" style="font-size:12px;font-weight:700;color:var(--navy);padding:7px 9px;">第 6 周　第 6 周轮换：B 组 3 段，读成会议发言强度</td></tr><tr><td class="en">Day 36</td><td class="ex">极限听力训练</td><td style="font-size:12px;">B8 · B9 · E5</td><td><span class="pill navy">B8 监管者演讲节选（FCA 风格）</span><span class="pill navy">B9 回复监管信息请求（正式函件）</span><span class="pill purple">E5 长句呼吸分组：合规长句怎么念</span></td></tr><tr><td class="en">Day 37</td><td class="ex">全真模拟（一）监管检查开场</td><td style="font-size:12px;">B5 · B9 · E1</td><td><span class="pill navy">B5 监管现场检查：开场致词</span><span class="pill navy">B9 回复监管信息请求（正式函件）</span><span class="pill purple">E1 陈述句降调：英式"笃定"的信号</span></td></tr><tr><td class="en">Day 38</td><td class="ex">全真模拟（二）客户投诉</td><td style="font-size:12px;">B10 · C5 · E2</td><td><span class="pill navy">B10 与业务部门沟通设限（不说不）</span><span class="pill teal">C5 一对一沟通：给出反馈</span><span class="pill purple">E2 疑问句与附加疑问：升调与选择问</span></td></tr><tr><td class="en">Day 39</td><td class="ex">全真模拟（三）内部举报</td><td style="font-size:12px;">B1 · B4 · E6</td><td><span class="pill navy">B1 向 MLRO 升级可疑活动（口头陈述）</span><span class="pill navy">B4 EDD 请求函（正式书面朗读）</span><span class="pill purple">E6 数字、日期与编号：读错就是事故</span></td></tr><tr><td class="en">Day 40</td><td class="ex">全真模拟（四）媒体与外部问询</td><td style="font-size:12px;">B8 · B12 · E4</td><td><span class="pill navy">B8 监管者演讲节选（FCA 风格）</span><span class="pill navy">B12 年度合规报告摘要（董事会语调）</span><span class="pill purple">E4 信息焦点：同一句话的五种意思</span></td></tr><tr><td class="en">Day 41</td><td class="ex">应急话术库定稿</td><td style="font-size:12px;">B5 · B7 · E6</td><td><span class="pill navy">B5 监管现场检查：开场致词</span><span class="pill navy">B7 风险委员会汇报（三点式结构）</span><span class="pill purple">E6 数字、日期与编号：读错就是事故</span></td></tr><tr><td class="en">Day 42</td><td class="ex">终测与交付</td><td style="font-size:12px;">B12 · B7 · E1</td><td><span class="pill navy">B12 年度合规报告摘要（董事会语调）</span><span class="pill navy">B7 风险委员会汇报（三点式结构）</span><span class="pill purple">E1 陈述句降调：英式"笃定"的信号</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="info" style="margin-top:12px;">
+    <b>这份表怎么用：</b>从 <b>Day 01</b> 起，每天课程页（<span class="mono">Day-NN.html</span>）的「发音朗读」模块里已经把当天这几段的<b>全文、标注、发音要点、中文译文和英式朗读按钮直接内嵌</b>，不需要再跳回本页找。<br>
+    本页是<b>总库与索引</b>：想通读全部 __TOTAL__ 段 / __POINTS__ 条发音要点、按 A–E 组浏览，或核对某一天该读哪几段，看这里。
+  </div>
+</div>
+<!--PRON_SCHED_END-->
+<h2 class="sec">七、分组材料索引</h2>
+<p class="sub">五组材料的定位与篇幅，方便你按当天的时间预算挑选。</p>
+
+<div class="card">
+  <div class="tblwrap">
+    <table>
+      <thead><tr><th style="width:80px;">组别</th><th style="width:180px;">模块</th><th>内容</th><th style="width:90px;">段数</th><th style="width:100px;">单段时长</th></tr></thead>
+      <tbody id="indexBody"></tbody>
+    </table>
+  </div>
+</div>
+
+<footer>
+  发音与朗读系统　|　<a href="00-作战中心.html">作战中心</a>　·　<a href="01-听力系统.html">听力系统</a>　·　<a href="02-Anki复习系统.html">Anki 复习系统</a>　·　<a href="Day-02.html">Day 02</a>
+</footer>
+
+</main>
+
+<script>
+/*__DATA__*/
+
+/* ---------- 渲染 ---------- */
+var $ = function(s){ return document.querySelector(s); };
+var LS = "ukce_pron_v1";
+var state = { done: {} };
+try { var raw = localStorage.getItem(LS); if(raw) state = JSON.parse(raw); } catch(e){}
+if(!state.done) state.done = {};
+function save(){ try{ localStorage.setItem(LS, JSON.stringify(state)); }catch(e){} }
+
+/* 把 *重音* _连读_ ~易错~ 渲染成 HTML；同时产出纯文本供语音合成 */
+function markup(t){
+  return t.replace(/\*(.+?)\*/g, '<b class="st">$1</b>')
+          .replace(/_(.+?)_/g, '<u class="lk">$1</u>')
+          .replace(/~(.+?)~/g, '<em class="hw">$1</em>');
+}
+function plain(t){
+  return t.replace(/\*(.+?)\*/g, '$1').replace(/_(.+?)_/g, '$1').replace(/~(.+?)~/g, '$1')
+          .replace(/<span[^>]*>/g, '').replace(/<\/span>/g, '')
+          .replace(/<br\s*\/?>/g, '. ');
+}
+
+/* ---------- 语音合成 ---------- */
+var gbVoice = null;
+function pickVoice(){
+  if(!window.speechSynthesis) return;
+  var vs = speechSynthesis.getVoices() || [];
+  var pref = ["Google UK English Female","Google UK English Male","Libby","Sonia","Ryan","George","Hazel","Microsoft Libby","Microsoft Sonia"];
+  gbVoice = null;
+  for(var i=0;i<pref.length && !gbVoice;i++){
+    gbVoice = vs.find(function(v){ return v.name.indexOf(pref[i])>-1; }) || null;
+  }
+  if(!gbVoice) gbVoice = vs.find(function(v){ return /^en-GB/i.test(v.lang); }) || null;
+  if(!gbVoice) gbVoice = vs.find(function(v){ return /^en/i.test(v.lang); }) || null;
+}
+if(window.speechSynthesis){
+  pickVoice();
+  speechSynthesis.onvoiceschanged = pickVoice;
+}
+function speak(txt, rate){
+  if(!window.speechSynthesis){ alert("当前浏览器不支持朗读功能，请用 Edge 或 Chrome 打开本页。"); return; }
+  speechSynthesis.cancel();
+  var u = new SpeechSynthesisUtterance(txt);
+  u.lang = "en-GB";
+  if(gbVoice) u.voice = gbVoice;
+  u.rate = rate || 0.92;
+  u.pitch = 1.0;
+  speechSynthesis.speak(u);
+}
+
+/* ---------- 计时器 ---------- */
+(function(){
+  var total = 25*60, left = total, t = null;
+  function draw(){
+    var m = Math.floor(left/60), s = left%60;
+    $("#clock").textContent = (m<10?"0":"")+m+":"+(s<10?"0":"")+s;
+    $("#clock").className = "clock" + (left<=180 ? " warn" : "");
+  }
+  $("#tStart").onclick = function(){
+    if(t) return;
+    t = setInterval(function(){
+      if(left>0){ left--; draw(); } else { clearInterval(t); t=null; }
+    }, 1000);
+  };
+  $("#tPause").onclick = function(){ if(t){ clearInterval(t); t=null; } };
+  $("#tReset").onclick = function(){ if(t){ clearInterval(t); t=null; } left = total; draw(); };
+  draw();
+})();
+
+/* ---------- 渲染文本库 ---------- */
+var curGroup = "all";
+function groupsOf(){ 
+  var o = [], seen = {};
+  SEGMENTS.forEach(function(s){ if(!seen[s.g]){ seen[s.g]=1; o.push(s.g); } });
+  return o;
+}
+var GROUPNAME = __GROUPNAME__;
+
+function renderNav(){
+  var nav = $("#navbar"), html = '<button data-g="all"'+(curGroup==="all"?' class="on"':'')+'>全部 '+SEGMENTS.length+'</button>';
+  groupsOf().forEach(function(g){
+    var n = SEGMENTS.filter(function(s){ return s.g===g; }).length;
+    html += '<button data-g="'+g+'"'+(curGroup===g?' class="on"':'')+'>'+g+' '+GROUPNAME[g]+' · '+n+'</button>';
+  });
+  nav.innerHTML = html;
+  [].forEach.call(nav.querySelectorAll("button"), function(b){
+    b.onclick = function(){ curGroup = b.getAttribute("data-g"); renderNav(); renderSegs(); };
+  });
+}
+
+function renderSegs(){
+  var wrap = $("#segWrap");
+  var list = SEGMENTS.filter(function(s){ return curGroup==="all" || s.g===curGroup; });
+  wrap.innerHTML = list.map(function(s){
+    var on = !!state.done[s.id];
+    return '<div class="card">' +
+      '<div class="seghead">' +
+        '<span class="segno">'+s.id+'</span>' +
+        '<span class="segtt">'+s.title+'</span>' +
+        '<span class="segmeta">'+s.words+' 词 · 约 '+s.mins+' 分钟 · '+s.focus+'</span>' +
+      '</div>' +
+      '<div style="margin:8px 0 10px;">' +
+        '<button class="btn sm primary" data-say="'+s.id+'">▶ 英式朗读</button> ' +
+        '<button class="btn sm" data-slow="'+s.id+'">▶ 慢速</button> ' +
+        '<button class="btn sm ckbtn'+(on?' primary':'')+'" data-ck="'+s.id+'">'+(on?'✓ 已朗读':'标记已朗读')+'</button>' +
+      '</div>' +
+      '<div class="rb">'+markup(s.text).split("\n").map(function(p){ return '<div class="para">'+p+'</div>'; }).join("")+'</div>' +
+      '<div class="reveal">' +
+        '<button class="btn sm" data-rv="p'+s.id+'" data-base="发音要点（'+s.points.length+' 条）">发音要点（'+s.points.length+' 条）</button> ' +
+        '<button class="btn sm" data-rv="z'+s.id+'" data-base="中文译文">中文译文</button>' +
+      '</div>' +
+      '<div class="revbd" id="p'+s.id+'">' +
+        '<div class="tblwrap"><table><thead><tr><th style="width:190px;">词 / 短语</th><th>为什么容易读错 · 怎么改</th></tr></thead><tbody>' +
+        s.points.map(function(p){ return '<tr><td class="ph">'+p[0]+'</td><td class="ex">'+p[1]+'</td></tr>'; }).join("") +
+        '</tbody></table></div>' +
+      '</div>' +
+      '<div class="revbd" id="z'+s.id+'" style="font-size:13.2px;color:var(--ink-2);background:var(--panel-2);border:1px solid var(--line-2);border-radius:9px;padding:12px 14px;">'+s.zh+'</div>' +
+    '</div>';
+  }).join("");
+
+  [].forEach.call(wrap.querySelectorAll("[data-say]"), function(b){
+    b.onclick = function(){
+      var s = SEGMENTS.find(function(x){ return x.id===b.getAttribute("data-say"); });
+      speak(plain(s.text), 0.95);
+    };
+  });
+  [].forEach.call(wrap.querySelectorAll("[data-slow]"), function(b){
+    b.onclick = function(){
+      var s = SEGMENTS.find(function(x){ return x.id===b.getAttribute("data-slow"); });
+      speak(plain(s.text), 0.72);
+    };
+  });
+  [].forEach.call(wrap.querySelectorAll("[data-ck]"), function(b){
+    b.onclick = function(){
+      var id = b.getAttribute("data-ck");
+      state.done[id] = !state.done[id];
+      if(!state.done[id]) delete state.done[id];
+      save(); drawStat(); renderSegs();
+    };
+  });
+  [].forEach.call(wrap.querySelectorAll("[data-rv]"), function(b){
+    b.onclick = function(){
+      var el = document.getElementById(b.getAttribute("data-rv"));
+      el.classList.toggle("on");
+      var base = b.getAttribute("data-base");
+      b.textContent = (el.classList.contains("on") ? "收起 · " : "") + base;
+    };
+  });
+}
+
+function drawStat(){
+  var all = SEGMENTS.length, done = Object.keys(state.done).length;
+  $("#statDone").textContent = done;
+  $("#statAll").textContent = all;
+  var pct = all ? Math.round(done/all*100) : 0;
+  $("#barAll").style.width = pct+"%";
+  $("#statPct").textContent = pct+"%";
+}
+
+/* 索引表 */
+(function(){
+  var rows = "";
+  groupsOf().forEach(function(g){
+    var list = SEGMENTS.filter(function(s){ return s.g===g; });
+    var mins = list.reduce(function(a,b){ return a + b.mins; }, 0);
+    rows += '<tr><td class="en">'+g+'</td><td>'+GROUPNAME[g]+'</td><td class="ex">'+list[0].desc+'</td>' +
+            '<td>'+list.length+'</td><td>约 '+mins+' 分钟</td></tr>';
+  });
+  $("#indexBody").innerHTML = rows;
+})();
+
+$("#btnReset").onclick = function(){
+  if(confirm("清空所有朗读进度？")){ state.done = {}; save(); drawStat(); renderSegs(); }
+};
+
+renderNav();
+renderSegs();
+drawStat();
+</script>
+</body>
+</html>

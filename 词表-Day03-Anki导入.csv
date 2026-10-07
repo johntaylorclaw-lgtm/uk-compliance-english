@@ -1,0 +1,100 @@
+﻿Financial Intelligence Unit (FIU),金融情报中心,反洗钱与客户尽调 AML/KYC,
+National Crime Agency (NCA),英国国家犯罪调查局,反洗钱与客户尽调 AML/KYC,
+UKFIU,英国金融情报中心,反洗钱与客户尽调 AML/KYC,
+transaction monitoring (TM),交易监测,反洗钱与客户尽调 AML/KYC,
+alert / alert triage,警报 / 警报分诊,反洗钱与客户尽调 AML/KYC,
+red flag,危险信号,反洗钱与客户尽调 AML/KYC,
+structuring / smurfing,拆分交易,反洗钱与客户尽调 AML/KYC,刻意压低于申报门槛，简称 structured deposits
+threshold,阈值,反洗钱与客户尽调 AML/KYC,
+risk-based approach (RBA),风险为本方法,反洗钱与客户尽调 AML/KYC,FATF 推荐的核心监管原则
+customer risk rating / risk scoring,客户风险评级 / 风险评分,反洗钱与客户尽调 AML/KYC,
+risk appetite,风险偏好,反洗钱与客户尽调 AML/KYC,反洗钱中用于界定可接受客户与业务
+Money Laundering Regulations 2017,英国反洗钱条例 2017,反洗钱与客户尽调 AML/KYC,
+JMLSG Guidance,英国反洗钱行业指引,反洗钱与客户尽调 AML/KYC,
+6AMLD,第六号欧盟反洗钱指令,反洗钱与客户尽调 AML/KYC,
+record keeping / audit trail,记录保存 / 审计轨迹,反洗钱与客户尽调 AML/KYC,
+escalate / escalation memo,上报 / 上报备忘,反洗钱与客户尽调 AML/KYC,
+correspondent banking due diligence,代理行尽职调查,反洗钱与客户尽调 AML/KYC,
+wire transfer,电汇,反洗钱与客户尽调 AML/KYC,
+unusual activity,异常活动,反洗钱与客户尽调 AML/KYC,
+customer risk assessment (CRA),客户风险评估,反洗钱与客户尽调 AML/KYC,
+trigger event,触发事件,反洗钱与客户尽调 AML/KYC,如交易异常、负面新闻、客户信息变更
+periodic review,定期复核,反洗钱与客户尽调 AML/KYC,
+remediation,整改,反洗钱与客户尽调 AML/KYC,
+lookback review,回溯审查,反洗钱与客户尽调 AML/KYC,
+typology,（犯罪）类型学,反洗钱与客户尽调 AML/KYC,
+typologies report,类型报告,反洗钱与客户尽调 AML/KYC,
+trade-based money laundering (TBML),贸易洗钱,反洗钱与客户尽调 AML/KYC,
+invoice manipulation,发票操纵,反洗钱与客户尽调 AML/KYC,
+over- / under-invoicing,高开发票 / 低开发票,反洗钱与客户尽调 AML/KYC,
+phantom shipment,幽灵货运,反洗钱与客户尽调 AML/KYC,单证齐全但货根本不存在
+carousel fraud,旋转木马骗税,反洗钱与客户尽调 AML/KYC,循环开具增值税发票骗取退税
+shell company,空壳公司,反洗钱与客户尽调 AML/KYC,
+front company,前台公司,反洗钱与客户尽调 AML/KYC,
+nominee director / shareholder,名义董事 / 名义股东,反洗钱与客户尽调 AML/KYC,
+bearer share,无记名股票,反洗钱与客户尽调 AML/KYC,
+trust and company service provider (TCSP),信托与公司服务提供商,反洗钱与客户尽调 AML/KYC,
+professional enabler,专业协助者,反洗钱与客户尽调 AML/KYC,律师、会计师等为洗钱提供便利的人
+gatekeeper,守门人,反洗钱与客户尽调 AML/KYC,金融业在反洗钱中的角色定位
+cuckoo smurfing,杜鹃式拆分,反洗钱与客户尽调 AML/KYC,利用不知情第三方账户过账的洗钱手法
+hawala / hundi,哈瓦拉,反洗钱与客户尽调 AML/KYC,非正式跨境汇款体系
+underground banking,地下钱庄,反洗钱与客户尽调 AML/KYC,
+money mule / mule account,钱骡 / 钱骡账户,反洗钱与客户尽调 AML/KYC,
+authorised push payment (APP) fraud,授权推送支付欺诈,反洗钱与客户尽调 AML/KYC,英国最受关注的支付欺诈类型
+romance fraud,情感诈骗,反洗钱与客户尽调 AML/KYC,
+invoice redirection fraud,发票改向欺诈,反洗钱与客户尽调 AML/KYC,
+CEO fraud,冒充高管诈骗,反洗钱与客户尽调 AML/KYC,
+pig butchering,杀猪盘,反洗钱与客户尽调 AML/KYC,
+crypto laundering,加密货币洗钱,反洗钱与客户尽调 AML/KYC,
+mixer / tumbler,混币器,反洗钱与客户尽调 AML/KYC,隐私增强服务，受制裁关注
+privacy coin,隐私币,反洗钱与客户尽调 AML/KYC,
+chain-hopping,链跳,反洗钱与客户尽调 AML/KYC,在不同区块链间转移以躲避追踪
+national risk assessment (NRA),国家风险评估,反洗钱与客户尽调 AML/KYC,
+business-wide risk assessment (BWRA),全业务风险评估,反洗钱与客户尽调 AML/KYC,英国 MLR 2017 的强制要求
+geographic risk,地域风险,反洗钱与客户尽调 AML/KYC,
+product / service risk,产品服务风险,反洗钱与客户尽调 AML/KYC,
+delivery channel risk,交付渠道风险,反洗钱与客户尽调 AML/KYC,
+control testing,控制测试,反洗钱与客户尽调 AML/KYC,
+independent testing,独立测试,反洗钱与客户尽调 AML/KYC,
+compliance monitoring,合规监控,反洗钱与客户尽调 AML/KYC,
+quality assurance (QA),质量保证,反洗钱与客户尽调 AML/KYC,
+first / second / third line,第一 / 第二 / 三道防线,反洗钱与客户尽调 AML/KYC,
+aged alerts,超期未处理警报,反洗钱与客户尽调 AML/KYC,
+key risk indicator (KRI),关键风险指标,反洗钱与客户尽调 AML/KYC,先行指标，用于预警
+key performance indicator (KPI),关键绩效指标,反洗钱与客户尽调 AML/KYC,
+management information (MI),管理信息,反洗钱与客户尽调 AML/KYC,给管理层的量化报告
+board reporting,董事会报告,反洗钱与客户尽调 AML/KYC,
+policy owner,政策责任人,反洗钱与客户尽调 AML/KYC,
+tone from the top,高层基调,反洗钱与客户尽调 AML/KYC,
+whistleblowing,内部举报,反洗钱与客户尽调 AML/KYC,英国受 1998 年公共利益披露法保护
+remediation plan,整改计划,反洗钱与客户尽调 AML/KYC,
+past business review (PBR),历史业务审查,反洗钱与客户尽调 AML/KYC,
+training completion rate,培训完成率,反洗钱与客户尽调 AML/KYC,
+regulatory expectation,监管期望,反洗钱与客户尽调 AML/KYC,
+consent regime,同意制度,反洗钱与客户尽调 AML/KYC,SAR 上报后等待 NCA 同意才能继续交易
+placement,放置阶段,反洗钱与客户尽调 AML/KYC,洗钱三阶段之首：将现金投入金融体系
+layering,离析阶段,反洗钱与客户尽调 AML/KYC,通过多层交易切断资金与来源的联系
+integration,整合阶段,反洗钱与客户尽调 AML/KYC,资金回流合法经济体系
+mule account / money mule,钱骡账户 / 钱骡,反洗钱与客户尽调 AML/KYC,以佣金诱使他人出借账户
+round-tripping,循环回流,反洗钱与客户尽调 AML/KYC,资金出境后再以投资名义回流
+loan-back scheme,贷款回流式洗钱,反洗钱与客户尽调 AML/KYC,
+APP fraud,授权推送支付欺诈,反洗钱与客户尽调 AML/KYC,Authorised Push Payment，受害者自愿转账
+authorised push payment scam,授权推送支付骗局,反洗钱与客户尽调 AML/KYC,
+phishing / smishing / vishing,钓鱼 / 短信钓鱼 / 电话钓鱼,反洗钱与客户尽调 AML/KYC,
+investment fraud,投资诈骗,反洗钱与客户尽调 AML/KYC,
+boiler room fraud,锅炉房诈骗,反洗钱与客户尽调 AML/KYC,高压电话推销不存在的股票
+pump and dump,拉高出货,反洗钱与客户尽调 AML/KYC,
+unauthorised access fraud,未授权侵入欺诈,反洗钱与客户尽调 AML/KYC,
+internal fraud,内部欺诈,反洗钱与客户尽调 AML/KYC,
+third-party fraud,第三方欺诈,反洗钱与客户尽调 AML/KYC,
+first-party fraud,一方欺诈,反洗钱与客户尽调 AML/KYC,客户本人虚构事实骗贷
+synthetic identity,合成身份,反洗钱与客户尽调 AML/KYC,拼接真实与虚构信息制造的身份
+account takeover,账户劫持,反洗钱与客户尽调 AML/KYC,
+SAR online,英国线上 SAR 提交系统,反洗钱与客户尽调 AML/KYC,
+NCA,英国国家犯罪调查局,反洗钱与客户尽调 AML/KYC,National Crime Agency
+DAML request,洗钱抗辩许可申请,反洗钱与客户尽调 AML/KYC,Defence Against Money Laundering，向 NCA 申请同意后方可交易
+consent / refusal,同意 / 拒绝,反洗钱与客户尽调 AML/KYC,NCA 对 DAML 申请的两种回复
+moratorium period,冻结期,反洗钱与客户尽调 AML/KYC,NCA 未决期间的 7 个工作日交易暂停
+criminal property,犯罪财产,反洗钱与客户尽调 AML/KYC,
+proceeds of crime,犯罪所得,反洗钱与客户尽调 AML/KYC,
+terrorist financing,恐怖融资,反洗钱与客户尽调 AML/KYC,

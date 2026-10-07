@@ -1,0 +1,1932 @@
+﻿nostro account,往账账户,银行业与国际金融市场,我行在他行开立的账户
+vostro account,来账账户,银行业与国际金融市场,他行在我行开立的账户
+correspondent banking,代理行业务,银行业与国际金融市场,跨境汇款的关键通道，反洗钱高风险领域
+remittance,汇款,银行业与国际金融市场,
+letter of credit (L/C),信用证,银行业与国际金融市场,
+trade finance,贸易融资,银行业与国际金融市场,
+syndicated loan,银团贷款,银行业与国际金融市场,
+underwriting,承销 / 包销,银行业与国际金融市场,
+custody,资产托管,银行业与国际金融市场,
+custodian,托管人,银行业与国际金融市场,
+derivative,衍生品,银行业与国际金融市场,
+interest rate swap (IRS),利率互换,银行业与国际金融市场,
+FX spot / forward / swap,即期 / 远期 / 掉期外汇,银行业与国际金融市场,
+settlement,结算、交割,银行业与国际金融市场,
+clearing,清算,银行业与国际金融市场,
+clearing house,清算所,银行业与国际金融市场,
+collateral,担保物、抵押品,银行业与国际金融市场,
+haircut,折扣率、估值减值,银行业与国际金融市场,
+margin call,追加保证金通知,银行业与国际金融市场,
+leverage ratio,杠杆率,银行业与国际金融市场,不依赖风险权重的资本底线指标
+capital adequacy,资本充足,银行业与国际金融市场,
+Basel III,巴塞尔协议 III,银行业与国际金融市场,
+CET1 (Common Equity Tier 1),核心一级资本,银行业与国际金融市场,
+risk-weighted assets (RWA),风险加权资产,银行业与国际金融市场,
+liquidity coverage ratio (LCR),流动性覆盖率,银行业与国际金融市场,优质流动性资产 / 30 天净流出
+net stable funding ratio (NSFR),净稳定资金比率,银行业与国际金融市场,一年期结构性流动性指标
+ICAAP / ILAAP,内部资本 / 流动性充足评估,银行业与国际金融市场,
+stress testing,压力测试,银行业与国际金融市场,
+balance sheet,资产负债表,银行业与国际金融市场,
+provisioning,计提拨备,银行业与国际金融市场,
+impairment,减值,银行业与国际金融市场,
+non-performing loan (NPL),不良贷款,银行业与国际金融市场,
+exposure,风险敞口,银行业与国际金融市场,
+counterparty / counterparty risk,交易对手 / 交易对手风险,银行业与国际金融市场,
+fiduciary duty,受托责任,银行业与国际金融市场,
+mandate,委托、授权,银行业与国际金融市场,客户给出的投资授权范围
+prospectus,招股说明书,银行业与国际金融市场,
+ISDA Master Agreement,国际掉期与衍生工具主协议,银行业与国际金融市场,
+SWIFT MT103 / MT202,客户汇款 / 行间头寸调拨报文,银行业与国际金融市场,
+IBAN / BIC,国际银行账号 / 银行识别码,银行业与国际金融市场,
+CHAPS,英国大额英镑实时清算系统,银行业与国际金融市场,Clearing House Automated Payment System，同日到账
+BACS,英国批量自动清算系统,银行业与国际金融市场,Bacs Credit / Bacs Direct Debit，通常 3 个工作日
+Faster Payments,英国快速支付系统,银行业与国际金融市场,小额英镑实时到账，7×24 小时
+SEPA,单一欧元支付区,银行业与国际金融市场,Single Euro Payments Area
+open banking,开放银行,银行业与国际金融市场,英国是这一制度的发源地，由 CMA 强制推行
+PSD2,支付服务指令二,银行业与国际金融市场,
+e-money institution (EMI),电子货币机构,银行业与国际金融市场,
+onboarding / offboarding,客户准入 / 客户退出,银行业与国际金融市场,
+KYC refresh,客户尽调定期更新,银行业与国际金融市场,
+de-risking,去风险化（退出高风险客户）,银行业与国际金融市场,整类退出某客户群，监管机构普遍不鼓励
+ring-fencing,业务隔离（零售与投行分离）,银行业与国际金融市场,
+resolution / bail-in,处置 / 内部纾困,银行业与国际金融市场,
+securitisation,证券化,银行业与国际金融市场,
+repo (repurchase agreement),回购,银行业与国际金融市场,
+reverse repo,逆回购,银行业与国际金融市场,
+netting,净额结算,银行业与国际金融市场,
+sub-participation,分参与,银行业与国际金融市场,不改变与原债务人的法律关系
+facility / drawdown,授信额度 / 提款,银行业与国际金融市场,
+covenant,契约条款（贷款合同中的承诺）,银行业与国际金融市场,
+payment rail,支付通道,银行业与国际金融市场,
+instant payment,即时支付,银行业与国际金融市场,
+RTGS (real-time gross settlement),实时全额清算系统,银行业与国际金融市场,
+ISO 20022,国际支付报文标准（MX 报文）,银行业与国际金融市场,结构化报文的全球统一格式，取代传统 SWIFT MT
+SWIFT gpi,全球支付创新（可追踪跨境汇款）,银行业与国际金融市场,Global Payments Innovation，提供汇款全程追踪
+standing settlement instruction (SSI),标准结算指令,银行业与国际金融市场,
+trade date / value date,交易日 / 起息日,银行业与国际金融市场,
+T+2,交易后第二个工作日交收,银行业与国际金融市场,
+payment versus payment (PvP),付款交割同步,银行业与国际金融市场,外汇结算的经典风险缓释安排
+delivery versus payment (DvP),券款对付,银行业与国际金融市场,
+free of payment (FoP),纯券过户（不带资金交收）,银行业与国际金融市场,
+settlement risk,结算风险,银行业与国际金融市场,
+Herstatt risk,赫斯塔特风险,银行业与国际金融市场,跨时区结算导致的一方已付、一方未付风险
+novation,债务更替,银行业与国际金融市场,把一方权利义务整体替换为第三方
+assignment,债权转让,银行业与国际金融市场,与 novation 的区别是原方仍可能保留义务
+revolving credit facility (RCF),循环信贷额度,银行业与国际金融市场,
+term loan,定期贷款,银行业与国际金融市场,
+bridge loan,过桥贷款,银行业与国际金融市场,
+project finance,项目融资,银行业与国际金融市场,
+structured finance,结构融资,银行业与国际金融市场,
+asset-backed securities (ABS),资产支持证券,银行业与国际金融市场,
+covered bond,担保债券,银行业与国际金融市场,
+senior / subordinated debt,优先债 / 次级债,银行业与国际金融市场,
+event of default (EOD),违约事件,银行业与国际金融市场,
+financial covenant,财务承诺条款,银行业与国际金融市场,如杠杆率、利息覆盖倍数
+forbearance,宽容处理、暂缓执行,银行业与国际金融市场,
+work-out / restructuring,债务重组、不良化解,银行业与国际金融市场,
+expected credit loss (ECL),预期信用损失,银行业与国际金融市场,减值计提的三阶段模型
+IFRS 9,国际财务报告准则第 9 号,银行业与国际金融市场,决定减值三阶段划分
+risk appetite statement (RAS),风险偏好声明,银行业与国际金融市场,
+ALM (asset-liability management),资产负债管理,银行业与国际金融市场,
+net interest income (NII),净利息收入,银行业与国际金融市场,
+cost-income ratio,成本收入比,银行业与国际金融市场,
+return on equity (RoE),净资产收益率,银行业与国际金融市场,
+RAROC,风险调整后资本回报率,银行业与国际金融市场,
+wholesale funding,批发融资,银行业与国际金融市场,
+deposit franchise,存款基础,银行业与国际金融市场,
+true sale,真实出售,银行业与国际金融市场,证券化中资产是否真正出表的关键判断
+SPV (special purpose vehicle),特殊目的载体,银行业与国际金融市场,
+banking book / trading book,银行账簿 / 交易账簿,银行业与国际金融市场,
+mark-to-market,按市值计价,银行业与国际金融市场,
+fair value,公允价值,银行业与国际金融市场,
+initial margin / variation margin,初始保证金 / 变动保证金,银行业与国际金融市场,
+central counterparty (CCP),中央对手方,银行业与国际金融市场,
+reconciliation,对账,银行业与国际金融市场,
+nostro break,往账差异,银行业与国际金融市场,
+suspense account,暂记账户,银行业与国际金融市场,款项归属不明时暂时挂账
+dormant account,休眠账户,银行业与国际金融市场,
+legal entity identifier (LEI),法人机构识别编码,银行业与国际金融市场,
+cash pooling,现金池,银行业与国际金融市场,集团资金归集安排
+securities lending,证券借贷,银行业与国际金融市场,
+sub-custody,次托管,银行业与国际金融市场,
+corporate actions,公司行为,银行业与国际金融市场,分红、配股、股东大会等
+margin lending,保证金贷款,银行业与国际金融市场,
+structured product,结构性产品,银行业与国际金融市场,零售分销适格性是监管关注重点
+payment system,支付系统,银行业与国际金融市场,
+RTGS,实时全额结算系统,银行业与国际金融市场,Real-Time Gross Settlement，英国 CHAPS 即属此类
+Fedwire,美联储资金转账系统,银行业与国际金融市场,
+TARGET2,欧洲央行实时清算系统,银行业与国际金融市场,
+ACH,自动清算所,银行业与国际金融市场,Automated Clearing House，美国批量支付网络
+pacs.008,客户贷记转账报文,银行业与国际金融市场,ISO 20022 中最核心的支付报文
+camt.053,账户对账单报文,银行业与国际金融市场,
+SWIFT MT103,客户汇款报文,银行业与国际金融市场,传统跨境汇款主报文
+UETR,唯一端到端交易参考号,银行业与国际金融市场,Unique End-to-End Transaction Reference，gpi 追踪用
+correspondent bank,代理行,银行业与国际金融市场,
+intermediary bank,中间行,银行业与国际金融市场,转汇链条中的中转机构
+beneficiary bank,收款人银行,银行业与国际金融市场,
+IBAN,国际银行账号,银行业与国际金融市场,
+BIC / SWIFT code,银行识别码,银行业与国际金融市场,
+sort code,英国银行分行代码,银行业与国际金融市场,六位数字，如 20-00-00
+national clearing code,国家清算代码,银行业与国际金融市场,各国本地清算行号的统称
+payer / payee,付款人 / 收款人,银行业与国际金融市场,重音均在第二音节；英式 payee 与 payer 重音一致
+payment instruction,支付指令,银行业与国际金融市场,
+remittance information,汇款附言,银行业与国际金融市场,反洗钱筛查的重点字段，需留意结构化拆分
+straight-through processing (STP),直通式处理,银行业与国际金融市场,无需人工干预的自动处理
+repair queue,待修复队列,银行业与国际金融市场,报文要素不全被挂起的处理流水线
+recall / cancellation,召回 / 撤销,银行业与国际金融市场,支付的追溯处理机制
+money market,货币市场,银行业与国际金融市场,
+SONIA,英镑隔夜指数平均利率,银行业与国际金融市场,Sterling Overnight Index Average，英国无风险利率基准
+SOFR,有担保隔夜融资利率,银行业与国际金融市场,Secured Overnight Financing Rate，美元基准
+€STR,欧元短期利率,银行业与国际金融市场,
+RFR,无风险利率,银行业与国际金融市场,Risk-Free Rate，LIBOR 退场后的替代基准
+term rate,期限利率,银行业与国际金融市场,由隔夜利率推导出的前瞻性期限基准
+compounded rate,复利利率,银行业与国际金融市场,隔夜利率回溯复利计算法
+basis point (bp),基点,银行业与国际金融市场,万分之一，100bp = 1%
+yield curve,收益率曲线,银行业与国际金融市场,
+HQLA,优质流动性资产,银行业与国际金融市场,High-Quality Liquid Assets
+liquidity buffer,流动性缓冲,银行业与国际金融市场,
+deposit runoff,存款流失,银行业与国际金融市场,压力测试中的核心假设之一
+deposit insurance,存款保险,银行业与国际金融市场,"英国 FSCS 保障上限为每人每机构 85,000 英镑"
+CET1 ratio,核心一级资本充足率,银行业与国际金融市场,Common Equity Tier 1
+Tier 1 / Tier 2 capital,一级 / 二级资本,银行业与国际金融市场,
+MREL,最低自有资金与合格负债要求,银行业与国际金融市场,欧盟/英国版 TLAC
+TLAC,总损失吸收能力,银行业与国际金融市场,Total Loss-Absorbing Capacity
+Pillar 1 / 2 / 3,第一 / 二 / 三支柱,银行业与国际金融市场,最低资本要求 / 监管审查 / 市场约束
+ICAAP,内部资本充足评估程序,银行业与国际金融市场,银行自评估资本充足性的年度作业
+ILAAP,内部流动性充足评估程序,银行业与国际金融市场,
+capital planning buffer,资本规划缓冲,银行业与国际金融市场,
+recovery plan,恢复计划,银行业与国际金融市场,危机自救方案
+resolution plan,处置计划,银行业与国际金融市场,有序倒闭方案
+living will,生前遗嘱,银行业与国际金融市场,处置计划的通俗说法
+repo / reverse repo,回购 / 逆回购,银行业与国际金融市场,回购是融资，逆回购是融出资金
+prime brokerage,主经纪商业务,银行业与国际金融市场,
+special purpose vehicle (SPV),特殊目的实体,银行业与国际金融市场,
+set-off,抵销,银行业与国际金融市场,
+close-out netting,终止净额结算,银行业与国际金融市场,ISDA 主协议的核心机制
+wholesale banking,批发银行,银行业与国际金融市场,
+retail banking,零售银行,银行业与国际金融市场,
+private banking,私人银行,银行业与国际金融市场,
+wealth management,财富管理,银行业与国际金融市场,
+corporate banking,对公业务,银行业与国际金融市场,
+treasury,资金部 / 司库,银行业与国际金融市场,
+ALM,资产负债管理,银行业与国际金融市场,Asset-Liability Management
+nostro reconciliation,往账对账,银行业与国际金融市场,
+anti-money laundering (AML),反洗钱,反洗钱与客户尽调 AML/KYC,
+counter-terrorist financing (CTF),反恐融资,反洗钱与客户尽调 AML/KYC,
+money laundering (ML),洗钱,反洗钱与客户尽调 AML/KYC,
+terrorist financing (TF),恐怖融资,反洗钱与客户尽调 AML/KYC,
+financial crime,金融犯罪,反洗钱与客户尽调 AML/KYC,银行内部通常用这个词统称 AML、制裁、欺诈、贿赂
+financial crime compliance (FCC),金融犯罪合规,反洗钱与客户尽调 AML/KYC,
+predicate offence,上游犯罪,反洗钱与客户尽调 AML/KYC,
+placement / layering / integration,处置 / 离析 / 整合（洗钱三阶段）,反洗钱与客户尽调 AML/KYC,
+Know Your Customer (KYC),客户身份识别,反洗钱与客户尽调 AML/KYC,
+Customer Due Diligence (CDD),客户尽职调查,反洗钱与客户尽调 AML/KYC,
+Enhanced Due Diligence (EDD),强化尽职调查,反洗钱与客户尽调 AML/KYC,
+Simplified Due Diligence (SDD),简化尽职调查,反洗钱与客户尽调 AML/KYC,
+ongoing monitoring,持续监测,反洗钱与客户尽调 AML/KYC,
+Ultimate Beneficial Owner (UBO),最终受益人,反洗钱与客户尽调 AML/KYC,
+beneficial ownership,受益所有权,反洗钱与客户尽调 AML/KYC,
+Politically Exposed Person (PEP),政治公众人物,反洗钱与客户尽调 AML/KYC,
+source of funds (SOF),资金来源,反洗钱与客户尽调 AML/KYC,这笔钱从哪来
+source of wealth (SOW),财富来源,反洗钱与客户尽调 AML/KYC,这个人的全部身家怎么来的
+adverse media,负面舆情筛查,反洗钱与客户尽调 AML/KYC,
+sanctions screening,制裁筛查,反洗钱与客户尽调 AML/KYC,
+suspicious activity report (SAR),可疑活动报告（AML 语境）,反洗钱与客户尽调 AML/KYC,英国向 NCA 提交；同缩写也指数据主体访问请求
+suspicious transaction report (STR),可疑交易报告,反洗钱与客户尽调 AML/KYC,
+tipping off,泄密（向当事人透露已被上报）,反洗钱与客户尽调 AML/KYC,英国法下的刑事犯罪
+Defence Against Money Laundering (DAML),反洗钱抗辩 / 同意申请,反洗钱与客户尽调 AML/KYC,
+Money Laundering Reporting Officer (MLRO),反洗钱报告官,反洗钱与客户尽调 AML/KYC,
+Nominated Officer,指定报告官,反洗钱与客户尽调 AML/KYC,
+Financial Intelligence Unit (FIU),金融情报中心,反洗钱与客户尽调 AML/KYC,
+National Crime Agency (NCA),英国国家犯罪调查局,反洗钱与客户尽调 AML/KYC,
+UKFIU,英国金融情报中心,反洗钱与客户尽调 AML/KYC,
+transaction monitoring (TM),交易监测,反洗钱与客户尽调 AML/KYC,
+alert / alert triage,警报 / 警报分诊,反洗钱与客户尽调 AML/KYC,
+red flag,危险信号,反洗钱与客户尽调 AML/KYC,
+structuring / smurfing,拆分交易,反洗钱与客户尽调 AML/KYC,刻意压低于申报门槛，简称 structured deposits
+threshold,阈值,反洗钱与客户尽调 AML/KYC,
+risk-based approach (RBA),风险为本方法,反洗钱与客户尽调 AML/KYC,FATF 推荐的核心监管原则
+customer risk rating / risk scoring,客户风险评级 / 风险评分,反洗钱与客户尽调 AML/KYC,
+risk appetite,风险偏好,反洗钱与客户尽调 AML/KYC,反洗钱中用于界定可接受客户与业务
+Money Laundering Regulations 2017,英国反洗钱条例 2017,反洗钱与客户尽调 AML/KYC,
+JMLSG Guidance,英国反洗钱行业指引,反洗钱与客户尽调 AML/KYC,
+6AMLD,第六号欧盟反洗钱指令,反洗钱与客户尽调 AML/KYC,
+record keeping / audit trail,记录保存 / 审计轨迹,反洗钱与客户尽调 AML/KYC,
+escalate / escalation memo,上报 / 上报备忘,反洗钱与客户尽调 AML/KYC,
+correspondent banking due diligence,代理行尽职调查,反洗钱与客户尽调 AML/KYC,
+wire transfer,电汇,反洗钱与客户尽调 AML/KYC,
+unusual activity,异常活动,反洗钱与客户尽调 AML/KYC,
+customer risk assessment (CRA),客户风险评估,反洗钱与客户尽调 AML/KYC,
+trigger event,触发事件,反洗钱与客户尽调 AML/KYC,如交易异常、负面新闻、客户信息变更
+periodic review,定期复核,反洗钱与客户尽调 AML/KYC,
+remediation,整改,反洗钱与客户尽调 AML/KYC,
+lookback review,回溯审查,反洗钱与客户尽调 AML/KYC,
+typology,（犯罪）类型学,反洗钱与客户尽调 AML/KYC,
+typologies report,类型报告,反洗钱与客户尽调 AML/KYC,
+trade-based money laundering (TBML),贸易洗钱,反洗钱与客户尽调 AML/KYC,
+invoice manipulation,发票操纵,反洗钱与客户尽调 AML/KYC,
+over- / under-invoicing,高开发票 / 低开发票,反洗钱与客户尽调 AML/KYC,
+phantom shipment,幽灵货运,反洗钱与客户尽调 AML/KYC,单证齐全但货根本不存在
+carousel fraud,旋转木马骗税,反洗钱与客户尽调 AML/KYC,循环开具增值税发票骗取退税
+shell company,空壳公司,反洗钱与客户尽调 AML/KYC,
+front company,前台公司,反洗钱与客户尽调 AML/KYC,
+nominee director / shareholder,名义董事 / 名义股东,反洗钱与客户尽调 AML/KYC,
+bearer share,无记名股票,反洗钱与客户尽调 AML/KYC,
+trust and company service provider (TCSP),信托与公司服务提供商,反洗钱与客户尽调 AML/KYC,
+professional enabler,专业协助者,反洗钱与客户尽调 AML/KYC,律师、会计师等为洗钱提供便利的人
+gatekeeper,守门人,反洗钱与客户尽调 AML/KYC,金融业在反洗钱中的角色定位
+cuckoo smurfing,杜鹃式拆分,反洗钱与客户尽调 AML/KYC,利用不知情第三方账户过账的洗钱手法
+hawala / hundi,哈瓦拉,反洗钱与客户尽调 AML/KYC,非正式跨境汇款体系
+underground banking,地下钱庄,反洗钱与客户尽调 AML/KYC,
+money mule / mule account,钱骡 / 钱骡账户,反洗钱与客户尽调 AML/KYC,
+authorised push payment (APP) fraud,授权推送支付欺诈,反洗钱与客户尽调 AML/KYC,英国最受关注的支付欺诈类型
+romance fraud,情感诈骗,反洗钱与客户尽调 AML/KYC,
+invoice redirection fraud,发票改向欺诈,反洗钱与客户尽调 AML/KYC,
+CEO fraud,冒充高管诈骗,反洗钱与客户尽调 AML/KYC,
+pig butchering,杀猪盘,反洗钱与客户尽调 AML/KYC,
+crypto laundering,加密货币洗钱,反洗钱与客户尽调 AML/KYC,
+mixer / tumbler,混币器,反洗钱与客户尽调 AML/KYC,隐私增强服务，受制裁关注
+privacy coin,隐私币,反洗钱与客户尽调 AML/KYC,
+chain-hopping,链跳,反洗钱与客户尽调 AML/KYC,在不同区块链间转移以躲避追踪
+national risk assessment (NRA),国家风险评估,反洗钱与客户尽调 AML/KYC,
+business-wide risk assessment (BWRA),全业务风险评估,反洗钱与客户尽调 AML/KYC,英国 MLR 2017 的强制要求
+geographic risk,地域风险,反洗钱与客户尽调 AML/KYC,
+product / service risk,产品服务风险,反洗钱与客户尽调 AML/KYC,
+delivery channel risk,交付渠道风险,反洗钱与客户尽调 AML/KYC,
+control testing,控制测试,反洗钱与客户尽调 AML/KYC,
+independent testing,独立测试,反洗钱与客户尽调 AML/KYC,
+compliance monitoring,合规监控,反洗钱与客户尽调 AML/KYC,
+quality assurance (QA),质量保证,反洗钱与客户尽调 AML/KYC,
+first / second / third line,第一 / 第二 / 三道防线,反洗钱与客户尽调 AML/KYC,
+aged alerts,超期未处理警报,反洗钱与客户尽调 AML/KYC,
+key risk indicator (KRI),关键风险指标,反洗钱与客户尽调 AML/KYC,先行指标，用于预警
+key performance indicator (KPI),关键绩效指标,反洗钱与客户尽调 AML/KYC,
+management information (MI),管理信息,反洗钱与客户尽调 AML/KYC,给管理层的量化报告
+board reporting,董事会报告,反洗钱与客户尽调 AML/KYC,
+policy owner,政策责任人,反洗钱与客户尽调 AML/KYC,
+tone from the top,高层基调,反洗钱与客户尽调 AML/KYC,
+whistleblowing,内部举报,反洗钱与客户尽调 AML/KYC,英国受 1998 年公共利益披露法保护
+remediation plan,整改计划,反洗钱与客户尽调 AML/KYC,
+past business review (PBR),历史业务审查,反洗钱与客户尽调 AML/KYC,
+training completion rate,培训完成率,反洗钱与客户尽调 AML/KYC,
+regulatory expectation,监管期望,反洗钱与客户尽调 AML/KYC,
+consent regime,同意制度,反洗钱与客户尽调 AML/KYC,SAR 上报后等待 NCA 同意才能继续交易
+placement,放置阶段,反洗钱与客户尽调 AML/KYC,洗钱三阶段之首：将现金投入金融体系
+layering,离析阶段,反洗钱与客户尽调 AML/KYC,通过多层交易切断资金与来源的联系
+integration,整合阶段,反洗钱与客户尽调 AML/KYC,资金回流合法经济体系
+mule account / money mule,钱骡账户 / 钱骡,反洗钱与客户尽调 AML/KYC,以佣金诱使他人出借账户
+round-tripping,循环回流,反洗钱与客户尽调 AML/KYC,资金出境后再以投资名义回流
+loan-back scheme,贷款回流式洗钱,反洗钱与客户尽调 AML/KYC,
+APP fraud,授权推送支付欺诈,反洗钱与客户尽调 AML/KYC,Authorised Push Payment，受害者自愿转账
+authorised push payment scam,授权推送支付骗局,反洗钱与客户尽调 AML/KYC,
+phishing / smishing / vishing,钓鱼 / 短信钓鱼 / 电话钓鱼,反洗钱与客户尽调 AML/KYC,
+investment fraud,投资诈骗,反洗钱与客户尽调 AML/KYC,
+boiler room fraud,锅炉房诈骗,反洗钱与客户尽调 AML/KYC,高压电话推销不存在的股票
+pump and dump,拉高出货,反洗钱与客户尽调 AML/KYC,
+unauthorised access fraud,未授权侵入欺诈,反洗钱与客户尽调 AML/KYC,
+internal fraud,内部欺诈,反洗钱与客户尽调 AML/KYC,
+third-party fraud,第三方欺诈,反洗钱与客户尽调 AML/KYC,
+first-party fraud,一方欺诈,反洗钱与客户尽调 AML/KYC,客户本人虚构事实骗贷
+synthetic identity,合成身份,反洗钱与客户尽调 AML/KYC,拼接真实与虚构信息制造的身份
+account takeover,账户劫持,反洗钱与客户尽调 AML/KYC,
+SAR online,英国线上 SAR 提交系统,反洗钱与客户尽调 AML/KYC,
+NCA,英国国家犯罪调查局,反洗钱与客户尽调 AML/KYC,National Crime Agency
+DAML request,洗钱抗辩许可申请,反洗钱与客户尽调 AML/KYC,Defence Against Money Laundering，向 NCA 申请同意后方可交易
+consent / refusal,同意 / 拒绝,反洗钱与客户尽调 AML/KYC,NCA 对 DAML 申请的两种回复
+moratorium period,冻结期,反洗钱与客户尽调 AML/KYC,NCA 未决期间的 7 个工作日交易暂停
+criminal property,犯罪财产,反洗钱与客户尽调 AML/KYC,
+proceeds of crime,犯罪所得,反洗钱与客户尽调 AML/KYC,
+terrorist financing,恐怖融资,反洗钱与客户尽调 AML/KYC,
+proliferation financing,扩散融资,反洗钱与客户尽调 AML/KYC,为大规模杀伤性武器扩散提供资金
+TF risk assessment,恐怖融资风险评估,反洗钱与客户尽调 AML/KYC,
+risk rating,风险评级,反洗钱与客户尽调 AML/KYC,
+adverse media / negative news,负面新闻筛查,反洗钱与客户尽调 AML/KYC,
+PEP register,政治公众人物名册,反洗钱与客户尽调 AML/KYC,
+relationship manager (RM),客户关系经理,反洗钱与客户尽调 AML/KYC,
+KYC refresh / remediation,KYC 复检 / 存量整改,反洗钱与客户尽调 AML/KYC,
+trigger-based review,事件驱动复检,反洗钱与客户尽调 AML/KYC,
+onboarding,开户准入,反洗钱与客户尽调 AML/KYC,
+offboarding / exit,销户 / 关系退出,反洗钱与客户尽调 AML/KYC,
+financial inclusion,普惠金融,反洗钱与客户尽调 AML/KYC,与去风险化相对的监管关切
+transaction monitoring scenario,交易监测场景,反洗钱与客户尽调 AML/KYC,
+threshold-based rule,阈值型规则,反洗钱与客户尽调 AML/KYC,
+typology coverage,类型学覆盖度,反洗钱与客户尽调 AML/KYC,
+alert-to-case conversion rate,警报转案件率,反洗钱与客户尽调 AML/KYC,衡量监测系统效率的核心指标
+false positive rate,误报率,反洗钱与客户尽调 AML/KYC,
+tuning / optimisation,调优 / 优化,反洗钱与客户尽调 AML/KYC,
+sample testing,抽样测试,反洗钱与客户尽调 AML/KYC,
+investigative report,调查报告,反洗钱与客户尽调 AML/KYC,
+account,账户,核心词与拼读易错,/əˈkaʊnt/
+balance,余额,核心词与拼读易错,/ˈbæləns/
+debit,借记、借方,核心词与拼读易错,/ˈdebɪt/　英式读 /ˈdebɪt/，重音在第一音节
+credit,贷记、贷方,核心词与拼读易错,/ˈkredɪt/
+deposit,存款,核心词与拼读易错,/dɪˈpɒzɪt/　重音在第二音节，/ɒ/ 是短元音
+withdrawal,取款,核心词与拼读易错,/wɪðˈdrɔːəl/
+transaction,交易,核心词与拼读易错,/trænˈzækʃn/
+transfer,转账、划转,核心词与拼读易错,/ˈtrænsfɜː/　名词重音在前，动词重音在后
+beneficiary,收款人、受益人,核心词与拼读易错,/ˌbenɪˈfɪʃəri/
+ledger,总账、分类账,核心词与拼读易错,/ˈledʒə/
+margin,利差、保证金,核心词与拼读易错,/ˈmɑːdʒɪn/
+fee / charge,手续费、费用,核心词与拼读易错,/fiː/ /tʃɑːdʒ/
+interest rate,利率,核心词与拼读易错,/ˈɪntrəst reɪt/
+principal,本金,核心词与拼读易错,/ˈprɪnsəpl/
+counterparty,交易对手,核心词与拼读易错,/ˈkaʊntəpɑːti/
+liquidity,流动性,核心词与拼读易错,/lɪˈkwɪdəti/
+capital,资本,核心词与拼读易错,/ˈkæpɪtl/
+liability,负债,核心词与拼读易错,/ˌlaɪəˈbɪləti/
+asset,资产,核心词与拼读易错,/ˈæset/
+portfolio,投资组合,核心词与拼读易错,/pɔːtˈfəʊliəʊ/
+on behalf of,代表……,核心词与拼读易错,/ɒn bɪˈhɑːf əv/
+in accordance with,依照、根据,核心词与拼读易错,/ɪn əˈkɔːdns wɪð/　合规文书第一高频，务必练到脱口而出
+audit,审计、审计工作,核心词与拼读易错,/ˈɔːdɪt/　首音节是长音 /ɔː/（奥），不是 /aʊ/
+authority,主管机关、授权,核心词与拼读易错,/ɔːˈθɒrəti/　重音在第二音节；英式首音 /ɔː/
+compliance,合规,核心词与拼读易错,/kəmˈplaɪəns/　重音在 -PLI-，因为来自 comply /kəmˈplaɪ/
+regulation,法规、条例,核心词与拼读易错,/ˌreɡjuˈleɪʃn/　重音在 -LA-，前两音节全部弱读
+regulatory,监管的,核心词与拼读易错,/ˈreɡjələtri/　重音在首音节，与 regulation 位置相反
+proportionate,相称的、成比例的,核心词与拼读易错,/prəˈpɔːʃənət/　形容词尾 -ate 弱读成 /ət/，绝不读 /eɪt/
+inadequate,不充分的、不适当的,核心词与拼读易错,/ɪnˈædɪkwət/　重音在 -AD-；尾 -ate 同样弱读
+material,重大的、实质性的,核心词与拼读易错,/məˈtɪəriəl/　英式读三音节 /məˈtɪə-ri-əl/，重音在第二音节
+scrutiny,审查、审视,核心词与拼读易错,/ˈskruːtəni/　首音节 /skruː/ 三辅音连缀；中间弱化成 /tə/
+jurisdiction,司法管辖区、管辖,核心词与拼读易错,/ˌdʒʊərɪsˈdɪkʃn/　重音在 -DIC-；首音节 /dʒʊə/ 常被压掉
+licence,许可证、牌照（英式名词）,核心词与拼读易错,/ˈlaɪsns/　英式：名词 -ce，动词 license -se，读音相同
+practise,执业、从事（英式动词）,核心词与拼读易错,/ˈpræktɪs/　英式：动词 -se，名词 practice -ce
+schedule,时间表、排期,核心词与拼读易错,/ˈʃedjuːl/　英式读 /ʃed-/（谢），不是美式 /sked-/
+programme,计划、方案（英式拼法）,核心词与拼读易错,/ˈprəʊɡræm/　英式拼 -me 结尾，美式拼 program
+cheque,支票（英式拼法）,核心词与拼读易错,/tʃek/　英式仅「支票」义用 cheque，核对义用 check
+instalment,分期付款,核心词与拼读易错,/ɪnˈstɔːlmənt/　英式单 l；a 读 /ɔː/
+judgement,判断、判决,核心词与拼读易错,/ˈdʒʌdʒmənt/　法律文本保留 e；其他语境用 judgment
+defence,抗辩、辩护（英式拼法）,核心词与拼读易错,/dɪˈfens/　英式 -ce，美式 defense；同族 defend 读 /dɪˈfend/
+endeavour,尽力、努力,核心词与拼读易错,/ɪnˈdevə/　英式 -our；best 与 reasonable endeavours 法律强度不同
+organisation,组织、机构,核心词与拼读易错,/ˌɔːɡənaɪˈzeɪʃn/　第三音节是 /naɪ/；英式 -isation 拼法
+escalate,上报、升级处理,核心词与拼读易错,/ˈeskəleɪt/　重音在首音节；动词尾读 /eɪt/
+mitigate,减轻、缓解,核心词与拼读易错,/ˈmɪtɪɡeɪt/　重音在首音节；名词 mitigation 同
+corroborate,佐证、印证,核心词与拼读易错,/kəˈrɒbəreɪt/　双 r 拼写；重音在 -ROB-
+straightforward,直接的、简单的,核心词与拼读易错,/ˌstreɪtˈfɔːwəd/　两个 t 相连只发一个音
+underlying,底层的、潜在的,核心词与拼读易错,/ˌʌndəˈlaɪɪŋ/　/aɪ/ 与 /ɪ/ 直接相接，中间没有 /n/
+adverse,不利的、负面的,核心词与拼读易错,/ˈædvɜːs/　重音在首音节，不是 /ədˈvɜːs/
+legitimate,合法的、正当的,核心词与拼读易错,/lɪˈdʒɪtɪmət/　重音在第二音节；尾 -ate 弱读
+evidence,证据；（动词）证明,核心词与拼读易错,/ˈevɪdens/　名词动词同音同重音，靠句子位置判断
+enquiry,询问、查询（英式拼法）,核心词与拼读易错,/ɪnˈkwaɪəri/　英式通用 enquiry；正式调查用 inquiry，同音
+sanctions regime,制裁制度,制裁与出口管制,
+designated person / entity,被列名个人 / 实体,制裁与出口管制,
+asset freeze,资产冻结,制裁与出口管制,制裁中最高频的即时义务
+OFAC,美国财政部海外资产控制办公室,制裁与出口管制,
+SDN List,特别指定国民名单,制裁与出口管制,美国 OFAC 的核心制裁名单
+50% Rule,50% 规则,制裁与出口管制,被制裁方直接或间接持股过半即视为受制裁
+OFSI,英国金融制裁执行办公室,制裁与出口管制,Office of Financial Sanctions Implementation
+EU sanctions,欧盟制裁,制裁与出口管制,
+secondary sanctions,次级制裁,制裁与出口管制,美国对非美国主体的域外制裁
+sectoral sanctions,行业制裁,制裁与出口管制,针对特定行业而非全面禁运
+comprehensive sanctions,全面制裁,制裁与出口管制,
+circumvention / evasion,规避 / 逃避,制裁与出口管制,
+screening list,筛查名单,制裁与出口管制,
+fuzzy matching,模糊匹配,制裁与出口管制,允许拼写差异的筛查算法
+false positive,误报,制裁与出口管制,
+true match,真实命中,制裁与出口管制,
+potential match,潜在命中,制裁与出口管制,
+name / transaction / payment screening,名单 / 交易 / 支付筛查,制裁与出口管制,
+licence (UK) / license (US),许可,制裁与出口管制,注意英式拼写 licence 是名词
+derogation / exemption,例外许可 / 豁免,制裁与出口管制,
+blocked transaction,被冻结交易,制裁与出口管制,
+rejected payment,被拒付的款项,制裁与出口管制,
+export control,出口管制,制裁与出口管制,
+dual-use goods,两用物项,制裁与出口管制,民用与军用皆可
+military end-user,军事最终用户,制裁与出口管制,
+end-use,最终用途,制裁与出口管制,
+ECCN (Export Control Classification Number),出口管制分类编码,制裁与出口管制,
+embargo,禁运,制裁与出口管制,
+freeze and report,冻结并上报,制裁与出口管制,
+vessel screening,船舶筛查,制裁与出口管制,
+ownership and control test,所有权与控制判定,制裁与出口管制,英国法下控制权可低于 50%
+humanitarian carve-out,人道主义例外,制裁与出口管制,
+sanctions compliance programme,制裁合规体系,制裁与出口管制,
+HM Treasury,英国财政部,制裁与出口管制,英国制裁的发布机关
+Sanctions and Anti-Money Laundering Act 2018,2018 年制裁与反洗钱法,制裁与出口管制,英国脱欧后制裁制度的法律基础
+consolidated list,综合名单,制裁与出口管制,英国 OFSI 维护的金融制裁名单
+UK Sanctions List,英国制裁名单,制裁与出口管制,
+UN Security Council resolution,联合国安理会决议,制裁与出口管制,
+BIS (Bureau of Industry and Security),美国工业与安全局,制裁与出口管制,
+EAR (Export Administration Regulations),美国出口管理条例,制裁与出口管制,
+ITAR,美国国际武器贸易条例,制裁与出口管制,
+Entity List,实体清单,制裁与出口管制,美国商务部限制出口的实体名单
+Denied Persons List,拒绝人员清单,制裁与出口管制,
+Affiliates Rule,关联方规则,制裁与出口管制,
+sanctions nexus,制裁关联点,制裁与出口管制,判断一笔业务是否触及制裁的连结点
+US person,美国人士,制裁与出口管制,美国制裁域外适用的核心概念
+facilitation,促成,制裁与出口管制,禁止协助他人规避制裁
+economic resources,经济资源,制裁与出口管制,
+making available,提供（资金或经济资源）,制裁与出口管制,制裁禁令中的核心动词
+dominant influence,支配性影响,制裁与出口管制,
+flag state,船旗国,制裁与出口管制,
+AIS (Automatic Identification System),船舶自动识别系统,制裁与出口管制,
+dark fleet,影子船队,制裁与出口管制,关闭 AIS 以规避制裁的油轮群
+ship-to-ship transfer,船对船过驳,制裁与出口管制,
+price cap,价格上限,制裁与出口管制,G7 对俄油的价格上限机制
+attestation (price cap),价格上限声明,制裁与出口管制,
+certificate of origin,原产地证明,制裁与出口管制,
+stop list / watchlist,禁止名单 / 观察名单,制裁与出口管制,
+rescreening,重新筛查,制裁与出口管制,
+lookback screening,回溯筛查,制裁与出口管制,
+screening tuning,筛查规则调优,制裁与出口管制,降低误报率的核心工作
+voluntary self-disclosure,自愿披露,制裁与出口管制,可显著减轻处罚的关键动作
+civil penalty / criminal penalty,民事处罚 / 刑事处罚,制裁与出口管制,
+strict liability,严格责任,制裁与出口管制,制裁违规通常不要求证明主观故意
+reasonable cause to suspect,有合理理由怀疑,制裁与出口管制,
+funds and economic resources,资金与经济资源,制裁与出口管制,冻结令的法定标的表述
+travel ban,旅行禁令,制裁与出口管制,
+arms embargo,武器禁运,制裁与出口管制,
+extraterritorial reach,域外效力,制裁与出口管制,
+50 per cent rule,50% 规则,制裁与出口管制,受制裁主体合计持股达 50% 的实体视为受制裁
+circumvention,规避,制裁与出口管制,
+sanctions evasion,制裁规避,制裁与出口管制,主观故意的违规行为
+general licence,一般许可,制裁与出口管制,无需逐一申请、满足条件即可适用的豁免
+specific licence,特定许可,制裁与出口管制,个案申请
+derogation,例外减免,制裁与出口管制,
+delisting / de-listing request,除名申请,制裁与出口管制,
+potential match / partial match,潜在命中,制裁与出口管制,
+name screening,名单筛查,制裁与出口管制,
+payment screening,支付筛查,制裁与出口管制,在报文流转环节实时拦截
+transaction screening,交易筛查,制裁与出口管制,
+threshold / sensitivity,阈值 / 灵敏度,制裁与出口管制,调高降误报、调低防漏报的权衡
+alert disposition,警报处置结论,制裁与出口管制,
+whitelist / suppression list,白名单 / 抑制名单,制裁与出口管制,须有独立复核机制，否则是监管雷区
+screening tool coverage,筛查工具覆盖率,制裁与出口管制,
+fleet screening,全量批次筛查,制裁与出口管制,
+ownership screening,股权穿透筛查,制裁与出口管制,
+shadow fleet,影子船队,制裁与出口管制,通过换旗、关 AIS 规避价格上限与制裁
+AIS,船舶自动识别系统,制裁与出口管制,Automatic Identification System，常被关闭以隐藏轨迹
+dark fleet activity,暗船队活动,制裁与出口管制,
+G7 price cap,七国集团价格上限,制裁与出口管制,针对俄罗斯原油与成品油
+attestation,合规声明,制裁与出口管制,供应链中下游主体出具的用途与价格承诺
+end-use statement,最终用途声明,制裁与出口管制,
+catch-all control,兜底管制,制裁与出口管制,物项本身未被列名但用途可疑即可管制
+export control classification number (ECCN),出口管制分类编号,制裁与出口管制,
+technology transfer,技术转移,制裁与出口管制,
+deemed export,视同出口,制裁与出口管制,向境内外国人披露技术即视为出口
+embargoed jurisdiction,受禁运法域,制裁与出口管制,
+ownership chain,股权链条,制裁与出口管制,
+control via other means,其他方式控制,制裁与出口管制,如任命多数董事、主导经营
+sanctions risk assessment,制裁风险评估,制裁与出口管制,
+monetary penalty,罚款,制裁与出口管制,
+economic crime,经济犯罪,金融犯罪、欺诈与执法,英国《2023 年经济犯罪与企业透明法》的法定用语
+fraud,欺诈,金融犯罪、欺诈与执法,
+bribery and corruption,贿赂与腐败,金融犯罪、欺诈与执法,
+tax evasion,逃税,金融犯罪、欺诈与执法,刑事犯罪；与 tax avoidance 有本质区别
+tax avoidance,避税,金融犯罪、欺诈与执法,合法但可能被认定为 aggressive
+facilitation of tax evasion,协助逃税,金融犯罪、欺诈与执法,英国 2017 年刑事财政法创设的企业犯罪
+failure to prevent,未能预防,金融犯罪、欺诈与执法,英国法下企业犯罪的典型归责模式
+failure to prevent bribery,未能预防贿赂,金融犯罪、欺诈与执法,2010 年反贿赂法第六条
+failure to prevent fraud,未能预防欺诈,金融犯罪、欺诈与执法,2023 年经济犯罪法新增罪名
+adequate procedures,充分程序,金融犯罪、欺诈与执法,反贿赂法的唯一抗辩事由
+POCA 2002,2002 年犯罪所得法,金融犯罪、欺诈与执法,英国反洗钱刑事体系的根基
+SOCPA 2005,2005 年严重有组织犯罪与警察法,金融犯罪、欺诈与执法,
+suspicion,怀疑,金融犯罪、欺诈与执法,英国法下无需确证，标准极低且主观
+reasonable grounds to suspect,有合理理由怀疑,金融犯罪、欺诈与执法,
+knowledge,明知,金融犯罪、欺诈与执法,
+criminal conduct,犯罪行为,金融犯罪、欺诈与执法,
+benefit from criminal conduct,从犯罪行为中获益,金融犯罪、欺诈与执法,
+civil recovery,民事追缴,金融犯罪、欺诈与执法,无需刑事定罪即可追回资产
+unexplained wealth order (UWO),财富来源不明令,金融犯罪、欺诈与执法,针对高价值资产的强调查权
+account freezing order (AFO),账户冻结令,金融犯罪、欺诈与执法,
+account forfeiture order,账户没收令,金融犯罪、欺诈与执法,
+restraint order,限制令,金融犯罪、欺诈与执法,刑事程序中冻结被告资产
+confiscation order,没收令,金融犯罪、欺诈与执法,
+cash seizure,现金扣押,金融犯罪、欺诈与执法,
+asset recovery,资产追回,金融犯罪、欺诈与执法,
+Serious Fraud Office (SFO),英国严重欺诈办公室,金融犯罪、欺诈与执法,
+CPS,英国皇家检察署,金融犯罪、欺诈与执法,Crown Prosecution Service
+Financial Conduct Authority (FCA),英国金融行为监管局,金融犯罪、欺诈与执法,
+Prudential Regulation Authority (PRA),英国审慎监管局,金融犯罪、欺诈与执法,
+deferred prosecution agreement (DPA),暂缓起诉协议,金融犯罪、欺诈与执法,企业缴纳罚款并整改以换取不起诉
+corporate criminal offence,企业犯罪,金融犯罪、欺诈与执法,
+identification principle,同一性原则,金融犯罪、欺诈与执法,英国法下须证明「指挥意志」有责
+senior management liability,高级管理层责任,金融犯罪、欺诈与执法,
+consent order,同意令,金融犯罪、欺诈与执法,
+proceeds of Crime Act investigation,犯罪所得法调查,金融犯罪、欺诈与执法,
+mutual legal assistance (MLA),司法互助,金融犯罪、欺诈与执法,
+letters rogatory,司法委托书,金融犯罪、欺诈与执法,
+freezing injunction (Mareva),玛瑞瓦禁令,金融犯罪、欺诈与执法,全球资产冻结令
+Norwich Pharmacal order,诺里奇药厂令,金融犯罪、欺诈与执法,强制第三方披露信息的命令
+section 2 notice,第 2 条通知,金融犯罪、欺诈与执法,SFO 的强制取证权
+search warrant,搜查令,金融犯罪、欺诈与执法,
+dawn raid,突击搜查,金融犯罪、欺诈与执法,监管或执法机构上门
+compelled interview,强制询问,金融犯罪、欺诈与执法,
+privilege against self-incrimination,不得自证其罪特权,金融犯罪、欺诈与执法,
+legal professional privilege (LPP),法律职业特权,金融犯罪、欺诈与执法,
+litigation privilege,诉讼特权,金融犯罪、欺诈与执法,
+advice privilege,法律意见特权,金融犯罪、欺诈与执法,
+Upjohn warning,厄普约翰警示,金融犯罪、欺诈与执法,公司律师访谈员工前须声明代理的是公司而非员工
+conflict of interest,利益冲突,金融犯罪、欺诈与执法,
+insider threat,内部威胁,金融犯罪、欺诈与执法,
+protected disclosure,受保护的披露,金融犯罪、欺诈与执法,
+detriment,不利对待,金融犯罪、欺诈与执法,举报人受保护的核心禁止行为
+speak-up channel,举报渠道,金融犯罪、欺诈与执法,
+external reporting hotline,外部举报热线,金融犯罪、欺诈与执法,
+internal investigation,内部调查,金融犯罪、欺诈与执法,
+forensic investigation,取证调查,金融犯罪、欺诈与执法,
+e-discovery,电子取证,金融犯罪、欺诈与执法,
+preservation notice,证据保全通知,金融犯罪、欺诈与执法,
+legal hold,法律留置,金融犯罪、欺诈与执法,禁止删除相关文件
+data sampling,数据抽样,金融犯罪、欺诈与执法,
+interview under caution,具警示讯问,金融犯罪、欺诈与执法,
+disciplinary process,纪律程序,金融犯罪、欺诈与执法,
+gross misconduct,严重不当行为,金融犯罪、欺诈与执法,
+summary dismissal,即时解雇,金融犯罪、欺诈与执法,
+regulatory referral,监管移送,金融犯罪、欺诈与执法,
+enforcement action,执法行动,金融犯罪、欺诈与执法,
+settlement agreement,和解协议,金融犯罪、欺诈与执法,
+disgorgement,吐出违法所得,金融犯罪、欺诈与执法,
+lessons learned review,教训总结复盘,金融犯罪、欺诈与执法,
+equity,股票 / 权益,金融产品与市场工具,
+ordinary share,普通股,金融产品与市场工具,
+preference share,优先股,金融产品与市场工具,
+bond / fixed income,债券 / 固定收益,金融产品与市场工具,
+government bond / gilt,政府债券 / 英国金边债券,金融产品与市场工具,
+corporate bond,公司债,金融产品与市场工具,
+high-yield bond,高收益债,金融产品与市场工具,俗称垃圾债
+investment grade,投资级,金融产品与市场工具,
+subordinated debt,次级债,金融产品与市场工具,
+convertible bond,可转换债券,金融产品与市场工具,
+callable / puttable bond,可赎回 / 可回售债券,金融产品与市场工具,
+coupon / yield / duration,票息 / 收益率 / 久期,金融产品与市场工具,
+credit spread,信用利差,金融产品与市场工具,
+rating agency / credit rating,评级机构 / 信用评级,金融产品与市场工具,
+investment bank,投资银行,金融产品与市场工具,
+corporate finance,公司金融 / 投行业务,金融产品与市场工具,
+M&A advisory,并购顾问,金融产品与市场工具,
+leveraged buyout (LBO),杠杆收购,金融产品与市场工具,
+private equity,私募股权,金融产品与市场工具,
+venture capital,风险投资,金融产品与市场工具,
+IPO / secondary offering,首次公开发行 / 增发,金融产品与市场工具,
+rights issue,供股,金融产品与市场工具,
+bookbuilding,簿记建档,金融产品与市场工具,
+roadshow,路演,金融产品与市场工具,
+due diligence (DD),尽职调查,金融产品与市场工具,注意：此处指交易尽调，与客户尽调 CDD 不同
+data room,数据库房,金融产品与市场工具,交易尽调的资料库
+term sheet,条款清单,金融产品与市场工具,交易核心商业条款的摘要
+SPA / SHA,股权购买协议 / 股东协议,金融产品与市场工具,
+disclosure letter,披露函,金融产品与市场工具,对保证条款的例外披露，界定索赔边界
+escrow,托管 / 第三方保管,金融产品与市场工具,
+earn-out,业绩对赌,金融产品与市场工具,
+completion / closing,交割,金融产品与市场工具,
+fund,基金,金融产品与市场工具,
+UCITS,可转让证券集合投资计划,金融产品与市场工具,
+AIFMD,另类投资基金管理人指令,金融产品与市场工具,
+open-ended / closed-ended fund,开放式 / 封闭式基金,金融产品与市场工具,
+ETF,交易所交易基金,金融产品与市场工具,
+NAV,资产净值,金融产品与市场工具,Net Asset Value
+management fee / performance fee,管理费 / 业绩报酬,金融产品与市场工具,
+side letter,附属函,金融产品与市场工具,对特定投资者的特别约定
+prime broker,主经纪商,金融产品与市场工具,
+fund administrator,基金行政管理人,金融产品与市场工具,
+depositary,托管人（基金）,金融产品与市场工具,
+discretionary management,全权委托管理,金融产品与市场工具,
+advisory mandate,投资顾问型授权,金融产品与市场工具,
+benchmark / index,基准 / 指数,金融产品与市场工具,
+tracking error,跟踪误差,金融产品与市场工具,
+asset allocation,资产配置,金融产品与市场工具,
+portfolio rebalancing,组合再平衡,金融产品与市场工具,
+hedging,对冲,金融产品与市场工具,
+long / short position,多头 / 空头头寸,金融产品与市场工具,
+short selling,卖空,金融产品与市场工具,英国受 EU 236/2012 及本土规则约束
+margin / leverage,保证金 / 杠杆,金融产品与市场工具,
+securities financing transaction,证券融资交易,金融产品与市场工具,
+sukuk,伊斯兰债券,金融产品与市场工具,
+derivative types,衍生品类型,金融产品与市场工具,远期、期货、期权、互换共四大类
+option / call / put,期权 / 看涨 / 看跌,金融产品与市场工具,
+futures contract,期货合约,金融产品与市场工具,
+credit default swap (CDS),信用违约互换,金融产品与市场工具,
+collateralised debt obligation (CDO),债务担保证券,金融产品与市场工具,
+cleared / uncleared margin,已清算 / 未清算保证金,金融产品与市场工具,
+suitability assessment,适合性评估,金融产品与市场工具,
+target market determination,目标市场认定,金融产品与市场工具,
+Bank of England (BoE),英格兰银行,英美监管与市场行为,
+Financial Policy Committee (FPC),金融政策委员会,英美监管与市场行为,
+Senior Managers and Certification Regime (SM&CR),高级管理人员与认证制度,英美监管与市场行为,
+approved person,受认可人士（SM&CR 之前制度）,英美监管与市场行为,受审批准入的个人
+PRIN (Principles for Businesses),FCA 商业原则,英美监管与市场行为,
+SYSC,FCA 高级管理与系统控制手册,英美监管与市场行为,"Senior Management Arrangements, Systems and Controls"
+COBS,FCA 商业行为手册,英美监管与市场行为,Conduct of Business Sourcebook
+CASS,FCA 客户资产手册,英美监管与市场行为,Client Assets Sourcebook，客户钱与自营钱必须隔离
+MAR (Market Abuse Regulation),市场滥用条例,英美监管与市场行为,
+SUP,FCA 监管手册,英美监管与市场行为,
+threshold conditions,准入门槛条件,英美监管与市场行为,
+Part 4A permission,第四 A 部分许可,英美监管与市场行为,英国存款机构与投资公司的许可依据
+appointed representative,指定代表,英美监管与市场行为,依托持牌机构展业的轻牌照安排
+Consumer Duty,消费者责任（2023 生效）,英美监管与市场行为,2023 年生效，要求为零售客户交付良好结果
+vulnerable customer,弱势客户,英美监管与市场行为,
+Treating Customers Fairly (TCF),公平对待客户,英美监管与市场行为,
+MiFID II / MiFIR,金融工具市场指令二 / 条例,英美监管与市场行为,
+EMIR / UK EMIR,欧洲市场基础设施条例,英美监管与市场行为,
+transaction reporting,交易报告,英美监管与市场行为,
+best execution,最佳执行,英美监管与市场行为,
+appropriateness / suitability,适当性 / 适合性,英美监管与市场行为,
+inducements,诱导性安排,英美监管与市场行为,禁止第三方收受非透明报酬
+product governance / target market,产品治理 / 目标市场,英美监管与市场行为,
+inside information,内幕信息,英美监管与市场行为,
+insider dealing,内幕交易,英美监管与市场行为,
+market manipulation,市场操纵,英美监管与市场行为,
+unlawful disclosure,非法披露,英美监管与市场行为,
+suspicious transaction and order report (STOR),可疑交易与指令报告,英美监管与市场行为,英国版市场滥用举报
+wall-crossing,越墙程序,英美监管与市场行为,把内幕信息告知交易人员并留痕的流程
+conflicts of interest / Chinese wall,利益冲突 / 信息隔离墙,英美监管与市场行为,
+Final Notice / prohibition order,最终处罚通知 / 禁业令,英美监管与市场行为,
+financial penalty,罚款,英美监管与市场行为,
+VREQ (voluntary requirement),自愿要求,英美监管与市场行为,
+s166 skilled person review,第 166 条专家审查,英美监管与市场行为,
+Securities and Exchange Commission (SEC),美国证券交易委员会,英美监管与市场行为,
+FINRA,美国金融业监管局,英美监管与市场行为,
+CFTC,美国商品期货交易委员会,英美监管与市场行为,
+Dodd-Frank Act,多德-弗兰克法案,英美监管与市场行为,
+Volcker Rule,沃尔克规则,英美监管与市场行为,
+Bank Secrecy Act (BSA),美国银行保密法,英美监管与市场行为,
+FinCEN,美国金融犯罪执法网络,英美监管与市场行为,
+CTR (Currency Transaction Report),现金交易报告,英美监管与市场行为,
+USA PATRIOT Act,美国爱国者法案,英美监管与市场行为,
+Foreign Corrupt Practices Act (FCPA),美国反海外腐败法,英美监管与市场行为,
+UK Bribery Act 2010,英国 2010 年反贿赂法,英美监管与市场行为,
+Matter Requiring Attention (MRA),需关注事项,英美监管与市场行为,
+examination,监管检查,英美监管与市场行为,
+Financial Services and Markets Act 2023,2023 年金融服务与市场法,英美监管与市场行为,脱欧后英国监管框架的基石
+FSMA 2000,2000 年金融服务与市场法,英美监管与市场行为,
+Consumer Credit Act 1974,1974 年消费信贷法,英美监管与市场行为,
+MCOB,FCA 抵押贷款业务规则,英美监管与市场行为,
+BCOBS,FCA 银行业务行为规则,英美监管与市场行为,
+ICOBS,FCA 保险业务行为规则,英美监管与市场行为,
+DISP,FCA 投诉处理规则,英美监管与市场行为,包含 FOS 与 FSCS 的管辖
+client money,客户资金,英美监管与市场行为,
+statutory trust,法定信托,英美监管与市场行为,CASS 下客户资金的持有法律基础
+internal reconciliation requirement,内部对账要求,英美监管与市场行为,
+Financial Ombudsman Service (FOS),金融申诉专员服务,英美监管与市场行为,
+Financial Services Compensation Scheme (FSCS),金融服务补偿计划,英美监管与市场行为,
+complaint handling rules,投诉处理规则,英美监管与市场行为,
+eight-week deadline,八周期限,英美监管与市场行为,投诉处理的法定期限
+final response letter,最终答复函,英美监管与市场行为,
+redress,赔偿、救济,英美监管与市场行为,
+Payment Systems Regulator (PSR),支付系统监管局,英美监管与市场行为,
+APP fraud reimbursement,APP 欺诈赔付,英美监管与市场行为,
+confirmation of payee,收款人姓名核对,英美监管与市场行为,英国防转账诈骗的核心机制
+strong customer authentication (SCA),强客户认证,英美监管与市场行为,
+3-D Secure,3D 安全验证,英美监管与市场行为,
+safeguarding,资金保障,英美监管与市场行为,支付机构隔离客户资金的义务
+variation of permission,许可变更,英美监管与市场行为,
+senior manager function (SMF),高级管理职能,英美监管与市场行为,
+prescribed responsibilities,规定职责,英美监管与市场行为,
+fit and proper,适当人选,英美监管与市场行为,
+regulatory reference,监管证明,英美监管与市场行为,SM&CR 下必须出具的从业背景证明
+certification regime,认证制度,英美监管与市场行为,
+conduct rules,行为规则,英美监管与市场行为,个体问责制的核心，分五条基本准则
+notifiable matter,需通报事项,英美监管与市场行为,
+Securities Act 1933 / Exchange Act 1934,美国证券法 / 证券交易法,英美监管与市场行为,
+Investment Advisers Act 1940,美国投资顾问法,英美监管与市场行为,
+OCC / Federal Reserve / FDIC,美国货币监理署 / 美联储 / 联邦存款保险公司,英美监管与市场行为,
+NYDFS,纽约州金融服务局,英美监管与市场行为,
+Rule 10b-5,美国交易法 10b-5 规则,英美监管与市场行为,反证券欺诈的核心条款
+Sarbanes-Oxley Act,萨班斯-奥克斯利法,英美监管与市场行为,
+Regulation Best Interest (Reg BI),最大利益规则,英美监管与市场行为,
+Regulation S-P,美国客户信息隐私规则,英美监管与市场行为,
+Corporate Transparency Act,美国企业透明度法,英美监管与市场行为,
+beneficial ownership information (BOI) reporting,受益所有权信息报告,英美监管与市场行为,
+Wells notice,韦尔斯通知,英美监管与市场行为,SEC 拟起诉前的告知程序
+cease and desist order,停止令,英美监管与市场行为,
+FSMA 2023,英国金融服务与市场法 2023,英美监管与市场行为,确立消费者责任、SMCR 扩展与关键第三方制度
+RAO,受监管活动令,英美监管与市场行为,Regulated Activities Order，界定哪些活动需牌照
+regulated activity,受监管活动,英美监管与市场行为,无牌照进行即刑事犯罪
+permission,业务许可,英美监管与市场行为,
+variation of permission (VOP),变更许可,英美监管与市场行为,
+PRIN,商业原则,英美监管与市场行为,FCA 的 12 条 Principles for Businesses
+CONC,消费信贷规则,英美监管与市场行为,
+FOS,金融申诉专员服务,英美监管与市场行为,免费、对消费者有利的独立裁判机构
+FSCS,金融服务补偿计划,英美监管与市场行为,"每人每机构上限 85,000 英镑"
+senior manager,高级经理,英美监管与市场行为,
+certification employee,认证雇员,英美监管与市场行为,
+SMF / prescribed responsibility,高级管理职能 / 法定职责,英美监管与市场行为,
+replacement of SMF,高级经理变更,英美监管与市场行为,
+host / home state,东道国 / 母国,英美监管与市场行为,
+passporting,通行证制度,英美监管与市场行为,英国脱欧后对欧盟已失效，现为 TPR 制度
+temporary permissions regime (TPR),临时许可制度,英美监管与市场行为,
+overseas fund,海外基金,英美监管与市场行为,
+supervisory review and evaluation process (SREP),监管审查与评估程序,英美监管与市场行为,
+skilled person,专家顾问,英美监管与市场行为,FCA 依 FSMA 第 166 条指派的独立审查人
+supervisory notice,监管通知,英美监管与市场行为,
+warning notice / decision notice / final notice,警告通知 / 决定通知 / 最终通知,英美监管与市场行为,
+own initiative requirement (OIREQ),监管主动施加的要求,英美监管与市场行为,
+voluntary requirement,自愿承诺要求,英美监管与市场行为,
+prohibition order,禁业令,英美监管与市场行为,
+redress scheme,赔偿计划,英美监管与市场行为,
+review of past business,历史业务复查,英美监管与市场行为,
+four consumer outcomes,四项消费者结果,英美监管与市场行为,
+consumer understanding,消费者理解,英美监管与市场行为,
+price and value,价格与价值,英美监管与市场行为,
+consumer support,消费者支持,英美监管与市场行为,
+products and services outcome,产品与服务结果,英美监管与市场行为,
+foreseeable harm,可预见损害,英美监管与市场行为,
+fair value assessment,公允价值评估,英美监管与市场行为,
+market abuse regulation (MAR),市场滥用条例,英美监管与市场行为,
+insider list,内幕信息知情人名单,英美监管与市场行为,
+closed period,静默期,英美监管与市场行为,
+PDMR,履行管理职责人员,英美监管与市场行为,Persons Discharging Managerial Responsibilities
+disclosure guidance and transparency rules (DTR),披露指引与透明度规则,英美监管与市场行为,
+listing rules (LR),上市规则,英美监管与市场行为,
+prospectus regulation,招股说明书条例,英美监管与市场行为,
+sponsor,保荐人,英美监管与市场行为,
+takeover code,收购守则,英美监管与市场行为,
+put up or shut up (PUSU),要么报价要么闭嘴,英美监管与市场行为,收购守则第 2.6 条规则
+MiFID II,金融工具市场指令二,英美监管与市场行为,
+client categorisation,客户分类,英美监管与市场行为,零售 / 专业 / 合格对手方
+product governance,产品治理,英美监管与市场行为,目标市场与分销策略
+costs and charges disclosure,成本与费用披露,英美监管与市场行为,
+EMIR,欧洲市场基础设施条例,英美监管与市场行为,
+clearing obligation,强制清算义务,英美监管与市场行为,
+trade repository,交易存管库,英美监管与市场行为,
+SFTR,证券融资交易条例,英美监管与市场行为,
+settlement discipline,结算纪律,英美监管与市场行为,
+buy-side / sell-side,买方 / 卖方,英美监管与市场行为,
+GDPR / UK GDPR,欧盟通用数据保护条例 / 英国版,数据与隐私保护,
+Data Protection Act 2018,英国 2018 年数据保护法,数据与隐私保护,
+Information Commissioner's Office (ICO),英国信息专员办公室,数据与隐私保护,
+personal data,个人数据,数据与隐私保护,
+special category data,特殊类别数据（敏感数据）,数据与隐私保护,种族、健康、性取向等，处理门槛更高
+data subject,数据主体,数据与隐私保护,
+data controller / processor,数据控制者 / 处理者,数据与隐私保护,
+joint controller,共同控制者,数据与隐私保护,
+lawful basis,合法性基础,数据与隐私保护,六种之一：同意、合同、法定义务、重大利益、公共任务、正当利益
+consent,同意,数据与隐私保护,须自由给出、具体、知情、明确
+legitimate interests,正当利益,数据与隐私保护,需通过三步平衡测试 LIA
+data minimisation,数据最小化,数据与隐私保护,
+purpose limitation,目的限制,数据与隐私保护,
+storage limitation,存储限制,数据与隐私保护,
+Data Protection Impact Assessment (DPIA),数据保护影响评估,数据与隐私保护,
+Data Protection Officer (DPO),数据保护官,数据与隐私保护,
+subject access request (SAR),数据主体访问请求,数据与隐私保护,注意与 AML 的 Suspicious Activity Report 同缩写
+right to erasure / to rectification,删除权 / 更正权,数据与隐私保护,
+data breach,数据泄露,数据与隐私保护,
+72-hour notification,72 小时通报义务,数据与隐私保护,向 ICO 通报的时限
+cross-border transfer,跨境传输,数据与隐私保护,
+adequacy decision,充分性认定,数据与隐私保护,
+Standard Contractual Clauses (SCCs),标准合同条款,数据与隐私保护,
+Binding Corporate Rules (BCRs),约束性公司规则,数据与隐私保护,
+Schrems II,Schrems II 判决,数据与隐私保护,推翻隐私盾，重塑跨大西洋数据传输
+Records of Processing Activities (ROPA),处理活动记录,数据与隐私保护,
+privacy notice,隐私声明,数据与隐私保护,
+pseudonymisation / anonymisation,假名化 / 匿名化,数据与隐私保护,
+retention period,保存期限,数据与隐私保护,
+accountability principle,问责原则,数据与隐私保护,GDPR 的核心原则：你必须能证明自己合规
+data protection by design and by default,设计阶段与默认的数据保护,数据与隐私保护,
+transparency,透明性,数据与隐私保护,
+right to restriction of processing,限制处理权,数据与隐私保护,
+right to object,反对权,数据与隐私保护,
+right to data portability,数据可携权,数据与隐私保护,
+data processing agreement (DPA),数据处理协议,数据与隐私保护,
+sub-processor,次级处理者,数据与隐私保护,
+controller-processor agreement,控制者—处理者协议,数据与隐私保护,
+international data transfer agreement (IDTA),国际数据传输协议,数据与隐私保护,英国版 SCC
+UK Addendum,英国附录,数据与隐私保护,附加在欧盟 SCC 上以适用英国法
+transfer risk assessment (TRA),传输风险评估,数据与隐私保护,
+EU-US Data Privacy Framework,欧美数据隐私框架,数据与隐私保护,
+data sharing agreement,数据共享协议,数据与隐私保护,
+law enforcement request,执法机关请求,数据与隐私保护,
+confidentiality / availability / integrity breach,保密性 / 可用性 / 完整性泄露,数据与隐私保护,GDPR 对泄露的三种分类
+Freedom of Information Act (FOIA),信息自由法,数据与隐私保护,
+PECR (e-privacy),英国电子隐私法规,数据与隐私保护,管 Cookie 和直接营销
+cookie consent,Cookie 同意,数据与隐私保护,须事先取得，不得默认勾选
+soft opt-in,柔性选择加入,数据与隐私保护,既有客户营销的例外规则
+direct marketing consent,直接营销同意,数据与隐私保护,
+employee monitoring,员工监控,数据与隐私保护,涉及告知义务、比例原则与正当利益测试
+redaction,遮蔽处理,数据与隐私保护,回复 SAR 时删除第三方信息
+automated decision-making,自动化决策,数据与隐私保护,
+profiling,画像分析,数据与隐私保护,
+records retention schedule,记录保存时间表,数据与隐私保护,
+data loss prevention (DLP),数据防泄漏,数据与隐私保护,
+data governance,数据治理,数据与隐私保护,
+data lineage,数据血缘,数据与隐私保护,数据从哪来到哪去的追溯链
+data quality,数据质量,数据与隐私保护,
+AI Act,欧盟人工智能法案,数据与隐私保护,
+UK GDPR,英国通用数据保护条例,数据与隐私保护,
+controller,控制者,数据与隐私保护,决定处理目的与方式的主体
+processor,处理者,数据与隐私保护,受控制者委托处理数据的主体
+joint controllers,共同控制者,数据与隐私保护,
+criminal offence data,刑事犯罪数据,数据与隐私保护,英国法下单独一类受保护数据
+vital interests,重大利益,数据与隐私保护,
+public task,公共任务,数据与隐私保护,
+accuracy principle,准确性原则,数据与隐私保护,
+accountability,问责原则,数据与隐私保护,须能证明合规，而非仅仅声称
+data protection by design and default,默认与设计即合规,数据与隐私保护,
+privacy impact assessment (DPIA),隐私影响评估,数据与隐私保护,
+transparency requirement,透明性要求,数据与隐私保护,
+data subject access request (DSAR),数据主体访问请求,数据与隐私保护,与可疑活动报告同缩写，须靠上下文区分
+one-month deadline,一个月答复期限,数据与隐私保护,可延长两个月，须说明理由
+rectification,更正权,数据与隐私保护,
+right to erasure,删除权,数据与隐私保护,亦称被遗忘权
+right to restriction,限制处理权,数据与隐私保护,
+rights relating to automated decision-making,自动化决策相关权利,数据与隐私保护,含画像 profiling
+solely automated decision,完全自动化决策,数据与隐私保护,
+human intervention,人工介入,数据与隐私保护,
+information notice / enforcement notice,信息通知 / 执法通知,数据与隐私保护,
+monetary penalty notice,罚款通知,数据与隐私保护,"英国上限为 1,750 万英镑或全球营业额 4%"
+ICO,英国信息专员办公室,数据与隐私保护,Information Commissioner's Office
+fee / registration,数据保护登记费,数据与隐私保护,
+international transfer,跨境传输,数据与隐私保护,
+adequacy regulations,充分性认定,数据与隐私保护,
+data localisation,数据本地化,数据与隐私保护,
+government access,政府调取,数据与隐私保护,
+PECR,隐私与电子通信条例,数据与隐私保护,管理 Cookie、邮件营销与来电营销
+direct marketing,直接营销,数据与隐私保护,
+personal data breach,个人数据泄露,数据与隐私保护,
+data breach register,数据泄露台账,数据与隐私保护,
+anonymisation,匿名化,数据与隐私保护,完全不可复原，脱离 GDPR 管辖
+pseudonymisation,假名化,数据与隐私保护,可复原，仍属个人数据
+aggregated data,汇总数据,数据与隐私保护,
+retention schedule,保存期限表,数据与隐私保护,
+data mapping,数据映射,数据与隐私保护,
+records retention,档案留存,数据与隐私保护,
+subject rights request handling,数据主体权利请求处理,数据与隐私保护,
+bring your own device (BYOD),自带设备办公,数据与隐私保护,
+vendor due diligence,供应商尽职调查,数据与隐私保护,
+herein / hereof / hereto / hereunder,本文件中 / 本文件的 / 附于本文件 / 依本文件,合同与法律英语,
+hereinafter,以下称,合同与法律英语,
+therein / thereof / thereto,其中 / 其 / 向其,合同与法律英语,
+whereas,鉴于,合同与法律英语,陈述背景的事实性连接词
+recitals,引言部分（鉴于条款）,合同与法律英语,
+in witness whereof,以资证明,合同与法律英语,签署条款的固定起首语
+operative provisions,正文条款,合同与法律英语,合同的实质权利义务部分
+representation,陈述,合同与法律英语,对事实的说明
+warranty,保证,合同与法律英语,对事实的承诺，违者可索赔
+indemnity,补偿,合同与法律英语,独立于违约救济的直接赔偿义务
+hold harmless,使免受损害,合同与法律英语,
+limitation of liability,责任限制,合同与法律英语,
+force majeure,不可抗力,合同与法律英语,
+material adverse change (MAC),重大不利变化,合同与法律英语,并购与融资文件中的关键退出阀
+termination for cause / for convenience,违约解除 / 任意解除,合同与法律英语,
+notice period,通知期,合同与法律英语,
+governing law,适用法律,合同与法律英语,
+jurisdiction clause,管辖条款,合同与法律英语,
+arbitration,仲裁,合同与法律英语,
+mediation,调解,合同与法律英语,
+expert determination,专家裁定,合同与法律英语,比仲裁更快更省的争议解决机制
+severability,可分割性,合同与法律英语,某条无效不影响其余条款
+entire agreement clause,完整协议条款,合同与法律英语,排除此前一切口头与书面洽谈
+no waiver,不弃权条款,合同与法律英语,
+conditions precedent (CP),先决条件,合同与法律英语,
+conditions subsequent,后决条件,合同与法律英语,
+best / reasonable endeavours,最大努力 / 合理努力,合同与法律英语,英国法下两者法律强度不同
+time is of the essence,时间为关键要素,合同与法律英语,逾期即构成根本违约
+subject to contract,以正式合同为准,合同与法律英语,
+pari passu,同等顺位,合同与法律英语,
+pro rata,按比例,合同与法律英语,
+bona fide,善意,合同与法律英语,
+inter alia,除其他外,合同与法律英语,
+mutatis mutandis,作必要修改后适用,合同与法律英语,
+ultra vires,越权,合同与法律英语,
+de facto / de jure,事实上的 / 法律上的,合同与法律英语,
+prima facie,初步看来,合同与法律英语,
+ex parte,单方（对方不在场）,合同与法律英语,
+standard of proof,证明标准,合同与法律英语,
+balance of probabilities,概然性权衡,合同与法律英语,英式民事标准
+beyond reasonable doubt,排除合理怀疑,合同与法律英语,刑事标准
+burden of proof,举证责任,合同与法律英语,
+disclosure / discovery,证据开示,合同与法律英语,
+without admission of liability,不承认责任,合同与法律英语,
+release,免责文件,合同与法律英语,
+liquidated damages,预定损害赔偿,合同与法律英语,
+specific performance,强制履行,合同与法律英语,
+injunctive relief,禁令救济,合同与法律英语,
+undertaking,承诺、保证,合同与法律英语,
+due execution,适当签署,合同与法律英语,
+counterpart,副本,合同与法律英语,
+deed vs agreement,契据 / 协议,合同与法律英语,英国法下 deed 无需对价即可执行
+without prejudice,不损害权利,合同与法律英语,既用于保留法律立场，也用于和解谈判
+non-disclosure agreement (NDA),保密协议,合同与法律英语,
+estoppel,禁反言,合同与法律英语,
+piercing the corporate veil,刺破公司面纱,合同与法律英语,
+joint and several liability,连带责任,合同与法律英语,
+recital,鉴于条款,合同与法律英语,合同开头的背景陈述
+boilerplate,标准条款 / 套话条款,合同与法律英语,末尾的通用条款统称
+proviso,但书,合同与法律英语,附带限制条件的条款
+notwithstanding,尽管有……的规定,合同与法律英语,法律英语中最强势的优先表达
+subject to,以……为条件,合同与法律英语,不能简单理解为「关于」
+counterparts,副本,合同与法律英语,分签后共同构成同一份合同
+representations and warranties,陈述与保证,合同与法律英语,陈述针对事实，保证是合同承诺，违约救济不同
+condition precedent,先决条件,合同与法律英语,满足后方才生效或放款
+condition subsequent,后决条件,合同与法律英语,
+best endeavours,尽力义务,合同与法律英语,英国法下强度高于 reasonable endeavours
+reasonable endeavours,合理努力义务,合同与法律英语,低于 best，高于 commercially reasonable
+commercially reasonable endeavours,商业上合理的努力,合同与法律英语,
+good faith,诚信,合同与法律英语,
+cap on liability,责任上限,合同与法律英语,
+exclusion of liability,责任排除,合同与法律英语,
+consequential loss,间接损失,合同与法律英语,英国法下与 direct loss 的界线是判例争议焦点
+gross negligence,重大过失,合同与法律英语,
+wilful misconduct,故意不当行为,合同与法律英语,
+penalty clause,惩罚性条款,合同与法律英语,英国法下可能不可执行
+interim / interlocutory injunction,临时禁令,合同与法律英语,
+termination for cause,因违约终止,合同与法律英语,
+termination for convenience,便利终止,合同与法律英语,须有权且通常需通知期
+survival clause,存续条款,合同与法律英语,
+waiver,弃权,合同与法律英语,须书面且不得推定
+variation,变更,合同与法律英语,须由双方书面签署
+entire agreement,完整协议,合同与法律英语,
+third party rights,第三方权利,合同与法律英语,英国 1999 年合同（第三方权利）法
+Contracts (Rights of Third Parties) Act 1999,合同（第三方权利）法 1999,合同与法律英语,
+privity of contract,合同相对性,合同与法律英语,
+deed,契据,合同与法律英语,无需对价即可执行，须符合签署形式
+consideration,对价,合同与法律英语,合同成立的核心要件
+execution,签署生效,合同与法律英语,
+escalation clause,升级条款,合同与法律英语,先协商、再调解、后仲裁的阶梯安排
+LCIA / ICC arbitration,伦敦国际仲裁院 / 国际商会仲裁,合同与法律英语,
+New York Convention,纽约公约,合同与法律英语,仲裁裁决跨国执行的依据
+restrictive covenant,限制性约款,合同与法律英语,竞业禁止、挖角禁止、保密义务
+non-compete / non-solicit / non-deal,竞业禁止 / 禁止招揽 / 禁止交易,合同与法律英语,
+milestone payment,里程碑付款,合同与法律英语,
+liquidated,已清算的 / 确定的,合同与法律英语,
+supervisory college,监管联席会,监管检查、审计与调查,
+risk assessment framework,风险评估框架,监管检查、审计与调查,
+supervisory plan,监管计划,监管检查、审计与调查,
+information request (s165),信息请求（第 165 条）,监管检查、审计与调查,
+skilled person review (s166),专家审查（第 166 条）,监管检查、审计与调查,
+on-site inspection,现场检查,监管检查、审计与调查,
+off-site review,非现场审查,监管检查、审计与调查,
+desk-based review,桌面审查,监管检查、审计与调查,
+scoping meeting,范围界定会议,监管检查、审计与调查,
+opening meeting,开场会议,监管检查、审计与调查,
+closing meeting,总结会议,监管检查、审计与调查,
+management letter,管理层函,监管检查、审计与调查,
+findings,检查发现事项,监管检查、审计与调查,
+observation,观察事项,监管检查、审计与调查,
+recommendation,建议,监管检查、审计与调查,
+action plan,行动计划,监管检查、审计与调查,
+remediation timeline,整改时间表,监管检查、审计与调查,
+root cause analysis,根因分析,监管检查、审计与调查,
+control gap,控制缺陷,监管检查、审计与调查,
+control effectiveness,控制有效性,监管检查、审计与调查,
+design effectiveness,设计有效性,监管检查、审计与调查,
+operating effectiveness,运行有效性,监管检查、审计与调查,
+walkthrough test,穿行测试,监管检查、审计与调查,从交易起点走到终点验证控制链路
+substantive testing,实质性测试,监管检查、审计与调查,
+sample selection,样本选取,监管检查、审计与调查,
+working paper,工作底稿,监管检查、审计与调查,
+fieldwork,现场工作阶段,监管检查、审计与调查,
+follow-up review,后续审查,监管检查、审计与调查,
+overdue action,逾期整改,监管检查、审计与调查,
+interview notes,访谈记录,监管检查、审计与调查,
+forensic review,法务会计审查,监管检查、审计与调查,
+document preservation,文件保全,监管检查、审计与调查,
+legal privilege,法律职业特权,监管检查、审计与调查,内部调查文件能否豁免披露的关键
+privileged report,受特权保护的报告,监管检查、审计与调查,
+notifiable breach,需通报的违规事项,监管检查、审计与调查,
+lessons learned,经验教训,监管检查、审计与调查,
+attestation letter,确认函,监管检查、审计与调查,
+self-assessment questionnaire,自查问卷,监管检查、审计与调查,
+voluntary undertaking,自愿承诺,监管检查、审计与调查,
+thematic review,主题审查,监管检查、审计与调查,
+mystery shopping,神秘顾客检查,监管检查、审计与调查,
+complaint file review,投诉档案审查,监管检查、审计与调查,
+consumer harm,消费者损害,监管检查、审计与调查,
+three lines of defence,三道防线,风险管理与内部控制,业务一线 / 风险合规二线 / 内审三线
+first line of defence,第一道防线,风险管理与内部控制,业务部门自担风险责任
+second line of defence,第二道防线,风险管理与内部控制,风险与合规的监督与挑战职能
+third line of defence,第三道防线,风险管理与内部控制,内部审计的独立确认
+enterprise risk management (ERM),全面风险管理,风险管理与内部控制,
+risk taxonomy,风险分类体系,风险管理与内部控制,
+risk tolerance / risk limit,风险容忍度 / 风险限额,风险管理与内部控制,
+risk register,风险登记册,风险管理与内部控制,
+risk owner,风险责任人,风险管理与内部控制,
+inherent risk,固有风险,风险管理与内部控制,控制前风险
+residual risk,剩余风险,风险管理与内部控制,控制后风险
+control environment,控制环境,风险管理与内部控制,
+control design effectiveness,控制设计有效性,风险管理与内部控制,
+control operating effectiveness,控制运行有效性,风险管理与内部控制,
+design deficiency,设计缺陷,风险管理与内部控制,
+operating deficiency,运行缺陷,风险管理与内部控制,
+key control,关键控制,风险管理与内部控制,
+compensating control,补偿性控制,风险管理与内部控制,
+preventive / detective control,预防性 / 检查性控制,风险管理与内部控制,
+manual / automated control,手工 / 自动化控制,风险管理与内部控制,
+segregation of duties,职责分离,风险管理与内部控制,
+maker-checker,经办复核制,风险管理与内部控制,英国金融机构的基础控制要求
+four-eyes principle,四眼原则,风险管理与内部控制,
+authorisation limit,授权权限,风险管理与内部控制,
+delegated authority,授权,风险管理与内部控制,
+sample size,样本量,风险管理与内部控制,
+exception report,例外报告,风险管理与内部控制,
+issue management,问题管理,风险管理与内部控制,
+self-assessment,自评估,风险管理与内部控制,
+control self-assessment (CSA),控制自评估,风险管理与内部控制,
+risk and control self-assessment (RCSA),风险与控制自评估,风险管理与内部控制,
+risk committee,风险委员会,风险管理与内部控制,
+board risk appetite,董事会风险偏好,风险管理与内部控制,
+operational risk,操作风险,风险管理与内部控制,
+conduct risk,行为风险,风险管理与内部控制,以客户结果和员工行为为核心的独立风险类别
+compliance risk,合规风险,风险管理与内部控制,
+reputational risk,声誉风险,风险管理与内部控制,
+strategic risk,战略风险,风险管理与内部控制,
+credit risk,信用风险,风险管理与内部控制,
+market risk,市场风险,风险管理与内部控制,
+liquidity risk,流动性风险,风险管理与内部控制,
+model risk,模型风险,风险管理与内部控制,
+information security risk,信息安全风险,风险管理与内部控制,
+third-party risk,第三方风险,风险管理与内部控制,
+concentration risk,集中度风险,风险管理与内部控制,
+risk culture,风险文化,风险管理与内部控制,监管越来越关注「软性」维度
+speak-up culture,敢于发声的文化,风险管理与内部控制,
+near miss,未遂事件,风险管理与内部控制,
+loss event / incident,损失事件 / 事件,风险管理与内部控制,
+risk-adjusted return,风险调整后收益,风险管理与内部控制,
+stress and scenario testing,压力与情景测试,风险管理与内部控制,
+reverse stress testing,反向压力测试,风险管理与内部控制,先假设业务不可持续，再倒推触发条件
+heat map,风险热力图,风险管理与内部控制,
+material risk taker,重大风险承担者,风险管理与内部控制,
+risk-weighted exposure,风险加权敞口,风险管理与内部控制,
+ESG,环境、社会与治理,ESG 与可持续金融合规,
+sustainable finance,可持续金融,ESG 与可持续金融合规,
+climate-related financial risk,气候相关金融风险,ESG 与可持续金融合规,
+physical risk / transition risk,物理风险 / 转型风险,ESG 与可持续金融合规,
+TCFD,气候相关财务信息披露工作组,ESG 与可持续金融合规,
+climate risk disclosure,气候风险披露,ESG 与可持续金融合规,英国已对大型公司强制要求
+scope 1 / 2 / 3 emissions,范围一 / 二 / 三排放,ESG 与可持续金融合规,范围三即供应链与融资排放
+financed emissions,融资排放,ESG 与可持续金融合规,银行投向客户产生的碳排放
+net zero commitment,净零承诺,ESG 与可持续金融合规,
+carbon footprint,碳足迹,ESG 与可持续金融合规,
+transition plan,转型计划,ESG 与可持续金融合规,
+decarbonisation pathway,脱碳路径,ESG 与可持续金融合规,
+greenwashing,漂绿,ESG 与可持续金融合规,夸大可持续表现的误导性陈述，已成执法重点
+greenhushing,绿色沉默,ESG 与可持续金融合规,因怕被指漂绿而选择不披露
+misleading sustainability claim,误导性可持续陈述,ESG 与可持续金融合规,
+sustainability-linked loan (SLL),可持续发展挂钩贷款,ESG 与可持续金融合规,
+green bond,绿色债券,ESG 与可持续金融合规,
+sustainability-linked bond,可持续发展挂钩债券,ESG 与可持续金融合规,
+green loan principles,绿色贷款原则,ESG 与可持续金融合规,
+use of proceeds,募集资金用途,ESG 与可持续金融合规,
+second party opinion,第二方意见,ESG 与可持续金融合规,
+SFDR,可持续金融披露条例,ESG 与可持续金融合规,
+EU Taxonomy,欧盟可持续经济活动分类,ESG 与可持续金融合规,
+UK Green Taxonomy,英国绿色分类目录,ESG 与可持续金融合规,
+principal adverse impact,主要不利影响,ESG 与可持续金融合规,
+ESG rating provider,ESG 评级机构,ESG 与可持续金融合规,英国已就其透明度与治理开展监管咨询
+stewardship,尽责管理,ESG 与可持续金融合规,机构投资者对被投企业的监督义务
+engagement / escalation,参与沟通 / 升级行动,ESG 与可持续金融合规,
+voting policy,投票政策,ESG 与可持续金融合规,
+just transition,公正转型,ESG 与可持续金融合规,兼顾低碳转型对就业与社区的影响
+social risk,社会风险,ESG 与可持续金融合规,
+human rights due diligence,人权尽职调查,ESG 与可持续金融合规,
+modern slavery,现代奴役,ESG 与可持续金融合规,英国《2015 年现代奴役法》要求大企业发布报告
+supply chain due diligence,供应链尽职调查,ESG 与可持续金融合规,
+biodiversity risk,生物多样性风险,ESG 与可持续金融合规,
+nature-related disclosures (TNFD),自然相关财务信息披露,ESG 与可持续金融合规,
+diversity and inclusion (D&I),多元与包容,ESG 与可持续金融合规,
+gender pay gap reporting,性别薪酬差距报告,ESG 与可持续金融合规,
+board diversity target,董事会多元目标,ESG 与可持续金融合规,
+governance standards,治理标准,ESG 与可持续金融合规,
+double materiality,双重重要性,ESG 与可持续金融合规,既看财务影响，也看对外部的影响
+climate scenario analysis,气候情景分析,ESG 与可持续金融合规,
+stranded asset,搁浅资产,ESG 与可持续金融合规,
+carbon border adjustment mechanism (CBAM),碳边境调节机制,ESG 与可持续金融合规,
+emissions trading scheme,碳排放交易体系,ESG 与可持续金融合规,
+operational resilience,运营韧性,网络安全与运营韧性,英国监管的核心要求：在中断中仍能交付重要业务服务
+important business service (IBS),重要业务服务,网络安全与运营韧性,
+impact tolerance,影响容忍度,网络安全与运营韧性,IBS 中断可承受的最长时间
+business continuity plan (BCP),业务连续性计划,网络安全与运营韧性,
+disaster recovery (DR),灾难恢复,网络安全与运营韧性,
+recovery time objective (RTO),恢复时间目标,网络安全与运营韧性,
+recovery point objective (RPO),恢复点目标,网络安全与运营韧性,
+cyber resilience,网络韧性,网络安全与运营韧性,
+cyber risk,网络风险,网络安全与运营韧性,
+threat landscape,威胁态势,网络安全与运营韧性,
+threat actor,威胁行为者,网络安全与运营韧性,
+advanced persistent threat (APT),高级持续性威胁,网络安全与运营韧性,
+ransomware,勒索软件,网络安全与运营韧性,
+malware / trojan / worm,恶意软件 / 木马 / 蠕虫,网络安全与运营韧性,
+distributed denial of service (DDoS),分布式拒绝服务攻击,网络安全与运营韧性,
+social engineering,社会工程学攻击,网络安全与运营韧性,
+phishing / spear phishing,钓鱼 / 鱼叉式钓鱼,网络安全与运营韧性,
+business email compromise (BEC),商务邮件欺诈,网络安全与运营韧性,
+zero-day vulnerability,零日漏洞,网络安全与运营韧性,
+patch management,补丁管理,网络安全与运营韧性,
+vulnerability assessment,漏洞评估,网络安全与运营韧性,
+penetration testing,渗透测试,网络安全与运营韧性,
+red team exercise,红队演练,网络安全与运营韧性,
+threat intelligence,威胁情报,网络安全与运营韧性,
+indicators of compromise (IoC),失陷指标,网络安全与运营韧性,
+security operations centre (SOC),安全运营中心,网络安全与运营韧性,
+SIEM,安全信息与事件管理系统,网络安全与运营韧性,
+endpoint detection and response (EDR),端点检测与响应,网络安全与运营韧性,
+multi-factor authentication (MFA),多因素认证,网络安全与运营韧性,
+least privilege,最小权限,网络安全与运营韧性,
+privileged access management (PAM),特权访问管理,网络安全与运营韧性,
+identity and access management (IAM),身份与访问管理,网络安全与运营韧性,
+network segmentation,网络隔离,网络安全与运营韧性,
+encryption at rest / in transit,静态 / 传输中加密,网络安全与运营韧性,
+key management,密钥管理,网络安全与运营韧性,
+security incident,安全事件,网络安全与运营韧性,
+incident response plan,事件响应预案,网络安全与运营韧性,
+major incident,重大事件,网络安全与运营韧性,
+escalation matrix,上报矩阵,网络安全与运营韧性,决定什么事项报给谁
+regulatory notification,监管通报,网络安全与运营韧性,重大网络事件须在法定时限内上报
+material cyber incident,重大网络事件,网络安全与运营韧性,
+post-incident review,事后复盘,网络安全与运营韧性,
+lessons identified,教训识别,网络安全与运营韧性,
+threat hunting,威胁狩猎,网络安全与运营韧性,
+attack surface,攻击面,网络安全与运营韧性,
+supply chain attack,供应链攻击,网络安全与运营韧性,
+DORA,欧盟数字运营韧性法案,网络安全与运营韧性,对金融实体的 ICT 风险管理提出统一要求
+ICT third-party risk,信息通信技术第三方风险,网络安全与运营韧性,
+critical ICT provider,关键 ICT 服务提供商,网络安全与运营韧性,
+cloud concentration risk,云集中度风险,网络安全与运营韧性,
+data residency,数据驻留,网络安全与运营韧性,
+post-quantum cryptography,后量子密码学,网络安全与运营韧性,
+security awareness training,安全意识培训,网络安全与运营韧性,
+simulated phishing campaign,模拟钓鱼演练,网络安全与运营韧性,
+tax compliance,税务合规,税务合规与信息交换,
+tax evasion vs avoidance,逃税与避税之别,税务合规与信息交换,前者刑事、后者合法但有争议，是合规沟通的关键区分
+withholding tax,预提所得税,税务合规与信息交换,
+double taxation treaty,避免双重征税协定,税务合规与信息交换,
+permanent establishment,常设机构,税务合规与信息交换,
+transfer pricing,转让定价,税务合规与信息交换,关联交易定价，是税基侵蚀的核心议题
+arm's length principle,独立交易原则,税务合规与信息交换,
+base erosion and profit shifting (BEPS),税基侵蚀与利润转移,税务合规与信息交换,
+Pillar Two / global minimum tax,第二支柱 / 全球最低税,税务合规与信息交换,15% 全球最低有效税率
+qualified domestic minimum top-up tax,合格国内最低补足税,税务合规与信息交换,
+country-by-country reporting,国别报告,税务合规与信息交换,
+controlled foreign company (CFC) rules,受控外国公司规则,税务合规与信息交换,
+general anti-abuse rule (GAAR),一般反滥用规则,税务合规与信息交换,
+purpose test,目的测试,税务合规与信息交换,
+disclosure of tax avoidance schemes (DOTAS),避税方案披露制度,税务合规与信息交换,英国推行的强制披露机制
+promoter of tax avoidance scheme,避税方案推广人,税务合规与信息交换,
+FATCA,美国海外账户税收合规法,税务合规与信息交换,Foreign Account Tax Compliance Act
+CRS,共同申报准则,税务合规与信息交换,OECD 主导的金融账户涉税信息自动交换
+common reporting standard,共同申报准则（全称）,税务合规与信息交换,
+automatic exchange of information (AEOI),涉税信息自动交换,税务合规与信息交换,
+tax residency,税务居民身份,税务合规与信息交换,
+tax identification number (TIN),纳税人识别号,税务合规与信息交换,
+reportable account,须申报账户,税务合规与信息交换,
+controlling person,控制人,税务合规与信息交换,CRS 下穿透至实际控制人
+self-certification,自我证明,税务合规与信息交换,开户时客户填写的税务身份声明
+tax due diligence,税务尽职调查,税务合规与信息交换,
+VAT,增值税,税务合规与信息交换,英国标准税率为 20%
+reverse charge,反向征收,税务合规与信息交换,
+input / output tax,进项 / 销项税,税务合规与信息交换,
+tax ruling,税务裁定,税务合规与信息交换,
+tax authority enquiry,税务机关调查,税务合规与信息交换,
+HMRC,英国税务海关总署,税务合规与信息交换,HM Revenue & Customs
+penalty regime,处罚制度,税务合规与信息交换,
+voluntary disclosure of tax,自愿补税披露,税务合规与信息交换,
+criminal evasion,刑事逃税,税务合规与信息交换,
+sanctions and tax nexus,制裁与税务的交叉,税务合规与信息交换,
+know your customer's tax position,了解客户的税务状况,税务合规与信息交换,
+tax risk framework,税务风险框架,税务合规与信息交换,
+uncertain tax position,不确定税务事项,税务合规与信息交换,
+deferred tax,递延税,税务合规与信息交换,
+effective tax rate,有效税率,税务合规与信息交换,
+tax provision,税务准备 / 计提,税务合规与信息交换,
+acceptable tax planning,可接受的税务筹划,税务合规与信息交换,
+board of directors,董事会,银行组织、职位与部门,
+non-executive director (NED),非执行董事,银行组织、职位与部门,
+chair / chairperson,董事长,银行组织、职位与部门,
+CEO / CFO / COO / CRO,首席执行官 / 财务 / 运营 / 首席风险官,银行组织、职位与部门,
+Chief Compliance Officer (CCO),首席合规官,银行组织、职位与部门,
+general counsel (GC),总法律顾问,银行组织、职位与部门,
+company secretary,公司秘书,银行组织、职位与部门,英国公司治理中的法定角色
+audit committee,审计委员会,银行组织、职位与部门,
+remuneration committee,薪酬委员会,银行组织、职位与部门,
+nomination committee,提名委员会,银行组织、职位与部门,
+executive committee (ExCo),执行委员会,银行组织、职位与部门,
+management committee (ManCo),管理委员会,银行组织、职位与部门,
+ALCO (asset-liability committee),资产负债管理委员会,银行组织、职位与部门,
+new product committee (NPC),新产品委员会,银行组织、职位与部门,
+reputational risk committee,声誉风险委员会,银行组织、职位与部门,
+steering committee,指导委员会,银行组织、职位与部门,
+working group,工作组,银行组织、职位与部门,
+terms of reference (ToR),职责范围、工作大纲,银行组织、职位与部门,
+front office,前台（业务部门）,银行组织、职位与部门,
+middle office,中台（风控、产品控制）,银行组织、职位与部门,
+back office,后台（运营、结算）,银行组织、职位与部门,
+coverage / coverage banker,客户覆盖岗,银行组织、职位与部门,
+product specialist,产品专家,银行组织、职位与部门,
+risk function,风险部门,银行组织、职位与部门,
+financial crime risk,金融犯罪风险,银行组织、职位与部门,
+compliance advisory,合规咨询（业务条线的对口合规）,银行组织、职位与部门,
+internal audit,内部审计,银行组织、职位与部门,
+in-house counsel / legal counsel,内部法律顾问,银行组织、职位与部门,
+external counsel,外部律师,银行组织、职位与部门,
+head of compliance,合规负责人,银行组织、职位与部门,
+group / entity / branch / subsidiary,集团 / 法人 / 分行 / 子公司,银行组织、职位与部门,
+line of business (LoB),业务条线,银行组织、职位与部门,
+desk,交易台 / 业务组,银行组织、职位与部门,
+reporting line,汇报线,银行组织、职位与部门,
+dotted line,虚线汇报,银行组织、职位与部门,
+span of control,管理幅度,银行组织、职位与部门,
+secondment,借调,银行组织、职位与部门,
+probation period,试用期,银行组织、职位与部门,
+appraisal / performance review,绩效评估,银行组织、职位与部门,
+objective / KPI,目标 / 关键绩效指标,银行组织、职位与部门,
+stakeholder,利益相关方,银行组织、职位与部门,
+counterpart department,对口部门,银行组织、职位与部门,
+committee paper,委员会审议文件,银行组织、职位与部门,
+minutes / matters arising,会议纪要 / 待跟进事项,银行组织、职位与部门,
+action log,待办清单,银行组织、职位与部门,
+sign-off / approval authority,签批 / 审批权限,银行组织、职位与部门,
+income statement / P&L,利润表 / 损益表,财务会计与报表,
+statement of financial position,财务状况表（资产负债表）,财务会计与报表,即资产负债表 balance sheet 的 IFRS 表述
+cash flow statement,现金流量表,财务会计与报表,
+statement of changes in equity,所有者权益变动表,财务会计与报表,
+notes to the financial statements,财务报表附注,财务会计与报表,
+revenue / turnover,收入 / 营业额,财务会计与报表,英国英语更常用 turnover
+cost of sales,销售成本,财务会计与报表,
+gross profit,毛利,财务会计与报表,
+operating expenses (opex),营业费用,财务会计与报表,
+EBITDA,息税折旧摊销前利润,财务会计与报表,
+EBIT,息税前利润,财务会计与报表,
+net profit / bottom line,净利润,财务会计与报表,
+accrual,应计项目,财务会计与报表,
+deferred income,递延收入,财务会计与报表,
+prepayment,预付费用,财务会计与报表,
+provision,准备金,财务会计与报表,
+contingent liability,或有负债,财务会计与报表,
+contingent asset,或有资产,财务会计与报表,
+work in progress (WIP),在建项目 / 在制品,财务会计与报表,
+inventory,存货,财务会计与报表,
+receivables / payables,应收账款 / 应付账款,财务会计与报表,
+days sales outstanding (DSO),应收账款周转天数,财务会计与报表,
+working capital,营运资金,财务会计与报表,
+goodwill,商誉,财务会计与报表,
+intangible assets,无形资产,财务会计与报表,
+amortisation,摊销,财务会计与报表,
+depreciation,折旧,财务会计与报表,
+impairment testing,减值测试,财务会计与报表,
+recoverable amount,可收回金额,财务会计与报表,
+carrying amount,账面价值,财务会计与报表,
+fair value hierarchy,公允价值层级,财务会计与报表,第一层报价、第二层可观察、第三层不可观察
+off-balance sheet,表外项目,财务会计与报表,
+related party transaction,关联方交易,财务会计与报表,
+consolidation,合并报表,财务会计与报表,
+audit opinion / qualified opinion,审计意见 / 保留意见,财务会计与报表,
+going concern,持续经营,财务会计与报表,
+materiality,重要性水平,财务会计与报表,审计与会计的共同核心概念
+internal control over financial reporting (ICFR),财务报告内部控制,财务会计与报表,
+intercompany,公司间往来,财务会计与报表,
+segment reporting,分部报告,财务会计与报表,
+IFRS / UK GAAP / US GAAP,国际财务报告准则 / 英国准则 / 美国准则,财务会计与报表,
+accounting policy,会计政策,财务会计与报表,
+restatement,（报表）重述,财务会计与报表,
+prior period adjustment,前期调整,财务会计与报表,
+cut-off,截止（期间划分）,财务会计与报表,
+substance over form,实质重于形式,财务会计与报表,
+prudence,审慎性,财务会计与报表,
+income statement,利润表,财务会计与报表,
+IFRS,国际财务报告准则,财务会计与报表,
+UK GAAP / FRS 102,英国公认会计原则 / 财务报告准则 102,财务会计与报表,
+stage 1 / 2 / 3 assets,减值三阶段资产,财务会计与报表,信用风险显著上升即进入第二阶段
+IFRS 15,收入准则,财务会计与报表,
+IFRS 16,租赁准则,财务会计与报表,经营租赁入表，对银行客户财务分析影响巨大
+revenue recognition,收入确认,财务会计与报表,
+accruals,应计项目,财务会计与报表,
+prepayments,预付款项,财务会计与报表,
+provisions,预计负债,财务会计与报表,
+tangible fixed assets,有形固定资产,财务会计与报表,
+impairment test,减值测试,财务会计与报表,
+value in use,使用价值,财务会计与报表,
+discount rate / WACC,折现率 / 加权平均资本成本,财务会计与报表,
+level 3 assets,第三层级资产,财务会计与报表,估值依赖模型假设，监管关注重点
+mark-to-model,按模型计价,财务会计与报表,
+operating cash flow,经营现金流,财务会计与报表,
+free cash flow,自由现金流,财务会计与报表,
+net interest margin,净息差,财务会计与报表,
+cost-to-income ratio,成本收入比,财务会计与报表,
+return on tangible equity (ROTE),有形净资产收益率,财务会计与报表,
+retained earnings,留存收益,财务会计与报表,
+shareholders' equity,股东权益,财务会计与报表,
+unqualified opinion,无保留意见,财务会计与报表,也就是「干净的」审计意见
+qualified opinion,保留意见,财务会计与报表,
+adverse opinion,否定意见,财务会计与报表,
+disclaimer of opinion,无法表示意见,财务会计与报表,
+key audit matter,关键审计事项,财务会计与报表,
+internal control over financial reporting,财务报告内部控制,财务会计与报表,
+fraud risk in revenue recognition,收入确认舞弊风险,财务会计与报表,审计准则推定的固有风险
+journal entry testing,会计分录测试,财务会计与报表,
+debt covenant,债务契约,财务会计与报表,财务指标触发即技术性违约
+covenant breach,违反债务契约,财务会计与报表,
+waiver letter,豁免函,财务会计与报表,
+import / export,进口 / 出口,贸易融资与贸易洗钱,
+bill of lading,提单,贸易融资与贸易洗钱,物权凭证，贸易融资的核心单据
+air waybill,空运单,贸易融资与贸易洗钱,
+commercial invoice,商业发票,贸易融资与贸易洗钱,
+packing list,装箱单,贸易融资与贸易洗钱,
+inspection certificate,检验证明,贸易融资与贸易洗钱,
+documentary collection,跟单托收,贸易融资与贸易洗钱,
+documents against payment (D/P),付款交单,贸易融资与贸易洗钱,买方付款后才拿到单据
+documents against acceptance (D/A),承兑交单,贸易融资与贸易洗钱,买方承兑即可拿单，风险显著更高
+open account,赊销,贸易融资与贸易洗钱,卖方风险最大、成本最低
+advance payment,预付款,贸易融资与贸易洗钱,
+sight / usance letter of credit,即期 / 远期信用证,贸易融资与贸易洗钱,
+issuing bank,开证行,贸易融资与贸易洗钱,
+advising bank,通知行,贸易融资与贸易洗钱,
+confirming bank,保兑行,贸易融资与贸易洗钱,
+negotiating bank,议付行,贸易融资与贸易洗钱,
+discrepancy,不符点,贸易融资与贸易洗钱,单据与信用证条款不一致
+waiver of discrepancies,不符点豁免,贸易融资与贸易洗钱,
+UCP 600,跟单信用证统一惯例,贸易融资与贸易洗钱,
+standby letter of credit (SBLC),备用信用证,贸易融资与贸易洗钱,实质是银行担保
+bank guarantee,银行保函,贸易融资与贸易洗钱,
+performance bond,履约保函,贸易融资与贸易洗钱,
+advance payment guarantee,预付款保函,贸易融资与贸易洗钱,
+forfaiting,福费廷,贸易融资与贸易洗钱,无追索买断远期票据
+factoring,保理,贸易融资与贸易洗钱,应收账款买断加管理
+receivables finance,应收账款融资,贸易融资与贸易洗钱,
+supply chain finance,供应链融资,贸易融资与贸易洗钱,
+reverse factoring,反向保理,贸易融资与贸易洗钱,买方主导，对供应商融资成本友好
+pre-shipment finance,装运前融资,贸易融资与贸易洗钱,
+post-shipment finance,装运后融资,贸易融资与贸易洗钱,
+warehouse receipt,仓单,贸易融资与贸易洗钱,
+commodity finance,大宗商品融资,贸易融资与贸易洗钱,
+borrowing base,借款基数,贸易融资与贸易洗钱,
+tenor,期限,贸易融资与贸易洗钱,
+rollover,展期,贸易融资与贸易洗钱,
+red flag indicators,红旗指标,贸易融资与贸易洗钱,
+multiple invoicing,重复开票,贸易融资与贸易洗钱,
+short / over shipping,短装 / 超装,贸易融资与贸易洗钱,
+free trade zone,自由贸易区,贸易融资与贸易洗钱,
+transit country,中转国,贸易融资与贸易洗钱,
+customs declaration,报关单,贸易融资与贸易洗钱,
+HS code,海关商品编码,贸易融资与贸易洗钱,
+end-user certificate,最终用户证明,贸易融资与贸易洗钱,
+clean bill of lading,清洁提单,贸易融资与贸易洗钱,无货物不良批注
+shipped on board bill of lading,已装船提单,贸易融资与贸易洗钱,
+order bill of lading,指示提单,贸易融资与贸易洗钱,可背书转让
+straight bill of lading,记名提单,贸易融资与贸易洗钱,不可转让
+sea waybill,海运单,贸易融资与贸易洗钱,非物权凭证，不可转让
+air waybill (AWB),空运单,贸易融资与贸易洗钱,
+multimodal transport document,多式联运单据,贸易融资与贸易洗钱,
+freight forwarder,货运代理,贸易融资与贸易洗钱,
+shipper / consignee / notify party,托运人 / 收货人 / 通知方,贸易融资与贸易洗钱,
+insurance policy / certificate,保险单 / 保险凭证,贸易融资与贸易洗钱,
+bill of exchange,汇票,贸易融资与贸易洗钱,
+at sight / usance,即期 / 远期,贸易融资与贸易洗钱,
+consignment,寄售,贸易融资与贸易洗钱,
+revolving letter of credit,循环信用证,贸易融资与贸易洗钱,
+transferable letter of credit,可转让信用证,贸易融资与贸易洗钱,
+back-to-back letter of credit,背对背信用证,贸易融资与贸易洗钱,
+confirmed irrevocable L/C,保兑不可撤销信用证,贸易融资与贸易洗钱,
+issuing bank / advising bank / confirming bank,开证行 / 通知行 / 保兑行,贸易融资与贸易洗钱,
+ISBP,国际标准银行实务,贸易融资与贸易洗钱,
+eUCP,电子交单附则,贸易融资与贸易洗钱,
+Incoterms 2020,国际贸易术语解释通则 2020,贸易融资与贸易洗钱,
+EXW / FOB / CIF / CIP / DAP / DDP,工厂交货 / 船上交货 / 成本保险费加运费 / 运费保险费付至 / 目的地交货 / 完税后交货,贸易融资与贸易洗钱,
+on-demand guarantee,见索即付保函,贸易融资与贸易洗钱,独立保函，银行付款义务不与基础合同挂钩
+demand guarantee,见索即付担保,贸易融资与贸易洗钱,
+invoice discounting,发票贴现,贸易融资与贸易洗钱,不通知买方的融资安排
+receivables purchase agreement,应收账款购买协议,贸易融资与贸易洗钱,
+over- and under-invoicing,高开 / 低开发票,贸易融资与贸易洗钱,
+falsely described goods,货物描述不实,贸易融资与贸易洗钱,
+carousel transaction,循环交易,贸易融资与贸易洗钱,
+red flag indicator,红旗指标,贸易融资与贸易洗钱,
+wire stripping,电文剥除,贸易融资与贸易洗钱,篡改汇款报文隐藏付款方信息
+trade finance risk participation,贸易融资风险参与,贸易融资与贸易洗钱,
+pre-export finance,出口前融资,贸易融资与贸易洗钱,
+cryptoasset,加密资产,数字资产与金融科技合规,
+virtual asset service provider (VASP),虚拟资产服务提供商,数字资产与金融科技合规,FATF 定义的受监管主体
+cryptoasset business,加密资产业务,数字资产与金融科技合规,英国 FCA 的注册类别
+custody wallet,托管钱包,数字资产与金融科技合规,
+hosted / unhosted wallet,托管 / 非托管钱包,数字资产与金融科技合规,
+private key,私钥,数字资产与金融科技合规,
+cold / hot wallet,冷钱包 / 热钱包,数字资产与金融科技合规,
+crypto exchange,加密资产交易所,数字资产与金融科技合规,
+stablecoin,稳定币,数字资产与金融科技合规,
+central bank digital currency (CBDC),央行数字货币,数字资产与金融科技合规,英国称为 digital pound
+digital pound,数字英镑,数字资产与金融科技合规,
+tokenisation,代币化,数字资产与金融科技合规,
+security token,证券型代币,数字资产与金融科技合规,
+utility token,功能型代币,数字资产与金融科技合规,
+NFT,非同质化代币,数字资产与金融科技合规,
+smart contract,智能合约,数字资产与金融科技合规,
+distributed ledger technology (DLT),分布式账本技术,数字资产与金融科技合规,
+blockchain analytics,区块链分析,数字资产与金融科技合规,
+travel rule,旅行规则,数字资产与金融科技合规,转账须附带发起方与接收方信息
+FATF Recommendation 16,FATF 第 16 项建议,数字资产与金融科技合规,旅行规则的出处
+on-chain / off-chain,链上 / 链下,数字资产与金融科技合规,
+DeFi,去中心化金融,数字资产与金融科技合规,
+staking,质押,数字资产与金融科技合规,
+mining,挖矿,数字资产与金融科技合规,
+wallet screening,钱包筛查,数字资产与金融科技合规,
+attribution,地址归属分析,数字资产与金融科技合规,
+sanctioned wallet address,受制裁钱包地址,数字资产与金融科技合规,
+financial promotions regime,金融推广制度,数字资产与金融科技合规,英国对加密广告的准入要求
+cryptoasset registration,加密资产注册,数字资产与金融科技合规,
+MiCA,欧盟加密资产市场条例,数字资产与金融科技合规,
+open finance,开放金融,数字资产与金融科技合规,
+API,应用程序接口,数字资产与金融科技合规,
+screen scraping,屏幕抓取,数字资产与金融科技合规,
+buy now pay later (BNPL),先买后付,数字资产与金融科技合规,英国已纳入 FCA 监管
+robo-adviser,智能投顾,数字资产与金融科技合规,
+neobank / challenger bank,新型银行 / 挑战者银行,数字资产与金融科技合规,
+payment initiation service provider (PISP),支付发起服务商,数字资产与金融科技合规,
+account information service provider (AISP),账户信息服务商,数字资产与金融科技合规,
+regtech / suptech,监管科技 / 监管端科技,数字资产与金融科技合规,
+model risk management,模型风险管理,数字资产与金融科技合规,
+explainability,可解释性,数字资产与金融科技合规,AI 模型能否解释决策依据
+algorithmic trading,算法交易,数字资产与金融科技合规,
+high-frequency trading (HFT),高频交易,数字资产与金融科技合规,
+digital identity,数字身份,数字资产与金融科技合规,
+eKYC / liveness check,电子 KYC / 活体检测,数字资产与金融科技合规,
+fiat-backed stablecoin,法币背书稳定币,数字资产与金融科技合规,英国 2023 年后纳入支付监管
+e-money token,电子货币代币,数字资产与金融科技合规,
+custodial wallet,托管钱包,数字资产与金融科技合规,服务商持有私钥，构成资产保管义务
+non-custodial wallet,非托管钱包,数字资产与金融科技合规,
+hot / cold wallet,热钱包 / 冷钱包,数字资产与金融科技合规,
+centralised exchange (CEX),中心化交易所,数字资产与金融科技合规,
+decentralised exchange (DEX),去中心化交易所,数字资产与金融科技合规,
+non-fungible token (NFT),非同质化代币,数字资产与金融科技合规,
+originator / beneficiary information,发起方 / 受益方信息,数字资产与金融科技合规,
+unhosted wallet,自托管钱包,数字资产与金融科技合规,转账时的额外尽调触发点
+on-chain analytics,链上分析,数字资产与金融科技合规,
+blockchain forensics,区块链取证,数字资产与金融科技合规,
+consensus mechanism,共识机制,数字资产与金融科技合规,
+proof of work / proof of stake,工作量证明 / 权益证明,数字资产与金融科技合规,
+staking / validator,质押 / 验证节点,数字资产与金融科技合规,
+cross-chain bridge,跨链桥,数字资产与金融科技合规,黑客攻击高发环节
+rug pull,拉地毯跑路,数字资产与金融科技合规,项目方抽走流动性的退出骗局
+initial coin offering (ICO),首次代币发行,数字资产与金融科技合规,
+crypto travel rule compliance,加密旅行规则合规,数字资产与金融科技合规,
+embedded finance,嵌入式金融,数字资产与金融科技合规,
+robo-advisory,智能投顾,数字资产与金融科技合规,
+insurtech / regtech / suptech,保险科技 / 监管科技 / 监管科技（监管方侧）,数字资产与金融科技合规,
+model validation,模型验证,数字资产与金融科技合规,
+model drift,模型漂移,数字资产与金融科技合规,
+algorithmic bias,算法偏见,数字资产与金融科技合规,
+high-risk AI system,高风险人工智能系统,数字资产与金融科技合规,
+cloud outsourcing,云外包,数字资产与金融科技合规,关键第三方与退出计划是监管重点
+critical third party (CTP),关键第三方,数字资产与金融科技合规,FSMA 2023 新增的直接监管对象
+exit plan,退出计划,数字资产与金融科技合规,防范供应商锁定
+Could you bear with me for a moment?,请稍等一下,合规职场与会议口语,电话或会上最常用的缓冲句
+Let's take this offline.,我们私下再聊,合规职场与会议口语,会上不想展开时的标准说法
+I'll revert to you.,我回头答复你,合规职场与会议口语,英式商务高频，不是「恢复」的意思
+Let me loop you in.,我把你加进沟通里,合规职场与会议口语,
+Just a heads-up.,先跟你说一声,合规职场与会议口语,
+Shall we get started?,我们可以开始了吗,合规职场与会议口语,
+Can everyone hear me?,大家能听到我说话吗,合规职场与会议口语,
+You're on mute.,你静音了,合规职场与会议口语,
+Let me share my screen.,我共享一下屏幕,合规职场与会议口语,
+Could you say that again?,你能再说一遍吗,合规职场与会议口语,
+"Sorry, I didn't quite catch that.",抱歉我没太听清,合规职场与会议口语,
+Let me rephrase that.,我换个说法,合规职场与会议口语,
+To build on what [name] said…,接着 [某人] 刚才说的,合规职场与会议口语,
+I'd like to push back on that.,这一点我有不同意见,合规职场与会议口语,
+"With respect, I see it differently.",恕我直言，我的看法不同,合规职场与会议口语,
+I wonder if we could look at it another way.,我们是不是可以换个角度看,合规职场与会议口语,
+"That's a fair point, but…",这点有道理，不过……,合规职场与会议口语,先认可再反驳
+Let's park that for now.,这个先放一放,合规职场与会议口语,
+Who's taking the minutes?,谁来做会议纪要,合规职场与会议口语,
+Let's take that as an action.,这条我们记为待办,合规职场与会议口语,
+I'll follow up by [date].,我会在 [日期] 前跟进,合规职场与会议口语,
+Any questions before we move on?,继续之前有疑问吗,合规职场与会议口语,
+To summarise where we are…,总结一下目前的进展,合规职场与会议口语,
+For the avoidance of doubt…,为避免歧义,合规职场与会议口语,合规文书最高频的限定语之一
+On a without-prejudice basis,在不影响权利的前提下,合规职场与会议口语,
+We're required to…,我们有义务……,合规职场与会议口语,
+This falls within scope of…,这属于……的范围,合规职场与会议口语,
+I'd rather not commit to that at this stage.,这个阶段我不想先给出承诺,合规职场与会议口语,
+Let me take that away and come back to you.,我回去确认后再答复你,合规职场与会议口语,
+For your records,供你存档,合规职场与会议口语,
+Please note for completeness,为完整起见，请注意,合规职场与会议口语,
+I'm easy / I'm not fussed.,我都行、我不介意,合规职场与会议口语,
+"Not too bad, can't complain.",还行，没什么可抱怨的,合规职场与会议口语,英式寒暄标准回答
+That's not ideal.,这不太理想,合规职场与会议口语,英式委婉表达不满
+This is a bit of a grey area.,这属于灰色地带,合规职场与会议口语,
+We need to get our ducks in a row.,我们得先把内部理顺,合规职场与会议口语,
+Let's not reinvent the wheel.,别重复造轮子了,合规职场与会议口语,
+Ballpark figure,大致数字,合规职场与会议口语,
+Deep dive,深入分析,合规职场与会议口语,
+Touch base,简短沟通一下,合规职场与会议口语,
+Bandwidth,精力 / 可用时间,合规职场与会议口语,不是带宽，指能不能承接
+Move the needle,产生实质影响,合规职场与会议口语,
+Circle back,回头再谈,合规职场与会议口语,
+I'd like to flag a concern.,我想提出一个关切,合规职场与会议口语,
+Just to be clear on the scope…,先把范围界定清楚,合规职场与会议口语,
+That falls outside my remit.,这不在我的职责范围内,合规职场与会议口语,
+I'll own that action.,这条我来负责,合规职场与会议口语,
+Do we have a decision owner?,谁负责拍板,合规职场与会议口语,
+What's the ask here?,具体是要什么,合规职场与会议口语,
+Let's align on next steps.,我们对齐一下后续步骤,合规职场与会议口语,
+I'll bring this to the committee.,我提交到委员会,合规职场与会议口语,
+Should we escalate this?,要不要升级处理,合规职场与会议口语,
+That's a fair challenge.,这个质疑有道理,合规职场与会议口语,
+Let me play devil's advocate.,我来唱个反调,合规职场与会议口语,
+I'd caveat that.,我加个限定条件,合规职场与会议口语,
+I'm not comfortable signing off on this.,我不便批准这件事,合规职场与会议口语,
+subject to legal review,待法律审查,合规职场与会议口语,
+subject to board approval,待董事会批准,合规职场与会议口语,
+conditional on,以……为条件,合规职场与会议口语,
+off the record,非正式地（不作记录）,合规职场与会议口语,
+Chatham House Rule,查塔姆研究所规则,合规职场与会议口语,发言可引用但不得指明来源
+in the interests of transparency,为透明起见,合规职场与会议口语,
+to be prudent,为审慎起见,合规职场与会议口语,
+we're mindful of,我们注意到,合规职场与会议口语,
+we'd rather err on the side of caution,我们宁可谨慎一点,合规职场与会议口语,
+it would be remiss of us not to,我们若不做便有失职之嫌,合规职场与会议口语,
+we're obliged to,我们有义务,合规职场与会议口语,
+this is a matter of judgement,这属于判断问题,合规职场与会议口语,
+reasonable and proportionate,合理且相称,合规职场与会议口语,监管看控制措施是否符合这一标准
+documenting the rationale,记录决策理由,合规职场与会议口语,
+in a timely manner,及时地,合规职场与会议口语,
+with immediate effect,立即生效,合规职场与会议口语,
+please treat as urgent,请按紧急事项处理,合规职场与会议口语,
+as you're aware,如你所知,合规职场与会议口语,
+further to our conversation,承接我们的谈话,合规职场与会议口语,
+I'm writing to follow up on,我致函跟进,合规职场与会议口语,
+I'd be grateful if you could,若你能……我将不胜感激,合规职场与会议口语,
+Please do not hesitate to contact me,请随时联系我,合规职场与会议口语,
+Could you walk me through it?,你能带我过一遍吗？,合规职场与会议口语,请人逐步骤讲解，比 explain 更自然
+Can I just clarify one thing?,我想确认一点,合规职场与会议口语,会议中插话的礼貌切口
+Just to make sure I've got this right…,我想确认我理解无误……,合规职场与会议口语,校验理解的万能开场
+To build on what you said…,接着你刚才说的……,合规职场与会议口语,承接他人观点
+I see it slightly differently.,我的看法稍有不同,合规职场与会议口语,温和反对的标准句
+I'd push back on that.,这一点我可能有异议,合规职场与会议口语,比 I disagree 更职场
+Where I'd land is…,我的结论会落在……,合规职场与会议口语,表达最终立场
+My inclination would be to…,我倾向于……,合规职场与会议口语,谨慎表达偏好
+"On balance, I think…",权衡下来我认为……,合规职场与会议口语,
+I'd err on the side of caution.,我会倾向于谨慎行事,合规职场与会议口语,合规岗位的高频表态
+It's a matter of judgement.,这属于判断范畴,合规职场与会议口语,承认无法给出唯一答案
+That sits outside my remit.,这不在我的职责范围内,合规职场与会议口语,
+Let me take that away.,我回去查一下,合规职场与会议口语,不当场给答案的得体说法
+"Noted, with thanks.",收到，谢谢,合规职场与会议口语,便于留下书面记录
+Without prejudice to…,在不影响……的前提下,合规职场与会议口语,
+to flag something,提示一个问题,合规职场与会议口语,
+to loop someone in,把某人拉进沟通,合规职场与会议口语,
+to take something offline,私下另行讨论,合规职场与会议口语,会议中搁置话题
+to park something,暂时搁置,合规职场与会议口语,
+to circle back,稍后再谈,合规职场与会议口语,
+to bottom out an issue,把问题彻底弄清楚,合规职场与会议口语,
+to socialise a proposal,先小范围非正式征询意见,合规职场与会议口语,
+to land a point,把观点讲清楚并被接受,合规职场与会议口语,
+to push back the deadline,推迟截止日期,合规职场与会议口语,
+to bite the bullet,硬着头皮做,合规职场与会议口语,
+to get the ball rolling,开始启动,合规职场与会议口语,
+to touch base,简短联络一下,合规职场与会议口语,
+to be across something,对某事已掌握情况,合规职场与会议口语,英式用法，不是「跨越」
+to be on the front foot,主动出击,合规职场与会议口语,
+heads-up,事先知会,合规职场与会议口语,
+join the dots,把点连成线（把线索串起来）,合规职场与会议口语,
+gap analysis,差距分析,合规职场与会议口语,
+the ask,要求、诉求,合规职场与会议口语,口语化的名词用法
+moving parts,变动因素,合规职场与会议口语,
+join the call,接入会议,合规职场与会议口语,
+dial-in details,电话会议拨入信息,合规职场与会议口语,
+on mute,已静音,合规职场与会议口语,
+you're breaking up,你那边声音断续,合规职场与会议口语,
+apologies for the background noise,抱歉背景有噪音,合规职场与会议口语,
+let's run through the agenda,我们过一遍议程,合规职场与会议口语,
+any other business (AOB),其他事项,合规职场与会议口语,
+action points,待办事项,合规职场与会议口语,
+matters arising,上次会议遗留事项,合规职场与会议口语,
+meeting minutes,会议纪要,合规职场与会议口语,
+paper,议案文件,合规职场与会议口语,会议文件统称
+executive summary,执行摘要,合规职场与会议口语,
+decision required,需决事项,合规职场与会议口语,
+for information only,仅供知悉,合规职场与会议口语,
+for discussion,供讨论,合规职场与会议口语,
+for approval,待批准,合规职场与会议口语,
+for noting,备查,合规职场与会议口语,
+next steps,后续安排,合规职场与会议口语,
+key takeaway,核心要点,合规职场与会议口语,
+draft for comment,征求意见稿,合规职场与会议口语,
+version control,版本管理,合规职场与会议口语,
+workstream,工作流,合规职场与会议口语,
+spot check,抽查,合规职场与会议口语,
+proof of concept (POC),概念验证,合规职场与会议口语,
+pain point,痛点,合规职场与会议口语,
+quick win,速赢项,合规职场与会议口语,
+critical path,关键路径,合规职场与会议口语,
+resource constraint,资源约束,合规职场与会议口语,
+dependency,依赖项,合规职场与会议口语,
+escalation,上报升级,合规职场与会议口语,
+decision log,决策记录,合规职场与会议口语,
+chips vs crisps,炸薯条 vs 袋装薯片,英国日常生活：食品与日用品,英美差异高频踩坑点
+aubergine / courgette,茄子 / 西葫芦,英国日常生活：食品与日用品,
+rocket / coriander,芝麻菜 / 香菜,英国日常生活：食品与日用品,
+spring onion / leek,小葱 / 大葱,英国日常生活：食品与日用品,
+semi-skimmed / whole milk,半脱脂 / 全脂牛奶,英国日常生活：食品与日用品,
+double cream / single cream,浓奶油 / 淡奶油,英国日常生活：食品与日用品,
+clotted cream,凝脂奶油,英国日常生活：食品与日用品,英式下午茶配司康必备
+caster sugar / icing sugar,细砂糖 / 糖粉,英国日常生活：食品与日用品,
+porridge,燕麦粥,英国日常生活：食品与日用品,
+jacket potato,带皮烤土豆,英国日常生活：食品与日用品,
+baked beans,茄汁焗豆,英国日常生活：食品与日用品,
+sausage roll / pasty,香肠卷 / 康沃尔肉馅饼,英国日常生活：食品与日用品,
+full English / fry-up,英式全套早餐,英国日常生活：食品与日用品,
+Sunday roast,周日烤肉大餐,英国日常生活：食品与日用品,英国家庭聚餐的经典形式
+shepherd's pie / cottage pie,牧羊人派（羊肉）/ 农家派（牛肉）,英国日常生活：食品与日用品,
+bap / bun / cob / roll,面包卷（各地叫法不同）,英国日常生活：食品与日用品,
+biscuit / cookie,饼干,英国日常生活：食品与日用品,英式 biscuit 指甜饼干，cookie 多指美式软曲奇
+scone,司康,英国日常生活：食品与日用品,读 /skɒn/ 或 /skəʊn/ 都行，加奶油还是果酱先放是永恒争论
+meal deal,套餐优惠（主食 + 零食 + 饮料）,英国日常生活：食品与日用品,三明治加零食加饮料的固定价套餐，英国午餐文化核心
+takeaway,外卖,英国日常生活：食品与日用品,英式，不是 takeout
+pub / gastropub,酒吧 / 餐吧,英国日常生活：食品与日用品,
+checkout / till,收银台,英国日常生活：食品与日用品,
+self-checkout,自助结账,英国日常生活：食品与日用品,
+trolley / basket,购物车 / 购物篮,英国日常生活：食品与日用品,
+receipt,小票,英国日常生活：食品与日用品,
+loyalty card (Clubcard / Nectar),超市会员卡,英国日常生活：食品与日用品,
+off-licence,酒类专卖店,英国日常生活：食品与日用品,
+corner shop,街角小店,英国日常生活：食品与日用品,
+chemist / pharmacy,药房,英国日常生活：食品与日用品,英国不说 drugstore
+prescription,处方,英国日常生活：食品与日用品,
+paracetamol,扑热息痛,英国日常生活：食品与日用品,英国最常用的非处方药
+plaster,创可贴,英国日常生活：食品与日用品,英式，不是 band-aid
+GP surgery,社区全科诊所,英国日常生活：食品与日用品,
+A&E (Accident & Emergency),急诊,英国日常生活：食品与日用品,
+NHS,英国国家医疗服务体系,英国日常生活：食品与日用品,
+flat,公寓,英国日常生活：食品与日用品,英式，不是 apartment
+ground floor / first floor,一楼 / 二楼,英国日常生活：食品与日用品,英国 ground floor 才是我们说的一楼
+lift,电梯,英国日常生活：食品与日用品,英式，不是 elevator
+bin / rubbish,垃圾桶 / 垃圾,英国日常生活：食品与日用品,英式，不是 trash
+washing-up liquid,洗洁精,英国日常生活：食品与日用品,
+cling film,保鲜膜,英国日常生活：食品与日用品,英式，不是 saran wrap
+kitchen roll,厨房纸巾,英国日常生活：食品与日用品,
+hoover (v.),用吸尘器打扫,英国日常生活：食品与日用品,
+kettle / hob / oven / grill,电水壶 / 灶台 / 烤箱 / 烤架,英国日常生活：食品与日用品,
+cutlery,餐具（刀叉勺）,英国日常生活：食品与日用品,
+cuppa / brew,一杯茶,英国日常生活：食品与日用品,
+queue,排队,英国日常生活：食品与日用品,英国排队的严格程度超乎想象
+queue-jumping,插队,英国日常生活：食品与日用品,英国人最不能忍的行为之一
+tap,水龙头,英国日常生活：食品与日用品,英式，不是 faucet
+wardrobe,衣柜,英国日常生活：食品与日用品,
+tumble dryer,滚筒烘干机,英国日常生活：食品与日用品,
+letting agent / landlord,房屋中介 / 房东,英国日常生活：食品与日用品,
+deposit / tenancy agreement,押金 / 租约,英国日常生活：食品与日用品,
+council tax,市政税,英国日常生活：食品与日用品,按住房分级征收，单人居住可申请 25% 折扣
+utility bills,水电燃气账单,英国日常生活：食品与日用品,
+national insurance number,国民保险号,英国日常生活：食品与日用品,俗称 NI number，工作与纳税必备，通常缩写为 NINO
+council / borough,地方政府 / 行政区,英国日常生活：食品与日用品,
+bank holiday,公共假日,英国日常生活：食品与日用品,每年只有八天，全英统一
+postcode,邮编,英国日常生活：食品与日用品,
+supermarket chains,英国主要超市,英国日常生活：食品与日用品,高端 Waitrose/M&S，主流 Tesco/Sainsbury's，平价 Asda/Morrisons，折扣 Aldi/Lidl
+crisps,薯片,英国日常生活：食品与日用品,英国叫 crisps，chips 是薯条，最常见的点餐误解
+chips,薯条,英国日常生活：食品与日用品,不是薯片
+fizzy drink,碳酸饮料,英国日常生活：食品与日用品,英国不用 soda 这个词
+squash,浓缩果汁饮料,英国日常生活：食品与日用品,
+biscuit,饼干,英国日常生活：食品与日用品,英式 biscuit 近似美式 cookie，但更硬更脆
+jam,果酱,英国日常生活：食品与日用品,
+banger,香肠,英国日常生活：食品与日用品,口语说法，配 mash 即香肠土豆泥
+bap / barm / cob,小圆面包,英国日常生活：食品与日用品,地区叫法不同，是判别口音地域的经典测试
+black pudding,黑布丁,英国日常生活：食品与日用品,血肠，全套英式早餐的组成部分
+bacon rasher,培根片,英国日常生活：食品与日用品,
+beans on toast,烤豆吐司,英国日常生活：食品与日用品,
+fish and chips,炸鱼薯条,英国日常生活：食品与日用品,
+newsagent,报刊便利店,英国日常生活：食品与日用品,
+chemist,药房 / 日化店,英国日常生活：食品与日用品,Boots 是最常见的连锁
+till / checkout,收银台,英国日常生活：食品与日用品,
+loyalty card,积分卡,英国日常生活：食品与日用品,Tesco Clubcard 与 Nectar 最普及
+Nectar points,Nectar 积分,英国日常生活：食品与日用品,
+Best before vs Use by,最佳食用期与保质期,英国日常生活：食品与日用品,前者是品质提示，后者过期不得食用
+food hygiene rating,食品卫生评级,英国日常生活：食品与日用品,
+deposit return scheme,瓶罐押金退还计划,英国日常生活：食品与日用品,苏格兰已实施，英格兰即将推行
+brolly,雨伞,英国日常生活：食品与日用品,英国口语缩写，十有八九会用到
+wellies,雨靴,英国日常生活：食品与日用品,
+ibuprofen,布洛芬,英国日常生活：食品与日用品,
+loo / toilet / bog,厕所的三种说法,英国日常生活：食品与日用品,公开场合用 toilet 或 loo，bog 极口语
+bin,垃圾桶,英国日常生活：食品与日用品,英式用 bin，美式用 trash can
+hoover,吸尘器 / 吸尘,英国日常生活：食品与日用品,品牌名泛化为动词，英国特有用法
+ironing board,熨衣板,英国日常生活：食品与日用品,
+duvet,羽绒被,英国日常生活：食品与日用品,英国寝具的默认形式，不是 blanket
+kettle,电水壶,英国日常生活：食品与日用品,英国家庭使用频率最高的电器之一
+National Insurance contributions,国民保险费,英国生活事务：租房、医疗与开户,工资单上的 NICs，用于累积养老金权利
+PAYE,预扣所得税制,英国生活事务：租房、医疗与开户,Pay As You Earn，多数雇员自动适用
+tax code,税号代码,英国生活事务：租房、医疗与开户,如 1257L，决定免税额度，出错会导致少发工资
+P60,年度纳税证明,英国生活事务：租房、医疗与开户,财年结束后由雇主提供
+P45,离职纳税汇总表,英国生活事务：租房、医疗与开户,换工作时交给新雇主
+self-assessment tax return,自评申报表,英国生活事务：租房、医疗与开户,副业或高收入者须自行申报
+council tax band,市政税等级,英国生活事务：租房、医疗与开户,A 至 H 共八级，取决于房产估值
+single person discount,单人居住折扣,英国生活事务：租房、医疗与开户,
+energy supplier,电力燃气供应商,英国生活事务：租房、医疗与开户,
+standing charge,固定日租费,英国生活事务：租房、医疗与开户,即便不用气电也照收
+meter reading,抄表读数,英国生活事务：租房、医疗与开户,
+water rates,水费,英国生活事务：租房、医疗与开户,
+TV licence,电视牌照费,英国生活事务：租房、医疗与开户,看直播或 BBC iPlayer 就必须买
+tenancy agreement,租赁合同,英国生活事务：租房、医疗与开户,
+assured shorthold tenancy (AST),保障性短期租赁,英国生活事务：租房、医疗与开户,英国最常见的私人租房形式
+landlord / letting agent,房东 / 租赁中介,英国生活事务：租房、医疗与开户,
+deposit protection scheme,押金保护计划,英国生活事务：租房、医疗与开户,法律强制，押金须在 30 日内存入
+tenancy deposit,租赁押金,英国生活事务：租房、医疗与开户,
+inventory check,房屋清单核验,英国生活事务：租房、医疗与开户,入住与退租时逐项对照，退押金的关键证据
+check-in / check-out report,入住 / 退租报告,英国生活事务：租房、医疗与开户,
+break clause,中途解约条款,英国生活事务：租房、医疗与开户,
+guarantor,担保人,英国生活事务：租房、医疗与开户,无英国信用记录时常被要求提供
+rent in advance,预付租金,英国生活事务：租房、医疗与开户,
+holding deposit,定金,英国生活事务：租房、医疗与开户,法定上限为一周租金
+right to rent check,租赁资格核查,英国生活事务：租房、医疗与开户,房东必须核验租客的合法居留身份
+flat share / house share,合租,英国生活事务：租房、医疗与开户,
+bills included,含账单,英国生活事务：租房、医疗与开户,合租房广告常见表述，务必确认含哪些
+studio flat,单间公寓,英国生活事务：租房、医疗与开户,
+one-bed flat,一居室,英国生活事务：租房、医疗与开户,
+leasehold / freehold,租赁产权 / 永久产权,英国生活事务：租房、医疗与开户,英国房产的两大产权类型，差异极大
+ground rent,地租,英国生活事务：租房、医疗与开户,
+service charge,物业管理费,英国生活事务：租房、医疗与开户,
+mortgage offer,按揭批准函,英国生活事务：租房、医疗与开户,
+stamp duty land tax,印花税,英国生活事务：租房、医疗与开户,
+conveyancing,房产过户法律事务,英国生活事务：租房、医疗与开户,
+EPC,能源性能证书,英国生活事务：租房、医疗与开户,Energy Performance Certificate，租房买房必备
+GP registration,注册全科医生,英国生活事务：租房、医疗与开户,落地后应尽早办理，没注册看病很麻烦
+NHS number,国民健康服务编号,英国生活事务：租房、医疗与开户,
+NHS 111,非紧急医疗咨询热线,英国生活事务：租房、医疗与开户,
+A&E,急诊科,英国生活事务：租房、医疗与开户,Accident & Emergency
+walk-in centre,免预约诊疗中心,英国生活事务：租房、医疗与开户,
+pharmacy / chemist,药房,英国生活事务：租房、医疗与开户,
+prescription charge,处方费,英国生活事务：租房、医疗与开户,英格兰地区收费，苏格兰与威尔士已取消
+referral,转诊,英国生活事务：租房、医疗与开户,
+waiting list,候诊名单,英国生活事务：租房、医疗与开户,
+private health insurance,私人医疗保险,英国生活事务：租房、医疗与开户,
+current account,活期账户,英国生活事务：租房、医疗与开户,
+savings account,储蓄账户,英国生活事务：租房、医疗与开户,
+proof of address,地址证明,英国生活事务：租房、医疗与开户,开户与办事的高频材料
+credit history / credit file,信用记录,英国生活事务：租房、医疗与开户,刚到英国时几乎为零，会影响租房与开户
+overdraft,透支额度,英国生活事务：租房、医疗与开户,
+direct debit,直接借记,英国生活事务：租房、医疗与开户,授权商户按需扣款，账单常用
+standing order,定期转账指令,英国生活事务：租房、医疗与开户,固定金额固定日期，你自己设定
+contactless payment,非接触式支付,英国生活事务：租房、医疗与开户,英国普及度极高，单笔通常上限 100 英镑
+cashpoint / ATM,自动取款机,英国生活事务：租房、医疗与开户,英国口语里 cashpoint 比 ATM 更常见
+mobile banking app,手机银行,英国生活事务：租房、医疗与开户,
+challenger bank,新兴数字银行,英国生活事务：租房、医疗与开户,Monzo、Starling、Revolut 等
+Individual Savings Account (ISA),个人储蓄账户,英国生活事务：租房、医疗与开户,利息与资本利得免税，每年有额度上限
+Premium Bonds,溢价债券,英国生活事务：租房、医疗与开户,英国国家储蓄局的抽奖型储蓄产品
+driving licence,驾照,英国生活事务：租房、医疗与开户,
+DVLA,英国车辆管理局,英国生活事务：租房、医疗与开户,Driver and Vehicle Licensing Agency
+MOT test,车辆年检,英国生活事务：租房、医疗与开户,
+road tax,车辆税,英国生活事务：租房、医疗与开户,
+congestion charge,伦敦拥堵费,英国生活事务：租房、医疗与开户,
+ULEZ,超低排放区,英国生活事务：租房、医疗与开户,Ultra Low Emission Zone，不达标车辆须缴费
+council,地方议会,英国生活事务：租房、医疗与开户,负责垃圾清运、市政税、图书馆等
+recycling collection,垃圾回收,英国生活事务：租房、医疗与开户,
+999 / 111 / 101,紧急 / 医疗咨询 / 非紧急警务电话,英国生活事务：租房、医疗与开户,
+Elizabeth Tower / Big Ben,伊丽莎白塔 / 大本钟,伦敦地标与交通,大本钟是钟，塔叫伊丽莎白塔
+Palace of Westminster,威斯敏斯特宫（议会大厦）,伦敦地标与交通,
+Westminster Abbey,威斯敏斯特教堂,伦敦地标与交通,
+Buckingham Palace,白金汉宫,伦敦地标与交通,
+Trafalgar Square / Nelson's Column,特拉法加广场 / 纳尔逊纪念柱,伦敦地标与交通,
+Tower of London / Tower Bridge,伦敦塔 / 塔桥,伦敦地标与交通,
+London Bridge,伦敦桥,伦敦地标与交通,不是明信片上那座塔桥，别混
+St Paul's Cathedral,圣保罗大教堂,伦敦地标与交通,
+The City / Square Mile,伦敦金融城 / 一平方英里,伦敦地标与交通,
+Bank of England / Royal Exchange,英格兰银行 / 皇家交易所,伦敦地标与交通,
+Mansion House / Guildhall,市长官邸 / 市政厅,伦敦地标与交通,
+Canary Wharf,金丝雀码头,伦敦地标与交通,第二大金融中心
+One Canada Square,加拿大广场一号,伦敦地标与交通,
+The Shard / The Gherkin,碎片大厦 / 小黄瓜,伦敦地标与交通,
+The Cheesegrater / The Walkie-Talkie,奶酪刨大楼 / 对讲机大楼,伦敦地标与交通,
+The Monument,伦敦大火纪念碑,伦敦地标与交通,
+British Museum / National Gallery,大英博物馆 / 国家美术馆,伦敦地标与交通,
+Tate Modern / Tate Britain,泰特现代 / 泰特不列颠,伦敦地标与交通,
+London Eye / South Bank,伦敦眼 / 南岸,伦敦地标与交通,
+Covent Garden / Leicester Square,考文特花园 / 莱斯特广场,伦敦地标与交通,
+Piccadilly Circus / Oxford Street,皮卡迪利圆环 / 牛津街,伦敦地标与交通,
+Regent Street / Bond Street,摄政街 / 邦德街,伦敦地标与交通,
+Soho / Shoreditch / Camden,苏荷 / 肖尔迪奇 / 卡姆登,伦敦地标与交通,
+Notting Hill / Portobello Road,诺丁山 / 波多贝罗路,伦敦地标与交通,
+Borough Market,博罗市场,伦敦地标与交通,
+Hyde Park / Regent's Park,海德公园 / 摄政公园,伦敦地标与交通,
+St James's Park / Green Park,圣詹姆斯公园 / 绿园,伦敦地标与交通,
+Greenwich / Royal Observatory,格林尼治 / 皇家天文台,伦敦地标与交通,
+Kew Gardens / Hampstead Heath,邱园 / 汉普斯特德荒野,伦敦地标与交通,
+King's Cross / St Pancras,国王十字 / 圣潘克拉斯（欧洲之星）,伦敦地标与交通,欧洲之星出发站
+Paddington / Heathrow Express,帕丁顿 / 希思罗快线,伦敦地标与交通,
+The Tube / Underground,伦敦地铁,伦敦地标与交通,
+Overground / DLR / Elizabeth line,地上铁 / 码头区轻轨 / 伊丽莎白线,伦敦地标与交通,
+TfL / Oyster / contactless,伦敦交通局 / 牡蛎卡 / 非接触支付,伦敦地标与交通,
+Zone 1 / terminus,一区 / 终点站,伦敦地标与交通,
+Mind the gap,小心站台空隙,伦敦地标与交通,
+platform / escalator,站台 / 自动扶梯,伦敦地标与交通,
+stand on the right,靠右站立,伦敦地标与交通,扶梯左侧留给赶时间的人
+black cab / minicab,黑色出租车 / 预约制网约车,伦敦地标与交通,
+Santander Cycles,伦敦共享单车,伦敦地标与交通,
+National Rail / railcard,国家铁路 / 铁路折扣卡,伦敦地标与交通,
+coach station,长途汽车站,伦敦地标与交通,
+Moorgate / Liverpool Street / Bank,金融城三个主要地铁站,伦敦地标与交通,
+Broadgate / Aldgate,金融城办公区与站点,伦敦地标与交通,
+Whitehall,白厅（英国政府街）,伦敦地标与交通,英国政府各部委所在地
+Downing Street,唐宁街,伦敦地标与交通,
+Horse Guards Parade,皇家骑兵卫队阅兵场,伦敦地标与交通,
+The Mall,林荫路（通往白金汉宫）,伦敦地标与交通,
+Marble Arch,大理石拱门,伦敦地标与交通,
+Barbican Centre,巴比肯艺术中心,伦敦地标与交通,
+Royal Albert Hall,皇家阿尔伯特音乐厅,伦敦地标与交通,
+Abbey Road,艾比路（披头士斑马线）,伦敦地标与交通,
+Baker Street,贝克街（福尔摩斯 221B）,伦敦地标与交通,
+Regent's Canal,摄政运河,伦敦地标与交通,
+Camden Lock,卡姆登水闸,伦敦地标与交通,
+Little Venice,小威尼斯,伦敦地标与交通,
+Primrose Hill,樱草山,伦敦地标与交通,
+The O2,O2 体育馆,伦敦地标与交通,
+Wembley Stadium,温布利球场,伦敦地标与交通,
+Lord's / The Oval,伦敦两大板球场,伦敦地标与交通,
+Richmond / Wimbledon,里士满 / 温布尔登,伦敦地标与交通,
+Clapham / Brixton / Peckham,克拉珀姆 / 布里克斯顿 / 佩卡姆,伦敦地标与交通,
+peak / off-peak,高峰 / 非高峰（票价时段）,伦敦地标与交通,票价差异显著，通勤成本的关键变量
+tap in / tap out,刷卡进站 / 出站,伦敦地标与交通,
+the City of London,伦敦金融城,伦敦地标与交通,square mile，与 Westminster 的行政伦敦是两回事
+Bank,银行站,伦敦地标与交通,伦敦地铁站名，金融城的交通枢纽
+Moorgate,摩尔盖特,伦敦地标与交通,金融城北部车站
+Liverpool Street,利物浦街站,伦敦地标与交通,
+Liverpool Street station,利物浦街火车站,伦敦地标与交通,通往 Stansted 机场与东英格兰
+Old Street,老街站,伦敦地标与交通,科技城 Silicon Roundabout 所在
+Barbican,巴比肯,伦敦地标与交通,金融城北侧的住宅与文化中心
+St Paul's,圣保罗座堂,伦敦地标与交通,
+Tower Bridge,塔桥,伦敦地标与交通,常被误认作 London Bridge，两者完全不同
+Tower of London,伦敦塔,伦敦地标与交通,
+the Shard,碎片大厦,伦敦地标与交通,西欧最高建筑
+Tate Modern,泰特现代美术馆,伦敦地标与交通,
+South Bank,南岸,伦敦地标与交通,
+Waterloo,滑铁卢站,伦敦地标与交通,南岸主要交通枢纽
+Paddington,帕丁顿站,伦敦地标与交通,通往希思罗机场快线与西英格兰
+Euston,尤斯顿站,伦敦地标与交通,通往曼彻斯特、格拉斯哥等北方城市
+Marylebone,马里波恩站,伦敦地标与交通,
+Victoria,维多利亚站,伦敦地标与交通,
+Earl's Court,伯爵宫站,伦敦地标与交通,
+Canary Wharf station,金丝雀码头站,伦敦地标与交通,Jubilee line 与 DLR 交汇
+Westminster,威斯敏斯特站,伦敦地标与交通,
+Houses of Parliament,议会大厦,伦敦地标与交通,
+Trafalgar Square,特拉法加广场,伦敦地标与交通,
+Piccadilly Circus,皮卡迪利圆环,伦敦地标与交通,
+Covent Garden,考文特花园,伦敦地标与交通,
+Camden Town,卡姆登镇,伦敦地标与交通,
+Notting Hill,诺丁山,伦敦地标与交通,
+Brick Lane,砖巷,伦敦地标与交通,
+Greenwich,格林尼治,伦敦地标与交通,
+O2 Arena,O2 体育馆,伦敦地标与交通,
+Wembley,温布利,伦敦地标与交通,
+Heathrow / Gatwick / Stansted / Luton / City,五大伦敦机场,伦敦地标与交通,City 机场离金融城最近，但只能起降小型机
+Elizabeth line,伊丽莎白线,伦敦地标与交通,横贯伦敦的东西向快速铁路，2022 年全线通车
+Thameslink,泰晤士连线,伦敦地标与交通,
+Overground,伦敦地上铁,伦敦地标与交通,
+TfL,伦敦交通局,伦敦地标与交通,Transport for London
+Oyster card,牡蛎卡,伦敦地标与交通,实体交通卡，现多被非接触银行卡取代
+contactless cap,非接触支付每日/每周封顶,伦敦地标与交通,用银行卡直接刷闸机比买票更划算
+Travelcard,交通通票,伦敦地标与交通,
+zone 1-6,一至六区,伦敦地标与交通,伦敦交通分区计费体系
+Railcard,铁路优惠卡,伦敦地标与交通,如 26-30 Railcard，可省三分之一
+National Rail,英国国家铁路,伦敦地标与交通,
+advance single,预售单程票,伦敦地标与交通,通常比现场购票便宜一半以上
+split ticketing,分段购票,伦敦地标与交通,英国合法且常见的省钱技巧
+delay repay,延误补偿,伦敦地标与交通,火车晚点超过一定时长可申请退款
+strike action,罢工,伦敦地标与交通,英国铁路罢工频繁，需提前查 National Rail 网站
+bus pass / Hopper fare,公交票 / 换乘优惠,伦敦地标与交通,一小时内换乘公交不额外收费
+congestion charge zone,拥堵费区域,伦敦地标与交通,
+Black cab,黑色出租车,伦敦地标与交通,须通过「知识」考试，可路边招手
+licensed minicab,预约制出租车,伦敦地标与交通,不能路边招手，必须提前预约
+small talk,寒暄闲聊,英国文化与社交,英国职场与社交的润滑剂，不是浪费时间
+weather talk,聊天气,英国文化与社交,英国社交的默认开场，本质是表达善意
+How's it going?,最近怎么样？,英国文化与社交,回答不用真诚汇报，一句 Not too bad 即可
+You alright?,你好啊？,英国文化与社交,英式招呼语，**不是**真的在问你身体好不好
+Not too bad.,还行。,英国文化与社交,英式回答的最高级克制表达
+Can't complain.,没什么可抱怨的。,英国文化与社交,
+Cheers.,谢谢 / 干杯,英国文化与社交,英国用法极广，从道谢到告别都能用
+Ta.,谢啦,英国文化与社交,非常口语的道谢，英式特色
+Fancy a cuppa?,要不要来杯茶？,英国文化与社交,cuppa = cup of tea，办公室社交的万能开场
+Do you want a brew?,要来杯茶吗？,英国文化与社交,brew 在英式口语中也指一杯茶
+tea round,茶水轮值,英国文化与社交,办公室文化里人人都要轮到，别只让别人给你倒
+drinks round,轮流请酒,英国文化与社交,酒吧文化铁律：轮到你就得请，不能只喝别人的
+pub quiz,酒吧知识竞赛,英国文化与社交,
+pub lunch,酒吧午餐,英国文化与社交,
+after-work drinks,下班小酌,英国文化与社交,
+full English breakfast,全套英式早餐,英国文化与社交,
+Boxing Day,节礼日,英国文化与社交,12 月 26 日
+Bonfire Night,篝火之夜,英国文化与社交,11 月 5 日，纪念火药阴谋
+Remembrance Day,阵亡将士纪念日,英国文化与社交,11 月 11 日前后佩戴罂粟花
+Pancake Day,煎饼日,英国文化与社交,忏悔星期二，全民吃薄饼
+Christmas do,公司圣诞聚会,英国文化与社交,do 在英国口语中泛指活动、聚会
+Christmas jumper day,圣诞毛衣日,英国文化与社交,
+dress code,着装规范,英国文化与社交,
+smart casual,商务休闲,英国文化与社交,比 business casual 更得体一档，别穿运动鞋
+business attire,正装,英国文化与社交,
+hot-desking,流动性工位,英国文化与社交,
+breakout area,休息区,英国文化与社交,
+water cooler moment,茶水间的非正式交流,英国文化与社交,
+personal space,个人空间,英国文化与社交,英国人比南欧人更在意身体距离
+understatement,低调陈述,英国文化与社交,「Not bad」往往是「相当好」，这是英式表达的核心特征
+self-deprecation,自嘲,英国文化与社交,
+British reserve,英式克制,英国文化与社交,不轻易表露强烈情绪
+banter,玩笑打趣,英国文化与社交,英式幽默的主要形式，但要分清边界避免越界
+taking the mickey,取笑调侃,英国文化与社交,熟悉同事间的常用语，正式场合绝不可用
+irony,反讽,英国文化与社交,英国幽默的底层语法，字面意思常与真实意思相反
+queuing etiquette,排队礼仪,英国文化与社交,插队是英国社会最严重的失礼之一
+sorry culture,道歉文化,英国文化与社交,英国人平均一天说 sorry 八次，多数并非认错
+excuse me vs sorry,打扰一下 / 抱歉,英国文化与社交,进出门与人擦身而过时用 sorry 更地道
+Sorted.,搞定了。,英国文化与社交,
+Brilliant.,太好了。,英国文化与社交,
+Lovely.,很好。,英国文化与社交,
+Fair enough.,有道理 / 可以。,英国文化与社交,
+I'm easy.,我都行。,英国文化与社交,
+Bear with me.,稍等一下。,英国文化与社交,
+to pop round,顺道过去一趟,英国文化与社交,
+to swing by,顺便过来,英国文化与社交,
+to grab a bite,随便吃点,英国文化与社交,
+to be knackered,累趴了,英国文化与社交,
+to be gutted,特别失望,英国文化与社交,
+to be chuffed,特别高兴,英国文化与社交,
+to be gobsmacked,目瞪口呆,英国文化与社交,
+a bit of a faff,有点麻烦事,英国文化与社交,
+not my cup of tea,不是我的菜,英国文化与社交,
+Premier League,英超联赛,英国文化与社交,
+Six Nations,六国橄榄球赛,英国文化与社交,
+Wimbledon,温布尔登网球赛,英国文化与社交,
+broadsheet / tabloid,大报 / 小报,英国文化与社交,
+Financial Times,金融时报,英国文化与社交,英国金融圈的必读报纸
+Radio 4,BBC 第四广播台,英国文化与社交,英国中产与专业人士的信息主流渠道
+BBC Sounds,BBC 音频平台,英国文化与社交,
