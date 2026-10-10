@@ -35,3 +35,8 @@ desktop.ini
 *.tmp
 ~$*
 .~lock.*
+
+# ===== 本地备份快照（按 John决定：只保留 bak_history.md，不上传 .bak 文件） =====
+# 说明：backups/bak_history.md 已完整记录每个备份的时间、原路径、用途与变更原因，
+#       .bak 快照本身信息增益低且体积翻倍，故排除。
+backups/*.bak

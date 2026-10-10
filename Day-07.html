@@ -1,0 +1,1501 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Day 07 · 第 1 周测评与复盘 + 英国监管架构与 FCA 手册 — 英国银行业合规英语强化</title>
+<style>
+:root{
+  --bg:#f5f6f8;--panel:#fff;--panel-2:#fafbfc;--line:#e3e6ea;--line-2:#eef1f4;
+  --ink:#1c2330;--ink-2:#4a5568;--ink-3:#8a94a3;
+  --navy:#012169;--red:#c8102e;--blue:#1f6feb;--teal:#0f8a7e;--amber:#b7791f;--purple:#6b46c1;--green:#2f855a;
+  --shadow:0 1px 2px rgba(16,24,40,.05),0 4px 14px rgba(16,24,40,.06);
+  --radius:12px;
+}
+*{box-sizing:border-box;}
+body{margin:0;background:var(--bg);color:var(--ink);font-size:14px;line-height:1.68;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",Roboto,sans-serif;
+  -webkit-font-smoothing:antialiased;}
+a{color:var(--blue);text-decoration:none;}
+a:hover{text-decoration:underline;}
+
+.hero{background:linear-gradient(120deg,#012169 0%,#0b3a8f 55%,#1f6feb 100%);color:#fff;padding:24px 28px 20px;}
+.hero-inner{max-width:1080px;margin:0 auto;}
+.crumb{font-size:12px;opacity:.85;}
+.crumb a{color:#fff;text-decoration:underline;}
+.hero h1{margin:8px 0 6px;font-size:23px;font-weight:700;}
+.hero p{margin:0;opacity:.88;font-size:13.5px;max-width:820px;}
+.stats{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px;}
+.stat{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18);border-radius:10px;padding:7px 13px;min-width:98px;}
+.stat b{display:block;font-size:17px;font-weight:700;line-height:1.2;}
+.stat span{font-size:11.5px;opacity:.82;}
+
+main{max-width:1080px;margin:0 auto;padding:22px 20px 90px;}
+h2.sec{font-size:18px;margin:0 0 4px;font-weight:700;}
+p.sub{margin:0 0 16px;color:var(--ink-3);font-size:13px;}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px;margin-bottom:16px;}
+.card h3{margin:0 0 10px;font-size:15.5px;font-weight:700;}
+.card h4{margin:16px 0 6px;font-size:13.5px;font-weight:700;color:var(--navy);}
+.card h4:first-child{margin-top:0;}
+.mod{display:flex;align-items:center;gap:12px;margin-bottom:10px;}
+.mod-no{flex:0 0 44px;height:44px;border-radius:11px;background:var(--navy);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1.05;}
+.mod-no b{font-size:15px;}
+.mod-no span{font-size:9px;opacity:.8;letter-spacing:.06em;}
+.mod-tt{flex:1;}
+.mod-tt h3{margin:0;font-size:16px;}
+.mod-tt p{margin:1px 0 0;font-size:12.5px;color:var(--ink-3);}
+.mod-time{font-size:11.5px;color:#fff;background:var(--teal);border-radius:999px;padding:3px 10px;white-space:nowrap;}
+.mod-time.hot{background:var(--red);}
+
+.pill{display:inline-block;font-size:11px;padding:2px 8px;border-radius:999px;border:1px solid var(--line);background:var(--panel-2);color:var(--ink-2);margin:0 5px 5px 0;}
+.pill.navy{background:#eef2fb;border-color:#d5def5;color:var(--navy);}
+.pill.red{background:#fdeef0;border-color:#f7d4d9;color:var(--red);}
+.pill.teal{background:#e9f7f5;border-color:#cbe9e4;color:var(--teal);}
+.pill.amber{background:#fdf6e7;border-color:#f3e3bd;color:var(--amber);}
+.pill.purple{background:#f2edfb;border-color:#e0d5f5;color:var(--purple);}
+.pill.green{background:#ecf7f1;border-color:#d0ebdd;color:var(--green);}
+
+ul.tight{margin:6px 0 0;padding-left:20px;}
+ul.tight li{margin-bottom:5px;font-size:13.2px;color:var(--ink-2);}
+ul.tight li b{color:var(--ink);}
+ol.tight{margin:6px 0 0;padding-left:22px;}
+ol.tight li{margin-bottom:6px;font-size:13.2px;color:var(--ink-2);}
+ol.tight li b{color:var(--ink);}
+
+.ck{display:flex;align-items:flex-start;gap:10px;padding:8px 0;border-bottom:1px solid var(--line-2);cursor:pointer;}
+.ck:last-child{border-bottom:0;}
+.ck:hover{background:var(--panel-2);}
+.ck .bx{flex:0 0 17px;width:17px;height:17px;border:1.5px solid var(--line);border-radius:5px;background:#fff;margin-top:3px;}
+.ck.on .bx{background:var(--green);border-color:var(--green);}
+.ck.on .bx::after{content:"✓";color:#fff;font-size:11px;display:flex;justify-content:center;line-height:15px;}
+.ck .tx{flex:1;font-size:13.2px;color:var(--ink-2);}
+.ck.on .tx{color:var(--ink-3);text-decoration:line-through;}
+
+.script{background:#fbfcfd;border:1px solid var(--line-2);border-radius:10px;padding:14px 16px;font-size:13.4px;line-height:1.95;color:var(--ink);}
+.script em{font-style:normal;background:#fff2c9;padding:0 1px;border-radius:2px;}
+.script u{text-decoration:none;border-bottom:2px solid #b9d4ff;}
+.script .rhythm{color:var(--red);font-weight:600;}
+.script .spk{font-weight:700;color:var(--navy);}
+.mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:12.6px;}
+.ipa{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--amber);font-size:12.4px;}
+
+table{width:100%;border-collapse:collapse;font-size:13px;}
+th,td{text-align:left;padding:8px 9px;border-bottom:1px solid var(--line-2);vertical-align:top;}
+th{background:var(--panel-2);font-size:11.5px;color:var(--ink-3);letter-spacing:.03em;text-transform:uppercase;font-weight:600;position:sticky;top:0;z-index:2;}
+tbody tr:hover{background:#fbfcfd;}
+td.en{font-weight:600;color:var(--navy);white-space:nowrap;}
+td.ph{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--amber);font-size:12px;white-space:nowrap;}
+td.ex{color:var(--ink-2);font-size:12.6px;}
+td.ex i{display:block;color:var(--ink-3);font-style:normal;font-size:12px;margin-top:2px;}
+.tblwrap{max-height:620px;overflow:auto;border:1px solid var(--line-2);border-radius:10px;}
+.vck{width:16px;height:16px;border:1.5px solid var(--line);border-radius:4px;background:#fff;display:inline-block;cursor:pointer;vertical-align:middle;}
+.vck.on{background:var(--green);border-color:var(--green);}
+.vck.on::after{content:"✓";color:#fff;font-size:10px;display:flex;justify-content:center;line-height:14px;}
+
+.btn{appearance:none;font:inherit;font-size:13px;padding:7px 14px;border-radius:8px;border:1px solid var(--line);background:#fff;color:var(--ink);cursor:pointer;}
+.btn:hover{background:var(--panel-2);}
+.btn.primary{background:var(--navy);border-color:var(--navy);color:#fff;}
+.btn.primary:hover{background:#0b3a8f;}
+.reveal{margin-top:10px;}
+.revbd{display:none;margin-top:10px;}
+.revbd.on{display:block;}
+
+.timer{display:flex;align-items:center;gap:10px;flex-wrap:wrap;background:var(--panel-2);border:1px solid var(--line-2);border-radius:10px;padding:10px 12px;}
+.timer .clock{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:24px;font-weight:700;color:var(--navy);min-width:76px;}
+.timer .clock.warn{color:var(--red);}
+
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+@media(max-width:840px){.two{grid-template-columns:1fr;}}
+.rowline{display:flex;gap:9px;font-size:13px;padding:7px 0;border-bottom:1px solid var(--line-2);}
+.rowline:last-child{border-bottom:0;}
+.rowline .t{flex:0 0 34%;font-weight:600;color:var(--navy);}
+.rowline .m{flex:1;color:var(--ink-2);}
+.note{background:#fffbea;border:1px solid #f5e6b8;border-radius:9px;padding:11px 13px;font-size:12.7px;color:#7a5c12;}
+.note b{color:#6b4f0d;}
+.bad{background:#fdeef0;border:1px solid #f7d4d9;border-radius:9px;padding:11px 13px;font-size:12.7px;color:#8c2231;}
+.good{background:#ecf7f1;border:1px solid #d0ebdd;border-radius:9px;padding:11px 13px;font-size:12.7px;color:#276749;}
+.info{background:#eef4ff;border:1px solid #d3e0fb;border-radius:9px;padding:11px 13px;font-size:12.7px;color:#1b4189;}
+.rate{display:flex;gap:6px;align-items:center;margin:4px 0 10px;}
+.rate span.lb{flex:0 0 260px;font-size:13px;color:var(--ink-2);}
+.rate button{width:32px;height:30px;border:1px solid var(--line);background:#fff;border-radius:7px;cursor:pointer;font:inherit;font-size:12.5px;color:var(--ink-2);}
+.rate button:hover{border-color:var(--blue);}
+.rate button.on{background:var(--navy);border-color:var(--navy);color:#fff;font-weight:700;}
+.bar{height:9px;background:var(--line-2);border-radius:999px;overflow:hidden;margin:6px 0 4px;}
+.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--navy),var(--blue));border-radius:999px;transition:width .3s;}
+.tagline{display:flex;gap:10px;font-size:12.5px;color:var(--ink-3);flex-wrap:wrap;}
+
+.step{display:flex;gap:10px;margin:14px 0 8px;}
+.step .n{flex:0 0 26px;height:26px;border-radius:8px;background:var(--blue);color:#fff;font-size:12.5px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.step .h{font-size:14px;font-weight:700;color:var(--navy);padding-top:2px;}
+.step .h small{display:block;font-weight:400;font-size:12px;color:var(--ink-3);}
+
+.hit{color:var(--red);font-weight:600;}
+.seg{background:#eef4ff;border-radius:4px;padding:0 2px;}
+.lk{background:#e9f7f5;border-radius:4px;padding:0 2px;}
+
+footer{max-width:1080px;margin:0 auto;padding:0 20px 60px;color:var(--ink-3);font-size:12.5px;text-align:center;}
+/*PRON_CSS_START*/
+.btn.sm{font-size:12px;padding:5px 10px;border-radius:7px;}
+.prhead{display:flex;align-items:flex-start;gap:10px;flex-wrap:wrap;margin:0 0 6px;}
+.prno{flex:0 0 auto;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:11.5px;font-weight:700;color:#fff;background:var(--teal);border-radius:6px;padding:3px 8px;}
+.prtt{font-size:15px;font-weight:700;flex:1;min-width:190px;color:var(--navy);}
+.prmeta{font-size:11.5px;color:var(--ink-3);padding-top:4px;}
+.prbox{background:#fbfcfd;border:1px solid var(--line-2);border-left:3px solid var(--teal);border-radius:10px;padding:15px 17px;font-size:15.2px;line-height:2.1;color:var(--ink);font-family:Georgia,"Times New Roman",-apple-system,"PingFang SC","Microsoft YaHei",serif;}
+.prbox .pp{margin-bottom:9px;}
+.prbox .pp:last-child{margin-bottom:0;}
+.prbox b.ps{color:var(--red);font-weight:700;}
+.prbox u.pl{text-decoration:none;background:#e9f1ff;border-radius:3px;padding:0 1px;}
+.prbox em.px{font-style:normal;background:#fff2c9;border-radius:3px;padding:0 1px;}
+.prbox .who{font-weight:700;color:var(--navy);font-family:-apple-system,"Segoe UI","Microsoft YaHei",sans-serif;font-size:13px;}
+.prleg{display:flex;gap:14px;flex-wrap:wrap;font-size:12px;color:var(--ink-3);margin:9px 0 0;}
+.prleg i{font-style:normal;padding:0 3px;border-radius:3px;}
+.prwhy{font-size:12.3px;color:var(--ink-3);display:block;margin:8px 0 0;}
+.prseg{border-top:1px dashed var(--line);padding-top:15px;margin-top:17px;}
+.prseg:first-child{border-top:0;padding-top:0;margin-top:0;}
+.przh{font-size:13.2px;color:var(--ink-2);background:var(--panel-2);border:1px solid var(--line-2);border-radius:9px;padding:12px 14px;line-height:1.9;}
+/*PRON_CSS_END*/
+</style>
+<style id="day7QuizCss">
+/* 第1 周术语测（由 _build_day07_page.js 注入） */
+#quizTbl .qin{width:100%;padding:5px 7px;border:1px solid var(--line-2);border-radius:6px;font-size:12.5px;font-family:inherit;background:#fff;color:var(--ink);}
+#quizTbl .qin:focus{outline:none;border-color:var(--teal);box-shadow:0 0 0 2px rgba(0,150,136,.12);}
+#quizTbl .qres{text-align:center;font-size:14px;font-weight:700;}
+#quizTbl .qtag{display:inline-block;margin-left:7px;padding:1px 6px;border-radius:5px;background:var(--panel-2);border:1px solid var(--line-2);font-size:10.5px;color:var(--ink-3);font-family:ui-monospace,Menlo,Consolas,monospace;vertical-align:1px;}
+#quizTbl td.zh{font-size:12.5px;color:var(--ink-2);}
+#quizTbl tr.rw{background:#fffdf5;}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="crumb"><a href="00-作战中心.html">← 返回作战中心</a>　·　第 1 周：地基与英式英语适应（今天是第 1 周最后一天）　·　<a href="Day-06.html">Day 06</a></div>
+    <h1>Day 07 · 第 1 周测评与复盘 + 英国监管架构</h1>
+    <p>今天是<b>第 1 周的最后一天，也是唯一一次「验收日」</b>。词表第 601–700 行顺延到了<b>英国监管与市场行为</b>——BoE、FPC、FCA 手册（PRIN / SYSC / COBS / CASS / SUP）、SM&amp;CR 责任制度、市场滥用三条线、美国监管（SEC / FINRA / CFTC / BSA / FCPA）、投诉赔付（FOS / FSCS / redress）、支付保护（confirmation of payee / SCA）。<b>但今天真正的重点不是这 100 个新词，而是回收前六天的 600 词。</b>听力脚本换成一场<b>监管检查开场会</b>——你入职英国银行后第一周最可能遇到的第二个场景，<b>重点不是答什么，而是「能给什么、欠什么、什么要先确认」</b>。今天还有一个硬指标：<b>第1 周术语测 100 题，目标 ≥ 85 分</b>。</p>
+    <div class="stats">
+      <div class="stat"><b>4 h 35 m</b><span>今日训练量</span></div>
+      <div class="stat"><b>6</b><span>训练模块</span></div>
+      <div class="stat"><b>100</b><span>核心词</span></div>
+      <div class="stat"><b id="statPct">0%</b><span>完成进度</span></div>
+    </div>
+  </div>
+</div>
+
+<main>
+
+<!-- 进度 -->
+<div class="card">
+  <h3>今日总进度</h3>
+  <div class="bar"><i id="barAll" style="width:0%"></i></div>
+  <div class="tagline"><span id="progText">0 / 0 项已完成</span></div>
+</div>
+
+<div class="info" style="margin-bottom:16px;">
+  <b>今天的节奏安排：</b>这是周测日，<b>模块 02 分成两半</b>——前半建新（今天的 100 词，精讲 30 个只求「认得 + 读准」），后半验收（<b>术语测 100 题，从前六天 600 词里等距抽取</b>）。今天的 30 个精讲名额分配原则是<b>「体系词优先」</b>：监管架构 5 个（FCA 全称 + PRIN / SYSC / COBS）、准入与客户义务 4 个（threshold conditions / Part 4A permission / Consumer Duty / vulnerable customer）、SM&amp;CR 4 个、市场滥用 6 个、处罚工具 3 个、客户资金与投诉 5 个、支付保障 3 个——<b>因为这 30 个词是听懂监管对话的最低门槛</b>，不认识PRIN / SYSC / COBS，FCA 说什么你都听不出来。<b>请按 00 → 01 → 02 → 03 → 04 → 05 的顺序做</b>，<b>顺序不能改</b>：术语测要检验的正是模块 01 练出来的东西，先做术语测会低估自己。时间不够时优先砍模块 05 的写作，<b>模块 01 的 A/B 段和模块 02 的术语测不能砍</b>。
+</div>
+
+<!-- 模块 0 -->
+<div class="card">
+  <div class="mod">
+    <div class="mod-no"><b>00</b><span>WARMUP</span></div>
+    <div class="mod-tt"><h3>第 1 周总复盘 + 音素自测 + 今天是周测日</h3><p>不是新的一天，是把前六天回收的一天</p></div>
+    <div class="mod-time">15 分钟</div>
+  </div>
+
+  <h4>第一步：第 1 周数据总盘（6 分钟）</h4>
+  <p class="sub" style="margin-bottom:8px;">今天不是学新东西的日子，是<b>把 Day-01 到 Day-06 的账结清</b>的日子。打开 <span class="mono">学习记录/Day-01.md</span> 到 <span class="mono">Day-06.md</span>，把 6 份记录里的自评分数全部填上，然后回答下面四个问题——<b>这四个问题的答案决定你第 2 周怎么走</b>。</p>
+  <div class="tblwrap" style="max-height:none;">
+    <table>
+      <thead><tr><th style="width:5%;">#</th><th style="width:34%;">要回答的问题</th><th>怎么算「有问题」</th></tr>
+      <tbody>
+        <tr><td>1</td><td class="ex">六天里<b>哪一天的自评分数最低</b>？</td><td class="ex">如果最低分集中在 Day-03/04（AML 与核心地基词），说明<b>专业术语的密度是瓶颈</b>，第 2 周要放慢</td></tr>
+        <tr><td>2</td><td class="ex">「音素分辨」六天里错了多少组？趋势是<b>下降还是没变</b>？</td><td class="ex">没下降 = 你的耳朵<b>没有在进步</b>，这是最需要立刻处理的一项，第 2 周每天 A 段不能砍</td></tr>
+        <tr><td>3</td><td class="ex">「精听脚本 B」的理解率六天分别是多少？</td><td class="ex">如果一直卡在 40% 上下，<b>不是听力问题，是词汇问题</b>——听不出来的词你根本不认识</td></tr>
+        <tr><td>4</td><td class="ex">错题本现在<b>有多少条</b>？有几天<b>一条都没新增</b>？</td><td class="ex">连续两天零新增 = 你在<b>用「认得」冒充「听得出来」</b>，这是最危险的一种假努力</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="note" style="margin-bottom:4px;">
+    <b>顺便做两件事：</b>① 把 Day-06 错题本里的 <span class="mono">detriment / Upjohn warning / regulatory referral / preservation notice</span> 四个词组单独测一遍——<b>detriment 和 referral 会以「法定职责」「监管通报」的形式在今天的词表里回来</b>；② 打开 Anki，确认今天的第 1 张新卡是 <span class="mono">suitability assessment</span>（如果不是，先看 02-Anki复习系统.html 第八节）。
+  </div>
+
+  <h4 style="margin-top:18px;">第二步：今天的音素自测（5 分钟，3 组、16 个）</h4>
+  <p class="sub" style="margin-bottom:6px;">今天三组音各打一个靶子，而且<b>全部是前六天反复出现的旧敌</b>——周测日不做新东西，只检查旧账：第 ① 组 = <b>/ɜː/ 与 /ɔː/ 与 /ɒ/</b>，今天的 approval / enforcement / Wall's 这类词全踩这三个音；第 ② 组 = <b>/ʃ/ 与 /tʃ/ 与 /dʒ/</b>，今天的 disclosure / Chinese / 三个缩写是重灾区；第 ③ 组 = <b>名词重音 vs 动词重音</b>，conduct / conflict / redress 这一组是今天最该拿满分的一条。</p>
+  <div class="tblwrap" style="max-height:none;">
+    <table>
+      <thead><tr><th style="width:22%;">单词 / 对照</th><th style="width:24%;">你的读法（先自己读）</th><th style="width:22%;">正确读音</th><th>你要注意的点</th></tr></thead>
+      <tbody>
+        <tr><td colspan="4" style="background:#f4f8ff;font-weight:700;color:var(--navy);font-size:12.5px;">① /ɜː/ 与 /ɔː/ 与 /ɒ/ —— 都不卷舌，口型相反（5 组）</td></tr>
+        <tr><td class="en">work / walk</td><td class="ex">先自己读一遍再对答案</td><td class="ph">/wɜːk/ · /wɔːk/</td><td class="ex"><b>/ɜː/ 舌头平放不卷</b>，<b>/ɔː/ 嘴唇收圆</b>。今天的 approved person / prohibition order 全是长音</td></tr>
+        <tr><td class="en">her / hoar</td><td class="ex">—</td><td class="ph">/hɜː/ · /hɔː/</td><td class="ex">两个音<b>都不卷舌</b>，只差口型。这一组是最基础也最容易错的</td></tr>
+        <tr><td class="en">cot / caught</td><td class="ex">—</td><td class="ph">/kɒt/ · /kɔːt/</td><td class="ex">同样是 /ɒ/ 与 /ɔː/ 的对比。<b>三个音都不卷舌，区别只在圆唇与否和长短</b></td></tr>
+        <tr><td class="en">policy / policy</td><td class="ex">—</td><td class="ph">/ˈpɒləsi/</td><td class="ex">今天词表里的 <b>policy</b>——<b>/ɒ/ 是英式专属短圆唇音</b>，美式读 /ˈpɑːləsi/。这个音读错会让整句露馅</td></tr>
+        <tr><td class="en">Wells / Wallace</td><td class="ex">—</td><td class="ph">/ˈwelz/ · /ˈwɔːləs/</td><td class="ex">今天词表里的 <b>Wells notice</b>——专有名词按普通词读，<b>不按拼写猜</b>。两个词的 /w/ 后面口型完全相反</td></tr>
+        <tr><td colspan="4" style="background:#f4f8ff;font-weight:700;color:var(--navy);font-size:12.5px;">② /ʃ/ 与 /tʃ/ 与 /dʒ/ 与清浊 —— 今天的缩写全靠它们（5 组）</td></tr>
+        <tr><td class="en">Chinese / church</td><td class="ex">—</td><td class="ph">/ˌtʃaɪˈniːz/ · /tʃɜːtʃ/</td><td class="ex">两个都是 <b>/tʃ/</b>，但 Chinese 词尾是<b>浊音 /z/</b>。今天的 <b>Chinese wall</b> 是这个词</td></tr>
+        <tr><td class="en">share / shy</td><td class="ex">—</td><td class="ph">/ʃeə/ · /ʃaɪ/</td><td class="ex">share 在 Day-06 出现过（preference share）。<b>英式两音节 /ʃeə/ 不是美式 /ʃer/</b></td></tr>
+        <tr><td class="en">disclose / disclosure</td><td class="ex">—</td><td class="ph">/dɪsˈkləʊz/ · /dɪsˈkləʊʒə/</td><td class="ex"><b>Day-05 已经练过这一对，今天再confirm 一次。</b>动词清音、名词浊音——今天的 unlawful disclosure 是它的名词版</td></tr>
+        <tr><td class="en">cheap / jeep</td><td class="ex">—</td><td class="ph">/tʃiːp/ · /dʒiːp/</td><td class="ex">清音与浊音的一对。<b>手贴喉结：/tʃ/ 振动，/dʒ/ 也振动但更强</b>——这一组主要靠镜子验证口型</td></tr>
+        <tr><td class="en">manipulation / management</td><td class="ex">—</td><td class="ph">/məˌnɪpjuˈleɪʃn/ · /ˈmænɪdʒmənt/</td><td class="ex">今天词表里的两个词，<b>一个结尾 /ʃn/ 一个中间 /dʒ/</b>。<b>重音位置也不同：-PU- 在后，-NAGE- 在前</b></td></tr>
+        <tr><td colspan="4" style="background:#f4f8ff;font-weight:700;color:var(--navy);font-size:12.5px;">③ 名词重音 vs 动词重音 —— 今天最该拿满分的一条（6 组）</td></tr>
+        <tr><td class="en">conduct (名) / conduct (动)</td><td class="ex">—</td><td class="ph">/ˈkɒndʌkt/ · /kənˈdʌkt/</td><td class="ex"><b>今天第① 号实用条。</b>FCA 全称里的 Conduct 是名词，读首音节；动词「行为」读后音节</td></tr>
+        <tr><td class="en">conflict (名) / conflict (动)</td><td class="ex">—</td><td class="ph">/ˈkɒnflɪkt/ · /kənˈflɪkt/</td><td class="ex">今天的 <b>conflicts of interest</b> 是名词。<b>看到 of interest 就知道前面是名词</b></td></tr>
+        <tr><td class="en">present (名) / present (动)</td><td class="ex">—</td><td class="ph">/ˈpreznt/ · /prɪˈzent/</td><td class="ex">同样的机制。<b>这一组在 Day-02 出现过，今天是第三次碰</b>——三次还错就必须专项攻坚</td></tr>
+        <tr><td class="en">record (名) / record (动)</td><td class="ex">—</td><td class="ph">/ˈrekɔːd/ · /rɪˈkɔːd/</td><td class="ex">名词「记录」首重音，动词「记录」后重音。<b>今天 B 段会议里会出现 record 的两个读法</b></td></tr>
+        <tr><td class="en">object (名) / object (动)</td><td class="ex">—</td><td class="ph">/ˈɒbdʒɪkt/ · /əbˈdʒekt/</td><td class="ex">名词首重音、动词后重音，同时<b>词尾清浊也变了</b>——这是双重陷阱</td></tr>
+        <tr><td class="en">desist / design</td><td class="ex">—</td><td class="ph">/dɪˈzɪst/ · /dɪˈzaɪn/</td><td class="ex">今天的 <b>cease and desist</b>。<b>两个词重音都在第二音节，但后面完全不同</b>：/ɪst/ 与 /aɪn/</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="note" style="margin-top:12px;">
+    <b>第 ③ 组做错 2 组以上 → 你的问题不是「单词量」，是「词性判断」。</b>英语里大量词的名词与动词重音不同，靠的是「后面跟什么」判断：跟 <span class="mono">of</span> / <span class="mono">the</span> / 形容词多半是名词（<span class="mono">conduct of business</span>），跟 <span class="mono">to</span> / 宾语多半是动词（<span class="mono">conduct an interview</span>）。<b>今天的 FCA 全称里就有 conduct（名词），B 段会议里会有 conduct（动词）</b>——这是第 1 周最后一次考这个机制，第 2 周的 SAR / EDD 还要再考。
+  </div>
+
+  <h4 style="margin-top:18px;">第三步：今天是周测日，说明一下和前六天的区别（4 分钟）</h4>
+  <div class="tblwrap" style="max-height:none;">
+    <table>
+      <thead><tr><th style="width:22%;">维度</th><th style="width:39%;">Day-01 ~ Day-06</th><th>Day-07（今天）</th></tr>
+      <tbody>
+        <tr><td class="en">词表</td><td class="ex">100 个新词，以「学新」为主</td><td class="ex">100 个新词照发（Anki 队列不等人），但<b>重心是回收前六天的 600 词</b></td></tr>
+        <tr><td class="en">听力</td><td class="ex">学一段新材料</td><td class="ex"><b>无字幕听 BBC 15 分钟</b>——检验真实语流下的理解率</td></tr>
+        <tr><td class="en">朗读</td><td class="ex">读当天的新段</td><td class="ex"><b>复读本阶段最卡的 3 段（A4 / A8 / B2）</b>——重读比换新段有效得多</td></tr>
+        <tr><td class="en">写作</td><td class="ex">写当天的交付物</td><td class="ex"><b>把本周两份备忘扩成完整一页</b> + 写本周复盘 5 句（英文）</td></tr>
+        <tr><td class="en">术语测</td><td class="ex">无</td><td class="ex"><b>100 题，目标 ≥ 85%</b>（详见模块 02）</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="note" style="margin:12px 0 4px;">
+    <b>今天的顺序不能改：</b>先做模块 01 的 A 段（音素）与 B 段（精听），再做模块 02 的术语测——<b>因为术语测要检验的正是模块 01 练出来的东西</b>。如果先做术语测，你的耳朵还没热，做出来的分数偏低，会误导你对第 2 周节奏的判断。<b>时间不够时，优先砍模块 05 的写作，模块 01 的 A/B 段和模块 02 的术语测不能砍。</b>
+  </div>
+
+  <h4 style="margin-top:16px;">第四步：今天按什么走（两条线）</h4>
+  <div class="two">
+    <div>
+      <div class="info">
+        <b>词汇按什么走：</b>严格按 <b>词表 CSV 顺序</b> —— 也就是 Anki 发卡的顺序。今天发的 100 张 = 词表<b>第 601–700 行</b>。已逐条核对：<b>与 Anki 队列零差异</b>。首词是 <span class="mono">suitability assessment</span>，末词是 <span class="mono">FSCS</span>。
+      </div>
+    </div>
+    <div>
+      <div class="info">
+        <b>听力/口语/写作按什么走：</b>跟着<b>「周测日」这个性质</b>走。今天不追新素材——听力是<b>监管检查开场会</b>（你入职后第一周最可能遇到的第二个场景），朗读是<b>复读本周最卡的三段</b>，写作是<b>把前两份备忘扩成一页并补上 Decision 段</b>。真正要回收的是<b>前六天的 600 词</b>。
+      </div>
+    </div>
+  </div>
+
+  <h4 style="margin-top:16px;">开机清单</h4>
+  <div id="ckSetup"></div>
+</div>
+
+<!-- 模块 1 -->
+<div class="card" style="border-left:4px solid var(--red);">
+  <div class="mod">
+    <div class="mod-no" style="background:var(--red);"><b>01</b><span>LISTEN</span></div>
+    <div class="mod-tt"><h3>听力：四段式（周测日重点在 A 段与 D 段的真实语流）</h3><p>音素听辨 → 监管检查开场会精听 → 词块听写 → 无字幕真实材料</p></div>
+    <div class="mod-time hot">90 分钟</div>
+  </div>
+
+  <div class="note" style="margin-bottom:16px;">
+    <b>今天的听力设计逻辑：</b>前六天你练的是「一段新材料」，今天换成<b>「第 1 周的总验收」</b>。A 段是旧敌复查（音素与重音，全部是前六天错过的）；B 段是一场<b>监管检查开场会</b>——这是你入职英国银行后<b>第一周最可能遇到的场景之一</b>，而且它把今天词表里的监管体系词（FCA / SYSC / COBS / threshold conditions / fit and proper）一次性串起来；C 段把今天的词放进真实句子里做<b>听写</b>；D 段是<b>无字幕 BBC 15 分钟</b>——周测日唯一的真实语流验收。<b>四段递进：A段决定你能不能分辨，B 段决定你能不能跟上，C 段决定你能不能写下来，D 段决定你能不能听懂真人。</b>
+  </div>
+
+  <!-- A 段 -->
+  <div class="step"><div class="n">A</div><div class="h">音素听辨：16 组对照（旧敌复查 · 长音 5 + 塞擦音清浊 5 + 词性重音 6）<small>把前六天的错题重考一遍 · 20 分钟</small></div></div>
+  <p class="sub" style="margin-bottom:8px;">用 Edge「朗读此页」或任意 TTS 逐组播放（每对之间停 2 秒），<b>不看音标先判断你听到的是左还是右</b>，写出答案再对。做错的组用红笔圈出。<b>今天的 16 组里有 11 组是前六天已经出现过的旧敌</b>——如果你这次还错，说明前六天的错题没有真正进错题本；如果这次全对，说明耳朵在进步。</p>
+  <div class="tblwrap" style="max-height:none;">
+    <table>
+      <thead><tr><th style="width:6%;">#</th><th style="width:24%;">左</th><th style="width:24%;">右</th><th style="width:18%;">关键差别</th><th>说明</th></tr></thead>
+      <tbody>
+        <tr><td colspan="5" style="background:#f4f8ff;font-weight:700;color:var(--navy);font-size:12.5px;">① /ɜː/ 与 /ɔː/ 与 /ɒ/ —— 都不卷舌，口型相反（5 组）</td></tr>
+        <tr><td>1</td><td class="en">work <span class="ph">/wɜːk/</span></td><td class="en">walk <span class="ph">/wɔːk/</span></td><td class="ex">舌平 vs 唇圆<br>都是长音</td><td class="ex">英式 <b>/ɜː/ 绝对不卷舌</b>。你今天要听的 approved person / prohibition order / enforcement 全是这一类</td></tr>
+        <tr><td>2</td><td class="en">her <span class="ph">/hɜː/</span></td><td class="en">hoar <span class="ph">/hɔː/</span></td><td class="ex">/ɜː/ 舌平<br>/ɔː/ 唇圆</td><td class="ex">第1 周反复出现的一组。<b>听到 hoar 不要以为是 her</b></td></tr>
+        <tr><td>3</td><td class="en">cot <span class="ph">/kɒt/</span></td><td class="en">caught <span class="ph">/kɔːt/</span></td><td class="ex">/ɒ/ 短圆唇<br>/ɔː/ 长圆唇</td><td class="ex">长短 + 圆唇两层差别。<b>三个音都不卷舌，全靠口型和长度区分</b></td></tr>
+        <tr><td>4</td><td class="en">policy <span class="ph">/ˈpɒləsi/</span></td><td class="en">policy (美) <span class="ph">/ˈpɑːləsi/</span></td><td class="ex">/ɒ/ vs<br>/ɑː/</td><td class="ex"><b>/ɒ/ 是英式专属短圆唇音</b>。今天 B 段会议里 FCA 会说到 policy，读成美式整句露馅</td></tr>
+        <tr><td>5</td><td class="en">Wells <span class="ph">/ˈwelz/</span></td><td class="en">Wallace <span class="ph">/ˈwɔːləs/</span></td><td class="ex">/e/ vs /ɔː/<br>长短 + 圆唇</td><td class="ex">今天词表里的 <b>Wells notice</b>。<b>专有名词按普通词读</b>，不按拼写猜——Wells 是姓氏，就读 /ˈwelz/</td></tr>
+        <tr><td colspan="5" style="background:#f4f8ff;font-weight:700;color:var(--navy);font-size:12.5px;">② /ʃ/ 与 /tʃ/ 与 /dʒ/ 与清浊 —— 今天的缩写全靠它们（5 组）</td></tr>
+        <tr><td>6</td><td class="en">Chinese <span class="ph">/ˌtʃaɪˈniːz/</span></td><td class="en">church <span class="ph">/tʃɜːtʃ/</span></td><td class="ex">都是 /tʃ/<br>词尾清浊不同</td><td class="ex">今天的 <b>Chinese wall</b>。Chinese 词尾是<b>浊音 /z/</b>，church 词尾是 /tʃ/——两个都不加 /ə/</td></tr>
+        <tr><td>7</td><td class="en">share <span class="ph">/ʃeə/</span></td><td class="en">shy <span class="ph">/ʃaɪ/</span></td><td class="ex">/eə/ vs /aɪ/</td><td class="ex">preference share 在 Day-06 出现过。<b>英式两音节 /ʃeə/，不是美式单音节 /ʃer/</b></td></tr>
+        <tr><td>8</td><td class="en">disclose <span class="ph">/dɪsˈkləʊz/</span></td><td class="en">disclosure <span class="ph">/dɪsˈkləʊʒə/</span></td><td class="ex">结尾 <b>/z/ 清</b><br>结尾 <b>/ʒ/ 浊</b></td><td class="ex"><b>Day-05 练过这一对，今天是第 ③ 次。</b>动词清音、名词浊音。今天词表里的 unlawful disclosure 是它的名词版</td></tr>
+        <tr><td>9</td><td class="en">cheap <span class="ph">/tʃiːp/</span></td><td class="en">jeep <span class="ph">/dʒiːp/</span></td><td class="ex">清音 vs 浊音</td><td class="ex">清音与浊音的一对。<b>主要靠镜子验证口型</b>：/tʃ/ 舌尖抵上齿龈，/dʒ/ 抵硬腭</td></tr>
+        <tr><td>10</td><td class="en">manipulation <span class="ph">/məˌnɪpjuˈleɪʃn/</span></td><td class="en">management <span class="ph">/ˈmænɪdʒmənt/</span></td><td class="ex">结尾 /ʃn/<br>中间 /dʒ/</td><td class="ex">今天词表里的两个词。<b>重音位置也不同：-PU- 在后（第五音节），-NAGE- 在前（首音节）</b></td></tr>
+        <tr><td colspan="5" style="background:#f4f8ff;font-weight:700;color:var(--navy);font-size:12.5px;">③ 名词重音 vs 动词重音 —— 今天最该拿满分的一条（6 组）</td></tr>
+        <tr><td>11</td><td class="en">conduct (名) <span class="ph">/ˈkɒndʌkt/</span></td><td class="en">conduct (动) <span class="ph">/kənˈdʌkt/</span></td><td class="ex">重音在<b>首</b><br>重音在<b>后</b></td><td class="ex"><b>今天第 ① 号实用条。</b>FCA 全称里的 Conduct 是名词；B 段里「行为不端」是动词。<b>跟 of / the 多半名词，跟 to 多半动词</b></td></tr>
+        <tr><td>12</td><td class="en">conflict (名) <span class="ph">/ˈkɒnflɪkt/</span></td><td class="en">conflict (动) <span class="ph">/kənˈflɪkt/</span></td><td class="ex">首 vs 后</td><td class="ex">今天的 <b>conflicts of interest</b> 是名词。<b>看到 of interest 就知道前面读首重音</b></td></tr>
+        <tr><td>13</td><td class="en">present (名) <span class="ph">/ˈpreznt/</span></td><td class="en">present (动) <span class="ph">/prɪˈzent/</span></td><td class="ex">首 vs 后<br>元音也变</td><td class="ex">Day-02 出现过，<b>今天第三次碰</b>。三次还错必须专项攻坚——记进错题本第四节</td></tr>
+        <tr><td>14</td><td class="en">record (名) <span class="ph">/ˈrekɔːd/</span></td><td class="en">record (动) <span class="ph">/rɪˈkɔːd/</span></td><td class="ex">首 vs 后</td><td class="ex">名词「记录」首重音，动词「记录」后重音。<b>今天 B 段会议里两个读法都会出现</b></td></tr>
+        <tr><td>15</td><td class="en">object (名) <span class="ph">/ˈɒbdʒɪkt/</span></td><td class="en">object (动) <span class="ph">/əbˈdʒekt/</span></td><td class="ex">首 vs 后<br>词尾清浊也变</td><td class="ex"><b>双重陷阱</b>：重音位置变了，结尾 /kt/ 又变成 /kt/ 但元音变 /e/</td></tr>
+        <tr><td>16</td><td class="en">desist <span class="ph">/dɪˈzɪst/</span></td><td class="en">design <span class="ph">/dɪˈzaɪn/</span></td><td class="ex">重音同<br>后半不同</td><td class="ex">今天的 <b>cease and desist</b>。<b>重音都在第二音节</b>，但后半是 /ɪst/ 与 /aɪn/，别听混</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="note" style="margin-top:12px;">
+    <b>第 ③ 组做错 2 组以上 → 立刻去做一件事：</b>把今天词表里所有「名词/动词同形」的词（conduct / conflict / present / record / object / desert）挑出来，<b>每个词读两遍——一遍当名词，一遍当动词</b>，用手势区分（名词竖手、动词横手）。<b>这个机制在第 2 周的 SAR（上报）/ EDD（强化尽调）上会再考，而且这次是口语考试</b>——面试官会直接问 tell me about your role，读成动词重音立刻露馅。
+  </div>
+
+  <!-- B 段 -->
+  <div class="step"><div class="n">B</div><div class="h">精听脚本 B：监管检查开场会（内部会议）<small>真实语速 · 今天的核心材料 · 30 分钟</small></div></div>
+  <div class="info" style="margin-bottom:12px;">
+    <b>这是你入职后第一周最可能碰上的第二个场景。</b>周二上午，FCA 的检查组（<b>Supervisor Priya Nair</b>） arrive 伦敦办公室，要求看某三项业务的记录。对方三人：<b>Alan Whitfield</b>（业务负责人，被质询）、<b>Maya</b>（合规官，主持）、<b>Ruth Ellery</b>（金融犯罪部门负责人，<b>今天不在场</b>——但她的名字出现了）。<br>
+    这场会议的核心是<b>范围与边界</b>：检查组要什么、我们能给什么、什么必须先确认合法基础才能给。而且它<b>把今天词表里的整个监管体系串起来了</b>——FCA / SYSC / COBS / threshold conditions / fit and proper / final response letter。<b>用法：用 Edge「朗读此页」播放。第 1 遍 0.9 倍速盲听，第 4 遍回到 1.0 倍速。先自己听、自己猜，猜完再看拆解表。</b>
+  </div>
+
+  <div class="script">
+    <div><span class="spk">Priya:</span> Thank you for making time. This is a <em>routine</em> examination under our supervisory powers — I want to be clear about that at the outset.</div>
+    <div style="margin-top:8px;"><span class="spk">Maya:</span> Understood. Would you prefer to start with scope, or with the specific <em>threshold conditions</em> questions?</div>
+    <div style="margin-top:8px;"><span class="spk">Priya:</span> Scope first. And I should say up front — this is not an <em>enforcement</em> visit. If we find something, we will tell you before we write anything.</div>
+    <div style="margin-top:8px;"><span class="spk">Alan:</span> That's helpful to hear. We did wonder — after the last review, are we still subject to the remediation plan?</div>
+    <div style="margin-top:8px;"><span class="spk">Priya:</span> Partly. Two of the three items are closed. The third — customer money — stays open, and that is why I am here.</div>
+    <div style="margin-top:8px;"><span class="spk">Maya:</span> Then let me take you to where that sits. <em>Client money</em> rules are in <em>COBS</em>, and the governance requirements sit in <em>SYSC</em>.</div>
+    <div style="margin-top:8px;"><span class="spk">Priya:</span> Right. And under SYSC, who is accountable for that sign-off?</div>
+    <div style="margin-top:8px;"><span class="spk">Maya:</span> The <em>senior manager function</em>. Each senior manager has a set of <em>prescribed responsibilities</em>, and client money sits with one of them by name.</div>
+    <div style="margin-top:8px;"><span class="spk">Alan:</span> That was us a few years ago. Ruth's function, before the <em>regime</em> changed.</div>
+    <div style="margin-top:8px;"><span class="spk">Priya:</span> The <em>regime</em> is not the point. <em>Fit and proper</em> is the point. I don't care who holds the function; I care whether the person holding it could explain the control to me.</div>
+    <div style="margin-top:8px;"><span class="spk">Maya:</span> That's fair, and it's the right way to ask. Can I ask what you're actually looking for today?</div>
+    <div style="margin-top:8px;"><span class="spk">Priya:</span> Three things. The <em>safeguarding</em> procedure. The last two years of <em>internal reconciliation</em> records. And one <em>notifiable matter</em> from 2024.</div>
+    <div style="margin-top:8px;"><span class="spk">Alan:</span> The notifiable matter — is that the one that was <em>disclosed</em> to you last spring?</div>
+    <div style="margin-top:8px;"><span class="spk">Priya:</span> It was <em>disclosure</em> at the time, yes. Whether it met the threshold is a separate question, and I'd rather we looked at that together than in a letter.</div>
+    <div style="margin-top:8px;"><span class="spk">Maya:</span> We'd prefer that. Our position is that <em>inside information</em> was <em>disclosed</em> to the market at the same time, so there was no <em>unlawful disclosure</em>.</div>
+    <div style="margin-top:8px;"><span class="spk">Priya:</span> That argument turns on <em>inside information</em> and on timing. I'd like the <em>wall-crossing</em> records, and then the <em>internal information</em> barrier you operated at the time.</div>
+    <div style="margin-top:8px;"><span class="spk">Maya:</span> We can produce the wall-crossing log today. The Chinese wall policy is in the compliance manual — chapter four.</div>
+    <div style="margin-top:8px;"><span class="spk">Alan:</span> If we supply everything today, when do we get the <em>final response letter</em>?</div>
+    <div style="margin-top:8px;"><span class="spk">Priya:</span> <span class="rhythm">There isn't one on this visit. A final response letter follows a decision, and there is no decision until the file is complete.</span> If you wanted <em>redress</em> for the delay, that is a <em>separate</em> process — your <em>complaint</em> would go to the <em>Ombudsman</em>, not to me.</div>
+    <div style="margin-top:8px;"><span class="spk">Maya:</span> Understood. Then let us set out what we produce today and what we owe you by when.</div>
+    <div style="margin-top:8px;"><span class="spk">Priya:</span> <span class="rhythm">One more thing, and this is the part I would remember if I were you. Nobody at your firm should be <em>cease and desist</em> order-ed into a panic by this visit.</span> Tell your people it is routine, tell them what we asked for, and tell them what you will do.</div>
+    <div style="margin-top:8px;"><span class="spk">Maya:</span> <span class="rhythm">That's exactly how we'll brief it. Thank you for being upfront with us, Priya — genuinely it makes this easier.</span></div>
+  </div>
+
+  <h4 style="margin-top:16px;">逐句拆解表（先听，后看）</h4>
+  <div class="tblwrap" style="max-height:none;">
+    <table>
+      <thead><tr><th style="width:5%;">#</th><th style="width:32%;">原句</th><th style="width:28%;">语音难点</th><th>你可能会听成</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td class="ex">This is a <b>routine examination</b> under our supervisory powers — I want to be clear about that at the outset.</td><td class="ex"><span class="hit">routine</span> → <span class="mono">/ruːˈtiːn/</span><br><span class="hit">examination</span> → <span class="mono">/ɪɡˌzæmɪˈneɪʃn/</span></td><td class="ex">routine 重音在<b>最后音节 -TINE</b>；examination 四个音节，重音在 <b>-NA-</b>（不是 -EXA-）</td></tr>
+        <tr><td>2</td><td class="ex">Would you prefer to start with <b>scope</b>, or with the specific <b>threshold conditions</b> questions?</td><td class="ex"><span class="hit">scope</span> → <span class="mono">/skəʊp/</span><br><span class="hit">threshold</span> → <span class="mono">/ˈθreʃhəʊld/</span></td><td class="ex"><b>threshold 首音 /θ/ 舌尖伸出</b>，容易听成 /tr/ 或 /s/；scope 一音节，词尾 /p/ 不加 /ə/</td></tr>
+        <tr><td>3</td><td class="ex">This is not an <b>enforcement</b> visit. If we find something, we will tell you <b>before</b> we write anything.</td><td class="ex"><span class="hit">enforcement</span> → <span class="mono">/ɪnˈfɔːsmənt/</span></td><td class="ex">enforcement 四个音节，<b>重音在 -FORCE-（第二音节）</b>，不是首音节。<b>/ɔː/ 英式不卷舌</b></td></tr>
+        <tr><td>4</td><td class="ex">We did wonder — after the last review, are we still subject to the <b>remediation plan</b>?</td><td class="ex">句尾<b>升调</b>（是问句）<br><span class="lk">still subject to</span></td><td class="ex"><b>这句话决定你听不听得懂对方态度。</b>升调 = 真在问；降调就变成了陈述句</td></tr>
+        <tr><td>5</td><td class="ex">Two of the three items are closed. The third — <b>client money</b> — stays open, and that is why I am here.</td><td class="ex">破折号处<b>停顿</b><br><span class="hit">client</span> → <span class="mono">/ˈklaɪənt/</span></td><td class="ex">破折号是口语的强调手段。client 中间 <b>/aɪə/ 是三音</b>，不是 /e/——今天的 client money 是词表高频词</td></tr>
+        <tr><td>6</td><td class="ex"><b>Client money</b> rules are in <b>COBS</b>, and the governance requirements sit in <b>SYSC</b>.</td><td class="ex"><span class="hit">COBS</span> → <span class="mono">/kɒbz/</span><br><span class="hit">SYSC</span> → <span class="mono">/sɪsk/</span></td><td class="ex"><b>本段最该拿满分的一句。</b>两个缩写<b>都逐字母读</b>；COBS 首音是<b>英式专属 /ɒ/</b>，读成 /kɑːbz/ 就露馅了</td></tr>
+        <tr><td>7</td><td class="ex">And under SYSC, who is <b>accountable</b> for that sign-off?</td><td class="ex"><span class="hit">accountable</span> → <span class="mono">/əˈkaʊntəbl/</span></td><td class="ex">accountable 重音在 <b>-COUNT-（第二音节）</b>，不是首音节；词尾 <b>-able 读 /əbl/</b> 不加 /ə/。与Day-04 的 vulnerable / notifiable 是同一类词尾</td></tr>
+        <tr><td>8</td><td class="ex">Each senior manager has a set of <b>prescribed responsibilities</b>, and client money sits with one of them by name.</td><td class="ex"><span class="hit">prescribed</span> → <span class="mono">/prɪˈskraɪbd/</span><br><span class="hit">responsibilities</span> → <span class="mono">/rɪˌspɒnsəˈbɪlətiz/</span></td><td class="ex">prescribed 重音在 <b>-SCRIBE-</b>，中间 /skr/ 不要读成 /sk/；responsibilities <b>五音节</b>，词尾 /bɪlətiz/ 清楚收住</td></tr>
+        <tr><td>9</td><td class="ex">That was us a few years ago. Ruth's function, before the <b>regime</b> changed.</td><td class="ex"><span class="hit">regime</span> → <span class="mono">/reɪˈʒiːm/</span></td><td class="ex"><b>regime 重音在最后音节 -GIME</b>，读成 RE-gime 就错了。这是今天 SM&amp;CR 的核心词</td></tr>
+        <tr><td>10</td><td class="ex"><b>The regime is not the point. Fit and proper is the point.</b> I don't care who holds the function; I care whether the person holding it could explain the control to me.</td><td class="ex">三个短句<b>各自成拍</b><br><span class="hit">fit and proper</span> → <span class="mono">/ˌfɪt ən ˈprɒpə/</span></td><td class="ex"><b>本段最重要的一句。</b>fit and proper <b>结尾不读 /r/</b>（不是 /ˈprɒpər/）；and 弱读 /ən/。三个短句要有节奏对比，否则就糊成一句</td></tr>
+        <tr><td>11</td><td class="ex">Three things. The <b>safeguarding</b> procedure. The last two years of <b>internal reconciliation</b> records. And one <b>notifiable matter</b> from 2024.</td><td class="ex">三个名词短语<b>各自重读</b><br><span class="hit">safeguarding</span> → <span class="mono">/ˈseɪfɡɑːdɪŋ/</span></td><td class="ex">safeguarding 重音在<b>首音节</b>（不是第三音节），中间 /ɡ/ 读<b>长音 /ɡɑː/</b>。<b>数字 2024 要读成「two thousand and twenty-four」</b></td></tr>
+        <tr><td>12</td><td class="ex">It was <b>disclosure</b> at the time, yes. Whether it met the threshold is a separate question.</td><td class="ex"><span class="hit">disclosure</span> → <span class="mono">/dɪsˈkləʊʒə/</span><br><span class="lk">at the time</span></td><td class="ex"><b>名词用浊音 /ʒ/</b>——和下一句的动词 disclose /z/ 形成对照。这正是第 ② 组第8 题考的东西</td></tr>
+        <tr><td>13</td><td class="ex">Our position is that <b>inside information</b> was <b>disclosed</b> to the market at the same time.</td><td class="ex"><span class="hit">inside information</span> → <span class="mono">/ɪnˈsaɪd ˌɪnfəˈmeɪʃn/</span></td><td class="ex">inside 重音在<b>第二音节</b>；information 重音在 <b>-MA-</b>。<b>整块有两个重音，不要读成一个</b></td></tr>
+        <tr><td>14</td><td class="ex">so there was no <b>unlawful disclosure</b>.</td><td class="ex"><span class="hit">unlawful</span> → <span class="mono">/ʌnˈlɔːfəl/</span></td><td class="ex">unlawful 重音在 <b>-LAW-</b>；<b>/ɔː/ 英式不卷舌</b>。两个词都重读，因为是罪名</td></tr>
+        <tr><td>15</td><td class="ex">I'd like the <b>wall-crossing</b> records, and then the <b>Chinese wall</b> policy.</td><td class="ex"><span class="hit">wall-crossing</span> → <span class="mono">/ˈwɔːl ˌkrɒsɪŋ/</span><br><span class="hit">Chinese</span> → <span class="mono">/ˌtʃaɪˈniːz/</span></td><td class="ex"><b>两个词的 /w/ 开头 + 词尾 /wːl/ 与 /z/</b> 都是易错点。Chinese 的 /tʃ/ 是塞擦音，词尾浊音 /z/</td></tr>
+        <tr><td>16</td><td class="ex">when do we get the <b>final response letter</b>?</td><td class="ex"><span class="hit">response</span> → <span class="mono">/rɪˈspɒns/</span><br><span class="lk">get the</span> → <span class="mono">/ɡet ðə/</span></td><td class="ex">response 重音在<b>最后音节 -SPONSE</b>，中间 /s/ 读浊音 /z/；<b>letter 英式两音节 /ˈletə/</b>。三个词重音分别是首、末、首</td></tr>
+        <tr><td>17</td><td class="ex"><span class="rhythm">There isn't one on this visit. A final response letter follows a decision, and there is no decision until the file is complete.</span></td><td class="ex">第一句降调<br>后面长句列举</td><td class="ex"><b>这是 Priya 立规矩的一句。</b>四个短句节奏一致，<b>每句末尾都要落下来</b>——读成流水账就失去分量</td></tr>
+        <tr><td>18</td><td class="ex">If you wanted <b>redress</b> for the delay, that is a separate process — your <b>complaint</b> would go to the <b>Ombudsman</b>, not to me.</td><td class="ex"><span class="hit">redress</span> → <span class="mono">/rɪˈdres/</span><br><span class="hit">Ombudsman</span> → <span class="mono">/ˈəʊmbɡzɪdəm/</span></td><td class="ex">redress 结尾是<b>清音 /s/</b>；<b>Ombudsman 中间的 /b/ 不发音</b>，读成 /əʊmˈbɪdʒ-/b> 就毁了。三个术语各重一次</td></tr>
+        <tr><td>19</td><td class="ex"><span class="rhythm">One more thing, and this is the part I would remember if I were you. Nobody at your firm should be cease and desist order-ed into a panic by this visit.</span></td><td class="ex">第一句降调<br>长句 + 破折号插入</td><td class="ex"><b>全场的情绪转折点。</b>cease 重音在<b>首音节 /siːs/</b>——<b>这里是清音，不要读成 /siːz/</b>；desist 重音在<b>最后音节</b>。<b>长句中间那个破折号插入语要压低，不要抢重音</b></td></tr>
+        <tr><td>20</td><td class="ex"><span class="rhythm">That's exactly how we'll brief it. Thank you for being upfront with us, Priya — genuinely it makes this easier.</span></td><td class="ex">句尾降调<br>破折号处停顿</td><td class="ex"><b>Maya 用「upfront」这个词回应，是英式职场沟通的信号</b>——先明确说明立场，再表达感谢。<b>genuinely 后面要略停</b>，这个词是认真的</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="reveal">
+    <button class="btn" onclick="tog(this)">查看本段中文参考译文</button>
+    <div class="revbd">
+      <div class="script" style="font-size:13.2px;line-height:1.9;">
+        <b>1.</b> 谢谢你们抽出时间。这是一次依据我们监管权限进行的<b>例行检查</b>——一开始我就想把这一点说清楚。<br>
+        <b>2.</b> 明白。你希望先谈范围，还是先谈具体的<b>准入门槛条件</b>问题？<br>
+        <b>3.</b> 先谈范围。而且我先把话说在前面——<b>这不是一次执法检查</b>。如果我们发现什么，会在动笔之前先告诉你们。<br>
+        <b>4.</b> 这话让人安心。上次检查之后，我们还受整改计划约束吗？<br>
+        <b>5.</b> 部分是。三项里的两项已经关闭。第三项——客户资金——仍未关闭，所以我今天来。<br>
+        <b>6.</b> 那我带你去相关部分。<b>客户资金</b>的规则在 <b>COBS</b>，治理要求在 <b>SYSC</b>。<br>
+        <b>7.</b> 好。那么在 SYSC 下，谁对那个签字负责？<br>
+        <b>8.</b> <b>高级管理职能</b>。每位高管都有一组<b>规定职责</b>，客户资金按名字挂在其中一位身上。<br>
+        <b>9.</b> 那是几年前我们这边的做法。Ruth 的职能，<b>制度</b>改之前。<br>
+        <b>10.</b> <b>制度不是重点。「适当人选」才是重点。</b>我不在乎谁持有这个职能；我在乎的是持有这个职能的人能不能向我解释清楚那道控制。<br>
+        <b>11.</b> 这个问题问得对。那我能问一下您今天具体要看什么吗？<br>
+        <b>12.</b> 三样东西。<b>资金保障</b>流程。过去两年的<b>内部对账</b>记录。以及 2024 年的一项<b>需通报事项</b>。<br>
+        <b>13.</b> 那项需通报事项——是不是去年春天我们<b>披露</b>给贵方的那一件？<br>
+        <b>14.</b> 当时确实是一次<b>披露</b>。至于它是否达到门槛是另一个问题，我宁愿我们一起看，而不是在一封信里看。<br>
+        <b>15.</b> 我们也正希望如此。我们的立场是<b>内幕信息</b>是同时<b>披露</b>给市场的，所以不存在<b>非法披露</b>。<br>
+        <b>16.</b> 那个论点取决于<b>内幕信息</b>和时间点。我要看<b>越墙</b>记录，以及你们当时运行的<b>信息隔离墙</b>。<br>
+        <b>17.</b> 越墙记录我们今天就能提供。隔离墙政策在合规手册里——第四章。<br>
+        <b>18.</b>如果我们今天全部提供，什么时候能拿到<b>最终答复函</b>？<br>
+        <b>19.</b> <b>这次访问没有。 最终答复函是在决定之后才有的，而档案没齐之前不会有决定。</b>如果你想就延误寻求<b>赔偿</b>，那是<b>另一个</b>流程——你的<b>投诉</b>会交给<b>专员服务</b>，不是到我这里。<br>        <b>20.</b> 明白。那我们把今天提供什么、什么时候之前交什么列出来。<br>
+        <b>21.</b> <b>还有一件事，这件是我希望你们记住的。这场检查不该让贵司任何人因为「停止令」而陷入恐慌。</b>告诉你的员工这是例行检查，告诉他们我们问了什么、你们会怎么做。<br>
+        <b>22.</b> <b>我们会照这个口径通报。谢谢你愿意把话说在前面，Priya——说实话这让事情容易多了。</b>
+      </div>
+    </div>
+  </div>
+
+  <!-- C 段 -->
+  <div class="step"><div class="n">C</div><div class="h">词块听写：今天的词在真实句子里长什么样<small>把"认得"变成"写得出" · 25 分钟</small></div></div>
+  <div class="info" style="margin-bottom:12px;">
+    <b>今天听写的两个新难点：</b>① <b>缩写的逐字母读法</b>（FCA / SYSC / COBS / PRIN / SM&amp;CR / SCA / FOS）——这是第 1 周从未考过的新题型，今天一次考七个；② <b>专有名词的大小写与词形</b>（Chinese wall / Wall's Road / BoE）——听写时大写容易写错。<br>
+    <b>做法：</b>用 Edge 朗读下面的 16 句（<b>慢速档 0.8 倍</b>），<b>一句一停，写下来</b>。写完再看答案。<b>拼写错和听不出一样算错。</b>
+  </div>
+  <div class="tblwrap" style="max-height:none;">
+    <table>
+      <thead><tr><th style="width:5%;">#</th><th>听写句（先别看这列，用它朗读）</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td class="ex">The <b>Bank of England</b> sets the base rate.</td></tr>
+        <tr><td>2</td><td class="ex">A firm must satisfy the <b>threshold conditions</b> before applying for permission.</td></tr>
+        <tr><td>3</td><td class="ex"><b>PRIN</b> sets the overarching principles for everything else in the handbook.</td></tr>
+        <tr><td>4</td><td class="ex">The governance requirements sit in <b>SYSC</b>, and client money rules sit in <b>COBS</b>.</td></tr>
+        <tr><td>5</td><td class="ex">Under <b>SM&amp;CR</b>, each senior manager has a set of <b>prescribed responsibilities</b>.</td></tr>
+        <tr><td>6</td><td class="ex">The regulator must be satisfied that each senior manager is <b>fit and proper</b>.</td></tr>
+        <tr><td>7</td><td class="ex">A <b>notifiable matter</b> must be reported without delay.</td></tr>
+        <tr><td>8</td><td class="ex"><b>Inside information</b> must not be <b>disclosed</b> to the market before it is made public.</td></tr>
+        <tr><td>9</td><td class="ex"><b>Insider dealing</b> is a criminal offence as well as market abuse.</td></tr>
+        <tr><td>10</td><td class="ex">Creating an artificial price level is <b>market manipulation</b>.</td></tr>
+        <tr><td>11</td><td class="ex">Managing <b>conflicts of interest</b> is what the <b>Chinese wall</b> is designed to do.</td></tr>
+        <tr><td>12</td><td class="ex">A <b>Final Notice</b> is published, so the fine becomes a matter of public record.</td></tr>
+        <tr><td>13</td><td class="ex">A <b>Wells notice</b> tells the firm what the regulator thinks it did wrong.</td></tr>
+        <tr><td>14</td><td class="ex">If we do not respond within the <b>eight-week deadline</b>, the customer can escalate to the <b>Ombudsman</b>.</td></tr>
+        <tr><td>15</td><td class="ex"><b>Safeguarding</b> means client money is never commingled with the firm's own money.</td></tr>
+        <tr><td>16</td><td class="ex"><b>Strong customer authentication</b> is required whenever a payment leaves the account online.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="note" style="margin-top:12px;">
+    <b>判读标准：</b>16 句全对 → 第1 周的词已经落地；错 3–5 处 → 正常；<b>错 6 处以上</b> → 大概率错在三处：① <b>缩写的逐字母读与拼写</b>（FCA / SYSC / COBS / PRIN / SM&amp;CR / SCA / FOS）；② <b>名词重音 vs 动词重音</b>（disclosure / disclosed、conduct / conflicts）；③ <b>专有名词大小写（Bank of England / Chinese wall / Final Notice）</b>。<b>把错的地方抄进错题本，明天朗读前先过一遍。</b>
+  </div>
+
+  <!-- D 段 -->
+  <div class="step"><div class="n">D</div><div class="h">真实材料：无字幕 BBC 15 分钟（周测日验收）<small>不查词· 记理解率 · 15 分钟</small></div></div>
+
+  <div class="two">
+    <div>
+      <h4>① 无字幕 6 Minute English 第七集（10 分钟）</h4>
+      <p class="sub" style="margin-bottom:6px;">在 <span class="mono">bbc.co.uk/learningenglish</span> 的 <b>6 Minute English</b> 归档页，按发布时间倒序取<b>第七集</b>。<b>今天的规则改变：全程不看文本、不查词</b>——这与前六天的「四遍法」不同，是<b>一次性验收</b>。</p>
+      <ul class="tight">
+        <li><b>做法</b>：只播放一次，边听边记下「听到的关键词」，<b>不暂停、不回退、不查</b>。听完立刻写下一个百分比：<b>你理解了多少</b></li>
+        <li><b>目标 ≥ 70%</b>。低于 70% 不要重听——<b>直接记下你完全没听懂的 5 个位置</b>，那些就是你第 2 周的听力清单</li>
+        <li>如果标题涉及 <b>regulation / compliance / banking / consumer</b>，优先选那一集</li>
+      </ul>
+      <div class="note" style="margin-top:10px;font-size:12.3px;">
+        <b>为什么今天要这么狠：</b>前六天你都有一份文本在手，随时可以对照。<b>真实工作里没有文本对照</b>——周测日必须去掉这个拐杖，否则你的理解率会被高估，第 2 周真正上手时就会崩。
+      </div>
+    </div>
+    <div>
+      <h4>② 多口音材料（5 分钟，只做 1 段）</h4>
+      <p class="sub" style="margin-bottom:6px;">今天的词表后半段是<b>监管体系与缩写</b>（FCA / SYSC / COBS / MAR / SEC / FINRA），财经与监管播报是这些词的天然语料。</p>
+      <ul class="tight">
+        <li><b>BBC World Service「Business Daily」</b>：<b>优先选涉及 FCA / regulation / market abuse / consumer duty 的单集</b>，听 5 分钟</li>
+        <li><b>BBC Radio 4「You and Yours」</b>或 <b>FT News Briefing</b>：今天<b>只选一个</b>，不要贪多——<b>周测日的D 段是验收，不是加练</b></li>
+      </ul>
+      <div class="note" style="margin-top:10px;font-size:12.3px;">
+        <b>验收标准只有一条：</b>听完能说出<b>3 个关键词 + 1 个数字</b>。<b>不要追求听懂全文</b>，追求抓住这三样。
+      </div>
+    </div>
+  </div>
+
+  <h4 style="margin-top:18px;">四遍法操作表（今天以 B 段监管检查会为准）</h4>
+  <div class="tblwrap" style="max-height:none;">
+    <table>
+      <thead><tr><th style="width:10%;">遍数</th><th style="width:10%;">时长</th><th style="width:38%;">动作</th><th>必须产出的东西</th></tr></thead>
+      <tbody>
+        <tr><td class="en">第 1 遍</td><td class="ph">6 min</td><td class="ex"><b>0.9 倍速盲听，不看文本。</b>只回答三个问题：他们要什么？给了什么？还没给什么？</td><td class="ex">写下 3 个你<b>听清</b>的词 + 一个数字</td></tr>
+        <tr><td class="en" style="color:var(--red);">第 2 遍</td><td class="ph">10 min</td><td class="ex"><b>看文本听。</b>圈出所有"<b>这个词我认识（前六天学过），但刚才没听出来</b>"的位置。<span class="hit">这是整件事的胜负手，也是第 1 周的总账</span></td><td class="ex">错题本新增 <b>10–15 条</b>，格式：<span class="mono">单词 ｜ 听成了什么 ｜ 原因</span></td></tr>
+        <tr><td class="en">第 3 遍</td><td class="ph">8 min</td><td class="ex"><b>逐句跟读。</b>每句暂停跟读 3 次，重点模仿 <span class="mono">fit and proper / prescribed responsibilities / cease and desist</span> 这三处的重音落点</td><td class="ex">标出 2–3 个"读起来最拗口"的句子，模块 04 用它做影子跟读</td></tr>
+        <tr><td class="en">第 4 遍</td><td class="ph">6 min</td><td class="ex"><b>关掉文本，1.0 倍速再听一遍</b>，中间不暂停</td><td class="ex">估一个理解率（%），写进学习记录</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h4 style="margin-top:18px;">盲区预测清单（20 条 · 第 1 周旧词复查专用）</h4>
+  <p class="sub" style="margin-bottom:8px;">下面这些词，<b>你十有八九在前六天的听力里已经听错过</b>。今天逐条自查，命中一条记一条进错题本。<b>这份清单同时是第 2 周的听力预付</b>——第 2 周的 AML 场景会大量用到它们。</p>
+  <div class="tblwrap">
+    <table>
+      <thead><tr><th style="width:4%;">#</th><th style="width:20%;">词</th><th style="width:20%;">你的默认读法（易错）</th><th style="width:18%;">实际读音</th><th>原因</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td class="en">conduct</td><td class="ex">一律读成动词重音</td><td class="ph">/ˈkɒndʌkt/ 名<br>/kənˈdʌkt/ 动</td><td class="ex"><b>今天第 ① 号实用条。</b>跟 of / the 多半名词，跟 to 多半动词</td></tr>
+        <tr><td>2</td><td class="en">conflict</td><td class="ex">一律读成动词重音</td><td class="ph">/ˈkɒnflɪkt/ 名</td><td class="ex">conflicts of interest 是名词，读首重音</td></tr>
+        <tr><td>3</td><td class="en">disclose / disclosure</td><td class="ex">都读成 /z/</td><td class="ph">/z/ · /ʒ/</td><td class="ex"><b>动词清音、名词浊音。</b>Day-05 练过，第 1 周最后一次</td></tr>
+        <tr><td>4</td><td class="en">inside information</td><td class="ex">information 重音在 -FOR-</td><td class="ph">/ˌɪnfəˈmeɪʃn/</td><td class="ex">重音在 <b>-MA-</b>；inside 重音在第二音节。<b>两个重音</b></td></tr>
+        <tr><td>5</td><td class="en">threshold</td><td class="ex">/ˈtreʃhəʊld/</td><td class="ph">/ˈθreʃhəʊld/</td><td class="ex">首音 <b>/θ/ 舌尖伸出</b>，不是 /tr/ 也不是 /s/</td></tr>
+        <tr><td>6</td><td class="en">policy</td><td class="ex">/ˈpɑːləsi/</td><td class="ph">/ˈpɒləsi/</td><td class="ex"><b>/ɒ/ 是英式专属短圆唇音</b>，不卷舌</td></tr>
+        <tr><td>7</td><td class="en">enforcement</td><td class="ex">/ɪnˈfɔːrsmənt/</td><td class="ph">/ɪnˈfɔːsmənt/</td><td class="ex">重音在 <b>-FORCE-</b>（第二音节）；<b>/ɔː/ 不卷舌</b></td></tr>
+        <tr><td>8</td><td class="en">accountable</td><td class="ex">/əˈkaʊntəbəl/</td><td class="ph">/əˈkaʊntəbl/</td><td class="ex">重音在 <b>-COUNT-</b>；词尾 <b>-able 读 /əbl/</b> 不加 /ə/</td></tr>
+        <tr><td>9</td><td class="en">regime</td><td class="ex">/ˈredʒiːm/</td><td class="ph">/reɪˈʒiːm/</td><td class="ex">重音在<b>最后音节 -GIME</b></td></tr>
+        <tr><td>10</td><td class="en">prescribed</td><td class="ex">/prɪˈskraɪbt/ 或 /prɪˈskrɪpt/</td><td class="ph">/prɪˈskraɪbd/</td><td class="ex">中间 <b>/skr/</b> 是三个辅音；<b>拼写 -scribe</b></td></tr>
+        <tr><td>11</td><td class="en">responsibilities</td><td class="ex">/rɪˌspɒnˈsɪbɪlətiz/</td><td class="ph">/rɪˌspɒnsəˈbɪlətiz/</td><td class="ex">词尾 <b>-bilities 读 /bɪlətiz/</b>；共五个音节</td></tr>
+        <tr><td>12</td><td class="en">fit and proper</td><td class="ex">结尾读 /r/</td><td class="ph">/ˌfɪt ən ˈprɒpə/</td><td class="ex"><b>英式结尾不卷舌</b>；and 弱读 /ən/</td></tr>
+        <tr><td>13</td><td class="en">Chinese</td><td class="ex">词尾读 /s/</td><td class="ph">/ˌtʃaɪˈniːz/</td><td class="ex">首音 /tʃ/ 塞擦音，词尾<b>浊音 /z/</b></td></tr>
+        <tr><td>14</td><td class="en">cease</td><td class="ex">/siːz/</td><td class="ph">/siːs/</td><td class="ex"><b>这里是清音 /s/</b>。cease and desist 里的 cease</td></tr>
+        <tr><td>15</td><td class="en">desist</td><td class="ex">/dɪˈzaɪst/</td><td class="ph">/dɪˈzɪst/</td><td class="ex">重音在<b>最后音节</b>；后半是 /ɪst/ 不是 /aɪn/</td></tr>
+        <tr><td>16</td><td class="en">response</td><td class="ex">/rɪˈspɒnseɪ/</td><td class="ph">/rɪˈspɒns/</td><td class="ex">中间 <b>/s/ 读浊音 /z/</b>；结尾不读 /eɪ/</td></tr>
+        <tr><td>17</td><td class="en">letter</td><td class="ex">单音节 /ˈletr/</td><td class="ph">/ˈletə/</td><td class="ex"><b>英式两音节</b>，不是美式单音节。final response letter 天天用</td></tr>
+        <tr><td>18</td><td class="en">Ombudsman</td><td class="ex">中间的 /b/ 发音</td><td class="ph">/ˈəʊmbɡzɪdəm/</td><td class="ex"><b>/b/ 不发音</b>；重音在首音节</td></tr>
+        <tr><td>19</td><td class="en">redress</td><td class="ex">/rɪˈdrez/</td><td class="ph">/rɪˈdres/</td><td class="ex">结尾是<b>清音 /s/</b>，与 press / stress 不同</td></tr>
+        <tr><td>20</td><td class="en">safeguarding</td><td class="ex">重音在第三音节</td><td class="ph">/ˈseɪfɡɑːdɪŋ/</td><td class="ex">重音在<b>首音节</b>；中间 /ɡ/ 读<b>长音 /ɡɑː/</b></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="reveal">
+    <button class="btn" onclick="tog(this)">展开：监管检查场景的连读与弱读速查</button>
+    <div class="revbd">
+      <div class="script" style="font-size:13px;">
+        <b style="color:var(--navy);">一、本段出现频率最高的连读块（整块记住，不要拆开听）</b><br>
+        · <span class="mono">client money</span> → <span class="mono">/ˈklaɪənt ˈmʌni/</span>　· <span class="mono">threshold conditions</span> → <span class="mono">/ˈθreʃhəʊld kənˈdɪʃnz/</span><br>
+        · <span class="mono">fit and proper</span> → <span class="mono">/ˌfɪt ən ˈprɒpə/</span>　· <span class="mono">prescribed responsibilities</span> → <span class="mono">/prɪˈskraɪbd rɪˌspɒnsəˈbɪlətiz/</span><br>
+        · <span class="mono">inside information</span> → <span class="mono">/ɪnˈsaɪd ˌɪnfəˈmeɪʃn/</span>　· <span class="mono">final response letter</span> → <span class="mono">/ˌfaɪnəl rɪˈspɒns ˈletə/</span><br>
+        · <span class="mono">cease and desist order</span> → <span class="mono">/ˌsiːs ən dɪˈzɪst ˈɔːdə/</span>（<b>三个词全重读</b>）<br>
+        · <span class="mono">eight-week deadline</span> → <span class="mono">/ˌeɪt ˈwiːk ˈdedlaɪn/</span><br><br>
+
+        <b style="color:var(--navy);">二、今天新学到的弱读（功能词继续降级）</b><br>
+        · <span class="mono">would you prefer to start</span> → <span class="mono">/wʊd juː prɪˈfɜː tə ˈstɑːt/</span>（would 弱读 /wʊd/，to 弱读 /tə/）<br>
+        · <span class="mono">I'm telling you the fact-finding</span> → <span class="mono">/aɪm ˈtelɪŋ juː/</span>（I'm 弱读 /aɪm/）<br>
+        · <span class="mono">and then the Chinese wall policy</span> → <span class="mono">/ən ðen ðə ˌtʃaɪˈniːz ˈwɔːl ˈpɒləsi/</span>（三个 the 全部弱读）<br>
+        · <span class="mono">in a letter</span> → <span class="mono">/ɪn ə ˈletə/</span>（a 弱读 /ə/）<br>
+        · <span class="mono">if I were you</span> → <span class="mono">/ɪf aɪ wɜː juː/</span>（were 弱读 /wɜː/，不卷舌）<br>
+        · <span class="mono">that's not an enforcement visit</span> → <span class="mono">/ðæts nəʊt ən ɪnˈfɔːsmənt ˈvɪzɪt/</span>（not an 弱读成 /nəʊt ən/）<br>
+        · <span class="mono">There isn't one on this visit.</span> → 降调陈述。<b>句首 There 不弱读</b>，要清楚<br><br>
+
+        <b style="color:var(--navy);">三、今天新增的英式 vs 美式 5 条</b><br>
+        1. <b>词尾 r 一律不卷</b>：<span class="mono">letter /ˈletə/</span>、<span class="mono">proper /ˈprɒpə/</span>、<span class="mono">person /ˈpɜːsn/</span>、<span class="mono">order /ˈɔːdə/</span>、<span class="mono">information /ˌɪnfəˈmeɪʃn/</span> ——美式这五个词全卷舌，是最容易被美国同事带跑的一批<br>
+        2. <b>/ɒ/ 是英式专属</b>：<span class="mono">policy /ˈpɒləsi/</span>、<span class="mono">COBS /kɒbz/</span>、<span class="mono">conflicts /ˈkɒnflɪkts/</span>、<span class="mono">notifiable /ˈnəʊtɪfaɪəbl/</span> —— 美式读 /ɑː/<br>
+        3. <b>四个字母缩写一律逐字母读</b>：<span class="mono">SYSC /sɪsk/</span>、<span class="mono">COBS /kɒbz/</span>、<span class="mono">PRIN /prɪn/</span>、<span class="mono">SM&amp;CR</span> —— <b>不确定就逐字母读，永远不会错</b><br>
+        4. <b>letter / notice 都是英式两音节</b>：<span class="mono">letter /ˈletə/</span>、<span class="mono">notice /ˈnəʊtɪs/</span> —— 今天的 Final Notice 与 final response letter 都是文档名<br>
+        5. <b>/b/ 在 Ombudsman 里不发音</b>：<span class="mono">/ˈəʊmbɡzɪdəm/</span> —— 这是个孤例，但它出现在投诉流程的关键词上，读错很扎眼
+      </div>
+    </div>
+  </div>
+
+  <h4 style="margin-top:16px;">今日听力任务</h4>
+  <div id="ckListen"></div>
+</div>
+
+<!-- 模块 2 -->
+<div class="card">
+  <div class="mod">
+    <div class="mod-no"><b>02</b><span>VOCAB</span></div>
+    <div class="mod-tt"><h3>词汇：100 个核心词（30 精讲 + 70 拓展）+ 第 1 周术语测 100 题</h3><p>英美监管与市场行为 98 + 金融产品与市场工具 2</p></div>
+    <div class="mod-time">50 分钟</div>
+  </div>
+
+  <div class="note" style="margin-bottom:12px;">
+    <b>今天这 100 词就是词表第 601–700 行 = 今天 Anki 会发给你的那 100 张卡。</b>已逐条核对：<b>与Anki 队列零差异</b>。首词 <span class="mono">suitability assessment</span>，末词 <span class="mono">FSCS</span>。构成：<b>英美监管与市场行为 98 条</b>（英国监管架构 / FCA 手册体系 / SM&amp;CR / 市场滥用 / 美国监管 / 投诉赔付 / 支付保护）+ <b>金融产品与市场工具 2 条</b>（suitability assessment / target market determination）。<br><br>
+    <b>但今天真正的重点不是这 100 个新词，而是下面那张 100 题的术语测。</b>今天是第 1 周唯一一次<b>「词表内容与训练重点不一致」</b>的日子——词表顺延到了监管体系，但训练重点是<b>回收前六天的 600 词</b>。所以模块 02 分成两半：<b>前半建新（今天这 100 词），后半验收（术语测 100 题）。</b>
+  </div>
+
+  <p class="sub" style="margin:0 0 8px;"><b>第一档｜精讲词 30 个（需开口造句 + 读准）</b>　按主题分组：监管架构 5 → 准入与客户义务 4 → SM&amp;CR 4 → 市场滥用 6 → 处罚工具 3 → 客户资金与投诉 5 → 支付与保障 3</p>
+  <div class="tblwrap">
+    <table id="vocabTbl">
+      <thead><tr><th style="width:34px;">造句</th><th>英文</th><th>读音（英式）</th><th>释义</th><th>英式例句</th></tr></thead>
+      <tbody id="vocabBody"></tbody>
+    </table>
+  </div>
+
+  <h4 style="margin:20px 0 8px;">第二档｜拓展词 70 个（认读即可）</h4>
+  <div class="note" style="margin-bottom:10px;">
+    这 70 个词同样进 Anki。今天的要求降到最低：<b>看到英文能想起中文、听到能反应过来</b>就行。这一批按监管体系分七块：<b>英国监管机构与准入</b>（appointed representative / Financial Services and Markets Act 2023 / FSMA 2000 / FSMA 2023 / RAO / regulated activity / permission / variation of permission (VOP) / Consumer Credit Act 1974 / 准入门槛的近邻）；<b>FCA 手册与其他规则书</b>（CASS / SUP / MCOB / BCOBS / ICOBS / DISP / CONC / PRIN 的缩写条目）；<b>市场与报告</b>（MiFID II / MiFIR / EMIR / UK EMIR / transaction reporting / best execution / appropriateness / inducements）；<b>市场滥用细则</b>（product governance / suspicious transaction and order report (STOR) / product governance 与 target market 的近邻）；<b>美国监管体系</b>（SEC / FINRA / CFTC / OCC / Federal Reserve / FDIC / NYDFS / Dodd-Frank Act / Volcker Rule / Bank Secrecy Act (BSA) / FinCEN / CTR / USA PATRIOT Act / FCPA / UK Bribery Act 2010 / Sarbanes-Oxley Act / Securities Act 1933 / Exchange Act 1934 / Investment Advisers Act 1940 / Rule 10b-5 / Regulation Best Interest / Regulation S-P / Corporate Transparency Act / BOI reporting）；<b>处罚与检查工具</b>（MRA / examination / VREQ / s166 skilled person review / financial penalty / prohibition order 的近邻）；<b>投诉、赔付与支付</b>（FSCS / complaint handling rules / Payment Systems Regulator (PSR) / APP fraud reimbursement / confirmation of payee / strong customer authentication (SCA) / 3-D Secure）。
+  </div>
+  <div class="tblwrap">
+    <table id="vocab2Tbl">
+      <thead><tr><th style="width:34px;">标记</th><th>英文</th><th style="width:20%;">中文</th><th>补充说明</th></tr></thead>
+      <tbody id="vocab2Body"></tbody>
+    </table>
+  </div>
+
+  <div class="reveal">
+    <button class="btn" onclick="tog(this)">展开：30 个精讲词的读音速查表（今日通用）</button>
+    <div class="revbd">
+      <div class="script" style="font-size:13px;">
+        <b style="color:var(--navy);">一、缩写逐字母读（今天的头号新题型）</b><br>
+        <b>1. PRIN</b> <span class="mono">/prɪn/</span> — 四个字母逐个读，读成一个词就错了；Principles 词尾 -ples 读 <span class="mono">/plz/</span><br>
+        <b>2. SYSC</b> <span class="mono">/sɪsk/</span> — 读成 <span class="mono">/sɪŋk/</span> 或「sysk」都不对<br>
+        <b>3. COBS</b> <span class="mono">/kɒbz/</span> — 首音是<b>英式专属的 /ɒ/</b>，美式读 <span class="mono">/kɑːbz/</span><br>
+        <b>4. SM&amp;CR</b> — 读作 <b>S-M-and-C-R</b>，中间的 and 不能省<br>
+        <b>5. SCA</b> <span class="mono">/ˌes siː ˈeɪ/</span> — 三个字母各一个音<br>
+        <b>6. FOS</b> <span class="mono">/ˌef əʊ ˈes/</span> — 不要读成「foss」<br>
+        <b>7. BoE / FPC</b> <span class="mono">/ˌbiː əʊ ˈiː/</span> · <span class="mono">/ˌef piː ˈsiː/</span> — 三个都是长音<br>
+        <b>8. MAR</b> <span class="mono">/ˌem eɪ ˈɑː/</span> — 市场滥用条例<br><br>
+
+        <b style="color:var(--navy);">二、名词重音 vs 动词重音（今天第 ① 号实用条）</b><br>
+        <b>9. conduct</b> <span class="mono">/ˈkɒndʌkt/</span>（名）· <span class="mono">/kənˈdʌkt/</span>（动）— FCA 全称里是名词<br>
+        <b>10. conflict</b> <span class="mono">/ˈkɒnflɪkt/</span>（名）· <span class="mono">/kənˈflɪkt/</span>（动）— conflicts of interest 是名词<br>
+        <b>11. present / record / object</b> — 同样机制，<b>跟 of / the 是名词，跟 to 是动词</b><br>
+        <b>12. disclose / disclosure</b> <span class="mono">/z/</span> · <span class="mono">/ʒ/</span> — <b>动词清音、名词浊音</b><br><br>
+
+        <b style="color:var(--navy);">三、英式不卷舌（今天新增一批）</b><br>
+        <b>13. proper</b> <span class="mono">/ˈprɒpə/</span> — <b>fit and proper 结尾不读 /r/</b>；and 弱读 <span class="mono">/ən/</span><br>
+        <b>14. person</b> <span class="mono">/ˈpɜːsn/</span> — approved person 词尾无 /r/<br>
+        <b>15. letter</b> <span class="mono">/ˈletə/</span> — <b>英式两音节</b>，不是美式 <span class="mono">/ˈletr/</span><br>
+        <b>16. notice</b> <span class="mono">/ˈnəʊtɪs/</span> — 首音 <span class="mono">/nəʊ/</span> 不卷舌<br>
+        <b>17. order</b> <span class="mono">/ˈɔːdə/</span> — prohibition order / cease and desist order 都不卷<br>
+        <b>18. enforcement / redress</b> <span class="mono">/ɪnˈfɔːsmənt/</span> · <span class="mono">/rɪˈdres/</span> — /ɔː/ 与 /e/ 都不卷<br><br>
+
+        <b style="color:var(--navy);">四、/ɒ/ 是英式专属（今天四个）</b><br>
+        <b>19. policy</b> <span class="mono">/ˈpɒləsi/</span> — 今天 B 段会议里出现<br>
+        <b>20. COBS</b> <span class="mono">/kɒbz/</span> · <b>conflicts</b> <span class="mono">/ˈkɒnflɪkts/</span> · <b>notifiable</b> <span class="mono">/ˈnəʊtɪfaɪəbl/</span><br><br>
+
+        <b style="color:var(--navy);">五、重音易错词（手指敲桌子打重音）</b><br>
+        <b>21. threshold</b> <span class="mono">/ˈθreʃhəʊld/</span> — 首音 <b>/θ/ 舌尖伸出</b>；conditions 重音在<b>后</b><br>
+        <b>22. account·able</b> <span class="mono">/əˈkaʊntəbl/</span> — 重音在 <b>-COUNT-</b>；<b>-able 读 /əbl/</b><br>
+        <b>23. regime</b> <span class="mono">/reɪˈʒiːm/</span> — 重音在<b>最后音节 -GIME</b><br>
+        <b>24. prescribed</b> <span class="mono">/prɪˈskraɪbd/</span> — 重音在 <b>-SCRIBE-</b>，中间 <b>/skr/</b><br>
+        <b>25. resp·onsibilities</b> <span class="mono">/rɪˌspɒnsəˈbɪlətiz/</span> — 五音节，重音在 -BIL-<br>
+        <b>26. market manipulation</b> <span class="mono">/ˈmɑːkɪt məˌnɪpjuˈleɪʃn/</span> — manipulation 重音在 <b>-PU-</b>（倒数第二），中间 /pju/ 是三音<br>
+        <b>27. prescribed responsibilities</b> <span class="mono">/prɪˈskraɪbd rɪˌspɒnsəˈbɪlətiz/</span> — <b>今天最长的术语，两个重音要分开打</b><br>
+        <b>28. cease and desist</b> <span class="mono">/ˌsiːs ən dɪˈzɪst/</span> — cease <b>清音 /siːs/</b>，desist 重音在最后音节<br>
+        <b>29. final response letter</b> <span class="mono">/ˌfaɪnəl rɪˈspɒns ˈletə/</span> — 三词重音<b>首、末、首</b>；response 中间 /z/<br>
+        <b>30. safeguarding</b> <span class="mono">/ˈseɪfɡɑːdɪŋ/</span> — 重音在<b>首音节</b>；中间 /ɡ/ 读<b>长音 /ɡɑː/</b><br>
+        <b>31. confirmation of payee</b> <span class="mono">/ˌkɒnfəˈmeɪʃn əv ˈpeɪiː/</span> — 重音在 -MA-；of 弱读 <span class="mono">/əv/</span>；payee 结尾长音 /iː/<br>
+        <b>32. authentication</b> <span class="mono">/ˌɔːˌθentɪˈkeɪʃn/</span> — 五音节，重音在 <b>-TI-</b>，中间 /θ/ 舌尖伸出<br>
+        <b>33. Ombudsman</b> <span class="mono">/ˈəʊmbɡzɪdəm/</span> — <b>中间的 /b/ 不发音</b>；重音在首音节<br>
+        <b>34. vulnerable / notifiable</b> — 词尾 <b>-able 读 /əbl/</b> 不加 /ə/；notifiable 重音在<b>首音节</b><br>
+        <b>35. client / customer</b> — client 中间 <b>/aɪə/ 是三音</b>；customer 三音节弱读结尾，要打三拍
+      </div>
+    </div>
+  </div>
+
+  <h4 style="margin:22px 0 8px;">第 1 周术语测（100 题 · 目标 ≥ 85%）</h4>
+  <div class="note" style="margin-bottom:10px;">
+    <b>这是周测日的核心，也是整个第 1 周唯一一次「验收」。</b>做法：<b>限时 20 分钟</b>，题目从 Day-01 到 Day-06 的 600 词里<b>等距抽取</b>，覆盖全部六天。<b>在「你的答案」列写下中文释义，不查 Anki、不翻前六天的页面</b>。写完点<b>「对答案」</b>自动判分。<br><br>
+    <b>三个档位：</b>≥ 85 分 → <b>第 1 周通过</b>，第 2 周按计划走；70–84 分 → <b>第 2 周前三天每天加 20 分钟术语测</b>；&lt; 70 分 → <b>第 2 周节奏放慢</b>，前三天改成「复习 Day-03/04 的 AML 词」而不是往前推。<br><br>
+    <b>判分规则宽松</b>：答案里<b>命中关键词即算对</b>（例如答案是「可疑交易与指令报告」，你写「可疑交易报告」也算对）。<b>但无论多少分，都要把答错的抄进错题本</b>——尤其是「想得出中文但写不出英文」和「两个词都认识但重音读错」这两类，前者是产出问题，后者是听力问题，补法完全不同。
+  </div>
+  <div style="margin:0 0 10px;display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
+    <button class="btn primary" id="quizGrade">对答案（自动判分）</button>
+    <button class="btn" id="quizClear">清空重做</button>
+    <span id="quizScore" style="font-size:13px;color:var(--ink-3);">未判分</span>
+  </div>
+  <div class="tblwrap" style="max-height:640px;">
+    <table id="quizTbl">
+      <thead><tr><th style="width:5%;">#</th><th style="width:30%;">题面（英文 → 写中文）</th><th style="width:20%;">你的答案</th><th style="width:7%;">对错</th><th>正确答案</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td class="ex">nostro account<span class="qtag">Day 01</span></td><td><input class="qin" data-q="0" type="text" autocomplete="off"></td><td class="qres" data-res="0">&mdash;</td><td class="ex zh">往账账户</td></tr>
+        <tr><td>2</td><td class="ex">syndicated loan<span class="qtag">Day 01</span></td><td><input class="qin" data-q="1" type="text" autocomplete="off"></td><td class="qres" data-res="1">&mdash;</td><td class="ex zh">银团贷款</td></tr>
+        <tr><td>3</td><td class="ex">FX spot / forward / swap<span class="qtag">Day 01</span></td><td><input class="qin" data-q="2" type="text" autocomplete="off"></td><td class="qres" data-res="2">&mdash;</td><td class="ex zh">即期 / 远期 / 掉期外汇</td></tr>
+        <tr><td>4</td><td class="ex">margin call<span class="qtag">Day 01</span></td><td><input class="qin" data-q="3" type="text" autocomplete="off"></td><td class="qres" data-res="3">&mdash;</td><td class="ex zh">追加保证金通知</td></tr>
+        <tr><td>5</td><td class="ex">liquidity coverage ratio (LCR)<span class="qtag">Day 01</span></td><td><input class="qin" data-q="4" type="text" autocomplete="off"></td><td class="qres" data-res="4">&mdash;</td><td class="ex zh">流动性覆盖率</td></tr>
+        <tr><td>6</td><td class="ex">impairment<span class="qtag">Day 01</span></td><td><input class="qin" data-q="5" type="text" autocomplete="off"></td><td class="qres" data-res="5">&mdash;</td><td class="ex zh">减值</td></tr>
+        <tr><td>7</td><td class="ex">prospectus<span class="qtag">Day 01</span></td><td><input class="qin" data-q="6" type="text" autocomplete="off"></td><td class="qres" data-res="6">&mdash;</td><td class="ex zh">招股说明书</td></tr>
+        <tr><td>8</td><td class="ex">Faster Payments<span class="qtag">Day 01</span></td><td><input class="qin" data-q="7" type="text" autocomplete="off"></td><td class="qres" data-res="7">&mdash;</td><td class="ex zh">英国快速支付系统</td></tr>
+        <tr><td>9</td><td class="ex">KYC refresh<span class="qtag">Day 01</span></td><td><input class="qin" data-q="8" type="text" autocomplete="off"></td><td class="qres" data-res="8">&mdash;</td><td class="ex zh">客户尽调定期更新</td></tr>
+        <tr><td>10</td><td class="ex">reverse repo<span class="qtag">Day 01</span></td><td><input class="qin" data-q="9" type="text" autocomplete="off"></td><td class="qres" data-res="9">&mdash;</td><td class="ex zh">逆回购</td></tr>
+        <tr><td>11</td><td class="ex">instant payment<span class="qtag">Day 01</span></td><td><input class="qin" data-q="10" type="text" autocomplete="off"></td><td class="qres" data-res="10">&mdash;</td><td class="ex zh">即时支付</td></tr>
+        <tr><td>12</td><td class="ex">T+2<span class="qtag">Day 01</span></td><td><input class="qin" data-q="11" type="text" autocomplete="off"></td><td class="qres" data-res="11">&mdash;</td><td class="ex zh">交易后第二个工作日交收</td></tr>
+        <tr><td>13</td><td class="ex">novation<span class="qtag">Day 01</span></td><td><input class="qin" data-q="12" type="text" autocomplete="off"></td><td class="qres" data-res="12">&mdash;</td><td class="ex zh">债务更替</td></tr>
+        <tr><td>14</td><td class="ex">structured finance<span class="qtag">Day 01</span></td><td><input class="qin" data-q="13" type="text" autocomplete="off"></td><td class="qres" data-res="13">&mdash;</td><td class="ex zh">结构融资</td></tr>
+        <tr><td>15</td><td class="ex">forbearance<span class="qtag">Day 01</span></td><td><input class="qin" data-q="14" type="text" autocomplete="off"></td><td class="qres" data-res="14">&mdash;</td><td class="ex zh">宽容处理、暂缓执行</td></tr>
+        <tr><td>16</td><td class="ex">net interest income (NII)<span class="qtag">Day 01</span></td><td><input class="qin" data-q="15" type="text" autocomplete="off"></td><td class="qres" data-res="15">&mdash;</td><td class="ex zh">净利息收入</td></tr>
+        <tr><td>17</td><td class="ex">true sale<span class="qtag">Day 01</span></td><td><input class="qin" data-q="16" type="text" autocomplete="off"></td><td class="qres" data-res="16">&mdash;</td><td class="ex zh">真实出售</td></tr>
+        <tr><td>18</td><td class="ex">central counterparty (CCP)<span class="qtag">Day 02</span></td><td><input class="qin" data-q="17" type="text" autocomplete="off"></td><td class="qres" data-res="17">&mdash;</td><td class="ex zh">中央对手方</td></tr>
+        <tr><td>19</td><td class="ex">cash pooling<span class="qtag">Day 02</span></td><td><input class="qin" data-q="18" type="text" autocomplete="off"></td><td class="qres" data-res="18">&mdash;</td><td class="ex zh">现金池</td></tr>
+        <tr><td>20</td><td class="ex">payment system<span class="qtag">Day 02</span></td><td><input class="qin" data-q="19" type="text" autocomplete="off"></td><td class="qres" data-res="19">&mdash;</td><td class="ex zh">支付系统</td></tr>
+        <tr><td>21</td><td class="ex">camt.053<span class="qtag">Day 02</span></td><td><input class="qin" data-q="20" type="text" autocomplete="off"></td><td class="qres" data-res="20">&mdash;</td><td class="ex zh">账户对账单报文</td></tr>
+        <tr><td>22</td><td class="ex">IBAN<span class="qtag">Day 02</span></td><td><input class="qin" data-q="21" type="text" autocomplete="off"></td><td class="qres" data-res="21">&mdash;</td><td class="ex zh">国际银行账号</td></tr>
+        <tr><td>23</td><td class="ex">remittance information<span class="qtag">Day 02</span></td><td><input class="qin" data-q="22" type="text" autocomplete="off"></td><td class="qres" data-res="22">&mdash;</td><td class="ex zh">汇款附言</td></tr>
+        <tr><td>24</td><td class="ex">SOFR<span class="qtag">Day 02</span></td><td><input class="qin" data-q="23" type="text" autocomplete="off"></td><td class="qres" data-res="23">&mdash;</td><td class="ex zh">有担保隔夜融资利率</td></tr>
+        <tr><td>25</td><td class="ex">yield curve<span class="qtag">Day 02</span></td><td><input class="qin" data-q="24" type="text" autocomplete="off"></td><td class="qres" data-res="24">&mdash;</td><td class="ex zh">收益率曲线</td></tr>
+        <tr><td>26</td><td class="ex">Tier 1 / Tier 2 capital<span class="qtag">Day 02</span></td><td><input class="qin" data-q="25" type="text" autocomplete="off"></td><td class="qres" data-res="25">&mdash;</td><td class="ex zh">一级 / 二级资本</td></tr>
+        <tr><td>27</td><td class="ex">capital planning buffer<span class="qtag">Day 02</span></td><td><input class="qin" data-q="26" type="text" autocomplete="off"></td><td class="qres" data-res="26">&mdash;</td><td class="ex zh">资本规划缓冲</td></tr>
+        <tr><td>28</td><td class="ex">special purpose vehicle (SPV)<span class="qtag">Day 02</span></td><td><input class="qin" data-q="27" type="text" autocomplete="off"></td><td class="qres" data-res="27">&mdash;</td><td class="ex zh">特殊目的实体</td></tr>
+        <tr><td>29</td><td class="ex">wealth management<span class="qtag">Day 02</span></td><td><input class="qin" data-q="28" type="text" autocomplete="off"></td><td class="qres" data-res="28">&mdash;</td><td class="ex zh">财富管理</td></tr>
+        <tr><td>30</td><td class="ex">counter-terrorist financing (CTF)<span class="qtag">Day 02</span></td><td><input class="qin" data-q="29" type="text" autocomplete="off"></td><td class="qres" data-res="29">&mdash;</td><td class="ex zh">反恐融资</td></tr>
+        <tr><td>31</td><td class="ex">placement / layering / integration<span class="qtag">Day 02</span></td><td><input class="qin" data-q="30" type="text" autocomplete="off"></td><td class="qres" data-res="30">&mdash;</td><td class="ex zh">处置 / 离析 / 整合（洗钱三阶段）</td></tr>
+        <tr><td>32</td><td class="ex">Ultimate Beneficial Owner (UBO)<span class="qtag">Day 02</span></td><td><input class="qin" data-q="31" type="text" autocomplete="off"></td><td class="qres" data-res="31">&mdash;</td><td class="ex zh">最终受益人</td></tr>
+        <tr><td>33</td><td class="ex">sanctions screening<span class="qtag">Day 02</span></td><td><input class="qin" data-q="32" type="text" autocomplete="off"></td><td class="qres" data-res="32">&mdash;</td><td class="ex zh">制裁筛查</td></tr>
+        <tr><td>34</td><td class="ex">Nominated Officer<span class="qtag">Day 02</span></td><td><input class="qin" data-q="33" type="text" autocomplete="off"></td><td class="qres" data-res="33">&mdash;</td><td class="ex zh">指定报告官</td></tr>
+        <tr><td>35</td><td class="ex">red flag<span class="qtag">Day 03</span></td><td><input class="qin" data-q="34" type="text" autocomplete="off"></td><td class="qres" data-res="34">&mdash;</td><td class="ex zh">危险信号</td></tr>
+        <tr><td>36</td><td class="ex">Money Laundering Regulations 2017<span class="qtag">Day 03</span></td><td><input class="qin" data-q="35" type="text" autocomplete="off"></td><td class="qres" data-res="35">&mdash;</td><td class="ex zh">英国反洗钱条例 2017</td></tr>
+        <tr><td>37</td><td class="ex">wire transfer<span class="qtag">Day 03</span></td><td><input class="qin" data-q="36" type="text" autocomplete="off"></td><td class="qres" data-res="36">&mdash;</td><td class="ex zh">电汇</td></tr>
+        <tr><td>38</td><td class="ex">lookback review<span class="qtag">Day 03</span></td><td><input class="qin" data-q="37" type="text" autocomplete="off"></td><td class="qres" data-res="37">&mdash;</td><td class="ex zh">回溯审查</td></tr>
+        <tr><td>39</td><td class="ex">phantom shipment<span class="qtag">Day 03</span></td><td><input class="qin" data-q="38" type="text" autocomplete="off"></td><td class="qres" data-res="38">&mdash;</td><td class="ex zh">幽灵货运</td></tr>
+        <tr><td>40</td><td class="ex">trust and company service provider (TCSP)<span class="qtag">Day 03</span></td><td><input class="qin" data-q="39" type="text" autocomplete="off"></td><td class="qres" data-res="39">&mdash;</td><td class="ex zh">信托与公司服务提供商</td></tr>
+        <tr><td>41</td><td class="ex">money mule / mule account<span class="qtag">Day 03</span></td><td><input class="qin" data-q="40" type="text" autocomplete="off"></td><td class="qres" data-res="40">&mdash;</td><td class="ex zh">钱骡 / 钱骡账户</td></tr>
+        <tr><td>42</td><td class="ex">crypto laundering<span class="qtag">Day 03</span></td><td><input class="qin" data-q="41" type="text" autocomplete="off"></td><td class="qres" data-res="41">&mdash;</td><td class="ex zh">加密货币洗钱</td></tr>
+        <tr><td>43</td><td class="ex">geographic risk<span class="qtag">Day 03</span></td><td><input class="qin" data-q="42" type="text" autocomplete="off"></td><td class="qres" data-res="42">&mdash;</td><td class="ex zh">地域风险</td></tr>
+        <tr><td>44</td><td class="ex">quality assurance (QA)<span class="qtag">Day 03</span></td><td><input class="qin" data-q="43" type="text" autocomplete="off"></td><td class="qres" data-res="43">&mdash;</td><td class="ex zh">质量保证</td></tr>
+        <tr><td>45</td><td class="ex">board reporting<span class="qtag">Day 03</span></td><td><input class="qin" data-q="44" type="text" autocomplete="off"></td><td class="qres" data-res="44">&mdash;</td><td class="ex zh">董事会报告</td></tr>
+        <tr><td>46</td><td class="ex">training completion rate<span class="qtag">Day 03</span></td><td><input class="qin" data-q="45" type="text" autocomplete="off"></td><td class="qres" data-res="45">&mdash;</td><td class="ex zh">培训完成率</td></tr>
+        <tr><td>47</td><td class="ex">mule account / money mule<span class="qtag">Day 03</span></td><td><input class="qin" data-q="46" type="text" autocomplete="off"></td><td class="qres" data-res="46">&mdash;</td><td class="ex zh">钱骡账户 / 钱骡</td></tr>
+        <tr><td>48</td><td class="ex">investment fraud<span class="qtag">Day 03</span></td><td><input class="qin" data-q="47" type="text" autocomplete="off"></td><td class="qres" data-res="47">&mdash;</td><td class="ex zh">投资诈骗</td></tr>
+        <tr><td>49</td><td class="ex">first-party fraud<span class="qtag">Day 03</span></td><td><input class="qin" data-q="48" type="text" autocomplete="off"></td><td class="qres" data-res="48">&mdash;</td><td class="ex zh">一方欺诈</td></tr>
+        <tr><td>50</td><td class="ex">consent / refusal<span class="qtag">Day 03</span></td><td><input class="qin" data-q="49" type="text" autocomplete="off"></td><td class="qres" data-res="49">&mdash;</td><td class="ex zh">同意 / 拒绝</td></tr>
+        <tr><td>51</td><td class="ex">TF risk assessment<span class="qtag">Day 04</span></td><td><input class="qin" data-q="50" type="text" autocomplete="off"></td><td class="qres" data-res="50">&mdash;</td><td class="ex zh">恐怖融资风险评估</td></tr>
+        <tr><td>52</td><td class="ex">trigger-based review<span class="qtag">Day 04</span></td><td><input class="qin" data-q="51" type="text" autocomplete="off"></td><td class="qres" data-res="51">&mdash;</td><td class="ex zh">事件驱动复检</td></tr>
+        <tr><td>53</td><td class="ex">typology coverage<span class="qtag">Day 04</span></td><td><input class="qin" data-q="52" type="text" autocomplete="off"></td><td class="qres" data-res="52">&mdash;</td><td class="ex zh">类型学覆盖度</td></tr>
+        <tr><td>54</td><td class="ex">account<span class="qtag">Day 04</span></td><td><input class="qin" data-q="53" type="text" autocomplete="off"></td><td class="qres" data-res="53">&mdash;</td><td class="ex zh">账户</td></tr>
+        <tr><td>55</td><td class="ex">transaction<span class="qtag">Day 04</span></td><td><input class="qin" data-q="54" type="text" autocomplete="off"></td><td class="qres" data-res="54">&mdash;</td><td class="ex zh">交易</td></tr>
+        <tr><td>56</td><td class="ex">interest rate<span class="qtag">Day 04</span></td><td><input class="qin" data-q="55" type="text" autocomplete="off"></td><td class="qres" data-res="55">&mdash;</td><td class="ex zh">利率</td></tr>
+        <tr><td>57</td><td class="ex">asset<span class="qtag">Day 04</span></td><td><input class="qin" data-q="56" type="text" autocomplete="off"></td><td class="qres" data-res="56">&mdash;</td><td class="ex zh">资产</td></tr>
+        <tr><td>58</td><td class="ex">compliance<span class="qtag">Day 04</span></td><td><input class="qin" data-q="57" type="text" autocomplete="off"></td><td class="qres" data-res="57">&mdash;</td><td class="ex zh">合规</td></tr>
+        <tr><td>59</td><td class="ex">scrutiny<span class="qtag">Day 04</span></td><td><input class="qin" data-q="58" type="text" autocomplete="off"></td><td class="qres" data-res="58">&mdash;</td><td class="ex zh">审查、审视</td></tr>
+        <tr><td>60</td><td class="ex">cheque<span class="qtag">Day 04</span></td><td><input class="qin" data-q="59" type="text" autocomplete="off"></td><td class="qres" data-res="59">&mdash;</td><td class="ex zh">支票（英式拼法）</td></tr>
+        <tr><td>61</td><td class="ex">escalate<span class="qtag">Day 04</span></td><td><input class="qin" data-q="60" type="text" autocomplete="off"></td><td class="qres" data-res="60">&mdash;</td><td class="ex zh">上报、升级处理</td></tr>
+        <tr><td>62</td><td class="ex">legitimate<span class="qtag">Day 04</span></td><td><input class="qin" data-q="61" type="text" autocomplete="off"></td><td class="qres" data-res="61">&mdash;</td><td class="ex zh">合法的、正当的</td></tr>
+        <tr><td>63</td><td class="ex">OFAC<span class="qtag">Day 04</span></td><td><input class="qin" data-q="62" type="text" autocomplete="off"></td><td class="qres" data-res="62">&mdash;</td><td class="ex zh">美国财政部海外资产控制办公室</td></tr>
+        <tr><td>64</td><td class="ex">sectoral sanctions<span class="qtag">Day 04</span></td><td><input class="qin" data-q="63" type="text" autocomplete="off"></td><td class="qres" data-res="63">&mdash;</td><td class="ex zh">行业制裁</td></tr>
+        <tr><td>65</td><td class="ex">true match<span class="qtag">Day 04</span></td><td><input class="qin" data-q="64" type="text" autocomplete="off"></td><td class="qres" data-res="64">&mdash;</td><td class="ex zh">真实命中</td></tr>
+        <tr><td>66</td><td class="ex">rejected payment<span class="qtag">Day 04</span></td><td><input class="qin" data-q="65" type="text" autocomplete="off"></td><td class="qres" data-res="65">&mdash;</td><td class="ex zh">被拒付的款项</td></tr>
+        <tr><td>67</td><td class="ex">embargo<span class="qtag">Day 04</span></td><td><input class="qin" data-q="66" type="text" autocomplete="off"></td><td class="qres" data-res="66">&mdash;</td><td class="ex zh">禁运</td></tr>
+        <tr><td>68</td><td class="ex">HM Treasury<span class="qtag">Day 05</span></td><td><input class="qin" data-q="67" type="text" autocomplete="off"></td><td class="qres" data-res="67">&mdash;</td><td class="ex zh">英国财政部</td></tr>
+        <tr><td>69</td><td class="ex">EAR (Export Administration Regulations)<span class="qtag">Day 05</span></td><td><input class="qin" data-q="68" type="text" autocomplete="off"></td><td class="qres" data-res="68">&mdash;</td><td class="ex zh">美国出口管理条例</td></tr>
+        <tr><td>70</td><td class="ex">US person<span class="qtag">Day 05</span></td><td><input class="qin" data-q="69" type="text" autocomplete="off"></td><td class="qres" data-res="69">&mdash;</td><td class="ex zh">美国人士</td></tr>
+        <tr><td>71</td><td class="ex">AIS (Automatic Identification System)<span class="qtag">Day 05</span></td><td><input class="qin" data-q="70" type="text" autocomplete="off"></td><td class="qres" data-res="70">&mdash;</td><td class="ex zh">船舶自动识别系统</td></tr>
+        <tr><td>72</td><td class="ex">stop list / watchlist<span class="qtag">Day 05</span></td><td><input class="qin" data-q="71" type="text" autocomplete="off"></td><td class="qres" data-res="71">&mdash;</td><td class="ex zh">禁止名单 / 观察名单</td></tr>
+        <tr><td>73</td><td class="ex">strict liability<span class="qtag">Day 05</span></td><td><input class="qin" data-q="72" type="text" autocomplete="off"></td><td class="qres" data-res="72">&mdash;</td><td class="ex zh">严格责任</td></tr>
+        <tr><td>74</td><td class="ex">50 per cent rule<span class="qtag">Day 05</span></td><td><input class="qin" data-q="73" type="text" autocomplete="off"></td><td class="qres" data-res="73">&mdash;</td><td class="ex zh">50% 规则</td></tr>
+        <tr><td>75</td><td class="ex">delisting / de-listing request<span class="qtag">Day 05</span></td><td><input class="qin" data-q="74" type="text" autocomplete="off"></td><td class="qres" data-res="74">&mdash;</td><td class="ex zh">除名申请</td></tr>
+        <tr><td>76</td><td class="ex">alert disposition<span class="qtag">Day 05</span></td><td><input class="qin" data-q="75" type="text" autocomplete="off"></td><td class="qres" data-res="75">&mdash;</td><td class="ex zh">警报处置结论</td></tr>
+        <tr><td>77</td><td class="ex">AIS<span class="qtag">Day 05</span></td><td><input class="qin" data-q="76" type="text" autocomplete="off"></td><td class="qres" data-res="76">&mdash;</td><td class="ex zh">船舶自动识别系统</td></tr>
+        <tr><td>78</td><td class="ex">export control classification number (ECCN)<span class="qtag">Day 05</span></td><td><input class="qin" data-q="77" type="text" autocomplete="off"></td><td class="qres" data-res="77">&mdash;</td><td class="ex zh">出口管制分类编号</td></tr>
+        <tr><td>79</td><td class="ex">sanctions risk assessment<span class="qtag">Day 05</span></td><td><input class="qin" data-q="78" type="text" autocomplete="off"></td><td class="qres" data-res="78">&mdash;</td><td class="ex zh">制裁风险评估</td></tr>
+        <tr><td>80</td><td class="ex">tax avoidance<span class="qtag">Day 05</span></td><td><input class="qin" data-q="79" type="text" autocomplete="off"></td><td class="qres" data-res="79">&mdash;</td><td class="ex zh">避税</td></tr>
+        <tr><td>81</td><td class="ex">POCA 2002<span class="qtag">Day 05</span></td><td><input class="qin" data-q="80" type="text" autocomplete="off"></td><td class="qres" data-res="80">&mdash;</td><td class="ex zh">2002 年犯罪所得法</td></tr>
+        <tr><td>82</td><td class="ex">benefit from criminal conduct<span class="qtag">Day 05</span></td><td><input class="qin" data-q="81" type="text" autocomplete="off"></td><td class="qres" data-res="81">&mdash;</td><td class="ex zh">从犯罪行为中获益</td></tr>
+        <tr><td>83</td><td class="ex">confiscation order<span class="qtag">Day 05</span></td><td><input class="qin" data-q="82" type="text" autocomplete="off"></td><td class="qres" data-res="82">&mdash;</td><td class="ex zh">没收令</td></tr>
+        <tr><td>84</td><td class="ex">Prudential Regulation Authority (PRA)<span class="qtag">Day 05</span></td><td><input class="qin" data-q="83" type="text" autocomplete="off"></td><td class="qres" data-res="83">&mdash;</td><td class="ex zh">英国审慎监管局</td></tr>
+        <tr><td>85</td><td class="ex">proceeds of Crime Act investigation<span class="qtag">Day 06</span></td><td><input class="qin" data-q="84" type="text" autocomplete="off"></td><td class="qres" data-res="84">&mdash;</td><td class="ex zh">犯罪所得法调查</td></tr>
+        <tr><td>86</td><td class="ex">search warrant<span class="qtag">Day 06</span></td><td><input class="qin" data-q="85" type="text" autocomplete="off"></td><td class="qres" data-res="85">&mdash;</td><td class="ex zh">搜查令</td></tr>
+        <tr><td>87</td><td class="ex">advice privilege<span class="qtag">Day 06</span></td><td><input class="qin" data-q="86" type="text" autocomplete="off"></td><td class="qres" data-res="86">&mdash;</td><td class="ex zh">法律意见特权</td></tr>
+        <tr><td>88</td><td class="ex">speak-up channel<span class="qtag">Day 06</span></td><td><input class="qin" data-q="87" type="text" autocomplete="off"></td><td class="qres" data-res="87">&mdash;</td><td class="ex zh">举报渠道</td></tr>
+        <tr><td>89</td><td class="ex">legal hold<span class="qtag">Day 06</span></td><td><input class="qin" data-q="88" type="text" autocomplete="off"></td><td class="qres" data-res="88">&mdash;</td><td class="ex zh">法律留置</td></tr>
+        <tr><td>90</td><td class="ex">regulatory referral<span class="qtag">Day 06</span></td><td><input class="qin" data-q="89" type="text" autocomplete="off"></td><td class="qres" data-res="89">&mdash;</td><td class="ex zh">监管移送</td></tr>
+        <tr><td>91</td><td class="ex">ordinary share<span class="qtag">Day 06</span></td><td><input class="qin" data-q="90" type="text" autocomplete="off"></td><td class="qres" data-res="90">&mdash;</td><td class="ex zh">普通股</td></tr>
+        <tr><td>92</td><td class="ex">investment grade<span class="qtag">Day 06</span></td><td><input class="qin" data-q="91" type="text" autocomplete="off"></td><td class="qres" data-res="91">&mdash;</td><td class="ex zh">投资级</td></tr>
+        <tr><td>93</td><td class="ex">rating agency / credit rating<span class="qtag">Day 06</span></td><td><input class="qin" data-q="92" type="text" autocomplete="off"></td><td class="qres" data-res="92">&mdash;</td><td class="ex zh">评级机构 / 信用评级</td></tr>
+        <tr><td>94</td><td class="ex">venture capital<span class="qtag">Day 06</span></td><td><input class="qin" data-q="93" type="text" autocomplete="off"></td><td class="qres" data-res="93">&mdash;</td><td class="ex zh">风险投资</td></tr>
+        <tr><td>95</td><td class="ex">data room<span class="qtag">Day 06</span></td><td><input class="qin" data-q="94" type="text" autocomplete="off"></td><td class="qres" data-res="94">&mdash;</td><td class="ex zh">数据库房</td></tr>
+        <tr><td>96</td><td class="ex">completion / closing<span class="qtag">Day 06</span></td><td><input class="qin" data-q="95" type="text" autocomplete="off"></td><td class="qres" data-res="95">&mdash;</td><td class="ex zh">交割</td></tr>
+        <tr><td>97</td><td class="ex">NAV<span class="qtag">Day 06</span></td><td><input class="qin" data-q="96" type="text" autocomplete="off"></td><td class="qres" data-res="96">&mdash;</td><td class="ex zh">资产净值</td></tr>
+        <tr><td>98</td><td class="ex">discretionary management<span class="qtag">Day 06</span></td><td><input class="qin" data-q="97" type="text" autocomplete="off"></td><td class="qres" data-res="97">&mdash;</td><td class="ex zh">全权委托管理</td></tr>
+        <tr><td>99</td><td class="ex">hedging<span class="qtag">Day 06</span></td><td><input class="qin" data-q="98" type="text" autocomplete="off"></td><td class="qres" data-res="98">&mdash;</td><td class="ex zh">对冲</td></tr>
+        <tr><td>100</td><td class="ex">derivative types<span class="qtag">Day 06</span></td><td><input class="qin" data-q="99" type="text" autocomplete="off"></td><td class="qres" data-res="99">&mdash;</td><td class="ex zh">衍生品类型</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div id="rateWrap" style="margin-top:18px;"></div>
+</div>
+
+<!-- 模块 3 PRON -->
+<!--PRON_MODULE_START-->
+<!-- 发音朗读模块（由 _朗读源文件/_build_day_pron.js 生成，勿手改） -->
+<div class="card" style="border-left:4px solid var(--teal);">
+  <div class="mod">
+    <div class="mod-no" style="background:var(--teal);"><b>03</b><span>PRON</span></div>
+    <div class="mod-tt"><h3>发音朗读：今日 3 段文本（已内嵌）</h3><p>文本 + 标注 + 发音要点 + 中文译文 + 英式朗读按钮，全在本页</p></div>
+    <div class="mod-time">30 分钟</div>
+  </div>
+  <div class="info" style="margin-bottom:12px;">
+    <b>今天的 3 段朗读文本已经直接放在本页了，不用跳转。</b>
+    点 <b>▶ 英式朗读</b> 听 en-GB 标准音，点 <b>▶ 慢速</b> 听 0.72 倍速。
+    完整文本库（36 段 · 211 条发音要点 · 3925 词）在 <a href="03-发音与朗读系统.html"><b>03-发音与朗读系统.html</b></a>，
+    <b>42 天逐日分配表</b>见该页第六节。<br>
+    <b>标注法：</b><span style="color:var(--red);font-weight:700;">红色 = 句子重音</span>　<span style="background:#e9f1ff;border-radius:3px;padding:0 3px;">蓝底 = 连读 / 弱读</span>　<span style="background:#fff2c9;border-radius:3px;padding:0 3px;">黄底 = 易错音</span>
+  </div>
+
+  <h4>今天的读法（照这个顺序走，30 分钟）</h4>
+  <div class="rowline"><div class="t">① 先听后读</div><div class="m">每段先点「英式朗读」听 1 遍，<b>不跟读</b>，只听轮廓与重音落点。　<span class="mono">4 分钟</span></div></div>
+  <div class="rowline"><div class="t">② 看标注读</div><div class="m">把每个标记落实：红色落在哪、蓝色哪里连、黄色哪里别读错。<b>慢，但每个音要到位。</b>　<span class="mono">10 分钟</span></div></div>
+  <div class="rowline"><div class="t">③ 不看标注读</div><div class="m">把标注当透明，检验是否已经内化。卡住的位置就是今天的真实短板。　<span class="mono">10 分钟</span></div></div>
+  <div class="rowline"><div class="t">④ 站着读收尾</div><div class="m">站起来、用比平时大半格的音量读第 3 遍，模拟会议室强度，完后做体感自查。　<span class="mono">6 分钟</span></div></div>
+
+  <div class="note" style="margin:12px 0 4px;">
+    <b>没有录音，怎么知道读对了（四点自查）：</b>① <b>喉结振动</b>——手贴喉结读 /v/ /ð/ /b/ /d/ /g/ 应明显振动，读 /f/ /θ/ /s/ 几乎不振动；② <b>嘴前气流</b>——/p/ /t/ /k/ 开头应感到气流；③ <b>对镜看舌尖</b>——/θ/ /ð/ 必须看得见舌尖；④ <b>中文回想</b>——读完合上文本用中文回想，想不起英文怎么说的位置就是卡壳点，记入错题本。
+  </div>
+
+  <h4 style="margin-top:16px;">今日朗读文本 <span style="font-size:12px;font-weight:400;color:var(--ink-3);">（第 1 周·<b>周测日复读</b>：A4 / A8 / B2——刻意重读本周最卡的三段，而不是换新段）</span></h4>
+  <div id="prWrap"></div>
+
+  <h4 style="margin-top:18px;">今日朗读打卡</h4>
+  <div id="ckPron"></div>
+</div>
+<!--PRON_MODULE_END-->
+<!-- 模块 4 -->
+<div class="card">
+  <div class="mod">
+    <div class="mod-no"><b>04</b><span>SPEAK</span></div>
+    <div class="mod-tt"><h3>口语：影子跟读 + 绕口句 + 「监管检查应答」骨架</h3><p>不做录音留档，但必须出声、必须完整说完</p></div>
+    <div class="mod-time">30 分钟</div>
+  </div>
+
+  <div class="note" style="margin-bottom:14px;">
+    <b>按你的要求，本阶段口语与发音自行练习，不做录音留档。</b>三条底线不变：<b>① 必须出声</b>；<b>② 必须完整说完一整段</b>；<b>③ 说完立刻用中文回想</b>——想不起英文怎么说的位置就是真实卡壳点，记入错题本。<br><br>
+    <b>今天与前六天的不同：</b>今天不学新的口语骨架，而是<b>把前六天的骨架串成一条线</b>。Day-03 你学了「警报分诊怎么汇报」，Day-05 学了「怎么设限而不树敌」，Day-06 学了「程序怎么排序」。今天要把它们合成<b>一个完整的应对流程</b>——因为真实会议里不会给你分场次。
+  </div>
+
+  <h4>第一步：影子跟读（Shadowing）三个层次（15 分钟）</h4>
+  <p class="sub" style="margin-bottom:6px;">材料用上面 <b>模块 03 的 A4 段</b>（短音 /ɪ/ 专段）——今天朗读安排里 A4 是「复读本周最卡的段」之首，<b>因为它练的是 Day-04 那批核心地基词的短音</b>，而这些词在今天的监管会议里还会出现。<b>影子跟读不是复述，是几乎同时跟着说。</b></p>
+  <div class="rowline"><div class="t">第 1 层｜看文本跟</div><div class="m">看着文本，落后原声半个词跟着读。目标：嘴跟得上，不掉队。　<span class="mono">5 分钟</span></div></div>
+  <div class="rowline"><div class="t">第 2 层｜关文本跟</div><div class="m">关掉文本，只听声音跟。目标：不靠眼睛也能跟上节奏和语调。　<span class="mono">5 分钟</span></div></div>
+  <div class="rowline"><div class="t">第 3 层｜变速跟</div><div class="m">把语速调到 <b>1.1 倍</b>再跟一遍。目标：把平时的说话速度逼上去。　<span class="mono">5 分钟</span></div></div>
+  <div class="note" style="margin:10px 0 4px;font-size:12.3px;">
+    <b>今天的额外要求：</b>跟读时<b>把每个句子的重音位置用手拍出来</b>。周测日不只是跟节奏，<b>要检验六天里练的重音有没有内化成肌肉记忆</b>。如果你拍不出重音位置，说明还在「读单词」而不是「读句子」。
+  </div>
+
+  <h4 style="margin-top:16px;">第二步：今日必练的 3 组绕口句（10 分钟）</h4>
+  <p class="sub" style="margin-bottom:6px;">每组连读 5 遍，慢速 → 正常 → 快速。<b>这些句子专门用今天的词和今天的重音难点设计。</b></p>
+  <div class="tblwrap" style="max-height:none;">
+    <table>
+      <thead><tr><th style="width:46%;">句子</th><th>训练目标</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="ex">The <span class="seg">senior manager function</span> holds <span class="seg">prescribed responsibilities</span>, and <span class="seg">client money</span> sits with one of them <span class="seg">by name</span>.</td>
+          <td class="ex"><b>今天最长的一句术语链。</b>三个短语各重一次：<span class="mono">-man·ager</span> / <span class="mono">pre·scribed</span> / <span class="mono">cli·ent</span>。<b>不要读成一串平音</b></td>
+        </tr>
+        <tr>
+          <td class="ex">The <span class="seg">regime</span> is not the point; <span class="seg">fit and proper</span> is the point.</td>
+          <td class="ex"><b>用 semicolon（分号）改写 B 段第 10 句</b>，练「短句 + 分号 + 短句」的节奏。fit and proper <b>结尾不读 /r/</b></td>
+        </tr>
+        <tr>
+          <td class="ex">If you wanted <span class="seg">redress</span>, that is a <span class="seg">separate</span> process — your complaint goes to the <span class="seg">Ombudsman</span>, not to me.</td>
+          <td class="ex">练<b>破折号前后各降一档</b>。redress 结尾清音 /s/；<b>Ombudsman 中间 /b/ 不发音</b>；goes to 弱读 <span class="mono">/ɡəʊz tə/</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h4 style="margin-top:16px;">第三步：「监管检查应答」骨架（5 分钟）</h4>
+  <p class="sub" style="margin-bottom:6px;">前六天你练过三个骨架：Day-03「警报分诊汇报」、Day-05「设限四步」、Day-06「程序排序」。<b>今天把它们串成一个</b>——这是你入职后参加任何监管会议时的通用应答结构。<b>整段出声说 3 遍。</b></p>
+  <div class="script" style="font-size:13px;">
+    <b style="color:var(--navy);">REGULATORY RESPONSE骨架（五段· 照抄结构，内容用自己的话）</b><br>
+    <b>① Acknowledge</b> — <span class="mono">Thank you for making time.</span> / <span class="mono">Understood.</span>　<span style="color:var(--ink-3)">（先接住，不要立刻辩解）</span><br>
+    <b>② Scope</b> — <span class="mono">Would you prefer to start with scope, or with the specific questions?</span>　<span style="color:var(--ink-3)">（把主动权交回去，同时显得有章法）</span><br>
+    <b>③ Fact</b> — <span class="mono">Here is what we can evidence today, and here is what we owe you by when.</span>　<span style="color:var(--ink-3)">（<b>今天能给什么 / 欠什么，分开说</b>）</span><br>
+    <b>④ Boundary</b> — <span class="mono">That argument turns on two facts, and I'd rather we looked at them together than in a letter.</span>　<span style="color:var(--ink-3)">（这是 Day-05「设限而不树敌」的句式：<b>我理解你的立场，但我建议换个方式</b>）</span><br>
+    <b>⑤ Close</b> — <span class="mono">Then let us set out what we produce today. / Tell your people it is routine, tell them what we asked for.</span>　<span style="color:var(--navy);">（收尾必须落到<b>「我接下来做什么」</b>，而不是落在「我解释清楚了」）</span>
+  </div>
+  <div class="note" style="margin:12px 0 4px;">
+    <b>为什么第 ④ 段最难也最关键：</b>它同时用了 Day-05 的「不树敌」和 Day-06 的「顺序与边界」。<b>英国合规会议上，你很少被允许说「不」</b>，但你可以说「我们换个顺序看这件事」——<span class="mono">I'd rather we looked at them together than in a letter</span> 这句话在语气上是配合，在立场上是坚守。<b>把这段说到不用想，就能直接用在真实会议上。</b>
+  </div>
+
+  <div id="ckSpeak" style="margin-top:12px;"></div>
+</div>
+
+<!-- 模块 5 -->
+<div class="card">
+  <div class="mod">
+    <div class="mod-no"><b>05</b><span>WRITE</span></div>
+    <div class="mod-tt"><h3>写作与第 1 周总复盘</h3><p>精讲词造句 + 本周两份备忘扩成一页 + 写本周复盘 5 句（英文）</p></div>
+    <div class="mod-time">30 分钟</div>
+  </div>
+
+  <h4>任务 A：用精讲词写 5 句（10 分钟）</h4>
+  <p class="sub" style="margin-bottom:6px;">从今天 30 个精讲词里选词，<b>每句至少用 2 个</b>，写成你在真实工作中会说的话。写完朗读一遍，<b>读着拗口的句子必须改到顺为止</b>。今天特别要求：<b>至少 2 句里要用上 conduct / conflict 这一对</b>（名词与动词），把重音差异写进句子里感受一次。</p>
+  <div class="script" style="font-size:13px;">
+    <b>示例（可以直接沿用句式）</b><br>
+    · The <span class="seg">conduct</span> of the review is governed by SYSC, not by the <span class="seg">fit and proper</span> test alone.<br>
+    · We <span class="seg">disclosed</span> the <span class="seg">inside information</span> at the same time, so there was no <span class="seg">unlawful disclosure</span>.<br>
+    · Managing <span class="seg">conflicts of interest</span> is what the <span class="seg">Chinese wall</span> is designed to do — the <span class="seg">conduct</span> of the conversation decides it.
+  </div>
+
+  <h4 style="margin-top:16px;">任务 B：把本周两份备忘扩成「完整一页」（12 分钟）</h4>
+  <p class="sub" style="margin-bottom:6px;">这是今天的<b>主交付物</b>。前两天你各写了四行骨架：Day-05 的<b>装货前审查备忘</b>（管一笔交易）和 Day-06 的<b>内部调查启动备忘</b>（管一件事的启动）。<b>今天把它们扩成完整一页，并且补上最关键的第八段：Decision。</b></p>
+  <div class="script" style="font-size:12.8px;">
+    <b style="color:var(--navy);">COMPLIANCE FILE COVER MEMO（八段骨架 · 照抄格式，内容用自己的话）</b><br>
+    <b>1. Trigger</b> — <span class="mono">[what started this: a sanctions hit / a protected disclosure / a supervisory letter]</span>. First logged on <span class="mono">[date]</span>.<br>
+    <b>2. Scope</b> — <span class="mono">[what is in / what is explicitly out]</span>. Out of scope at this stage: <span class="mono">[__]</span>.<br>
+    <b>3. Preservation</b> — <span class="seg">Legal hold</span> issued <span class="mono">[date]</span> to <span class="mono">[systems]</span>. <span class="seg">Safeguarding</span> of <span class="seg">client money</span> confirmed unaffected.<br>
+    <b>4. Privilege</b> — Independent counsel instructed from day one. <span class="seg">Advice privilege</span> and <span class="seg">litigation privilege</span> assessed separately per workstream; <b>assume no privilege until confirmed</b>.<br>
+    <b>5. People</b> — <span class="seg">Prescribed responsibilities</span> mapped: <span class="mono">[name]</span> holds <span class="mono">[__]</span> by name. <span class="seg">Detriment</span> protection confirmed to the reporter in writing.<br>
+    <b>6. Regulatory interface</b> — <span class="mono">[FCA / PRA / none]</span>. Contact: <span class="mono">[name]</span>. <span class="seg">Notifiable matter</span> assessment: <span class="mono">[yes / no]</span>. If yes, <span class="seg">disclosure</span> made on <span class="mono">[date]</span>.<br>
+    <b>7. Timeline</b> — Fact-finding <span class="mono">[n]</span> weeks. Decision point at week <span class="mono">[n]</span>. <span class="seg">Final response letter</span> only follows a decision.<br>
+    <b>8. Decision</b> — <span style="color:var(--red);"><b>这一段前两天没有，今天必须有。</b></span> <span class="mono">[proceed / stop / remediate / refer / no action]</span>. Rationale in one sentence: <span class="mono">[__]</span>. Lessons learned review scheduled: <span class="mono">[date]</span>.<br>
+    <span style="color:var(--ink-3)">八段顺序固定，改的只是内容。<b>第 6 段和第 8 段是英国合规文件与英美文件最大的差别</b>——英美文件习惯「先说风险和整改」，英国文件习惯「先说监管接口在哪、然后才说决定」。</span>
+  </div>
+  <div class="note" style="margin:10px 0 4px;">
+    <b>为什么第 8 段今天才加：</b>前两天你在写「过程」，今天第 1 周结束，可以写「结论」了。<b>而这一段恰恰是你入职后第一年最常写的段落</b>——监管检查结束后那份 memo 的最后一段，几乎就是今天这八段的缩影。<b>第 7 段的「八周期限」和「最终答复函只跟在决定之后」这两条，是今天词表里 complaint / redress 部分的直接应用。</b>
+  </div>
+
+  <h4 style="margin-top:16px;">任务 C：本周复盘 5 句（英文）（8 分钟）</h4>
+  <p class="sub" style="margin-bottom:6px;">用英文写 5 句，回答这五个问题。<b>这五句就是你在第 2 周开课时会说的东西</b>，也可能是你入职第一次 1-on-1 时要说的话——所以<b>写成口语，不要写成书面语</b>。</p>
+  <ol class="tight">
+    <li>第 1 周六天里，<b>哪一天你的听力理解率最低</b>？为什么？</li>
+    <li>六天里<b>你最常听不懂的一类词</b>是什么（音素 / 重音 / 缩写 / 专业术语）？</li>
+    <li>你的错题本现在有多少条？<b>哪一类重复出现最多</b>？</li>
+    <li>六天里你<b>最满意的一天</b>是哪个，为什么？</li>
+    <li>第 2 周你最想改掉<b>哪一个习惯</b>？</li>
+  </ol>
+  <div class="script" style="font-size:13px;">
+    <b>示例（第 1 句）</b><br>
+    · My weakest day was Day 03, because the AML vocabulary was dense and I kept hearing words I did not know yet.<br>
+    <b>示例（第 3 句）</b><br>
+    · My error log has nineteen entries, and the most frequent type is stress — I hear the word but not where the stress falls.
+  </div>
+  <div class="note" style="margin:10px 0 4px;">
+    <b>写不出第 3 句的量（错题本多少条）＝ 你没有真的在用错题本。</b>如果六天下来错题本还是 Day-01 写的那 2 条样例，说明模块 01 的「第 2 遍」你没有做——<b>那一遍是整个系统里唯一会产出错题本的环节</b>。
+  </div>
+
+  <div id="ckWrite" style="margin-top:12px;"></div>
+
+  <h4 style="margin-top:16px;">任务 D：今日收尾</h4>
+  <div id="ckWrap"></div>
+</div>
+
+<!-- 自评 -->
+<div class="card">
+  <h3>今日自评（听力与输出，5 项）</h3>
+  <p class="sub">按实际感受打分，不用美化。<b>这份数据决定我后面几周的配比。</b></p>
+  <div id="rateWrap"></div>
+  <div class="bar"><i id="barRate" style="width:0%"></i></div>
+  <div class="tagline"><span id="rateText">尚未评分</span></div>
+</div>
+
+<!-- 词库推进地图 -->
+<div class="card">
+  <h3>词库推进地图（1932 条 · 每日 100 条 · 约 20 天）</h3>
+  <p class="sub">避免重复、也避免漏词。每天开始前对照这张表，确认今天该用哪一段。</p>
+  <div class="tblwrap" style="max-height:none;">
+    <table>
+      <thead><tr><th style="width:13%;">日程</th><th style="width:13%;">词表行号</th><th>内容</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="en">Day 01</td>
+          <td class="mono" style="font-size:12px;">1–100</td>
+          <td class="ex">银行业与国际金融市场 <b>1–100</b>（nostro / L/C / Basel III / SWIFT / CHAPS …）</td>
+        </tr>
+        <tr>
+          <td class="en">Day 02</td>
+          <td class="mono" style="font-size:12px;">101–199</td>
+          <td class="ex">银行业 <b>101–173</b> + AML <b>1–26</b>（支付报文、货币市场基准、资本监管指标、AML 开篇）</td>
+        </tr>
+        <tr>
+          <td class="en">Day 03</td>
+          <td class="mono" style="font-size:12px;">200–299</td>
+          <td class="ex">AML / KYC <b>27–126</b>（交易监测、警报分诊、风险评级、洗钱类型学、上报与同意制度、整改与治理）</td>
+        </tr>
+        <tr>
+          <td class="en">Day 04</td>
+          <td class="mono" style="font-size:12px;">300–399</td>
+          <td class="ex">AML 收尾 + 核心地基词 + 制裁开篇（ownership and control / catch-all control / 名单机制）</td>
+        </tr>
+        <tr>
+          <td class="en">Day 05</td>
+          <td class="mono" style="font-size:12px;">400–499</td>
+          <td class="ex">制裁与出口管制 <b>71 条</b> + 金融犯罪开篇 <b>29 条</b>（名单穿透、许可豁免、长臂、影子船队、价格上限、经济犯罪、POCA）</td>
+        </tr>
+        <tr>
+          <td class="en">Day 06</td>
+          <td class="mono" style="font-size:12px;">500–599</td>
+          <td class="ex">金融犯罪与执法续 <b>40 条</b>（DPA、企业犯罪、搜查令、legal hold / e-discovery、三种 privilege、Upjohn warning、举报与 detriment、纪律与移送、disgorgement）+ 金融产品与市场工具 <b>60 条</b>（股 / 债 / 并购 / 基金 / 衍生品）</td>
+        </tr>
+        <tr style="background:#fff8e6;">
+          <td class="en"><b>Day 07</b></td>
+          <td class="mono" style="font-size:12px;"><b>601–700</b></td>
+          <td class="ex"><b>第 1 周测评与复盘日</b>：词表顺延至<b>英美监管与市场行为 98 条</b>（英国监管架构 / FCA 手册 PRIN·SYSC·COBS·SUP·CASS / SM&amp;CR 责任制度 / 市场滥用三条线 / 美国监管 SEC·FINRA·CFTC·BSA·FCPA / 投诉赔付 FOS·FSCS·redress / 支付保护 confirmation of payee·SCA）+ 金融产品 <b>2 条</b>（suitability assessment / target market determination）</td>
+        </tr>
+        <tr>
+          <td class="en">Day 08 起</td>
+          <td class="mono" style="font-size:12px;">701–</td>
+          <td class="ex">AML 全景与洗钱三阶段 → CDD / EDD → 交易监测 → SAR 上报 → 客户风险评级与治理</td>
+        </tr>
+        <tr>
+          <td class="en">Day 19–20</td>
+          <td class="mono" style="font-size:12px;">1901–1932</td>
+          <td class="ex">伦敦地标与交通收尾 + 英国文化与社交 <b>最后 32 条</b></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="note" style="margin-top:12px;">
+    <b>对齐规则（唯一真相源 = 词表顺序）：</b>每天 100 词的取材顺序，与 Anki 发放新卡的顺序<b>完全一致</b>——Anki 按卡片 position 升序发卡，而 position 与词表行号一一对应（<b>position = 行号 − 100</b>）。所以你只要打开 Anki，看到的必然是这张表上今天那一行。<br><br>
+    <b>关于「Day 02 = 101–199」：</b>第 200 行 <span class="mono">Financial Intelligence Unit (FIU)</span> 在 Day-02 的页面上出现过，但 Anki 当天并没有发到它，于是它顺延成了 Day-03 的第一张卡。<b>所以 Day-02 实际是 99 张 + 一张越界的第 1312 行</b>（详见 <a href="02-Anki复习系统.html">02-Anki复习系统.html</a> 第八节）。<br><br>
+    <b>关于今天的「词表与训练重点不一致」：</b>Day-07 是第 1 周<b>唯一一次</b>词表内容与当日训练重点不同的日子——<b>词表照常顺延到监管体系，但训练重点是回收前六天的 600 词</b>（术语测 100 题 + 复读最卡三段 + 扩写本周备忘）。所以今天的精讲 30 词只求「认得 + 读准」，<b>真正的掌握检验在下面的术语测里</b>。
+  </div>
+</div>
+
+<div class="card" style="background:linear-gradient(120deg,#f4f8ff,#fff);">
+  <h3>明天（Day 08）预告</h3>
+  <ul class="tight">
+    <li><b>性质</b>：<b>第 2 周第1 天，回到新词节奏</b>。词表进入 <b>701–800 行</b>，主题是<b>AML 全景与洗钱三阶段</b>——第 1 周走完了 bank → AML → 核心词 → 制裁 → 金融犯罪 → 金融产品 → 监管架构七条线，<b>第 2 周开始进入真正的AML 纵深</b></li>
+    <li><b>词汇</b>：新100 词，<b>但第一天不做术语测</b>。今天（Day-07）的分数决定你要不要在<b>前三天加练</b>：≥ 85 就按计划走；70–84 就在前三天每天多20 分钟回刷 Day-07 的错题</li>
+    <li><b>听力</b>：精听脚本B 换成<b>AML 全景会议</b>（预警→ 客户风险评级 → 增强尽调的触发逻辑），A 段回到音素新内容</li>
+    <li><b>写作</b>：开始第 2 周第一条线——<b>客户风险评级方法论</b>（把今天的 <span class="mono">threshold conditions / fit and proper / prescribed responsibilities</span> 三条骨架用于评级方法论）</li>
+    <li><b>朗读</b>：<b>进入第 2 周轮换</b>（A 组 1 段热身 + B 组 2 段），不再是复读第 1 周的三段</li>
+  </ul>
+</div>
+
+</main>
+
+
+
+
+<footer>
+  Day 07 · 第 1 周测评与复盘 + 英国监管架构　|　<a href="00-作战中心.html">作战中心</a>　·　<a href="01-听力系统.html">听力系统</a>　·　<a href="02-Anki复习系统.html">Anki 系统</a>　·　<a href="03-发音与朗读系统.html">朗读库</a>　·　<a href="Day-06.html">Day 06</a>　·　Day 08（待生成）
+</footer>
+
+<script>
+var LS = "ukce_day07";
+var state = {ck:{}, voc:{}, voc2:{}, rate:{}};
+try{ var raw = localStorage.getItem(LS); if(raw){ state = JSON.parse(raw); } }catch(e){}
+state.ck = state.ck||{}; state.voc = state.voc||{}; state.voc2 = state.voc2||{}; state.rate = state.rate||{};
+function save(){ try{ localStorage.setItem(LS, JSON.stringify(state)); }catch(e){} }
+function $(s){ return document.querySelector(s); }
+
+/* ---------- 词条数据（由 _词库源文件/_build_day04.js 注入） ---------- */
+var WORDS = [["Bank of England (BoE)","/ˌbæŋk əv ˈɪŋɡlənd/","英格兰银行","The Bank of England sets the base rate, and the Financial Policy Committee decides what to do about inflation.","英格兰银行设定基准利率，金融政策委员会决定如何应对通胀。","重音落在 <b>OF</b> 和 <b>ENG</b>，两个词各重一次；England 词尾 <b>-land的 /l/ 收住</b>不加元音；<b>缩写 BoE 逐字母读 /ˌbiː əʊ ˈiː/</b>——三个都是长音，绝不能读成一个词"],
+["Financial Policy Committee (FPC)","/ˌfaɪˈnænʃl ˈpɒləsi kəˈmɪti/","金融政策委员会","The Financial Policy Committee meets eight times a year to set the monetary policy stance.","金融政策委员会每年开会八次，确定货币政策立场。","Financial 重音在<b>第二音节 -NAN-</b>（不是 FI-nan-cial）；policy 重音在<b>首音节 /ˈpɒləsi/</b>，英式 /ɒ/ 不卷舌；committee 重音在<b>第二音节 -MIT-</b>，结尾 /ti/ 不浊化"],
+["PRIN (Principles for Businesses)","/prɪn/","FCA 商业原则","PRIN sets the overarching principles, and everything else in the handbook sits underneath it.","PRIN 设定总原则，手册里其他一切都在它之下。","<b>四个字母逐个读 /prɪn/</b>，读成一个词就错了；<b>Principles 词尾 -ples 读 /plz/</b>；for 弱读 /fə/；Businesses 重音在<b>首音节 /ˈbɪznəsɪz/</b>"],
+["SYSC","/sɪsk/","FCA 高级管理与系统控制手册","SYSC sets out what senior management must do, and COBS covers how you must treat customers.","SYSC 规定高级管理层必须做什么，COBS 规定必须如何对待客户。","<b>逐字母读 /sɪsk/</b>；读成 /sɪŋk/ 或「sysk」都不对。<b>四字母缩写的读法是英美会议里最容易露怯的一类</b>——不确定就逐字母读"],
+["COBS","/kɒbz/","FCA 商业行为手册","COBS is where the client money rules and the complaint handling rules actually live.","COBS 才是客户资金规则和投诉处理规则真正所在的地方。","<b>逐字母读 /kɒbz/</b>，首音是<b>英式专属的 /ɒ/</b>（美式读 /kɑːbz/）——这个缩写本身就是英式音标的活标本"],
+["threshold conditions","/ˈθreʃhəʊld kənˈdɪʃnz/","准入门槛条件","A firm must satisfy the threshold conditions before it can apply for a Part4A permission.","机构必须满足准入门槛条件，才能申请第四A 部分许可。","threshold 首音 <b>/θ/ 舌尖必须伸出齿间</b>，不要读成 /tr/ 或 /s/；重音在<b>首音节</b>；conditions 重音在<b>后</b> /kənˈdɪʃnz/，词尾 /ʃnz/ 压缩不加 /ən/"],
+["Part 4A permission","/ˌpɑːt ˌfɔː ˈeɪ pəˈmɪʃn/","第四A 部分许可","Most UK banks hold a Part 4A permission under the Financial Services and Markets Act.","大多数英国银行依据金融服务与市场法持有第四A 部分许可。","<b>4A 读作「four A」，不读「forty A」</b>；permission 重音在<b>后</b> /pəˈmɪʃn/，词尾 /ʃn/ 压缩；<b>英式 permission 词尾是 /ʃn/ 不是 /ʃən/</b>"],
+["Consumer Duty","/kənˈsjuːmə ˈdjuːti/","消费者责任（2023 生效）","The Consumer Duty requires us to evidence that we acted in the customer's best interest.","消费者责任要求我们能证明自己是按客户最佳利益行事的。","Consumer 重音在<b>第二音节 -SU-</b>；Duty 重音在<b>首音节 /ˈdjuːti/</b>——<b>首音是 /j/ 不是 /d/，也不是 /duː/</b>；两个 /juː/ /dj/ 都不卷舌"],
+["vulnerable customer","/ˈvʌlnərəbl ˈkʌstəmə/","弱势客户","A vulnerable customer is someone whose circumstances make them more likely to suffer detriment.","弱势客户是指其处境使其更易遭受不利对待的人。","vulnerable 重音在<b>首音节 /ˈvʌl-/</b>；customer 重音在<b>首音节</b>，词尾 /ə/ 弱读。<b>两个词都是三音节弱读结尾，连续读会糊成一团</b>——要打成三拍"],
+["Senior Managers and Certification Regime (SM&CR)","/ˌsenjər ˈmænɪdʒəz ən ˌsɜːtɪfɪˈkeɪʃn rɪˈʒiːm/","高级管理人员与认证制度","Under the Senior Managers and Certification Regime, each senior manager has a statement of responsibilities.","在高级管理人员与认证制度下，每位高管都有一份责任说明。","Regime 重音在<b>最后音节 -GIME</b> /rɪˈʒiːm/；certification 重音在<b>-CA-</b>（不是 -TI-）；Senior 英式<b>两音节 /ˈsenjər/</b>，不是三音节。<b>缩写 SM&amp;CR 读作 S-M-and-C-R</b>"],
+["approved person","/əˈpruːvd ˈpɜːsn/","受认可人士（SM&CR 之前制度）","Under the old regime an approved person was personally accountable for everything they supervised.","在旧制度下，受认可人士要对本人监督的一切承担个人责任。","approved 重音在<b>第二音节</b> /əˈpruːvd/，-ed 读 /d/（原形 approve 结尾是 /v/）；<b>person 英式词尾没有 /r/</b>，读 /ˈpɜːsn/——这是最容易被美国同事带跑的地方"],
+["fit and proper","/ˌfɪt ən ˈprɒpə/","适当人选","The regulator must be satisfied that each senior manager is fit and proper for the role.","监管机构必须确信每位高管对该职务而言是适当人选。","<b>不是 /fɪt ænd ˈprɒpər/，结尾不读 /r/</b>；and 弱读 /ən/ 而不是 /ænd/；proper 重音在<b>首音节</b>，词尾 /ə/ 弱读。<b>fit and proper 是 FCA 手册里的固定措辞</b>"],
+["prescribed responsibilities","/prɪˈskraɪbd rɪˌspɒnsəˈbɪlətiz/","规定职责","The map of prescribed responsibilities determines which regulatory rules apply to you.","规定职责的映射表决定哪些监管规则适用于你。","prescribed 重音在<b>第二音节 -SCRIBE-</b>，中间的 /skr/ 别读成 /sk/；<b>拼写是 -scribe 不是 -script</b>；responsibilities 词尾 <b>-bilities 读 /bɪlətiz/</b>，共五个音节"],
+["inside information","/ɪnˈsaɪdˌɪnfəˈmeɪʃn/","内幕信息","Inside information is non-public, precise, and would have a significant effect on the price if disclosed.","内幕信息是非公开的、确切的，若披露会对价格产生重大影响。","inside 重音在<b>第二音节</b> /ɪnˈsaɪd/；information 重音在<b>-MA-</b>（不是 -FOR-），四音节里只有 -ma- 重读；<b>整块有两个重音：inside 的 -side 和 information 的 -ma</b>"],
+["insider dealing","/ˈɪnsaɪdə ˈdiːklɪŋ/","内幕交易","Insider dealing is a criminal offence, and it is also market abuse under MAR.","内幕交易既是刑事犯罪，也是 MAR 项下的市场滥用。","insider 重音在<b>首音节 /ˈɪnsaɪdə/</b>，词尾 /ə/ 弱读；dealing <b>读 /ˈdiːklɪŋ/</b>——<b>deal 是单音节词根，加 -ing 仍合成一个音节</b>，不是 /ˈdiːkəlɪŋ/"],
+["market manipulation","/ˈmɑːkɪt məˌnɪpjuˈleɪʃn/","市场操纵","Creating an artificial price level is market manipulation, even if the trades are genuine.","制造人为价格水平就是市场操纵，即使交易本身都是真的。","market 重音在<b>首音节 /ˈmɑːkɪt/</b>；<b>manipulation 五个音节，重音在 -PU-（倒数第二）</b> /məˌnɪpjuˈleɪʃn/，中间的 /pju/ 是三音，最容易读成两音"],
+["unlawful disclosure","/ʌnˈlɔːfəl dɪsˈkləʊʒə/","非法披露","Unlawful disclosure of inside information is a separate offence from insider dealing.","非法披露内幕信息是与内幕交易<b>并列</b>的独立罪名。","unlawful 重音在 <b>-LAW-</b>，<b>/ɔː/ 英式不卷舌</b>；disclosure 重音在 <b>-CLO-</b>，中间 s 读浊音 /z/，词尾 /ʒə/"],
+["wall-crossing","/ˈwɔːlˌkrɒsɪŋ/","越墙程序","Before the announcement the analyst was wall-crossed, and the information was logged.","公告前分析师已被越墙，该信息已登记在册。","<b>wall 的 /ɔː/ 英式不卷舌</b>（美式 /wɔːl/ 会卷）；crossing 重音在<b>首音节 /ˈkrɒsɪŋ/</b>；两个词都重读——<b>这是一个动名词合成的术语</b>"],
+["conflicts of interest / Chinese wall","/ˈkɒnflɪkts əv ˈɪntrəst/ /ˌtʃaɪniːz ˈwɔːl/","利益冲突 / 信息隔离墙","Managing conflicts of interest is what the Chinese wall is designed to do.","管理利益冲突正是信息隔离墙的设计目的。","conflicts 重音在<b>首音节 /ˈkɒnflɪkts/</b>；interest 重音在<b>首音节 /ˈɪntrəst/</b>；<b>Chinese 的 /tʃ/ 是塞擦音，wall 的 /ɔː/ 不卷舌</b>。两个术语各重一次，不要连成一串"],
+["Final Notice / prohibition order","/ˈfaɪnəl ˈnəʊtɪs/ /prəˌhɪbɪˈʃn ˈɔːdə/","最终处罚通知 / 禁业令","A Final Notice is published, so the fine becomes a matter of public record.","最终处罚通知会被公开，因此罚款成为公开记录。","Final 重音在<b>首音节</b>；<b>Notice 首音是英式 /nəʊ/ 不卷舌</b>（美式 /noʊ/ 会卷）；prohibition 重音在 <b>-HI-</b> /prəˌhɪbɪˈʃn/；<b>四个词全重读，因为是文档名</b>"],
+["Wells notice","/ˈwelz ˈnəʊtɪs/","韦尔斯通知","A Wells notice tells the firm what the regulator thinks it did wrong, before any enforcement.","韦尔斯通知在任何执法行动之前，先告知机构监管方认为它做错了什么。","Wells 以人名 Wells 命名，读 /ˈwelz/ 就是<b>读姓氏本身</b>，不读 /ˈweɪlz/；notice 同上英式 /nəʊ/。<b>专有名词按普通词读，不按拼写猜</b>"],
+["cease and desist order","/ˌsiːs ən dɪˈzɪst ˈɔːdə/","停止令","Once a cease and desist order is issued, continuing the activity becomes a criminal offence.","一旦发出停止令，继续该活动就构成刑事犯罪。","cease 重音在<b>首音节 /siːs/</b>——<b>看起来该读 /siːz/，但这里是清音 /s/</b>；desist 重音在<b>最后音节 -SIST</b>；order 的 /ɔː/ 不卷舌；<b>三个词全部重读</b>"],
+["client money","/ˈklaɪənt ˈmʌni/","客户资金","Client money must be held in a statutory trust and reconciled at least once a week.","客户资金必须存放在法定信托中，并至少每周对账一次。","client 重音在<b>首音节</b>，中间 /aɪə/ 是三音（不是 /e/）；money 重音在<b>首音节 /ˈmʌni/</b>，尾 /i/ 英式不浊化。<b>两个词都是首重音，一串首重音要打成一拍</b>"],
+["Financial Ombudsman Service (FOS)","/ˌfaɪˈnænʃl ˈəʊmbɡzɪdəm ˈsɜːvɪs/","金融申诉专员服务","If the firm fails to respond within eight weeks, the customer can escalate to the Financial Ombudsman Service.","如果机构八周内未回应，客户可升级至金融申诉专员服务。","Ombudsman 重音在<b>首音节 /ˈəʊmb-/</b>，中间的 /b/ <b>不发音</b>，不要读成 /əʊmˈbɪdʒəm/；Service 词尾 <b>/ɪs/ 是清音</b>不是 /ɪz/；<b>缩写 FOS 逐字母读 /ˌef əʊ ˈes/</b>"],
+["eight-week deadline","/ˌeɪt ˈwiːk ˈdedlaɪn/","八周期限","We missed the eight-week deadline by two days, and that is what triggered the complaint.","我们差了两天没赶上八周期限，正是这触发了投诉。","<b>eight 读 /eɪt/，gh 不发音</b>（不是 /eɪɡt/）；week 弱读 /wiːk/；deadline 重音在<b>首音节 /ˈdedlaɪn/</b>——<b>dead + line 两个词根合成一个词，不是两个词</b>"],
+["final response letter","/ˌfaɪnəl rɪˈspɒns ˈletə/","最终答复函","The final response letter is the last chance to put the complaint right before it goes to the Ombudsman.","最终答复函是投诉升级至专员服务前最后的补救机会。","response 重音在<b>最后音节 -SPONSE</b> /rɪˈspɒns/，中间 /s/ 读浊音 /z/；<b>letter 英式读两音节 /ˈletə/</b>（美式单音节 /ˈletr/）；三词的<b>重音位置分别是首、末、首</b>"],
+["redress","/rɪˈdres/","赔偿、救济","The aim of the complaint process is redress, so put the customer back where they should have been.","投诉流程的目标是赔偿，就是把客户放回应有的状态。","重音在<b>第二音节 -DRESS</b>；<b>结尾是清辅音 /s/ 不是浊音 /z/</b>——这一点和 press / stress 不同，要单独记；词尾 /s/ 后不加 /ə/"],
+["confirmation of payee","/ˌkɒnfəˈmeɪʃn əv ˈpeɪiː/","收款人姓名核对","Confirmation of payee stopped my client sending money to a fraudster with the same name.","收款人姓名核对拦下了我的客户给一个同名的骗子转钱。","confirmation 重音在<b>-MA-</b>（不是 -CON-），中间 /fə/ 弱读；<b>of 弱读 /əv/</b>；payee 重音在<b>首音节 /ˈpeɪiː/</b>，结尾<b>长音 /iː/ 收住不加元音</b>"],
+["strong customer authentication (SCA)","/ˌstrɒŋ ˈkʌstəmə ˌɔːˌθentɪˈkeɪʃn/","强客户认证","Strong customer authentication is required whenever a payment leaves the account online.","只要付款从线上账户转出，就必须做强客户认证。","strong 重音在<b>首音节</b>，/ɒ/ 不卷舌；authentication 五个音节重音在 <b>-TI-</b> /ˌɔːˌθentɪˈkeɪʃn/，中间的 /θ/ <b>舌尖要伸出</b>；<b>缩写 SCA 逐字母读 /ˌes siː ˈeɪ/</b>"],
+["safeguarding","/ˈseɪfɡɑːdɪŋ/","资金保障","Safeguarding means client money must be segregated and never commingled with the firm's own money.","资金保障意味着客户资金必须隔离，绝不能与机构自有资金混同。","重音在<b>首音节 /ˈseɪf-/</b>，<b>不是 sa-FEGUARD-ing 的第三音节</b>；中间 <b>/ɡ/ 读长音 /ɡɑː/</b>，美式会读成 /ɡɑːr/；词尾 /dɪŋ/ 清楚收住"]];
+var EXTRA = [["suitability assessment","适合性评估",""],
+["target market determination","目标市场认定",""],
+["CASS","FCA 客户资产手册","Client Assets Sourcebook，客户钱与自营钱必须隔离"],
+["MAR (Market Abuse Regulation)","市场滥用条例",""],
+["SUP","FCA 监管手册",""],
+["appointed representative","指定代表","依托持牌机构展业的轻牌照安排"],
+["Treating Customers Fairly (TCF)","公平对待客户",""],
+["MiFID II / MiFIR","金融工具市场指令二 / 条例",""],
+["EMIR / UK EMIR","欧洲市场基础设施条例",""],
+["transaction reporting","交易报告",""],
+["best execution","最佳执行",""],
+["appropriateness / suitability","适当性 / 适合性",""],
+["inducements","诱导性安排","禁止第三方收受非透明报酬"],
+["product governance / target market","产品治理 / 目标市场",""],
+["suspicious transaction and order report (STOR)","可疑交易与指令报告","英国版市场滥用举报"],
+["financial penalty","罚款",""],
+["VREQ (voluntary requirement)","自愿要求",""],
+["s166 skilled person review","第 166 条专家审查",""],
+["Securities and Exchange Commission (SEC)","美国证券交易委员会",""],
+["FINRA","美国金融业监管局",""],
+["CFTC","美国商品期货交易委员会",""],
+["Dodd-Frank Act","多德-弗兰克法案",""],
+["Volcker Rule","沃尔克规则",""],
+["Bank Secrecy Act (BSA)","美国银行保密法",""],
+["FinCEN","美国金融犯罪执法网络",""],
+["CTR (Currency Transaction Report)","现金交易报告",""],
+["USA PATRIOT Act","美国爱国者法案",""],
+["Foreign Corrupt Practices Act (FCPA)","美国反海外腐败法",""],
+["UK Bribery Act 2010","英国 2010 年反贿赂法",""],
+["Matter Requiring Attention (MRA)","需关注事项",""],
+["examination","监管检查",""],
+["Financial Services and Markets Act 2023","2023 年金融服务与市场法","脱欧后英国监管框架的基石"],
+["FSMA 2000","2000 年金融服务与市场法",""],
+["Consumer Credit Act 1974","1974 年消费信贷法",""],
+["MCOB","FCA 抵押贷款业务规则",""],
+["BCOBS","FCA 银行业务行为规则",""],
+["ICOBS","FCA 保险业务行为规则",""],
+["DISP","FCA 投诉处理规则","包含 FOS 与 FSCS 的管辖"],
+["statutory trust","法定信托","CASS 下客户资金的持有法律基础"],
+["internal reconciliation requirement","内部对账要求",""],
+["Financial Services Compensation Scheme (FSCS)","金融服务补偿计划",""],
+["complaint handling rules","投诉处理规则",""],
+["Payment Systems Regulator (PSR)","支付系统监管局",""],
+["APP fraud reimbursement","APP 欺诈赔付",""],
+["3-D Secure","3D 安全验证",""],
+["variation of permission","许可变更",""],
+["senior manager function (SMF)","高级管理职能",""],
+["regulatory reference","监管证明","SM&CR 下必须出具的从业背景证明"],
+["certification regime","认证制度",""],
+["conduct rules","行为规则","个体问责制的核心，分五条基本准则"],
+["notifiable matter","需通报事项",""],
+["Securities Act 1933 / Exchange Act 1934","美国证券法 / 证券交易法",""],
+["Investment Advisers Act 1940","美国投资顾问法",""],
+["OCC / Federal Reserve / FDIC","美国货币监理署 / 美联储 / 联邦存款保险公司",""],
+["NYDFS","纽约州金融服务局",""],
+["Rule 10b-5","美国交易法 10b-5 规则","反证券欺诈的核心条款"],
+["Sarbanes-Oxley Act","萨班斯-奥克斯利法",""],
+["Regulation Best Interest (Reg BI)","最大利益规则",""],
+["Regulation S-P","美国客户信息隐私规则",""],
+["Corporate Transparency Act","美国企业透明度法",""],
+["beneficial ownership information (BOI) reporting","受益所有权信息报告",""],
+["FSMA 2023","英国金融服务与市场法 2023","确立消费者责任、SMCR 扩展与关键第三方制度"],
+["RAO","受监管活动令","Regulated Activities Order，界定哪些活动需牌照"],
+["regulated activity","受监管活动","无牌照进行即刑事犯罪"],
+["permission","业务许可",""],
+["variation of permission (VOP)","变更许可",""],
+["PRIN","商业原则","FCA 的 12 条 Principles for Businesses"],
+["CONC","消费信贷规则",""],
+["FOS","金融申诉专员服务","免费、对消费者有利的独立裁判机构"],
+["FSCS","金融服务补偿计划","每人每机构上限 85,000 英镑"]];
+
+(function renderVocab2(){
+  var tb = $("#vocab2Body");
+  EXTRA.forEach(function(w, i){
+    var tr = document.createElement("tr");
+    var on = state.voc2[i] ? " on" : "";
+    tr.innerHTML =
+      '<td><span class="vck' + on + '" data-j="' + i + '"></span></td>' +
+      '<td class="en">' + w[0] + '</td>' +
+      '<td>' + w[1] + '</td>' +
+      '<td class="ex" style="font-size:12px;">' + (w[2]||"") + '</td>';
+    tb.appendChild(tr);
+  });
+  tb.addEventListener("click", function(e){
+    var el = e.target;
+    if(!el.classList.contains("vck")){ return; }
+    var i = el.getAttribute("data-j");
+    if(state.voc2[i]){ delete state.voc2[i]; } else { state.voc2[i] = true; }
+    el.classList.toggle("on", !!state.voc2[i]);
+    save(); sync();
+  });
+})();
+
+(function renderVocab(){
+  var tb = $("#vocabBody");
+  WORDS.forEach(function(w, i){
+    var tr = document.createElement("tr");
+    var on = state.voc[i] ? " on" : "";
+    tr.innerHTML =
+      '<td><span class="vck' + on + '" data-i="' + i + '"></span></td>' +
+      '<td class="en">' + w[0] + '</td>' +
+      '<td class="ph">' + w[1] + '</td>' +
+      '<td>' + w[2] + '</td>' +
+      '<td class="ex">' + w[3] + '<i>' + w[4] + '</i>' + (w[5] ? '<i style="color:var(--red);">※ ' + w[5] + '</i>' : '') + '</td>';
+    tb.appendChild(tr);
+  });
+  tb.addEventListener("click", function(e){
+    var el = e.target;
+    if(!el.classList.contains("vck")){ return; }
+    var i = el.getAttribute("data-i");
+    if(state.voc[i]){ delete state.voc[i]; } else { state.voc[i] = true; }
+    el.classList.toggle("on", !!state.voc[i]);
+    save(); sync();
+  });
+})();
+
+/* ---------- 清单数据 ---------- */
+var LISTS = {
+  ckSetup: [
+    "把 <span class='mono'>学习记录/Day-01.md</span> 到 <span class='mono'>Day-06.md</span> 的自评分数<b>全部回填</b>（六天共 30 个分数），这是今天第 ① 步的前提",
+    "回答「本模块 00 第一步」的四个问题：<b>哪一天分数最低 / 音素错题趋势 / 精听理解率 / 错题本新增量</b>，<b>四个答案都要写进学习记录</b>",
+    "完成上面的 16 组音素自测，写下至少 3 个和自己读法不一致的（<b>尤其看第 ③ 组 conduct / conflict 这六对名词动词重音</b>）",
+    "把第 ③ 组做错的每一对<b>各读三遍</b>：一遍当名词、一遍当动词，用手势区分（名词竖手、动词横手）",
+    "打开 Anki，确认今天的新卡第一张是 <span class='mono'>suitability assessment</span>（如果不是，先看02-Anki复习系统.html 第八节）",
+    "复习昨天 100 词中标记为困难的词；<b>detriment / Upjohn warning / regulatory referral / preservation notice 四个词组必须脱口而出</b>"
+  ],
+  ckListen: [
+    "<b>A 段</b>：16 组音素对照全部听过一遍，圈出判断错误的组；<b>第 ③ 组的 conduct / conflict / present / record / object / desist 六对今天最该拿满分</b>",
+    "<b>A 段</b>：把前六天做错过的音素组<b>单独再测一遍</b>（对照 <span class='mono'>盲区预测清单 20 条</span>），命中几条记几条",
+    "<b>B 段</b>：监管检查开场会走完四遍法，先盲听再对拆解表，错题本新增 <b>10 条以上</b>",
+    "<b>B 段</b>：把 <span class='mono'>fit and proper / prescribed responsibilities / cease and desist / Chinese wall</span> 四个词组单独回听 3 遍，直到能条件反射式反应",
+    "<b>B 段</b>：把三个缩写 <span class='mono'>SYSC / COBS / PRIN</span> 单独回听 3 遍，<b>确认是逐字母读而不是读成一个词</b>",
+    "<b>C 段</b>：16 句词块听写全部写完，对照答案，<b>把「听错」「拼错」「缩写大小写错」三类分开记</b>",
+    "<b>D 段</b>：<b>无字幕</b>听 6 Minute English 第七集一遍（不查词、不回退），写下理解率与 5 个完全没听懂的位置",
+    "<b>D 段</b>：BBC World Service「Business Daily」听 5 分钟（<b>优先选 FCA / regulation / consumer duty 主题</b>），<b>只选一个材料</b>，目标是抓住 3 个关键词 + 1 个数字"
+  ],
+  ckSpeak: [
+    "影子跟读第 1 层（看文本，用 A4 段）完成 5 分钟，<b>并用手拍出每个句子的重音位置</b>",
+    "影子跟读第 2 层（关文本）完成 5 分钟",
+    "影子跟读第 3 层（1.1 倍速）完成 5 分钟",
+    "3 组绕口句各连读 5 遍（慢 → 正常 → 快），<b>重点确认 prescribed responsibilities 与 final response letter 两处的重音打在不同位置</b>",
+    "「监管检查应答」五段骨架填好并<b>整段出声说 3 遍</b>（Acknowledge… / Scope… / Fact… / Boundary… / Close…）",
+    "说完立刻用中文回想：今天有哪些位置「想不起英文怎么说」，全部记入错题本"
+  ],
+  ckWrite: [
+    "用今天的精讲词写出 5 个句子，每句至少用 2 个精讲词",
+    "5 句全部朗读出声，拗口的地方改到顺为止；<b>其中至少 2 句用到 conduct / conflict 这一对</b>（名词与动词）",
+    "把<b>本周两份备忘扩成「完整一页」八段</b>（Trigger / Scope / Preservation / Privilege / People / Regulatory interface / Timeline / <b>Decision</b>）",
+    "写出<b>本周复盘 5 句（英文）</b>，对应「最弱的一天 / 最听不懂的词类 / 错题本条数 / 最满意的一天 / 最想改的习惯」",
+    "回炉前两天作业：检查 Day05 与 Day06 备忘里的全部 -ise / -isation / -our / -re / -ce 拼写",
+    "把今天的产出保存到「我的作业」，命名 <span class='mono'>Day07_精讲词造句.md</span>、<span class='mono'>Day07_合规档案封面备忘_八段.md</span>、<span class='mono'>Day07_第1周复盘.md</span>"
+  ],
+  ckWrap: [
+    "<b>完成第 1 周术语测 100 题并点「对答案」</b>，<b>把得分写进学习记录</b>（这一项是今天的核心交付，优先于其他收尾动作）",
+    "把术语测答错的题<b>全部抄进错题本</b>，<b>区分「想不出中文」与「重音读错」两类</b>（前者是产出问题，后者是听力问题，补法不同）",
+    "根据得分决定第 2 周节奏：<b>≥ 85 按计划走 / 70–84 前三天加 20 分钟术语测 / &lt; 70 前三天先复习 Day-03/04 的 AML 词</b>，<b>把结论写进学习记录</b>",
+    "填写 <span class='mono'>学习记录/Day-07.md</span>（<b>模块 01 的 B 段听力记录与术语测得分是两个必填项</b>）",
+    "错题本更新完成，且至少淘汰 1 条已连续 3 次反应过来的旧条目",
+    "100 词过完一遍：30 个精讲词完成口头造句打卡，70 个拓展词在 Anki 完成首轮",
+    "在作战中心的「第 1 周计划」里把 <b>Day 7 打勾</b>，并看一眼第 2 周的 Day 8 是否已开放",
+    "回听一遍今天 B 段监管检查开场会（睡前 10 分钟，不看文本）"
+  ]
+};
+
+var RATES = [
+  ["音素分辨（16 组对照，错几组）", "5 = 全对；3 = 错 3-5 组；1 = 错 8 组以上"],
+  ["第 ③ 组名词/动词重音（6 对，错几对）", "5 = 全对；3 = 错 2 对；1 = 全错——今天最该拿满分的一项"],
+  ["第 1 周术语测（100 题得分）", "5 = ≥ 90；3 = 75-84（需加练）；1 = < 70（第 2 周要放慢）"],
+  ["精听脚本 B（监管检查开场会）的盲听理解率", "5 = 70% 以上；3 = 40% 左右；1 = 只抓住几个词"],
+  ["词块听写（16 句，写对几句）", "5 = 15 句以上；3 = 10-12 句；1 = 6 句以下"],
+  ["30 个精讲词的开口造句完成度", "5 = 30 个都能现场造句；3 = 一半能；1 = 大部分想不起搭配"]
+];
+
+/* ---------- 第 1 周术语测：自动判分 ---------- */
+var QUIZ_ANS = ["往账账户", "银团贷款", "即期 / 远期 / 掉期外汇", "追加保证金通知", "流动性覆盖率", "减值", "招股说明书", "英国快速支付系统", "客户尽调定期更新", "逆回购", "即时支付", "交易后第二个工作日交收", "债务更替", "结构融资", "宽容处理、暂缓执行", "净利息收入", "真实出售", "中央对手方", "现金池", "支付系统", "账户对账单报文", "国际银行账号", "汇款附言", "有担保隔夜融资利率", "收益率曲线", "一级 / 二级资本", "资本规划缓冲", "特殊目的实体", "财富管理", "反恐融资", "处置 / 离析 / 整合（洗钱三阶段）", "最终受益人", "制裁筛查", "指定报告官", "危险信号", "英国反洗钱条例 2017", "电汇", "回溯审查", "幽灵货运", "信托与公司服务提供商", "钱骡 / 钱骡账户", "加密货币洗钱", "地域风险", "质量保证", "董事会报告", "培训完成率", "钱骡账户 / 钱骡", "投资诈骗", "一方欺诈", "同意 / 拒绝", "恐怖融资风险评估", "事件驱动复检", "类型学覆盖度", "账户", "交易", "利率", "资产", "合规", "审查、审视", "支票（英式拼法）", "上报、升级处理", "合法的、正当的", "美国财政部海外资产控制办公室", "行业制裁", "真实命中", "被拒付的款项", "禁运", "英国财政部", "美国出口管理条例", "美国人士", "船舶自动识别系统", "禁止名单 / 观察名单", "严格责任", "50% 规则", "除名申请", "警报处置结论", "船舶自动识别系统", "出口管制分类编号", "制裁风险评估", "避税", "2002 年犯罪所得法", "从犯罪行为中获益", "没收令", "英国审慎监管局", "犯罪所得法调查", "搜查令", "法律意见特权", "举报渠道", "法律留置", "监管移送", "普通股", "投资级", "评级机构 / 信用评级", "风险投资", "数据库房", "交割", "资产净值", "全权委托管理", "对冲", "衍生品类型"];
+(function quiz(){
+  var btn = document.getElementById('quizGrade');
+  var clr = document.getElementById('quizClear');
+  var out = document.getElementById('quizScore');
+  var ins = [].slice.call(document.querySelectorAll('.qin'));
+  if(!btn || !ins.length){ return; }
+
+  function norm(s){
+    return String(s || '')
+      .toLowerCase()
+      .replace(/[\s\u3000]/g, '')
+      .replace(/[（）()，,、。.；;：:！!？?／/·・]/g, '')
+      .replace(/[（(].*?[)）]/g, '');
+  }
+  /* 宽松判定：答案含全部关键词即算对（去掉括号内的补充说明后比对） */
+  function judge(mine, ans){
+    var a = norm(ans), m = norm(mine);
+    if(!m){ return 0; }
+    if(m === a){ return 1; }
+    /* 以 / 或空格分隔的任一关键词命中即可 */
+    var parts = a.split(/[/／]/).filter(function(x){ return x.length >= 2; });
+    if(parts.length){
+      for(var i = 0; i < parts.length; i++){
+        if(m.indexOf(parts[i]) > -1 || parts[i].indexOf(m) > -1){ return 1; }
+      }
+    }
+    return 0;
+  }
+  function grade(){
+    var right = 0, done = 0;
+    ins.forEach(function(inp){
+      var i = +inp.getAttribute('data-q');
+      var cell = document.querySelector('.qres[data-res="' + i + '"]');
+      if(!cell){ return; }
+      if(!String(inp.value || '').trim()){ cell.innerHTML = '<span style="color:var(--ink-3);">—</span>'; cell.className = 'qres'; return; }
+      done++;
+      var ok = judge(inp.value, QUIZ_ANS[i]);
+      if(ok){ right++; cell.innerHTML = '<b style="color:#0a7">✓</b>'; cell.className = 'qres ok'; }
+      else { cell.innerHTML = '<b style="color:var(--red);">✗</b>'; cell.className = 'qres no'; }
+    });
+    if(!done){
+      out.textContent = '还没写任何答案——先在「你的答案」列写下中文释义。';
+      out.style.color = 'var(--ink-3)';
+      return;
+    }
+    var pct = Math.round(right / 100 * 100);
+    var msg = '得分 ' + right + ' / 100（已答 ' + done + ' 题）　';
+    if(pct >= 85){ msg += '第 1 周通过，第 2 周按计划走。'; out.style.color = '#0a7'; }
+    else if(pct >= 70){ msg += '第 2 周前三天每天加 20 分钟术语测。'; out.style.color = 'var(--amber, #b8860b)'; }
+    else { msg += '第 2 周节奏放慢，前三天先复习 Day-03/04 的 AML 词。'; out.style.color = 'var(--red)'; }
+    out.textContent = msg;
+    try{ localStorage.setItem(LS + '_quiz', right + '/' + done); }catch(e){}
+  }
+  function clearAll(){
+    ins.forEach(function(inp){ inp.value = ''; });
+    [].slice.call(document.querySelectorAll('.qres')).forEach(function(c){
+      c.innerHTML = '&mdash;'; c.className = 'qres';
+    });
+    out.textContent = '已清空，可以重做。';
+    out.style.color = 'var(--ink-3)';
+  }
+  btn.addEventListener('click', grade);
+  if(clr){ clr.addEventListener('click', clearAll); }
+  /* 回显上次得分 */
+  try{
+    var last = localStorage.getItem(LS + '_quiz');
+    if(last){ out.textContent = '上次得分：' + last + '（可点「对答案」重新判分）'; }
+  }catch(e){}
+})();
+
+(function renderLists(){
+  Object.keys(LISTS).forEach(function(id){
+    var box = document.getElementById(id);
+    if(!box){ return; }
+    LISTS[id].forEach(function(txt, i){
+      var key = id + "_" + i;
+      var el = document.createElement("div");
+      el.className = "ck" + (state.ck[key] ? " on" : "");
+      el.innerHTML = '<div class="bx"></div><div class="tx">' + txt + '</div>';
+      el.addEventListener("click", function(){
+        if(state.ck[key]){ delete state.ck[key]; } else { state.ck[key] = true; }
+        el.classList.toggle("on", !!state.ck[key]);
+        save(); sync();
+      });
+      box.appendChild(el);
+    });
+  });
+})();
+
+(function renderRates(){
+  var wrap = $("#rateWrap");
+  RATES.forEach(function(r, i){
+    var row = document.createElement("div");
+    row.className = "rate";
+    var btns = "";
+    for(var s = 1; s <= 5; s++){
+      btns += '<button data-r="' + i + '" data-s="' + s + '"' + (state.rate[i] === s ? ' class="on"' : '') + '>' + s + '</button>';
+    }
+    row.innerHTML = '<span class="lb">' + r[0] + '</span>' + btns;
+    wrap.appendChild(row);
+    var tip = document.createElement("div");
+    tip.style.cssText = "font-size:11.5px;color:var(--ink-3);margin:-6px 0 10px 266px;";
+    tip.textContent = r[1];
+    wrap.appendChild(tip);
+  });
+  wrap.addEventListener("click", function(e){
+    var b = e.target;
+    if(b.tagName !== "BUTTON"){ return; }
+    var i = b.getAttribute("data-r");
+    state.rate[i] = parseInt(b.getAttribute("data-s"), 10);
+    Array.prototype.forEach.call(wrap.querySelectorAll('button[data-r="' + i + '"]'), function(x){ x.classList.remove("on"); });
+    b.classList.add("on");
+    save(); sync();
+  });
+})();
+
+/* ---------- 进度统计 ---------- */
+function countAll(){
+  var total = 0, done = 0;
+  Object.keys(LISTS).forEach(function(id){
+    LISTS[id].forEach(function(_, i){
+      total++; if(state.ck[id + "_" + i]){ done++; }
+    });
+  });
+  total += WORDS.length + EXTRA.length;
+  done += Object.keys(state.voc).length + Object.keys(state.voc2).length;
+  return {total:total, done:done};
+}
+function sync(){
+  var c = countAll();
+  var pct = c.total ? Math.round(c.done / c.total * 100) : 0;
+  $("#barAll").style.width = pct + "%";
+  $("#statPct").textContent = pct + "%";
+  var vocN = Object.keys(state.voc).length, vocN2 = Object.keys(state.voc2).length;
+  $("#progText").textContent = c.done + " / " + c.total + " 项已完成　·　精讲词造句 " + vocN + " / " + WORDS.length + "　·　拓展词认读 " + vocN2 + " / " + EXTRA.length;
+  var rk = Object.keys(state.rate);
+  if(rk.length){
+    var sum = 0; rk.forEach(function(k){ sum += state.rate[k]; });
+    $("#rateText").textContent = "已评分：" + rk.length + " / 5 项，当前得分 " + sum + " / 25";
+    $("#barRate").style.width = (sum / 25 * 100) + "%";
+  } else {
+    $("#rateText").textContent = "尚未评分";
+    $("#barRate").style.width = "0%";
+  }
+}
+
+/* ---------- 折叠 ---------- */
+function tog(btn){
+  var bd = btn.nextElementSibling;
+  bd.classList.toggle("on");
+  if(!btn.dataset.base){ btn.dataset.base = btn.textContent; }
+  btn.textContent = bd.classList.contains("on") ? "收起" : btn.dataset.base;
+}
+
+sync();
+</script>
+<!--PRON_JS_START-->
+<script>
+/* 发音朗读模块（由 _朗读源文件/_build_day_pron.js 生成，勿手改） */
+var PRON_DAY = [{"id":"A4","title":"/ɪ/ 与 /iː/：松紧之别","words":58,"mins":0.5,"focus":"/ɪ/ vs /iː/","text":"Please *sit* and *read* the *sheet*. *Each team needs three weeks* to *finish* the *list*. The *risk* is *minimal* if we *keep* it *simple* and *leave* the *details* to the *leads*.","points":[["sit /sɪt/ vs seat /siːt/","/ɪ/ 是松元音，短而放松；/iː/ 是紧元音，长且嘴角向两边拉。英语母语者靠这个区分 sit 和 seat"],["sheet /ʃiːt/","/iː/ 拉长。要特别注意这个词：如果读成短音 /ʃɪt/ 会变成粗俗词，这是中国学习者最著名的翻车点之一"],["finish /ˈfɪnɪʃ/、list /lɪst/","两个音节都是 /ɪ/，不要读成 /fiːnɪʃ/"],["minimal /ˈmɪnɪməl/","三个音节全是 /ɪ/ 或 /ə/，重音在第一个"],["details /ˈdiːteɪlz/","英式重音在第一音节 /ˈdiːteɪlz/（美式常在第二音节）"]],"zh":"请坐下读这份表。每个团队需要三周才能完成清单。只要保持简单、把细节交给负责人，风险很小。","why":"<b>今天是周测日，重读而非换新段。</b>A4 是本周<b>短音 /ɪ/ 专段</b>——debit / deposit / liquidity / liability / beneficiary 这些词你Day-04 练过，如果今天读A4 时<b>还能保持两音节里的短音不拖长</b>，说明短音已经过关。这一段也是模块 04 影子跟读的材料，读准了后面跟读轻松很多。"},{"id":"A8","title":"词尾辅音串：别加元音，也别吞掉","words":64,"mins":0.6,"focus":"-s / -ed / -ths 结尾","text":"*Banks ask* for *documents*, *contracts*, *reports* and *statements*. *Clients submit requests*, *banks assess risks*, and *records get archived*. *Last* week we *checked* the *lists*, *flagged* the *gaps*, and *moved* the *files*. The *months* of *work* paid off.","points":[["contracts /ˈkɒntrækts/","词尾三个辅音 /kts/ 要连读成一串。常见错误是加元音读成 /ˈkɒntræktɪs/"],["documents /ˈdɒkjumənts/","重音在第一音节，第二音节弱化成 /ju/ 或 /jə/，结尾 /nts/ 一串连读"],["checked /tʃekt/、flagged /flæɡd/、moved /muːvd/","-ed 的三种读法：前面是清辅音读 /t/，浊辅音或元音读 /d/，只有 /t/ /d/ 结尾才读 /ɪd/。<b>不要把 checked 读成 /ˈtʃekɪd/</b>"],["months /mʌnθs/、sixths /sɪksθs/","/θs/ 连续两个齿音，是英语里最难的结尾之一。慢慢读，先保证 /θ/ 的舌尖位置，再过渡到 /s/"],["assess /əˈses/、risks /rɪsks/","assess 是两音节 /əˈses/，重音在后；risks 结尾 /sks/ 三连辅音"]],"zh":"银行要求提供文件、合同、报告和账单。客户提交申请，银行评估风险，记录被归档。上周我们核对了清单，标记了缺口，并转移了文件。几个月的工作有了回报。","why":"A8 专练<b>词尾辅音串</b>——thresholds、risks、flagged。<b>今天词表里的 threshold conditions 首音就是 /θ/</b>，而 thresholds 的复数尾是 /ðz/。周测日重读这一段，等于把 Day-03 的词尾弱项再清一次。<b>读完立刻回到模块 01 的 A 段重测一遍。</b>"},{"id":"B2","title":"制裁筛查命中：判断与放行","words":142,"mins":1.3,"focus":"专有名词重音 · 审慎措辞语调","text":"<span class='who'>Sanctions Officer</span> *Here is the case.* The *screening system* _returned_ a *potential match* on the *beneficiary name*. On _closer inspection_, the *name differs* in *two letters*, and the *date of birth* is _not consistent_ with our record.\nWe _ran_ the *name* against _both_ the *UK consolidated list* and the *OFAC list*. *Neither returns an exact match.* The customer's *identity documents* _corroborate_ the details, and *no adverse media* was found.\n*My view* is that this is a *false positive*, and we can _release_ the payment. *However*, I would _like your sign-off_ _before_ we do — _given_ the *jurisdiction involved*.","points":[["beneficiary /ˌbenɪˈfɪʃəri/","五个音节，重音在第三音节 /fɪ/。念的时候别把重音放在开头"],["corroborate /kəˈrɒbəreɪt/","重音在第二音节 /rɒb/。注意是两个 /r/，中间是 /ɒ/ 不是 /əʊ/"],["adverse /ˈædvɜːs/","<b>英式重音在第一音节</b>，美式在第二（/ædˈvɜːrs/）。你在英国同事面前读错会很显眼"],["consolidated /kənˈsɒlɪdeɪtɪd/","重音在第二音节，五个音节要有清晰的强弱起伏，别读成一串平调"],["OFAC /ˈəʊfæk/","读成一个词，不是逐字母念 O-F-A-C。同理 FATF 读 /fætf/、FCA 读三个字母 /ef siː eɪ/"],["sign-off /ˈsaɪnɒf/","复合名词重音在前半。作动词时读 /ˌsaɪn ˈɒf/，重音在后"],["closer inspection /ˈkləʊsə ɪnˈspekʃn/","closer 在这里是形容词\"更仔细的\"，读 /s/ 不读 /z/（后者是\"更近的\"）"]],"zh":"情况是这样的。筛查系统对收款人姓名返回了一个潜在命中。经更仔细的检查，姓名有两个字母不同，出生日期也与我们的记录不一致。\n我们同时用英国综合制裁名单和 OFAC 名单做了比对，两者都没有精确命中。客户的身份文件与所填细节相互印证，也没有发现负面舆情。\n我认为这是误报，可以放行付款。但在放行之前，考虑到涉及的司法辖区，我希望得到你的签批。","why":"B2 是<b>制裁筛查命中该判真还是判假</b>的那段会议——Day-04 你听过它的朗读版。<b>今天重读它，是因为它是本周唯一一个「用事实与数据反驳对方」的完整范例</b>：<span class=\"mono\">I am not saying no… What I am saying is…</span>。这段的语调模式<b>就是</b>今天模块 04「监管检查应答」骨架第④ 段的来源。<b>听过的场景再读，口腔记忆形成得最快。</b>"}];
+
+(function(){
+  var GROUP_CN = {"A":"音素校准","B":"合规专业","C":"职场口语","D":"生活场景","E":"语调与节奏"};
+
+  function markup(t){
+    return String(t)
+      .replace(/\*(.+?)\*/g, '<b class="ps">$1</b>')
+      .replace(/(^|[^_])_([^_]+?)_(?=[^_]|$)/g, '$1<u class="pl">$2</u>')
+      .replace(/~(.+?)~/g, '<em class="px">$1</em>');
+  }
+  function plain(t){
+    return String(t)
+      .replace(/\*(.+?)\*/g, '$1')
+      .replace(/(^|[^_])_([^_]+?)_(?=[^_]|$)/g, '$1$2')
+      .replace(/~(.+?)~/g, '$1')
+      .replace(/<span[^>]*>/g, '').replace(/<\/span>/g, '')
+      .replace(/<br\s*\/?>/g, '. ');
+  }
+
+  /* ---------- 语音合成（en-GB） ---------- */
+  var gbVoice = null;
+  function pickVoice(){
+    if(!window.speechSynthesis){ return; }
+    var vs = speechSynthesis.getVoices() || [];
+    var pref = ['Google UK English Female','Google UK English Male','Libby','Sonia','Ryan','George','Hazel','Microsoft Libby','Microsoft Sonia'];
+    gbVoice = null;
+    for(var i = 0; i < pref.length && !gbVoice; i++){
+      gbVoice = vs.filter(function(v){ return v.name.indexOf(pref[i]) > -1; })[0] || null;
+    }
+    if(!gbVoice){ gbVoice = vs.filter(function(v){ return /^en-GB/i.test(v.lang); })[0] || null; }
+    if(!gbVoice){ gbVoice = vs.filter(function(v){ return /^en/i.test(v.lang); })[0] || null; }
+  }
+  if(window.speechSynthesis){ pickVoice(); speechSynthesis.onvoiceschanged = pickVoice; }
+  function speak(txt, rate){
+    if(!window.speechSynthesis){ alert('当前浏览器不支持朗读，请用 Edge 或 Chrome 打开本页。'); return; }
+    speechSynthesis.cancel();
+    var u = new SpeechSynthesisUtterance(txt);
+    u.lang = 'en-GB';
+    if(gbVoice){ u.voice = gbVoice; }
+    u.rate = rate || 0.95;
+    u.pitch = 1.0;
+    speechSynthesis.speak(u);
+  }
+
+  /* ---------- 渲染今日段落 ---------- */
+  var wrap = document.getElementById('prWrap');
+  wrap.innerHTML = PRON_DAY.map(function(s, i){
+    var paras = markup(s.text).split('\n').map(function(p){ return '<div class="pp">' + p + '</div>'; }).join('');
+    var pts = s.points.map(function(p){
+      return '<tr><td class="ph">' + markup(p[0]) + '</td><td class="ex">' + markup(p[1]) + '</td></tr>';
+    }).join('');
+    var zh = String(s.zh).replace(/\n/g, '<br>');
+    var g = s.id.charAt(0);
+    return '<div class="prseg">' +
+      '<div class="prhead">' +
+        '<span class="prno">' + s.id + '</span>' +
+        '<span class="prtt">' + s.title + '</span>' +
+        '<span class="prmeta">' + s.words + ' 词 · 约 ' + s.mins + ' 分钟 · ' + g + ' 组 ' + (GROUP_CN[g] || '') + ' · ' + s.focus + '</span>' +
+      '</div>' +
+      '<div style="margin:8px 0 9px;">' +
+        '<button class="btn sm primary" data-say="' + i + '">▶ 英式朗读</button> ' +
+        '<button class="btn sm" data-slow="' + i + '">▶ 慢速</button>' +
+      '</div>' +
+      (s.why ? '<span class="prwhy"><b>今天为什么读这段：</b>' + s.why + '</span>' : '') +
+      '<div class="prbox">' + paras + '</div>' +
+      '<div class="prleg">' +
+        '<span><i style="background:#fff2c9;">黄底</i> 易错音</span>' +
+        '<span><i style="background:#e9f1ff;">蓝底</i> 连读 / 弱读</span>' +
+        '<span style="color:var(--red);">红色 = 句子重音</span>' +
+        '<span>' + s.points.length + ' 条发音要点</span>' +
+      '</div>' +
+      '<div class="reveal"><button class="btn sm" onclick="tog(this)">发音要点（' + s.points.length + ' 条）</button>' +
+        '<div class="revbd"><div class="tblwrap"><table><thead><tr><th style="width:200px;">词 / 短语</th><th>为什么容易读错 · 怎么改</th></tr></thead><tbody>' + pts + '</tbody></table></div></div>' +
+      '</div>' +
+      '<div class="reveal"><button class="btn sm" onclick="tog(this)">中文译文</button>' +
+        '<div class="revbd"><div class="przh">' + zh + '</div></div>' +
+      '</div>' +
+    '</div>';
+  }).join('');
+
+  Array.prototype.forEach.call(wrap.querySelectorAll('[data-say]'), function(b){
+    b.onclick = function(){ speak(plain(PRON_DAY[+b.getAttribute('data-say')].text), 0.95); };
+  });
+  Array.prototype.forEach.call(wrap.querySelectorAll('[data-slow]'), function(b){
+    b.onclick = function(){ speak(plain(PRON_DAY[+b.getAttribute('data-slow')].text), 0.72); };
+  });
+
+  /* ---------- 打卡清单（并入当日总进度） ---------- */
+  var GENERAL = ["走完四步：先听 → 看标注读 → 不看标注读 → 站起来加大音量读（<b>不许只读 1 遍就勾</b>）","每段读完后做体感自查：喉结振动 / 嘴前气流 / 对镜看舌尖 / 非重读 r 不卷舌","读完立刻合上文本用中文回想一遍，凡想不起英文怎么说的位置记入 <span class=\"mono\">错题本.md</span>"];
+  var box = document.getElementById('ckPron');
+  if(typeof LISTS !== 'undefined' && box && typeof state !== 'undefined'){
+    LISTS.ckPron = GENERAL.concat(PRON_DAY.map(function(s){
+      return s.id + ' ' + s.title + ' —— 三遍读完（听 → 看标注 → 不看标注 → 站着读），并做完体感自查';
+    }));
+    LISTS.ckPron.forEach(function(txt, i){
+      var key = 'ckPron_' + i;
+      var el = document.createElement('div');
+      el.className = 'ck' + (state.ck[key] ? ' on' : '');
+      el.innerHTML = '<div class="bx"></div><div class="tx">' + txt + '</div>';
+      el.addEventListener('click', function(){
+        if(state.ck[key]){ delete state.ck[key]; } else { state.ck[key] = true; }
+        el.classList.toggle('on', !!state.ck[key]);
+        save(); sync();
+      });
+      box.appendChild(el);
+    });
+    if(typeof sync === 'function'){ sync(); }
+  }
+})();
+</script>
+<!--PRON_JS_END-->
+</body>
+</html>

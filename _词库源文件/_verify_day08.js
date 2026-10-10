@@ -1,23 +1,27 @@
 /* ============================================================
-   Day-06 复核：脚本语法 / 词表条数 / 朗读内嵌 / 模拟渲染 / 打卡项
-   + 与 Anki 队列交叉校验（position 400–499 ↔ 词表 500–599 行）
-   用法：node _verify_day06.js [ankiSnapshotPath]
+   Day-08 复核：脚本语法 / 词表条数 / 朗读内嵌 / 模拟渲染 / 打卡项
+   + 与 Anki 队列交叉校验（position 600–699 ↔ 词表 701–800 行）
+   用法：node _verify_day08.js [ankiSnapshotPath]
+
+   注：原脚本硬编码 D:/英语培训教程（原作者本机路径），
+       此处改为 __dirname 向上两级，项目可整体搬移。
    ============================================================ */
 const fs = require('fs');
 const path = require('path');
 const vm = require('vm');
-const DIR = path.resolve(__dirname, '..');   // 原为硬编码 D:/英语培训教程（原作者本机路径）
-const FILE = path.join(DIR, 'Day-06.html');
+const DIR = path.resolve(__dirname, '..');
+const FILE = path.join(DIR, 'Day-08.html');
+if (!fs.existsSync(FILE)) { console.error('!! Day-08.html 不存在'); process.exit(1); }
 const html = fs.readFileSync(FILE, 'utf8');
 
-const EXP_SEGS = 'B1,C4,E6';
-const EXP_TOTAL = 136;
+const EXP_SEGS = 'A4,B1,B11';  // _schedule.js Day 8 = 数据与隐私保护 I：A组音素 + B组两段合规场景
+const EXP_TOTAL = 141;         // 本日 LISTS 35 + ckPron 6 + 词表 100
 
 let bad = 0;
 const ok = m => console.log('   OK  ' + m);
 const no = m => { bad++; console.log('   !!  ' + m); };
 
-console.log('── Day-06.html ──');
+console.log('── Day-08.html ──');
 
 /* 1. 标记块 */
 ['/*PRON_CSS_START*/', '/*PRON_CSS_END*/', '<!--PRON_MODULE_START-->', '<!--PRON_MODULE_END-->',
@@ -30,7 +34,6 @@ console.log('── Day-06.html ──');
  '<!--PRON_JS_START-->', '<!--PRON_JS_END-->', 'id="prWrap"', 'id="ckPron"']
   .forEach(m => { const n = html.split(m).length - 1; if (n !== 1) no(m + ' 出现 ' + n + ' 次（应为 1）'); });
 
-/* 每个打卡区在页面上必须恰好有一个容器（Day-03/04 曾漏过 ckWrap） */
 ['ckSetup', 'ckListen', 'ckSpeak', 'ckWrite', 'ckWrap']
   .forEach(id => { const n = html.split('id="' + id + '"').length - 1; if (n !== 1) no('#' + id + ' 容器出现 ' + n + ' 次（应为 1）'); });
 
@@ -94,9 +97,18 @@ console.log('   两档合计去重 = ' + dup.size + '（期望 100）');
 if (dup.size !== 100) no('两档有重复或缺失');
 W.forEach(w => { if (!w[1] || !w[2] || !w[3] || !w[4]) no('精讲条目字段缺失: ' + w[0]); });
 
+/* 6. 音标格式与 HTML 标签配平 */
+W.forEach(w => {
+  if (!/^\/.+\/$/.test(String(w[1]).trim())) no('音标格式可疑: ' + w[0] + ' → ' + w[1]);
+  const tip = String(w[5] || '');
+  const open = (tip.match(/<b>/g) || []).length, close = (tip.match(/<\/b>/g) || []).length;
+  if (open !== close) no('提示字段粗体不配平: ' + w[0] + ' (' + open + '/' + close + ')');
+  if (/\/b>/.test(tip) && /[^<]\/b>/.test(tip)) no('提示字段含畸形标签: ' + w[0]);
+});
+
 const P = sandbox.PRON_DAY || [];
 console.log('   内嵌朗读段 = ' + P.length + ' → ' + P.map(s => s.id).join(' / '));
-if (P.map(s => s.id).join(',') !== EXP_SEGS) no('朗读段与 _schedule.js Day 6 不一致（期望 ' + EXP_SEGS + '）');
+if (P.map(s => s.id).join(',') !== EXP_SEGS) no('朗读段与 _schedule.js Day 8 不一致（期望 ' + EXP_SEGS + '）');
 P.forEach(s => {
   if (!s.text || !s.points || !s.points.length || !s.zh) no(s.id + ' 数据不完整');
   if (!s.why) no(s.id + ' 缺「今天为什么读这段」');
@@ -122,23 +134,31 @@ else {
 if (ck) console.log('   朗读打卡项 = ' + ck._kids.length + '（3 条通用 + 每段 1 条 = ' + (3 + P.length) + '）');
 else no('未渲染 #ckPron');
 
-/* 6. 打卡项总数 */
+/* 7. 打卡项总数 */
 const L = sandbox.LISTS || {};
 console.log('   打卡清单：' + Object.keys(L).map(k => k + '=' + L[k].length).join('  '));
 const totalCk = Object.keys(L).reduce((a, k) => a + L[k].length, 0);
 console.log('   打卡项合计 = ' + totalCk + '　+ 词表 100 = ' + (totalCk + 100) + '（期望 ' + EXP_TOTAL + '）');
 if (totalCk + 100 !== EXP_TOTAL) no('总项数不是 ' + EXP_TOTAL);
-console.log('   进度：' + (nodes['progText'] ? nodes['progText'].textContent : '(无)'));
-if (html.indexOf('var LS = "ukce_day06"') < 0) no('localStorage 键不是 ukce_day06');
-else ok('localStorage 键 ukce_day06');
-console.log('   （本次运行已写入的键：' + (Object.keys(store).join(', ') || '无（未产生交互，属正常）') + '）');
+if (html.indexOf('var LS = "ukce_day08"') < 0) no('localStorage 键不是 ukce_day08');
+else ok('localStorage 键 ukce_day08');
 
-/* 7. 与 Anki 交叉校验 */
+/* 8. 常规日专项：跨日残留 */
+const stripped = html
+  .replace(/<!--PRON_MODULE_START-->[\s\S]*?<!--PRON_MODULE_END-->/, '')
+  .replace(/<!--PRON_JS_START-->[\s\S]*?<!--PRON_JS_END-->/, '');
+['ukce_day07', 'Day-07 · ', 'Day 07 · '].forEach(k => {   // 只查前一日残留
+  if (stripped.indexOf(k) > -1) no('残留前一日标识: ' + k);
+});
+if (!/数据与隐私|数据保护/.test(stripped)) no('缺少「数据与隐私保护」当日主题结构');
+else ok('含数据与隐私保护主题结构');
+
+/* 9. 与 Anki 交叉校验 */
 const snap = process.argv[2];
 if (snap && fs.existsSync(snap)) {
   console.log('\n── 与 Anki 队列交叉校验 ──');
   const { execFileSync } = require('child_process');
-  const pyFile = path.join(require('os').tmpdir(), '_verify_day05_anki.py');
+  const pyFile = path.join(require('os').tmpdir(), '_verify_day08_anki.py');
   fs.writeFileSync(pyFile, `
 # -*- coding: utf-8 -*-
 import sqlite3, io, sys, json
@@ -156,12 +176,12 @@ print(json.dumps({"pos0": rows[0][0], "posN": rows[-1][0], "words": [r[1] for r 
     catch (e) { errs.push(bin + ': ' + String(e.message).split('\n')[0]); }
   }
   if (out) {
-    console.log('   Anki 下一批 100 张 position：' + out.pos0 + ' ~ ' + out.posN + '（页面区间应为 300–399）');
+    console.log('   Anki 下一批 100 张 position：' + out.pos0 + ' ~ ' + out.posN + '（页面区间应为 600–699）');
     const page = new Set([...W.map(x => x[0]), ...E.map(x => x[0])]);
     const anki = new Set(out.words);
     const onlyPage = [...page].filter(x => !anki.has(x));
     const onlyAnki = [...anki].filter(x => !page.has(x));
-    console.log('   页面有而 Anki 没有：' + (onlyPage.length ? onlyPage.join(' | ') : '（空）'));
+    console.log('   页面有而Anki 没有：' + (onlyPage.length ? onlyPage.join(' | ') : '（空）'));
     console.log('   Anki 有而页面没有：' + (onlyAnki.length ? onlyAnki.join(' | ') : '（空）'));
     console.log('   集合完全一致：' + (page.size === anki.size && !onlyPage.length && !onlyAnki.length));
     if (onlyPage.length || onlyAnki.length) no('与 Anki 队列不一致');

@@ -6,7 +6,7 @@
 const fs = require('fs');
 const path = require('path');
 const vm = require('vm');
-const DIR = 'D:/英语培训教程';
+const DIR = path.resolve(__dirname, '..');   // 原为硬编码 D:/英语培训教程（原作者本机路径）
 const FILE = path.join(DIR, 'Day-05.html');
 const html = fs.readFileSync(FILE, 'utf8');
 

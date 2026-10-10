@@ -15,7 +15,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const ROOT = 'D:/英语培训教程';
+const ROOT = path.resolve(__dirname, '..');   // 原为硬编码 D:/英语培训教程（原作者本机路径）
 const SRC  = path.join(ROOT, '_朗读源文件');
 const DRY  = process.argv.includes('--dry');
 
@@ -100,6 +100,18 @@ const PER_DAY = {
     readMins: 30,
     steps: ['4 分钟', '10 分钟', '10 分钟', '6 分钟'],
     rot: '第 1 周·按当日主题加权：B 组 1 段（向 MLRO 口头升级，与今天调查链条终点同源）+ C 组 1 段（汇报进度与坏消息，对应 B 段里业务方追问进度的场景）+ E 组 1 段（数字与编号——今天起首练 E 组）'
+  },
+  7: {
+    mins: '30 分钟',
+    readMins: 30,
+    steps: ['4 分钟', '10 分钟', '10 分钟', '6 分钟'],
+    rot: '第 1 周·<b>周测日复读</b>：A4 / A8 / B2——刻意重读本周最卡的三段，而不是换新段'
+  },
+  8: {
+    mins: '30 分钟',
+    readMins: 30,
+    steps: ['4 分钟', '10 分钟', '10 分钟', '6 分钟'],
+    rot: '第 2 周·按当日主题加权：A 组 1 段（音素收尾，今天押在 -tion 重音上）+ B 组 2 段（向 MLRO 口头升级 / 团队会议里的警报分级，与今天的数据泄露通报场景同源）'
   }
 };
 
@@ -145,6 +157,16 @@ const WHY = {
     B1: '今天整场会议讨论的终点，就是「什么情况下、怎么向 MLRO 报告」。<b>B1 正是这个动作的口语版</b>——它练的是「先说结论 → 再说依据 → 最后说边界」这个顺序，<b>和今天口语模块的「程序排序」骨架完全同构</b>。你在英国合规体系里的第一份正式工作，迟早就是这一次口头陈述。',
     C4: '今天 B 段里 Greg 问「要多久」，Maya 答「六周，然后做决定」；Ruth 说「外部律师从第一天就介入」。<b>C4 就是「把坏消息说出口」的技术</b>——先给结论、给依据、给时间表，<b>不铺垫、不解释太多、不道歉</b>。合规工作里最难的就是这一段：<span class="mono">the fact-finding will take six weeks, and here is what we can do in the meantime</span>。',
     E6: '今天的词表里数字无处不在——<span class="mono">section 2 notice / 1998 / five per cent / day one / day thirty / six weeks</span>。<b>E6 专门练数字、日期与编号的读法，今天起第一次练 E 组</b>。合规场景里数字读错就是事故：把 <span class="mono">fifty-eight</span> 读成 <span class="mono">fifty-eighth</span>，罚款金额就完全不同了。'
+  },
+  7: {
+    A4: '<b>今天是周测日，重读而非换新段。</b>A4 是本周<b>短音 /ɪ/ 专段</b>——debit / deposit / liquidity / liability / beneficiary 这些词你Day-04 练过，如果今天读A4 时<b>还能保持两音节里的短音不拖长</b>，说明短音已经过关。这一段也是模块 04 影子跟读的材料，读准了后面跟读轻松很多。',
+    A8: 'A8 专练<b>词尾辅音串</b>——thresholds、risks、flagged。<b>今天词表里的 threshold conditions 首音就是 /θ/</b>，而 thresholds 的复数尾是 /ðz/。周测日重读这一段，等于把 Day-03 的词尾弱项再清一次。<b>读完立刻回到模块 01 的 A 段重测一遍。</b>',
+    B2: 'B2 是<b>制裁筛查命中该判真还是判假</b>的那段会议——Day-04 你听过它的朗读版。<b>今天重读它，是因为它是本周唯一一个「用事实与数据反驳对方」的完整范例</b>：<span class="mono">I am not saying no… What I am saying is…</span>。这段的语调模式<b>就是</b>今天模块 04「监管检查应答」骨架第④ 段的来源。<b>听过的场景再读，口腔记忆形成得最快。</b>'
+  },
+  8: {
+    A4: '今天第 ① 组音素就是它。<b>短音 <span class="mono">/ɪ/</span> 仍是绝对主角</b>——而这个词表里最该练的是<b>「重音落在词尾」的 -tion 词</b>：<span class="mono">notification / categorisation / rectification</span>。A4 帮你把「短音不拖长」这个底子打好，<b>读完立刻回模块 01 的 A 段重测第 ③ 组</b>。',
+    B1: '<b>这一段是今天 B 段的朗读版</b>——「向 MLRO 口头升级」。你刚在模块 01 听过数据泄露的通报电话会，现在把它读出来。<b>结构完全同构：先说结论 → 再说依据 → 最后说边界</b>，这正是今天口语模块「72 小时通报」骨架的来源。<b>听过的场景再读，口腔记忆形成得最快</b>，而且 B1 就是模块 04 影子跟读的材料。',
+    B11: 'B11 是<b>团队会议里的警报分级讨论</b>，与今天的泄露通报同源——都是「在压力下把事情按优先级排出来」。<b>它的对比结构</b>（<span class="mono">This is urgent; that is not</span>）就是今天写作任务里「72 小时行动清单」要用的句式。<b>读完这段，你的口语里会多一种「排序」的语调。</b>'
   }
 };
 
@@ -614,6 +636,36 @@ console.log('');
     r.log.forEach(l => console.log('   · ' + l));
   } else {
     console.log('Day-06.html（不存在，跳过）');
+  }
+}
+
+/* Day-07：独立「发音朗读」卡片（周测日：复读本周最卡三段） */
+{
+  const p7 = path.join(ROOT, 'Day-07.html');
+  if (fs.existsSync(p7)) {
+    const html = fs.readFileSync(p7, 'utf8');
+    const r = html.indexOf(MOD_START) > -1
+      ? inject(7, 'Day-07.html', 'card', null, false)
+      : inject(7, 'Day-07.html', 'card', '<!-- 模块 4 -->', false);
+    console.log('Day-07.html');
+    r.log.forEach(l => console.log('   · ' + l));
+  } else {
+    console.log('Day-07.html（不存在，跳过）');
+  }
+}
+
+/* Day-08：独立「发音朗读」卡片 */
+{
+  const p8 = path.join(ROOT, 'Day-08.html');
+  if (fs.existsSync(p8)) {
+    const html = fs.readFileSync(p8, 'utf8');
+    const r = html.indexOf(MOD_START) > -1
+      ? inject(8, 'Day-08.html', 'card', null, false)
+      : inject(8, 'Day-08.html', 'card', '<!-- 模块 4 -->', false);
+    console.log('Day-08.html');
+    r.log.forEach(l => console.log('   · ' + l));
+  } else {
+    console.log('Day-08.html（不存在，跳过）');
   }
 }
 

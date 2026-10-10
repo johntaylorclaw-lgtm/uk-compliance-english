@@ -1,0 +1,101 @@
+﻿英文,中文,领域,补充说明
+senior manager,高级经理,英美监管与市场行为,
+certification employee,认证雇员,英美监管与市场行为,
+SMF / prescribed responsibility,高级管理职能 / 法定职责,英美监管与市场行为,
+replacement of SMF,高级经理变更,英美监管与市场行为,
+host / home state,东道国 / 母国,英美监管与市场行为,
+passporting,通行证制度,英美监管与市场行为,英国脱欧后对欧盟已失效，现为 TPR 制度
+temporary permissions regime (TPR),临时许可制度,英美监管与市场行为,
+overseas fund,海外基金,英美监管与市场行为,
+supervisory review and evaluation process (SREP),监管审查与评估程序,英美监管与市场行为,
+skilled person,专家顾问,英美监管与市场行为,FCA 依 FSMA 第 166 条指派的独立审查人
+supervisory notice,监管通知,英美监管与市场行为,
+warning notice / decision notice / final notice,警告通知 / 决定通知 / 最终通知,英美监管与市场行为,
+own initiative requirement (OIREQ),监管主动施加的要求,英美监管与市场行为,
+voluntary requirement,自愿承诺要求,英美监管与市场行为,
+prohibition order,禁业令,英美监管与市场行为,
+redress scheme,赔偿计划,英美监管与市场行为,
+review of past business,历史业务复查,英美监管与市场行为,
+four consumer outcomes,四项消费者结果,英美监管与市场行为,
+consumer understanding,消费者理解,英美监管与市场行为,
+price and value,价格与价值,英美监管与市场行为,
+consumer support,消费者支持,英美监管与市场行为,
+products and services outcome,产品与服务结果,英美监管与市场行为,
+foreseeable harm,可预见损害,英美监管与市场行为,
+fair value assessment,公允价值评估,英美监管与市场行为,
+market abuse regulation (MAR),市场滥用条例,英美监管与市场行为,
+insider list,内幕信息知情人名单,英美监管与市场行为,
+closed period,静默期,英美监管与市场行为,
+PDMR,履行管理职责人员,英美监管与市场行为,Persons Discharging Managerial Responsibilities
+disclosure guidance and transparency rules (DTR),披露指引与透明度规则,英美监管与市场行为,
+listing rules (LR),上市规则,英美监管与市场行为,
+prospectus regulation,招股说明书条例,英美监管与市场行为,
+sponsor,保荐人,英美监管与市场行为,
+takeover code,收购守则,英美监管与市场行为,
+put up or shut up (PUSU),要么报价要么闭嘴,英美监管与市场行为,收购守则第 2.6 条规则
+MiFID II,金融工具市场指令二,英美监管与市场行为,
+client categorisation,客户分类,英美监管与市场行为,零售 / 专业 / 合格对手方
+product governance,产品治理,英美监管与市场行为,目标市场与分销策略
+costs and charges disclosure,成本与费用披露,英美监管与市场行为,
+EMIR,欧洲市场基础设施条例,英美监管与市场行为,
+clearing obligation,强制清算义务,英美监管与市场行为,
+trade repository,交易存管库,英美监管与市场行为,
+SFTR,证券融资交易条例,英美监管与市场行为,
+settlement discipline,结算纪律,英美监管与市场行为,
+buy-side / sell-side,买方 / 卖方,英美监管与市场行为,
+GDPR / UK GDPR,欧盟通用数据保护条例 / 英国版,数据与隐私保护,
+Data Protection Act 2018,英国 2018 年数据保护法,数据与隐私保护,
+Information Commissioner's Office (ICO),英国信息专员办公室,数据与隐私保护,
+personal data,个人数据,数据与隐私保护,
+special category data,特殊类别数据（敏感数据）,数据与隐私保护,种族、健康、性取向等，处理门槛更高
+data subject,数据主体,数据与隐私保护,
+data controller / processor,数据控制者 / 处理者,数据与隐私保护,
+joint controller,共同控制者,数据与隐私保护,
+lawful basis,合法性基础,数据与隐私保护,六种之一：同意、合同、法定义务、重大利益、公共任务、正当利益
+consent,同意,数据与隐私保护,须自由给出、具体、知情、明确
+legitimate interests,正当利益,数据与隐私保护,需通过三步平衡测试 LIA
+data minimisation,数据最小化,数据与隐私保护,
+purpose limitation,目的限制,数据与隐私保护,
+storage limitation,存储限制,数据与隐私保护,
+Data Protection Impact Assessment (DPIA),数据保护影响评估,数据与隐私保护,
+Data Protection Officer (DPO),数据保护官,数据与隐私保护,
+subject access request (SAR),数据主体访问请求,数据与隐私保护,注意与 AML 的 Suspicious Activity Report 同缩写
+right to erasure / to rectification,删除权 / 更正权,数据与隐私保护,
+data breach,数据泄露,数据与隐私保护,
+72-hour notification,72 小时通报义务,数据与隐私保护,向 ICO 通报的时限
+cross-border transfer,跨境传输,数据与隐私保护,
+adequacy decision,充分性认定,数据与隐私保护,
+Standard Contractual Clauses (SCCs),标准合同条款,数据与隐私保护,
+Binding Corporate Rules (BCRs),约束性公司规则,数据与隐私保护,
+Schrems II,Schrems II 判决,数据与隐私保护,推翻隐私盾，重塑跨大西洋数据传输
+Records of Processing Activities (ROPA),处理活动记录,数据与隐私保护,
+privacy notice,隐私声明,数据与隐私保护,
+pseudonymisation / anonymisation,假名化 / 匿名化,数据与隐私保护,
+retention period,保存期限,数据与隐私保护,
+accountability principle,问责原则,数据与隐私保护,GDPR 的核心原则：你必须能证明自己合规
+data protection by design and by default,设计阶段与默认的数据保护,数据与隐私保护,
+transparency,透明性,数据与隐私保护,
+right to restriction of processing,限制处理权,数据与隐私保护,
+right to object,反对权,数据与隐私保护,
+right to data portability,数据可携权,数据与隐私保护,
+data processing agreement (DPA),数据处理协议,数据与隐私保护,
+sub-processor,次级处理者,数据与隐私保护,
+controller-processor agreement,控制者—处理者协议,数据与隐私保护,
+international data transfer agreement (IDTA),国际数据传输协议,数据与隐私保护,英国版 SCC
+UK Addendum,英国附录,数据与隐私保护,附加在欧盟 SCC 上以适用英国法
+transfer risk assessment (TRA),传输风险评估,数据与隐私保护,
+EU-US Data Privacy Framework,欧美数据隐私框架,数据与隐私保护,
+data sharing agreement,数据共享协议,数据与隐私保护,
+law enforcement request,执法机关请求,数据与隐私保护,
+confidentiality / availability / integrity breach,保密性 / 可用性 / 完整性泄露,数据与隐私保护,GDPR 对泄露的三种分类
+Freedom of Information Act (FOIA),信息自由法,数据与隐私保护,
+PECR (e-privacy),英国电子隐私法规,数据与隐私保护,管 Cookie 和直接营销
+cookie consent,Cookie 同意,数据与隐私保护,须事先取得，不得默认勾选
+soft opt-in,柔性选择加入,数据与隐私保护,既有客户营销的例外规则
+direct marketing consent,直接营销同意,数据与隐私保护,
+employee monitoring,员工监控,数据与隐私保护,涉及告知义务、比例原则与正当利益测试
+redaction,遮蔽处理,数据与隐私保护,回复 SAR 时删除第三方信息
+automated decision-making,自动化决策,数据与隐私保护,
+profiling,画像分析,数据与隐私保护,
+records retention schedule,记录保存时间表,数据与隐私保护,
+data loss prevention (DLP),数据防泄漏,数据与隐私保护,

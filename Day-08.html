@@ -1,0 +1,1326 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Day 08 · 数据与隐私保护 I：主体权利与跨境传输 — 英国银行业合规英语强化</title>
+<style>
+:root{
+  --bg:#f5f6f8;--panel:#fff;--panel-2:#fafbfc;--line:#e3e6ea;--line-2:#eef1f4;
+  --ink:#1c2330;--ink-2:#4a5568;--ink-3:#8a94a3;
+  --navy:#012169;--red:#c8102e;--blue:#1f6feb;--teal:#0f8a7e;--amber:#b7791f;--purple:#6b46c1;--green:#2f855a;
+  --shadow:0 1px 2px rgba(16,24,40,.05),0 4px 14px rgba(16,24,40,.06);
+  --radius:12px;
+}
+*{box-sizing:border-box;}
+body{margin:0;background:var(--bg);color:var(--ink);font-size:14px;line-height:1.68;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",Roboto,sans-serif;
+  -webkit-font-smoothing:antialiased;}
+a{color:var(--blue);text-decoration:none;}
+a:hover{text-decoration:underline;}
+
+.hero{background:linear-gradient(120deg,#012169 0%,#0b3a8f 55%,#1f6feb 100%);color:#fff;padding:24px 28px 20px;}
+.hero-inner{max-width:1080px;margin:0 auto;}
+.crumb{font-size:12px;opacity:.85;}
+.crumb a{color:#fff;text-decoration:underline;}
+.hero h1{margin:8px 0 6px;font-size:23px;font-weight:700;}
+.hero p{margin:0;opacity:.88;font-size:13.5px;max-width:820px;}
+.stats{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px;}
+.stat{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18);border-radius:10px;padding:7px 13px;min-width:98px;}
+.stat b{display:block;font-size:17px;font-weight:700;line-height:1.2;}
+.stat span{font-size:11.5px;opacity:.82;}
+
+main{max-width:1080px;margin:0 auto;padding:22px 20px 90px;}
+h2.sec{font-size:18px;margin:0 0 4px;font-weight:700;}
+p.sub{margin:0 0 16px;color:var(--ink-3);font-size:13px;}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px;margin-bottom:16px;}
+.card h3{margin:0 0 10px;font-size:15.5px;font-weight:700;}
+.card h4{margin:16px 0 6px;font-size:13.5px;font-weight:700;color:var(--navy);}
+.card h4:first-child{margin-top:0;}
+.mod{display:flex;align-items:center;gap:12px;margin-bottom:10px;}
+.mod-no{flex:0 0 44px;height:44px;border-radius:11px;background:var(--navy);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1.05;}
+.mod-no b{font-size:15px;}
+.mod-no span{font-size:9px;opacity:.8;letter-spacing:.06em;}
+.mod-tt{flex:1;}
+.mod-tt h3{margin:0;font-size:16px;}
+.mod-tt p{margin:1px 0 0;font-size:12.5px;color:var(--ink-3);}
+.mod-time{font-size:11.5px;color:#fff;background:var(--teal);border-radius:999px;padding:3px 10px;white-space:nowrap;}
+.mod-time.hot{background:var(--red);}
+
+.pill{display:inline-block;font-size:11px;padding:2px 8px;border-radius:999px;border:1px solid var(--line);background:var(--panel-2);color:var(--ink-2);margin:0 5px 5px 0;}
+.pill.navy{background:#eef2fb;border-color:#d5def5;color:var(--navy);}
+.pill.red{background:#fdeef0;border-color:#f7d4d9;color:var(--red);}
+.pill.teal{background:#e9f7f5;border-color:#cbe9e4;color:var(--teal);}
+.pill.amber{background:#fdf6e7;border-color:#f3e3bd;color:var(--amber);}
+.pill.purple{background:#f2edfb;border-color:#e0d5f5;color:var(--purple);}
+.pill.green{background:#ecf7f1;border-color:#d0ebdd;color:var(--green);}
+
+ul.tight{margin:6px 0 0;padding-left:20px;}
+ul.tight li{margin-bottom:5px;font-size:13.2px;color:var(--ink-2);}
+ul.tight li b{color:var(--ink);}
+ol.tight{margin:6px 0 0;padding-left:22px;}
+ol.tight li{margin-bottom:6px;font-size:13.2px;color:var(--ink-2);}
+ol.tight li b{color:var(--ink);}
+
+.ck{display:flex;align-items:flex-start;gap:10px;padding:8px 0;border-bottom:1px solid var(--line-2);cursor:pointer;}
+.ck:last-child{border-bottom:0;}
+.ck:hover{background:var(--panel-2);}
+.ck .bx{flex:0 0 17px;width:17px;height:17px;border:1.5px solid var(--line);border-radius:5px;background:#fff;margin-top:3px;}
+.ck.on .bx{background:var(--green);border-color:var(--green);}
+.ck.on .bx::after{content:"✓";color:#fff;font-size:11px;display:flex;justify-content:center;line-height:15px;}
+.ck .tx{flex:1;font-size:13.2px;color:var(--ink-2);}
+.ck.on .tx{color:var(--ink-3);text-decoration:line-through;}
+
+.script{background:#fbfcfd;border:1px solid var(--line-2);border-radius:10px;padding:14px 16px;font-size:13.4px;line-height:1.95;color:var(--ink);}
+.script em{font-style:normal;background:#fff2c9;padding:0 1px;border-radius:2px;}
+.script u{text-decoration:none;border-bottom:2px solid #b9d4ff;}
+.script .rhythm{color:var(--red);font-weight:600;}
+.script .spk{font-weight:700;color:var(--navy);}
+.mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:12.6px;}
+.ipa{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--amber);font-size:12.4px;}
+
+table{width:100%;border-collapse:collapse;font-size:13px;}
+th,td{text-align:left;padding:8px 9px;border-bottom:1px solid var(--line-2);vertical-align:top;}
+th{background:var(--panel-2);font-size:11.5px;color:var(--ink-3);letter-spacing:.03em;text-transform:uppercase;font-weight:600;position:sticky;top:0;z-index:2;}
+tbody tr:hover{background:#fbfcfd;}
+td.en{font-weight:600;color:var(--navy);white-space:nowrap;}
+td.ph{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--amber);font-size:12px;white-space:nowrap;}
+td.ex{color:var(--ink-2);font-size:12.6px;}
+td.ex i{display:block;color:var(--ink-3);font-style:normal;font-size:12px;margin-top:2px;}
+.tblwrap{max-height:620px;overflow:auto;border:1px solid var(--line-2);border-radius:10px;}
+.vck{width:16px;height:16px;border:1.5px solid var(--line);border-radius:4px;background:#fff;display:inline-block;cursor:pointer;vertical-align:middle;}
+.vck.on{background:var(--green);border-color:var(--green);}
+.vck.on::after{content:"✓";color:#fff;font-size:10px;display:flex;justify-content:center;line-height:14px;}
+
+.btn{appearance:none;font:inherit;font-size:13px;padding:7px 14px;border-radius:8px;border:1px solid var(--line);background:#fff;color:var(--ink);cursor:pointer;}
+.btn:hover{background:var(--panel-2);}
+.btn.primary{background:var(--navy);border-color:var(--navy);color:#fff;}
+.btn.primary:hover{background:#0b3a8f;}
+.reveal{margin-top:10px;}
+.revbd{display:none;margin-top:10px;}
+.revbd.on{display:block;}
+
+.timer{display:flex;align-items:center;gap:10px;flex-wrap:wrap;background:var(--panel-2);border:1px solid var(--line-2);border-radius:10px;padding:10px 12px;}
+.timer .clock{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:24px;font-weight:700;color:var(--navy);min-width:76px;}
+.timer .clock.warn{color:var(--red);}
+
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+@media(max-width:840px){.two{grid-template-columns:1fr;}}
+.rowline{display:flex;gap:9px;font-size:13px;padding:7px 0;border-bottom:1px solid var(--line-2);}
+.rowline:last-child{border-bottom:0;}
+.rowline .t{flex:0 0 34%;font-weight:600;color:var(--navy);}
+.rowline .m{flex:1;color:var(--ink-2);}
+.note{background:#fffbea;border:1px solid #f5e6b8;border-radius:9px;padding:11px 13px;font-size:12.7px;color:#7a5c12;}
+.note b{color:#6b4f0d;}
+.bad{background:#fdeef0;border:1px solid #f7d4d9;border-radius:9px;padding:11px 13px;font-size:12.7px;color:#8c2231;}
+.good{background:#ecf7f1;border:1px solid #d0ebdd;border-radius:9px;padding:11px 13px;font-size:12.7px;color:#276749;}
+.info{background:#eef4ff;border:1px solid #d3e0fb;border-radius:9px;padding:11px 13px;font-size:12.7px;color:#1b4189;}
+.rate{display:flex;gap:6px;align-items:center;margin:4px 0 10px;}
+.rate span.lb{flex:0 0 260px;font-size:13px;color:var(--ink-2);}
+.rate button{width:32px;height:30px;border:1px solid var(--line);background:#fff;border-radius:7px;cursor:pointer;font:inherit;font-size:12.5px;color:var(--ink-2);}
+.rate button:hover{border-color:var(--blue);}
+.rate button.on{background:var(--navy);border-color:var(--navy);color:#fff;font-weight:700;}
+.bar{height:9px;background:var(--line-2);border-radius:999px;overflow:hidden;margin:6px 0 4px;}
+.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--navy),var(--blue));border-radius:999px;transition:width .3s;}
+.tagline{display:flex;gap:10px;font-size:12.5px;color:var(--ink-3);flex-wrap:wrap;}
+
+.step{display:flex;gap:10px;margin:14px 0 8px;}
+.step .n{flex:0 0 26px;height:26px;border-radius:8px;background:var(--blue);color:#fff;font-size:12.5px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.step .h{font-size:14px;font-weight:700;color:var(--navy);padding-top:2px;}
+.step .h small{display:block;font-weight:400;font-size:12px;color:var(--ink-3);}
+
+.hit{color:var(--red);font-weight:600;}
+.seg{background:#eef4ff;border-radius:4px;padding:0 2px;}
+.lk{background:#e9f7f5;border-radius:4px;padding:0 2px;}
+
+footer{max-width:1080px;margin:0 auto;padding:0 20px 60px;color:var(--ink-3);font-size:12.5px;text-align:center;}
+/*PRON_CSS_START*/
+.btn.sm{font-size:12px;padding:5px 10px;border-radius:7px;}
+.prhead{display:flex;align-items:flex-start;gap:10px;flex-wrap:wrap;margin:0 0 6px;}
+.prno{flex:0 0 auto;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:11.5px;font-weight:700;color:#fff;background:var(--teal);border-radius:6px;padding:3px 8px;}
+.prtt{font-size:15px;font-weight:700;flex:1;min-width:190px;color:var(--navy);}
+.prmeta{font-size:11.5px;color:var(--ink-3);padding-top:4px;}
+.prbox{background:#fbfcfd;border:1px solid var(--line-2);border-left:3px solid var(--teal);border-radius:10px;padding:15px 17px;font-size:15.2px;line-height:2.1;color:var(--ink);font-family:Georgia,"Times New Roman",-apple-system,"PingFang SC","Microsoft YaHei",serif;}
+.prbox .pp{margin-bottom:9px;}
+.prbox .pp:last-child{margin-bottom:0;}
+.prbox b.ps{color:var(--red);font-weight:700;}
+.prbox u.pl{text-decoration:none;background:#e9f1ff;border-radius:3px;padding:0 1px;}
+.prbox em.px{font-style:normal;background:#fff2c9;border-radius:3px;padding:0 1px;}
+.prbox .who{font-weight:700;color:var(--navy);font-family:-apple-system,"Segoe UI","Microsoft YaHei",sans-serif;font-size:13px;}
+.prleg{display:flex;gap:14px;flex-wrap:wrap;font-size:12px;color:var(--ink-3);margin:9px 0 0;}
+.prleg i{font-style:normal;padding:0 3px;border-radius:3px;}
+.prwhy{font-size:12.3px;color:var(--ink-3);display:block;margin:8px 0 0;}
+.prseg{border-top:1px dashed var(--line);padding-top:15px;margin-top:17px;}
+.prseg:first-child{border-top:0;padding-top:0;margin-top:0;}
+.przh{font-size:13.2px;color:var(--ink-2);background:var(--panel-2);border:1px solid var(--line-2);border-radius:9px;padding:12px 14px;line-height:1.9;}
+/*PRON_CSS_END*/
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="crumb"><a href="00-作战中心.html">← 返回作战中心</a>　·　第 2 周：数据与隐私 / 法律　·　<a href="Day-07.html">Day 07</a></div>
+    <h1>Day 08 · 数据与隐私保护 I：主体权利与跨境传输</h1>
+    <p>今天进入<b>第 2 周第 1 天</b>，主题是<b>数据与隐私保护</b>。词表第 701–800 行由两块拼成：<b>英美监管与市场行为 44 条</b>——监管检查与执法工具（SREP / OIREQ / 三类 notice / prohibition order / review of past business）、Consumer Duty 的四项消费者结果、市场滥用（MAR / insider list / closed period / PDMR）、MiFID II 与交易报告；以及<b>数据与隐私保护 56 条</b>——GDPR 基石、合法性基础、六大主体权利、72 小时泄露通报、三套跨境传输机制（SCCs / BCRs / IDTA）。<b>这是你入职英国银行后最可能「被叫进会议室」的第二条线</b>——不是因为你违规，而是因为某个客户问「你们拿我的数据做什么」，或者系统报警说「数据泄露了」。听力脚本 accordingly 换成一场<b>数据泄露的 72 小时作战会</b>：重点不是技术细节，而是<b>时钟从什么时候开始算、以及这段时间里谁签字</b>。</p>
+    <div class="stats">
+      <div class="stat"><b>4 h 15 m</b><span>今日训练量</span></div>
+      <div class="stat"><b>6</b><span>训练模块</span></div>
+      <div class="stat"><b>100</b><span>核心词</span></div>
+      <div class="stat"><b id="statPct">0%</b><span>完成进度</span></div>
+    </div>
+  </div>
+</div>
+
+<main>
+
+<!-- 进度 -->
+<div class="card">
+  <h3>今日总进度</h3>
+  <div class="bar"><i id="barAll" style="width:0%"></i></div>
+  <div class="tagline"><span id="progText">0 / 0 项已完成</span></div>
+</div>
+
+<div class="info" style="margin-bottom:16px;">
+  <b>今天的节奏安排：</b>回到正常节奏，<b>不设术语测</b>（昨天是周测日，今天是新词日）。30 个精讲名额的分配原则是<b>「义务词优先」</b>——因为数据保护这个词表的特点是<b>名词全是硬义务</b>：controller / processor / breach / notification / erasure，每一条都对应一个「谁必须做什么」。<b>所以精讲 30 个里有 12 个是「义务型名词」</b>（监管工具 7 + GDPR 基石 5），另外 18 个是定义型与市场型词汇放拓展档认读。<b>请按 00 → 01 → 02 → 03 → 04 → 05 的顺序做</b>。时间不够时优先砍模块 05 的写作，<b>模块 01 的 B 段（数据泄露 72 小时作战会）和模块 02 的义务词不能砍</b>。
+</div>
+
+<!-- 模块 0 -->
+<div class="card">
+  <div class="mod">
+    <div class="mod-no"><b>00</b><span>WARMUP</span></div>
+    <div class="mod-tt"><h3>第 1 周收官 + 音素自测 + 今天为什么换成数据保护</h3><p>先结账，再开新线</p></div>
+    <div class="mod-time">15 分钟</div>
+  </div>
+
+  <h4>第一步：第 1 周验收结果回填（5 分钟）</h4>
+  <p class="sub" style="margin-bottom:8px;">昨天是周测日。你应该已经做完了<b>第 1 周术语测 100 题</b>并点了「对答案」。现在打开 <span class="mono">学习记录/Day-07.md</span>，把三件事填上——<b>这三件事决定第 2 周前三天要不要加练</b>。</p>
+  <div class="tblwrap" style="max-height:none;">
+    <table>
+      <thead><tr><th style="width:5%;">#</th><th style="width:38%;">要填的数</th><th>怎么解读</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td class="ex"><b>术语测得分</b>（____ / 100）</td><td class="ex">≥ 85 → 第 2 周按计划走；70–84 → <b>前三天每天加 20 分钟术语测</b>；&lt; 70 → <b>前三天先复习 Day-03/04 的 AML 词</b>，别往前推</td></tr>
+        <tr><td>2</td><td class="ex">其中「想不出中文」的题数：____</td><td class="ex">这是<b>产出问题</b>——你认识这个词但说不出中文，补法是造句，不是多听</td></tr>
+        <tr><td>3</td><td class="ex">其中「认识但重音读错」的题数：____</td><td class="ex">这是<b>听力问题</b>——补法是每天 A 段不能砍 + 手指敲桌子打重音</td></tr>
+        <tr><td>4</td><td class="ex">错题本现在共____ 条</td><td class="ex"><b>如果还是 Day-01 那2 条样例</b>，说明模块 01 的「第 2遍」你没做——那一遍是整个系统里唯一产出错题本的环节</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="note" style="margin-bottom:4px;">
+    <b>顺便把 Day-06 错题本里的四个词组再测一遍</b>，它们今天会以不同形式回来：<span class="mono">threshold conditions</span>（今天讲监管门槛）·<span class="mono">fit and proper</span>（今天讲谁对数据保护负责）·<span class="mono">preservation notice</span>（今天的 evidence preservation）·<span class="mono">detriment</span>（数据主体受损 = detriment）。
+  </div>
+
+  <h4 style="margin-top:18px;">第二步：今天的音素自测（5 分钟，3 组、16 个）</h4>
+  <p class="sub" style="margin-bottom:6px;">今天三组音各打一个靶子：第 ① 组 = <b>/ɜː/ 与 /ɔː/ 与 /ɒ/</b>，今天的 <b>personal / controller / processor / disclosure</b> 全踩这三个音，而 <b>costs / costs and charges</b> 里的 /ɒ/ 是英式专属；第 ② 组 = <b>/ʃ/ 与 /tʃ/ 与 /dʒ/</b>，今天的 <b>notification / rectification / subject access request</b> 是重灾区；第 ③ 组 = <b>词尾 -tion / -sion / -ture 的读法</b>——今天这个词表最大的特点是<b>名词全是 -tion 结尾</b>，而它们的重音位置各不相同。</p>
+  <div class="tblwrap" style="max-height:none;">
+    <table>
+      <thead><tr><th style="width:22%;">单词 / 对照</th><th style="width:24%;">你的读法（先自己读）</th><th style="width:22%;">正确读音</th><th>你要注意的点</th></tr></thead>
+      <tbody>
+        <tr><td colspan="4" style="background:#f4f8ff;font-weight:700;color:var(--navy);font-size:12.5px;">① /ɜː/ 与 /ɔː/ 与 /ɒ/ —— 都不卷舌，口型相反（5 组）</td></tr>
+        <tr><td class="en">work / walk</td><td class="ex">先自己读一遍再对答案</td><td class="ph">/wɜːk/ · /wɔːk/</td><td class="ex"><b>/ɜː/ 舌头平放不卷</b>，<b>/ɔː/ 嘴唇收圆</b>。今天的 personal / processor / controller 全是 /ɜː/ 这一类</td></tr>
+        <tr><td class="en">her / hoar</td><td class="ex">—</td><td class="ph">/hɜː/ · /hɔː/</td><td class="ex">两个音<b>都不卷舌</b>，只差口型。这一组是最基础也最容易错的</td></tr>
+        <tr><td class="en">costs / course</td><td class="ex">—</td><td class="ph">/kɒsts/ · /kɔːs/</td><td class="ex">今天的 <b>costs and charges disclosure</b>。<b>/ɒ/ 是英式专属短圆唇音</b>（美式读 /kɑːsts/），/ɔː/ 长音也不卷舌</td></tr>
+        <tr><td class="en">cot / caught</td><td class="ex">—</td><td class="ph">/kɒt/ · /kɔːt/</td><td class="ex">同样是 /ɒ/ 与 /ɔː/ 的对比。<b>三个音都不卷舌，区别只在圆唇与否和长短</b></td></tr>
+        <tr><td class="en">policy / policy (美)</td><td class="ex">—</td><td class="ph">/ˈpɒləsi/ · /ˈpɑːləsi/</td><td class="ex">Day-07 练过。今天再确认一次：<b>英式 /ɒ/ 不卷舌</b>。这个词在 B 段会议里会出现</td></tr>
+        <tr><td colspan="4" style="background:#f4f8ff;font-weight:700;color:var(--navy);font-size:12.5px;">② /ʃ/ 与 /tʃ/ 与 /dʒ/ 与清浊 —— 今天的 -tion 词群（5 组）</td></tr>
+        <tr><td class="en">notification / notifier</td><td class="ex">—</td><td class="ph">/ˌnəʊtɪfɪˈkeɪʃn/ · /ˈnəʊtɪfaɪə/</td><td class="ex">词尾 <b>/ʃn/ 压成一个音节</b>，不读成 /ˈkeɪʃən/；重音在 <b>-TI-</b></td></tr>
+        <tr><td class="en">rectification / rectify</td><td class="ex">—</td><td class="ph">/ˌrektɪfɪˈkeɪʃn/ · /ˈrektɪfaɪ/</td><td class="ex">今天的 <b>right to rectification</b>。名词重音在 <b>-CA-</b>（不是 -TI-），动词 rectify 重音在首音节</td></tr>
+        <tr><td class="en">erasure / erase</td><td class="ex">—</td><td class="ph">/ɪˈreɪʒə/ · /ɪˈreɪz/</td><td class="ex">今天的 <b>right to erasure</b>。名词结尾 <b>/ʒə/</b>，动词结尾 <b>/z/</b>——<b>名词与动词清浊不同</b></td></tr>
+        <tr><td class="en">subject / subject to</td><td class="ex">—</td><td class="ph">/ˈsʌbdʒɪkt/ · /səbˈdʒekt/</td><td class="ex"><b>今天的头号陷阱。</b>名词「数据主体」重音在<b>首</b>；形容词「subject to」重音在<b>后</b>，而且词尾 /kt/ 变 /kt/、元音变 /e/</td></tr>
+        <tr><td class="en">disclosure / disclose</td><td class="ex">—</td><td class="ph">/dɪsˈkləʊʒə/ · /dɪsˈkləʊz/</td><td class="ex">名词浊音 /ʒ/、动词清音 /z/。<b>Day-05 与 Day-07 都练过，今天是第三次</b></td></tr>
+        <tr><td colspan="4" style="background:#f4f8ff;font-weight:700;color:var(--navy);font-size:12.5px;">③ 词尾 -tion / -sion / -ture 的重音（6 组）</td></tr>
+        <tr><td class="en">information</td><td class="ex">—</td><td class="ph">/ˌɪnfəˈmeɪʃn/</td><td class="ex">重音在 <b>-MA-</b>（不是 -FOR-）。四个音节里只有 -ma- 重读</td></tr>
+        <tr><td class="en">notification</td><td class="ex">—</td><td class="ph">/ˌnəʊtɪfɪˈkeɪʃn/</td><td class="ex">重音在 <b>-TI-</b>（不是 -NO-）。<b>五音节里只有中间那个 -ti- 重读</b></td></tr>
+        <tr><td class="en">categorisation</td><td class="ex">—</td><td class="ph">/ˌkætəɡəraɪˈzeɪʃn/</td><td class="ex">今天的 <b>client categorisation</b>。重音在<b>最后音节 -TION</b>；<b>英式拼 -isation</b></td></tr>
+        <tr><td class="en">access / assess</td><td class="ex">—</td><td class="ph">/ˈækses/ · /əˈses/</td><td class="ex">今天的 <b>subject access request</b>。<b>access 是名词重音在首，assess 是动词重音在后</b></td></tr>
+        <tr><td class="en">transfer / transfer (名)</td><td class="ex">—</td><td class="ph">/trænsˈfɜː/ · /ˈtrænsfɜː/</td><td class="ex">今天的 <b>cross-border transfer / transfer risk assessment</b>。<b>动词重音在后，名词重音在首</b></td></tr>
+        <tr><td class="en">adequate / adequacy</td><td class="ex">—</td><td class="ph">/ˈædɪkwət/ · /ˈædɪkwəsi/</td><td class="ex">今天的 <b>adequacy decision</b>。两个词<b>重音都在首音节</b>，但 adequacy 多一个 /si/</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="note" style="margin-top:12px;">
+    <b>第 ③ 组做错 3 组以上 → 你的问题不是「单词量」，是「重音在词尾的词怎么建模」。</b>今天词表里 <b>notification / categorisation / erasure / rectification</b> 这类词，重音都在<b>最后或倒数第二个音节</b>——和 Day-04 的 -TION 在中间、Day-06 的 -GA- 在第四音节都不一样。<b>纠正方法：读这些词时把重音那一拍拉长、后面的音节快速带过</b>，用节拍把重音钉在词尾。<b>这批词在 B 段会议里全是关键词</b>——听不出来整段就废了。
+  </div>
+
+  <h4 style="margin-top:18px;">第三步：今天为什么换成数据保护（4 分钟）</h4>
+  <div class="note" style="margin-bottom:10px;">
+    你可能注意到：作战中心原计划Day-08 是「<b>AML 全景与洗钱三阶段</b>」，但今天词表 701–800 行里<b>一个 AML 词都没有</b>——AML 的核心词（CDD / EDD / SAR / threshold）在 Day-03 就学完了。<b>这里遵循的是整个系统的第一原则：唯一真相源 = 词表顺序。</b>Day-N 的词表必须是 Anki 当天发的那 100 张卡，页面、词表、Anki 三者按行号严格对齐（<b>position = 行号 − 100</b>）。<b>所以今天跟着词表走，学数据与隐私保护。</b>AML 会在第 2 周后续几天以别的形式回来。
+  </div>
+  <div class="tblwrap" style="max-height:none;">
+    <table>
+      <thead><tr><th style="width:22%;">维度</th><th style="width:39%;">Day-07（昨天 · 周测日）</th><th>Day-08（今天 · 新词日）</th></tr></thead>
+      <tbody>
+        <tr><td class="en">性质</td><td class="ex">验收：回收前六天 600 词</td><td class="ex"><b>建新：100 个新词，不设术语测</b></td></tr>
+        <tr><td class="en">词表</td><td class="ex">601–700（监管架构）</td><td class="ex">701–800（<b>监管工具 44 + 数据与隐私 56</b>）</td></tr>
+        <tr><td class="en">听力</td><td class="ex">监管检查开场会</td><td class="ex"><b>数据泄露 72 小时作战会</b></td></tr>
+        <tr><td class="en">朗读</td><td class="ex">复读本周最卡三段（A4/A8/B2）</td><td class="ex">进入第 2 周轮换：<b>A4 / B1 / B11</b></td></tr>
+        <tr><td class="en">写作</td><td class="ex">把两份备忘扩成八段</td><td class="ex"><b>「72 小时行动清单」+ 数据保护自查三问</b></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h4 style="margin-top:16px;">第四步：今天按什么走</h4>
+  <div class="two">
+    <div>
+      <div class="info">
+        <b>词汇按什么走：</b>严格按 <b>词表 CSV 顺序</b>——也就是 Anki 发卡的顺序。今天发的 100 张 = 词表<b>第 701–800 行</b>。已逐条核对：<b>与 Anki 队列零差异</b>。首词是 <span class="mono">senior manager</span>，末词是 <span class="mono">data loss prevention (DLP)</span>。
+      </div>
+    </div>
+    <div>
+      <div class="info">
+        <b>听力/口语/写作按什么走：</b>跟着<b>「义务词优先」</b>这条原则。数据保护这个词表的特点是<b>名词全是硬义务</b>——controller / processor / breach / notification / erasure / rectification，每一条都在回答<b>「谁必须做什么、什么时候之前」</b>。所以听力是一场<b>72 小时的作战会</b>，写作是<b>一份带时间戳的行动清单</b>。
+      </div>
+    </div>
+  </div>
+
+  <h4 style="margin-top:16px;">开机清单</h4>
+  <div id="ckSetup"></div>
+</div>
+
+<!-- 模块 1 -->
+<div class="card" style="border-left:4px solid var(--red);">
+  <div class="mod">
+    <div class="mod-no" style="background:var(--red);"><b>01</b><span>LISTEN</span></div>
+    <div class="mod-tt"><h3>听力：四段式（今天的重点是 B 段「72 小时」作战会）</h3><p>音素听辨 → 数据泄露通报电话会精听 → 词块听写 → 真实材料</p></div>
+    <div class="mod-time hot">90 分钟</div>
+  </div>
+
+  <div class="note" style="margin-bottom:16px;">
+    <b>今天的听力设计逻辑：</b>Day-06 是「举报进来之后的第一天」，Day-07 是「监管检查开场」，今天换成<b>第三条线：「系统报警说数据泄露了，你有一个 72 小时的时钟」</b>。这场会的核心<b>不是技术细节</b>（怎么被入侵的），而是<b>时钟从哪一刻开始算、这段时间里谁签字、什么能说什么不能说</b>——这恰好是 Day-06「程序排序」的升级版。<b>A 段修耳朵</b>，重点是<b>词尾 -tion 的重音</b>（这个词表最大的语音难点）；<b>B 段</b>是一场四方电话会；<b>C 段</b>把今天的词放进真实句子里做<b>听写</b>；<b>D 段</b>继续多口音训练。<b>四段递进：A 段决定你能不能分辨，B 段决定你能不能跟上，C 段决定你能不能写下来，D 段决定你能不能听懂真人。</b>
+  </div>
+
+  <!-- A 段 -->
+  <div class="step"><div class="n">A</div><div class="h">音素听辨：16 组对照（长音 5 + 塞擦音与清浊 5 + 词尾重音 6）<small>今天全押在 -tion 词群上 · 20 分钟</small></div></div>
+  <p class="sub" style="margin-bottom:8px;">用 Edge「朗读此页」或任意 TTS 逐组播放（每对之间停 2 秒），<b>不看音标先判断你听到的是左还是右</b>，写出答案再对。做错的组用红笔圈出。<b>今天的第 ③ 组是全 day's 重点</b>——<b>notification / categorisation / rectification</b> 这三个词的重音都在<b>词尾或倒数第二音节</b>，而你过去七天练的重音大多在<b>词首或中间</b>。如果这一组错 3 对以上，你在 B 段会听不出关键信息。</p>
+  <div class="tblwrap" style="max-height:none;">
+    <table>
+      <thead><tr><th style="width:6%;">#</th><th style="width:24%;">左</th><th style="width:24%;">右</th><th style="width:18%;">关键差别</th><th>说明</th></tr></thead>
+      <tbody>
+        <tr><td colspan="5" style="background:#f4f8ff;font-weight:700;color:var(--navy);font-size:12.5px;">① /ɜː/ 与 /ɔː/ 与 /ɒ/ —— 都不卷舌，口型相反（5 组）</td></tr>
+        <tr><td>1</td><td class="en">work <span class="ph">/wɜːk/</span></td><td class="en">walk <span class="ph">/wɔːk/</span></td><td class="ex">舌平 vs 唇圆<br>都是长音</td><td class="ex">英式 <b>/ɜː/ 绝对不卷舌</b>。你今天要听的 personal / processor / controller 全是这一类</td></tr>
+        <tr><td>2</td><td class="en">her <span class="ph">/hɜː/</span></td><td class="en">hoar <span class="ph">/hɔː/</span></td><td class="ex">/ɜː/ 舌平<br>/ɔː/ 唇圆</td><td class="ex">第 1 周反复出现的一组。<b>听到 hoar 不要以为是 her</b></td></tr>
+        <tr><td>3</td><td class="en">costs <span class="ph">/kɒsts/</span></td><td class="en">course <span class="ph">/kɔːs/</span></td><td class="ex">/ɒ/ 短圆唇<br>/ɔː/ 长圆唇</td><td class="ex">今天的 <b>costs and charges disclosure</b>。<b>/ɒ/ 是英式专属元音</b>，美式读 /kɑːsts/——读错整句露馅</td></tr>
+        <tr><td>4</td><td class="en">cot <span class="ph">/kɒt/</span></td><td class="en">caught <span class="ph">/kɔːt/</span></td><td class="ex">/ɒ/ vs /ɔː/</td><td class="ex">长短 + 圆唇两层差别。<b>三个音都不卷舌，全靠口型和长度区分</b></td></tr>
+        <tr><td>5</td><td class="en">policy <span class="ph">/ˈpɒləsi/</span></td><td class="en">policy (美) <span class="ph">/ˈpɑːləsi/</span></td><td class="ex">/ɒ/ vs /ɑː/</td><td class="ex">Day-07 练过。<b>英式 /ɒ/ 不卷舌</b>，今天 B 段会议里 FCA 会说到 policy</td></tr>
+        <tr><td colspan="5" style="background:#f4f8ff;font-weight:700;color:var(--navy);font-size:12.5px;">② /ʃ/ 与 /tʃ/ 与 /dʒ/ 与清浊 —— 今天的 -tion 词群（5 组）</td></tr>
+        <tr><td>6</td><td class="en">notification <span class="ph">/ˌnəʊtɪfɪˈkeɪʃn/</span></td><td class="en">notifier <span class="ph">/ˈnəʊtɪfaɪə/</span></td><td class="ex">结尾 /ʃn/<br>结尾 /ə/</td><td class="ex"><b>今天第一高频词。</b>notification 词尾 <b>/ʃn/ 压成一个音节</b>，不读成 /ˈkeɪʃən/</td></tr>
+        <tr><td>7</td><td class="en">rectification <span class="ph">/ˌrektɪfɪˈkeɪʃn/</span></td><td class="en">rectify <span class="ph">/ˈrektɪfaɪ/</span></td><td class="ex">名词重音<b>后</b><br>动词重音<b>前</b></td><td class="ex">今天的 <b>right to rectification</b>。<b>名词重音在 -CA-，动词重音在首音节</b>——和 notification 相反</td></tr>
+        <tr><td>8</td><td class="en">erasure <span class="ph">/ɪˈreɪʒə/</span></td><td class="en">erase <span class="ph">/ɪˈreɪz/</span></td><td class="ex">名词 /ʒ/ 浊<br>动词 /z/ 清</td><td class="ex">今天的 <b>right to erasure</b>。<b>名词与动词清浊不同</b>，和 Day-07 的 disclosure 同一机制</td></tr>
+        <tr><td>9</td><td class="en">subject <span class="ph">/ˈsʌbdʒɪkt/</span></td><td class="en">subject to <span class="ph">/səbˈdʒekt/</span></td><td class="ex">重音在<b>首</b><br>重音在<b>后</b></td><td class="ex"><b>今天第 ① 号陷阱。</b>「数据主体」是名词读首重音，「subject to」是短语读后重音。听到后重音就知道对方在讲「受制于」</td></tr>
+        <tr><td>10</td><td class="en">disclosure <span class="ph">/dɪsˈkləʊʒə/</span></td><td class="en">disclose <span class="ph">/dɪsˈkləʊz/</span></td><td class="ex">/ʒ/ 浊<br>/z/ 清</td><td class="ex">名词浊音、动词清音。<b>Day-05 与 Day-07 都练过，今天第三次</b>——三次还错必须专项攻坚</td></tr>
+        <tr><td colspan="5" style="background:#f4f8ff;font-weight:700;color:var(--navy);font-size:12.5px;">③ 词尾重音 —— 重音落在最后或倒数第二音节（6 组）</td></tr>
+        <tr><td>11</td><td class="en">information <span class="ph">/ˌɪnfəˈmeɪʃn/</span></td><td class="en">informatio <span class="ph">(错读)</span></td><td class="ex">重音在 <b>-MA-</b></td><td class="ex">四个音节<b>只有 -ma- 重读</b>。今天 B 段里会出现 information 的名词用法</td></tr>
+        <tr><td>12</td><td class="en">categorisation <span class="ph">/ˌkætəɡəraɪˈzeɪʃn/</span></td><td class="en">categorisation (美) <span class="ph">/ˌkætəɡərəˈzeɪʃn/</span></td><td class="ex">英式 /aɪˈzeɪ/<br>美式 /əˈzeɪ/</td><td class="ex">今天的 <b>client categorisation</b>。<b>英式拼 -isation</b>，元音是 /aɪ/ 不是 /ə/</td></tr>
+        <tr><td>13</td><td class="en">access <span class="ph">/ˈækses/</span></td><td class="en">assess <span class="ph">/əˈses/</span></td><td class="ex">名词首重音<br>动词后重音</td><td class="ex">今天的 <b>subject access request</b>。access 是名词、assess 是动词，<b>词尾清浊也不同</b></td></tr>
+        <tr><td>14</td><td class="en">transfer (动) <span class="ph">/trænsˈfɜː/</span></td><td class="en">transfer (名) <span class="ph">/ˈtrænsfɜː/</span></td><td class="ex">动词后重音<br>名词首重音</td><td class="ex">今天的 <b>cross-border transfer</b> 与 <b>transfer risk assessment</b>。<b>同一个词两种重音</b></td></tr>
+        <tr><td>15</td><td class="en">adequate <span class="ph">/ˈædɪkwət/</span></td><td class="en">adequacy <span class="ph">/ˈædɪkwəsi/</span></td><td class="ex">都重音在<b>首</b><br>adequacy 多 /si/</td><td class="ex">今天的 <b>adequacy decision</b>。两个词重音都在首音节，<b>adequacy 结尾是 /əsi/ 不是 /əti/</b></td></tr>
+        <tr><td>16</td><td class="en">prohibition <span class="ph">/ˌprəˌhɪbɪˈʃn/</span></td><td class="en">prohibit <span class="ph">/prəˈhɪbɪt/</span></td><td class="ex">名词重音在<b>第三</b><br>动词重音在<b>第二</b></td><td class="ex">今天的 <b>prohibition order</b>（Day-07 精讲词）。<b>名词 -tion 重音后移，动词 -it 重音前移</b></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="note" style="margin-top:12px;">
+    <b>第 ③ 组做错 3 组以上 → 一件事必须做：把今天的 -tion 词全部打重音读一遍。</b><b>纠正方法：重音那一拍用力、其余音节快速带过</b>——<b>notification 的重音在 -TI-（中间）</b>，<b>categorisation 的重音在 -TION（最后）</b>，<b>rectification 的重音在 -CA-（靠后）但 rectify 在首音节</b>。<b>这批词在 B 段里全是关键词</b>：the notification window、the categorisation decision、the rectification request。<b>听不出重音就抓不住句子主干。</b>
+  </div>
+
+  <!-- B 段 -->
+  <div class="step"><div class="n">B</div><div class="h">精听脚本 B：数据泄露被发现后的头两个小时（内部电话会）<small>真实语速 · 今天的核心材料 · 30 分钟</small></div></div>
+  <div class="info" style="margin-bottom:12px;">
+    <b>这是你入职后最可能被半夜叫醒的场景（夸张版）。</b>周二上午 9:47，系统监控弹出一条告警；10:02 安全团队确认是<b>真实泄露</b>——一个外包运维账号在非工作时间登录，批量导出了客户资料库。四人在线：<b>Priya</b>（数据保护官 DPO，主持）、<b>Alan</b>（IT 安全，负责技术）、<b>Maya</b>（合规，负责监管接口）、<b>Ruth</b>（业务，负责客户影响）。<br>
+    这场会的核心<b>不是「怎么被入侵的」</b>，而是<b>三件事</b>：<b>① 时钟从哪一刻起算</b>（GDPR 说「aware of it」，但 aware 何时算「知悉」，这正是今天争议的焦点）；<b>② 这 72 小时里能对外说什么</b>（多数团队第一反应是「先别告诉客户」，这可能是错的）；<b>③ 谁签字</b>（DPO 独立于业务，这一点是 GDPR 的核心设计）。<b>用法：用 Edge「朗读此页」播放。第 1 遍 0.9 倍速盲听，第 4 遍回到 1.0 倍速。先自己听、自己猜。</b>
+  </div>
+
+  <div class="script">
+    <div><span class="spk">Priya:</span> Right. Before we go round the table — what time does the clock start? I want it <em>minuted</em>.</div>
+    <div style="margin-top:8px;"><span class="spk">Alan:</span> Depends what you mean by aware. My team became <em>aware</em> at nine forty-seven, when the alert fired.</div>
+    <div style="margin-top:8px;"><span class="spk">Priya:</span> That's not the right question. The right question is when the <em>organisation</em> became aware — not when the first person did.</div>
+    <div style="margin-top:8px;"><span class="spk">Maya:</span> Which means we may already have started the clock before we confirmed anything.</div>
+    <div style="margin-top:8px;"><span class="spk">Priya:</span> Exactly. And we cannot move it back. So let us be conservative: <em>we are treating the clock as having started at 09:47</em>, and we will note the competing view.</div>
+    <div style="margin-top:8px;"><span class="spk">Ruth:</span> So what's our position with affected customers today? Some of them will notice the data was accessed.</div>
+    <div style="margin-top:8px;"><span class="spk">Priya:</span> If the breach is likely to result in a <em>risk</em> to their rights — financial loss included — then we notify them. Not as a favour. As an obligation.</div>
+    <div style="margin-top:8px;"><span class="spk">Ruth:</span> Will we get the volume of complaints that comes with telling four thousand people?</div>
+    <div style="margin-top:8px;"><span class="spk">Priya:</span> We will. And we would get a worse one by not telling them and it coming out later. <span class="rhythm">I am not saying tell everyone today. I am saying the decision is not ours to postpone.</span></div>
+    <div style="margin-top:8px;"><span class="spk">Alan:</span> On timing — the <em>notification</em> window is seventy-two hours from awareness, not from confirmation.</div>
+    <div style="margin-top:8px;"><span class="spk">Priya:</span> And if we cannot identify the affected people within the window, we notify the regulator anyway and explain why.</div>
+    <div style="margin-top:8px;"><span class="spk">Maya:</span> Then I need the <em>lawful basis</em> question answered before we draft anything. Are we relying on <em>consent</em>, or on <em>legitimate interests</em>?</div>
+    <div style="margin-top:8px;"><span class="spk">Priya:</span> Legitimate interests, for the fraud monitoring that caught this. And no — <em>consent</em> is not a substitute. You cannot consent your way out of this.</div>
+    <div style="margin-top:8px;"><span class="spk">Ruth:</span> Who signs the <em>initial notification</em> to the ICO?</div>
+    <div style="margin-top:8px;"><span class="spk">Priya:</span> I do. That is the point of having a <em>DPO</em> — the <em>data controller</em> retains responsibility, but the DPO is the one who signs, and I do not report to the business.</div>
+    <div style="margin-top:8px;"><span class="spk">Ruth:</span> <span class="rhythm">That is worth saying out loud to my team, actually. Because they will ask me, and I want to give them the right answer.</span></div>
+    <div style="margin-top:8px;"><span class="spk">Alan:</span> One more from me. The export was from the <em>client</em> database. If any of it went outside the UK, we have a second problem — <em>cross-border transfer</em> on top of everything else.</div>
+    <div style="margin-top:8px;"><span class="spk">Priya:</span> Then we do a <em>transfer risk assessment</em> today, and we check whether our <em>adequacy decision</em> or our <em>standard contractual clauses</em> actually covered this flow. That is a separate workstream, not a footnote.</div>
+    <div style="margin-top:8px;"><span class="spk">Maya:</span> Can I set out the next four hours before we get pulled into something else?</div>
+    <div style="margin-top:8px;"><span class="spk">Priya:</span> <span class="rhythm">Please do. And put the deadline at the top of the page — seventy-two hours from 09:47, not from whenever this call ends.</span></div>
+  </div>
+
+  <h4 style="margin-top:16px;">逐句拆解表（先听，后看）</h4>
+  <div class="tblwrap" style="max-height:none;">
+    <table>
+      <thead><tr><th style="width:5%;">#</th><th style="width:32%;">原句</th><th style="width:28%;">语音难点</th><th>你可能会听成</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td class="ex">what time does the clock start? I want it <b>minuted</b>.</td><td class="ex"><span class="hit">minuted</span> → <span class="mono">/ˈmɪnjʊtɪd/</span></td><td class="ex">minuted = 记入会议记录。<b>这是正式会议的标志词</b>。问句升调，但后半句是陈述降调</td></tr>
+        <tr><td>2</td><td class="ex">My team became <b>aware</b> at nine forty-seven, when the alert fired.</td><td class="ex">时间读法<br><span class="lk">became aware</span></td><td class="ex"><b>nine forty-seven 逐位读</b>，不是 ninety-seven。<b>clock 从钟表转到「时限」</b>——这是今天的核心隐喻</td></tr>
+        <tr><td>3</td><td class="ex">The right question is when the <b>organisation</b> became aware — <b>not when the first person did</b>.</td><td class="ex">破折号<b>停顿</b><br><span class="lk">not when the first</span></td><td class="ex"><b>本段最关键的一句。</b>破折号后要压低、拖慢。<b>organisation 里 -isa- 弱读</b>；first 里的 /ɜː/ 不卷舌</td></tr>
+        <tr><td>4</td><td class="ex">So let us be conservative: <b>we are treating the clock as having started at 09:47</b>.</td><td class="ex"><span class="hit">treating</span> → <span class="mono">/ˈtriːtɪŋ/</span><br>数字读法</td><td class="ex">treating 的 -ea- 读<b>长音 /iː/</b>，别读成 /trɪːtɪŋ/。<b>09:47 要读成「oh nine forty-seven」或「zero nine forty-seven」</b>，不要读「零点九分」</td></tr>
+        <tr><td>5</td><td class="ex">If the breach is likely to result in a <b>risk</b> to their rights — <b>financial loss included</b> — then we notify them.</td><td class="ex">句尾<b>降调</b>（是条件句）<br><span class="lk">included</span></td><td class="ex"><b>这一句决定你听不听得懂对方立场。</b>降调 = 「那就通知」；升调就变成「那就通知吗」，意思全变。<b>included 弱读成 /ɪnˈkluːdɪd/</b></td></tr>
+        <tr><td>6</td><td class="ex">Not as a favour. As an obligation.</td><td class="ex">两个短句<br><b>各自成拍</b></td><td class="ex"><b>全场最有力的一句。</b>两个短语必须各自落下、有停顿，否则连成一句就没有力量。<b>favour 的 u 是英式 /ˈfeɪvə/ 不是美式 /ˈfeɪvɚ/</b></td></tr>
+        <tr><td>7</td><td class="ex"><span class="rhythm">I am not saying tell everyone today. I am saying the decision is not ours to postpone.</span></td><td class="ex">第一句降调<br>第二句降调</td><td class="ex"><b>本段最重要的沟通句式，也是 Day-05「设限而不树敌」的变体。</b>两个 I am saying 要读出对比。<b>postpone 词尾 -one 是英式 /ˈpəʊstpəʊn/</b></td></tr>
+        <tr><td>8</td><td class="ex">the <b>notification</b> window is <b>seventy-two hours</b> from awareness, not from confirmation.</td><td class="ex"><span class="hit">notification</span> → <span class="mono">/ˌnəʊtɪfɪˈkeɪʃn/</span><br><span class="hit">seventy-two</span></td><td class="ex"><b>今天是第一高频词。</b>词尾 /ʃn/ 压成一个音节；重音在 <b>-TI-</b>。<b>seventy-two 是「七十」，不是「七十二」也不是「seven-two」</b>；hours 的 h 不发音</td></tr>
+        <tr><td>9</td><td class="ex">If we cannot identify the affected people within the window, we notify the regulator anyway.</td><td class="ex">句尾<b>降调</b><br><span class="lk">notify the regulator</span></td><td class="ex">notify 词尾<b>/aɪ/ 不是 /ɪ/</b>（动词读 /ˈnəʊtɪfaɪ/）；<b>the regulator 弱读 /ðə ˈreɡjəleɪtə/</b>，中间的 /ɡj/ 是三个辅音</td></tr>
+        <tr><td>10</td><td class="ex">we notify the regulator anyway and explain why.</td><td class="ex">两个动词<b>并列</b><br>why 弱读</td><td class="ex">notify 与 explain 两个动词要同重音。<b>why 弱读成 /waɪ/</b>。这一句是 UK EMIR / GDPR 的共同思路：<b>做不完也要先报</b></td></tr>
+        <tr><td>11</td><td class="ex">Are we relying on <b>consent</b>, or on <b>legitimate interests</b>?</td><td class="ex">or 在句中<br><b>几乎弱读成 /ə/</b></td><td class="ex">consent 重音在<b>第二音节 -SENT-</b> /kənˈsent/；legitimate 重音在<b>第二音节 -TI-</b> /lɪˈdʒɪtɪmət/，<b>五个音节，第三音节弱读 /ɪ/</b></td></tr>
+        <tr><td>12</td><td class="ex">And no — <b>consent</b> is not a substitute. You cannot <b>consent</b> your way out of this.</td><td class="ex">破折号停顿<br><span class="lk">consent your way</span></td><td class="ex">破折号后是<b>强否定</b>，要压重音。<b>consent your way out 是固定搭配</b>，「你不能靠同意脱身」——读顺它，别逐词拼</td></tr>
+        <tr><td>13</td><td class="ex">Who signs the <b>initial notification</b> to the ICO?</td><td class="ex"><span class="hit">ICO</span> → <span class="mono">/ˌaɪ siː ˈəʊ/</span><br>句尾升调</td><td class="ex"><b>ICO 逐字母读三个音</b>，不要读成「eye-co」。initial 词尾 <b>-al 读 /l/</b> 不加 /ə/；句尾升调（是问句）</td></tr>
+        <tr><td>14</td><td class="ex">the <b>data controller</b> retains responsibility, but the <b>DPO</b> is the one who signs, and <b>I do not report to the business</b>.</td><td class="ex"><span class="hit">controller</span> → <span class="mono">/kənˈtrəʊlə/</span><br><span class="hit">DPO</span> → <span class="mono">/ˌdiː piː ˈəʊ/</span></td><td class="ex">controller 重音在<b>第二音节 -TROL-</b>，词尾 /ə/ 不加 /r/；<b>DPO 逐字母读</b>。<b>本句是 GDPR 的核心设计</b>——DPO 独立于业务线</td></tr>
+        <tr><td>15</td><td class="ex"><span class="rhythm">That is worth saying out loud to my team, actually. Because they will ask me, and I want to give them the right answer.</span></td><td class="ex">句尾降调<br>三句递进</td><td class="ex">Ruth 的三句是<b>「我要把这个口径传达给业务线」</b>。<b>out loud 重音在 loud</b>；worth 的 w 不发音 /wɜːθ/</td></tr>
+        <tr><td>16</td><td class="ex">If any of it went outside the UK, we have a second problem — <b>cross-border transfer</b> on top of everything else.</td><td class="ex"><span class="hit">cross-border</span> → <span class="mono">/ˌkrɒsˈbɔːdə/</span></td><td class="ex">cross 的 <b>/ɒ/ 不卷舌</b>；border 的 /ɔː/ 也不卷舌。<b>破折号插入语要压低</b>。<b>这是很多团队漏掉的第二层义务</b></td></tr>
+        <tr><td>17</td><td class="ex">we do a <b>transfer risk assessment</b> today, and we check whether our <b>adequacy decision</b> or our <b>standard contractual clauses</b> actually covered this flow.</td><td class="ex">两个法律术语<br><b>各重三次</b></td><td class="ex"><b>今天是第 ① 号长句。</b>transfer（名词，重音在<b>首</b>）/ assessment（重音在<b>首</b>）/ adequacy（重音在首）/ clauses（重音在<b>首</b>，结尾 /ɪz/ 浊音）。<b>四个词都是首重音，要打四拍</b></td></tr>
+        <tr><td>18</td><td class="ex">Can I set out the next four hours before we get pulled into something else?</td><td class="ex">句尾<b>升调</b>（请求许可）</td><td class="ex"><b>升调 = 「可以吗」</b>。这一句是 Maya 的<b>程序性发言</b>——和 Day-06 Maya 的角色一致：<b>先问再推进</b></td></tr>
+        <tr><td>19</td><td class="ex"><span class="rhythm">Please do. And put the deadline at the top of the page — seventy-two hours from 09:47, not from whenever this call ends.</span></td><td class="ex">破折号前后<br>数字对比</td><td class="ex"><b>全场的收尾，也是最实用的一句。</b><b>数字 09:47 要逐位读</b>；「not from whenever this call ends」要略慢、加重。<b>这一句是今天口语模块的骨架来源</b></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="reveal">
+    <button class="btn" onclick="tog(this)">查看本段中文参考译文</button>
+    <div class="revbd">
+      <div class="script" style="font-size:13.2px;line-height:1.9;">
+        <b>1.</b> 在我们轮流发言之前——时钟从几点开始算？我要把它<b>记入会议记录</b>。<br>
+        <b>2.</b> 取决于你怎么定义「知悉」。我的团队在九点四十七分告警触发时<b>知悉</b>了。<br>
+        <b>3.</b> 那不是对的问题。对的问题是<b>整个机构</b>何时知悉——<b>而不是第一个人何时知悉</b>。<br>
+        <b>4.</b> 那意味着我们可能在确认任何事实之前，时钟就已经开始走了。<br>
+        <b>5.</b> 正是如此。而且我们不能把它往回拨。所以我们采取保守口径：<b>我们视时钟为 09:47 起算</b>，同时把竞争性意见记录在案。<br>
+        <b>6.</b> 那今天我们对受影响客户的立场是什么？有些人会注意到数据被访问过。<br>
+        <b>7.</b> 如果泄露很可能给他们的权利带来<b>风险</b>——包括经济损失——我们就通知他们。这不是施恩，是<b>义务</b>。<br>
+        <b>8.</b> 告诉四千人，会来多少投诉？<br>
+        <b>9.</b> 会。而如果不说、后来被发现，投诉会更糟。<b>我不是说今天就告诉所有人。我是说，这个决定不是我们能往后拖的。</b><br>
+        <b>10.</b> 关于时点——<b>通报</b>窗口是从知悉起算七十二小时，不是从确认起算。<br>
+        <b>11.</b> 如果我们无法在窗口内确定受影响的个人，我们照样要通报监管机构，并解释原因。<br>
+        <b>12.</b> 那我们在起草任何文件之前，需要先回答<b>合法性基础</b>的问题。我们是靠<b>同意</b>，还是靠<b>正当利益</b>？<br>
+        <b>13.</b> 靠正当利益，用于抓到这次事件的欺诈监测。而且不——<b>同意不是替代品。你不能靠同意脱身。</b><br>
+        <b>14.</b> 初始通报给 ICO 由谁签？<br>
+        <b>15.</b> 我签。这正是设<b>数据保护官</b>的意义——<b>数据控制者</b>保留责任，但签字的是 DPO，而<b>我不向业务线汇报</b>。<br>
+        <b>16.</b> <b>这点其实值得明确告诉我团队。因为他们会来问我，而我想给他们正确答案。</b><br>
+        <b>17.</b> 我这边还有一点。导出的是<b>客户</b>数据库。如果其中任何部分出境，我们还有第二个问题——在所有问题之上还叠加一个<b>跨境传输</b>问题。<br>
+        <b>18.</b> 那我们今天就做一次<b>传输风险评估</b>，并核查我们的<b>充分性认定</b>或<b>标准合同条款</b>是否真的覆盖了这条数据流。<b>那是一条独立的工作线，不是脚注。</b><br>
+        <b>19.</b> 在我们被别的事打断之前，我可以先列出接下来四小时的动作吗？<br>
+        <b>20.</b> <b>请。把截止时间写在页面最上方——从 09:47 起算的七十二小时，不是从这通电话结束起算。</b>
+      </div>
+    </div>
+  </div>
+
+  <!-- C 段 -->
+  <div class="step"><div class="n">C</div><div class="h">词块听写：今天的词在真实句子里长什么样<small>把"认得"变成"写得出" · 25 分钟</small></div></div>
+  <div class="info" style="margin-bottom:12px;">
+    <b>今天听写的两个新难点：</b>① <b>-tion 词的重音落在词尾</b>（notification / categorisation / rectification / adequate）——听写时容易写成自己熟悉的那个词；② <b>数字与时间</b>（seventy-two hours / 09:47 / nine forty-seven）——听写时数字记不下来，整句就废了。<br>
+    <b>做法：</b>用 Edge 朗读下面的 16 句（<b>慢速档 0.8 倍</b>），<b>一句一停，写下来</b>。写完再看答案。<b>拼写错和听不出一样算错。</b>
+  </div>
+  <div class="tblwrap" style="max-height:none;">
+    <table>
+      <thead><tr><th style="width:5%;">#</th><th>听写句（先别看这列，用它朗读）</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td class="ex">The <b>notification</b> window is <b>seventy-two hours</b> from awareness.</td></tr>
+        <tr><td>2</td><td class="ex">We are <b>data controller</b>; the cloud provider is only the <b>processor</b>.</td></tr>
+        <tr><td>3</td><td class="ex">You must identify a <b>lawful basis</b> before you collect any personal data.</td></tr>
+        <tr><td>4</td><td class="ex">Health records are <b>special category data</b>.</td></tr>
+        <tr><td>5</td><td class="ex">A <b>subject access request</b> must be answered within one month.</td></tr>
+        <tr><td>6</td><td class="ex">Once a <b>data breach</b> is confirmed we have <b>seventy-two hours</b> to notify the regulator.</td></tr>
+        <tr><td>7</td><td class="ex">The <b>right to erasure</b> is not absolute, but the <b>right to rectification</b> is.</td></tr>
+        <tr><td>8</td><td class="ex">The <b>adequacy decision</b> lets personal data flow to the EU without extra safeguards.</td></tr>
+        <tr><td>9</td><td class="ex"><b>Standard Contractual Clauses</b> are the fallback where no adequacy decision exists.</td></tr>
+        <tr><td>10</td><td class="ex">We will do a <b>transfer risk assessment</b> before the next data flow.</td></tr>
+        <tr><td>11</td><td class="ex">The <b>four consumer outcomes</b> are the test the Consumer Duty is measured against.</td></tr>
+        <tr><td>12</td><td class="ex">Financial promotions must not cause <b>foreseeable harm</b>.</td></tr>
+        <tr><td>13</td><td class="ex">Under a <b>closed period</b>, no one on the <b>insider list</b> may deal in the shares.</td></tr>
+        <tr><td>14</td><td class="ex">A <b>prohibition order</b> bars a person from taking up a regulated role.</td></tr>
+        <tr><td>15</td><td class="ex">The regulator appoints a <b>skilled person</b> to review <b>past business</b>.</td></tr>
+        <tr><td>16</td><td class="ex">Under MiFID II the firm must obtain explicit consent for a <b>professional client</b> classification.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="note" style="margin-top:12px;">
+    <b>判读标准：</b>16 句全对 → 今天的词已经完全"落地"；错 3–5 处 → 正常；<b>错 6 处以上</b> → 大概率错在三处：① <b>-tion 词的重音与拼写</b>（notification / categorisation / rectification）；② <b>数字与时间</b>（seventy-two / 09:47）；③ <b>名词与动词的清浊</b>（disclosure / disclose、erasure / erase）。<b>把错的地方抄进错题本，明天朗读前先过一遍。</b>
+  </div>
+
+  <!-- D 段 -->
+  <div class="step"><div class="n">D</div><div class="h">真实材料：数据保护与隐私主题<small>继续非 RP 口音训练 · 15 分钟</small></div></div>
+
+  <div class="two">
+    <div>
+      <h4>① 6 Minute English 第八集（8 分钟）</h4>
+      <p class="sub" style="margin-bottom:6px;">在 <span class="mono">bbc.co.uk/learningenglish</span> 的 <b>6 Minute English</b> 归档页，按发布时间倒序取<b>第八集</b>。如果列表里出现标题涉及 <b>privacy / data / surveillance / social media</b> 的，<b>优先选那一集</b>。</p>
+      <ul class="tight">
+        <li>这一集的任务：<b>练「听出 -tion 词的重音在哪」</b>。今天词表里 -tion 密度是七天里最高的，这一步不能省</li>
+      </ul>
+      <p class="sub" style="margin:8px 0 0;"><b>仍然只做四遍法，不查词。</b></p>
+    </div>
+    <div>
+      <h4>② 多口音材料（7 分钟）</h4>
+      <p class="sub" style="margin-bottom:6px;">今天的词表后半段是数据保护与跨境传输，<b>科技与法律播报是这些词的天然语料</b>。</p>
+      <ul class="tight">
+        <li><b>BBC World Service「Business Daily」</b>：<b>优先选涉及 data breach / privacy / GDPR / cross-border transfer 的单集</b>，听 5 分钟</li>
+        <li><b>BBC Radio 4「You and Yours」</b>：继续听 5 分钟消费访谈，<b>英国本土口音杂乱</b>，练"抓关键词"</li>
+        <li><b>FT News Briefing</b>：只听最新一集开头 30 秒，1.0 倍速，不减速</li>
+      </ul>
+      <div class="note" style="margin-top:10px;font-size:12.3px;">
+        <b>三档材料的分工：</b>Radio 4 练「口音杂乱」、Business Daily 练「专业词汇在真实语流里的样子 + 非本土口音」、FT 练「信息密度」。<b>不要追求听懂全文，追求抓住 3 个关键词加 1 个数字。</b>
+      </div>
+    </div>
+  </div>
+
+  <h4 style="margin-top:18px;">四遍法操作表（今天以 B 段数据泄露电话会为准）</h4>
+  <div class="tblwrap" style="max-height:none;">
+    <table>
+      <thead><tr><th style="width:10%;">遍数</th><th style="width:10%;">时长</th><th style="width:38%;">动作</th><th>必须产出的东西</th></tr></thead>
+      <tbody>
+        <tr><td class="en">第 1 遍</td><td class="ph">6 min</td><td class="ex"><b>0.9 倍速盲听，不看文本。</b>只回答三个问题：时钟从几点起算？他们决定通知客户吗？谁签字？</td><td class="ex">写下 3 个你<b>听清</b>的词 + <b>那个时间点</b></td></tr>
+        <tr><td class="en" style="color:var(--red);">第 2 遍</td><td class="ph">10 min</td><td class="ex"><b>看文本听。</b>圈出所有"<b>这个词我认识（今天刚背的），但刚才没听出来</b>"的位置。<span class="hit">这是整件事的胜负手</span></td><td class="ex">错题本新增 8–12 条，格式：<span class="mono">单词 ｜ 听成了什么 ｜ 原因</span></td></tr>
+        <tr><td class="en">第 3 遍</td><td class="ph">8 min</td><td class="ex"><b>逐句跟读。</b>每句暂停跟读 3 次，重点模仿 <span class="mono">notification / categorisation / transfer risk assessment</span> 这三处的重音落点</td><td class="ex">标出 2–3 个"读起来最拗口"的句子，模块 04 用它做影子跟读</td></tr>
+        <tr><td class="en">第 4 遍</td><td class="ph">6 min</td><td class="ex"><b>关掉文本，1.0 倍速再听一遍</b>，中间不暂停</td><td class="ex">估一个理解率（%），写进学习记录</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h4 style="margin-top:18px;">盲区预测清单（20 条 · 数据保护词专用）</h4>
+  <p class="sub" style="margin-bottom:8px;">下面这些词，<b>你十有八九会在接下来的几天听力里听不出来</b>。命中一条记一条进错题本。<b>第 ③ 组（-tion 重音）今天最该重点自查。</b></p>
+  <div class="tblwrap">
+    <table>
+      <thead><tr><th style="width:4%;">#</th><th style="width:20%;">词</th><th style="width:20%;">你的默认读法（易错）</th><th style="width:18%;">实际读音</th><th>原因</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td class="en">notification</td><td class="ex">/ˌnəʊtɪfɪˈkeɪʃən/</td><td class="ph">/ˌnəʊtɪfɪˈkeɪʃn/</td><td class="ex">词尾 <b>/ʃn/ 压成一个音节</b>，不加 /ən/；重音在 <b>-TI-</b>。今天第一高频词</td></tr>
+        <tr><td>2</td><td class="en">categorisation</td><td class="ex">重音在 -GOR-</td><td class="ph">/ˌkætəɡəraɪˈzeɪʃn/</td><td class="ex">重音在<b>最后音节 -TION</b>；<b>英式拼 -isation</b>，元音 /aɪ/</td></tr>
+        <tr><td>3</td><td class="en">rectification</td><td class="ex">重音在 -TI-</td><td class="ph">/ˌrektɪfɪˈkeɪʃn/</td><td class="ex">重音在 <b>-CA-</b>（不是 -TI-）；动词 rectify 却在首音节</td></tr>
+        <tr><td>4</td><td class="en">subject (名)</td><td class="ex">重音在后</td><td class="ph">/ˈsʌbdʒɪkt/</td><td class="ex">「数据主体」是<b>名词，读首重音</b>。subject to 才读后重音</td></tr>
+        <tr><td>5</td><td class="en">subject to</td><td class="ex">重音在首</td><td class="ph">/səbˈdʒekt/</td><td class="ex">「受制于」是<b>短语，读后重音</b>，词尾元音变 /e/。今天第① 号陷阱</td></tr>
+        <tr><td>6</td><td class="en">erasure / erase</td><td class="ex">都读成 /z/</td><td class="ph">/ʒə/ · /z/</td><td class="ex"><b>名词浊音、动词清音</b>。right to erasure 是名词</td></tr>
+        <tr><td>7</td><td class="en">disclosure / disclose</td><td class="ex">都读成 /z/</td><td class="ph">/ʒə/ · /z/</td><td class="ex">同一机制，<b>第三次出现</b>。三次还错必须专项攻坚</td></tr>
+        <tr><td>8</td><td class="en">costs</td><td class="ex">/kɑːsts/</td><td class="ph">/kɒsts/</td><td class="ex"><b>/ɒ/ 是英式专属短圆唇音</b>，不卷舌。costs and charges disclosure</td></tr>
+        <tr><td>9</td><td class="en">personal</td><td class="ex">/ˈpɜːsənəl/</td><td class="ph">/ˈpɜːsənl/</td><td class="ex">词尾 /ənl/；<b>/ɜː/ 不卷舌</b>。personal data 是今天的基石词</td></tr>
+        <tr><td>10</td><td class="en">controller</td><td class="ex">/ˈkɒntrələ/</td><td class="ph">/kənˈtrəʊlə/</td><td class="ex">重音在<b>第二音节 -TROL-</b>；词尾 /ə/ 不加 /r/</td></tr>
+        <tr><td>11</td><td class="en">processor</td><td class="ex">/ˈprəʊsesə/</td><td class="ph">/ˈprəʊsesə/</td><td class="ex">词尾 <b>-er 读 /ə/</b> 不加 /r/。与 controller 的区别靠重音位置</td></tr>
+        <tr><td>12</td><td class="en">DPO</td><td class="ex">读成一个词「迪波」</td><td class="ph">/ˌdiː piː ˈəʊ/</td><td class="ex"><b>逐字母读三个音</b>。这是签署初始通报的人</td></tr>
+        <tr><td>13</td><td class="en">ICO</td><td class="ex">读成「eye-co」</td><td class="ph">/ˌaɪ siː ˈəʊ/</td><td class="ex"><b>逐字母读三个音</b>。英国信息专员办公室</td></tr>
+        <tr><td>14</td><td class="en">consent</td><td class="ex">重音在首音节</td><td class="ph">/kənˈsent/</td><td class="ex">重音在<b>第二音节 -SENT-</b>。GDPR 六种合法性基础之一</td></tr>
+        <tr><td>15</td><td class="en">legitimate interests</td><td class="ex">读成五音节均重</td><td class="ph">/lɪˈdʒɪtɪmət/</td><td class="ex">重音在<b>第二音节 -TI-</b>，第三音节弱读 /ɪ/。最常用的合法性基础</td></tr>
+        <tr><td>16</td><td class="en">transfer (名)</td><td class="ex">一律读动词重音</td><td class="ph">/ˈtrænsfɜː/</td><td class="ex"><b>名词首重音、动词后重音</b>。cross-border transfer 是名词</td></tr>
+        <tr><td>17</td><td class="en">adequacy</td><td class="ex">结尾读 /əti/</td><td class="ph">/ˈædɪkwəsi/</td><td class="ex">结尾 <b>/əsi/ 不是 /əti/</b>；adequate 结尾是 /ət/</td></tr>
+        <tr><td>18</td><td class="en">clauses</td><td class="ex">读成单音节 /klɔːz/</td><td class="ph">/ˈklɔːziz/</td><td class="ex"><b>两音节 + 结尾浊音 /ɪz/</b>。Standard Contractual Clauses 的结尾</td></tr>
+        <tr><td>19</td><td class="en">prohibition</td><td class="ex">重音在首音节</td><td class="ph">/ˌprəˌhɪbɪˈʃn/</td><td class="ex">重音在<b>第三音节 -HI-</b>；<b>pro- 前缀弱读 /prə/</b></td></tr>
+        <tr><td>20</td><td class="en">foreseeable</td><td class="ex">重音在首音节</td><td class="ph">/fɔːrɪˈsiːəbl/</td><td class="ex">重音在<b>第三音节 -SEE-</b>，共四个音节。Consumer Duty 的法定表述</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="reveal">
+    <button class="btn" onclick="tog(this)">展开：数据保护场景的连读与弱读速查</button>
+    <div class="revbd">
+      <div class="script" style="font-size:13px;">
+        <b style="color:var(--navy);">一、本段出现频率最高的连读块（整块记住，不要拆开听）</b><br>
+        · <span class="mono">data controller</span> → <span class="mono">/ˈdeɪtə kənˌtrəʊlə/</span>　· <span class="mono">data breach</span> → <span class="mono">/ˈdeɪtə bretʃ/</span><br>
+        · <span class="mono">notification window</span> → <span class="mono">/ˌnəʊtɪfɪˈkeɪʃn ˈwɪndəʊ/</span>　· <span class="mono">subject access request</span> → <span class="mono">/ˈsʌbdʒɪkt ˈækses rɪˈkwest/</span><br>
+        · <span class="mono">lawful basis</span> → <span class="mono">/ˈlɔːfəl ˈbeɪsɪs/</span>　· <span class="mono">transfer risk assessment</span> → <span class="mono">/ˈtrænsfɜː rɪsk əˈsesmənt/</span><br>
+        · <span class="mono">standard contractual clauses</span> → <span class="mono">/ˌstændəd kənˈtræktjuəl ˈklɔːziz/</span>（<b>三个首重音，打三拍</b>）<br>
+        · <span class="mono">cross-border transfer</span> → <span class="mono">/ˌkrɒsˈbɔːdə ˈtrænsfɜː/</span>（<b>两个 /ɔː/ 都不卷舌</b>）<br><br>
+
+        <b style="color:var(--navy);">二、今天新学到的弱读（功能词继续降级）</b><br>
+        · <span class="mono">we are treating the clock</span> → <span class="mono">/wiː ə ˈtriːtɪŋ ðə klɒk/</span>（are 弱读 /ə/，the 弱读 /ðə/）<br>
+        · <span class="mono">if we cannot identify</span> → <span class="mono">/ɪf wiː kəˈnɒt aɪˈdentɪfaɪ/</span>（cannot 重音在后）<br>
+        · <span class="mono">notify the regulator</span> → <span class="mono">/ˈnəʊtɪfaɪ ðə ˈreɡjəleɪtə/</span>（the 弱读 /ðə/，regulator 词尾 /ə/）<br>
+        · <span class="mono">you cannot consent your way out</span> → <span class="mono">/juː kənˈnɒt kənˈsent jə weɪ aʊt/</span>（consent your 连读）<br>
+        · <span class="mono">on top of everything else</span> → <span class="mono">/ɒn tɒp əv ˈevriθɪŋ els/</span>（三个功能词连续弱读）<br>
+        · <span class="mono">before we get pulled into something</span> → <span class="mono">/bɪˌfɔː wiː ɡet pʊld ˈɪntə ˈsʌmθɪŋ/</span><br>
+        · <span class="mono">Not as a favour. As an obligation.</span> → 两个短句各自降调落住，<b>中间必须有停顿</b><br><br>
+
+        <b style="color:var(--navy);">三、今天新增的英式 vs 美式 5 条</b><br>
+        1. <b>/ɒ/ 是英式专属</b>：<span class="mono">costs /kɒsts/</span>、<span class="mono">costs and charges</span>、<span class="mono">cross-border /ˌkrɒs-/</span>、<span class="mono">personal data /ˈpɜːsənl/</span>附近的 <span class="mono">policy</span> —— 美式读 /ɑː/<br>
+        2. <b>词尾 r 一律不卷</b>：<span class="mono">controller /kənˈtrəʊlə/</span>、<span class="mono">processor /ˈprəʊsesə/</span>、<span class="mono">transfer /ˈtrænsfɜː/</span>、<span class="mono">regulator /ˈreɡjəleɪtə/</span>、<span class="mono">lawful /ˈlɔːfəl/</span> —— 美式这五个全卷舌<br>
+        3. <b>-tion 词尾不加 /ən/</b>：<span class="mono">notification /ˌnəʊtɪfɪˈkeɪʃn/</span>、<span class="mono">categorisation /ˌkætəɡəraɪˈzeɪʃn/</span>、<span class="mono">information /ˌɪnfəˈmeɪʃn/</span> —— 读成 /ˈkeɪʃən/ 就毁了<br>
+        4. <b>-isation 是英式拼写</b>：<span class="mono">categorisation</span>、<span class="mono">minimisation</span> ——美式写 -ization，读音相同<br>
+        5. <b>-our 名词读 /ə/</b>：<span class="mono">favour /ˈfeɪvə/</span>、<span class="mono">behaviour /bɪˈheɪvjə/</span> —— 美式读 /ˈfeɪvɚ/<br><br>
+
+        <b style="color:var(--navy);">四、数字与时间（今天最实用的一节）</b><br>
+        · <span class="mono">seventy-two hours</span> → <span class="mono">/ˈsevnti tuː ˈaʊəz/</span>（<b>hours 的 h 不发音</b>；不是 seven-two）<br>
+        · <span class="mono">09:47</span> → <span class="mono">/ˌəʊ naɪn ˈfɔːti sɪvən/</span> 或 <span class="mono">/ˌzɪərəʊ naɪn ˈfɔːti sɪvən/</span>——<b>逐位读，不读「零点九分四十七」</b><br>
+        · <span class="mono">nine forty-seven</span> → <span class="mono">/naɪn ˈfɔːti sɪvən/</span> —— 英式 forty <b>没有 /r/</b>，不是 forty 的美式 /ˈfɔːrti/<br>
+        · <span class="mono">four thousand people</span> → <span class="mono">/ˌfɔː ˈθaʊzənd ˈpiːpl/</span> —— thousand 的 th 读 /θ/，people 读 /ˈpiːpl/<br>
+        · <span class="mono">one month</span> → <span class="mono">/wʌn mʌnθ/</span> —— SAR 的法定期限
+      </div>
+    </div>
+  </div>
+
+  <h4 style="margin-top:16px;">今日听力任务</h4>
+  <div id="ckListen"></div>
+</div>
+
+<!-- 模块 2 -->
+<div class="card">
+  <div class="mod">
+    <div class="mod-no"><b>02</b><span>VOCAB</span></div>
+    <div class="mod-tt"><h3>词汇：100 个核心词（30 精讲 + 70 拓展）</h3><p>英美监管与市场行为 44 + 数据与隐私保护 56</p></div>
+    <div class="mod-time">50 分钟</div>
+  </div>
+
+  <div class="note" style="margin-bottom:12px;">
+    <b>今天这 100 词就是词表第 701–800 行 = 今天 Anki 会发给你的那 100 张卡。</b>已逐条核对：<b>与 Anki 队列零差异</b>。首词 <span class="mono">senior manager</span>，末词 <span class="mono">data loss prevention (DLP)</span>。两块构成：<b>英美监管与市场行为 44 条</b>（监管检查工具 / Consumer Duty 结果 / 市场滥用 / MiFID 与报告）+ <b>数据与隐私保护 56 条</b>（GDPR 基石 / 主体权利 / 跨境传输 / 电子隐私 / 技术措施）。<br><br>
+    <b>今天的词表有一个别天没有的特点：名词全是「硬义务」。</b>前七天的名词多是<b>定义型</b>（nostro account、deferred prosecution agreement——知道它是什么就行）；今天的名词大多是<b>义务型</b>（controller / processor / breach / notification / erasure / rectification / restriction / objection）——<b>每一个都在回答「谁必须做什么、什么时候之前、做不到会怎样」</b>。<b>所以这 30 个精讲词里有 12 个是义务词</b>，学的时候要带着「这条义务落在谁头上」去记，而不是只记中文。
+  </div>
+
+  <p class="sub" style="margin:0 0 8px;"><b>第一档｜精讲词 30 个（需开口造句 + 读准）</b>　按主题分组：监管检查与执法工具 7 → Consumer Duty 结果 4 → 市场滥用与内幕 4 → MiFID 与报告 4 → GDPR 基石 5 → 主体权利与跨境 6</p>
+  <div class="tblwrap">
+    <table id="vocabTbl">
+      <thead><tr><th style="width:34px;">造句</th><th>英文</th><th>读音（英式）</th><th>释义</th><th>英式例句</th></tr></thead>
+      <tbody id="vocabBody"></tbody>
+    </table>
+  </div>
+
+  <h4 style="margin:20px 0 8px;">第二档｜拓展词 70 个（认读即可）</h4>
+  <div class="note" style="margin-bottom:10px;">
+    这 70 个词同样进 Anki。今天的要求降到最低：<b>看到英文能想起中文、听到能反应过来</b>就行。这一批按四块分：<b>监管制度与跨境（12）</b>（senior manager / certification employee / SMF / replacement of SMF / host &amp; home state / passporting / temporary permissions regime (TPR) / overseas fund / supervisory notice / voluntary requirement / review of past business 的近邻 / listing rules (LR) 的近邻）；<b>市场与上市（8）</b>（prospectus regulation / sponsor / takeover code / put up or shut up (PUSU) / disclosure guidance and transparency rules (DTR) / product governance / clearing obligation / settlement discipline）；<b>跨境传输机制（11）</b>（Binding Corporate Rules (BCRs) / Schrems II / International Data Transfer Agreement (IDTA) / UK Addendum / transfer risk assessment 的近邻 / EU-US Data Privacy Framework / data sharing agreement / adequacy decision 的近邻 / Standard Contractual Clauses 的近邻 / records of processing activities 的近邻 / sub-processor）；<b>数据保护实务（39）</b>（Data Protection Act 2018 / ICO / joint controller / data minimisation / purpose limitation / storage limitation / DPIA / DPO / right to restriction of processing / right to object / right to data portability / data processing agreement (DPA) / controller-processor agreement / pseudonymisation / retention period / accountability principle / data protection by design and by default / transparency / data breach 的近邻 / cross-border transfer 的近邻 / data sharing agreement 的近邻 / law enforcement request / confidentiality-availability-integrity breach / Freedom of Information Act (FOIA) / PECR / cookie consent / soft opt-in / direct marketing consent / employee monitoring / redaction / automated decision-making / profiling / records retention schedule / data loss prevention (DLP) / privacy notice / breach 的近邻 / controller 的近邻 / processor 的近邻）。
+  </div>
+  <div class="tblwrap">
+    <table id="vocab2Tbl">
+      <thead><tr><th style="width:34px;">标记</th><th>英文</th><th style="width:20%;">中文</th><th>补充说明</th></tr></thead>
+      <tbody id="vocab2Body"></tbody>
+    </table>
+  </div>
+
+  <div class="reveal">
+    <button class="btn" onclick="tog(this)">展开：30 个精讲词的读音速查表（今日通用）</button>
+    <div class="revbd">
+      <div class="script" style="font-size:13px;">
+        <b style="color:var(--navy);">一、-tion 词群：重音位置各不相同（今天第一难点）</b><br>
+        <b>1. notification</b> <span class="mono">/ˌnəʊtɪfɪˈkeɪʃn/</span> — 重音在 <b>-TI-（中间）</b>；<b>词尾 /ʃn/ 压成一个音节</b>，不读成 /ˈkeɪʃən/<br>
+        <b>2. categorisation</b> <span class="mono">/ˌkætəɡəraɪˈzeɪʃn/</span> — 重音在<b>最后音节 -TION</b>；<b>英式拼 -isation</b>，元音 /aɪ/<br>
+        <b>3. rectification</b> <span class="mono">/ˌrektɪfɪˈkeɪʃn/</span> — 名词重音在 <b>-CA-</b>；<b>动词 rectify 重音在首音节</b> /ˈrektɪfaɪ/<br>
+        <b>4. information</b> <span class="mono">/ˌɪnfəˈmeɪʃn/</span> — 重音在 <b>-MA-</b>（不是 -FOR-）<br>
+        <b>5. prohibition</b> <span class="mono">/ˌprəˌhɪbɪˈʃn/</span> — 重音在<b>第三音节 -HI-</b>；<b>pro- 前缀弱读 /prə/</b><br>
+        <b>6. disclosure / disclose</b> <span class="mono">/dɪsˈkləʊʒə/ · /dɪsˈkləʊz/</span> — <b>名词浊音、动词清音</b>（第三次出现）<br>
+        <b>7. erasure / erase</b> <span class="mono">/ɪˈreɪʒə/ · /ɪˈreɪz/</span> — <b>名词 /ʒə/、动词 /z/</b>；<b>第一音节是 /ɪ/ 不是 /e/</b><br><br>
+
+        <b style="color:var(--navy);">二、名词 vs 动词重音（今天的第 ② 号实用条）</b><br>
+        <b>8. subject (名) / subject to</b> <span class="mono">/ˈsʌbdʒɪkt/ · /səbˈdʒekt/</span> — <b>今天第 ① 号陷阱</b>：「数据主体」首重音，「受制于」后重音<br>
+        <b>9. transfer (名) / transfer (动)</b> <span class="mono">/ˈtrænsfɜː/ · /trænsˈfɜː/</span> — cross-border transfer 是名词<br>
+        <b>10. access / assess</b> <span class="mono">/ˈækses/ · /əˈses/</span> — <b>词尾清浊也不同</b>（/s/ 与 /z/）<br>
+        <b>11. consent (名/动)</b> <span class="mono">/kənˈsent/</span> — 两种词性<b>都读后重音</b>，但名词义更常用<br>
+        <b>12. review (名) / review (动)</b> <span class="mono">/rɪˈvjuː/</span> — <b>今天两种读法都会出现</b>（review of past business / we will review）<br><br>
+
+        <b style="color:var(--navy);">三、缩写逐字母读（今天 8 个，全是新面孔）</b><br>
+        <b>13. SREP</b> <span class="mono">/ˌes ɑːr ˈiː ˈpiː/</span> — 监管审查与评估程序<br>
+        <b>14. OIREQ</b> <span class="mono">/ˌəʊ ɪ ˈrek/</span> — 监管主动施加的要求<br>
+        <b>15. MAR</b> <span class="mono">/ˌem eɪ ˈɑː/</span> — 市场滥用条例<br>
+        <b>16. PDMR</b> <span class="mono">/ˌpiː diː ɛm ˈɑː/</span> — 履行管理职责人员<br>
+        <b>17. DPO</b> <span class="mono">/ˌdiː piː ˈəʊ/</span> — 数据保护官（<b>签初始通报的人</b>）<br>
+        <b>18. ICO</b> <span class="mono">/ˌaɪ siː ˈəʊ/</span> — 英国信息专员办公室<br>
+        <b>19. SCCs</b> <span class="mono">/ˌes siː ˈsiːz/</span> — 标准合同条款<br>
+        <b>20. MiFID II</b> <span class="mono">/ˌmɪfɪd ˈtuː/</span> — <b>读「Mi-FID」，重音在第二音节</b>；<b>II 读 /ˈtuː/</b><br><br>
+
+        <b style="color:var(--navy);">四、英式不卷舌 + /ɒ/ 是英式专属（今天各一批）</b><br>
+        <b>21. costs</b> <span class="mono">/kɒsts/</span> — <b>/ɒ/ 专属</b>（美式 /kɑːsts/）<br>
+        <b>22. personal</b> <span class="mono">/ˈpɜːsənl/</span> — <b>/ɜː/ 不卷舌</b>，词尾 /ənl/<br>
+        <b>23. controller</b> <span class="mono">/kənˈtrəʊlə/</span> — 重音在 <b>第二音节 -TROL-</b>；<b>词尾不读 /r/</b><br>
+        <b>24. processor</b> <span class="mono">/ˈprəʊsesə/</span> — 词尾 <b>-er 读 /ə/</b> 不加 /r/<br>
+        <b>25. processor vs controller</b> — <b>靠重音区分</b>：controller 在 -TROL-，processor 在首音节<br>
+        <b>26. transfer / regulator</b> <span class="mono">/ˈtrænsfɜː/ · /ˈreɡjəleɪtə/</span> — 两个 /ɜː//ə/ 都不卷舌<br>
+        <b>27. cross-border</b> <span class="mono">/ˌkrɒsˈbɔːdə/</span> — <b>/ɒ/ 与 /ɔː/ 都不卷舌</b><br><br>
+
+        <b style="color:var(--navy);">五、多音节词的重音（手指敲桌子打重音）</b><br>
+        <b>28. supervisory</b> <span class="mono">/ˌsjuːpəˈvaɪzəri/</span> — <b>重音在第三音节 -VIS-</b>（不是第四音节）<br>
+        <b>29. evaluation</b> <span class="mono">/ɪˌevæljuˈeɪʃn/</span> — 五音节，重音在 <b>-LU-</b><br>
+        <b>30. initiative</b> <span class="mono">/ɪˈnɪʃətɪv/</span> — 重音在<b>第二音节 -NI-</b><br>
+        <b>31. requirement</b> <span class="mono">/rɪˈkwaɪəmənt/</span> — 重音在<b>最后音节 -QUIRE-</b>（三音节）<br>
+        <b>32. redress</b> <span class="mono">/rɪˈdres/</span> — <b>结尾清音 /s/</b>，与 press / stress 不同<br>
+        <b>33. skilled</b> <span class="mono">/ˈskɪld/</span> — <b>-ed 读 /d/</b>（原形 skill 结尾 /l/，不加音节）<br>
+        <b>34. foreseeable</b> <span class="mono">/fɔːrɪˈsiːəbl/</span> — 重音在<b>第三音节 -SEE-</b>，共四音节<br>
+        <b>35. consumer</b> <span class="mono">/kənˈsjuːmə/</span> — 重音在<b>第二音节 -SU-</b><br>
+        <b>36. outcome</b> <span class="mono">/ˈaʊtkʌm/</span> — 重音在<b>首音节</b><br>
+        <b>37. adequacy / adequate</b> <span class="mono">/ˈædɪkwəsi/ · /ˈædɪkwət/</span> — 都重音在首；<b>adequacy 结尾 /əsi/ 不是 /əti/</b><br>
+        <b>38. clauses</b> <span class="mono">/ˈklɔːziz/</span> — <b>两音节 + 结尾浊音 /ɪz/</b><br>
+        <b>39. repository</b> <span class="mono">/rɪˈpɒzətri/</span> — 四音节，重音在<b>第二音节 -POS-</b><br>
+        <b>40. lawfulness / lawful</b> <span class="mono">/ˈlɔːfəl/</span> — 词尾 <b>-ful 读 /fəl/</b> 不是 /fuːl/<br>
+        <b>41. basis</b> <span class="mono">/ˈbeɪsɪs/</span> — 重音在首；<b>词尾 /ɪs/ 清音</b>；复数 bases 结尾变 /ɪz/<br>
+        <b>42. special / category</b> <span class="mono">/ˈspeʃl ˈkætəɡəri/</span> — special 词尾 <b>-al 读 /l/</b> 不加 /ə/<br>
+        <b>43. period</b> <span class="mono">/ˈpɪəriəd/</span> — 中间 <b>/ɪə/ 是三音</b>（不是 /ɪər/）<br>
+        <b>44. closed</b> <span class="mono">/ˌkləʊzd/</span> — <b>-ed 读 /d/</b>，原形 close 结尾 /z/<b>（清浊变化）</b><br>
+        <b>45. scheme / breach</b> <span class="mono">/skiːm/ · /bretʃ/</span> — scheme 结尾 <b>/iːm/ 不是 /em/</b>；breach 词尾 /tʃ/ 干脆
+      </div>
+    </div>
+  </div>
+
+  <div id="rateWrap" style="margin-top:18px;"></div>
+</div>
+
+<!-- 模块 3 PRON -->
+<!--PRON_MODULE_START-->
+<!-- 发音朗读模块（由 _朗读源文件/_build_day_pron.js 生成，勿手改） -->
+<div class="card" style="border-left:4px solid var(--teal);">
+  <div class="mod">
+    <div class="mod-no" style="background:var(--teal);"><b>03</b><span>PRON</span></div>
+    <div class="mod-tt"><h3>发音朗读：今日 3 段文本（已内嵌）</h3><p>文本 + 标注 + 发音要点 + 中文译文 + 英式朗读按钮，全在本页</p></div>
+    <div class="mod-time">30 分钟</div>
+  </div>
+  <div class="info" style="margin-bottom:12px;">
+    <b>今天的 3 段朗读文本已经直接放在本页了，不用跳转。</b>
+    点 <b>▶ 英式朗读</b> 听 en-GB 标准音，点 <b>▶ 慢速</b> 听 0.72 倍速。
+    完整文本库（36 段 · 211 条发音要点 · 3925 词）在 <a href="03-发音与朗读系统.html"><b>03-发音与朗读系统.html</b></a>，
+    <b>42 天逐日分配表</b>见该页第六节。<br>
+    <b>标注法：</b><span style="color:var(--red);font-weight:700;">红色 = 句子重音</span>　<span style="background:#e9f1ff;border-radius:3px;padding:0 3px;">蓝底 = 连读 / 弱读</span>　<span style="background:#fff2c9;border-radius:3px;padding:0 3px;">黄底 = 易错音</span>
+  </div>
+
+  <h4>今天的读法（照这个顺序走，30 分钟）</h4>
+  <div class="rowline"><div class="t">① 先听后读</div><div class="m">每段先点「英式朗读」听 1 遍，<b>不跟读</b>，只听轮廓与重音落点。　<span class="mono">4 分钟</span></div></div>
+  <div class="rowline"><div class="t">② 看标注读</div><div class="m">把每个标记落实：红色落在哪、蓝色哪里连、黄色哪里别读错。<b>慢，但每个音要到位。</b>　<span class="mono">10 分钟</span></div></div>
+  <div class="rowline"><div class="t">③ 不看标注读</div><div class="m">把标注当透明，检验是否已经内化。卡住的位置就是今天的真实短板。　<span class="mono">10 分钟</span></div></div>
+  <div class="rowline"><div class="t">④ 站着读收尾</div><div class="m">站起来、用比平时大半格的音量读第 3 遍，模拟会议室强度，完后做体感自查。　<span class="mono">6 分钟</span></div></div>
+
+  <div class="note" style="margin:12px 0 4px;">
+    <b>没有录音，怎么知道读对了（四点自查）：</b>① <b>喉结振动</b>——手贴喉结读 /v/ /ð/ /b/ /d/ /g/ 应明显振动，读 /f/ /θ/ /s/ 几乎不振动；② <b>嘴前气流</b>——/p/ /t/ /k/ 开头应感到气流；③ <b>对镜看舌尖</b>——/θ/ /ð/ 必须看得见舌尖；④ <b>中文回想</b>——读完合上文本用中文回想，想不起英文怎么说的位置就是卡壳点，记入错题本。
+  </div>
+
+  <h4 style="margin-top:16px;">今日朗读文本 <span style="font-size:12px;font-weight:400;color:var(--ink-3);">（第 2 周·按当日主题加权：A 组 1 段（音素收尾，今天押在 -tion 重音上）+ B 组 2 段（向 MLRO 口头升级 / 团队会议里的警报分级，与今天的数据泄露通报场景同源））</span></h4>
+  <div id="prWrap"></div>
+
+  <h4 style="margin-top:18px;">今日朗读打卡</h4>
+  <div id="ckPron"></div>
+</div>
+<!--PRON_MODULE_END-->
+<!-- 模块 4 -->
+<div class="card">
+  <div class="mod">
+    <div class="mod-no"><b>04</b><span>SPEAK</span></div>
+    <div class="mod-tt"><h3>口语：影子跟读 + 绕口句 +「72 小时通报」骨架</h3><p>不做录音留档，但必须出声、必须完整说完</p></div>
+    <div class="mod-time">30 分钟</div>
+  </div>
+
+  <div class="note" style="margin-bottom:14px;">
+    <b>按你的要求，本阶段口语与发音自行练习，不做录音留档。</b>三条底线不变：<b>① 必须出声</b>；<b>② 必须完整说完一整段</b>；<b>③ 说完立刻用中文回想</b>——想不起英文怎么说的位置就是真实卡壳点，记入错题本。<br><br>
+    <b>今天与前七天的不同：</b>Day-05 你练了「怎么设限而不树敌」，Day-06 练了「程序怎么排序」，Day-07 练了「监管检查应答五段」。<b>今天要练的是同一套骨架在「紧急状态」下的用法</b>——<b>时钟在跑，语速更快，但顺序更不能乱</b>。真实的泄露通话里没有人等你组织语言，<b>你需要在三句话内说清「几点起算、谁签字、接下来四小时做什么」</b>。
+  </div>
+
+  <h4>第一步：影子跟读（Shadowing）三个层次（15 分钟）</h4>
+  <p class="sub" style="margin-bottom:6px;">材料用上面 <b>模块 01 的 B1 段</b>——那是「向 MLRO 口头升级」的段落，而你今天词表里的 <span class="mono">notification / DPO / ICO</span> 在结构上与它<b>完全同构</b>：都是「先说结论 → 再说依据 → 最后说边界」。<b>听过的场景再读，口腔记忆形成得最快。</b></p>
+  <div class="rowline"><div class="t">第 1 层｜看文本跟</div><div class="m">看着文本，落后原声半个词跟着读。目标：嘴跟得上，不掉队。　<span class="mono">5 分钟</span></div></div>
+  <div class="rowline"><div class="t">第 2 层｜关文本跟</div><div class="m">关掉文本，只听声音跟。目标：不靠眼睛也能跟上节奏和语调。　<span class="mono">5 分钟</span></div></div>
+  <div class="rowline"><div class="t">第 3 层｜变速跟</div><div class="m">把语速调到 <b>1.1 倍</b>再跟一遍。目标：把平时的说话速度逼上去。　<span class="mono">5 分钟</span></div></div>
+  <div class="note" style="margin:10px 0 4px;font-size:12.3px;">
+    <b>今天的额外要求：</b>跟读时<b>把每个 -tion 词的重音用手拍出来</b>。这批词的重音大多在<b>词尾</b>——如果你拍不出重音位置，说明还在「读单词」而不是「读句子」。
+  </div>
+
+  <h4 style="margin-top:16px;">第二步：今日必练的 3 组绕口句（10 分钟）</h4>
+  <p class="sub" style="margin-bottom:6px;">每组连读 5 遍，慢速 → 正常 → 快速。<b>这些句子专门用今天的词和今天的重音难点设计。</b></p>
+  <div class="tblwrap" style="max-height:none;">
+    <table>
+      <thead><tr><th style="width:46%;">句子</th><th>训练目标</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="ex">The <span class="seg">notification window</span> is <span class="seg">seventy-two hours</span> from <span class="seg">awareness</span>, not from <span class="seg">confirmation</span>.</td>
+          <td class="ex"><b>今天第一组。</b>notification 重音在 <b>-TI-</b>，awareness 重音在 <b>-WARE-</b>。<b>hours 的 h 不发音</b>；整句练「不是 A，是 B」的对比重音</td>
+        </tr>
+        <tr>
+          <td class="ex">We are the <span class="seg">data controller</span>; the cloud provider is only the <span class="seg">processor</span>.</td>
+          <td class="ex">练<b>靠重音区分两个近义词</b>：controller 重音在 <b>-TROL-</b>，processor 重音在<b>首音节</b>。<b>两个词尾都不读 /r/</b>——读成美式 /ˈkəntroʊlər/ 就毁了</td>
+        </tr>
+        <tr>
+          <td class="ex">If we cannot identify the affected people within the window, we notify the regulator anyway.</td>
+          <td class="ex">练<b>长句的气口划分</b>：<span class="mono">/ɪf wiː kəˈnɒt aɪˈdentɪfaɪ…/</span> 前半降调、<b>anyway 单独落下</b>。这一句是「做不完也要先报」的英文表达</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h4 style="margin-top:16px;">第三步：「72 小时通报」骨架（5 分钟）</h4>
+  <p class="sub" style="margin-bottom:6px;">今天这个骨架只有三段，但每一段都有硬 deadline——<b>它的设计原则是「先把时钟钉住，再谈别的」</b>。这是 Day-06「程序排序」在紧急状态下的压缩版。<b>整段出声说 3 遍。</b></p>
+  <div class="script" style="font-size:13px;">
+    <b style="color:var(--navy);">BREACH RESPONSE 骨架（三段 · 照抄结构，内容用自己的话）</b><br>
+    <b>① Pin the clock</b> — <span class="mono">The notification window is seventy-two hours from awareness, not from confirmation. We are treating the clock as having started at <span style="color:var(--red);">[09:47]</span>.</span><br>
+    <span style="color:var(--ink-3);">（<b>永远先说这个。</b>哪怕你不确定，也要把「起算点」明确说出来，并说明这是保守口径）</span><br><br>
+    <b>② Name the obligation</b> — <span class="mono">If the breach is likely to result in a risk to their rights, financial loss included, then we notify them. Not as a favour — as an obligation.</span><br>
+    <span style="color:var(--ink-3);">（<b>区分「风险」与「已确认损害」。</b>GDPR 的门槛是 likely to result in a risk，不是 confirmed loss。这两句是今天口语里最能体现专业度的地方）</span><br><br>
+    <b>③ Split the workstream</b> — <span class="mono">On the regulatory side, the initial notification to the ICO is mine to sign. On the transfer side, we do a transfer risk assessment today, because that is a separate problem, not a footnote.</span><br>
+    <span style="color:var(--ink-3);">（<b>把「监管通报」和「跨境传输」拆成两条线。</b>这是 Day-06 学过的边界意识——<b>漏掉第二条线是最常见的合规事故</b>）</span>
+  </div>
+  <div class="note" style="margin:12px 0 4px;">
+    <b>为什么这个骨架只有三段：</b>紧急状态下<b>长段位发言没人听</b>。Day-07 的五段骨架是给「有时间开正式会议」的场景用的；今天是「四小时内要交东西」的场景。<b>段位从 5 压到 3，但每段都必须落在具体时间和具体的人身上</b>——<b>这是英国合规沟通的常态切换</b>，你要能识别自己在哪种场景里用哪种段位。
+  </div>
+
+  <div id="ckSpeak" style="margin-top:12px;"></div>
+</div>
+
+<!-- 模块 5 -->
+<div class="card">
+  <div class="mod">
+    <div class="mod-no"><b>05</b><span>WRITE</span></div>
+    <div class="mod-tt"><h3>写作：72 小时行动清单 + 数据保护自查三问</h3><p>两份交付物，都用今天的词</p></div>
+    <div class="mod-time">30 分钟</div>
+  </div>
+
+  <h4>任务 A：用精讲词写 5 句（10 分钟）</h4>
+  <p class="sub" style="margin-bottom:6px;">从今天 30 个精讲词里选词，<b>每句至少用 2 个</b>，写成你在真实工作中会说的话。写完朗读一遍，<b>读着拗口的句子必须改到顺为止</b>。今天特别要求：<b>至少 2 句里要用上 notification / notification window 这一组</b>，把时间义务写进句子里感受一次。</p>
+  <div class="script" style="font-size:13px;">
+    <b>示例（可以直接沿用句式）</b><br>
+    · The <span class="seg">notification window</span> is <span class="seg">seventy-two hours</span> from awareness, and that clock started before we confirmed anything.<br>
+    · We are the <span class="seg">data controller</span>; the cloud provider is only the <span class="seg">processor</span>, and that distinction decides who signs.<br>
+    · If we cannot identify the affected people in time, we notify the regulator anyway and explain why.
+  </div>
+
+  <h4 style="margin-top:16px;">任务 B：写出「72 小时行动清单」（12 分钟）</h4>
+  <p class="sub" style="margin-bottom:6px;">这是今天的<b>主交付物</b>。英国合规团队在确认泄露当天就要出这样一份东西，<b>它的核心不是「做什么」而是「什么时候之前做完」</b>——每一行都必须带 deadline 和责任人。<b>写的时候把截止时间写在最上方</b>（今天 B 段最后一句就是这个要求）。</p>
+  <div class="script" style="font-size:12.8px;">
+    <b style="color:var(--navy);">BREACH RESPONSE PLAN（骨架 · 照抄格式，内容用自己的话）</b><br>
+    <span style="color:var(--red);"><b>DEADLINE: seventy-two hours from <span class="mono">[09:47]</span> — not from when this document is finished.</b></span><br><br>
+    <b>1. Awareness</b> — Clock start: <span class="mono">[time]</span>. Basis: <span class="mono">[alert / report]</span>. Conservative view adopted because the organisation, not the first individual, was aware.<br>
+    <b>2. Scope</b> — Data affected: <span class="mono">[__]</span>. <span class="seg">Special category data</span> involved: <span class="mono">yes / no</span>. Approximate number of <span class="seg">data subjects</span>: <span class="mono">[__]</span>. Systems: <span class="mono">[__]</span>.<br>
+    <b>3. Risk assessment</b> — Is it likely to result in a <span class="seg">risk</span> to rights (financial loss included)? <span class="mono">yes / no</span>. If notifiable, <span class="seg">notification</span> to affected people required: <span class="mono">yes / no</span>.<br>
+    <b>4. Lawful basis</b> — Basis relied on for the processing that exposed the data: <span class="seg">legitimate interests</span> / <span class="seg">consent</span> / contract / legal obligation. <b>Consent is not a substitute here.</b><br>
+    <b>5. Cross-border</b> — Any flow outside the UK? <span class="mono">yes / no</span>. If yes: <span class="seg">transfer risk assessment</span> completed? <span class="seg">adequacy decision</span> or <span class="seg">standard contractual clauses</span> covered this flow? <span class="seg">TRA</span> owner: <span class="mono">[name]</span>.<br>
+    <b>6. Regulatory interface</b> — <span class="seg">Initial notification</span> to <span class="seg">ICO</span>: signed by <span class="seg">DPO</span> (independent of the business line). Any <span class="seg">law enforcement request</span> route considered separately.<br>
+    <b>7. Documentation</b> — <span class="seg">Records of processing activities</span> updated. What we knew and when, minuted. Decision log kept from this point.<br>
+    <b>8. Next four hours</b> — <span class="mono">[action] — owner — by when]</span> × 3<br>
+    <b>9. Remediation</b> — <span class="mono">[access revoked / password reset / supplier informed]</span>. Customer-facing communication drafted: <span class="mono">[yes / deferred with reason]</span>.
+  </div>
+  <div class="note" style="margin:10px 0 4px;">
+    <b>为什么第 5 行（cross-border）必须单列：</b>它是<b>最常被漏掉的一层</b>。B 段里 Alan 提了一句，Priya 立刻把它标成「a separate problem, not a footnote」——因为如果你处理的客户数据里有任何部分出境英国，就<b>额外触发</b>一套跨境传输义务，而那套义务有自己的时间线和自己的评估文件。<b>英国合规团队最常见的失误就是把这一行省掉。</b>
+  </div>
+
+  <h4 style="margin-top:16px;">任务 C：数据保护自查三问（8 分钟）</h4>
+  <p class="sub" style="margin-bottom:6px;">用英文回答下面三个问题。<b>这三个问题是你入职第一周就会被问到的</b>（入职面谈、年度培训、监管检查开场都会用），<b>所以要写成能直接说出口的口语</b>。</p>
+  <ol class="tight">
+    <li>如果一个客户问「你们拿我的数据做什么」，<b>你用哪两个词回答责任归属</b>？为什么不是两个都答？</li>
+    <li>如果同事说「先别告诉客户，等查清楚再说」，<b>你用哪三句话回应</b>？</li>
+    <li>如果你的处理依赖 legitimate interests，<b>你在文件里必须留下什么</b>？</li>
+  </ol>
+  <div class="script" style="font-size:13px;">
+    <b>示例（第 1 问）</b><br>
+    · I would say we are the data controller and the cloud provider is our processor. That is not splitting hairs: the controller decides why and how the data is processed, and it is the controller that carries the notification obligation.<br>
+    <b>示例（第 2 问）</b><br>
+    · I understand the pressure. What I am saying is that the notification window runs from awareness, not from confirmation. If we cannot identify everyone in time, we notify the regulator anyway and explain why.
+  </div>
+  <div class="note" style="margin:10px 0 4px;">
+    <b>第 2 问的答案里必须包含「not from confirmation」这个区分</b>——这是今天整段脚本的核心争点，也是你未来几年最常被追问的一句话。<b>如果你的回答里没有「aware 是组织层面的知悉，不是第一个人的知悉」这个意思，你的回答是不完整的。</b>
+  </div>
+
+  <div id="ckWrite" style="margin-top:12px;"></div>
+
+  <h4 style="margin-top:16px;">任务 D：回炉昨天的作业（5 分钟）</h4>
+  <p class="sub" style="margin-bottom:6px;">打开 <span class="mono">Day07_合规档案封面备忘_八段.md</span>（如果还没写，就先补 Day-07 的八段备忘）。检查三件事：</p>
+  <ol class="tight">
+    <li><b>词尾 -tion / -sion / -ture 全表扫一遍</b>——<b>今天的 30 个精讲词里有 7 个是 -tion 结尾</b>，而它们的重音位置各不相同。把 notification / categorisation / rectification / evaluation / prohibition / information / notification window 手敲桌子打重音各读三遍。</li>
+    <li><b>英式拼写检查</b>——把全部 <span class="mono">-isation / -our / -re / -ce</span> 检查一遍：<span class="mono">categorisation / minimisation / favour / behaviour / centre / licence / offence / redaction</span>。<b>categorisation 是今天第一次出现 -isation 拼写</b>，注意是 s 不是 z。</li>
+    <li><b>结构复用</b>——对比今天的三段骨架和 Day-07 的五段骨架，<b>找出两处共通的句式</b>（比如都是「先说结论 → 再说依据 → 最后说边界」），把它们抄到错题本最后一页，作为你自己的模板库。</li>
+  </ol>
+
+  <h4 style="margin-top:16px;">任务 E：今日收尾</h4>
+  <div id="ckWrap"></div>
+</div>
+
+<!-- 自评 -->
+<div class="card">
+  <h3>今日自评（听力与输出，5 项）</h3>
+  <p class="sub">按实际感受打分，不用美化。<b>这份数据决定我后面几周的配比。</b></p>
+  <div id="rateWrap"></div>
+  <div class="bar"><i id="barRate" style="width:0%"></i></div>
+  <div class="tagline"><span id="rateText">尚未评分</span></div>
+</div>
+
+<!-- 词库推进地图 -->
+<div class="card">
+  <h3>词库推进地图（1932 条 · 每日 100 条 · 约 20 天）</h3>
+  <p class="sub">避免重复、也避免漏词。每天开始前对照这张表，确认今天该用哪一段。</p>
+  <div class="tblwrap" style="max-height:none;">
+    <table>
+      <thead><tr><th style="width:13%;">日程</th><th style="width:13%;">词表行号</th><th>内容</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="en">Day 01</td>
+          <td class="mono" style="font-size:12px;">1–100</td>
+          <td class="ex">银行业与国际金融市场 <b>1–100</b>（nostro / L/C / Basel III / SWIFT / CHAPS …）</td>
+        </tr>
+        <tr>
+          <td class="en">Day 02</td>
+          <td class="mono" style="font-size:12px;">101–199</td>
+          <td class="ex">银行业 <b>101–173</b> + AML <b>1–26</b>（支付报文、货币市场基准、资本监管指标、AML 开篇）</td>
+        </tr>
+        <tr>
+          <td class="en">Day 03</td>
+          <td class="mono" style="font-size:12px;">200–299</td>
+          <td class="ex">AML / KYC <b>27–126</b>（交易监测、警报分诊、风险评级、洗钱类型学、上报与同意制度、整改与治理）</td>
+        </tr>
+        <tr>
+          <td class="en">Day 04</td>
+          <td class="mono" style="font-size:12px;">300–399</td>
+          <td class="ex">AML 收尾 + 核心地基词 + 制裁开篇（ownership and control / catch-all control / 名单机制）</td>
+        </tr>
+        <tr>
+          <td class="en">Day 05</td>
+          <td class="mono" style="font-size:12px;">400–499</td>
+          <td class="ex">制裁与出口管制 <b>71 条</b> + 金融犯罪开篇 <b>29 条</b>（名单穿透、许可豁免、长臂、影子船队、价格上限、经济犯罪、POCA）</td>
+        </tr>
+        <tr>
+          <td class="en">Day 06</td>
+          <td class="mono" style="font-size:12px;">500–599</td>
+          <td class="ex">金融犯罪与执法续 <b>40 条</b>（DPA、企业犯罪、搜查令、legal hold / e-discovery、三种 privilege、Upjohn warning、举报与 detriment、纪律与移送、disgorgement）+ 金融产品与市场工具 <b>60 条</b>（股 / 债 / 并购 / 基金 / 衍生品）</td>
+        </tr>
+        <tr>
+          <td class="en">Day 07</td>
+          <td class="mono" style="font-size:12px;">601–700</td>
+          <td class="ex"><b>第 1 周测评与复盘日</b>：英美监管与市场行为 <b>98 条</b>（英国监管架构 / FCA 手册 / SM&amp;CR / 市场滥用 / 美国监管 / 投诉赔付 / 支付保护）+ 金融产品 <b>2 条</b>；<b>训练重点为回收前六天 600 词（术语测 100 题）</b></td>
+        </tr>
+        <tr style="background:#fff8e6;">
+          <td class="en"><b>Day 08</b></td>
+          <td class="mono" style="font-size:12px;"><b>701–800</b></td>
+          <td class="ex"><b>数据与隐私保护 I：主体权利与跨境传输</b>——英美监管与市场行为 <b>44 条</b>（监管检查工具 SREP / OIREQ / 三类 notice / prohibition order / review of past business、Consumer Duty 四项消费者结果、市场滥用 MAR / insider list / closed period / PDMR、MiFID II 与交易报告 / trade repository）+ 数据与隐私保护 <b>56 条</b>（GDPR 基石 / lawful basis /六大主体权利 / 72 小时通报 / SCCs·BCRs·IDTA 跨境机制 / 电子隐私 PECR / DLP）</td>
+        </tr>
+        <tr>
+          <td class="en">Day 09 起</td>
+          <td class="mono" style="font-size:12px;">801–</td>
+          <td class="ex">数据与隐私保护续（ROPA / 电子隐私 / 记录保存）→ 法律英语 → 生活英语 → 伦敦与文化，一路顺延</td>
+        </tr>
+        <tr>
+          <td class="en">Day 19–20</td>
+          <td class="mono" style="font-size:12px;">1901–1932</td>
+          <td class="ex">伦敦地标与交通收尾 + 英国文化与社交 <b>最后 32 条</b></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="note" style="margin-top:12px;">
+    <b>对齐规则（唯一真相源 = 词表顺序）：</b>每天 100 词的取材顺序，与 Anki 发放新卡的顺序<b>完全一致</b>——Anki 按卡片 position 升序发卡，而 position 与词表行号一一对应（<b>position = 行号 − 100</b>）。所以你只要打开 Anki，看到的必然是这张表上今天那一行。<br><br>
+    <b>关于今天为什么学数据保护而不是 AML：</b>作战中心原计划 Day-08 是「AML 全景与洗钱三阶段」，但词表第 701–800 行里<b>一个 AML 词都没有</b>——AML 的核心词（CDD / EDD / SAR / threshold）在 <b>Day-03</b> 就学完了。<b>这里遵循的是系统的第一原则：唯一真相源 = 词表顺序。</b>Day-N 的词表必须是 Anki 当天发的那 100 张卡，页面、词表、Anki 三者按行号严格对齐。<b>所以今天跟着词表走，学数据与隐私保护。</b>AML 会在第 2 周后续几天以别的形式回来。
+  </div>
+</div>
+
+<div class="card" style="background:linear-gradient(120deg,#f4f8ff,#fff);">
+  <h3>明天（Day 09）预告</h3>
+  <ul class="tight">
+    <li><b>性质</b>：第 2 周第 2 天，<b>合同与法律英语开篇</b>。词表进入 <b>801–900 行</b>——<b>合同与法律英语 55 条 + 数据与隐私保护收尾 45 条</b>（data governance / consideration / entire agreement / estoppel / indemnity …）。<b>今天学的 SAR / DPO / DPIA 会在明天以「文件条款」的形式回来</b></li>
+    <li><b>为什么是这个</b>：词表第 801–900 行里<b>没有电子隐私词</b>（PECR / cookie 同意在第 1901 行之后）。<b>唯一真相源 = 词表顺序</b>，所以明天跟着词表走</li>
+    <li><b>词汇</b>：新 100 词，<b>不做术语测</b>。如果 Day-07 的第 1 周术语测 &lt; 85，<b>前三天每天加 20 分钟回刷 Day-07 的错题</b></li>
+    <li><b>听力</b>：精听脚本 B 换成<b>合同条款审阅会</b>（definitions / warranties / termination 三段怎么读），A 段回到音素新内容</li>
+    <li><b>写作</b>：把今天的 <b>72 小时行动清单</b>扩写成<b>完整版数据泄露响应手册</b>（含记录保存期限、监管沟通模板、董事会通报口径）</li>
+    <li><b>朗读</b>：第 2 周轮换第二天，A 组 1 段 + B 组 2 段</li>
+  </ul>
+</div>
+
+</main>
+
+
+
+
+
+<footer>
+  Day 08 · 数据与隐私保护 I：主体权利与跨境传输　|　<a href="00-作战中心.html">作战中心</a>　·　<a href="01-听力系统.html">听力系统</a>　·　<a href="02-Anki复习系统.html">Anki 系统</a>　·　<a href="03-发音与朗读系统.html">朗读库</a>　·　<a href="Day-07.html">Day 07</a>　·　Day 09（待生成）
+</footer>
+
+<script>
+var LS = "ukce_day08";
+var state = {ck:{}, voc:{}, voc2:{}, rate:{}};
+try{ var raw = localStorage.getItem(LS); if(raw){ state = JSON.parse(raw); } }catch(e){}
+state.ck = state.ck||{}; state.voc = state.voc||{}; state.voc2 = state.voc2||{}; state.rate = state.rate||{};
+function save(){ try{ localStorage.setItem(LS, JSON.stringify(state)); }catch(e){} }
+function $(s){ return document.querySelector(s); }
+
+/* ---------- 词条数据（由 _词库源文件/_build_day04.js 注入） ---------- */
+var WORDS = [["supervisory review and evaluation process (SREP)","/ˌsjuːpəˈvaɪzəri rɪˈvjuː ənd ɪˌevæljuˈeɪʃn ˈprəʊses/","监管审查与评估程序","Under the SREP the regulator looks at how a firm runs, not just at whether the rules were broken.","在 SREP 下，监管机构审视的是机构如何运作，而不只是规则有没有被违反。","<b>supervisory 重音在第三音节 -VIS-</b>（不是 su-per-VIS-o-ry 的第四音节）；evaluation 五个音节，重音在 <b>-LU-</b>；<b>四个词各重一次，交替重读，不要连成一串平音</b>"],
+["warning notice / decision notice / final notice","/ˈwɔːnɪŋ ˈnəʊtɪs/ /dɪˈsɪʒn ˈnəʊtɪs/ /ˈfaɪnəl ˈnəʊtɪs/","警告通知 / 决定通知 / 最终通知","A warning notice is the first step, a decision notice comes next, and a final notice closes the matter.","警告通知是第一步，决定通知紧随其后，最终通知了结此案。","<b>三个 notice 全部英式 /ˈnəʊtɪs/ 不卷舌</b>，且都重读——这是文书名；warning 的 /ɔː/ 也不卷舌，读成 /ˈwɔːnɪŋ/ 才对；<b>三者的区别是「程度」，不是「结构」</b>"],
+["own initiative requirement (OIREQ)","/əʊn ɪˈnɪʃətɪv rɪˈkwaɪəmənt/","监管主动施加的要求","An own initiative requirement does not need a breach to have occurred first.","主动施加的要求不需要先发生违规行为。","own 弱读 /əʊn/；initiative 重音在<b>第二音节 -NI-</b>；requirement 重音在<b>最后音节 -QUIRE-</b> /rɪˈkwaɪəmənt/（三个音节，<b>不是 RE-quire</b>）；<b>缩写 OIREQ 逐字母读 /ˌəʊ ɪ ˈrek/</b>"],
+["prohibition order","/ˌprəˌhɪbɪˈʃn ˈɔːdə/","禁业令","A prohibition order bars a person from taking up a regulated role in the industry.","禁业令禁止一个人在行业内担任受监管职务。","prohibition 四个音节，<b>重音在第三音节 -HI-</b> /prəˌhɪbɪˈʃn/；<b>pro- 前缀弱读 /prə/ 不是 /prəʊ/</b>；order 的 /ɔː/ 不卷舌，词尾 /ə/ 弱读"],
+["review of past business","/rɪˈvjuː əv pɑːst ˈbɪznəs/","历史业务复查","A review of past business asks what you did differently five years ago and why.","历史业务复查会问你五年前的做法有什么不同，以及为什么。","review 重音在<b>最后音节 -VIEW</b> /rɪˈvjuː/；<b>of 弱读 /əv/</b>；past 读 /pɑːst/，<b>英式 /ɑː/ 长音不卷舌</b>；business 三音节，重音在<b>首音节 /ˈbɪznəs/</b>，中间 /zn/ 两个字合起来才一个音"],
+["redress scheme","/rɪˈdres ʃiːm/","赔偿计划","The redress scheme is how the FCA compensates customers who suffered detriment.","赔偿计划是FCA 补偿遭受不利待遇的客户的机制。","redress 重音在<b>第二音节 -DRESS</b>，<b>结尾是清音 /s/ 不是浊音 /z/</b>（与 press / stress 不同）；scheme 读 /skiːm/——<b>结尾是 /iːm/ 不是 /em/</b>；两个词都重读，这是制度名"],
+["skilled person","/ˈskɪld ˈpɜːsn/","专家顾问","The regulator appoints a skilled person to review past business where it suspects misconduct.","监管机构在怀疑存在不当行为时指定专家顾问复查历史业务。","skilled 结尾 <b>-ed 读 /d/</b>（原形 skill 结尾是 /l/，不加音节）；<b>person 英式词尾没有 /r/</b>，读 /ˈpɜːsn/——这是最容易被美国同事带跑的地方；两词都重读"],
+["four consumer outcomes","/ˌfɔː kənˈsjuːmə ˈaʊtkʌmz/","四项消费者结果","The Consumer Duty is measured against four consumer outcomes, and price and value is one of them.","消费者责任以四项消费者结果衡量，价格与价值是其中之一。","four 读 /fɔː/（<b>不是 /fər/</b>，英式不卷舌）；consumer 重音在<b>第二音节 -SU-</b>；outcomes 重音在<b>首音节 /ˈaʊtkʌmz/</b>；<b>四项里今天精讲 price and value、foreseeable harm 两项</b>"],
+["consumer understanding","/kənˈsjuːmə ˌʌndəˈstændɪŋ/","消费者理解","Consumer understanding means we must be able to evidence what the customer actually understood.","消费者理解意味着我们必须能证明客户真正理解了什么。","consumer 重音在<b>第二音节 -SU-</b>；understanding 重音在<b>第三音节 -STAND-</b>（不是 un-der-STAND-ing 的第四音节读错位）；<b>两个长音 /juː/ 与 /æ/ 都不卷舌</b>"],
+["price and value","/ˌpraɪs ən ˈvæljuː/","价格与价值","Fair value assessment asks whether the price and value were both clear to the customer.","公允价值评估问的是价格与价值这两点客户是否都清楚。","price 结尾<b>清音 /s/</b>（不是 prize的浊音 /z/）；and 弱读 <b>/ən/</b>；value 重音在<b>首音节 /ˈvæljuː/</b>，词尾 <b>/juː/ 是三音</b>（不是 /uː/）"],
+["foreseeable harm","/fɔːrɪˈsiːəbl hɑːm/","可预见损害","Financial promotions must not cause foreseeable harm to the average member of the group.","金融促销不得对群体中的普通成员造成可预见损害。","foreseeable 重音在<b>第三音节 -SEE-</b> /fɔːrɪˈsiːəbl/，<b>共四个音节</b>；harm 英式 <b>/hɑː/ 长音不卷舌</b>（美式 /hɑːrm/ 会卷）；<b>the average member of the group 是 Consumer Duty 的法定表述</b>"],
+["market abuse regulation (MAR)","/ˌmɑːkɪt əˈbjuːz ˌregjuleɪʃn/","市场滥用条例","Insider dealing is a criminal offence and also market abuse under the MAR.","内幕交易既是刑事犯罪，也是市场滥用条例项下的市场滥用。","market 重音在<b>首音节 /ˈmɑːkɪt/</b>；abuse 重音在<b>第二音节 -BUSE-</b>（不是 a-BUSE… 的首音节）；regulation 重音在<b>-LA-</b>；<b>MAR 逐字母读 /ˌem eɪ ˈɑː/</b>—— Day-07 已出现过"],
+["insider list","/ˈɪnsaɪdə lɪst/","内幕信息知情人名单","Everyone on the insider list must be cleared before the announcement is made.","内幕信息知情人名单上的每个人，都必须在公告发布前完成清场。","insider 重音在<b>首音节 /ˈɪnsaɪdə/</b>，词尾 /ə/ 弱读；list 读 /lɪst/（<b>短音 /ɪ/ 不是 /iː/</b>）；<b>这是 closed period 的配套词——名单 + 静默期一起构成内幕信息管理</b>"],
+["closed period","/ˌkləʊzd ˈpɪəriəd/","静默期","During a closed period no one on the insider list may deal in the shares.","静默期内，内幕信息知情人名单上的任何人都不得买卖股票。","closed 结尾 <b>-ed 读 /d/</b>（原形 close 结尾是 /z/——<b>清浊变化</b>）；period 重音在<b>首音节 /ˈpɪəriəd/</b>，中间的 /ɪə/ 是三音（不是 /ɪər/）；<b>不要读成 close period</b>"],
+["PDMR","/ˌpiː diː ɛm ˈɑː/","履行管理职责人员","A PDMR must not deal in shares during a closed period without clearance.","履行管理职责人员在静默期内未经清场不得买卖股票。","<b>逐字母读四个音</b>：P-D-M-R，重音落在最后一个字母上；<b>这是 Responsible Individual 的缩写，UK Corporate Governance Code 里的角色</b>——比「高管」范围更窄"],
+["MiFID II","/ˌmɪfɪd ˈtuː/","金融工具市场指令二","Under MiFID II the firm must obtain explicit client consent for a professional client classification.","在 MiFID II 下，机构必须就专业客户分类取得客户明确同意。","<b>读「Mi-FID」，重音在第二音节</b> /ˌmɪfɪd/——不是 /ˈmɪfɪd/；<b>II 是罗马数字二，读 /ˈtuː/ 不读 /ˈaɪ/</b>；全称 European MiFID 则是 /ˌmiːfɪd/"],
+["client categorisation","/ˌklaɪənt ˌkætəɡəraɪˈzeɪʃn/","客户分类","Client categorisation determines which investor protection rules apply to a customer.","客户分类决定哪些投资者保护规则适用于该客户。","client 重音在<b>首音节</b>，中间 <b>/aɪə/ 是三音</b>；categorisation 重音在<b>最后音节 -TION</b> /ˌkætəɡəraɪˈzeɪʃn/；<b>注意这里是 -isation（英式 s），美式写 -ization 但读音相同</b>——<b>今天第一次出现 -isation 拼写检查</b>"],
+["costs and charges disclosure","/ˌkɒsts ən ˈtʃɑːdʒɪz dɪsˈkləʊʒə/","成本与费用披露","Costs and charges disclosure must be given in good time before the client deals.","成本与费用披露必须在客户交易前的适当时间提供。","costs 的 <b>/ɒ/ 是英式专属短圆唇音</b>；charges 重音在<b>首音节 /ˈtʃɑːdʒɪz/</b>，结尾浊音 /ɪz/（复数）——<b>加 -es 就变浊，这是今天最实用的一条</b>；disclosure 重音在 <b>-CLO-</b>，结尾 /ʒə/"],
+["trade repository","/ˌtreɪd rɪˈpɒzətri/","交易存管库","Every OTC derivative must be reported to a trade repository by the next working day.","每笔场外衍生品交易必须在下一个工作日前报告给交易存管库。","trade 词尾 <b>/d/ 不加元音</b>；repository 四个音节，重音在<b>第二音节 -POS-</b> /rɪˈpɒzətri/（不是 RE-po-si-to-ry）；<b>这里是 Day-07 的 EMIR / UK EMIR 的落地环节——报告义务的接收端</b>"],
+["GDPR / UK GDPR","/ˌdʒiː diː ɑː ˈɑː/","欧盟通用数据保护条例 / 英国版","The UK GDPR is the retained EU version; it sits alongside the Data Protection Act 2018.","英国版GDPR 是内化的欧盟版本，与 2018 年数据保护法并行适用。","<b>GDPR 两种读法都说得通</b>——逐字母 /ˌdʒiː diː ɑː ˈɑː/，或压缩成 /ˈɡdpr/（读三个音 G-D-P-R）；<b>UK GDPR 前面要加 UK-</b>，这个前缀是区分两套制度的关键信号"],
+["personal data","/ˌpɜːsənl ˈdeɪtə/","个人数据","A name and an account number together are personal data, even without anything else.","一个姓名加上账号，两者合起来就是个人数据。","personal 重音在<b>首音节 /ˈpɜːsənl/</b>，词尾 /ənl/ 弱读；<b>英式 /ɜː/ 不卷舌</b>；data 重音在<b>首音节 /ˈdeɪtə/</b>，词尾 /ə/ 弱读；<b>两个词都是首重音，读成一篇平铺的英式低调</b>"],
+["special category data","/ˌspeʃl ˈkætəɡəri ˈdeɪtə/","特殊类别数据（敏感数据）","Health records are special category data, and the lawful basis rules are stricter.","健康记录属于特殊类别数据，合法性基础的规则更严。","special 词尾 <b>-al 读 /l/</b> 不加 /ə/（不是 /ˈspeʃiəl/）；category 重音在<b>首音节 /ˈkætəɡəri/</b>，中间 /ɡə/ 是弱读；<b>GDPR 第 9 条，禁止处理，除非落入例外</b>"],
+["data controller / processor","/ˈdeɪtə kənˌtrəʊlə ˈprəʊsesə/","数据控制者 / 处理者","We are the data controller; the cloud provider is only the processor.","我们是数据控制者；云服务商只是处理者。","controller 重音在<b>第二音节 -TROL-</b>（不是 CON-trol-ler）；processor 词尾 <b>-er 读 /ə/</b> 不加 /r/；<b>这个区分决定谁承担 72 小时通报义务——责任不可外包</b>"],
+["lawful basis","/ˈlɔːfəl ˈbeɪsɪs/","合法性基础","You must identify a lawful basis before you collect any personal data.","收集任何个人数据之前，你必须先确定一个合法性基础。","lawful 的词尾 <b>-ful 读 /fəl/</b>（不是 /fuːl/）；basis 重音在<b>首音节 /ˈbeɪsɪs/</b>，<b>词尾 /ɪs/ 是清音</b>—— <b>与 basis 的复数 bases /ˈbeɪsɪz/ 不同</b>；<b>GDPR 六种合法性基础，你只需记住 legitimation 最难</b>"],
+["subject access request (SAR)","/ˈsʌbdʒɪkt ˈækses rɪˈkwest/","数据主体访问请求","A subject access request must be answered within one month of receipt.","数据主体访问请求必须在收到后一个月内答复。","subject 重音在<b>首音节 /ˈsʌbdʒɪkt/</b>—— <b>这里是名词「数据主体」，不是形容词「subject to」，后者词尾读 /dʒɪkt/ 重音在后</b>；<b>SAR 缩写在 Day-07 已出现过（可疑交易报告），此处义项不同，注意区分</b>"],
+["right to erasure / to rectification","/raɪt tuː ɪˈreɪʒər /raɪt tuː ˌrektɪfɪˈkeɪʃn/","删除权 / 更正权","The right to erasure is not absolute; the right to rectification is much easier to honour.","删除权并非绝对；更正权则容易满足得多。","erasure 重音在<b>第二音节 -RA-</b> /ɪˈreɪʒər/，词尾 /ʒə/；<b>第一音节是 /ɪ/ 不是 /e/</b>；rectification 五个音节，重音在 <b>-CA-</b>（不是 -TI-）；<b>GDPR 第 16/17 条，「被遗忘权」</b>"],
+["data breach","/ˈdeɪtə bretʃ/","数据泄露","Once a data breach is confirmed we have 72 hours to notify the regulator.","数据泄露一经确认，我们就有 72 小时向监管机构通报。","breach 结尾 <b>/tʃ/ 干脆，不要糊成 /tʃə/</b>；<b>data breach 与 breach of security 措辞不同，但实务常混用</b>；<b>「confirmed」是触发 72 小时钟表的关键——这正是 Day-06 学的「程序排序」</b>"],
+["72-hour notification","/ˌseventi tuː ˈaʊə ˌnəʊtɪfɪˈkeɪʃn/","72 小时通报义务","The 72-hour notification obligation runs from the moment we become aware.","72 小时通报义务从我方知悉的那一刻起算。","<b>数字读「seventy-two hours」，不是「seven-two」</b>；<b>hour 的 h 不发音</b>，读 /ˈaʊə/（不是 /ˈhaʊə/）；notification 重音在 <b>-TI-</b> /ˌnəʊtɪfɪˈkeɪʃn/，词尾 /ʃn/ 压缩"],
+["adequacy decision","/ˈædɪkwəsi dɪˈsɪʒn/","充分性认定","The UK adequacy decision lets personal data flow to the EU without extra safeguards.","英国的充分性认定允许个人数据流向欧盟而无需额外保障。","adequacy 重音在<b>首音节 /ˈædɪkwəsi/</b>，中间 /kw/ 是三个辅音；decision 重音在<b>第二音节 -CI-</b>；<b>跨境传输的第一道门：有充分性认定就不必用 SCCs</b>"],
+["Standard Contractual Clauses (SCCs)","/ˌstændəd kənˈtræktjuːəl ˈklɔːziz/","标准合同条款","Standard Contractual Clauses are the fallback where no adequacy decision exists.","在没有充分性认定的情况下，标准合同条款是退而求其次的方案。","standard 重音在<b>首音节 /ˈstændəd/</b>，词尾 -ard 弱读 /əd/；contractual 重音在<b>第二音节 -TRAC-</b>，<b>注意不是 -CON-</b>；<b>SCCs 逐字母读 /ˌes siː ˈsiːz/</b>—— <b>Clauses 读 /ˈklɔːziz/，结尾 /ɪz/ 浊音</b>"]];
+var EXTRA = [["senior manager","高级经理",""],
+["certification employee","认证雇员",""],
+["SMF / prescribed responsibility","高级管理职能 / 法定职责",""],
+["replacement of SMF","高级经理变更",""],
+["host / home state","东道国 / 母国",""],
+["passporting","通行证制度","英国脱欧后对欧盟已失效，现为 TPR 制度"],
+["temporary permissions regime (TPR)","临时许可制度",""],
+["overseas fund","海外基金",""],
+["supervisory notice","监管通知",""],
+["voluntary requirement","自愿承诺要求",""],
+["consumer support","消费者支持",""],
+["products and services outcome","产品与服务结果",""],
+["fair value assessment","公允价值评估",""],
+["disclosure guidance and transparency rules (DTR)","披露指引与透明度规则",""],
+["listing rules (LR)","上市规则",""],
+["prospectus regulation","招股说明书条例",""],
+["sponsor","保荐人",""],
+["takeover code","收购守则",""],
+["put up or shut up (PUSU)","要么报价要么闭嘴","收购守则第 2.6 条规则"],
+["product governance","产品治理","目标市场与分销策略"],
+["EMIR","欧洲市场基础设施条例",""],
+["clearing obligation","强制清算义务",""],
+["SFTR","证券融资交易条例",""],
+["settlement discipline","结算纪律",""],
+["buy-side / sell-side","买方 / 卖方",""],
+["Data Protection Act 2018","英国 2018 年数据保护法",""],
+["Information Commissioner's Office (ICO)","英国信息专员办公室",""],
+["data subject","数据主体",""],
+["joint controller","共同控制者",""],
+["consent","同意","须自由给出、具体、知情、明确"],
+["legitimate interests","正当利益","需通过三步平衡测试 LIA"],
+["data minimisation","数据最小化",""],
+["purpose limitation","目的限制",""],
+["storage limitation","存储限制",""],
+["Data Protection Impact Assessment (DPIA)","数据保护影响评估",""],
+["Data Protection Officer (DPO)","数据保护官",""],
+["cross-border transfer","跨境传输",""],
+["Binding Corporate Rules (BCRs)","约束性公司规则",""],
+["Schrems II","Schrems II 判决","推翻隐私盾，重塑跨大西洋数据传输"],
+["Records of Processing Activities (ROPA)","处理活动记录",""],
+["privacy notice","隐私声明",""],
+["pseudonymisation / anonymisation","假名化 / 匿名化",""],
+["retention period","保存期限",""],
+["accountability principle","问责原则","GDPR 的核心原则：你必须能证明自己合规"],
+["data protection by design and by default","设计阶段与默认的数据保护",""],
+["transparency","透明性",""],
+["right to restriction of processing","限制处理权",""],
+["right to object","反对权",""],
+["right to data portability","数据可携权",""],
+["data processing agreement (DPA)","数据处理协议",""],
+["sub-processor","次级处理者",""],
+["controller-processor agreement","控制者—处理者协议",""],
+["international data transfer agreement (IDTA)","国际数据传输协议","英国版 SCC"],
+["UK Addendum","英国附录","附加在欧盟 SCC 上以适用英国法"],
+["transfer risk assessment (TRA)","传输风险评估",""],
+["EU-US Data Privacy Framework","欧美数据隐私框架",""],
+["data sharing agreement","数据共享协议",""],
+["law enforcement request","执法机关请求",""],
+["confidentiality / availability / integrity breach","保密性 / 可用性 / 完整性泄露","GDPR 对泄露的三种分类"],
+["Freedom of Information Act (FOIA)","信息自由法",""],
+["PECR (e-privacy)","英国电子隐私法规","管 Cookie 和直接营销"],
+["cookie consent","Cookie 同意","须事先取得，不得默认勾选"],
+["soft opt-in","柔性选择加入","既有客户营销的例外规则"],
+["direct marketing consent","直接营销同意",""],
+["employee monitoring","员工监控","涉及告知义务、比例原则与正当利益测试"],
+["redaction","遮蔽处理","回复 SAR 时删除第三方信息"],
+["automated decision-making","自动化决策",""],
+["profiling","画像分析",""],
+["records retention schedule","记录保存时间表",""],
+["data loss prevention (DLP)","数据防泄漏",""]];
+
+(function renderVocab2(){
+  var tb = $("#vocab2Body");
+  EXTRA.forEach(function(w, i){
+    var tr = document.createElement("tr");
+    var on = state.voc2[i] ? " on" : "";
+    tr.innerHTML =
+      '<td><span class="vck' + on + '" data-j="' + i + '"></span></td>' +
+      '<td class="en">' + w[0] + '</td>' +
+      '<td>' + w[1] + '</td>' +
+      '<td class="ex" style="font-size:12px;">' + (w[2]||"") + '</td>';
+    tb.appendChild(tr);
+  });
+  tb.addEventListener("click", function(e){
+    var el = e.target;
+    if(!el.classList.contains("vck")){ return; }
+    var i = el.getAttribute("data-j");
+    if(state.voc2[i]){ delete state.voc2[i]; } else { state.voc2[i] = true; }
+    el.classList.toggle("on", !!state.voc2[i]);
+    save(); sync();
+  });
+})();
+
+(function renderVocab(){
+  var tb = $("#vocabBody");
+  WORDS.forEach(function(w, i){
+    var tr = document.createElement("tr");
+    var on = state.voc[i] ? " on" : "";
+    tr.innerHTML =
+      '<td><span class="vck' + on + '" data-i="' + i + '"></span></td>' +
+      '<td class="en">' + w[0] + '</td>' +
+      '<td class="ph">' + w[1] + '</td>' +
+      '<td>' + w[2] + '</td>' +
+      '<td class="ex">' + w[3] + '<i>' + w[4] + '</i>' + (w[5] ? '<i style="color:var(--red);">※ ' + w[5] + '</i>' : '') + '</td>';
+    tb.appendChild(tr);
+  });
+  tb.addEventListener("click", function(e){
+    var el = e.target;
+    if(!el.classList.contains("vck")){ return; }
+    var i = el.getAttribute("data-i");
+    if(state.voc[i]){ delete state.voc[i]; } else { state.voc[i] = true; }
+    el.classList.toggle("on", !!state.voc[i]);
+    save(); sync();
+  });
+})();
+
+/* ---------- 清单数据 ---------- */
+var LISTS = {
+  ckSetup: [
+    "把 <span class='mono'>学习记录/Day-07.md</span> 的<b>第1 周术语测得分</b>填上（____ / 100），并按 85 / 70 两条线决定第 2 周前三天要不要加练",
+    "把 Day-07 记录里的三个数填齐：<b>「想不出中文」的题数</b>、<b>「认识但重音读错」的题数</b>、<b>错题本当前总条数</b>",
+    "完成上面的 16 组音素自测，写下至少 3 个和自己读法不一致的（<b>尤其看第 ③ 组 notification / categorisation / rectification 这三行</b>）",
+    "把今天 30 个精讲词里的 7 个 <b>-tion 词</b>各读三遍，确认重音位置各不相同：<span class='mono'>notification / categorisation / rectification / evaluation / prohibition / information / adequacy</span>",
+    "把 Day-06 错题本里的 <span class='mono'>threshold conditions / fit and proper / preservation notice / detriment</span> 四个词组测一遍（今天它们会以「监管门槛」「数据保护责任人」「证据保全」的形式回来）",
+    "打开 Anki，确认今天的新卡第一张是 <span class='mono'>senior manager</span>（如果不是，先看 02-Anki复习系统.html 第八节）",
+    "准备好今天的书签：6 Minute English 归档页、<b>BBC World Service「Business Daily」（data breach / privacy / GDPR 主题）</b>、Radio 4「You and Yours」、FT News Briefing"
+  ],
+  ckListen: [
+    "<b>A 段</b>：16 组音素对照全部听过一遍，圈出判断错误的组；<b>第 ③ 组（-tion 重音）今天最该拿满分</b>",
+    "<b>A 段</b>：把 <span class='mono'>disclosure / disclose</span> 这一对<b>第三次单独测</b>（Day-05、Day-07 都练过，今天再错就必须专项攻坚）",
+    "<b>B 段</b>：数据泄露电话会走完四遍法，先盲听再对拆解表，错题本新增 8 条以上",
+    "<b>B 段</b>：把 <span class='mono'>notification window / data controller / transfer risk assessment / standard contractual clauses</span> 四个词组单独回听 3 遍",
+    "<b>B 段</b>：把三个缩写 <span class='mono'>DPO / ICO / SCCs</span> 单独回听 3 遍，<b>确认是逐字母读而不是读成一个词</b>",
+    "<b>C 段</b>：16 句词块听写全部写完，对照答案，<b>把「听错」「拼错」「数字记错」三类分开记</b>",
+    "<b>D 段</b>：6 Minute English 第八集走完四遍法并记录理解率",
+    "<b>D 段</b>：BBC World Service「Business Daily」听 5 分钟（<b>优先选 data breach / privacy / cross-border transfer 主题</b>），Radio 4「You and Yours」5 分钟，FT News Briefing 只精听开头 30 秒",
+    "对照「盲区预测清单（数据保护词 20 条）」验证命中情况，命中的全部记入错题本"
+  ],
+  ckSpeak: [
+    "影子跟读第 1 层（看文本，用 B1 段）完成 5 分钟，<b>并用手拍出每个 -tion 词的重音位置</b>",
+    "影子跟读第 2 层（关文本）完成 5 分钟",
+    "影子跟读第 3 层（1.1 倍速）完成 5 分钟",
+    "3 组绕口句各连读 5 遍（慢 → 正常 → 快），<b>重点确认 controller 与 processor 的重音打在不同位置</b>",
+    "「72 小时通报」三段骨架填好并<b>整段出声说 3 遍</b>（Pin the clock… / Name the obligation… / Split the workstream…）",
+    "「数据保护自查三问」全部<b>出声回答一遍</b>，第 2 问必须包含「not from confirmation」这个区分",
+    "说完立刻回想：今天有哪些位置「想不起英文怎么说」，全部记入错题本"
+  ],
+  ckWrite: [
+    "用今天的精讲词写出 5 个句子，每句至少用 2 个精讲词",
+    "5 句全部朗读出声，拗口的地方改到顺为止；<b>其中至少 2 句用到 notification / seventy-two hours 这一组</b>",
+    "写出「72 小时行动清单」九段（<b>Deadline 在最上方</b> / Awareness / Scope / Risk assessment / Lawful basis / <b>Cross-border</b> / Regulatory interface / Documentation / Next four hours / Remediation）",
+    "写出「数据保护自查三问」的英文答案，<b>第 2 问必须说清「aware 是组织层面的知悉，不是第一个人的知悉」</b>",
+    "回炉 Day-07 作业：把 <span class='mono'>categorisation / minimisation / favour / behaviour / licence / offence / redaction</span> 的拼写全检查一遍，<b>确认 categorisation 是 -isation 不是 -ization</b>",
+    "把今天的产出保存到「我的作业」，命名 <span class='mono'>Day08_精讲词造句.md</span>、<span class='mono'>Day08_72小时行动清单.md</span>、<span class='mono'>Day08_数据保护自查三问.md</span>"
+  ],
+  ckWrap: [
+    "填写 <span class='mono'>学习记录/Day-08.md</span>（<b>模块 01 的 B 段听力记录与理解率是重点</b>，写清「我当时听成了什么」）",
+    "错题本更新完成，且至少淘汰 1 条已连续 3 次反应过来的旧条目",
+    "100 词过完一遍：30 个精讲词完成口头造句打卡，70 个拓展词在 Anki 完成首轮",
+    "<b>如果第 1 周术语测 &lt; 85</b>，确认从今天起前三天每天加 20 分钟术语测（回刷 Day-07 的错题）",
+    "在作战中心的「第 2 周计划」里把 <b>Day 8 打勾</b>",
+    "回听一遍今天 B 段数据泄露电话会（睡前 10 分钟，不看文本）"
+  ]
+};
+
+var RATES = [
+  ["音素分辨（16 组对照，错几组）", "5 = 全对；3 = 错 3-5 组；1 = 错 8 组以上"],
+  ["第 ③ 组 -tion 重音（6 对，错几对）", "5 = 全对；3 = 错 2 对；1 = 全错——今天最该拿满分的一项"],
+  ["精听脚本 B（数据泄露电话会）的盲听理解率", "5 = 70% 以上；3 = 40% 左右；1 = 只抓住几个词"],
+  ["词块听写（16 句，写对几句）", "5 = 15 句以上；3 = 10-12 句；1 = 6 句以下"],
+  ["30 个精讲词的开口造句完成度", "5 = 30 个都能现场造句；3 = 一半能；1 = 大部分想不起搭配"]
+];
+
+(function renderLists(){
+  Object.keys(LISTS).forEach(function(id){
+    var box = document.getElementById(id);
+    if(!box){ return; }
+    LISTS[id].forEach(function(txt, i){
+      var key = id + "_" + i;
+      var el = document.createElement("div");
+      el.className = "ck" + (state.ck[key] ? " on" : "");
+      el.innerHTML = '<div class="bx"></div><div class="tx">' + txt + '</div>';
+      el.addEventListener("click", function(){
+        if(state.ck[key]){ delete state.ck[key]; } else { state.ck[key] = true; }
+        el.classList.toggle("on", !!state.ck[key]);
+        save(); sync();
+      });
+      box.appendChild(el);
+    });
+  });
+})();
+
+(function renderRates(){
+  var wrap = $("#rateWrap");
+  RATES.forEach(function(r, i){
+    var row = document.createElement("div");
+    row.className = "rate";
+    var btns = "";
+    for(var s = 1; s <= 5; s++){
+      btns += '<button data-r="' + i + '" data-s="' + s + '"' + (state.rate[i] === s ? ' class="on"' : '') + '>' + s + '</button>';
+    }
+    row.innerHTML = '<span class="lb">' + r[0] + '</span>' + btns;
+    wrap.appendChild(row);
+    var tip = document.createElement("div");
+    tip.style.cssText = "font-size:11.5px;color:var(--ink-3);margin:-6px 0 10px 266px;";
+    tip.textContent = r[1];
+    wrap.appendChild(tip);
+  });
+  wrap.addEventListener("click", function(e){
+    var b = e.target;
+    if(b.tagName !== "BUTTON"){ return; }
+    var i = b.getAttribute("data-r");
+    state.rate[i] = parseInt(b.getAttribute("data-s"), 10);
+    Array.prototype.forEach.call(wrap.querySelectorAll('button[data-r="' + i + '"]'), function(x){ x.classList.remove("on"); });
+    b.classList.add("on");
+    save(); sync();
+  });
+})();
+
+/* ---------- 进度统计 ---------- */
+function countAll(){
+  var total = 0, done = 0;
+  Object.keys(LISTS).forEach(function(id){
+    LISTS[id].forEach(function(_, i){
+      total++; if(state.ck[id + "_" + i]){ done++; }
+    });
+  });
+  total += WORDS.length + EXTRA.length;
+  done += Object.keys(state.voc).length + Object.keys(state.voc2).length;
+  return {total:total, done:done};
+}
+function sync(){
+  var c = countAll();
+  var pct = c.total ? Math.round(c.done / c.total * 100) : 0;
+  $("#barAll").style.width = pct + "%";
+  $("#statPct").textContent = pct + "%";
+  var vocN = Object.keys(state.voc).length, vocN2 = Object.keys(state.voc2).length;
+  $("#progText").textContent = c.done + " / " + c.total + " 项已完成　·　精讲词造句 " + vocN + " / " + WORDS.length + "　·　拓展词认读 " + vocN2 + " / " + EXTRA.length;
+  var rk = Object.keys(state.rate);
+  if(rk.length){
+    var sum = 0; rk.forEach(function(k){ sum += state.rate[k]; });
+    $("#rateText").textContent = "已评分：" + rk.length + " / 5 项，当前得分 " + sum + " / 25";
+    $("#barRate").style.width = (sum / 25 * 100) + "%";
+  } else {
+    $("#rateText").textContent = "尚未评分";
+    $("#barRate").style.width = "0%";
+  }
+}
+
+/* ---------- 折叠 ---------- */
+function tog(btn){
+  var bd = btn.nextElementSibling;
+  bd.classList.toggle("on");
+  if(!btn.dataset.base){ btn.dataset.base = btn.textContent; }
+  btn.textContent = bd.classList.contains("on") ? "收起" : btn.dataset.base;
+}
+
+sync();
+</script>
+<!--PRON_JS_START-->
+<script>
+/* 发音朗读模块（由 _朗读源文件/_build_day_pron.js 生成，勿手改） */
+var PRON_DAY = [{"id":"A4","title":"/ɪ/ 与 /iː/：松紧之别","words":58,"mins":0.5,"focus":"/ɪ/ vs /iː/","text":"Please *sit* and *read* the *sheet*. *Each team needs three weeks* to *finish* the *list*. The *risk* is *minimal* if we *keep* it *simple* and *leave* the *details* to the *leads*.","points":[["sit /sɪt/ vs seat /siːt/","/ɪ/ 是松元音，短而放松；/iː/ 是紧元音，长且嘴角向两边拉。英语母语者靠这个区分 sit 和 seat"],["sheet /ʃiːt/","/iː/ 拉长。要特别注意这个词：如果读成短音 /ʃɪt/ 会变成粗俗词，这是中国学习者最著名的翻车点之一"],["finish /ˈfɪnɪʃ/、list /lɪst/","两个音节都是 /ɪ/，不要读成 /fiːnɪʃ/"],["minimal /ˈmɪnɪməl/","三个音节全是 /ɪ/ 或 /ə/，重音在第一个"],["details /ˈdiːteɪlz/","英式重音在第一音节 /ˈdiːteɪlz/（美式常在第二音节）"]],"zh":"请坐下读这份表。每个团队需要三周才能完成清单。只要保持简单、把细节交给负责人，风险很小。","why":"今天第 ① 组音素就是它。<b>短音 <span class=\"mono\">/ɪ/</span> 仍是绝对主角</b>——而这个词表里最该练的是<b>「重音落在词尾」的 -tion 词</b>：<span class=\"mono\">notification / categorisation / rectification</span>。A4 帮你把「短音不拖长」这个底子打好，<b>读完立刻回模块 01 的 A 段重测第 ③ 组</b>。"},{"id":"B1","title":"向 MLRO 升级可疑活动（口头陈述）","words":150,"mins":1.4,"focus":"金额数字 · 连读 · 正式陈述语调","text":"<span class='who'>Compliance Analyst</span> *Sorry to pull you in on this*, but I think we need to _escalate_. The *customer* is a *dormant corporate account* that _came back to life_ *eighteen months* ago. Since then we have seen *nineteen inbound payments* from *three jurisdictions* we treat as *higher risk*, _totalling_ about *four hundred thousand pounds*.\n*What concerns me* is not the *volume* but the *pattern*: the *funds _arrive_ and _move out_ within twenty-four hours*, and the *underlying invoices _do not match_ the stated business*.\nI have _already asked_ the *relationship team* for the *source of funds*. They have _not come back_ to me. *My recommendation* is to _file a SAR_ _unless_ we get *documentation that stands up*.","points":[["escalate /ˈeskəleɪt/","重音在第一音节，不是 /esˈkəleɪt/。动词重音规则：多数三音节动词重音在首"],["eighteen /ˌeɪˈtiːn/ 与 eighty /ˈeɪti/","<b>金额听错就是合规事故。</b> -teen 结尾重音在<u>后</u>且带长 /iː/；-ty 结尾重音在<u>前</u>且尾音短。读 18 时要有明显的两个重音峰"],["nineteen /ˌnaɪnˈtiːn/ 与 ninety /ˈnaɪnti/","同上规则。练习时把手放在桌上打节拍：nine-TEEN 是弱-强，NINE-ty 是强-弱"],["dormant /ˈdɔːmənt/、jurisdiction /ˌdʒʊərɪsˈdɪkʃn/","dormant 重音在首；jurisdiction 重音在第三音节 /dɪk/，这是很长的词，要分意群读"],["totalling /ˈtəʊtlɪŋ/","英式拼写双 l。读的时候两个 /l/ 只发一次，中间不加元音"],["underlying /ˌʌndəˈlaɪɪŋ/","重音在 /laɪ/；结尾 /ɪɪŋ/ 是两个相邻的松元音，慢慢读到位再提速"],["pull you in /pʊl ju ɪn/","连读成 /pʊljʊɪn/。do not match 中 /t/ 遇 /m/ 常被吞掉，读成 /duː nɒ mætʃ/"]],"zh":"抱歉把你拉进来，但我觉得这件事需要升级。客户是一个休眠的对公账户，十八个月前重新活跃。此后我们看到来自三个我们视为较高风险司法辖区的十九笔入账，总额约四十万英镑。\n让我担心的不是金额而是模式：资金到账后二十四小时内就转出，而且底层发票与所述业务不符。\n我已经向客户关系团队索要资金来源，他们没有回复我。我的建议是：除非能拿到经得起推敲的材料，否则提交可疑活动报告。","why":"<b>这一段是今天 B 段的朗读版</b>——「向 MLRO 口头升级」。你刚在模块 01 听过数据泄露的通报电话会，现在把它读出来。<b>结构完全同构：先说结论 → 再说依据 → 最后说边界</b>，这正是今天口语模块「72 小时通报」骨架的来源。<b>听过的场景再读，口腔记忆形成得最快</b>，而且 B1 就是模块 04 影子跟读的材料。"},{"id":"B11","title":"团队会议：警报分级讨论","words":130,"mins":1.2,"focus":"口语连读 · 会议中的确认与追问","text":"<span class='who'>Team Lead</span> _Right_, let us _run through_ the *queue*. _Remind me_ where we are with the *Martins matter*.\n<span class='who'>Analyst</span> _I closed it_ as a *false positive*. The _structuring pattern_ _looked_ suspicious, but the *invoices* _backed up_ every payment, and the client has been _with us_ for *eleven years*.\n<span class='who'>Team Lead</span> *Fine.* _Just to be clear_ — did you *document* the reason? _Because if it comes back_ in a *thematic review*, we need to _show_ why we _stopped there_.\n<span class='who'>Analyst</span> _Yes_, it is in the *file note*.\n<span class='who'>Team Lead</span> *Good.* _Next one._","points":[["queue /kjuː/","英式读 /kjuː/。/juː/ 要读成两个音素的滑动，不要读成 /kuː/"],["Martins matter /ˈmɑːtɪnz ˈmætə/","两个词连读时 /nz/ 与 /m/ 相邻，实际读成 /ˈmɑːtɪnz mætə/，中间只有极短的停顿"],["structuring /ˈstrʌktʃərɪŋ/","指\"化整为零\"的交易结构。重音在首，三个音节后接 /ɪŋ/，不要读成 /strʌkˈtʃʊərɪŋ/"],["Just to be clear","会议中的追问套语。<b>语调是先降后升</b>，表示\"我要确认一下\"而不是质问"],["thematic review /θɪˈmætɪk rɪˈvjuː/","监管的\"专题审查\"。thematic 重音在第二音节，开头是 /θ/（舌尖触上齿）"],["file note /faɪl nəʊt/","合规术语，指\"案卷记录\"。两个词要读成一个单位，中间不断开"]],"zh":"组长：好，我们过一遍队列。提醒我一下 Martins 那件事到哪了。\n分析员：我按误报结案了。那个拆分结构看着可疑，但发票为每一笔付款都提供了支撑，而且客户跟我们往来十一年了。\n组长：可以。确认一下——你把理由写下来了吗？因为如果专题审查回头问起，我们需要说明为什么在那里停下。\n分析员：写了，在案卷记录里。\n组长：好。下一个。","why":"B11 是<b>团队会议里的警报分级讨论</b>，与今天的泄露通报同源——都是「在压力下把事情按优先级排出来」。<b>它的对比结构</b>（<span class=\"mono\">This is urgent; that is not</span>）就是今天写作任务里「72 小时行动清单」要用的句式。<b>读完这段，你的口语里会多一种「排序」的语调。</b>"}];
+
+(function(){
+  var GROUP_CN = {"A":"音素校准","B":"合规专业","C":"职场口语","D":"生活场景","E":"语调与节奏"};
+
+  function markup(t){
+    return String(t)
+      .replace(/\*(.+?)\*/g, '<b class="ps">$1</b>')
+      .replace(/(^|[^_])_([^_]+?)_(?=[^_]|$)/g, '$1<u class="pl">$2</u>')
+      .replace(/~(.+?)~/g, '<em class="px">$1</em>');
+  }
+  function plain(t){
+    return String(t)
+      .replace(/\*(.+?)\*/g, '$1')
+      .replace(/(^|[^_])_([^_]+?)_(?=[^_]|$)/g, '$1$2')
+      .replace(/~(.+?)~/g, '$1')
+      .replace(/<span[^>]*>/g, '').replace(/<\/span>/g, '')
+      .replace(/<br\s*\/?>/g, '. ');
+  }
+
+  /* ---------- 语音合成（en-GB） ---------- */
+  var gbVoice = null;
+  function pickVoice(){
+    if(!window.speechSynthesis){ return; }
+    var vs = speechSynthesis.getVoices() || [];
+    var pref = ['Google UK English Female','Google UK English Male','Libby','Sonia','Ryan','George','Hazel','Microsoft Libby','Microsoft Sonia'];
+    gbVoice = null;
+    for(var i = 0; i < pref.length && !gbVoice; i++){
+      gbVoice = vs.filter(function(v){ return v.name.indexOf(pref[i]) > -1; })[0] || null;
+    }
+    if(!gbVoice){ gbVoice = vs.filter(function(v){ return /^en-GB/i.test(v.lang); })[0] || null; }
+    if(!gbVoice){ gbVoice = vs.filter(function(v){ return /^en/i.test(v.lang); })[0] || null; }
+  }
+  if(window.speechSynthesis){ pickVoice(); speechSynthesis.onvoiceschanged = pickVoice; }
+  function speak(txt, rate){
+    if(!window.speechSynthesis){ alert('当前浏览器不支持朗读，请用 Edge 或 Chrome 打开本页。'); return; }
+    speechSynthesis.cancel();
+    var u = new SpeechSynthesisUtterance(txt);
+    u.lang = 'en-GB';
+    if(gbVoice){ u.voice = gbVoice; }
+    u.rate = rate || 0.95;
+    u.pitch = 1.0;
+    speechSynthesis.speak(u);
+  }
+
+  /* ---------- 渲染今日段落 ---------- */
+  var wrap = document.getElementById('prWrap');
+  wrap.innerHTML = PRON_DAY.map(function(s, i){
+    var paras = markup(s.text).split('\n').map(function(p){ return '<div class="pp">' + p + '</div>'; }).join('');
+    var pts = s.points.map(function(p){
+      return '<tr><td class="ph">' + markup(p[0]) + '</td><td class="ex">' + markup(p[1]) + '</td></tr>';
+    }).join('');
+    var zh = String(s.zh).replace(/\n/g, '<br>');
+    var g = s.id.charAt(0);
+    return '<div class="prseg">' +
+      '<div class="prhead">' +
+        '<span class="prno">' + s.id + '</span>' +
+        '<span class="prtt">' + s.title + '</span>' +
+        '<span class="prmeta">' + s.words + ' 词 · 约 ' + s.mins + ' 分钟 · ' + g + ' 组 ' + (GROUP_CN[g] || '') + ' · ' + s.focus + '</span>' +
+      '</div>' +
+      '<div style="margin:8px 0 9px;">' +
+        '<button class="btn sm primary" data-say="' + i + '">▶ 英式朗读</button> ' +
+        '<button class="btn sm" data-slow="' + i + '">▶ 慢速</button>' +
+      '</div>' +
+      (s.why ? '<span class="prwhy"><b>今天为什么读这段：</b>' + s.why + '</span>' : '') +
+      '<div class="prbox">' + paras + '</div>' +
+      '<div class="prleg">' +
+        '<span><i style="background:#fff2c9;">黄底</i> 易错音</span>' +
+        '<span><i style="background:#e9f1ff;">蓝底</i> 连读 / 弱读</span>' +
+        '<span style="color:var(--red);">红色 = 句子重音</span>' +
+        '<span>' + s.points.length + ' 条发音要点</span>' +
+      '</div>' +
+      '<div class="reveal"><button class="btn sm" onclick="tog(this)">发音要点（' + s.points.length + ' 条）</button>' +
+        '<div class="revbd"><div class="tblwrap"><table><thead><tr><th style="width:200px;">词 / 短语</th><th>为什么容易读错 · 怎么改</th></tr></thead><tbody>' + pts + '</tbody></table></div></div>' +
+      '</div>' +
+      '<div class="reveal"><button class="btn sm" onclick="tog(this)">中文译文</button>' +
+        '<div class="revbd"><div class="przh">' + zh + '</div></div>' +
+      '</div>' +
+    '</div>';
+  }).join('');
+
+  Array.prototype.forEach.call(wrap.querySelectorAll('[data-say]'), function(b){
+    b.onclick = function(){ speak(plain(PRON_DAY[+b.getAttribute('data-say')].text), 0.95); };
+  });
+  Array.prototype.forEach.call(wrap.querySelectorAll('[data-slow]'), function(b){
+    b.onclick = function(){ speak(plain(PRON_DAY[+b.getAttribute('data-slow')].text), 0.72); };
+  });
+
+  /* ---------- 打卡清单（并入当日总进度） ---------- */
+  var GENERAL = ["走完四步：先听 → 看标注读 → 不看标注读 → 站起来加大音量读（<b>不许只读 1 遍就勾</b>）","每段读完后做体感自查：喉结振动 / 嘴前气流 / 对镜看舌尖 / 非重读 r 不卷舌","读完立刻合上文本用中文回想一遍，凡想不起英文怎么说的位置记入 <span class=\"mono\">错题本.md</span>"];
+  var box = document.getElementById('ckPron');
+  if(typeof LISTS !== 'undefined' && box && typeof state !== 'undefined'){
+    LISTS.ckPron = GENERAL.concat(PRON_DAY.map(function(s){
+      return s.id + ' ' + s.title + ' —— 三遍读完（听 → 看标注 → 不看标注 → 站着读），并做完体感自查';
+    }));
+    LISTS.ckPron.forEach(function(txt, i){
+      var key = 'ckPron_' + i;
+      var el = document.createElement('div');
+      el.className = 'ck' + (state.ck[key] ? ' on' : '');
+      el.innerHTML = '<div class="bx"></div><div class="tx">' + txt + '</div>';
+      el.addEventListener('click', function(){
+        if(state.ck[key]){ delete state.ck[key]; } else { state.ck[key] = true; }
+        el.classList.toggle('on', !!state.ck[key]);
+        save(); sync();
+      });
+      box.appendChild(el);
+    });
+    if(typeof sync === 'function'){ sync(); }
+  }
+})();
+</script>
+<!--PRON_JS_END-->
+</body>
+</html>
