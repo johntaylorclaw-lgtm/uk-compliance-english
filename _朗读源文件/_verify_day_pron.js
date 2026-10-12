@@ -51,7 +51,8 @@ console.log('\n共检查 ' + (DAY_FILES.length + OTHER.length) + ' 个文件（D
 /* 校验生成的 PRON_DAY 数据与打卡清单数量 */
 DAY_FILES.forEach(f => {
   const html = fs.readFileSync(path.join(ROOT, f), 'utf8');
-  const m = html.match(/var PRON_DAY = (\[[\s\S]*?\]);\n/);
+  /* 行尾无关：不能要求 ];\n —— 克隆到 Windows 后可能是 \r\n，会导致误报「找不到 PRON_DAY」 */
+  const m = html.match(/var PRON_DAY = (\[[\s\S]*?\]);/);
   if(!m){ console.log('\n' + f + ': 找不到 PRON_DAY'); bad++; return; }
   const arr = JSON.parse(m[1]);
   const ctx = { document:{ getElementById:()=>null, querySelectorAll:()=>[] }, window:{}, alert:()=>{} };
